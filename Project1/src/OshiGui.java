@@ -51,8 +51,8 @@ public class OshiGui {
         mainFrame = new JFrame(Config.GUI_TITLE);
         mainFrame.setSize(Config.GUI_WIDTH, Config.GUI_HEIGHT);
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        //mainFrame.setResizable(true);
-        mainFrame.setResizable(false);
+        mainFrame.setResizable(true);
+        //mainFrame.setResizable(false);
         mainFrame.setLocationByPlatform(true);
         mainFrame.setLayout(new BorderLayout());
         // Add a menu bar

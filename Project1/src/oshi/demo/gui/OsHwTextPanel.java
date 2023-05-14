@@ -121,8 +121,11 @@ public class OsHwTextPanel extends OshiJPanel { // NOSONAR squid:S110
         this.add(scrollPane, BorderLayout.CENTER);
 
         // Update up time every second
-        Timer timer = new Timer(Config.REFRESH_FAST, e -> osArea.setText(updateOsData(si)));
-        timer.start();
+        //Timer timer = new Timer(Config.REFRESH_FAST, e -> osArea.setText(updateOsData(si)));
+        //timer.start();
+        //Timer timer = new Timer(Config.REFRESH_FAST, e -> osArea.setText(updateOsData(si)));
+        //timer.start();
+
     }
 
     private static String getOsPrefix(SystemInfo si) {
@@ -130,8 +133,10 @@ public class OsHwTextPanel extends OshiJPanel { // NOSONAR squid:S110
 
         OperatingSystem os = si.getOperatingSystem();
         sb.append(String.valueOf(os));
+        /*
         sb.append("\n\n").append("Booted: ").append(Instant.ofEpochSecond(os.getSystemBootTime())).append('\n')
                 .append("Uptime: ");
+        */
         return sb.toString();
     }
 
