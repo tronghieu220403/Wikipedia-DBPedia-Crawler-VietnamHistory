@@ -10,13 +10,13 @@ import java.awt.Container;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.time.Instant;
+//import java.time.Instant;
 import java.util.List;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-import javax.swing.Timer;
+//import javax.swing.Timer;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -27,7 +27,7 @@ import oshi.hardware.ComputerSystem;
 import oshi.hardware.Display;
 import oshi.software.os.OperatingSystem;
 import oshi.util.EdidUtil;
-import oshi.util.FormatUtil;
+//import oshi.util.FormatUtil;
 
 import javax.swing.*;
 
@@ -123,20 +123,16 @@ public class OsHwTextPanel extends OshiJPanel { // NOSONAR squid:S110
         // Update up time every second
         //Timer timer = new Timer(Config.REFRESH_FAST, e -> osArea.setText(updateOsData(si)));
         //timer.start();
-        //Timer timer = new Timer(Config.REFRESH_FAST, e -> osArea.setText(updateOsData(si)));
-        //timer.start();
-
     }
 
     private static String getOsPrefix(SystemInfo si) {
-        StringBuilder sb = new StringBuilder(OPERATING_SYSTEM);
-
+        //StringBuilder sb = new StringBuilder(OPERATING_SYSTEM);
+        StringBuilder sb = new StringBuilder("");
         OperatingSystem os = si.getOperatingSystem();
+        //String osName = os.toString();
+        //sb.append(osName + '\n');
         sb.append(String.valueOf(os));
-        /*
-        sb.append("\n\n").append("Booted: ").append(Instant.ofEpochSecond(os.getSystemBootTime())).append('\n')
-                .append("Uptime: ");
-        */
+        sb.append("\n\n");//.append("Booted: ").append(Instant.ofEpochSecond(os.getSystemBootTime())).append('\n').append("Uptime: ");
         return sb.toString();
     }
 
@@ -189,6 +185,6 @@ public class OsHwTextPanel extends OshiJPanel { // NOSONAR squid:S110
     }
 
     private String updateOsData(SystemInfo si) {
-        return osPrefix + FormatUtil.formatElapsedSecs(si.getOperatingSystem().getSystemUptime());
+        return osPrefix;//+ FormatUtil.formatElapsedSecs(si.getOperatingSystem().getSystemUptime());
     }
 }
