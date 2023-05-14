@@ -1,7 +1,3 @@
-/*
- * Copyright 2022 The OSHI Project Contributors
- * SPDX-License-Identifier: MIT
- */
 package oshi.demo.jmx.demo;
 
 import javax.management.AttributeNotFoundException;

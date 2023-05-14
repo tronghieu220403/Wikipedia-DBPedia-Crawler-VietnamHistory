@@ -1,7 +1,3 @@
-/*
- * Copyright 2020-2022 The OSHI Project Contributors
- * SPDX-License-Identifier: MIT
- */
 package oshi.demo;
 
 import java.io.File;
