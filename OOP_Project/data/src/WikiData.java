@@ -91,17 +91,12 @@ public class WikiData extends DataHandling{
             if (!checkURL(refURL)) continue;         
             
             writeFile(superpath + "EntityReference/" + entityID + ".txt", refURL + '\n', true);
-            if (craftedURLsHashMap.containsKey(refURL) == false || depth < 3) {          
-                deque.add(new Pair(refURL, depth + 1));
-                String content = refURL + '\n' + String.valueOf(depth+1)+ '\n';
-                writeFile(craftedURLsPath, content, true);
-                craftedURLsHashMap.put(refURL, depth + 1);
-            }
+            addRef(refURL, depth);
         }
         return;
     }
 
-    String[] filter = {
+    private String[] filter = {
         "#","T%E1%BA%ADp_tin", 
         "File:", "Wikipedia:",
         "Th%E1%BB%83_lo%E1%BA%A1i:"

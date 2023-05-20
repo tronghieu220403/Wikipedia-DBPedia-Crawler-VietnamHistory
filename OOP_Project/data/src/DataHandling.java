@@ -1,6 +1,5 @@
 import org.json.*;
 import org.jsoup.nodes.Document;
-
 import java.net.*;  
 import java.io.*;  
 import java.net.URL;
@@ -13,27 +12,34 @@ import java.util.List;
 
 
 public class DataHandling implements EntityHandling{
-    public long timeNow = System.currentTimeMillis();
-    public boolean isRelated = false;
-    public HashSet<String> vietnamEntityHashSet = new HashSet<>();
-    
-    public String superpath;
-
-    public String beginURLsPath;
-    public String craftedURLsPath;
-    public String analysedURLsPath;
-    public String failedURLsPath;
-    public Deque<Pair> deque = new ArrayDeque<>();
-    public HashSet<String> failedURLsHashSet;
-    public HashSet<String> analysedURLsHashSet;
-    public HashMap<String, Integer> craftedURLsHashMap = new HashMap<>();
+    protected long timeNow = System.currentTimeMillis();
+    protected boolean isRelated = false;
+    protected HashSet<String> vietnamEntityHashSet = new HashSet<>();
+    protected String superpath;
+    protected String beginURLsPath;
+    protected String craftedURLsPath;
+    protected String analysedURLsPath;
+    protected String failedURLsPath;
+    private Deque<Pair> deque = new ArrayDeque<>();
+    private HashSet<String> failedURLsHashSet;
+    private HashSet<String> analysedURLsHashSet;
+    private HashMap<String, Integer> craftedURLsHashMap = new HashMap<>();
+    private int totalAnalysed;
+    private int limitAnalysed = 100000;
 
     public DataHandling(String path)
     {
         superpath = path;
         craftedURLsPath = superpath + "CraftedURLs.txt";
         analysedURLsPath = superpath + "AnalysedURLs.txt";
-        failedURLsPath = superpath + "FailedURLs.txt";    
+        failedURLsPath = superpath + "FailedURLs.txt";
+        beginURLsPath = superpath + "BeginURLs.txt";
+    }
+
+    private int requestRate = 100;
+    protected void changeRequestRate(int newRequestRate)
+    {
+        requestRate = newRequestRate;
     }
 
     public final StringBuffer getDataFromURL(String urlString) throws Exception {
@@ -41,7 +47,7 @@ public class DataHandling implements EntityHandling{
         // sleep for 2 seconds
         // sprint((int)(System.currentTimeMillis() - timeNow));
         try {
-            Thread.sleep(Math.max(0,200 - (int)(System.currentTimeMillis() - timeNow)));
+            Thread.sleep(Math.max(0,requestRate - (int)(System.currentTimeMillis() - timeNow)));
         } catch (InterruptedException e) {
         }
         timeNow = System.currentTimeMillis();
@@ -155,11 +161,22 @@ public class DataHandling implements EntityHandling{
         }
     }
 
+    public final void setAnalyseLimit(int newLimit)
+    {
+        limitAnalysed = newLimit;
+        return;
+    }
+
     public final void getData() throws Exception
     {
         getVietnamRelatedEntity();
         failedURLsHashSet = new HashSet<>(readFileAllLine(failedURLsPath));
         analysedURLsHashSet = new HashSet<>(readFileAllLine(analysedURLsPath));
+        totalAnalysed += failedURLsHashSet.size() + analysedURLsHashSet.size();
+        if (totalAnalysed > limitAnalysed)
+        {
+            return;
+        }
         List<String> craftedURLsList = readFileAllLine(craftedURLsPath);
         if (craftedURLsList.size()==0)
         {
@@ -167,6 +184,7 @@ public class DataHandling implements EntityHandling{
             writeFile(craftedURLsPath, beginURLs + 
             "\n0\n", false);
             deque.addLast(new Pair(beginURLs, 0));
+            craftedURLsHashMap.put(beginURLs, 0);
         }
         else
         {
@@ -186,12 +204,27 @@ public class DataHandling implements EntityHandling{
         {
             int depth = deque.getFirst().second;
             String url = deque.getFirst().first;
-            if ( depth <= 3 )
+            if ( depth <= 3 && totalAnalysed <= 100000)
             {
                 entityAnalys(url, depth);
+                totalAnalysed++;
             }
             deque.removeFirst();
         }
+    }
+
+    public void addRef(String refURL, int depth) throws Exception
+    {
+        if (craftedURLsHashMap.containsKey(refURL) == false) {
+            if (depth < 3)
+            {
+                deque.add(new Pair(refURL, depth + 1));
+                String content = refURL + '\n' + String.valueOf(depth+1)+ '\n';
+                writeFile(craftedURLsPath, content, true);
+                craftedURLsHashMap.put(refURL, depth + 1);
+            }
+        }
+        return;
     }
 
     public boolean checkURL(String url) throws Exception {

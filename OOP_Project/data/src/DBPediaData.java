@@ -1,35 +1,16 @@
 import java.net.URLEncoder;
 import org.jsoup.nodes.Document;
-
 public class DBPediaData extends DataHandling {
     
     public DBPediaData() throws Exception
     {
         super("E:/Code/Java/OOP_Project/saveddata/DBPedia/");
-        String string = "Bình";
-        String encoded = URLEncoder.encode(string, "UTF-8");
-
-        System.out.println(encoded);
-
-        String chr = "\\u00ec";
-        int i = Integer.parseInt(chr.replace("\\u", ""), 16);
-
-        char character = '\u00ec';
-        //int chr = (int)character;
-        char c = (char)i;
-        encoded = URLEncoder.encode(character + "", "UTF-8");
-
-        System.out.println(c);
-
-        writeFile("test.json", (getJSONFromURL("https://dbpedia.org/data/Vietnam.json").toString()), false);
-        //writeFile("test.txt",unicodeToURIs("https://en.wikipedia.org/wiki/V\\u00F5_Nguy\\u00EAn_Gi\\u00E1p"),false);
+        changeRequestRate(100);
     }
 
-    public String unicodeToURIs(String text) throws Exception
+    public String unicodeToURI(String text) throws Exception
     {
-        int start = text.indexOf("/wiki/", 0) + 6;
-        if (start == 5)
-            start = 0;
+        int start = text.lastIndexOf('/', text.length()) + 1;
         int id = 0;
         StringBuffer ansPath = new StringBuffer(text.substring(0, start));
         StringBuffer ansBuffer = new StringBuffer();
@@ -49,13 +30,64 @@ public class DBPediaData extends DataHandling {
 
     @Override
     public void entityAnalys(String url, int depth) throws Exception {
-        throw new UnsupportedOperationException("Unimplemented method 'getReferences'");
+        if (checkURL(url)==false) return;
+        url = unicodeToURI(url);
+        url = url.replace("http:", "https:");
+        if (url.contains("/resource/"))
+        {
+            url = url.replace("/resource/","/data/");
+            url = url + ".json";
+        }
+
+        String entityName = url.replace("https://dbpedia.org/data/", "");
+        if (fileExist(superpath + "EntityJson/" + entityName) == true)
+        {
+            return;
+        }
+
+        String content = getDataFromURL(url).toString();
+
+        // Check related
+        if (!content.contains("http://dbpedia.org/resource/Vietnam"))
+        {
+            writeFile(failedURLsPath, url + '\n', true);
+            return;
+        }
+
+        writeFile(superpath + "EntityJson/" + entityName, content , false);
+        writeFile(analysedURLsPath, url + '\n', true);
+
+        int strBegin = 0;
+        int strEnd = 0;
+        while(true)
+        {
+            strBegin = content.indexOf("http://dbpedia.org/resource/", strEnd);
+            if (strBegin == -1) break;
+            strEnd = content.indexOf("\"", strBegin);
+            if (strEnd == -1 ) break;
+            String refURL = content.substring(strBegin, strEnd);
+            refURL.replace("http:", "https:");
+            if (checkURL(refURL)==false) continue;
+            refURL = refURL.replace("http:", "https:");
+            if (refURL.contains("/resource/"))
+            {
+                refURL = refURL.replace("/resource/","/data/");
+                refURL = refURL + ".json";
+            }
+            refURL = unicodeToURI(refURL);
+            addRef(refURL, depth);
+        }
     }
 
     @Override
     public boolean checkURL(String url) {
-        if (!url.contains("http://dbpedia.org/resource/"))
+        url = url.replace("http:", "https:");
+        if (!url.contains("https://dbpedia.org/resource/"))
         {
+            if (!url.contains("https://dbpedia.org/data/"))
+                return false;
+        }
+        if (url.chars().filter(ch -> ch == ':').count() > 1) {
             return false;
         }
         return true;
