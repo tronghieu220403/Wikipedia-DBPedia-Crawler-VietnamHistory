@@ -195,6 +195,7 @@ public class DataHandling implements EntityHandling{
             for (int i = 0; i < craftedURLsList.size(); i+=2)
             {
                 String url = craftedURLsList.get(i);
+                url = filterURL(url);
                 int depth = Integer.parseInt(craftedURLsList.get(i+1));
                 if (checkURL(url) == false) continue;
                 if (existInAnalysedURL(url)) continue;
@@ -215,6 +216,12 @@ public class DataHandling implements EntityHandling{
             deque.removeFirst();
         }
     }
+
+    public String filterURL(String url) throws Exception
+    {
+        return url;
+    }
+
 
     public void addRef(String refURL, int depth) throws Exception
     {

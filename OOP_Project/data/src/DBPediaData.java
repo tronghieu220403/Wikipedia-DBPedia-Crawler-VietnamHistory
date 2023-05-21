@@ -30,9 +30,24 @@ public class DBPediaData extends DataHandling {
         return ansBuffer.toString();
     }
 
+    public String filterURL(String url) throws Exception
+    {
+        int start = 0;
+        int id = 0;
+        for ( int i = 0; i < 4; i++ )
+        {
+            id = url.indexOf("/",start);
+            start = id + 1;
+        }
+        String rootURL = url.substring(0, start);
+        String name = unicodeToURI(url.replace(rootURL, ""));
+        return rootURL + unicodeToURI(name);
+    }
+
     @Override
     public void entityAnalys(String url, int depth) throws Exception {
         if (checkURL(url)==false) return;
+        url = filterURL(url);
         url = url.replace("http:", "https:");
         if (url.contains("/resource/"))
         {
@@ -85,7 +100,7 @@ public class DBPediaData extends DataHandling {
                 refURL = refURL.replace("/resource/","/data/");
                 refURL = refURL + ".json";
             }
-            //refURL = filterURL(refURL);
+            refURL = filterURL(refURL);
             addRef(refURL, depth);
         }
     }
