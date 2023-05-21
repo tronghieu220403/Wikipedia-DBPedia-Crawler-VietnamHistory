@@ -20,12 +20,12 @@ public class DataHandling implements EntityHandling{
     protected String craftedURLsPath;
     protected String analysedURLsPath;
     protected String failedURLsPath;
-    private Deque<Pair> deque = new ArrayDeque<>();
-    private HashSet<String> failedURLsHashSet;
-    private HashSet<String> analysedURLsHashSet;
-    private HashMap<String, Integer> craftedURLsHashMap = new HashMap<>();
-    private int totalAnalysed;
-    private int limitAnalysed = 100000;
+    protected Deque<Pair> deque = new ArrayDeque<>();
+    protected HashSet<String> failedURLsHashSet;
+    protected HashSet<String> analysedURLsHashSet;
+    protected HashMap<String, Integer> craftedURLsHashMap = new HashMap<>();
+    protected int totalAnalysed;
+    protected int limitAnalysed = 100000;
 
     public DataHandling(String path)
     {

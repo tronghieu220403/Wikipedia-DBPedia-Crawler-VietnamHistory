@@ -1,4 +1,7 @@
 import java.net.URLEncoder;
+import java.util.Arrays;
+import java.util.HashSet;
+
 import org.jsoup.nodes.Document;
 public class DBPediaData extends DataHandling {
     
@@ -10,9 +13,8 @@ public class DBPediaData extends DataHandling {
 
     public String unicodeToURI(String text) throws Exception
     {
-        int start = text.lastIndexOf('/', text.length()) + 1;
+        int start = 0;
         int id = 0;
-        StringBuffer ansPath = new StringBuffer(text.substring(0, start));
         StringBuffer ansBuffer = new StringBuffer();
         while(true) {
             id = text.indexOf("\\u", start);
@@ -25,14 +27,12 @@ public class DBPediaData extends DataHandling {
             ansBuffer.append((char)i);
             start = id + 6;
         }
-        ansPath.append(ansBuffer);
-        return ansPath.toString();
+        return ansBuffer.toString();
     }
 
     @Override
     public void entityAnalys(String url, int depth) throws Exception {
         if (checkURL(url)==false) return;
-        url = unicodeToURI(url);
         url = url.replace("http:", "https:");
         if (url.contains("/resource/"))
         {
@@ -52,7 +52,6 @@ public class DBPediaData extends DataHandling {
         else
         {
             content = getDataFromURL(url).toString();
-
             // Check related
             if (!content.contains("http://dbpedia.org/resource/Vietnam"))
             {
@@ -86,13 +85,36 @@ public class DBPediaData extends DataHandling {
                 refURL = refURL.replace("/resource/","/data/");
                 refURL = refURL + ".json";
             }
-            refURL = unicodeToURI(refURL);
+            //refURL = filterURL(refURL);
             addRef(refURL, depth);
         }
     }
 
+    private HashSet<Character> bannedChr = new HashSet<>(Arrays.asList( '/', '\\', '?', '*', ':', '>', '<', '|', '\"'));
+
+    public String check(String url) throws Exception{
+        int start = 0;
+        int id = 0;
+        for ( int i = 0; i < 4; i++ )
+        {
+            id = url.indexOf("/",start);
+            start = id + 1;
+        }
+        String rootURL = url.substring(0, start);
+        String name = unicodeToURI(url.replace(rootURL, ""));
+
+        for (char c: bannedChr)
+        {
+            if (name.contains(Character.toString(c)))
+            {
+                name = name.replace(Character.toString(c), URLEncoder.encode(Character.toString(c), "UTF-8"));
+            }
+        }
+        return rootURL + name;
+    }
+
     @Override
-    public boolean checkURL(String url) {
+    public boolean checkURL(String url) throws Exception {
         url = url.replace("http:", "https:");
         if (!url.contains("https://dbpedia.org/resource/"))
         {
@@ -101,6 +123,20 @@ public class DBPediaData extends DataHandling {
         }
         if (url.chars().filter(ch -> ch == ':').count() > 1) {
             return false;
+        }
+        int index = 0;
+        for ( int i = 0; i < 4; i++ )
+        {
+            index = url.indexOf("/",index) + 1;
+        }
+        String name = unicodeToURI(url.replace(url.substring(0, index), ""));
+
+        for (char c: bannedChr)
+        {
+            if (name.contains(Character.toString(c)))
+            {
+                return false;
+            }
         }
         return true;
     }
