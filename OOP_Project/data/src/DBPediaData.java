@@ -1,4 +1,4 @@
-import java.net.URLEncoder;
+//import java.net.URLEncoder;
 import java.util.Arrays;
 import java.util.HashSet;
 
@@ -30,6 +30,7 @@ public class DBPediaData extends DataHandling {
         return ansBuffer.toString();
     }
 
+    @Override
     public String filterURL(String url) throws Exception
     {
         int start = 0;
@@ -106,27 +107,6 @@ public class DBPediaData extends DataHandling {
     }
 
     private HashSet<Character> bannedChr = new HashSet<>(Arrays.asList( '/', '\\', '?', '*', ':', '>', '<', '|', '\"'));
-
-    public String check(String url) throws Exception{
-        int start = 0;
-        int id = 0;
-        for ( int i = 0; i < 4; i++ )
-        {
-            id = url.indexOf("/",start);
-            start = id + 1;
-        }
-        String rootURL = url.substring(0, start);
-        String name = unicodeToURI(url.replace(rootURL, ""));
-
-        for (char c: bannedChr)
-        {
-            if (name.contains(Character.toString(c)))
-            {
-                name = name.replace(Character.toString(c), URLEncoder.encode(Character.toString(c), "UTF-8"));
-            }
-        }
-        return rootURL + name;
-    }
 
     @Override
     public boolean checkURL(String url) throws Exception {
