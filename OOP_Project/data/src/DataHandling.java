@@ -140,8 +140,12 @@ public class DataHandling implements EntityHandling{
     {
         File file = new File(fileName);
         if ((boolean)(file.isFile()) == false){
-            if (!file.createNewFile()){
-                throw new Exception("Unable to create file");
+            try{
+                file.createNewFile();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Unable to create file " + fileName);
             }
         }
         try (FileWriter fout = new FileWriter(fileName, append)){
@@ -193,9 +197,8 @@ public class DataHandling implements EntityHandling{
                 String url = craftedURLsList.get(i);
                 int depth = Integer.parseInt(craftedURLsList.get(i+1));
                 if (checkURL(url) == false) continue;
+                if (existInAnalysedURL(url)) continue;
                 craftedURLsHashMap.put(url, depth);
-                if (failedURLsHashSet.contains(url)) continue;
-                if (analysedURLsHashSet.contains(url)) continue;
                 deque.addLast(new Pair(url, depth));
             }
         }
@@ -225,6 +228,13 @@ public class DataHandling implements EntityHandling{
             }
         }
         return;
+    }
+
+    public boolean existInAnalysedURL(String url)
+    {
+        if (failedURLsHashSet.contains(url)) return true;
+        if (analysedURLsHashSet.contains(url)) return true;
+        return false;
     }
 
     public boolean checkURL(String url) throws Exception {

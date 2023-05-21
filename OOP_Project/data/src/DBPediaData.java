@@ -24,8 +24,9 @@ public class DBPediaData extends DataHandling {
             int i = Integer.parseInt((text.substring(id, id + 6)).replace("\\u", ""), 16);
             ansBuffer.append((char)i);
             start = id + 6;
-        }  
-        return ansPath.toString() + URLEncoder.encode(ansBuffer.toString(),"UTF-8");
+        }
+        ansPath.append(ansBuffer);
+        return ansPath.toString();
     }
 
     @Override
@@ -40,25 +41,33 @@ public class DBPediaData extends DataHandling {
         }
 
         String entityName = url.replace("https://dbpedia.org/data/", "");
+        String content;
         if (fileExist(superpath + "EntityJson/" + entityName) == true)
         {
-            return;
+            if (existInAnalysedURL(url))
+            {
+                writeFile(analysedURLsPath, url + '\n', true);
+            }
         }
-
-        String content = getDataFromURL(url).toString();
-
-        // Check related
-        if (!content.contains("http://dbpedia.org/resource/Vietnam"))
+        else
         {
-            writeFile(failedURLsPath, url + '\n', true);
-            return;
-        }
+            content = getDataFromURL(url).toString();
 
-        writeFile(superpath + "EntityJson/" + entityName, content , false);
-        writeFile(analysedURLsPath, url + '\n', true);
+            // Check related
+            if (!content.contains("http://dbpedia.org/resource/Vietnam"))
+            {
+                writeFile(failedURLsPath, url + '\n', true);
+                return;
+            }
+
+            writeFile(superpath + "EntityJson/" + entityName, content , false);
+            writeFile(analysedURLsPath, url + '\n', true);
+        }
 
         int strBegin = 0;
         int strEnd = 0;
+        
+        content = readFileAll(superpath + "EntityJson/" + entityName);
         while(true)
         {
             strBegin = content.indexOf("http://dbpedia.org/resource/", strEnd);
