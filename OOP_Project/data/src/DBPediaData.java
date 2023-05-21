@@ -44,7 +44,7 @@ public class DBPediaData extends DataHandling {
         String content;
         if (fileExist(superpath + "EntityJson/" + entityName) == true)
         {
-            if (existInAnalysedURL(url))
+            if (!existInAnalysedURL(url))
             {
                 writeFile(analysedURLsPath, url + '\n', true);
             }
@@ -61,7 +61,10 @@ public class DBPediaData extends DataHandling {
             }
 
             writeFile(superpath + "EntityJson/" + entityName, content , false);
-            writeFile(analysedURLsPath, url + '\n', true);
+            if (!existInAnalysedURL(url))
+            {
+                writeFile(analysedURLsPath, url + '\n', true);
+            }
         }
 
         int strBegin = 0;
