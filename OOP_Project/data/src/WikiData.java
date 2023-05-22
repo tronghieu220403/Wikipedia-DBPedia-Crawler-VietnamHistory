@@ -22,7 +22,7 @@ public class WikiData extends EntityHandling{
     
     public WikiData()
     {
-        super("E:/Code/Java/OOP_Test/saveddata/Wikipedia/");
+        super("E:/Code/Java/OOP_Project/saveddata/Wikipedia/");
         createFolder(superpath + "EntityReference");
         createFolder(superpath + "WebHTML");
     }
