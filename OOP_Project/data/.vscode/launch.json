@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "WikiData",
+            "request": "launch",
+            "mainClass": "WikiData",
+            "projectName": "data_bdaf9693"
+        },
+        {
+            "type": "java",
             "name": "DBPediaData",
             "request": "launch",
             "mainClass": "DBPediaData",
