@@ -1,3 +1,4 @@
+/*
 import java.io.File;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -7,10 +8,10 @@ import java.util.Comparator;
 import java.util.Map;
 import java.util.Map.Entry;
 import org.json.*;
-
+*/
 
 public class WikiCheck extends WikiData{
-
+/*
     HashMap<String, Integer> count = new HashMap<>();
 
     public WikiCheck() throws Exception {
@@ -147,4 +148,5 @@ public class WikiCheck extends WikiData{
     public static void main(String[] args) throws Exception {
         new WikiCheck();
     }
+*/
 }

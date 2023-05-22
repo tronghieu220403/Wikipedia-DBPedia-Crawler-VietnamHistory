@@ -2,8 +2,7 @@
 import java.util.Arrays;
 import java.util.HashSet;
 
-import org.jsoup.nodes.Document;
-public class DBPediaData extends DataHandling {
+public class DBPediaData extends EntityHandling {
     
     public DBPediaData() throws Exception
     {
@@ -11,42 +10,36 @@ public class DBPediaData extends DataHandling {
         changeRequestRate(100);
     }
 
-    public String unicodeToURI(String text) throws Exception
-    {
-        int start = 0;
-        int id = 0;
-        StringBuffer ansBuffer = new StringBuffer();
-        while(true) {
-            id = text.indexOf("\\u", start);
-            if(id == -1) {
-                ansBuffer.append(text.substring(start));
-                break;
-            }
-            ansBuffer.append(text.substring(start, id));
-            int i = Integer.parseInt((text.substring(id, id + 6)).replace("\\u", ""), 16);
-            ansBuffer.append((char)i);
-            start = id + 6;
-        }
-        return ansBuffer.toString();
+    public static void main(String[] args) throws Exception {
+        DBPediaData dbpediaData = new DBPediaData();
+        dbpediaData.getData();
     }
 
+    /**
+     * Convert the URL to their true form to be accessed by the Internet.
+     */
     @Override
-    public String filterURL(String url) throws Exception
+    public String filterURL(String urlString) throws Exception
     {
         int start = 0;
         int id = 0;
         for ( int i = 0; i < 4; i++ )
         {
-            id = url.indexOf("/",start);
+            id = urlString.indexOf("/",start);
             start = id + 1;
         }
-        String rootURL = url.substring(0, start);
-        String name = unicodeToURI(url.replace(rootURL, ""));
-        return rootURL + unicodeToURI(name);
+        String rootURL = urlString.substring(0, start);
+        String name = unicodeDecode(urlString.replace(rootURL, ""));
+        return rootURL + unicodeDecode(name);
     }
 
+    /**
+     * Analize an entity to make sure it is related to Vietnam and write it to logs.<p>
+     * Get the JSON content of this URL.
+     * @apiNote The entity data is in "EntityJson" folder. 
+     */
     @Override
-    public void entityAnalys(String url, int depth) throws Exception {
+    protected void entityAnalys(String url, int depth) throws Exception {
         if (checkURL(url)==false) return;
         url = filterURL(url);
         url = url.replace("http:", "https:");
@@ -69,7 +62,7 @@ public class DBPediaData extends DataHandling {
         {
             content = getDataFromURL(url).toString();
             // Check related
-            if (!content.contains("http://dbpedia.org/resource/Vietnam"))
+            if (checkRelated(content) == false)
             {
                 writeFile(failedURLsPath, url + '\n', true);
                 return;
@@ -102,12 +95,13 @@ public class DBPediaData extends DataHandling {
                 refURL = refURL + ".json";
             }
             refURL = filterURL(refURL);
-            addRef(refURL, depth);
+            addURLToCrafed(refURL, depth);
         }
+        return;
     }
 
     private HashSet<Character> bannedChr = new HashSet<>(Arrays.asList( '/', '\\', '?', '*', ':', '>', '<', '|', '\"'));
-
+    
     @Override
     public boolean checkURL(String url) throws Exception {
         url = url.replace("http:", "https:");
@@ -124,7 +118,7 @@ public class DBPediaData extends DataHandling {
         {
             index = url.indexOf("/",index) + 1;
         }
-        String name = unicodeToURI(url.replace(url.substring(0, index), ""));
+        String name = unicodeDecode(url.replace(url.substring(0, index), ""));
 
         for (char c: bannedChr)
         {
@@ -136,19 +130,27 @@ public class DBPediaData extends DataHandling {
         return true;
     }
 
+    /**
+     * Check if the entity is related to Vietnam.
+     * @param data String content of DBPedia JSON item.
+     * @return Return {@code true} if it is related; otherwise return {@code false}.
+     */
     @Override
-    public Object checkRelated(Document soupHWND) throws Exception {
-        throw new UnsupportedOperationException("Unimplemented method 'checkRelated'");
+    public boolean checkRelated(String data) throws Exception {
+        for (String vietnamEntity: vietnamEntityHashSet)
+        {
+            if (((String) data).contains(vietnamEntity))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
-    public void getVietnamRelatedEntity() throws Exception {
-        
-    }
-
-    public static void main(String[] args) throws Exception {
-        DBPediaData dbpediaData = new DBPediaData();
-        dbpediaData.getData();
+    protected void getVietnamRelatedEntity() throws Exception {
+        vietnamEntityHashSet.clear();
+        vietnamEntityHashSet.add("http://dbpedia.org/resource/Vietnam");
     }
     
 }

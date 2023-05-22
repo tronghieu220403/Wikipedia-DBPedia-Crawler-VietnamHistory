@@ -1,6 +1,7 @@
-
+/**
+ *  The "WikiData" class provides useful methods for analyzing Wikipedia pages and extracting relevant information related to entities in Vietnam.
+ */
 import java.util.Iterator;
-
 import org.json.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -17,8 +18,21 @@ class Pair
     }
 }
 
-public class WikiData extends DataHandling{
-        
+public class WikiData extends EntityHandling{
+    
+    public WikiData()
+    {
+        super("E:/Code/Java/OOP_Project/saveddata/Wikipedia/");
+        createFolder(superpath + "EntityReference");
+        createFolder(superpath + "WebHTML");
+        createFolder(superpath + "VietnamRelated");
+    }
+
+    public static void main(String[] args) throws Exception {
+        WikiData wikiData = new WikiData();
+        wikiData.getData();
+    }
+
     @Override
     public void getVietnamRelatedEntity() throws Exception{
 
@@ -36,18 +50,24 @@ public class WikiData extends DataHandling{
         return;
     }
 
-    
+    /**
+     * Analize an entity to make sure it is related to Vietnam and write it to logs.<p>
+     * Get the HTML content of this URL, also get the entity data and related URLs for this.
+     * @apiNote The HTML content is in "WebHtml" folder. 
+     * @apiNote The entity data is in "EntityJson" folder. 
+     * @apiNote The related URLs is in "EntityReference" folder. 
+     */
     @Override
-    public void entityAnalys(String url, int depth) throws Exception {
+    protected void entityAnalys(String urlString, int depth) throws Exception {
         
-        url = url.replace("\n", "");
-        if (checkURL(url) == false)
+        urlString = urlString.replace("\n", "");
+        if (checkURL(urlString) == false)
         {
             return;
         }
         String data = "";
         try {
-            data = getDataFromURL(url).toString();
+            data = getDataFromURL(urlString).toString();
         } catch (Exception e) {
             //System.out.println("Error in " + url);    
             return;
@@ -55,35 +75,42 @@ public class WikiData extends DataHandling{
 
         // Parse the HTML using Jsoup
         Document doc = Jsoup.parse(data);
-        
-        String entityTmp = getEntityID(doc);
-        if (!entityTmp.equals(""))
+        String entityID = getEntityID(doc);
+        if (!entityID.equals(""))
         {
-            if (fileExist(superpath + "WebHtml/" + entityTmp + ".html"))
+            if (fileExist(superpath + "WebHtml/" + entityID + ".html"))
             {
-                if (fileExist(superpath + "EntityJson/" + entityTmp + ".json"))
+                if (fileExist(superpath + "EntityJson/" + entityID + ".json"))
                 {
-                    writeFile(analysedURLsPath, url + '\n', true);
+                    writeFile(analysedURLsPath, urlString + '\n', true);
+                    return;
                 }
-                else writeFile(failedURLsPath, url + '\n', true);
-                return;
+                else {
+                    writeFile(failedURLsPath, urlString + '\n', true);
+                    return;
+                }
             }
-            writeFile(superpath + "WebHtml/" + entityTmp + ".html", data, false);
-
+            // Write the HTML content to "WebHtml" folder. 
+            writeFile(superpath + "WebHtml/" + entityID + ".html", data, false);
         }
         else {
-            writeFile(failedURLsPath, url + '\n', true);
+            writeFile(failedURLsPath, urlString + '\n', true);
             return;
         }
-        Object entityID = checkRelated(doc);
-        if (entityID instanceof Boolean)
+        
+        // Write the entity data to "EntityJson" folder if there's exist an entityID
+        if (!checkRelated(entityID))
         {
-            writeFile(failedURLsPath, url + '\n', true);
+            writeFile(failedURLsPath, urlString + '\n', true);
             return;
         }
         
-        writeFile(analysedURLsPath, url + '\n', true);
+        writeFile(analysedURLsPath, urlString + '\n', true);
         
+        /*
+         * Get related URL for this entity.
+         * The related URLs is in "EntityReference" folder. 
+         */
         Element divTag = doc.getElementById("mw-content-text"); 
         for (Element aTag : divTag.select("a")) {
             String href = aTag.attr("href");
@@ -91,7 +118,7 @@ public class WikiData extends DataHandling{
             if (!checkURL(refURL)) continue;         
             
             writeFile(superpath + "EntityReference/" + entityID + ".txt", refURL + '\n', true);
-            addRef(refURL, depth);
+            addURLToCrafed(refURL, depth);
         }
         return;
     }
@@ -104,45 +131,50 @@ public class WikiData extends DataHandling{
     
 
     @Override
-    public boolean checkURL(String url) {
-        if (url == null || url.isEmpty()) return false;  
-        if (!url.contains("/wiki/")) return false;
+    public boolean checkURL(String urlString) {
+        if (urlString == null || urlString.isEmpty()) return false;  
+        if (!urlString.contains("/wiki/")) return false;
         
         for (String text : filter) {
-            if (url.contains(text)) return false;
+            if (urlString.contains(text)) return false;
         }
         
-        if (url.chars().filter(ch -> ch == ':').count() > 1) {
+        if (urlString.chars().filter(ch -> ch == ':').count() > 1) {
             return false;  
         }
         
         return true;  
     }
 
-    public void JSONAnalysis(Object myJSON)
+    /**
+     * Check if the JSON of an entity has any properties that are related to Vietnam.
+     * @param EntityJSON the JSON of an entity.
+     * @return Member variable isRelated is {@code true} if that entity has any properties that are related to Vietnam, else {@code false}.
+     */
+    protected void JSONAnalysis(Object EntityJSON)
     {
         if (isRelated == true)
             return;
-        if (myJSON instanceof JSONArray)
+        if (EntityJSON instanceof JSONArray)
         {
-            for (int i = 0; i < ((JSONArray) myJSON).length(); i++) { 
-                JSONAnalysis(((JSONArray) myJSON).get(i));
+            for (int i = 0; i < ((JSONArray) EntityJSON).length(); i++) { 
+                JSONAnalysis(((JSONArray) EntityJSON).get(i));
             }
         }
-        else if (myJSON instanceof JSONObject)
+        else if (EntityJSON instanceof JSONObject)
         {
-            if (((JSONObject) myJSON).has("numeric-id"))
+            if (((JSONObject) EntityJSON).has("numeric-id"))
             {
-                if (vietnamEntityHashSet.contains(((JSONObject) myJSON).get("id")))
+                if (vietnamEntityHashSet.contains(((JSONObject) EntityJSON).get("id")))
                 {
                     isRelated = true;
-                    return ;
+                    return;
                 }
             }
-            Iterator<String> keys = ((JSONObject) myJSON).keys();
+            Iterator<String> keys = ((JSONObject) EntityJSON).keys();
             while (keys.hasNext()) {
                 String key = keys.next();
-                Object value = ((JSONObject) myJSON).get(key);
+                Object value = ((JSONObject) EntityJSON).get(key);
                 
                 if (value instanceof JSONObject) {
                     JSONAnalysis((JSONObject) value);
@@ -153,6 +185,11 @@ public class WikiData extends DataHandling{
         }
     }
 
+    /**
+     * Get the ID of an entity.
+     * @param soupHWND HTML content parsed by Jsoup library.
+     * @return That entity's ID of that soupHWND
+     */
     public String getEntityID(Document soupHWND) 
     {
         String entityURL = "";
@@ -169,44 +206,31 @@ public class WikiData extends DataHandling{
         return entityID;
     }
 
+    /**
+     * Check if the entity is related to Vietnam.
+     * @param entityID
+     * @return Return {@code true} if it is related; otherwise return {@code false}.
+     */
     @Override
-    public Object checkRelated(Document soupHWND) throws Exception {
-        String entityURL = "";
-        Element liTag = soupHWND.getElementById("t-wikibase");
-        if (liTag == null)
-            return (Boolean)false;
-
-        for (Element aTag : liTag.select("a")) {
-            entityURL = aTag.attr("href");
-            break;
-        }
-        if (entityURL == "")
-            return (Boolean)false;
-        entityURL= entityURL.replace("Page", "Data");
-        String entityID = entityURL.replace("https://www.wikidata.org/wiki/Special:EntityData/","");
-        if (fileExist(superpath + "EntityJson/" +entityID +".json") == true)
+    public boolean checkRelated(String entityID) throws Exception {
+        if (entityID.isEmpty())
         {
-            return entityID;
+            return false;
         }
-        entityURL = entityURL + ".json";
+        if (fileExist(superpath + "EntityJson/" + entityID +".json") == true)
+        {
+            return true;
+        }
+
+        String entityURL = "https://www.wikidata.org/wiki/Special:EntityData/" + entityID + ".json";
         JSONObject jsonData = getJSONFromURL(entityURL);
+        
         isRelated = false;
         JSONAnalysis(jsonData);
         if (isRelated == false)
-            return (Boolean)false;
+            return false;
         String content = (jsonData).toString();
-        writeFile(superpath + "EntityJson/" +entityID +".json", content , false);
-        return entityID;
+        writeFile(superpath + "EntityJson/" + entityID +".json", content , false);
+        return true;
     }
-
-    public WikiData()
-    {
-        super("E:/Code/Java/OOP_Project/saveddata/Wikipedia/");
-    }
-
-    public static void main(String[] args) throws Exception {
-        WikiData wikiData = new WikiData();
-        wikiData.getData();
-    }
-
 }

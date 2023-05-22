@@ -1,51 +1,46 @@
-import org.json.*;
-import org.jsoup.nodes.Document;
-import java.net.*;  
-import java.io.*;  
+/**
+ * What to do with an Data:
+ * 1) Get the content of that JSON file from URL.
+ * 2) Check if the entity of that JSON file belong to Vietnam.
+ * 3) Get all related entities.
+ */
+
 import java.net.URL;
-import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 
+import org.json.JSONObject;
 
-public class DataHandling implements EntityHandling{
-    protected long timeNow = System.currentTimeMillis();
-    protected boolean isRelated = false;
-    protected HashSet<String> vietnamEntityHashSet = new HashSet<>();
-    protected String superpath;
-    protected String beginURLsPath;
-    protected String craftedURLsPath;
-    protected String analysedURLsPath;
-    protected String failedURLsPath;
-    protected Deque<Pair> deque = new ArrayDeque<>();
-    protected HashSet<String> failedURLsHashSet;
-    protected HashSet<String> analysedURLsHashSet;
-    protected HashMap<String, Integer> craftedURLsHashMap = new HashMap<>();
-    protected int totalAnalysed;
-    protected int limitAnalysed = 100000;
-
-    public DataHandling(String path)
-    {
-        superpath = path;
-        craftedURLsPath = superpath + "CraftedURLs.txt";
-        analysedURLsPath = superpath + "AnalysedURLs.txt";
-        failedURLsPath = superpath + "FailedURLs.txt";
-        beginURLsPath = superpath + "BeginURLs.txt";
-    }
+abstract class DataHandling {   
+    protected static long timeNow = System.currentTimeMillis();
 
     private int requestRate = 100;
-    protected void changeRequestRate(int newRequestRate)
+    /**
+     * Set up a request gap time for the data crawler to avoid being blocked by the server.
+     * @param newRequestRate Gap between each request in {@code Millisecond(ms)}
+     * @apiNote The default value is {@code 100ms} for each request.
+     */
+    public void changeRequestRate(int newRequestRate)
     {
         requestRate = newRequestRate;
     }
 
+    /**
+     * Get content of an URL.
+     * @param urlString URL to get content.
+     * @return Data of the input URL.
+     * @throws Exception
+     */
     public final StringBuffer getDataFromURL(String urlString) throws Exception {
         
-        // sleep for 2 seconds
-        // sprint((int)(System.currentTimeMillis() - timeNow));
         try {
             Thread.sleep(Math.max(0,requestRate - (int)(System.currentTimeMillis() - timeNow)));
         } catch (InterruptedException e) {
@@ -76,6 +71,12 @@ public class DataHandling implements EntityHandling{
         return response;
     }
 
+    
+    /**
+     * Get JSON content of an URL.
+     * @param urlString URL to the JSON content.
+     * @return A JSON object of the input URL.
+     */
     public final JSONObject getJSONFromURL(String urlString) throws Exception {
         StringBuffer response = getDataFromURL(urlString);
         if (response.isEmpty())
@@ -87,11 +88,22 @@ public class DataHandling implements EntityHandling{
     }
 
     
-
-    public final String readFileAll(String fileName) throws IOException
+    /**
+     * Get content of a file.
+     * @param filePath The path to the file to be read.
+     * @return The contents of the file as a single string.
+     */
+    public final String readFileAll(String filePath) throws IOException
     {
+        File file = new File(filePath);
+        if (!file.exists()) {
+            throw new FileNotFoundException("File not found");
+        }
+        if (!file.canRead()) {
+            throw new SecurityException("File cannot be read");
+        }
         StringBuffer content = new StringBuffer();
-        try(BufferedReader finp = new BufferedReader(new FileReader(fileName)))
+        try(BufferedReader finp = new BufferedReader(new FileReader(filePath)))
         {
             String inputLine;
             while ((inputLine = finp.readLine()) != null)
@@ -106,16 +118,21 @@ public class DataHandling implements EntityHandling{
         return content.toString();
     }
 
-    public final List<String> readFileAllLine(String fileName) throws IOException
+    /**
+     * Get content of all line of a file.
+     * @param filePath The path to the file to be read.
+     * @return The contents of the file as a list of strings.
+     */
+    public final List<String> readFileAllLine(String filePath) throws IOException
     {
         List<String> lines = new ArrayList<>();
 
-        File file = new File(fileName);
+        File file = new File(filePath);
         if ((boolean)(file.isFile()) == false){
             return lines;
         }
 
-        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = br.readLine()) != null) {
                 lines.add(line);
@@ -127,28 +144,41 @@ public class DataHandling implements EntityHandling{
         return lines;
     }
 
-    public static boolean fileExist(String fileName)
+    /**
+     * Check if a file exists.
+     * @param filePath The path to the file to be checked.
+     * @return If the file exists, return {@code true}; otherwise, return {@code false}.
+     */
+    public final boolean fileExist(String filePath)
     {
-        File file = new File(fileName);
+        File file = new File(filePath);
         if ((boolean)(file.isFile()) == false){
             return false;
         }
         return true;
     }
 
-    public final void writeFile(String fileName, String content, boolean append) throws Exception
+    /**
+     * Wirte to a file.
+     * @param filePath The path to the file is written to.
+     * @param content The content you want to write in.
+     * @param append Set the value to true if you want to write your content to the end of the file, or false if you want to overwrite it.
+     * @apiNote This method will automatically create a file if one does not exist.
+     * @return {@code true} if the file exists, else {@code false}.
+     */
+    public final void writeFile(String filePath, String content, boolean append) throws Exception
     {
-        File file = new File(fileName);
+        File file = new File(filePath);
         if ((boolean)(file.isFile()) == false){
             try{
                 file.createNewFile();
             }
             catch (Exception e)
             {
-                throw new Exception("Unable to create file " + fileName);
+                throw new Exception("Unable to create file " + filePath);
             }
         }
-        try (FileWriter fout = new FileWriter(fileName, append)){
+        try (FileWriter fout = new FileWriter(filePath, append)){
             fout.write(content);
         }
         catch (IOException e)
@@ -157,6 +187,26 @@ public class DataHandling implements EntityHandling{
         }
     }
 
+    /**
+     * Creates the directory named by this abstract pathname.
+     *
+     * @throws  SecurityException
+     *          If a security manager exists and its {@link
+     *          java.lang.SecurityManager#checkWrite(java.lang.String)}
+     *          method does not permit the named directory to be created
+     */
+    public final void createFolder(String folderPath)
+    {
+        File folder = new File(folderPath);
+        if (!folder.exists()) {  
+            // Folder does not exist, create it    
+            folder.mkdir();
+        }
+    }
+
+    /**
+     * Print anything.
+     */
     public final void print(Object... content)
     {
         for(Object element: content)
@@ -165,100 +215,28 @@ public class DataHandling implements EntityHandling{
         }
     }
 
-    public final void setAnalyseLimit(int newLimit)
+    /**
+     * Decode Unicode string
+     * @param text The string to be decoded.
+     * @return Decoded string.
+     * @Example String "\u003d" will be convert to "=";
+     */
+    public final String unicodeDecode(String text)
     {
-        limitAnalysed = newLimit;
-        return;
-    }
-
-    public final void getData() throws Exception
-    {
-        getVietnamRelatedEntity();
-        failedURLsHashSet = new HashSet<>(readFileAllLine(failedURLsPath));
-        analysedURLsHashSet = new HashSet<>(readFileAllLine(analysedURLsPath));
-        totalAnalysed += failedURLsHashSet.size() + analysedURLsHashSet.size();
-        if (totalAnalysed > limitAnalysed)
-        {
-            return;
-        }
-        List<String> craftedURLsList = readFileAllLine(craftedURLsPath);
-        if (craftedURLsList.size()==0)
-        {
-            String beginURLs = readFileAll(beginURLsPath);
-            writeFile(craftedURLsPath, beginURLs + 
-            "\n0\n", false);
-            deque.addLast(new Pair(beginURLs, 0));
-            craftedURLsHashMap.put(beginURLs, 0);
-        }
-        else
-        {
-            for (int i = 0; i < craftedURLsList.size(); i+=2)
-            {
-                String url = craftedURLsList.get(i);
-                url = filterURL(url);
-                int depth = Integer.parseInt(craftedURLsList.get(i+1));
-                if (checkURL(url) == false) continue;
-                if (existInAnalysedURL(url)) continue;
-                craftedURLsHashMap.put(url, depth);
-                deque.addLast(new Pair(url, depth));
+        int start = 0;
+        int id = 0;
+        StringBuffer ansBuffer = new StringBuffer();
+        while(true) {
+            id = text.indexOf("\\u", start);
+            if(id == -1) {
+                ansBuffer.append(text.substring(start));
+                break;
             }
+            ansBuffer.append(text.substring(start, id));
+            int i = Integer.parseInt((text.substring(id, id + 6)).replace("\\u", ""), 16);
+            ansBuffer.append((char)i);
+            start = id + 6;
         }
-
-        while(deque.size()!=0)
-        {
-            int depth = deque.getFirst().second;
-            String url = deque.getFirst().first;
-            if ( depth <= 3 && totalAnalysed <= 100000)
-            {
-                entityAnalys(url, depth);
-                totalAnalysed++;
-            }
-            deque.removeFirst();
-        }
+        return ansBuffer.toString();
     }
-
-    public String filterURL(String url) throws Exception
-    {
-        return url;
-    }
-
-
-    public void addRef(String refURL, int depth) throws Exception
-    {
-        if (craftedURLsHashMap.containsKey(refURL) == false) {
-            if (depth < 3)
-            {
-                deque.add(new Pair(refURL, depth + 1));
-                String content = refURL + '\n' + String.valueOf(depth+1)+ '\n';
-                writeFile(craftedURLsPath, content, true);
-                craftedURLsHashMap.put(refURL, depth + 1);
-            }
-        }
-        return;
-    }
-
-    public boolean existInAnalysedURL(String url)
-    {
-        if (failedURLsHashSet.contains(url)) return true;
-        if (analysedURLsHashSet.contains(url)) return true;
-        return false;
-    }
-
-    public boolean checkURL(String url) throws Exception {
-        return false;
-    }
-
-    public void getVietnamRelatedEntity() throws Exception {
-    }
-
-    @Override
-    public Object checkRelated(Document soupHWND) throws Exception {
-        throw new UnsupportedOperationException("Unimplemented method 'checkRelated'");
-    }
-
-    @Override
-    public void entityAnalys(String url, int depth) throws Exception {
-        throw new UnsupportedOperationException("Unimplemented method 'entityAnalys'");
-    }
-
 }
