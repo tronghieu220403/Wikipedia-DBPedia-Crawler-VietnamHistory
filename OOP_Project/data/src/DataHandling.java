@@ -7,6 +7,7 @@
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.io.BufferedReader;
 import java.io.File;
@@ -164,7 +165,6 @@ abstract class DataHandling {
      * @param content The content you want to write in.
      * @param append Set the value to true if you want to write your content to the end of the file, or false if you want to overwrite it.
      * @apiNote This method will automatically create a file if one does not exist.
-     * @return {@code true} if the file exists, else {@code false}.
      */
     public final void writeFile(String filePath, String content, boolean append) throws Exception
     {
@@ -239,4 +239,40 @@ abstract class DataHandling {
         }
         return ansBuffer.toString();
     }
+
+    /**
+     * List all files in a folder.
+     * @param folderPath Path to folder.
+     * @return a {@code HashSet<String>} of file names.
+     */
+    public final HashSet<String> listAllFiles(String folderPath)
+    {
+        HashSet<String> list = new HashSet<String>();
+        File folder = new File(folderPath);
+        File[] files = folder.listFiles();
+
+        // List all files in a folder.
+        for (File file : files) {
+            if (file.isFile()) {
+                list.add(file.getName());
+            }
+        }
+        return list;
+    }
+
+    /**
+     * Check if a file exists
+     * @param filePath Path to file.
+     * @return return {@code true} if file exists; otherwise, return {@code false}.
+     */
+    public final boolean isFileExists(String filePath)
+    {
+        File file = new File(filePath);
+
+        if (file.exists()) {
+            return true;
+        }
+        return false;
+    }
+
 }

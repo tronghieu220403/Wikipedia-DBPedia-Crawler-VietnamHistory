@@ -1,6 +1,7 @@
 /**
  *  The "WikiData" class provides useful methods for analyzing Wikipedia pages and extracting relevant information related to entities in Vietnam.
  */
+import java.util.HashSet;
 import java.util.Iterator;
 import org.json.*;
 import org.jsoup.Jsoup;
@@ -30,6 +31,8 @@ public class WikiData extends EntityHandling{
     public static void main(String[] args) throws Exception {
         WikiData wikiData = new WikiData();
         wikiData.getData();
+        wikiData.getAdditionalData();
+        wikiData.getProperties();
     }
 
     @Override
@@ -147,33 +150,33 @@ public class WikiData extends EntityHandling{
 
     /**
      * Check if the JSON of an entity has any properties that are related to Vietnam.
-     * @param EntityJSON the JSON of an entity.
+     * @param entityJSON the JSON of an entity.
      * @return Member variable isRelated is {@code true} if that entity has any properties that are related to Vietnam, else {@code false}.
      */
-    protected void JSONAnalysis(Object EntityJSON)
+    private void JSONAnalysis(Object entityJSON)
     {
         if (isRelated == true)
             return;
-        if (EntityJSON instanceof JSONArray)
+        if (entityJSON instanceof JSONArray)
         {
-            for (int i = 0; i < ((JSONArray) EntityJSON).length(); i++) { 
-                JSONAnalysis(((JSONArray) EntityJSON).get(i));
+            for (int i = 0; i < ((JSONArray) entityJSON).length(); i++) { 
+                JSONAnalysis(((JSONArray) entityJSON).get(i));
             }
         }
-        else if (EntityJSON instanceof JSONObject)
+        else if (entityJSON instanceof JSONObject)
         {
-            if (((JSONObject) EntityJSON).has("numeric-id"))
+            if (((JSONObject) entityJSON).has("numeric-id"))
             {
-                if (vietnamEntityHashSet.contains(((JSONObject) EntityJSON).get("id")))
+                if (vietnamEntityHashSet.contains(((JSONObject) entityJSON).get("id")))
                 {
                     isRelated = true;
                     return;
                 }
             }
-            Iterator<String> keys = ((JSONObject) EntityJSON).keys();
+            Iterator<String> keys = ((JSONObject) entityJSON).keys();
             while (keys.hasNext()) {
                 String key = keys.next();
-                Object value = ((JSONObject) EntityJSON).get(key);
+                Object value = ((JSONObject) entityJSON).get(key);
                 
                 if (value instanceof JSONObject) {
                     JSONAnalysis((JSONObject) value);
@@ -231,5 +234,138 @@ public class WikiData extends EntityHandling{
         String content = (jsonData).toString();
         writeFile(superpath + "EntityJson/" + entityID +".json", content , false);
         return true;
+    }
+
+    protected String entityAdditionalJsonPath = superpath + "EntityJsonAdditional";
+    /**
+     * Get all entities contain "Vietnam" word.
+     * @throws Exception
+    */
+    protected void getAdditionalData() throws Exception
+    {
+        createFolder(entityAdditionalJsonPath);
+        HashSet<String> webHTML = listAllFiles(htmlPath);
+        HashSet<String> entityFileList = listAllFiles(entityJsonPath);
+        String vietnamWord[] = {"Vietnam","Việt Nam", "Viet Nam", "việt nam"};
+        for (String fileName: webHTML)
+        {
+            String name = fileName.replace(".html", ".json");
+            if (!entityFileList.contains(name))
+            {
+                String data = getDataFromURL("https://www.wikidata.org/wiki/Special:EntityData/" + name).toString();
+                if (fileExist(entityAdditionalJsonPath + "/" + name))
+                    continue;
+                for (int i = 0; i < 4; i++)
+                {
+                    if (data.contains(vietnamWord[i]))
+                    {
+                        writeFile("AnalysedURLsAdditional.txt", name.replace(".json", ""), true);
+                        writeFile(entityAdditionalJsonPath + "/" + name, data, false);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+
+    /**
+     * Analyze a JSON Object and add all properties into propertyHashSet
+     * @param entityJSON A Wikidata JSON Object.
+     * @param entityJSONFileList A list of files in "EntityJSON" folder.
+     */
+    private void jsonPropertiesAnalysis(Object entityJSON, HashSet<String> entityJSONFileList)
+    {
+        if (entityJSON instanceof JSONArray)
+        {
+            for (int i = 0; i < ((JSONArray) entityJSON).length(); i++) { 
+                jsonPropertiesAnalysis(((JSONArray) entityJSON).get(i), entityJSONFileList);
+            }
+        }
+        else if (entityJSON instanceof JSONObject)
+        {
+            if (((JSONObject) entityJSON).has("datavalue") &&
+                ((JSONObject) entityJSON).has("property") &&
+                ((JSONObject) entityJSON).has("datatype"))
+            {
+                propertyHashSet.add((String)((JSONObject) entityJSON).get("property"));
+                String datatype = (String)((JSONObject) entityJSON).get("datatype");
+                if (!datatype.equals("wikibase-item") && !datatype.equals("wikibase-property"))
+                {
+                    return;
+                }
+                JSONObject datavalue = (JSONObject)((JSONObject) entityJSON).get("datavalue");
+                JSONObject value = (JSONObject)((JSONObject) datavalue).get("value");
+                String id = (String)((JSONObject) value).get("id");
+                if (!entityJSONFileList.contains(id + ".json"))
+                {
+                    propertyHashSet.add(id);
+                }
+                return;
+            }
+            Iterator<String> keys = ((JSONObject) entityJSON).keys();
+            while (keys.hasNext()) {
+                String key = keys.next();
+                Object value = ((JSONObject) entityJSON).get(key);
+                
+                if (value instanceof JSONObject) {
+                    jsonPropertiesAnalysis((JSONObject) value, entityJSONFileList);
+                } else if (value instanceof JSONArray) {
+                    jsonPropertiesAnalysis((JSONArray) value, entityJSONFileList);
+                }
+            }
+        }
+    }
+
+    void getPropertiesInJson(String root, String fileName, HashSet<String> entityJSONFileList) throws Exception
+    {
+        JSONObject entityJSON = new JSONObject(readFileAll(entityJsonPath + '/' + fileName));
+        JSONObject claims = (JSONObject)(((JSONObject) ((JSONObject) entityJSON.get("entities")).get(fileName.replace(".json",""))).get("claims"));
+        jsonPropertiesAnalysis(claims, entityJSONFileList);
+    }
+
+    /**
+     * Get all properties of all entities and save it to folder "Properties".
+     * @throws Exception
+     */
+    @Override
+    protected void getProperties() throws Exception
+    {
+        if (fileExist(superpath + "PropertiesList.json"))
+        {
+            JSONArray myJsonArray = new JSONArray(readFileAll(superpath + "PropertiesList.json"));
+            for (int i = 0; i < myJsonArray.length(); i++) { 
+                propertyHashSet.add((String)myJsonArray.get(i));
+            }
+        }
+        else
+        {
+            HashSet<String> entityFileList = listAllFiles(entityJsonPath);
+            for (String fileName: entityFileList)
+            {
+                if (isFileExists(entityJsonPath + "/" + fileName))
+                {
+                    getPropertiesInJson(entityJsonPath,fileName, entityFileList);
+                }
+            }
+            writeFile(superpath + "PropertiesList.json", (new JSONArray(propertyHashSet)).toString(), false);
+        }
+        HashSet<String> propertyFileList = listAllFiles(entityPropertiesPath);
+        for (String property: propertyHashSet)
+        {
+            if (property.contains("P"))
+            {
+                if (!propertyFileList.contains(property + ".json"))
+                    writeFile(entityPropertiesPath + '/' + property + ".json", getDataFromURL("https://www.wikidata.org/wiki/Special:EntityData/" + property + ".json").toString(),false);
+            }
+        }
+        for (String property: propertyHashSet)
+        {
+            if (property.contains("Q"))
+            {
+                if (!propertyFileList.contains(property + ".json"))
+                    writeFile(entityPropertiesPath + '/' + property + ".json", getDataFromURL("https://www.wikidata.org/wiki/Special:EntityData/" + property + ".json").toString(),false);
+            }
+        }
     }
 }

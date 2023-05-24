@@ -9,6 +9,13 @@
             "name": "WikiData",
             "request": "launch",
             "mainClass": "WikiData",
+            "projectName": "data_c3f6d8d7"
+        },
+        {
+            "type": "java",
+            "name": "WikiData",
+            "request": "launch",
+            "mainClass": "WikiData",
             "projectName": "data_bdaf9693"
         },
         {

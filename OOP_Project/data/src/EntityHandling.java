@@ -8,17 +8,25 @@ import java.util.List;
 public class EntityHandling extends DataHandling{
     protected boolean isRelated = false;
     protected HashSet<String> vietnamEntityHashSet = new HashSet<>();
+    protected HashSet<String> propertyHashSet = new HashSet<>();
+    //root path:
     protected String superpath;
+    //files
     protected String beginURLsPath;
     protected String craftedURLsPath;
     protected String analysedURLsPath;
     protected String failedURLsPath;
+    //folders:
+    protected String entityJsonPath;
+    protected String entityPropertiesPath;
+    protected String htmlPath;
+
     protected Deque<Pair> deque = new ArrayDeque<>();
     protected HashSet<String> failedURLsHashSet;
     protected HashSet<String> analysedURLsHashSet;
     protected HashMap<String, Integer> craftedURLsHashMap = new HashMap<>();
     protected int totalAnalysed;
-    protected int limitAmountAnalysis = 100000;
+    protected int limitAmountAnalysis = 80000;
 
     /**
      * Set up an environment for saving data.
@@ -31,7 +39,11 @@ public class EntityHandling extends DataHandling{
         analysedURLsPath = superpath + "AnalysedURLs.txt";
         failedURLsPath = superpath + "FailedURLs.txt";
         beginURLsPath = superpath + "BeginURLs.txt";
-        createFolder(superpath + "EntityReference");
+        htmlPath = superpath + "WebHtml";
+        entityJsonPath = superpath + "EntityJson";
+        entityPropertiesPath = superpath + "EntityProperties";
+        createFolder(entityJsonPath);
+        createFolder(entityPropertiesPath);
     }
 
     /**
@@ -121,6 +133,7 @@ public class EntityHandling extends DataHandling{
         }
         return;
     }
+
     /**
      * Check if {@code urlString} has been processed before.
      * @return If {@code urlString} has been processed, return {@code true}; otherwise, return {@code false}.
@@ -148,7 +161,7 @@ public class EntityHandling extends DataHandling{
     }
 
     /**
-     * Analize an entity to make sure it is related to Vietnam and write it to logs.
+     * Analize an entity to make sure it is related to Vietnam and write it into logs.
      */
     protected boolean checkRelated(String data) throws Exception {
         throw new UnsupportedOperationException("Unimplemented method 'checkRelated' from EntityHandling. Must be overriden in subclasss.");
@@ -158,4 +171,7 @@ public class EntityHandling extends DataHandling{
         throw new UnsupportedOperationException("Unimplemented method 'entityAnalys' from EntityHandling. Must be overriden in subclasss.");
     }
 
+    protected void getProperties() throws Exception{
+        throw new UnsupportedOperationException("Unimplemented method 'entityAnalys' from EntityHandling. Must be overriden in subclasss.");
+    }
 }

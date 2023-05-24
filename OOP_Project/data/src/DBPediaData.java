@@ -2,6 +2,8 @@
 import java.util.Arrays;
 import java.util.HashSet;
 
+import org.json.JSONArray;
+
 public class DBPediaData extends EntityHandling {
     
     public DBPediaData() throws Exception
@@ -153,4 +155,35 @@ public class DBPediaData extends EntityHandling {
         vietnamEntityHashSet.add("http://dbpedia.org/resource/Vietnam");
     }
     
+    /**
+     * Get all properties of all entities and save it to folder "Properties".
+     * @throws Exception
+     */
+    @Override
+    protected void getProperties() throws Exception
+    {
+        if (fileExist(superpath + "PropertiesList.json"))
+        {
+            JSONArray myJsonArray = new JSONArray(readFileAll(superpath + "PropertiesList.json"));
+            for (int i = 0; i < myJsonArray.length(); i++) { 
+                propertyHashSet.add((String)myJsonArray.get(i));
+            }
+        }
+        else
+        {
+            HashSet<String> entityFileList = listAllFiles(entityJsonPath);
+            for (String fileName: entityFileList)
+            {
+                if (isFileExists(entityJsonPath + "/" + fileName))
+                {
+                    getPropertiesInJson(entityJsonPath,fileName, entityFileList);
+                }
+            }
+            writeFile(superpath + "PropertiesList.json", (new JSONArray(propertyHashSet)).toString(), false);
+        }
+    }
+
+    private void getPropertiesInJson(String entityJsonPath, String fileName, HashSet<String> entityFileList) {
+        
+    }
 }
