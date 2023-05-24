@@ -259,7 +259,7 @@ public class WikiData extends EntityHandling{
                 {
                     if (data.contains(vietnamWord[i]))
                     {
-                        writeFile("AnalysedURLsAdditional.txt", name.replace(".json", ""), true);
+                        writeFile(superpath + "AnalysedURLsAdditional.txt", name.replace(".json", "") + '\n', true);
                         writeFile(entityAdditionalJsonPath + "/" + name, data, false);
                         break;
                     }
