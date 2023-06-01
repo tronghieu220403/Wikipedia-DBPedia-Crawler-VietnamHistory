@@ -6,6 +6,7 @@
  */
 
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -88,11 +89,20 @@ abstract class DataHandling {
         return myResponse;
     }
 
+    /**
+     * Get JSON content of a file.
+     * @param filePath The path to the file to be read.
+     * @return The JSON content of the file as a JSONObject.
+     */
+    public final JSONObject getJSONFromFile(String filePath) throws Exception {
+        String content = readFileAll(filePath);
+        return new JSONObject(content);
+    }
     
     /**
      * Get content of a file.
      * @param filePath The path to the file to be read.
-     * @return The contents of the file as a single string.
+     * @return The content of the file as a single string.
      */
     public final String readFileAll(String filePath) throws IOException
     {
@@ -122,7 +132,7 @@ abstract class DataHandling {
     /**
      * Get content of all line of a file.
      * @param filePath The path to the file to be read.
-     * @return The contents of the file as a list of strings.
+     * @return The content of the file as a list of strings.
      */
     public final List<String> readFileAllLine(String filePath) throws IOException
     {
@@ -216,6 +226,16 @@ abstract class DataHandling {
     }
 
     /**
+     * Decode URL string
+     * @param urlString
+     * @return Decode string for that url.
+     */
+    public final String urlDecode(String urlString) throws Exception
+    {
+        return java.net.URLDecoder.decode(urlString, StandardCharsets.UTF_8.name());
+    }
+
+    /**
      * Decode Unicode string
      * @param text The string to be decoded.
      * @return Decoded string.
@@ -275,4 +295,32 @@ abstract class DataHandling {
         return false;
     }
 
+    /**
+     * Check if a string contains upper case character.
+     * @param str
+     * @return return {@code true} if the string contains upper case character; otherwise, return {@code false}.
+     */
+    public boolean containsUpperCase(String str) {
+        for (int i = 0; i < str.length(); i++) {
+          if (Character.isUpperCase(str.charAt(i))) {
+            return true;
+          }   
+        }
+        return false;    
+    }
+
+    /**
+     * Copy all files in {@code srcFolder} to {@code tarFolder}.
+     * @param srcFolder
+     * @param tarFolder
+     * @throws Exception
+     */
+    public final void copyFilesInFolder(String srcFolder, String tarFolder) throws Exception {
+        HashSet<String> srcFiles = listAllFiles(srcFolder);
+        for (String fileName: srcFiles)
+        {
+            writeFile(tarFolder + "/" + fileName, readFileAll(srcFolder+"/" + fileName), false);
+        }
+    }
+    
 }

@@ -53,7 +53,6 @@ public class OsHwTextPanel extends OshiJPanel { // NOSONAR squid:S110
         osPrefix = getOsPrefix(si);
 
         // assign position and constraint for all label to grid
-
         GridBagConstraints osLabel = new GridBagConstraints();
         GridBagConstraints osConstraints = new GridBagConstraints();
         osConstraints.gridy = 1;
@@ -132,7 +131,7 @@ public class OsHwTextPanel extends OshiJPanel { // NOSONAR squid:S110
         //String osName = os.toString();
         //sb.append(osName + '\n');
         sb.append(String.valueOf(os));
-        sb.append("\n\n");//.append("Booted: ").append(Instant.ofEpochSecond(os.getSystemBootTime())).append('\n').append("Uptime: ");
+        sb.append("\n\n");
         return sb.toString();
     }
 

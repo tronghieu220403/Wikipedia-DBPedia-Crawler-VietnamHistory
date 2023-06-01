@@ -266,6 +266,7 @@ public class WikiData extends EntityHandling{
                 }
             }
         }
+        copyFilesInFolder(entityAdditionalJsonPath, entityJsonPath);
     }
 
 

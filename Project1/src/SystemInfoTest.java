@@ -88,6 +88,7 @@ public class SystemInfoTest { // NOSONAR squid:S5786
 
         printOperatingSystem(os);
 
+        /*
         logger.info("Checking computer system...");
         printComputerSystem(hal.getComputerSystem());
 
@@ -121,15 +122,17 @@ public class SystemInfoTest { // NOSONAR squid:S5786
         logger.info("Checking File System...");
         printFileSystem(os.getFileSystem());
 
+        */
         logger.info("Checking Network interfaces...");
         printNetworkInterfaces(hal.getNetworkIFs());
 
+        /*
         logger.info("Checking Network parameters...");
         printNetworkParameters(os.getNetworkParams());
 
         logger.info("Checking IP statistics...");
         printInternetProtocolStats(os.getInternetProtocolStats());
-
+        
         logger.info("Checking Displays...");
         printDisplays(hal.getDisplays());
 
@@ -141,7 +144,7 @@ public class SystemInfoTest { // NOSONAR squid:S5786
 
         logger.info("Checking Graphics Cards...");
         printGraphicsCards(hal.getGraphicsCards());
-
+        */
         StringBuilder output = new StringBuilder();
         for (String line : oshi) {
             output.append(line);
