@@ -402,10 +402,6 @@ public class WikiAnalys extends WikiData{
                     jsonObj.put("value", viLabel);
                     jsonObj.put("type", "string");
                 }
-                if( datatype.equals("wikibase-property"))
-                {
-                    
-                }
 
             }
         }
@@ -553,8 +549,7 @@ public class WikiAnalys extends WikiData{
                 if (jsonArray.length()>0)
                     myClaims.put(property, jsonArray);
             }
-            if (myClaims.length()>0)
-                json.put("claims", myClaims);
+            json.put("claims", myClaims);
         }
     }
 
