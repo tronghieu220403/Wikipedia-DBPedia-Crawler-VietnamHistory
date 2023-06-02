@@ -30,8 +30,8 @@ public class WikiData extends EntityHandling{
 
     public static void main(String[] args) throws Exception {
         WikiData wikiData = new WikiData();
-        wikiData.getData();
-        wikiData.getAdditionalData();
+        //wikiData.getData();
+        //wikiData.getAdditionalData();
         wikiData.getProperties();
     }
 
@@ -318,8 +318,19 @@ public class WikiData extends EntityHandling{
         }
     }
 
-    void getPropertiesInJson(String root, String fileName, HashSet<String> entityJSONFileList) throws Exception
+    protected void getPropertiesInJson(String root, String fileName, HashSet<String> entityJSONFileList) throws Exception
     {
+        String content = readFileAll(entityJsonPath + '/' + fileName);
+        int last = 0;
+        while(true)
+        {
+            int start = content.indexOf("http://www.wikidata.org/entity/", last);
+            if (start == -1) break;
+            int end = content.indexOf("\"", start);
+            String qID = (content.substring(start, end)).replace("http://www.wikidata.org/entity/", "");
+            propertyHashSet.add(qID);
+            last = end;
+        }
         JSONObject entityJSON = new JSONObject(readFileAll(entityJsonPath + '/' + fileName));
         JSONObject claims = (JSONObject)(((JSONObject) ((JSONObject) entityJSON.get("entities")).get(fileName.replace(".json",""))).get("claims"));
         jsonPropertiesAnalysis(claims, entityJSONFileList);
