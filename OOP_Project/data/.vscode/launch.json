@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "WikiCheck",
+            "request": "launch",
+            "mainClass": "WikiCheck",
+            "projectName": "data_c3f6d8d7"
+        },
+        {
+            "type": "java",
             "name": "WikiAnalys",
             "request": "launch",
             "mainClass": "WikiAnalys",

@@ -7,6 +7,8 @@
 
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -24,7 +26,7 @@ import org.json.JSONObject;
 abstract class DataHandling {   
     protected static long timeNow = System.currentTimeMillis();
 
-    private int requestRate = 100;
+    private static int requestRate = 100;
     /**
      * Set up a request gap time for the data crawler to avoid being blocked by the server.
      * @param newRequestRate Gap between each request in {@code Millisecond(ms)}
@@ -41,7 +43,7 @@ abstract class DataHandling {
      * @return Data of the input URL.
      * @throws Exception
      */
-    public final StringBuffer getDataFromURL(String urlString) throws Exception {
+    public final static StringBuffer getDataFromURL(String urlString) throws Exception {
         
         try {
             Thread.sleep(Math.max(0,requestRate - (int)(System.currentTimeMillis() - timeNow)));
@@ -79,7 +81,7 @@ abstract class DataHandling {
      * @param urlString URL to the JSON content.
      * @return A JSON object of the input URL.
      */
-    public final JSONObject getJSONFromURL(String urlString) throws Exception {
+    public final static JSONObject getJSONFromURL(String urlString) throws Exception {
         StringBuffer response = getDataFromURL(urlString);
         if (response.isEmpty())
         {
@@ -94,7 +96,7 @@ abstract class DataHandling {
      * @param filePath The path to the file to be read.
      * @return The JSON content of the file as a JSONObject.
      */
-    public final JSONObject getJSONFromFile(String filePath) throws Exception {
+    public final static JSONObject getJSONFromFile(String filePath) throws Exception {
         String content = readFileAll(filePath);
         return new JSONObject(content);
     }
@@ -104,7 +106,7 @@ abstract class DataHandling {
      * @param filePath The path to the file to be read.
      * @return The content of the file as a single string.
      */
-    public final String readFileAll(String filePath) throws IOException
+    public final static String readFileAll(String filePath) throws IOException
     {
         File file = new File(filePath);
         if (!file.exists()) {
@@ -134,7 +136,7 @@ abstract class DataHandling {
      * @param filePath The path to the file to be read.
      * @return The content of the file as a list of strings.
      */
-    public final List<String> readFileAllLine(String filePath) throws IOException
+    public final static List<String> readFileAllLine(String filePath) throws IOException
     {
         List<String> lines = new ArrayList<>();
 
@@ -160,7 +162,7 @@ abstract class DataHandling {
      * @param filePath The path to the file to be checked.
      * @return If the file exists, return {@code true}; otherwise, return {@code false}.
      */
-    public final boolean fileExist(String filePath)
+    public final static boolean fileExist(String filePath)
     {
         File file = new File(filePath);
         if ((boolean)(file.isFile()) == false){
@@ -176,7 +178,7 @@ abstract class DataHandling {
      * @param append Set the value to true if you want to write your content to the end of the file, or false if you want to overwrite it.
      * @apiNote This method will automatically create a file if one does not exist.
      */
-    public final void writeFile(String filePath, String content, boolean append) throws Exception
+    public final static void writeFile(String filePath, String content, boolean append) throws Exception
     {
         File file = new File(filePath);
         if ((boolean)(file.isFile()) == false){
@@ -205,7 +207,7 @@ abstract class DataHandling {
      *          java.lang.SecurityManager#checkWrite(java.lang.String)}
      *          method does not permit the named directory to be created
      */
-    public final void createFolder(String folderPath)
+    public final static void createFolder(String folderPath)
     {
         File folder = new File(folderPath);
         if (!folder.exists()) {  
@@ -217,7 +219,7 @@ abstract class DataHandling {
     /**
      * Print anything.
      */
-    public final void print(Object... content)
+    public final static void print(Object... content)
     {
         for(Object element: content)
         {
@@ -230,7 +232,7 @@ abstract class DataHandling {
      * @param urlString
      * @return Decode string for that url.
      */
-    public final String urlDecode(String urlString) throws Exception
+    public final static String urlDecode(String urlString) throws Exception
     {
         return java.net.URLDecoder.decode(urlString, StandardCharsets.UTF_8.name());
     }
@@ -241,7 +243,7 @@ abstract class DataHandling {
      * @return Decoded string.
      * @Example String "\u003d" will be convert to "=";
      */
-    public final String unicodeDecode(String text)
+    public final static String unicodeDecode(String text)
     {
         int start = 0;
         int id = 0;
@@ -265,7 +267,7 @@ abstract class DataHandling {
      * @param folderPath Path to folder.
      * @return a {@code HashSet<String>} of file names.
      */
-    public final HashSet<String> listAllFiles(String folderPath)
+    public final static HashSet<String> listAllFiles(String folderPath)
     {
         HashSet<String> list = new HashSet<String>();
         File folder = new File(folderPath);
@@ -285,7 +287,7 @@ abstract class DataHandling {
      * @param filePath Path to file.
      * @return return {@code true} if file exists; otherwise, return {@code false}.
      */
-    public final boolean isFileExists(String filePath)
+    public final static boolean isFileExists(String filePath)
     {
         File file = new File(filePath);
 
@@ -300,7 +302,7 @@ abstract class DataHandling {
      * @param str
      * @return return {@code true} if the string contains upper case character; otherwise, return {@code false}.
      */
-    public boolean containsUpperCase(String str) {
+    public final static boolean containsUpperCase(String str) {
         for (int i = 0; i < str.length(); i++) {
           if (Character.isUpperCase(str.charAt(i))) {
             return true;
@@ -315,7 +317,7 @@ abstract class DataHandling {
      * @param tarFolder
      * @throws Exception
      */
-    public final void copyFilesInFolder(String srcFolder, String tarFolder) throws Exception {
+    public final static void copyFilesInFolder(String srcFolder, String tarFolder) throws Exception {
         HashSet<String> srcFiles = listAllFiles(srcFolder);
         for (String fileName: srcFiles)
         {
@@ -323,4 +325,27 @@ abstract class DataHandling {
         }
     }
     
+    /**
+     * Delete a file.
+     * @param filePath
+     */
+    public final static void deleteFile(String filePath)
+    {
+        if (!fileExist(filePath))
+            return;
+        File myObj = new File(filePath); 
+        myObj.delete();
+    }
+
+    /**
+     * Move a file from one directory to another.
+     * @param srcFilePath Path of the file to move.
+     * @param tarFilePath Path of the file to move it to.
+     * @throws IOException
+     */
+    public final static void moveFile(String srcFilePath, String tarFilePath) throws IOException
+    {
+        Files.move(Paths.get(srcFilePath), Paths.get(tarFilePath));
+    }
+
 }

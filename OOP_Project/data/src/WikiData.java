@@ -1,6 +1,7 @@
 /**
  *  The "WikiData" class provides useful methods for analyzing Wikipedia pages and extracting relevant information related to entities in Vietnam.
  */
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import org.json.*;
@@ -31,9 +32,12 @@ public class WikiData extends EntityHandling{
     public static void main(String[] args) throws Exception {
         WikiData wikiData = new WikiData();
         //wikiData.getData();
-        //wikiData.getAdditionalData();
-        wikiData.getProperties();
+        wikiData.getAdditionalData();
+        //wikiData.getProperties();
     }
+
+    HashSet<String> allQFile = listAllFiles(entityJsonPath);
+    HashSet<String> allPFile;
 
     @Override
     public void getVietnamRelatedEntity() throws Exception{
@@ -232,8 +236,64 @@ public class WikiData extends EntityHandling{
         if (isRelated == false)
             return false;
         String content = (jsonData).toString();
+        try{
+            getViLabel(jsonData, entityID);
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
         writeFile(superpath + "EntityJson/" + entityID +".json", content , false);
         return true;
+    }
+
+    /**
+     * Get the label of entity
+     */
+    public String getViLabel(String entityID) throws Exception
+    {
+        if (viLabelHashMap.containsKey(entityID))
+        {
+            return viLabelHashMap.get(entityID);
+        }
+        String viLabelValue = "";
+        JSONObject jsonContent;
+        if (fileExist(entityJsonPath + "/" + entityID + ".json"))
+            jsonContent = getJSONFromFile(entityJsonPath + "/" + entityID + ".json");
+        else if (fileExist(entityPropertiesPath + "/" + entityID + ".json"))
+            jsonContent = getJSONFromFile(entityPropertiesPath + "/" + entityID + ".json");
+        else return viLabelValue;
+        return getViLabel(jsonContent, entityID);
+    }
+
+    /**
+     * Get the label of entity
+     */
+    protected HashMap<String, String> viLabelHashMap = new HashMap<>();
+    protected String getViLabel(JSONObject jsonContent, String qID) throws Exception
+    {
+        String viLabelValue = "";
+        JSONObject entities = (JSONObject)jsonContent.get("entities");
+        JSONObject entity = (JSONObject)entities.get(qID);
+        JSONObject labels = (JSONObject)entity.get("labels");
+        if (labels.has("vi"))
+        {
+            JSONObject viLabel = (JSONObject)labels.get("vi");
+            viLabelValue = (String)viLabel.get("value");
+            viLabelHashMap.put(qID, viLabelValue);
+        }
+        else
+        {
+            JSONObject sitelinks;
+            sitelinks = (JSONObject)entity.get("sitelinks");
+            if (sitelinks.has("viwiki"))
+            {
+                JSONObject viwiki = (JSONObject)sitelinks.get("viwiki");
+                viLabelValue = (String)viwiki.get("title");
+                viLabelHashMap.put(qID, viLabelValue);
+            }
+        }         
+        return viLabelValue;
     }
 
     protected String entityAdditionalJsonPath = superpath + "EntityJsonAdditional";
@@ -246,16 +306,15 @@ public class WikiData extends EntityHandling{
         createFolder(entityAdditionalJsonPath);
         HashSet<String> webHTML = listAllFiles(htmlPath);
         HashSet<String> entityFileList = listAllFiles(entityJsonPath);
-        String vietnamWord[] = {"Vietnam","Việt Nam", "Viet Nam", "việt nam"};
+        String vietnamWord[] = {"Vi\\u1ec7t Nam", "Vietnam","Việt Nam", "Viet Nam", "việt nam", };
         for (String fileName: webHTML)
         {
             String name = fileName.replace(".html", ".json");
             if (!entityFileList.contains(name))
             {
-                String data = getDataFromURL("https://www.wikidata.org/wiki/Special:EntityData/" + name).toString();
-                if (fileExist(entityAdditionalJsonPath + "/" + name))
-                    continue;
-                for (int i = 0; i < 4; i++)
+                String data;
+                data = getDataFromURL("https://www.wikidata.org/wiki/Special:EntityData/" + name).toString();
+                for (int i = 0; i < 5; i++)
                 {
                     if (data.contains(vietnamWord[i]))
                     {
@@ -377,6 +436,26 @@ public class WikiData extends EntityHandling{
             {
                 if (!propertyFileList.contains(property + ".json"))
                     writeFile(entityPropertiesPath + '/' + property + ".json", getDataFromURL("https://www.wikidata.org/wiki/Special:EntityData/" + property + ".json").toString(),false);
+            }
+        }
+        allPFile = listAllFiles(entityPropertiesPath);
+        for (String fileName: allPFile)
+        {
+            try{
+                getViLabel(fileName.replace(".json", ""));
+            }
+            catch(Exception e){
+                deleteFile(entityPropertiesPath + "/" + fileName);
+                print(fileName);
+            }
+        }
+        allPFile = listAllFiles(entityPropertiesPath);
+        for (String fileName: allPFile)
+        {
+            if ((getViLabel(fileName.replace(".json", ""))).isEmpty())
+            {
+                deleteFile(entityPropertiesPath + "/" +fileName);
+                print(fileName);
             }
         }
     }

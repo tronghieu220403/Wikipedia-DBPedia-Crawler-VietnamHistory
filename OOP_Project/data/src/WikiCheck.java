@@ -1,152 +1,89 @@
-/*
-import java.io.File;
+
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Map;
-import java.util.Map.Entry;
+
 import org.json.*;
-*/
 
 public class WikiCheck extends WikiData{
-/*
     HashMap<String, Integer> count = new HashMap<>();
 
     public WikiCheck() throws Exception {
         super();
-        //countEntityType();
-        localCheck(readFileAll(analysedURLsPath));
+        countEntityType();
+        countTotal();
     }
 
-
-    public boolean localCheckAll() throws Exception 
+    public void countTotal() throws Exception
     {
-        getVietnamRelatedEntity();
-        String pathName1 = "E:/OneDrive - Hanoi University of Science and Technology/StudyMaterial/OOP/OOP Project/test/json";
-        //String pathName2 = "E:/OneDrive - Hanoi University of Science and Technology/StudyMaterial/OOP/OOP Project/test/References";
-        File directoryPath = new File(pathName1);
-        File[] fileList = directoryPath.listFiles();
-        int _count = 0;
-        for(File file : fileList) {
-            if (localCheck(readFileAll(pathName1+"/"+file.getName()))==false)
-            {
-                print(file.getName());
-                _count += 1;
-            }
-        }
-        if (_count == 0)
-        {
-            print("Not thing wrong with data.");
-            return true;
-        }
-        else
-        {
-            print(_count + " files do not belong to Vietnam.");
-            return false;
-        }
-        
-    }
+        JSONObject statistics = getJSONFromFile("E:/Code/Java/OOP_Project/saveddata/Wikipedia/statistics.json");
+        JSONObject myJsonObject = getJSONFromFile("E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\WikiAnalys\\Category\\Instance.json");
+        Iterator<String> keys = myJsonObject.keys();
 
-    public boolean localCheck(String content) throws Exception {
-        JSONObject jsonData = new JSONObject(content);
-        //print(jsonData);
-        isRelated = false;
-        JSONAnalysis(jsonData);
-        return isRelated;
-    }
+        JSONObject _myJsonObject = new JSONObject();
 
-    public final void getInstances(Object myJSON)
-    {
-        if (myJSON instanceof JSONArray)
-        {
-            for (int i = 0; i < ((JSONArray) myJSON).length(); i++) { 
-                getInstances(((JSONArray) myJSON).get(i));
-            }
+        int total = 0;
+        while(keys.hasNext()) {
+            String key = keys.next();
+            total += (int)statistics.get(key);
+            _myJsonObject.put(key, (int)statistics.get(key));
         }
-        else if (myJSON instanceof JSONObject)
-        {
-            if (((JSONObject) myJSON).has("property")==true)
-            {
-                if (((String)((((JSONObject) myJSON).get("property")))).equals("P31"))
-                {
-                    JSONObject datavalue = (JSONObject)((JSONObject) myJSON).get("datavalue");
-                    //print(datavalue);
-                    JSONObject value = (JSONObject)((JSONObject) datavalue).get("value");
-                    String entityID = (String)((JSONObject) value).get("id");
-                    if (count.containsKey(entityID)) {
-                        int prevCount = count.get(entityID);
-                        count.put(entityID, prevCount + 1); 
-                    } else {
-                        count.put(entityID, 1);  
-                    }
-                }
-            }
-            Iterator<String> keys = ((JSONObject) myJSON).keys();
-            while (keys.hasNext()) {
-                String key = keys.next();
-                Object value = ((JSONObject) myJSON).get(key);
-                
-                if (value instanceof JSONObject) {
-                    getInstances((JSONObject) value);
-                } else if (value instanceof JSONArray) {
-                    getInstances((JSONArray) value);
-                }
-            }
-        }
+        writeFile("E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\WikiAnalys\\Category\\Instance.json", _myJsonObject.toString(), false);
+        print(total);
+
     }
 
     public void countEntityType() throws Exception
     {
-        String pathName1 = "E:/OneDrive - Hanoi University of Science and Technology/StudyMaterial/OOP/OOP Project/test/json";
-        //String pathName2 = "E:/OneDrive - Hanoi University of Science and Technology/StudyMaterial/OOP/OOP Project/test/References";
-        File directoryPath = new File(pathName1);
-        File[] fileList = directoryPath.listFiles();
-        for(File file : fileList) {
-            String content = readFileAll(pathName1+"/"+file.getName());
-            JSONObject jsonData = new JSONObject(content);
-            getInstances(jsonData);
-        }
-        // print(count.get("Q5")); // number of human
-        // print(count.get("Q178561")); // number of battle
-        //print(count);
-        ArrayList<Integer> list = new ArrayList<>();
- 
-        for (Map.Entry<String, Integer> entry : count.entrySet()) {
-            
-            list.add((entry.getValue()).intValue());
-        }
-        Collections.sort(list, new Comparator<Integer>() {
-            public int compare(Integer str, Integer str1) {
-                return (str).compareTo(str1);
+
+        String finalEntityPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/EntityFinal";
+        HashSet<String> allQFile = listAllFiles(finalEntityPath);
+
+        JSONObject myJsonObject = new JSONObject();
+
+        for (String fileName: allQFile)
+        {
+            JSONObject json = getJSONFromFile(finalEntityPath + "/" + fileName);
+            JSONObject claims = (JSONObject)(json.get("claims"));
+            if (!claims.has("là một"))
+            {
+                continue;
             }
-        });
-        //print(list);
-        StringBuffer content = new StringBuffer("{");
-        int last = 0;
-        for (Integer freq : list) {
-            if (freq.intValue() == last) continue;
-            for (Entry<String, Integer> entry : count.entrySet()) {
-                if (entry.getValue().intValue() == freq.intValue()) {
-                    //sortedMap.put(entry.getKey(), str);
-                    content.append("\""+entry.getKey()+"\":");
-                    content.append(freq);
-                    content.append(",");
+            JSONArray isIncstanceOf = (JSONArray)(claims.get("là một"));
+            for(Object instance: isIncstanceOf)
+            {
+                JSONObject instanceObj = (JSONObject)instance;
+                String value = (String)instanceObj.get("value");
+                
+                if (!myJsonObject.has(value))
+                {
+                    myJsonObject.put(value, 1);
                 }
+                else
+                {
+                    int cnt = (int)myJsonObject.get(value) + 1;
+                    myJsonObject.put(value, cnt);
+                }
+                String content = (String)json.get("label") + "\n" + (String)json.get("id") + "\n";
+                value = value.replace("/", " hoặc ");
+                writeFile("E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/Category/ByInstance/" + value + ".txt", content , true);
             }
-            last = freq.intValue();
         }
-        content.setLength(content.length() - 1);  
-        content.append("}");
-        //String content = (String)(new JSONObject(sortedMap).toString());
-        //print(content.length());
-        writeFile("src/Wikipedia/statistics.json", content.toString() , (boolean)false);
-        
+        Iterator<String> keys = myJsonObject.keys();
+
+        while(keys.hasNext()) {
+            String key = keys.next();
+            int cnt = (int)myJsonObject.get(key);
+            String content = "\"" + key + "\": " + String.valueOf(cnt) + ",";
+            key = key.replace("/", " hoặc ");
+            writeFile("E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/Category/ByInstance/" + key + ".txt", content , true);
+        }
+
+        writeFile("E:/Code/Java/OOP_Project/saveddata/Wikipedia/statistics.json", myJsonObject.toString() , (boolean)false);
+
     }
 
     public static void main(String[] args) throws Exception {
         new WikiCheck();
     }
-*/
 }
