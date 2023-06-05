@@ -10,8 +10,25 @@ public class WikiCheck extends WikiData{
 
     public WikiCheck() throws Exception {
         super();
+        /*
         countEntityType();
         countTotal();
+        */
+        JSONObject json = getJSONFromFile("E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\WikiAnalys\\EntityFinal\\Q10748598.json");
+        JSONObject myJsonObject = (JSONObject)json.get("claims");
+        Iterator<String> keys = myJsonObject.keys();
+
+        while(keys.hasNext()) {
+            String key = keys.next();
+            print(key);
+            JSONArray arr = (JSONArray)myJsonObject.get(key);
+            for (Object ele: arr)
+            {
+                String value = (String)((JSONObject) ele).get("value");
+                print("         " + value);
+            }
+        }
+
     }
 
     public void countTotal() throws Exception
