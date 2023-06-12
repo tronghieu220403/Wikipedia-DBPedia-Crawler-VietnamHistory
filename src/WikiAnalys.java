@@ -547,7 +547,7 @@ public class WikiAnalys extends WikiData{
             }
             json.put("claims", myClaims);
 
-                        /*
+            /*
              * Get references of entity
              */
             JSONObject myRef = new JSONObject();
