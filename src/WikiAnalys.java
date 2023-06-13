@@ -13,7 +13,6 @@ import org.jsoup.nodes.Element;
 public class WikiAnalys extends WikiData{
     public static void main(String[] args) throws Exception {
         WikiAnalys myWikiAnalys = new WikiAnalys();
-
         //myWikiAnalys.getInvalidEntities();
         //myWikiAnalys.urlToEntities();
         //myWikiAnalys.entityRefFinal();
@@ -22,11 +21,19 @@ public class WikiAnalys extends WikiData{
         myWikiAnalys.export();
     }
 
+    public WikiAnalys()
+    {
+        createFolder(superpath + "/WikiAnalys");
+        createFolder(superpath + );
+    }
+
     HashMap<String, String> urlToEntitiesHashMap = new HashMap<>();
     HashSet<String> allQFile = listAllFiles(entityJsonPath);
     HashSet<String> validEntities = new HashSet<>();
     HashSet<String> propertyEntityHashSet = new HashSet<>();
     String refFinalPath = superpath + "WikiAnalys/EntityRefFinal";
+    String finalEntityPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/EntityFinal";
+
 
     String wikiAnalysPath = superpath + "/WikiAnalys";
 
@@ -432,7 +439,6 @@ public class WikiAnalys extends WikiData{
 
     public final void entityFinal() throws Exception
     {
-        //print("Here");
         String entityFinalPath = superpath + "WikiAnalys/EntityFinal";
         allPFile = listAllFiles(entityPropertiesPath);
         for (String fileName: allPFile)
@@ -597,7 +603,6 @@ public class WikiAnalys extends WikiData{
 
     public final void deleteInvalidFinalFile() throws Exception
     {
-        String finalEntityPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/EntityFinal";
         allQFile = listAllFiles(finalEntityPath);
         for (String fileName: allQFile)
         {
@@ -643,8 +648,13 @@ public class WikiAnalys extends WikiData{
 
     public final void export() throws Exception
     {
-        String exportPath = refFinalPath + "/export";
+        String categoryPath = superpath + "WikiAnalys/Category";
+        String exportPath = categoryPath + "/export";
         createFolder(exportPath);
-        
+        HashSet<String> files = listAllFiles(finalEntityPath);
+        for (String fileName: files)
+        {
+            fe
+        }
     }
 }
