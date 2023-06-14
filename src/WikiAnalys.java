@@ -16,15 +16,15 @@ public class WikiAnalys extends WikiData{
         //myWikiAnalys.getInvalidEntities();
         //myWikiAnalys.urlToEntities();
         //myWikiAnalys.entityRefFinal();
-        //myWikiAnalys.entityFinal();
+        myWikiAnalys.entityFinal();
         //myWikiAnalys.deleteInvalidFinalFile();
-        myWikiAnalys.export();
+        //myWikiAnalys.export();
     }
 
     public WikiAnalys()
     {
         createFolder(superpath + "/WikiAnalys");
-        createFolder(superpath + );
+        //createFolder(superpath + );
     }
 
     HashMap<String, String> urlToEntitiesHashMap = new HashMap<>();
@@ -649,12 +649,22 @@ public class WikiAnalys extends WikiData{
     public final void export() throws Exception
     {
         String categoryPath = superpath + "WikiAnalys/Category";
-        String exportPath = categoryPath + "/export";
+        String exportPath = categoryPath + "/export1";
+        JSONObject category = getJSONFromFile(categoryPath + "/Split.json");
         createFolder(exportPath);
         HashSet<String> files = listAllFiles(finalEntityPath);
         for (String fileName: files)
         {
-            fe
+            JSONObject json = getJSONFromFile(finalEntityPath + "/" + fileName);
+            if(!json.has("claims"))
+            {
+                JSONObject claims = (JSONObject)json.get("claims");
+                if (claims.has("là một"))
+                {
+                    JSONArray instanceOf = (JSONArray)claims.get("là một");   
+
+                }
+            }
         }
     }
 }
