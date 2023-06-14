@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -17,7 +18,6 @@ public class WikiAnalys extends WikiData{
         //myWikiAnalys.urlToEntities();
         //myWikiAnalys.entityRefFinal();
         //myWikiAnalys.entityFinal();
-        //myWikiAnalys.deleteInvalidFinalFile();
         myWikiAnalys.export();
     }
 
@@ -417,6 +417,7 @@ public class WikiAnalys extends WikiData{
 
     public final void entityFinal() throws Exception
     {
+        int cnt = 0;
         String entityFinalPath = superpath + "WikiAnalys/EntityFinal";
         allPFile = listAllFiles(entityPropertiesPath);
         for (String fileName: allPFile)
@@ -425,7 +426,15 @@ public class WikiAnalys extends WikiData{
         }
         for (String fileName: allQFile)
         {
-            //if (!fileName.equals("Q862051.json")) continue;
+            cnt++;
+            if (cnt%1000==0)
+            {
+                print(cnt);
+            }
+            if (fileExist(entityFinalPath + "/" + fileName))
+            {
+                continue;
+            }
             JSONObject json = new JSONObject();
             JSONObject content = getJSONFromFile(entityJsonPath + "/" + fileName);
             String entityID = fileName.replace(".json", "");
@@ -581,62 +590,25 @@ public class WikiAnalys extends WikiData{
             String writePath = entityFinalPath + "/" + fileName;
             String writeContent = json.toString();
             writeFile(writePath, writeContent, false);
+
         }
     }
 
-    String[] acceptedCountries = {"Việt Nam", "Đại Việt","Nam Việt", "Đại Cồ Việt", "Đại Ngu"};
 
-    public final void deleteInvalidFinalFile() throws Exception
-    {
-        allQFile = listAllFiles(finalEntityPath);
-        for (String fileName: allQFile)
-        {
-            JSONObject json = getJSONFromFile(finalEntityPath + "/" + fileName);
-            JSONObject claims = (JSONObject)(json.get("claims"));
-            if (!claims.has("là một"))
-            {
-                continue;
-            }
-            JSONArray isIncstanceOf = (JSONArray)(claims.get("là một"));
-            for(Object instance: isIncstanceOf)
-            {
-                JSONObject instanceObj = (JSONObject)instance;
-                String value = (String)instanceObj.get("value");
-                if (value.equals("người"))
-                {
-                    if (!claims.has("quốc tịch"))
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        JSONArray quocTichs = (JSONArray)(claims.get("quốc tịch"));
-                        boolean check = false;
-                        for(Object quocTich: quocTichs)
-                        {
-                            JSONObject quocTichObj = (JSONObject)quocTich;
-                            if (((String)(quocTichObj.get("value"))).equals("Việt Nam"))
-                            {
-                                check = true;
-                            }
-                        }
-                        if (check==false)
-                        {
-                            //deleteFile(finalEntityPath + "/" + fileName);
-                            break;
-                        }
-                    }
-                }                
-            }
-        }
-    }
-
+    HashSet<String> acceptedCountries = new HashSet<>(Arrays.asList("Việt Nam", "Đại Việt","Nam Việt", "Đại Cồ Việt", "Đại Ngu", "Xích Quỷ", "Văn Lang", "Âu Lạc", "Giao Chỉ", "Lĩnh Nam", "Giao Châu", "An Nam", "Trấn Nam", "Tĩnh Hải quân", "Đại Nam"));
     public final void export() throws Exception
     {
         String categoryPath = superpath + "WikiAnalys/Category";
         String exportPath = categoryPath + "/export1";
-        JSONObject bigCategories = getJSONFromFile(categoryPath + "/Split.json");
         createFolder(exportPath);
+        JSONObject bigCategories = getJSONFromFile(categoryPath + "/Split.json");
+        Iterator<String> bigCategory = ((JSONObject) bigCategories).keys();
+        while (bigCategory.hasNext()) {
+            String bigCate = bigCategory.next();
+            createFolder(exportPath + "/" + bigCate);
+        }
+
+        
         HashSet<String> files = listAllFiles(finalEntityPath);
         for (String fileName: files)
         {
@@ -651,16 +623,40 @@ public class WikiAnalys extends WikiData{
                     {
                         JSONObject instanceObj = (JSONObject)instance;
                         String value = (String)instanceObj.get("value");
-                        Iterator<String> bigCategory = ((JSONObject) bigCategories).keys();
+                        if (value.equals("người"))
+                        {
+                            if (!claims.has("quốc tịch"))
+                            {
+                                continue;
+                            }
+                            else
+                            {
+                                JSONArray quocTichs = (JSONArray)(claims.get("quốc tịch"));
+                                boolean check = false;
+                                for(Object quocTich: quocTichs)
+                                {
+                                    JSONObject quocTichObj = (JSONObject)quocTich;
+                                    if (acceptedCountries.contains((String)quocTichObj.get("value")))
+                                    {
+                                        check = true;
+                                    }
+                                }
+                                if (check==false)
+                                {
+                                    break;
+                                }
+                            }
+                        }
+                        else continue;
+                        bigCategory = ((JSONObject) bigCategories).keys();
                         while (bigCategory.hasNext()) {
                             String bigCate = bigCategory.next();
                             JSONObject subCategories = (JSONObject)bigCategories.get(bigCate);
                             if(subCategories.has(value))
                             {
-                                print("OKE");
+                                writeFile(exportPath + "/" + bigCate + "/" + fileName, readFileAll(finalEntityPath + "/" + fileName), false);
                             }
                         }
-
                     }
 
                 }
