@@ -43,11 +43,11 @@ public class WikiAnalys extends WikiData{
         {
             JSONObject content = getJSONFromFile(entityJsonPath + "/" + fileName);
             JSONObject entities  = (JSONObject )content.get("entities");
-            String entityID = fileName.replace(".json", "");
-            JSONObject entitiyContent = (JSONObject )entities.get(entityID);
-            if (getSitelink(entitiyContent, entityID, "viwiki").equals(""))
+            String qID = fileName.replace(".json", "");
+            JSONObject entitiyContent = (JSONObject )entities.get(qID);
+            if (getSitelink(entitiyContent, qID, "viwiki").equals(""))
             {
-                moveFile(entityJsonPath + "/" + entityID + ".json", entityPropertiesPath + "/" + entityID + ".json");
+                moveFile(entityJsonPath + "/" + qID + ".json", entityPropertiesPath + "/" + qID + ".json");
                 continue;
             }
             String instance = getInstance(entitiyContent);
@@ -59,7 +59,7 @@ public class WikiAnalys extends WikiData{
                     continue;
                 }    
                 if (entityMinYear > 1962) {
-                    moveFile(entityJsonPath + "/" + entityID + ".json", entityPropertiesPath + "/" + entityID + ".json");
+                    moveFile(entityJsonPath + "/" + qID + ".json", entityPropertiesPath + "/" + qID + ".json");
                 }
                 continue;
             }
@@ -148,17 +148,17 @@ public class WikiAnalys extends WikiData{
         return instance;
     }
 
-    public final String getInstance(String entityID) throws Exception
+    public final String getInstance(String qID) throws Exception
     {
         String instance = "";
         JSONObject jsonContent;
-        if (fileExist(entityJsonPath + "/" + entityID + ".json"))
-            jsonContent = getJSONFromFile(entityJsonPath + "/" + entityID + ".json");
-        else if (fileExist(entityPropertiesPath + "/" + entityID + ".json"))
-            jsonContent = getJSONFromFile(entityPropertiesPath + "/" + entityID + ".json");
+        if (fileExist(entityJsonPath + "/" + qID + ".json"))
+            jsonContent = getJSONFromFile(entityJsonPath + "/" + qID + ".json");
+        else if (fileExist(entityPropertiesPath + "/" + qID + ".json"))
+            jsonContent = getJSONFromFile(entityPropertiesPath + "/" + qID + ".json");
         else return instance;
         JSONObject entities  = (JSONObject )jsonContent.get("entities");
-        JSONObject entitiyContent = (JSONObject )entities.get(entityID);
+        JSONObject entitiyContent = (JSONObject )entities.get(qID);
         JSONObject claims = (JSONObject)entitiyContent.get("claims");
         if (!claims.has("P31")){
             return instance;
@@ -179,7 +179,7 @@ public class WikiAnalys extends WikiData{
         return instance;
     }
 
-    private final String getSitelink(JSONObject entitiyContent, String entityID, String wikiLang) throws Exception
+    private final String getSitelink(JSONObject entitiyContent, String qID, String wikiLang) throws Exception
     {
         JSONObject sitelinks = (JSONObject )entitiyContent.get("sitelinks");
         String sitelinkVN = "";
@@ -219,20 +219,20 @@ public class WikiAnalys extends WikiData{
         {
             JSONObject content = getJSONFromFile(entityJsonPath + "/" + fileName);
             JSONObject entities  = (JSONObject )content.get("entities");
-            String entityID = fileName.replace(".json", "");
-            JSONObject entitiyID = (JSONObject )entities.get(entityID);
+            String qID = fileName.replace(".json", "");
+            JSONObject entitiyID = (JSONObject )entities.get(qID);
             JSONObject sitelinks = (JSONObject )entitiyID.get("sitelinks");
             String sitelinkVN = "";
             String sitelinkENG = "";
             if (sitelinks.has("viwiki"))
             {
                 sitelinkVN = (String )(((JSONObject )(sitelinks.get("viwiki"))).get("url"));
-                urlToEntitiesHashMap.put(urlDecode(sitelinkVN), entityID);
+                urlToEntitiesHashMap.put(urlDecode(sitelinkVN), qID);
             }
             if (sitelinks.has("enwiki"))
             {
                 sitelinkENG = (String )(((JSONObject )(sitelinks.get("enwiki"))).get("url"));
-                urlToEntitiesHashMap.put(sitelinkENG, entityID);
+                urlToEntitiesHashMap.put(sitelinkENG, qID);
             }
         }
         writeFile(wikiAnalysPath + "/" + "URLToEntities.json" , (new JSONObject(urlToEntitiesHashMap)).toString(), false);
@@ -244,13 +244,13 @@ public class WikiAnalys extends WikiData{
         HashMap<String, HashSet<String> > refList = new HashMap<String, HashSet<String>>();
         for (String fileName: allQFile)
         {
-            String entityID = fileName.replace(".json", "");
+            String qID = fileName.replace(".json", "");
             HashSet<String> h = new HashSet<>();
-            refList.putIfAbsent(entityID, h);
+            refList.putIfAbsent(qID, h);
         }
         for (String fileName: allQRefFile)
         {
-            String entityID = fileName.replace(".txt", "");
+            String qID = fileName.replace(".txt", "");
             List<String> qRef = readFileAllLine(superpath + "EntityReference/" + fileName);
             for (String urlString: qRef)
             {
@@ -258,25 +258,25 @@ public class WikiAnalys extends WikiData{
                 if (urlToEntitiesHashMap.containsKey(urlString))
                 {
                     String entityID1 = urlToEntitiesHashMap.get(urlString);
-                    if (!refList.containsKey(entityID))
+                    if (!refList.containsKey(qID))
                     {
                         HashSet<String> h = new HashSet<>();
                         h.add(entityID1);
-                        refList.put(entityID, h);
+                        refList.put(qID, h);
                     }
                     else
                     {
-                        refList.get(entityID).add(entityID1);
+                        refList.get(qID).add(entityID1);
                     }
                     if (!refList.containsKey(entityID1))
                     {
                         HashSet<String> h = new HashSet<>();
-                        h.add(entityID);
+                        h.add(qID);
                         refList.put(entityID1, h);
                     }
                     else
                     {
-                        refList.get(entityID1).add(entityID);
+                        refList.get(entityID1).add(qID);
                     }
                 }
             }
@@ -290,9 +290,9 @@ public class WikiAnalys extends WikiData{
         });
     }
 
-    public String getOverview(String entityID)
+    public String getOverview(String qID)
     {
-        String filePath = htmlPath + "/" + entityID + ".html";
+        String filePath = htmlPath + "/" + qID + ".html";
         String overview = "";
         if (fileExist(filePath))
         {
@@ -364,8 +364,8 @@ public class WikiAnalys extends WikiData{
             }
             else
             {
-                String entityID = unit.replace("http://www.wikidata.org/entity/", "");
-                unit = getViLabel(entityID); 
+                String qID = unit.replace("http://www.wikidata.org/entity/", "");
+                unit = getViLabel(qID); 
             }
             jsonObj.put("value", amount + " " + unit);
             jsonObj.put("type", "string");
@@ -437,9 +437,9 @@ public class WikiAnalys extends WikiData{
             }
             JSONObject json = new JSONObject();
             JSONObject content = getJSONFromFile(entityJsonPath + "/" + fileName);
-            String entityID = fileName.replace(".json", "");
+            String qID = fileName.replace(".json", "");
             JSONObject entities = (JSONObject)content.get("entities");
-            JSONObject entity = (JSONObject)entities.get(entityID);
+            JSONObject entity = (JSONObject)entities.get(qID);
 
             /*
              * Get ID of entity
@@ -449,7 +449,7 @@ public class WikiAnalys extends WikiData{
             /*
              * Get label of entity
              */
-            json.put("label", getViLabel(entityID));
+            json.put("label", getViLabel(qID));
 
             /*
              * Get description of entity
@@ -466,7 +466,7 @@ public class WikiAnalys extends WikiData{
             /*
              * Get overview of entity
              */
-            json.put("overview", getOverview(entityID));
+            json.put("overview", getOverview(qID));
 
             /*
              * Get aliases of entity
@@ -610,6 +610,7 @@ public class WikiAnalys extends WikiData{
             createFolder(exportPath + "/" + bigCate);
         }
         
+        /*
         HashSet<String> files = listAllFiles(finalEntityPath);
         for (String fileName: files)
         {
@@ -654,11 +655,98 @@ public class WikiAnalys extends WikiData{
                             JSONObject subCategories = (JSONObject)bigCategories.get(bigCate);
                             if(subCategories.has(value))
                             {
-                                //writeFile(exportPath + "/" + bigCate + "/" + fileName, readFileAll(finalEntityPath + "/" + fileName), false);
+                                if (bigCate.equals("triều đại lịch sử"))
+                                {
+                                    json.remove("references");
+                                }
+                                //writeFile(exportPath + "/" + bigCate + "/" + fileName, json.toString(), false);
                             }
                         }
                     }
                 }
+            }
+        }
+        */
+        HashSet<String> acceptEntitySet = new HashSet<>();
+        bigCategory = ((JSONObject) bigCategories).keys();
+        while (bigCategory.hasNext()) {
+            String bigCate = bigCategory.next();
+            for (String fileName: listAllFiles(exportPath + "/" + bigCate))
+            {
+                acceptEntitySet.add(fileName.replace(".json", ""));
+            }
+        }
+        bigCategory = ((JSONObject) bigCategories).keys();
+        while (bigCategory.hasNext()) {
+            String bigCate = bigCategory.next();
+            String folderName = exportPath + "/" + bigCate;
+            for (String fileName: listAllFiles(folderName))
+            {
+                StringBuffer filePath = new StringBuffer(folderName);
+                filePath.append("/");
+                filePath.append(fileName);
+                JSONObject json = getJSONFromFile(filePath.toString());
+                if (json.has("claims"))
+                {
+                    JSONObject claims = (JSONObject)json.get("claims");
+                    Iterator<String> claimKeys = claims.keys();
+                    List<String> deleteProperties = new ArrayList<String>();
+                    while(claimKeys.hasNext())
+                    {
+                        String key = claimKeys.next();
+                        if (bannedProperties.contains(key))
+                        {
+                            deleteProperties.add(key);
+                            continue;
+                        }
+                        JSONArray jsonArr = claims.getJSONArray(key);
+                        for (Object ele: jsonArr)
+                        {
+                            JSONObject propertyObj = (JSONObject)ele;
+                            if ( ((String)propertyObj.get("type")).equals("wikibase-item") )
+                            {
+                                String qID = (String)propertyObj.get("id");
+                                if (!acceptEntitySet.contains(qID))
+                                {
+                                    propertyObj.remove("id");
+                                    propertyObj.put("type", "string");
+                                }
+                            }
+                        }
+                    }
+                    for (String p: deleteProperties)
+                    {
+                        claims.remove(p);
+                    }
+                }
+
+                JSONObject references = (JSONObject)json.get("references");
+                Iterator<String> referenceKeys = references.keys();
+                List<String> delete = new ArrayList<String>();
+                while(referenceKeys.hasNext())
+                {
+                    String key = referenceKeys.next();
+                    if (bannedProperties.contains(key))
+                    {
+                        delete.add(key);
+                        continue;
+                    }
+                    JSONArray refArr = references.getJSONArray(key);
+                    for (Object ele: refArr)
+                    {
+                        JSONObject propertyObj = (JSONObject)ele;
+                        if ( ((String)propertyObj.get("type")).equals("wikibase-item") )
+                        {
+                            String qID = (String)propertyObj.get("id");
+                            if (!acceptEntitySet.contains(qID))
+                            {
+                                propertyObj.remove("id");
+                                propertyObj.put("type", "string");
+                            }
+                        }
+                    }
+                }
+                writeFile(folderName, json.toString(), false);
             }
         }
     }
