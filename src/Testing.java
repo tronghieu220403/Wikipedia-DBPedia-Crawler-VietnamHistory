@@ -8,9 +8,20 @@ import org.json.JSONObject;
 
 public class Testing extends DataHandling {
     public static void main(String[] args) throws Exception {
-        
+        String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
+        for (String bigCategory: bigCategories)
+        {
+            String path = "export/" + bigCategory;
+            HashSet<String> fileList = listAllFiles(path);
+            for (String fileName: fileList)
+            {
+                JSONObject json = getJSONFromFile(path + "/" + fileName);
+                String s = (String)json.get("");
+            }
+        }
+
         /*
-        JSONObject json = getJSONFromFile("E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\WikiAnalys\\Category\\export1\\nhân vật lịch sử\\Q36014.json");
+        JSONObject json = getJSONFromFile("E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/Category/export1/nhân vật lịch sử/Q36014.json");
         JSONObject claims = (JSONObject)json.get("claims");
         Iterator<String> properties = ((JSONObject) claims).keys();
         StringBuilder sb = new StringBuilder();
