@@ -362,5 +362,32 @@ public class DBPediaData extends EntityHandling {
         {
             mappedWikiProp = getJSONFromFile(superpath + "MappedWikiProp.json");
         }
+        Iterator<String> keys = selected.keys();
+        while (keys.hasNext()) {
+            String fileName = keys.next();
+            JSONObject analizedJSON = new JSONObject();
+            JSONObject json = getJSONFromFile(dbEntityFolder + fileName);
+            Iterator<String> firstFloorKeys = json.keys();
+            String mainKey = "http://dbpedia.org/resource/" + fileName.replace(".json", "");
+            while(firstFloorKeys.hasNext())
+            {
+                String firstFloorKey = firstFloorKeys.next();
+                if (firstFloorKey.equals(mainKey))
+                {
+                    JSONObject mainJSON = json.getJSONObject(mainKey);
+                    Iterator<String> secondFloorKeys = mainJSON.keys();
+                    while(secondFloorKeys.hasNext())
+                    {
+                        String secondFloorKey = secondFloorKeys.next();
+                        
+                    }
+                }
+                else{
+
+                }
+            }
+
+        }
+
     }
 }
