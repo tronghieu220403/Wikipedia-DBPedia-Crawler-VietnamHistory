@@ -204,9 +204,15 @@ public class DBPediaData extends EntityHandling {
                 qIDHashSet.add(fileName.replaceAll(".json",""));
             }
         }
-        String dbFolder = superpath + "EntityJson";
+        String dbFolder = superpath + "EntityJson/";
         HashSet<String> files = listAllFiles(dbFolder);
-        
+        for (String fileName: files)
+        {
+            String filePath = dbFolder + fileName;
+            JSONObject json = getJSONFromFile(filePath);
+            
+            break;
+        }
 
     }
 }
