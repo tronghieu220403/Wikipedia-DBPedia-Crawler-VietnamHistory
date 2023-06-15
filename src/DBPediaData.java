@@ -379,15 +379,20 @@ public class DBPediaData extends EntityHandling {
                     while(secondFloorKeys.hasNext())
                     {
                         String secondFloorKey = secondFloorKeys.next();
-                        
+
                     }
                 }
                 else{
-
+                    
                 }
             }
 
         }
+        /*
+         * 1) Loại bỏ các property rác: trong tên có số, có "term", có 2 kí tự cuối là " c", độ dài <= 2 kí tự
+         * 2) Chỉ chấp nhận thuộc tính: chứa chỉ toàn dbr hoặc date (dbr có "type": "uri" còn date có dạng "datatype": "http://www.w3.org/2001/XMLSchema#date")
+         * 3) Nếu string có lang thì bỏ qua luôn.
+         */
 
     }
 }
