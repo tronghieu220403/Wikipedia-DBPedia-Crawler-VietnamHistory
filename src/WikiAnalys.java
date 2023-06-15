@@ -610,7 +610,6 @@ public class WikiAnalys extends WikiData{
             createFolder(exportPath + "/" + bigCate);
         }
         
-        /*
         HashSet<String> files = listAllFiles(finalEntityPath);
         for (String fileName: files)
         {
@@ -659,19 +658,18 @@ public class WikiAnalys extends WikiData{
                                 {
                                     json.remove("references");
                                 }
-                                //writeFile(exportPath + "/" + bigCate + "/" + fileName, json.toString(), false);
+                                writeFile(exportPath + "/" + bigCate + "/" + fileName, json.toString(), false);
                             }
                         }
                     }
                 }
             }
         }
-        */
         HashSet<String> acceptEntitySet = new HashSet<>();
         bigCategory = ((JSONObject) bigCategories).keys();
         while (bigCategory.hasNext()) {
             String bigCate = bigCategory.next();
-            for (String fileName: listAllFiles(exportPath + "/" + bigCate))
+            for (String fileName: listAllFiles("E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\WikiAnalys\\Category\\New folder\\export" + "\\" + bigCate))
             {
                 acceptEntitySet.add(fileName.replace(".json", ""));
             }
@@ -685,6 +683,11 @@ public class WikiAnalys extends WikiData{
                 StringBuffer filePath = new StringBuffer(folderName);
                 filePath.append("/");
                 filePath.append(fileName);
+                if (!acceptEntitySet.contains(fileName.replace(".json", "")))
+                {
+                    deleteFile(filePath.toString());
+                    continue;
+                }
                 JSONObject json = getJSONFromFile(filePath.toString());
                 if (json.has("claims"))
                 {
@@ -719,7 +722,7 @@ public class WikiAnalys extends WikiData{
                         claims.remove(p);
                     }
                 }
-
+                if (!json.has("references")) continue;
                 JSONObject references = (JSONObject)json.get("references");
                 Iterator<String> referenceKeys = references.keys();
                 List<String> delete = new ArrayList<String>();
@@ -745,8 +748,12 @@ public class WikiAnalys extends WikiData{
                             }
                         }
                     }
+                    for (String p: delete)
+                    {
+                        references.remove(p);
+                    }
                 }
-                writeFile(folderName, json.toString(), false);
+                writeFile(filePath.toString(), json.toString(), false);
             }
         }
     }
