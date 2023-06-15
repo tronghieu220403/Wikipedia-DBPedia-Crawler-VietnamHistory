@@ -612,7 +612,6 @@ public class WikiAnalys extends WikiData{
         }
         
         HashSet<String> files = listAllFiles(finalEntityPath);
-        
         for (String fileName: files)
         {
             JSONObject json = getJSONFromFile(finalEntityPath + "/" + fileName);
