@@ -1,7 +1,10 @@
 //import java.net.URLEncoder;
+import java.security.Key;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -16,7 +19,7 @@ public class DBPediaData extends EntityHandling {
 
     public static void main(String[] args) throws Exception {
         DBPediaData dbpediaData = new DBPediaData();
-        //dbpediaData.getData();
+        dbpediaData.getData();
         dbpediaData.syncData();
     }
 
@@ -105,7 +108,7 @@ public class DBPediaData extends EntityHandling {
         return;
     }
 
-    private HashSet<Character> bannedChr = new HashSet<>(Arrays.asList( '/', '\\', '?', '*', ':', '>', '<', '|', '\"'));
+    private HashSet<Character> bannedChr = new HashSet<>(Arrays.asList( '/', '/', '?', '*', ':', '>', '<', '|', '\"'));
     
     @Override
     public boolean checkURL(String url) throws Exception {
@@ -193,7 +196,6 @@ public class DBPediaData extends EntityHandling {
     protected void syncData() throws Exception
     {
         String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
-        StringBuffer sb = new StringBuffer();
         HashSet<String> qIDHashSet = new HashSet<>();
         for (String bigCategory: bigCategories)
         {
@@ -205,14 +207,62 @@ public class DBPediaData extends EntityHandling {
             }
         }
         String dbFolder = superpath + "EntityJson/";
+
+        JSONObject wikiUrlMapped = new JSONObject();
+        JSONObject rawWikiUrlMapped = getJSONFromFile("E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/URLToEntities.json");
+        Iterator<String> URLs = ((JSONObject) rawWikiUrlMapped).keys();
+        while (URLs.hasNext()) {
+            String url = URLs.next();
+            wikiUrlMapped.put(urlDecode(url), rawWikiUrlMapped.getString(url));
+        }
+
+        String wikiJsonPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/EntityJson";
+        String wikiPropPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/EntityProperties";
         HashSet<String> files = listAllFiles(dbFolder);
+        HashMap<String, String> selected = new HashMap<String, String>(); 
+        HashMap<String, String> selectedP = new HashMap<>();
         for (String fileName: files)
         {
             String filePath = dbFolder + fileName;
+            String key1 = "", key2 = "";
             JSONObject json = getJSONFromFile(filePath);
-            
-            break;
+            Iterator<String> keys = ((JSONObject) json).keys();
+            while (keys.hasNext()) {
+                String key = keys.next();
+                JSONObject value = json.getJSONObject(key);
+                if (value.has("http://xmlns.com/foaf/0.1/primaryTopic"))
+                {
+                    key1 = key;
+                }
+                if (value.has("http://xmlns.com/foaf/0.1/isPrimaryTopicOf"))
+                {
+                    key2 = value.getJSONArray("http://xmlns.com/foaf/0.1/isPrimaryTopicOf").getJSONObject(0).getString("value");
+                }
+            }
+            if (!key1.equals(key2))
+            {
+                print("Something wrong", key1, key2);
+                break;
+            }
+            key1 = unicodeDecode(key1).replace("http:", "https:");
+            if (wikiUrlMapped.has(key1))
+            {
+                String qID = wikiUrlMapped.getString(key1);
+                if (qIDHashSet.contains(qID))
+                {
+                    selected.put(fileName, qID);
+                }
+                else{
+                    String label = WikiData.getViLabel(qID, wikiJsonPath, wikiPropPath);
+                    if (!label.isEmpty())
+                    {
+                        selectedP.put(fileName, label);
+                    }
+                }
+            }   
         }
-
+        writeFile(superpath + "wikiMapped.json", (new JSONObject(selected)).toString(), false);
+        writeFile(superpath + "wikiMappedProp.json", (new JSONObject(selectedP)).toString(), false);
+        
     }
 }
