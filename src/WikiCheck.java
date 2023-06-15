@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 import org.json.*;
 
-public class WikiCheck extends WikiData{
+public class WikiCheck extends DataHandling{
     HashMap<String, Integer> count = new HashMap<>();
 
     public WikiCheck() throws Exception {

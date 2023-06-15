@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "WikiAnalys",
+            "request": "launch",
+            "mainClass": "WikiAnalys",
+            "projectName": "Wikipedia-DBPedia-Crawler-VietnamHistory_f4dc11d3"
+        },
+        {
+            "type": "java",
+            "name": "Testing",
+            "request": "launch",
+            "mainClass": "Testing",
+            "projectName": "Wikipedia-DBPedia-Crawler-VietnamHistory_f4dc11d3"
+        },
+        {
+            "type": "java",
             "name": "WikiCheck",
             "request": "launch",
             "mainClass": "WikiCheck",

@@ -345,6 +345,8 @@ abstract class DataHandling {
      */
     public final static void moveFile(String srcFilePath, String tarFilePath) throws IOException
     {
+        if (fileExist(tarFilePath))
+            return;
         Files.move(Paths.get(srcFilePath), Paths.get(tarFilePath));
     }
 
