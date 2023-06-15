@@ -8,6 +8,8 @@ import org.json.JSONObject;
 
 public class Testing extends DataHandling {
     public static void main(String[] args) throws Exception {
+        
+        /*
         JSONObject json = getJSONFromFile("E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\WikiAnalys\\Category\\export1\\nhân vật lịch sử\\Q36014.json");
         JSONObject claims = (JSONObject)json.get("claims");
         Iterator<String> properties = ((JSONObject) claims).keys();
@@ -55,6 +57,7 @@ public class Testing extends DataHandling {
             sb.append("\n");
         }
         writeFile("hehe.txt",sb.toString(), false);
+        */
     }
 
     
