@@ -9,7 +9,7 @@ import org.json.JSONObject;
 public class Testing extends DataHandling {
     public static void main(String[] args) throws Exception {
         //String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
-        String[] bigCategories = {"nhân vật lịch sử"};
+        String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
         StringBuffer sb = new StringBuffer();
         for (String bigCategory: bigCategories)
         {
