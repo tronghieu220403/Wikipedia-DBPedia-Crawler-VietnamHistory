@@ -607,7 +607,6 @@ public class WikiAnalys extends WikiData{
             String bigCate = bigCategory.next();
             createFolder(exportPath + "/" + bigCate);
         }
-
         
         HashSet<String> files = listAllFiles(finalEntityPath);
         for (String fileName: files)
@@ -647,18 +646,16 @@ public class WikiAnalys extends WikiData{
                                 }
                             }
                         }
-                        else continue;
                         bigCategory = ((JSONObject) bigCategories).keys();
                         while (bigCategory.hasNext()) {
                             String bigCate = bigCategory.next();
                             JSONObject subCategories = (JSONObject)bigCategories.get(bigCate);
                             if(subCategories.has(value))
                             {
-                                writeFile(exportPath + "/" + bigCate + "/" + fileName, readFileAll(finalEntityPath + "/" + fileName), false);
+                                //writeFile(exportPath + "/" + bigCate + "/" + fileName, readFileAll(finalEntityPath + "/" + fileName), false);
                             }
                         }
                     }
-
                 }
             }
         }

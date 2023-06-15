@@ -2,37 +2,59 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 
 public class Testing extends DataHandling {
     public static void main(String[] args) throws Exception {
-        HashMap<String, String> p = new HashMap<>();
-        String filePath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/Category/export/";
-        String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
-        for (String bigCategory: bigCategories)
-        {
-            HashSet<String> fileList = listAllFiles(filePath + bigCategory);
-            for (String fileName: fileList)
+        JSONObject json = getJSONFromFile("E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\WikiAnalys\\Category\\export\\nhân vật lịch sử\\Q179910.json");
+        JSONObject claims = (JSONObject)json.get("claims");
+        Iterator<String> properties = ((JSONObject) claims).keys();
+        StringBuilder sb = new StringBuilder();
+        while (properties.hasNext()) {
+            String propertyName = properties.next();
+            sb.append(propertyName + ": ");
+            JSONArray propertyArr = (JSONArray)claims.get(propertyName);
+            int count = 0;
+            for (Object propertyDetail: propertyArr)
             {
-                JSONObject json = getJSONFromFile(filePath + bigCategory + "/" + fileName);
-                if (json.has("claims"))
-                {                
-                    JSONObject claims = (JSONObject)json.get("claims");
-                    Iterator<String> keys = claims.keys();
-
-                    while(keys.hasNext()) {
-                        String key = keys.next();
-
-                        if (!p.containsKey(key))
-                        {
-                        }
-                        p.put(key, fileName);
-                    }
+                if (count > 0)
+                {
+                    sb.append(", ");
                 }
+                JSONObject obj = (JSONObject)propertyDetail;
+                String value = (String)obj.get("value");
+                sb.append(value +" ");
+                if (obj.has("qualifiers"))
+                {
+                    sb.append("(");
+                    JSONObject qualifiersObj = (JSONObject)obj.get("qualifiers");
+                    Iterator<String> qualifierKeys = qualifiersObj.keys();
+                    int subCount = 0;
+                    while(qualifierKeys.hasNext())
+                    {
+                        if (subCount != 0) sb.append(", ");
+                        String qualifierPropertyName = qualifierKeys.next();
+                        sb.append(qualifierPropertyName + ": ");
+                        JSONArray qualifierPropertyArr = (JSONArray)qualifiersObj.get(qualifierPropertyName);
+                        int subSubCount = 0;
+                        for (Object ele: qualifierPropertyArr)
+                        {
+                            if (subSubCount != 0) sb.append(", ");
+                            JSONObject subQualifierProperty = (JSONObject)ele;
+                            sb.append(subQualifierProperty.get("value"));
+                            subSubCount++;
+                        }
+                        subCount++;
+                    }
+                    sb.append(")");
+                }
+                count++;
             }
+            sb.append("\n");
         }
-        writeFile("gg.json", (new JSONObject(p)).toString(), false);
+        writeFile("hehe.txt",sb.toString(), false);
     }
 
     

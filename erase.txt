@@ -6,3 +6,6 @@ tập hình Commons
 có trong danh sách chú trọng của dự án Wikimedia
 thể loại ở Commons
 chuyển tự McCune–Reischauer
+thể loại chính của đề tài
+thể loại cho nhóm người
+thể loại có liên quan
