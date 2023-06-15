@@ -331,29 +331,36 @@ public class DBPediaData extends EntityHandling {
                 propertyHashSet.add(line);
             }
         }
-
-        HashSet<String> files = listAllFiles(wikiPropPath);
+        
         JSONObject mappedWikiProp = new JSONObject();
-        for (String fileName: files)
+        if (!fileExist(superpath + "MappedWikiProp.json"))
         {
-            if (!fileName.contains("P")) continue;
-            String pID = fileName.replace(".json", "");
-            String propViLabel = WikiData.getViLabel(pID, wikiPropPath, wikiPropPath);
-            if (propViLabel.isEmpty()) continue;
-            JSONObject json = getJSONFromFile(wikiPropPath + "/" + fileName);
-            JSONObject entity = json.getJSONObject("entities").getJSONObject(pID);
-            String propEngLabel = entity.getJSONObject("labels").getJSONObject("en").getString("value");
-            mappedWikiProp.put(propEngLabel, propViLabel);
-            JSONObject aliases = entity.getJSONObject("aliases");
-            if (!aliases.has("en")) continue;
-            JSONArray propEngAliases = aliases.getJSONArray("en");
-            for (Object propEngAlias: propEngAliases)
+            HashSet<String> files = listAllFiles(wikiPropPath);
+            for (String fileName: files)
             {
-                JSONObject propAliasObj = (JSONObject)propEngAlias;
-                String alias = propAliasObj.getString("value");
-                mappedWikiProp.put(alias, propViLabel);
+                if (!fileName.contains("P")) continue;
+                String pID = fileName.replace(".json", "");
+                String propViLabel = WikiData.getViLabel(pID, wikiPropPath, wikiPropPath);
+                if (propViLabel.isEmpty()) continue;
+                JSONObject json = getJSONFromFile(wikiPropPath + "/" + fileName);
+                JSONObject entity = json.getJSONObject("entities").getJSONObject(pID);
+                String propEngLabel = entity.getJSONObject("labels").getJSONObject("en").getString("value");
+                mappedWikiProp.put(propEngLabel, propViLabel);
+                JSONObject aliases = entity.getJSONObject("aliases");
+                if (!aliases.has("en")) continue;
+                JSONArray propEngAliases = aliases.getJSONArray("en");
+                for (Object propEngAlias: propEngAliases)
+                {
+                    JSONObject propAliasObj = (JSONObject)propEngAlias;
+                    String alias = propAliasObj.getString("value");
+                    mappedWikiProp.put(alias, propViLabel);
+                }
             }
+            writeFile(superpath + "MappedWikiProp.json", mappedWikiProp.toString(), false);
         }
-        writeFile(superpath + "MappedWikiProp.json", mappedWikiProp.toString(), false);
+        else
+        {
+            mappedWikiProp = getJSONFromFile(superpath + "MappedWikiProp.json");
+        }
     }
 }
