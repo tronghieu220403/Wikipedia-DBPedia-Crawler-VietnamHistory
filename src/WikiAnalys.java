@@ -18,7 +18,7 @@ public class WikiAnalys extends WikiData{
         //myWikiAnalys.urlToEntities();
         //myWikiAnalys.entityRefFinal();
         //myWikiAnalys.entityFinal();
-        //myWikiAnalys.export();
+        myWikiAnalys.export();
     }
 
     public WikiAnalys()
@@ -314,7 +314,7 @@ public class WikiAnalys extends WikiData{
                 {
                     String tagContent = tag.text();
                     if (!tagContent.matches(".*[a-zA-Z].*")) continue;
-                    tagContent = tagContent.replaceAll("\\[.*?\\]","");
+                    tagContent = tagContent.replaceAll("/[.*?/]","");
                     overviewSB.append(tagContent);
                     break;
                 }
@@ -602,6 +602,7 @@ public class WikiAnalys extends WikiData{
     {
         String categoryPath = superpath + "WikiAnalys/Category";
         String exportPath = "export";
+        //String exportPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/Category/New folder/export";
         createFolder(exportPath);
         JSONObject bigCategories = getJSONFromFile(categoryPath + "/Split.json");
         Iterator<String> bigCategory = ((JSONObject) bigCategories).keys();
@@ -611,7 +612,6 @@ public class WikiAnalys extends WikiData{
         }
         
         HashSet<String> files = listAllFiles(finalEntityPath);
-        
         for (String fileName: files)
         {
             JSONObject json = getJSONFromFile(finalEntityPath + "/" + fileName);
@@ -662,7 +662,7 @@ public class WikiAnalys extends WikiData{
                 }
             }
         }
-        
+
         HashSet<String> acceptEntitySet = new HashSet<>();
         bigCategory = ((JSONObject) bigCategories).keys();
         while (bigCategory.hasNext()) {
@@ -681,11 +681,6 @@ public class WikiAnalys extends WikiData{
                 StringBuffer filePath = new StringBuffer(folderName);
                 filePath.append("/");
                 filePath.append(fileName);
-                if (!acceptEntitySet.contains(fileName.replace(".json", "")))
-                {
-                    deleteFile(filePath.toString());
-                    continue;
-                }
                 JSONObject json = getJSONFromFile(filePath.toString());
                 if (json.has("claims"))
                 {
@@ -720,35 +715,37 @@ public class WikiAnalys extends WikiData{
                         claims.remove(p);
                     }
                 }
-                if (!json.has("references")) continue;
-                JSONObject references = (JSONObject)json.get("references");
-                Iterator<String> referenceKeys = references.keys();
-                List<String> delete = new ArrayList<String>();
-                while(referenceKeys.hasNext())
+                if (json.has("references"))
                 {
-                    String key = referenceKeys.next();
-                    if (bannedProperties.contains(key))
+                    JSONObject references = (JSONObject)json.get("references");
+                    Iterator<String> referenceKeys = references.keys();
+                    List<String> delete = new ArrayList<String>();
+                    while(referenceKeys.hasNext())
                     {
-                        delete.add(key);
-                        continue;
-                    }
-                    JSONArray refArr = references.getJSONArray(key);
-                    for (Object ele: refArr)
-                    {
-                        JSONObject propertyObj = (JSONObject)ele;
-                        if ( ((String)propertyObj.get("type")).equals("wikibase-item") )
+                        String key = referenceKeys.next();
+                        if (bannedProperties.contains(key))
                         {
-                            String qID = (String)propertyObj.get("id");
-                            if (!acceptEntitySet.contains(qID))
+                            delete.add(key);
+                            continue;
+                        }
+                        JSONArray refArr = references.getJSONArray(key);
+                        for (Object ele: refArr)
+                        {
+                            JSONObject propertyObj = (JSONObject)ele;
+                            if ( ((String)propertyObj.get("type")).equals("wikibase-item") )
                             {
-                                propertyObj.remove("id");
-                                propertyObj.put("type", "string");
+                                String qID = (String)propertyObj.get("id");
+                                if (!acceptEntitySet.contains(qID))
+                                {
+                                    propertyObj.remove("id");
+                                    propertyObj.put("type", "string");
+                                }
                             }
                         }
-                    }
-                    for (String p: delete)
-                    {
-                        references.remove(p);
+                        for (String p: delete)
+                        {
+                            references.remove(p);
+                        }
                     }
                 }
                 writeFile(filePath.toString(), json.toString(), false);

@@ -1,8 +1,10 @@
 //import java.net.URLEncoder;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Iterator;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class DBPediaData extends EntityHandling {
     
@@ -14,7 +16,8 @@ public class DBPediaData extends EntityHandling {
 
     public static void main(String[] args) throws Exception {
         DBPediaData dbpediaData = new DBPediaData();
-        dbpediaData.getData();
+        //dbpediaData.getData();
+        dbpediaData.syncData();
     }
 
     /**
@@ -185,5 +188,25 @@ public class DBPediaData extends EntityHandling {
 
     private void getPropertiesInJson(String entityJsonPath, String fileName, HashSet<String> entityFileList) {
         
+    }
+
+    protected void syncData() throws Exception
+    {
+        String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
+        StringBuffer sb = new StringBuffer();
+        HashSet<String> qIDHashSet = new HashSet<>();
+        for (String bigCategory: bigCategories)
+        {
+            String path = "export/" + bigCategory;
+            HashSet<String> fileList = listAllFiles(path);
+            for (String fileName: fileList)
+            {
+                qIDHashSet.add(fileName.replaceAll(".json",""));
+            }
+        }
+        String dbFolder = superpath + "EntityJson";
+        HashSet<String> files = listAllFiles(dbFolder);
+        
+
     }
 }
