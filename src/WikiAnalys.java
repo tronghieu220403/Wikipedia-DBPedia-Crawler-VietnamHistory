@@ -18,7 +18,7 @@ public class WikiAnalys extends WikiData{
         //myWikiAnalys.urlToEntities();
         //myWikiAnalys.entityRefFinal();
         //myWikiAnalys.entityFinal();
-        myWikiAnalys.export();
+        //myWikiAnalys.export();
     }
 
     public WikiAnalys()
@@ -601,7 +601,7 @@ public class WikiAnalys extends WikiData{
     public final void export() throws Exception
     {
         String categoryPath = superpath + "WikiAnalys/Category";
-        String exportPath = categoryPath + "/export1";
+        String exportPath = "export";
         createFolder(exportPath);
         JSONObject bigCategories = getJSONFromFile(categoryPath + "/Split.json");
         Iterator<String> bigCategory = ((JSONObject) bigCategories).keys();
@@ -611,6 +611,7 @@ public class WikiAnalys extends WikiData{
         }
         
         HashSet<String> files = listAllFiles(finalEntityPath);
+        
         for (String fileName: files)
         {
             JSONObject json = getJSONFromFile(finalEntityPath + "/" + fileName);
@@ -626,11 +627,7 @@ public class WikiAnalys extends WikiData{
                         String value = (String)instanceObj.get("value");
                         if (value.equals("người"))
                         {
-                            if (!claims.has("quốc tịch"))
-                            {
-                                continue;
-                            }
-                            else
+                            if (claims.has("quốc tịch"))
                             {
                                 JSONArray quocTichs = (JSONArray)(claims.get("quốc tịch"));
                                 boolean check = false;
@@ -665,11 +662,12 @@ public class WikiAnalys extends WikiData{
                 }
             }
         }
+        
         HashSet<String> acceptEntitySet = new HashSet<>();
         bigCategory = ((JSONObject) bigCategories).keys();
         while (bigCategory.hasNext()) {
             String bigCate = bigCategory.next();
-            for (String fileName: listAllFiles("E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\WikiAnalys\\Category\\New folder\\export" + "\\" + bigCate))
+            for (String fileName: listAllFiles(exportPath + "/" + bigCate))
             {
                 acceptEntitySet.add(fileName.replace(".json", ""));
             }
