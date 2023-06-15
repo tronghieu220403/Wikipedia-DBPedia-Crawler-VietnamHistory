@@ -8,7 +8,9 @@ import org.json.JSONObject;
 
 public class Testing extends DataHandling {
     public static void main(String[] args) throws Exception {
-        String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
+        //String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
+        String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "sự kiện lịch sử", "triều đại lịch sử"};
+        StringBuffer sb = new StringBuffer();
         for (String bigCategory: bigCategories)
         {
             String path = "export/" + bigCategory;
@@ -16,7 +18,9 @@ public class Testing extends DataHandling {
             for (String fileName: fileList)
             {
                 JSONObject json = getJSONFromFile(path + "/" + fileName);
-                String s = (String)json.get("");
+                String s = (String)json.get("overview");
+                if (s.length()<300)
+                    writeFile("gg.txt", s.toString() + "\n" + fileName + '\n', true);
             }
         }
 
