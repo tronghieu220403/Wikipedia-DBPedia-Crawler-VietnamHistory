@@ -1,5 +1,7 @@
 //import java.net.URLEncoder;
 import java.security.Key;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -209,7 +211,7 @@ public class DBPediaData extends EntityHandling {
     protected void syncData() throws Exception
     {
         String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
-        String wikiJsonPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/EntityJson";
+        String wikiEntityPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/EntityJson";
         String wikiPropPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/EntityProperties";
 
         HashSet<String> qIDHashSet = new HashSet<>();
@@ -271,7 +273,7 @@ public class DBPediaData extends EntityHandling {
                         selected.put(fileName, qID);
                     }
                     else{
-                        String label = WikiData.getViLabel(qID, wikiJsonPath, wikiPropPath);
+                        String label = WikiData.getViLabel(qID, wikiEntityPath, wikiPropPath);
                         if (!label.isEmpty())
                         {
                             selectedP.put(fileName, label);
@@ -287,51 +289,7 @@ public class DBPediaData extends EntityHandling {
             selected = getJSONFromFile(superpath + "wikiMapped.json");
             selectedP = getJSONFromFile(superpath + "wikiMappedProp.json");
         }
-        
-        HashSet<String> propertyHashSet = new HashSet<>();
-        if (!fileExist(superpath + "AllProperties.txt"))
-        {
-            Iterator<String> keys = selected.keys();
-            while(keys.hasNext())
-            {
-                JSONObject json = getJSONFromFile(dbEntityFolder + keys.next());
-                Iterator<String> firstFloorKeys = json.keys();
-                while(firstFloorKeys.hasNext())
-                {
-                    String firstFloorKey = firstFloorKeys.next();
-                    JSONObject firstFloorJson = json.getJSONObject(firstFloorKey);
-                    Iterator<String> secondFloorKeys = firstFloorJson.keys();
-                    while(secondFloorKeys.hasNext())
-                    {
-                        String propertyStr = secondFloorKeys.next();
-                        if (propertyStr.contains("wiki")||propertyStr.contains("Wiki")) continue;
-                        if (propertyStr.contains("http://dbpedia.org/property/"))
-                        {
-                            String p = propertyStr.replace("http://dbpedia.org/property/", "");
-                            propertyHashSet.add(convertCamelCase(p));
-                        }
-                        else if (propertyStr.contains("http://dbpedia.org/ontology/"))
-                        {
-                            String p = propertyStr.replace("http://dbpedia.org/ontology/", "");
-                            propertyHashSet.add(convertCamelCase(p));
-                        }
-                    }
-                }
-            }
-            for (String propName: propertyHashSet)
-            {
-                writeFile(superpath + "AllProperties.txt", propName + "\n", true);
-            }
-        }
-        else
-        {
-            List<String> lines = readFileAllLine(superpath + "AllProperties.txt");
-            for (String line: lines)
-            {
-                propertyHashSet.add(line);
-            }
-        }
-        
+                
         JSONObject mappedWikiProp = new JSONObject();
         if (!fileExist(superpath + "MappedWikiProp.json"))
         {
@@ -362,10 +320,72 @@ public class DBPediaData extends EntityHandling {
         {
             mappedWikiProp = getJSONFromFile(superpath + "MappedWikiProp.json");
         }
+
+        JSONObject dbpediaPropertyTranslate = new JSONObject();
+        if (!fileExist(superpath + "AllProperties.txt"))
+        {
+            Iterator<String> keys = selected.keys();
+            while(keys.hasNext())
+            {
+                JSONObject json = getJSONFromFile(dbEntityFolder + keys.next());
+                Iterator<String> firstFloorKeys = json.keys();
+                while(firstFloorKeys.hasNext())
+                {
+                    String firstFloorKey = firstFloorKeys.next();
+                    JSONObject firstFloorJson = json.getJSONObject(firstFloorKey);
+                    Iterator<String> secondFloorKeys = firstFloorJson.keys();
+                    while(secondFloorKeys.hasNext())
+                    {
+                        String propertyStr = secondFloorKeys.next();
+                        if (propertyStr.contains("wiki")||propertyStr.contains("Wiki")) continue;
+                        String p;
+                        if (propertyStr.contains("http://dbpedia.org/property/"))
+                        {
+                            p = propertyStr.replace("http://dbpedia.org/property/", "");
+                        }
+                        else if (propertyStr.contains("http://dbpedia.org/ontology/"))
+                        {
+                            p = propertyStr.replace("http://dbpedia.org/ontology/", "");
+                        }
+                        else continue;
+                        if (p.matches(".*[0-9].*")) continue;
+                        if (p.length()<=2) continue;
+                        String pConvert = convertCamelCase(p);
+                        dbpediaPropertyTranslate.put(pConvert, "");
+                    }
+                }
+            }
+            Iterator<String> propKeys = dbpediaPropertyTranslate.keys();
+            while(propKeys.hasNext())
+            {
+                writeFile(superpath + "AllProperties.txt", propKeys.next() + "\n", true);
+            }
+        }
+        else
+        {
+            List<String> lines = readFileAllLine(superpath + "AllProperties.txt");
+            List<String> trans = readFileAllLine(superpath + "Translate.txt");
+            for (int i = 0; i < lines.size(); i++)
+            {
+                String propertyName = lines.get(i);
+                if (mappedWikiProp.has(propertyName))
+                {
+                    dbpediaPropertyTranslate.put(lines.get(i), mappedWikiProp.getString(propertyName));
+                }
+                else dbpediaPropertyTranslate.put(lines.get(i), trans.get(i));
+            }
+        }
+
+
+        createFolder(superpath + "export");
+        /*
+         * Iterate all selected files
+         */
         Iterator<String> keys = selected.keys();
         while (keys.hasNext()) {
             String fileName = keys.next();
             JSONObject analizedJSON = new JSONObject();
+            JSONObject claims = new JSONObject();
             JSONObject json = getJSONFromFile(dbEntityFolder + fileName);
             Iterator<String> firstFloorKeys = json.keys();
             String mainKey = "http://dbpedia.org/resource/" + fileName.replace(".json", "");
@@ -379,15 +399,103 @@ public class DBPediaData extends EntityHandling {
                     while(secondFloorKeys.hasNext())
                     {
                         String secondFloorKey = secondFloorKeys.next();
-
+                        String propertyName = convertCamelCase(secondFloorKey.replace("http://dbpedia.org/ontology/", "").replace("http://dbpedia.org/property/", ""));
+                        if (!dbpediaPropertyTranslate.has(propertyName)) continue;
+                        propertyName = dbpediaPropertyTranslate.getString(propertyName);
+                        
+                        JSONArray secondFloorArray = mainJSON.getJSONArray(secondFloorKey);
+                        JSONArray analizedJsonArray = new JSONArray();
+                        for (int i=0;i < secondFloorArray.length() ; ++i){
+                            JSONObject thirdFloorProp = secondFloorArray.getJSONObject(i);
+                            if (thirdFloorProp.has("lang")) continue;
+                            if (thirdFloorProp.getString("type").equals("uri"))
+                            {
+                                String value = thirdFloorProp.getString("value");
+                                if (!value.contains("http://dbpedia.org/resource/")) continue;
+                                value = value.replace("http://dbpedia.org/resource/", "") + ".json";
+                                if (selected.has(value))
+                                {
+                                    JSONObject info = new JSONObject();
+                                    info.put("type", "wikibase-item");
+                                    String id = selected.getString(value);
+                                    info.put("id", id);
+                                    info.put("value", WikiData.getViLabel(id, wikiEntityPath, wikiPropPath));
+                                    analizedJsonArray.put(info);
+                                }
+                                else if (selectedP.has(value))
+                                {
+                                    JSONObject info = new JSONObject();
+                                    info.put("type", "string");
+                                    info.put("value", selectedP.getString(value));
+                                    analizedJsonArray.put(info);
+                                }
+                            }
+                            else if (thirdFloorProp.has("datatype"))
+                            {
+                                String datatype = thirdFloorProp.getString("datatype");
+                                if (datatype.equals("http://www.w3.org/2001/XMLSchema#date"))
+                                {
+                                    JSONObject info = new JSONObject();
+                                    info.put("type", "string");
+                                    String dateStr = thirdFloorProp.getString("value");
+                                    LocalDate date = LocalDate.parse(dateStr);
+                                    String formattedDate = date.format(DateTimeFormatter.ofPattern("'Ngày' dd 'Tháng' MM 'Năm' yyyy"));
+                                    info.put("value", formattedDate);
+                                    analizedJsonArray.put(info);
+                                }
+                            }
+                        }
+                        if (analizedJsonArray.length()>0)
+                        {
+                            claims.put(propertyName, analizedJsonArray);
+                        }
                     }
                 }
                 else{
-                    
+                    if (!firstFloorKey.contains("http://dbpedia.org/resource/")) continue;
+                    String key = firstFloorKey.replace("http://dbpedia.org/resource/", "") + ".json";
+                    if (!selected.has(key) && !selectedP.has(key)) continue;
+                    JSONObject info = new JSONObject();
+                    if (selected.has(key))
+                    {
+                        info.put("type", "wikibase-item");
+                        String id = selected.getString(key);
+                        info.put("id", id);
+                        info.put("value", WikiData.getViLabel(id, wikiEntityPath, wikiPropPath));
+                    }
+                    else
+                    {
+                        info.put("type", "string");
+                        info.put("value", selectedP.getString(key));
+                    }
+
+                    JSONObject passiveJSON = json.getJSONObject(firstFloorKey);
+                    Iterator<String> secondFloorKeys = passiveJSON.keys();
+                    while(secondFloorKeys.hasNext())
+                    {
+                        String propertyName = convertCamelCase(secondFloorKeys.next().replace("http://dbpedia.org/ontology/", "").replace("http://dbpedia.org/property/", ""));
+                        if (!dbpediaPropertyTranslate.has(propertyName)) continue;
+                        propertyName = "là " + dbpediaPropertyTranslate.getString(propertyName) + " của";
+
+                        if (!claims.has(propertyName))
+                        {
+                            JSONArray jsonArr = new JSONArray();
+                            jsonArr.put(info);
+                            claims.put(propertyName, jsonArr);
+                        }
+                        else
+                        {
+                            claims.getJSONArray(propertyName).put(info);
+                        }
+                    }
                 }
             }
-
+            analizedJSON.put("claims", claims);
+            String qID = selected.getString(fileName);
+            String writePath = superpath + "export/" + qID + ".json";
+            writeFile(writePath,  analizedJSON.toString(), false);
         }
+        
         /*
          * 1) Loại bỏ các property rác: trong tên có số, có "term", có 2 kí tự cuối là " c", độ dài <= 2 kí tự
          * 2) Chỉ chấp nhận thuộc tính: chứa chỉ toàn dbr hoặc date (dbr có "type": "uri" còn date có dạng "datatype": "http://www.w3.org/2001/XMLSchema#date")
