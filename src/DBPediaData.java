@@ -322,60 +322,71 @@ public class DBPediaData extends EntityHandling {
         }
 
         JSONObject dbpediaPropertyTranslate = new JSONObject();
-        if (!fileExist(superpath + "AllProperties.txt"))
+        if (!fileExist(superpath + "DBPediaPropertyTranslate.json"))
         {
-            Iterator<String> keys = selected.keys();
-            while(keys.hasNext())
+            if (!fileExist(superpath + "AllProperties.txt"))
             {
-                JSONObject json = getJSONFromFile(dbEntityFolder + keys.next());
-                Iterator<String> firstFloorKeys = json.keys();
-                while(firstFloorKeys.hasNext())
+                Iterator<String> keys = selected.keys();
+                while(keys.hasNext())
                 {
-                    String firstFloorKey = firstFloorKeys.next();
-                    JSONObject firstFloorJson = json.getJSONObject(firstFloorKey);
-                    Iterator<String> secondFloorKeys = firstFloorJson.keys();
-                    while(secondFloorKeys.hasNext())
+                    JSONObject json = getJSONFromFile(dbEntityFolder + keys.next());
+                    Iterator<String> firstFloorKeys = json.keys();
+                    while(firstFloorKeys.hasNext())
                     {
-                        String propertyStr = secondFloorKeys.next();
-                        if (propertyStr.contains("wiki")||propertyStr.contains("Wiki")) continue;
-                        String p;
-                        if (propertyStr.contains("http://dbpedia.org/property/"))
+                        String firstFloorKey = firstFloorKeys.next();
+                        JSONObject firstFloorJson = json.getJSONObject(firstFloorKey);
+                        Iterator<String> secondFloorKeys = firstFloorJson.keys();
+                        while(secondFloorKeys.hasNext())
                         {
-                            p = propertyStr.replace("http://dbpedia.org/property/", "");
+                            String propertyStr = secondFloorKeys.next();
+                            if (propertyStr.contains("wiki")||propertyStr.contains("Wiki")) continue;
+                            String p;
+                            if (propertyStr.contains("http://dbpedia.org/property/"))
+                            {
+                                p = propertyStr.replace("http://dbpedia.org/property/", "");
+                            }
+                            else if (propertyStr.contains("http://dbpedia.org/ontology/"))
+                            {
+                                p = propertyStr.replace("http://dbpedia.org/ontology/", "");
+                            }
+                            else continue;
+                            if (p.matches(".*[0-9].*")) continue;
+                            if (p.length()<=2) continue;
+                            String pConvert = convertCamelCase(p);
+                            dbpediaPropertyTranslate.put(pConvert, "");
                         }
-                        else if (propertyStr.contains("http://dbpedia.org/ontology/"))
-                        {
-                            p = propertyStr.replace("http://dbpedia.org/ontology/", "");
-                        }
-                        else continue;
-                        if (p.matches(".*[0-9].*")) continue;
-                        if (p.length()<=2) continue;
-                        String pConvert = convertCamelCase(p);
-                        dbpediaPropertyTranslate.put(pConvert, "");
                     }
                 }
+                Iterator<String> propKeys = dbpediaPropertyTranslate.keys();
+                while(propKeys.hasNext())
+                {
+                    writeFile(superpath + "AllProperties.txt", propKeys.next() + "\n", true);
+                }
             }
-            Iterator<String> propKeys = dbpediaPropertyTranslate.keys();
-            while(propKeys.hasNext())
+            else
             {
-                writeFile(superpath + "AllProperties.txt", propKeys.next() + "\n", true);
+                List<String> lines = readFileAllLine(superpath + "AllProperties.txt");
+                List<String> trans = readFileAllLine(superpath + "Translate.txt");
+
+                for (int i = 0; i < lines.size(); i++)
+                {
+                    String propertyName = lines.get(i);
+                    if (mappedWikiProp.has(propertyName))
+                    {
+                        dbpediaPropertyTranslate.put(lines.get(i), mappedWikiProp.getString(propertyName));
+                    }
+                    else {
+
+                        dbpediaPropertyTranslate.put(lines.get(i), trans.get(i));
+                    }
+                }
+                writeFile(superpath + "DBPediaPropertyTranslate.json", dbpediaPropertyTranslate.toString(), false);
             }
         }
         else
         {
-            List<String> lines = readFileAllLine(superpath + "AllProperties.txt");
-            List<String> trans = readFileAllLine(superpath + "Translate.txt");
-            for (int i = 0; i < lines.size(); i++)
-            {
-                String propertyName = lines.get(i);
-                if (mappedWikiProp.has(propertyName))
-                {
-                    dbpediaPropertyTranslate.put(lines.get(i), mappedWikiProp.getString(propertyName));
-                }
-                else dbpediaPropertyTranslate.put(lines.get(i), trans.get(i));
-            }
+            dbpediaPropertyTranslate = getJSONFromFile(superpath + "DBPediaPropertyTranslate.json");
         }
-
 
         createFolder(superpath + "export");
         /*
@@ -401,8 +412,8 @@ public class DBPediaData extends EntityHandling {
                         String secondFloorKey = secondFloorKeys.next();
                         String propertyName = convertCamelCase(secondFloorKey.replace("http://dbpedia.org/ontology/", "").replace("http://dbpedia.org/property/", ""));
                         if (!dbpediaPropertyTranslate.has(propertyName)) continue;
+                        if (!mappedWikiProp.has(propertyName)) continue;
                         propertyName = dbpediaPropertyTranslate.getString(propertyName);
-                        
                         JSONArray secondFloorArray = mainJSON.getJSONArray(secondFloorKey);
                         JSONArray analizedJsonArray = new JSONArray();
                         for (int i=0;i < secondFloorArray.length() ; ++i){
@@ -475,7 +486,7 @@ public class DBPediaData extends EntityHandling {
                     {
                         String propertyName = convertCamelCase(secondFloorKeys.next().replace("http://dbpedia.org/ontology/", "").replace("http://dbpedia.org/property/", ""));
                         if (!dbpediaPropertyTranslate.has(propertyName)) continue;
-                        propertyName = "là " + dbpediaPropertyTranslate.getString(propertyName) + " của";
+                        propertyName = dbpediaPropertyTranslate.getString(propertyName) + " của";
 
                         if (!claims.has(propertyName))
                         {
@@ -490,6 +501,7 @@ public class DBPediaData extends EntityHandling {
                     }
                 }
             }
+            if (claims.length() == 0) continue;
             analizedJSON.put("claims", claims);
             String qID = selected.getString(fileName);
             String writePath = superpath + "export/" + qID + ".json";
