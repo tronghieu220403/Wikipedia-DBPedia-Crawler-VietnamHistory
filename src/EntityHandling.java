@@ -17,8 +17,8 @@ public class EntityHandling extends DataHandling{
     protected String analysedURLsPath;
     protected String failedURLsPath;
     //folders:
-    protected String entityJsonPath;
-    protected String entityPropertiesPath;
+    protected static String entityJsonPath;
+    protected static String entityPropertiesPath;
     protected String htmlPath;
 
     protected Deque<Pair> deque = new ArrayDeque<>();

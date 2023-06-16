@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.json.*;
 import org.jsoup.Jsoup;
@@ -18,7 +19,101 @@ public class WikiAnalys extends WikiData{
         //myWikiAnalys.urlToEntities();
         //myWikiAnalys.entityRefFinal();
         //myWikiAnalys.entityFinal();
+        //myWikiAnalys.getFestival();
         myWikiAnalys.export();
+    }
+
+    private void getFestival() throws Exception
+    {
+        allPFile = listAllFiles("E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\EntityProperties");
+        Set<String> bannedFestivalURLs = new HashSet<>(Arrays.asList("https://vi.wikipedia.org/wiki/Lễ_hội_các_dân_tộc_Việt_Nam",
+            "https://vi.wikipedia.org/wiki/Lễ_hội_Lào",
+            "https://vi.wikipedia.org/wiki/Lễ_hội_Nhật_Bản",
+            "https://vi.wikipedia.org/wiki/Lễ_hội_Thái_Lan", "https://vi.wikipedia.org/wiki/Lễ_hội", "https://vi.wikipedia.org/wiki/Lễ_hội_Việt_Nam"));
+        String urls[] = {"https://vi.wikipedia.org/wiki/L%E1%BB%85_h%E1%BB%99i_c%C3%A1c_d%C3%A2n_t%E1%BB%99c_Vi%E1%BB%87t_Nam", "https://vi.wikipedia.org/wiki/L%E1%BB%85_h%E1%BB%99i_Vi%E1%BB%87t_Nam"};
+        HashSet<String> urlSet = new HashSet<>();
+        for (String urlString: urls)
+        {
+            String data = "";
+            try {
+                data = getDataFromURL(urlString).toString();
+            } catch (Exception e) {
+                System.out.println("Error in " + urlString);    
+                return;
+            }
+            Document doc = Jsoup.parse(data);
+            Element divTag = doc.getElementById("mw-content-text"); 
+
+            for (Element aTag : divTag.select("a")) {
+                String href = aTag.attr("href");
+                String craftURL = "https://vi.wikipedia.org" + href; 
+                if (!checkURL(craftURL)) continue;
+                craftURL = urlDecode(craftURL);
+                if ((craftURL.contains("Lễ_hội") || craftURL.contains("Hội")) && !bannedFestivalURLs.contains(craftURL)){
+                    if (!urlSet.contains(craftURL))
+                    {
+                        urlSet.add(craftURL);
+                        writeFile("gg.txt", craftURL + "\n", true);
+                    }
+                }
+            }
+        }
+        HashSet<String> qIDSet = new HashSet<>();
+        for (String urlString: urlSet)
+        {
+            String data = "";
+            try {
+                data = getDataFromURL(urlString).toString();
+            } catch (Exception e) {
+                //System.out.println("Error in " + url);    
+                return;
+            }
+            Document doc = Jsoup.parse(data);
+            String qID = getEntityID(doc);
+            if (qID.equals("")) continue;
+            writeFile(superpath + "WebHtml/" + qID + ".html", data, false);
+            qIDSet.add(qID);
+            String entityURL = "https://www.wikidata.org/wiki/Special:EntityData/" + qID + ".json";
+            JSONObject jsonData = getJSONFromURL(entityURL);
+            writeFile(superpath + "EntityJson/" + qID +".json", jsonData.toString() , false);
+
+            /*
+            * Get related URL for this entity.
+            * The related URLs is in "EntityReference" folder. 
+            */
+            if (!fileExist(superpath + "EntityReference/" + qID + ".txt"))
+            {
+                Element divTag = doc.getElementById("mw-content-text"); 
+                for (Element aTag : divTag.select("a")) {
+                    String href = aTag.attr("href");
+                    String refURL = "https://vi.wikipedia.org" + href; 
+                    if (!checkURL(refURL)) continue;         
+                    
+                    writeFile(superpath + "EntityReference/" + qID + ".txt", urlDecode(refURL) + '\n', true);
+                }
+            }
+            JSONObject json = getVietnameseWikiReadable(qID + ".json");
+            //json.getJSONObject("claims").
+            JSONObject claims = json.getJSONObject("claims");
+            JSONObject addObj = new JSONObject();
+            addObj.put("value", "lễ hội");
+            addObj.put("type", "string");
+            JSONArray jsonArr = new JSONArray();
+            jsonArr.put(addObj);
+            claims.put("là một", jsonArr);
+            if (!claims.has("quốc gia"))
+            {
+                JSONObject addObj2 = new JSONObject();
+                addObj2.put("value", "Việt Nam");
+                addObj2.put("type", "wikibase-item");
+                addObj2.put("id", "Q881");
+                jsonArr = new JSONArray();
+                jsonArr.put(addObj2);
+                claims.put("quốc gia", jsonArr);
+            }
+            writeFile("E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\WikiAnalys\\Category\\export\\lễ hội văn hóa\\" + qID + ".json", json.toString(), false);
+            writeFile("E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\WikiAnalys\\EntityFinal\\" + qID + ".json", json.toString(), false);
+        }
     }
 
     public WikiAnalys()
@@ -324,7 +419,7 @@ public class WikiAnalys extends WikiData{
         return overview;
     }
 
-    public final JSONObject propertyProcess(JSONObject infoObj) throws Exception
+    private final JSONObject propertyProcess(JSONObject infoObj) throws Exception
     {
         JSONObject jsonObj = new JSONObject();
         String datatype = (String)infoObj.get("datatype");
@@ -415,6 +510,163 @@ public class WikiAnalys extends WikiData{
         return jsonObj;
     }
 
+    private JSONObject getVietnameseWikiReadable(String fileName) throws Exception
+    {
+        JSONObject json = new JSONObject();
+        JSONObject content = getJSONFromFile(entityJsonPath + "/" + fileName);
+        String qID = fileName.replace(".json", "");
+        JSONObject entities = (JSONObject)content.get("entities");
+        JSONObject entity = (JSONObject)entities.get(qID);
+
+        /*
+            * Get ID of entity
+            */
+        json.put("id",entity.getString("id"));
+
+        /*
+            * Get label of entity
+            */
+        json.put("label", getViLabel(qID));
+
+        /*
+            * Get description of entity
+            */
+        String viDescriptionValue = "";
+        JSONObject descriptions = (JSONObject)entity.get("descriptions");
+        if (descriptions.has("vi"))
+        {
+            JSONObject viDescriptions = (JSONObject)descriptions.get("vi");
+            viDescriptionValue = (String)viDescriptions.get("value");
+            json.put("description", viDescriptionValue);
+        }
+
+        /*
+            * Get overview of entity
+            */
+        json.put("overview", getOverview(qID));
+
+        /*
+            * Get aliases of entity
+            */
+        JSONObject aliases = (JSONObject)entity.get("aliases");
+        ArrayList<String> myAliases = new ArrayList<>();
+        if (aliases.has("vi"))
+        {
+            JSONArray viAlias = (JSONArray)aliases.get("vi");
+            for (int i = 0 ; i < viAlias.length() ; i++)
+            {
+                String viAliasValue = (String)(((JSONObject)(viAlias.get(i))).get("value"));
+                myAliases.add(viAliasValue);
+            }
+        }
+        json.put("aliases", new JSONArray(myAliases));
+
+        /*
+            * Get claims of entity
+            */
+        JSONObject myClaims = new JSONObject();
+        JSONObject claims = (JSONObject)entity.get("claims");
+        Iterator<String> properties = ((JSONObject) claims).keys();
+        while (properties.hasNext()) {
+            String propertyID = properties.next();
+            /* Cho that entity if that entity has a name in Vietnamese */
+            String propertyName = getViLabel(propertyID);
+            if (propertyName.isEmpty())
+                continue;
+            
+            JSONArray propertyInfoArr = new JSONArray();
+            propertyInfoArr = (JSONArray)(claims).getJSONArray(propertyID);
+            JSONArray jsonArray = new JSONArray();
+            for (Object info: propertyInfoArr)
+            {
+                JSONObject infoObj = (JSONObject) info;
+                JSONObject mainsnak = (JSONObject)infoObj.get("mainsnak");
+                JSONObject jsonObj = propertyProcess(mainsnak);
+
+                if (jsonObj.length() == 0) continue;
+                
+                /*
+                    * Get qualifiers of a property (a qualifier field will describe a property more clear)
+                    */
+                if (infoObj.has("qualifiers"))
+                {
+                    JSONObject qualifiersJsonObj = new JSONObject();
+                    JSONObject qualifiers = (JSONObject)infoObj.get("qualifiers");
+                    Iterator<String> keys = ((JSONObject) qualifiers).keys();
+                    while (keys.hasNext()) {
+                        String key = keys.next();
+                        JSONArray myQualifiersPropertyJsonArray = new JSONArray();
+                        JSONArray qualifiersPropertyJsonArr = qualifiers.getJSONArray(key);
+                        for (Object propertyInfo: qualifiersPropertyJsonArr)
+                        {
+                            JSONObject propertyInfoJson = (JSONObject)propertyInfo;
+                            JSONObject propertyJsonObj = propertyProcess(propertyInfoJson);
+                            if (propertyJsonObj.length()>0)
+                                myQualifiersPropertyJsonArray.put(propertyJsonObj);
+                        }
+                        if (myQualifiersPropertyJsonArray.length()>0)
+                        {
+                            qualifiersJsonObj.put(getViLabel(key), myQualifiersPropertyJsonArray);
+                        }
+                    }
+                    if (qualifiersJsonObj.length()>0)
+                        jsonObj.put("qualifiers", qualifiersJsonObj);
+
+                }
+                if (jsonObj.length()>0)
+                    jsonArray.put(jsonObj);
+
+            }
+            if  (jsonArray.length()>0)
+                myClaims.put(propertyName, jsonArray);
+        }
+        json.put("claims", myClaims);
+
+        /*
+        * Get references of entity
+        */
+        JSONObject myRef = new JSONObject();
+        if (fileExist(refFinalPath + "/" + fileName))
+        {
+            HashMap<String, String> idInstance = new HashMap<>();
+            String fileContent = readFileAll(refFinalPath + "/" + fileName);
+            JSONArray jsonArray = new JSONArray(fileContent);
+            for (Object iter: jsonArray)
+            {
+                String refEntityID = (String)iter;
+                String instanceName = "";
+
+                if (!idInstance.containsKey(refEntityID))
+                {
+                    String instanceID = getInstance(refEntityID);
+                    if(instanceID.isEmpty()) continue;
+                    instanceName = getViLabel(instanceID);
+                    idInstance.put(refEntityID, instanceName);
+                }
+                else
+                    instanceName = idInstance.get(refEntityID);
+                if (instanceName.isEmpty()) continue;
+                JSONObject refEntityIDObject = new JSONObject();
+                refEntityIDObject.put("id", refEntityID);
+                refEntityIDObject.put("type","wikibase-item");
+                refEntityIDObject.put("value",getViLabel(refEntityID));
+                if (!myRef.has(instanceName))
+                {
+                    JSONArray h = new JSONArray();
+                    h.put(refEntityIDObject);
+                    myRef.put(instanceName, h);
+                }
+                else
+                {
+                    ((JSONArray)myRef.get(instanceName)).put(refEntityIDObject);
+                }
+            }
+        }
+        json.put("references",myRef);
+
+        return json;
+    }
+
     public final void entityFinal() throws Exception
     {
         int cnt = 0;
@@ -435,158 +687,7 @@ public class WikiAnalys extends WikiData{
             {
                 continue;
             }
-            JSONObject json = new JSONObject();
-            JSONObject content = getJSONFromFile(entityJsonPath + "/" + fileName);
-            String qID = fileName.replace(".json", "");
-            JSONObject entities = (JSONObject)content.get("entities");
-            JSONObject entity = (JSONObject)entities.get(qID);
-
-            /*
-             * Get ID of entity
-             */
-            json.put("id",(String)entity.get("id"));
-
-            /*
-             * Get label of entity
-             */
-            json.put("label", getViLabel(qID));
-
-            /*
-             * Get description of entity
-             */
-            String viDescriptionValue = "";
-            JSONObject descriptions = (JSONObject)entity.get("descriptions");
-            if (descriptions.has("vi"))
-            {
-                JSONObject viDescriptions = (JSONObject)descriptions.get("vi");
-                viDescriptionValue = (String)viDescriptions.get("value");
-                json.put("description", viDescriptionValue);
-            }
-
-            /*
-             * Get overview of entity
-             */
-            json.put("overview", getOverview(qID));
-
-            /*
-             * Get aliases of entity
-             */
-            JSONObject aliases = (JSONObject)entity.get("aliases");
-            ArrayList<String> myAliases = new ArrayList<>();
-            if (aliases.has("vi"))
-            {
-                JSONArray viAlias = (JSONArray)aliases.get("vi");
-                for (int i = 0 ; i < viAlias.length() ; i++)
-                {
-                    String viAliasValue = (String)(((JSONObject)(viAlias.get(i))).get("value"));
-                    myAliases.add(viAliasValue);
-                }
-            }
-            json.put("aliases", new JSONArray(myAliases));
-
-            /*
-             * Get claims of entity
-             */
-            JSONObject myClaims = new JSONObject();
-            JSONObject claims = (JSONObject)entity.get("claims");
-            Iterator<String> properties = ((JSONObject) claims).keys();
-            while (properties.hasNext()) {
-                String propertyID = properties.next();
-                /* Cho that entity if that entity has a name in Vietnamese */
-                String propertyName = getViLabel(propertyID);
-                if (propertyName.isEmpty())
-                    continue;
-                
-                JSONArray propertyInfoArr = new JSONArray();
-                propertyInfoArr = (JSONArray)(claims).getJSONArray(propertyID);
-                JSONArray jsonArray = new JSONArray();
-                for (Object info: propertyInfoArr)
-                {
-                    JSONObject infoObj = (JSONObject) info;
-                    JSONObject mainsnak = (JSONObject)infoObj.get("mainsnak");
-                    JSONObject jsonObj = propertyProcess(mainsnak);
-
-                    if (jsonObj.length() == 0) continue;
-                    
-                    /*
-                     * Get qualifiers of a property (a qualifier field will describe a property more clear)
-                     */
-                    if (infoObj.has("qualifiers"))
-                    {
-                        JSONObject qualifiersJsonObj = new JSONObject();
-                        JSONObject qualifiers = (JSONObject)infoObj.get("qualifiers");
-                        Iterator<String> keys = ((JSONObject) qualifiers).keys();
-                        while (keys.hasNext()) {
-                            String key = keys.next();
-                            JSONArray myQualifiersPropertyJsonArray = new JSONArray();
-                            JSONArray qualifiersPropertyJsonArr = qualifiers.getJSONArray(key);
-                            for (Object propertyInfo: qualifiersPropertyJsonArr)
-                            {
-                                JSONObject propertyInfoJson = (JSONObject)propertyInfo;
-                                JSONObject propertyJsonObj = propertyProcess(propertyInfoJson);
-                                if (propertyJsonObj.length()>0)
-                                    myQualifiersPropertyJsonArray.put(propertyJsonObj);
-                            }
-                            if (myQualifiersPropertyJsonArray.length()>0)
-                            {
-                                qualifiersJsonObj.put(getViLabel(key), myQualifiersPropertyJsonArray);
-                            }
-                        }
-                        if (qualifiersJsonObj.length()>0)
-                            jsonObj.put("qualifiers", qualifiersJsonObj);
-
-                    }
-                    if (jsonObj.length()>0)
-                        jsonArray.put(jsonObj);
-
-                }
-                if  (jsonArray.length()>0)
-                    myClaims.put(propertyName, jsonArray);
-            }
-            json.put("claims", myClaims);
-
-            /*
-             * Get references of entity
-             */
-            JSONObject myRef = new JSONObject();
-            if (fileExist(refFinalPath + "/" + fileName))
-            {
-                HashMap<String, String> idInstance = new HashMap<>();
-                String fileContent = readFileAll(refFinalPath + "/" + fileName);
-                JSONArray jsonArray = new JSONArray(fileContent);
-                for (Object iter: jsonArray)
-                {
-                    String refEntityID = (String)iter;
-                    String instanceName = "";
-
-                    if (!idInstance.containsKey(refEntityID))
-                    {
-                        String instanceID = getInstance(refEntityID);
-                        if(instanceID.isEmpty()) continue;
-                        instanceName = getViLabel(instanceID);
-                        idInstance.put(refEntityID, instanceName);
-                    }
-                    else
-                        instanceName = idInstance.get(refEntityID);
-                    if (instanceName.isEmpty()) continue;
-                    JSONObject refEntityIDObject = new JSONObject();
-                    refEntityIDObject.put("id", refEntityID);
-                    refEntityIDObject.put("type","wikibase-item");
-                    refEntityIDObject.put("value",getViLabel(refEntityID));
-                    if (!myRef.has(instanceName))
-                    {
-                        JSONArray h = new JSONArray();
-                        h.put(refEntityIDObject);
-                        myRef.put(instanceName, h);
-                    }
-                    else
-                    {
-                        ((JSONArray)myRef.get(instanceName)).put(refEntityIDObject);
-                    }
-                }
-            }
-            json.put("references",myRef);
-
+            JSONObject json = getVietnameseWikiReadable(fileName);
             String writePath = entityFinalPath + "/" + fileName;
             String writeContent = json.toString();
             writeFile(writePath, writeContent, false);
@@ -601,9 +702,9 @@ public class WikiAnalys extends WikiData{
     public final void export() throws Exception
     {
         String categoryPath = superpath + "WikiAnalys/Category";
-        String exportPath = "export";
-        //String exportPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/Category/New folder/export";
+        String exportPath = categoryPath + "/export";
         createFolder(exportPath);
+        //String exportPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/Category/New folder/export";
         JSONObject bigCategories = getJSONFromFile(categoryPath + "/Split.json");
         Iterator<String> bigCategory = ((JSONObject) bigCategories).keys();
         while (bigCategory.hasNext()) {
@@ -611,6 +712,7 @@ public class WikiAnalys extends WikiData{
             createFolder(exportPath + "/" + bigCate);
         }
         
+        /*
         HashSet<String> files = listAllFiles(finalEntityPath);
         for (String fileName: files)
         {
@@ -654,14 +756,24 @@ public class WikiAnalys extends WikiData{
                                 if (bigCate.equals("triều đại lịch sử"))
                                 {
                                     json.remove("references");
+                                    //List vua vietnam here
                                 }
-                                writeFile(exportPath + "/" + bigCate + "/" + fileName, json.toString(), false);
+                                if (bigCate.equals("lễ hội văn hóa"))
+                                {
+                                    if (!fileExist(exportPath + "/" + bigCate + "/" + fileName))
+                                    {
+                                        print(fileName);
+                                        writeFile(exportPath + "/" + bigCate + "/" + fileName, json.toString(), false);
+                                    }
+                                }
+                                    
                             }
                         }
                     }
                 }
             }
         }
+        */
 
         HashSet<String> acceptEntitySet = new HashSet<>();
         bigCategory = ((JSONObject) bigCategories).keys();
@@ -676,6 +788,7 @@ public class WikiAnalys extends WikiData{
         while (bigCategory.hasNext()) {
             String bigCate = bigCategory.next();
             String folderName = exportPath + "/" + bigCate;
+            if (!bigCate.equals("lễ hội văn hóa")) continue;
             for (String fileName: listAllFiles(folderName))
             {
                 StringBuffer filePath = new StringBuffer(folderName);
