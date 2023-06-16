@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DBPediaData",
+            "request": "launch",
+            "mainClass": "DBPediaData",
+            "projectName": "Wikipedia-DBPedia-Crawler-VietnamHistory_f4dc11d3"
+        },
+        {
+            "type": "java",
             "name": "WikiAnalys",
             "request": "launch",
             "mainClass": "WikiAnalys",
