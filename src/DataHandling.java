@@ -350,4 +350,12 @@ abstract class DataHandling {
         Files.move(Paths.get(srcFilePath), Paths.get(tarFilePath));
     }
 
+    /*
+     * Get all string keys of a JSONObject object.
+     * 
+     */
+    public final static HashSet<String> getAllKeys(JSONObject jsonObject)
+    {
+        return new HashSet<>(jsonObject.keySet());
+    }
 }
