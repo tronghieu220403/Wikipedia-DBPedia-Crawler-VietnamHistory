@@ -2,6 +2,7 @@
 import java.security.Key;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -22,8 +23,9 @@ public class DBPediaData extends EntityHandling {
 
     public static void main(String[] args) throws Exception {
         DBPediaData dbpediaData = new DBPediaData();
-        dbpediaData.getData();
+        //dbpediaData.getData();
         dbpediaData.syncData();
+        dbpediaData.merge();
     }
 
     /**
@@ -501,18 +503,157 @@ public class DBPediaData extends EntityHandling {
                     }
                 }
             }
+            Iterator<String> claimKeys = claims.keys();
+            while(claimKeys.hasNext())
+            {
+                String propertyName = claimKeys.next();
+                JSONArray jsonArr = claims.getJSONArray(propertyName);
+                HashSet<String> nameSet = new HashSet<>();
+                List<Integer> eraseList = new ArrayList<>();
+                for (int i = 0; i < jsonArr.length(); i++)
+                {
+                    String value = jsonArr.getJSONObject(i).getString("value");
+                    if (nameSet.contains(value))
+                    {
+                        eraseList.add(i);
+                    }
+                    else
+                    {
+                        nameSet.add(value);
+                    }
+                }
+                for (int i = eraseList.size() - 1; i >= 0 ; i--)
+                {
+                    jsonArr.remove(eraseList.get(i));
+                }
+            }
             if (claims.length() == 0) continue;
             analizedJSON.put("claims", claims);
             String qID = selected.getString(fileName);
             String writePath = superpath + "export/" + qID + ".json";
             writeFile(writePath,  analizedJSON.toString(), false);
         }
-        
-        /*
-         * 1) Loại bỏ các property rác: trong tên có số, có "term", có 2 kí tự cuối là " c", độ dài <= 2 kí tự
-         * 2) Chỉ chấp nhận thuộc tính: chứa chỉ toàn dbr hoặc date (dbr có "type": "uri" còn date có dạng "datatype": "http://www.w3.org/2001/XMLSchema#date")
-         * 3) Nếu string có lang thì bỏ qua luôn.
-         */
+
+    }
+
+    void merge() throws Exception
+    {
+        String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
+        String wikiEntityPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/EntityJson";
+        String wikiPropPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/EntityProperties";
+        String dbpediaExportPath = "E:/Code/Java/OOP_Project/saveddata/DBPedia/export/";
+        String exportDataFolder = "data";
+        createFolder(exportDataFolder);
+        for (String bigCategory: bigCategories)
+        {
+            String path = "export/" + bigCategory;
+            String exportDataSubFolder = exportDataFolder + "/" + bigCategory;
+            createFolder(exportDataSubFolder);
+            HashSet<String> fileList = listAllFiles(path);
+            for (String fileName: fileList)
+            {
+                JSONObject wikiJSON = getJSONFromFile(path + "/" + fileName);
+                if (fileExist(dbpediaExportPath + fileName))
+                {
+                    JSONObject dbpediaJSON = getJSONFromFile(dbpediaExportPath + fileName);
+                    JSONObject dbpediaClaims = dbpediaJSON.getJSONObject("claims");
+                    JSONObject wikiClaims = wikiJSON.getJSONObject("claims");
+                    JSONObject exportClaims = new JSONObject();
+                    for (String propertyName: getAllKeys(wikiClaims))
+                    {                        
+                        JSONArray wikiPropertyArr = wikiClaims.getJSONArray(propertyName);
+                        if (dbpediaClaims.has(propertyName))
+                        {
+                            JSONArray fullJoinArr = new JSONArray();
+                            JSONArray dbpediaPropertyArr = dbpediaClaims.getJSONArray(propertyName);
+                            for (int i = 0; i < wikiPropertyArr.length(); i++)
+                            {
+                                JSONObject wikiObj = wikiPropertyArr.getJSONObject(i);
+                                String wikiObjValue = wikiObj.getString("value");
+                                boolean isUnique = true;
+                                for (int j = 0; j < dbpediaPropertyArr.length(); j++)
+                                {
+                                    JSONObject dbpediaObj = dbpediaPropertyArr.getJSONObject(j);
+                                    String dbpediaObjValue = dbpediaObj.getString("value");
+                                    if (wikiObjValue.equals(dbpediaObjValue))
+                                    {
+                                        if (wikiObj.has("qualifiers"))
+                                        {
+                                            wikiObj.put("source", "Wikipedia");
+                                            dbpediaObj.put("source", "DBPedia");
+                                            fullJoinArr.put(wikiObj);   
+                                            fullJoinArr.put(dbpediaObj);
+                                        }
+                                        else
+                                        {
+                                            wikiObj.put("source", "both");
+                                            fullJoinArr.put(wikiObj);
+                                        }
+                                        isUnique = false;
+                                        break;
+                                    }
+                                }
+                                if (isUnique == true)
+                                {
+                                    wikiObj.put("source", "Wikipedia");
+                                    fullJoinArr.put(wikiObj);
+                                }
+                            }
+                            for (int i = 0; i < dbpediaPropertyArr.length(); i++)
+                            {
+                                JSONObject dbpediaObj = dbpediaPropertyArr.getJSONObject(i);
+                                String dbpediaObjValue = dbpediaObj.getString("value");
+                                boolean isUnique = true;
+                                for (int j = 0; j < wikiPropertyArr.length(); j++)
+                                {
+                                    JSONObject wikiObj = wikiPropertyArr.getJSONObject(j);
+                                    String wikiObjValue = wikiObj.getString("value");
+                                    if (wikiObjValue.equals(dbpediaObjValue)){
+                                        isUnique = false;
+                                        break;
+                                    }
+                                }
+                                if (isUnique == true){
+                                    dbpediaObj.put("source", "DBPedia");
+                                    fullJoinArr.put(dbpediaObj);
+                                }
+                            }
+                            exportClaims.put(propertyName, fullJoinArr);
+                        }
+                        else
+                        {
+                            /*
+                            for (int i = 0; i < wikiPropertyArr.length(); i++)
+                            {
+                                JSONObject wikiObj = wikiPropertyArr.getJSONObject(i);
+                                wikiObj.put("source", "Wikipedia");
+                            }
+                            */
+                            exportClaims.put(propertyName, wikiPropertyArr);
+                        }
+                    }
+                    for (String propertyName: getAllKeys(dbpediaClaims))
+                    {
+                        if (!wikiClaims.has(propertyName))
+                        {
+                            /*
+                            JSONArray dbpediaPropertyArr = dbpediaClaims.getJSONArray(propertyName);
+                            for (int i = 0; i < dbpediaPropertyArr.length(); i++)
+                            {
+                                JSONObject dbpediaObj = dbpediaPropertyArr.getJSONObject(i);
+                                dbpediaObj.put("source", "DBPedia");
+                            }
+                            */
+                            exportClaims.put(propertyName, dbpediaClaims.getJSONArray(propertyName));
+                        }
+                    }
+                    wikiJSON.put("claims", exportClaims);
+                }
+                writeFile(exportDataSubFolder + "/" + fileName, wikiJSON.toString(), false);
+            }
+        }
+
+
 
     }
 }

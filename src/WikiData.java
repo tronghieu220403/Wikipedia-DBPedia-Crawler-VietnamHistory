@@ -37,7 +37,7 @@ public class WikiData extends EntityHandling{
     }
 
     HashSet<String> allQFile = listAllFiles(entityJsonPath);
-    HashSet<String> allPFile;
+    HashSet<String> allPFile = listAllFiles(entityPropertiesPath);
 
     @Override
     public void getVietnamRelatedEntity() throws Exception{

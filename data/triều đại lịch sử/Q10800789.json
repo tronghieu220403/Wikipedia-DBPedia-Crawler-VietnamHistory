@@ -1,0 +1,128 @@
+{
+	"overview": "Nhà Hậu Lê (chữ Nôm: 茹後黎, chữ Hán: 後黎朝, Hán Việt: Hậu Lê triều; (1428-1789) là một triều đại phong kiến Việt Nam tồn tại sau thời Bắc thuộc lần 4 và đồng thời với nhà Mạc, nhà Tây Sơn trong một thời gian, trước Nhà Nguyễn",
+	"aliases": [],
+	"claims": {
+		"được tuyên bố trong": [
+			{
+				"qualifiers": {
+					"đoạn văn hoặc câu thơ": [
+						{
+							"type": "string",
+							"value": "Later Le Dynasty"
+						}
+					]
+				},
+				"type": "string",
+				"value": "Encyclopædia Britannica"
+			}
+		],
+		"lãnh đạo": [
+			{
+				"id": "Q6506833",
+				"type": "wikibase-item",
+				"value": "Lê Cung Hoàng"
+			},
+			{
+				"type": "string",
+				"value": "Lê Chiêu Thống"
+			},
+			{
+				"id": "Q6802344",
+				"type": "wikibase-item",
+				"value": "Lê Trang Tông"
+			}
+		],
+		"ngày giải thể, bãi bỏ hoặc phá bỏ": [
+			{
+				"source": "Wikipedia",
+				"type": "string",
+				"value": "Năm 1788"
+			},
+			{
+				"source": "DBPedia",
+				"type": "string",
+				"value": "Ngày 30 Tháng 01 Năm 1789"
+			}
+		],
+		"chiến binh của": [
+			{
+				"id": "Q3539853",
+				"type": "wikibase-item",
+				"value": "Trận Ngọc Hồi - Đống Đa"
+			}
+		],
+		"quốc gia": [
+			{
+				"id": "Q430309",
+				"type": "wikibase-item",
+				"value": "Đại Việt"
+			}
+		],
+		"nhà của": [
+			{
+				"id": "Q2986223",
+				"type": "wikibase-item",
+				"value": "Lê Thái Tông"
+			},
+			{
+				"id": "Q1195391",
+				"type": "wikibase-item",
+				"value": "Lê Thái Tổ"
+			},
+			{
+				"id": "Q1771050",
+				"type": "wikibase-item",
+				"value": "Lê Thánh Tông"
+			},
+			{
+				"id": "Q842465",
+				"type": "wikibase-item",
+				"value": "Lê Nghi Dân"
+			},
+			{
+				"id": "Q2988059",
+				"type": "wikibase-item",
+				"value": "Lê Nhân Tông"
+			},
+			{
+				"type": "string",
+				"value": "Lê Chiêu Thống"
+			}
+		],
+		"đơn vị tiền tệ": [
+			{
+				"type": "string",
+				"value": "văn"
+			}
+		],
+		"là một": [
+			{
+				"type": "string",
+				"value": "triều đại"
+			}
+		],
+		"ngày thành lập hoặc tạo ra": [
+			{
+				"qualifiers": {
+					"là một": [
+						{
+							"type": "string",
+							"value": "tuyên bố trước năm 1584 lịch Gregorius"
+						}
+					]
+				},
+				"source": "Wikipedia",
+				"type": "string",
+				"value": "Ngày 01 Tháng 01 Năm 1428"
+			},
+			{
+				"source": "DBPedia",
+				"type": "string",
+				"value": "Ngày 29 Tháng 04 Năm 1427"
+			}
+		]
+	},
+	"description": "Triều đại trong lịch sử Việt Nam tồn tại từ năm 1428 đến năm 1789",
+	"id": "Q10800789",
+	"label": "Nhà Hậu Lê"
+}
