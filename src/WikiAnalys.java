@@ -127,7 +127,6 @@ public class WikiAnalys extends WikiData{
     private void getKings() throws Exception
     {
         JSONObject urlMapped = getJSONFromFile(superpath + "/WikiAnalys/URLToEntities.json");
-        String[] kingProp = {"Miếu hiệu", "Tôn hiệu hoặc Thụy hiệu", "Niên hiệu", "Thế thứ", "Trị vì"};
         JSONObject allDynastyJsonObject = getJSONFromFile(superpath + "/VVN.json");
         HashMap<String, String> dynastyHashMap = new HashMap<>();
         int cnt = 1;
@@ -138,6 +137,7 @@ public class WikiAnalys extends WikiData{
             dynastyHashMap.put(dynastyName, json.getString("id"));
         }
 
+        String[] kingProp = {"Miếu hiệu", "Tôn hiệu hoặc Thụy hiệu", "Tôn hiệu", "Niên hiệu", "Thế thứ", "Trị vì"};
         for (String dynastyName: getAllKeys(allDynastyJsonObject))
         {
             JSONObject dynastyJsonObject = new JSONObject();
@@ -217,6 +217,7 @@ public class WikiAnalys extends WikiData{
 
                 for (String prop: kingProp)
                 {
+                    if (!king.has(prop)) continue;
                     JSONArray arr = new JSONArray();
                     JSONObject propObj = new JSONObject();
                     propObj.put("type", "string");
