@@ -219,7 +219,7 @@ public class DBPediaData extends EntityHandling {
         HashSet<String> qIDHashSet = new HashSet<>();
         for (String bigCategory: bigCategories)
         {
-            String path = "export/" + bigCategory;
+            String path = "data/" + bigCategory;
             HashSet<String> fileList = listAllFiles(path);
             for (String fileName: fileList)
             {
@@ -390,7 +390,7 @@ public class DBPediaData extends EntityHandling {
             dbpediaPropertyTranslate = getJSONFromFile(superpath + "DBPediaPropertyTranslate.json");
         }
 
-        createFolder(superpath + "export");
+        createFolder(superpath + "data");
         /*
          * Iterate all selected files
          */
@@ -530,7 +530,7 @@ public class DBPediaData extends EntityHandling {
             if (claims.length() == 0) continue;
             analizedJSON.put("claims", claims);
             String qID = selected.getString(fileName);
-            String writePath = superpath + "export/" + qID + ".json";
+            String writePath = superpath + "data/" + qID + ".json";
             writeFile(writePath,  analizedJSON.toString(), false);
         }
 
@@ -546,7 +546,7 @@ public class DBPediaData extends EntityHandling {
         createFolder(exportDataFolder);
         for (String bigCategory: bigCategories)
         {
-            String path = "export/" + bigCategory;
+            String path = "data/" + bigCategory;
             String exportDataSubFolder = exportDataFolder + "/" + bigCategory;
             createFolder(exportDataSubFolder);
             HashSet<String> fileList = listAllFiles(path);
