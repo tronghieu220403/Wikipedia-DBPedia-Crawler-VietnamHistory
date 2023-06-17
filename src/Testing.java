@@ -13,7 +13,7 @@ public class Testing extends DataHandling {
         StringBuffer sb = new StringBuffer();
         for (String bigCategory: bigCategories)
         {
-            String path = "data/" + bigCategory;
+            String path = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/data/" + bigCategory;
             HashSet<String> fileList = listAllFiles(path);
             for (String fileName: fileList)
             {
@@ -24,6 +24,19 @@ public class Testing extends DataHandling {
                 {
                     writeFile(path + "/" + fileName, s, false);
                 }
+            }
+        }
+
+        String path = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/EntityFinal";
+        HashSet<String> fileList = listAllFiles(path);
+        for (String fileName: fileList)
+        {
+            String s = readFileAll(path + "/" + fileName);
+            int oldSize = s.length();
+            s = s.replace("Bight (địa lý)", "");
+            if (s.length()!=oldSize)
+            {
+                writeFile(path + "/" + fileName, s, false);
             }
         }
 
