@@ -17,17 +17,14 @@ public class Testing extends DataHandling {
             HashSet<String> fileList = listAllFiles(path);
             for (String fileName: fileList)
             {
-                JSONObject json = getJSONFromFile(path + "/" + fileName);
-                JSONObject claims = json.getJSONObject("claims");
-                for (String propName: getAllKeys(claims))
+                String s = readFileAll(path + "/" + fileName);
+                int oldSize = s.length();
+                s = s.replace("Bight (địa lý)", "");
+                if (s.length()!=oldSize)
                 {
-                    JSONArray jsonArr = claims.getJSONArray(propName);
-                    int index1 = 0;
-                    for (int i = 0; i < jsonArr.length(); i++)
-                    {
-                        
-                    }
+                    writeFile(path + "/" + fileName, s, false);
                 }
+
             }
         }
 
