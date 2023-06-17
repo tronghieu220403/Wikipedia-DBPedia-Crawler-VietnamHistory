@@ -14,16 +14,25 @@ import org.jsoup.nodes.Element;
 
 public class WikiAnalys extends WikiData{
     public static void main(String[] args) throws Exception {
+        
         WikiAnalys myWikiAnalys = new WikiAnalys();
         //myWikiAnalys.getInvalidEntities();
         //myWikiAnalys.urlToEntities();
         //myWikiAnalys.entityRefFinal();
         //myWikiAnalys.entityFinal();
-        //myWikiAnalys.getFestival();
-        myWikiAnalys.export();
+        //myWikiAnalys.getFestivals();
+        myWikiAnalys.getKings();
+        //myWikiAnalys.export();
     }
 
-    private void getFestival() throws Exception
+    public WikiAnalys()
+    {
+        createFolder(superpath + "/WikiAnalys");
+        //createFolder(superpath + );
+    }
+
+
+    private void getFestivals() throws Exception
     {
         allPFile = listAllFiles("E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\EntityProperties");
         Set<String> bannedFestivalURLs = new HashSet<>(Arrays.asList("https://vi.wikipedia.org/wiki/Lễ_hội_các_dân_tộc_Việt_Nam",
@@ -53,7 +62,6 @@ public class WikiAnalys extends WikiData{
                     if (!urlSet.contains(craftURL))
                     {
                         urlSet.add(craftURL);
-                        writeFile("gg.txt", craftURL + "\n", true);
                     }
                 }
             }
@@ -116,10 +124,199 @@ public class WikiAnalys extends WikiData{
         }
     }
 
-    public WikiAnalys()
+    private void getKings() throws Exception
     {
-        createFolder(superpath + "/WikiAnalys");
-        //createFolder(superpath + );
+        JSONObject urlMapped = getJSONFromFile(superpath + "/WikiAnalys/URLToEntities.json");
+        JSONObject allDynastyJsonObject = getJSONFromFile(superpath + "/VVN.json");
+        HashMap<String, String> dynastyHashMap = new HashMap<>();
+        int cnt = 1;
+        for (String fileName: listAllFiles("data/triều đại lịch sử"))
+        {
+            JSONObject json = getJSONFromFile("data/triều đại lịch sử/" + fileName);
+            String dynastyName = json.getString("label");
+            dynastyHashMap.put(dynastyName, json.getString("id"));
+        }
+
+        String[] kingProp = {"Miếu hiệu", "Tôn hiệu hoặc Thụy hiệu", "Tôn hiệu", "Niên hiệu", "Thế thứ", "Trị vì"};
+        for (String dynastyName: getAllKeys(allDynastyJsonObject))
+        {
+            JSONObject dynastyJsonObject = new JSONObject();
+            if (!dynastyHashMap.containsKey(dynastyName))
+            {
+                JSONObject claims = new JSONObject();
+                JSONArray jsonArr = new JSONArray();
+                String qID = "Q" + Integer.toString(cnt) + "X";
+                cnt++;
+                dynastyHashMap.put(dynastyName, qID);
+                JSONObject addObj = new JSONObject();
+                addObj.put("value", "triều đại");
+                addObj.put("type", "string");
+                jsonArr.put(addObj);
+                claims.put("là một", jsonArr);
+                jsonArr = new JSONArray();
+                JSONObject addObj2 = new JSONObject();
+                addObj2.put("value", "Việt Nam");
+                addObj2.put("type", "string");
+                jsonArr.put(addObj2);
+                claims.put("quốc gia", jsonArr);
+                cnt++;
+                dynastyJsonObject.put("claims", claims);
+                dynastyJsonObject.put("overview",  dynastyName + " là một triều đại phong kiến trong lịch sử Việt Nam.");
+                dynastyJsonObject.put("aliases", new JSONArray());
+                dynastyJsonObject.put("id", qID);
+                dynastyJsonObject.put("label", dynastyName);
+            }
+            else
+            {
+                try{
+                    dynastyJsonObject = getJSONFromFile("data/triều đại lịch sử/" + dynastyHashMap.get(dynastyName) + ".json");
+                }
+                catch (Exception e) {
+                    System.out.println("[ERROR] Can't find file: data/triều đại lịch sử/" + dynastyHashMap.get(dynastyName));
+                }
+            }
+
+            String dynastyQID = dynastyHashMap.get(dynastyName);
+            JSONArray dynastyRefArr = new JSONArray();
+            JSONArray kingArr = allDynastyJsonObject.getJSONArray(dynastyName);
+            for (int i = 0; i < kingArr.length(); i++)
+            {
+                String kingQID = "";
+                JSONObject king = kingArr.getJSONObject(i);
+                String kingURL = urlDecode(king.getString("link"));
+                
+                JSONObject kingJsonObject = new JSONObject();
+                JSONObject kingClaims = new JSONObject();
+
+                String kingName = "";
+                if (urlMapped.has(kingURL))
+                {
+                    kingQID = urlMapped.getString(kingURL);
+                    if (!fileExist("data/nhân vật lịch sử/" + kingQID + ".json"))
+                    {
+                        kingJsonObject = getVietnameseWikiReadable(kingQID);
+                        writeFile("data/nhân vật lịch sử/" + kingQID + ".json", kingJsonObject.toString(), false);
+                    }
+                    else
+                    {
+                        kingJsonObject = getJSONFromFile("data/nhân vật lịch sử/" + kingQID + ".json");
+                    }
+                    kingClaims = kingJsonObject.getJSONObject("claims");
+                    kingName = kingJsonObject.getString("label");
+                }
+                else
+                {
+                    kingQID = "Q" + Integer.toString(cnt) + "X";
+                    cnt++;
+                    if (king.has("Vua"))
+                    {
+                        kingName = king.getString("Vua");
+                    }
+                    else if (king.has("Tước hiệu"))
+                    {
+                        kingName = king.getString("Tước hiệu");
+                    }
+                    else if (king.has("Thủ lĩnh"))
+                    {
+                        kingName = king.getString("Thủ lĩnh");
+                    }
+                    else if (king.has("Tiết độ sứ"))
+                    {
+                        kingName = king.getString("Thủ lĩnh");
+                    }
+                    if (kingName.isEmpty())
+                    {
+                        print(kingQID);
+                    }
+                    kingJsonObject.put("label", kingName);
+                    JSONArray jsonArr = new JSONArray();
+                    JSONObject addObj = new JSONObject();
+                    addObj.put("value", "người");
+                    addObj.put("type", "string");
+                    jsonArr.put(addObj);
+                    kingClaims.put("là một", jsonArr);
+                    jsonArr = new JSONArray();
+                    JSONObject addObj2 = new JSONObject();
+                    addObj2.put("value", "Việt Nam");
+                    addObj2.put("type", "string");
+                    jsonArr.put(addObj2);
+                    kingClaims.put("quốc tịch", jsonArr);
+                    cnt++;
+                }
+
+                JSONArray kingInstances = kingClaims.getJSONArray("là một");
+                List<Integer> eraseArr = new ArrayList<Integer>();
+                for (int k = 0; k < kingInstances.length(); k++)
+                {
+                    if (kingInstances.getJSONObject(k).getString("value").equals("vua"))
+                    {
+                        eraseArr.add(k);
+                    }
+                }
+                for (int k = eraseArr.size() - 1; k >= 0; k--)
+                {
+                    kingInstances.remove(eraseArr.get(k));
+                }
+                JSONObject kingInstanceObj = new JSONObject();
+                kingInstanceObj.put("type", "string");
+                kingInstanceObj.put("value", "vua");
+                kingInstances.put(kingInstanceObj);
+
+                for (String prop: kingProp)
+                {
+                    if (!king.has(prop)) continue;
+                    JSONArray arr = new JSONArray();
+                    JSONObject propObj = new JSONObject();
+                    propObj.put("type", "string");
+                    String value = king.getString(prop);
+                    if (value.isEmpty()) continue;
+                    propObj.put("value", value);
+                    arr.put(propObj);
+                    kingClaims.put(prop, arr);
+                }
+                if (kingQID.contains("X"))
+                {
+                    kingJsonObject.put("claims", kingClaims);
+                    kingJsonObject.put("aliases", new JSONArray());
+                    kingJsonObject.put("overview",  kingName + " là một vị vua trong lịch sử Việt Nam.");
+                    kingJsonObject.put("id", kingQID);
+                    kingJsonObject.put("references", new JSONObject());
+                    kingJsonObject.put("label", kingName);
+                    urlMapped.put(kingURL, kingQID);
+                }
+                JSONObject refJSONObj = new JSONObject();
+                refJSONObj.put("type", "wikibase-item");
+                refJSONObj.put("value", kingName);
+                refJSONObj.put("id", kingQID);
+                dynastyRefArr.put(refJSONObj);
+
+                JSONObject kingRefJsonObject = new JSONObject();
+                if (kingJsonObject.has("references"))
+                    kingRefJsonObject = kingJsonObject.getJSONObject("references");
+
+                JSONObject kingRef = new JSONObject();
+
+                kingRef.put("type", "wikibase-item");
+                kingRef.put("value", dynastyName);
+                kingRef.put("id", dynastyQID);
+
+                if (!kingRefJsonObject.has("triều đại"))
+                {
+                    JSONArray kingRefArr = new JSONArray();
+                    kingRefArr.put(kingRef);
+                    kingRefJsonObject.put("triều đại", kingRefArr);
+                }
+                else if (dynastyQID.contains("X")){
+                    kingRefJsonObject.getJSONArray("triều đại").put(kingRef);
+                }
+                kingJsonObject.put("references", kingRefJsonObject);
+                writeFile("data/nhân vật lịch sử/" + kingQID + ".json", kingJsonObject.toString(), false);
+            }
+            dynastyJsonObject.put("references", (new JSONObject()).put("vua", dynastyRefArr));
+            writeFile("data/triều đại lịch sử/" + dynastyQID + ".json", dynastyJsonObject.toString(), false);
+            //break;
+        }
+        
     }
 
     HashMap<String, String> urlToEntitiesHashMap = new HashMap<>();
@@ -512,6 +709,10 @@ public class WikiAnalys extends WikiData{
 
     private JSONObject getVietnameseWikiReadable(String fileName) throws Exception
     {
+        if (!fileName.contains(".json"))
+        {
+            fileName = fileName + ".json";
+        }
         JSONObject json = new JSONObject();
         JSONObject content = getJSONFromFile(entityJsonPath + "/" + fileName);
         String qID = fileName.replace(".json", "");
@@ -562,14 +763,14 @@ public class WikiAnalys extends WikiData{
         json.put("aliases", new JSONArray(myAliases));
 
         /*
-            * Get claims of entity
-            */
+        * Get claims of entity
+        */
         JSONObject myClaims = new JSONObject();
         JSONObject claims = (JSONObject)entity.get("claims");
         Iterator<String> properties = ((JSONObject) claims).keys();
         while (properties.hasNext()) {
             String propertyID = properties.next();
-            /* Cho that entity if that entity has a name in Vietnamese */
+            /* Choose that entity if that entity has a name in Vietnamese */
             String propertyName = getViLabel(propertyID);
             if (propertyName.isEmpty())
                 continue;
@@ -702,7 +903,7 @@ public class WikiAnalys extends WikiData{
     public final void export() throws Exception
     {
         String categoryPath = superpath + "WikiAnalys/Category";
-        String exportPath = categoryPath + "/export";
+        String exportPath = "data";
         createFolder(exportPath);
         //String exportPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/Category/New folder/export";
         JSONObject bigCategories = getJSONFromFile(categoryPath + "/Split.json");
@@ -779,7 +980,7 @@ public class WikiAnalys extends WikiData{
         bigCategory = ((JSONObject) bigCategories).keys();
         while (bigCategory.hasNext()) {
             String bigCate = bigCategory.next();
-            for (String fileName: listAllFiles(exportPath + "/" + bigCate))
+            for (String fileName: listAllFiles("data/" + bigCate))
             {
                 acceptEntitySet.add(fileName.replace(".json", ""));
             }
@@ -788,7 +989,6 @@ public class WikiAnalys extends WikiData{
         while (bigCategory.hasNext()) {
             String bigCate = bigCategory.next();
             String folderName = exportPath + "/" + bigCate;
-            if (!bigCate.equals("lễ hội văn hóa")) continue;
             for (String fileName: listAllFiles(folderName))
             {
                 StringBuffer filePath = new StringBuffer(folderName);

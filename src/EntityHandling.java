@@ -26,7 +26,7 @@ public class EntityHandling extends DataHandling{
     protected HashSet<String> analysedURLsHashSet;
     protected HashMap<String, Integer> craftedURLsHashMap = new HashMap<>();
     protected int totalAnalysed;
-    protected int limitAmountAnalysis = 80000;
+    protected int limitAmountAnalysis = 15000;
 
     /**
      * Set up an environment for saving data.
@@ -44,6 +44,11 @@ public class EntityHandling extends DataHandling{
         entityPropertiesPath = superpath + "EntityProperties";
         createFolder(entityJsonPath);
         createFolder(entityPropertiesPath);
+    }
+
+    public EntityHandling()
+    {
+        throw new IllegalArgumentException("File path must be provided");
     }
 
     /**
@@ -138,7 +143,7 @@ public class EntityHandling extends DataHandling{
      * Check if {@code urlString} has been processed before.
      * @return If {@code urlString} has been processed, return {@code true}; otherwise, return {@code false}.
      */
-    public final boolean existInAnalysedURL(String urlString)
+    protected final boolean existInAnalysedURL(String urlString)
     {
         if (failedURLsHashSet.contains(urlString)) return true;
         if (analysedURLsHashSet.contains(urlString)) return true;

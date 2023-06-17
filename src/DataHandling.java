@@ -352,7 +352,6 @@ abstract class DataHandling {
 
     /*
      * Get all string keys of a JSONObject object.
-     * 
      */
     public final static HashSet<String> getAllKeys(JSONObject jsonObject)
     {
