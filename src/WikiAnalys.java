@@ -171,16 +171,17 @@ public class WikiAnalys extends WikiData{
             }
 
             String dynastyQID = dynastyHashMap.get(dynastyName);
-            JSONArray refKingArr = new JSONArray();
+            JSONArray dynastyRefArr = new JSONArray();
             JSONArray kingArr = allDynastyJsonObject.getJSONArray(dynastyName);
             for (int i = 0; i < kingArr.length(); i++)
             {
                 String qID = "";
                 JSONObject king = kingArr.getJSONObject(i);
                 String kingURL = urlDecode(king.getString("link"));
+                
                 JSONObject kingJsonObject = new JSONObject();
                 JSONObject kingClaims = new JSONObject();
-                JSONObject kingRef = new JSONObject();
+
                 String name = "";
                 if (urlMapped.has(kingURL))
                 {
@@ -238,19 +239,29 @@ public class WikiAnalys extends WikiData{
                 refJSONObj.put("type", "wikibase-item");
                 refJSONObj.put("value", name);
                 refJSONObj.put("id", qID);
-                refKingArr.put(refJSONObj);
+                dynastyRefArr.put(refJSONObj);
 
-                if (!kingJsonObject.has("triều đại"))
+                JSONObject kingRefJsonObject = kingJsonObject.getJSONObject("references");
+
+                JSONObject kingRef = new JSONObject();
+
+                kingRef.put("type", "wikibase-item");
+                kingRef.put("value", dynastyName);
+                kingRef.put("id", dynastyQID);
+
+                if (!kingRefJsonObject.has("triều đại"))
                 {
-                    kingRef.put("type", "wikibase-item");
-                    kingRef.put("value", dynastyName);
-                    kingRef.put("id", dynastyQID);
                     JSONArray kingRefArr = new JSONArray();
                     kingRefArr.put(kingRef);
-                    kingJsonObject.put("triều đại", kingRefArr);
+                    kingRefJsonObject.put("triều đại", kingRefArr);
                 }
+                else{
+                    if (dynastyQID.contains("X"))
+                        kingRefJsonObject.getJSONArray("triều đại").put(kingRef);
+                }
+                writeFile("hehe.json", kingJsonObject.toString(), false);
             }
-            dynastyJsonObject.put("references", (new JSONObject()).put("vua", refKingArr));
+            dynastyJsonObject.put("references", (new JSONObject()).put("vua", dynastyRefArr));
             writeFile("gg.json", dynastyJsonObject.toString(), false);
             break;
         }
