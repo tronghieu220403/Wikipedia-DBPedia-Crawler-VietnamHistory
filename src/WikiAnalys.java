@@ -164,10 +164,16 @@ public class WikiAnalys extends WikiData{
                 dynastyJsonObject.put("overview",  dynastyName + " là một triều đại phong kiến trong lịch sử Việt Nam.");
                 dynastyJsonObject.put("aliases", new JSONArray());
                 dynastyJsonObject.put("id", qID);
+                dynastyJsonObject.put("label", dynastyName);
             }
             else
             {
-                dynastyJsonObject = getJSONFromFile("data/nhân vật lịch sử/" + dynastyHashMap.get(dynastyName) + ".json");
+                try{
+                    dynastyJsonObject = getJSONFromFile("data/triều đại lịch sử/" + dynastyHashMap.get(dynastyName) + ".json");
+                }
+                catch (Exception e) {
+                    System.out.println("[ERROR] Can't find file: data/triều đại lịch sử/" + dynastyHashMap.get(dynastyName));
+                }
             }
 
             String dynastyQID = dynastyHashMap.get(dynastyName);
@@ -175,27 +181,54 @@ public class WikiAnalys extends WikiData{
             JSONArray kingArr = allDynastyJsonObject.getJSONArray(dynastyName);
             for (int i = 0; i < kingArr.length(); i++)
             {
-                String qID = "";
+                String kingQID = "";
                 JSONObject king = kingArr.getJSONObject(i);
                 String kingURL = urlDecode(king.getString("link"));
                 
                 JSONObject kingJsonObject = new JSONObject();
                 JSONObject kingClaims = new JSONObject();
 
-                String name = "";
+                String kingName = "";
                 if (urlMapped.has(kingURL))
                 {
-                    qID = urlMapped.getString(kingURL);
-                    kingJsonObject = getJSONFromFile("data/nhân vật lịch sử/" + qID + ".json");
+                    kingQID = urlMapped.getString(kingURL);
+                    if (!fileExist("data/nhân vật lịch sử/" + kingQID + ".json"))
+                    {
+                        kingJsonObject = getVietnameseWikiReadable(kingQID);
+                        writeFile("data/nhân vật lịch sử/" + kingQID + ".json", kingJsonObject.toString(), false);
+                    }
+                    else
+                    {
+                        kingJsonObject = getJSONFromFile("data/nhân vật lịch sử/" + kingQID + ".json");
+                    }
                     kingClaims = kingJsonObject.getJSONObject("claims");
-                    name = kingJsonObject.getString("label");
+                    kingName = kingJsonObject.getString("label");
                 }
                 else
                 {
-                    qID = "Q" + Integer.toString(cnt) + "X";
+                    kingQID = "Q" + Integer.toString(cnt) + "X";
                     cnt++;
-                    name = king.getString("Vua");
-                    kingJsonObject.put("label", name);
+                    if (king.has("Vua"))
+                    {
+                        kingName = king.getString("Vua");
+                    }
+                    else if (king.has("Tước hiệu"))
+                    {
+                        kingName = king.getString("Tước hiệu");
+                    }
+                    else if (king.has("Thủ lĩnh"))
+                    {
+                        kingName = king.getString("Thủ lĩnh");
+                    }
+                    else if (king.has("Tiết độ sứ"))
+                    {
+                        kingName = king.getString("Thủ lĩnh");
+                    }
+                    if (kingName.isEmpty())
+                    {
+                        print(kingQID);
+                    }
+                    kingJsonObject.put("label", kingName);
                     JSONArray jsonArr = new JSONArray();
                     JSONObject addObj = new JSONObject();
                     addObj.put("value", "người");
@@ -210,7 +243,20 @@ public class WikiAnalys extends WikiData{
                     kingClaims.put("quốc tịch", jsonArr);
                     cnt++;
                 }
+
                 JSONArray kingInstances = kingClaims.getJSONArray("là một");
+                List<Integer> eraseArr = new ArrayList<Integer>();
+                for (int k = 0; k < kingInstances.length(); k++)
+                {
+                    if (kingInstances.getJSONObject(k).getString("value").equals("vua"))
+                    {
+                        eraseArr.add(k);
+                    }
+                }
+                for (int k = eraseArr.size() - 1; k >= 0; k--)
+                {
+                    kingInstances.remove(eraseArr.get(k));
+                }
                 JSONObject kingInstanceObj = new JSONObject();
                 kingInstanceObj.put("type", "string");
                 kingInstanceObj.put("value", "vua");
@@ -222,26 +268,31 @@ public class WikiAnalys extends WikiData{
                     JSONArray arr = new JSONArray();
                     JSONObject propObj = new JSONObject();
                     propObj.put("type", "string");
-                    propObj.put("value", king.getString(prop));
+                    String value = king.getString(prop);
+                    if (value.isEmpty()) continue;
+                    propObj.put("value", value);
                     arr.put(propObj);
                     kingClaims.put(prop, arr);
                 }
-                if (qID.contains("X"))
+                if (kingQID.contains("X"))
                 {
                     kingJsonObject.put("claims", kingClaims);
                     kingJsonObject.put("aliases", new JSONArray());
-                    kingJsonObject.put("overview",  dynastyName + " là một vị vua trong lịch sử Việt Nam.");
-                    kingJsonObject.put("id", qID);
+                    kingJsonObject.put("overview",  kingName + " là một vị vua trong lịch sử Việt Nam.");
+                    kingJsonObject.put("id", kingQID);
                     kingJsonObject.put("references", new JSONObject());
-                    urlMapped.put(kingURL, qID);
+                    kingJsonObject.put("label", kingName);
+                    urlMapped.put(kingURL, kingQID);
                 }
                 JSONObject refJSONObj = new JSONObject();
                 refJSONObj.put("type", "wikibase-item");
-                refJSONObj.put("value", name);
-                refJSONObj.put("id", qID);
+                refJSONObj.put("value", kingName);
+                refJSONObj.put("id", kingQID);
                 dynastyRefArr.put(refJSONObj);
 
-                JSONObject kingRefJsonObject = kingJsonObject.getJSONObject("references");
+                JSONObject kingRefJsonObject = new JSONObject();
+                if (kingJsonObject.has("references"))
+                    kingRefJsonObject = kingJsonObject.getJSONObject("references");
 
                 JSONObject kingRef = new JSONObject();
 
@@ -255,15 +306,15 @@ public class WikiAnalys extends WikiData{
                     kingRefArr.put(kingRef);
                     kingRefJsonObject.put("triều đại", kingRefArr);
                 }
-                else{
-                    if (dynastyQID.contains("X"))
-                        kingRefJsonObject.getJSONArray("triều đại").put(kingRef);
+                else if (dynastyQID.contains("X")){
+                    kingRefJsonObject.getJSONArray("triều đại").put(kingRef);
                 }
-                writeFile("hehe.json", kingJsonObject.toString(), false);
+                kingJsonObject.put("references", kingRefJsonObject);
+                writeFile("data/nhân vật lịch sử/" + kingQID + ".json", kingJsonObject.toString(), false);
             }
             dynastyJsonObject.put("references", (new JSONObject()).put("vua", dynastyRefArr));
-            writeFile("gg.json", dynastyJsonObject.toString(), false);
-            break;
+            writeFile("data/triều đại lịch sử/" + dynastyQID + ".json", dynastyJsonObject.toString(), false);
+            //break;
         }
         
     }
@@ -658,6 +709,10 @@ public class WikiAnalys extends WikiData{
 
     private JSONObject getVietnameseWikiReadable(String fileName) throws Exception
     {
+        if (!fileName.contains(".json"))
+        {
+            fileName = fileName + ".json";
+        }
         JSONObject json = new JSONObject();
         JSONObject content = getJSONFromFile(entityJsonPath + "/" + fileName);
         String qID = fileName.replace(".json", "");
@@ -708,14 +763,14 @@ public class WikiAnalys extends WikiData{
         json.put("aliases", new JSONArray(myAliases));
 
         /*
-            * Get claims of entity
-            */
+        * Get claims of entity
+        */
         JSONObject myClaims = new JSONObject();
         JSONObject claims = (JSONObject)entity.get("claims");
         Iterator<String> properties = ((JSONObject) claims).keys();
         while (properties.hasNext()) {
             String propertyID = properties.next();
-            /* Cho that entity if that entity has a name in Vietnamese */
+            /* Choose that entity if that entity has a name in Vietnamese */
             String propertyName = getViLabel(propertyID);
             if (propertyName.isEmpty())
                 continue;
@@ -848,7 +903,7 @@ public class WikiAnalys extends WikiData{
     public final void export() throws Exception
     {
         String categoryPath = superpath + "WikiAnalys/Category";
-        String exportPath = categoryPath + "/export";
+        String exportPath = "data";
         createFolder(exportPath);
         //String exportPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/Category/New folder/export";
         JSONObject bigCategories = getJSONFromFile(categoryPath + "/Split.json");
@@ -925,7 +980,7 @@ public class WikiAnalys extends WikiData{
         bigCategory = ((JSONObject) bigCategories).keys();
         while (bigCategory.hasNext()) {
             String bigCate = bigCategory.next();
-            for (String fileName: listAllFiles(exportPath + "/" + bigCate))
+            for (String fileName: listAllFiles("data/" + bigCate))
             {
                 acceptEntitySet.add(fileName.replace(".json", ""));
             }
@@ -934,7 +989,6 @@ public class WikiAnalys extends WikiData{
         while (bigCategory.hasNext()) {
             String bigCate = bigCategory.next();
             String folderName = exportPath + "/" + bigCate;
-            if (!bigCate.equals("lễ hội văn hóa")) continue;
             for (String fileName: listAllFiles(folderName))
             {
                 StringBuffer filePath = new StringBuffer(folderName);
