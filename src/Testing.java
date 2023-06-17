@@ -11,6 +11,59 @@ public class Testing extends DataHandling {
         //String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
         String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
         StringBuffer sb = new StringBuffer();
+        HashSet<String> filePaths = new HashSet<>();
+        for (String bigCategory: bigCategories)
+        {
+            String path = "data/" + bigCategory;
+            HashSet<String> fileList = listAllFiles(path);
+            for (String fileName: fileList)
+            {
+                filePaths.add(path + "/" + fileName);
+            }
+        }
+        for (String bigCategory: bigCategories)
+        {
+            String path = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/data/" + bigCategory;
+            HashSet<String> fileList = listAllFiles(path);
+            for (String fileName: fileList)
+            {
+                filePaths.add(path + "/" + fileName);
+            }
+        }
+        String path = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/EntityFinal";
+        HashSet<String> fileList = listAllFiles(path);
+        for (String fileName: fileList)
+        {
+            filePaths.add(path + "/" + fileName);
+        }
+        for (String filePath: filePaths)
+        {
+            JSONObject json = getJSONFromFile(filePath);
+            JSONObject claims = json.getJSONObject("claims");
+            for (String propName: getAllKeys(claims))
+            {
+                JSONArray jsonArr = claims.getJSONArray(propName);
+                for (int i = 0; i < jsonArr.length(); i++)
+                {
+                    JSONObject obj = jsonArr.getJSONObject(i);   
+                    if (obj.has("qualifiers"))
+                    {
+                        if (obj.getJSONObject("qualifiers").has("lý do lỗi thời"))
+                        {
+                            obj.getJSONObject("qualifiers").remove("lý do lỗi thời");
+                            if (obj.getJSONObject("qualifiers").length() == 0)
+                            {
+                                obj.remove("qualifiers");
+                            }
+                        }
+                    }
+                }
+            }
+            writeFile(filePath, json.toString(), false);
+        }
+
+        /*
+
         for (String bigCategory: bigCategories)
         {
             String path = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/data/" + bigCategory;
@@ -40,7 +93,8 @@ public class Testing extends DataHandling {
             }
         }
 
-        /*
+
+
         JSONObject json = getJSONFromFile("E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/Category/export1/nhân vật lịch sử/Q36014.json");
         JSONObject claims = (JSONObject)json.get("claims");
         Iterator<String> properties = ((JSONObject) claims).keys();
