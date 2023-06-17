@@ -21,8 +21,8 @@ public class WikiAnalys extends WikiData{
         //myWikiAnalys.entityRefFinal();
         //myWikiAnalys.entityFinal();
         //myWikiAnalys.getFestivals();
-        myWikiAnalys.getKings();
-        //myWikiAnalys.export();
+        //myWikiAnalys.getKings();
+        myWikiAnalys.export();
     }
 
     public WikiAnalys()
@@ -898,7 +898,7 @@ public class WikiAnalys extends WikiData{
 
     HashSet<String> acceptedCountries = new HashSet<>(Arrays.asList("Việt Nam", "Đại Việt","Nam Việt", "Đại Cồ Việt", "Đại Ngu", "Xích Quỷ", "Văn Lang", "Âu Lạc", "Giao Chỉ", "Lĩnh Nam", "Giao Châu", "An Nam", "Trấn Nam", "Tĩnh Hải quân", "Đại Nam"));
 
-    HashSet<String> bannedProperties = new HashSet<>(Arrays.asList("mã sân bay IATA", "chuyến bay vũ trụ", "Romaja quốc ngữ", "trang Commons Creator", "tập hình Commons", "có trong danh sách chú trọng của dự án Wikimedia", "thể loại ở Commons", "chuyển tự McCune–Reischauer", "thể loại chính của đề tài", "thể loại cho nhóm người", "thể loại có liên quan"));
+    HashSet<String> bannedProperties = new HashSet<>(Arrays.asList("mã sân bay IATA", "chuyến bay vũ trụ", "Romaja quốc ngữ", "trang Commons Creator", "tập hình Commons", "có trong danh sách chú trọng của dự án Wikimedia", "thể loại ở Commons", "chuyển tự McCune–Reischauer", "thể loại chính của đề tài", "thể loại cho nhóm người", "thể loại có liên quan", "bài danh sách Wikimedia"));
 
     public final void export() throws Exception
     {
@@ -1031,11 +1031,9 @@ public class WikiAnalys extends WikiData{
                 if (json.has("references"))
                 {
                     JSONObject references = (JSONObject)json.get("references");
-                    Iterator<String> referenceKeys = references.keys();
                     List<String> delete = new ArrayList<String>();
-                    while(referenceKeys.hasNext())
+                    for (String key: getAllKeys(references))
                     {
-                        String key = referenceKeys.next();
                         if (bannedProperties.contains(key))
                         {
                             delete.add(key);
