@@ -13,14 +13,17 @@ public class Testing extends DataHandling {
         StringBuffer sb = new StringBuffer();
         for (String bigCategory: bigCategories)
         {
-            String path = "export/" + bigCategory;
+            String path = "data/" + bigCategory;
             HashSet<String> fileList = listAllFiles(path);
             for (String fileName: fileList)
             {
-                JSONObject json = getJSONFromFile(path + "/" + fileName);
-                String s = (String)json.get("overview");
-                if (s.length()<300)
-                    writeFile("gg.txt", s.toString() + "\n" + fileName + '\n', true);
+                //if (!fileName.equals("Q1034173.json")) continue;
+                String s = readFileAll(path + "/" + fileName);
+                int oldSize = s.length();
+                s = s.replace("chiến binh của", "thực thể tham chiến của");
+                int newSize = s.length();
+                if (oldSize != newSize)
+                    writeFile(path + "/" + fileName, s, false);
             }
         }
 
