@@ -24,7 +24,6 @@ public class Testing extends DataHandling {
                 {
                     writeFile(path + "/" + fileName, s, false);
                 }
-
             }
         }
 
