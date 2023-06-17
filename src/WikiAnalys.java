@@ -66,6 +66,7 @@ public class WikiAnalys extends WikiData{
                 }
             }
         }
+        urlSet.add("https://vi.wikipedia.org/wiki/Giỗ_Tổ_Hùng_Vương");
         HashSet<String> qIDSet = new HashSet<>();
         for (String urlString: urlSet)
         {
@@ -130,9 +131,9 @@ public class WikiAnalys extends WikiData{
         JSONObject allDynastyJsonObject = getJSONFromFile(superpath + "/VVN.json");
         HashMap<String, String> dynastyHashMap = new HashMap<>();
         int cnt = 1;
-        for (String fileName: listAllFiles("data/triều đại lịch sử"))
+        for (String fileName: listAllFiles(superpath + "data/triều đại lịch sử"))
         {
-            JSONObject json = getJSONFromFile("data/triều đại lịch sử/" + fileName);
+            JSONObject json = getJSONFromFile(superpath + "data/triều đại lịch sử/" + fileName);
             String dynastyName = json.getString("label");
             dynastyHashMap.put(dynastyName, json.getString("id"));
         }
@@ -169,7 +170,7 @@ public class WikiAnalys extends WikiData{
             else
             {
                 try{
-                    dynastyJsonObject = getJSONFromFile("data/triều đại lịch sử/" + dynastyHashMap.get(dynastyName) + ".json");
+                    dynastyJsonObject = getJSONFromFile(superpath +"data/triều đại lịch sử/" + dynastyHashMap.get(dynastyName) + ".json");
                 }
                 catch (Exception e) {
                     System.out.println("[ERROR] Can't find file: data/triều đại lịch sử/" + dynastyHashMap.get(dynastyName));
@@ -192,14 +193,14 @@ public class WikiAnalys extends WikiData{
                 if (urlMapped.has(kingURL))
                 {
                     kingQID = urlMapped.getString(kingURL);
-                    if (!fileExist("data/nhân vật lịch sử/" + kingQID + ".json"))
+                    if (!fileExist(superpath + "data/nhân vật lịch sử/" + kingQID + ".json"))
                     {
                         kingJsonObject = getVietnameseWikiReadable(kingQID);
-                        writeFile("data/nhân vật lịch sử/" + kingQID + ".json", kingJsonObject.toString(), false);
+                        writeFile(superpath +"data/nhân vật lịch sử/" + kingQID + ".json", kingJsonObject.toString(), false);
                     }
                     else
                     {
-                        kingJsonObject = getJSONFromFile("data/nhân vật lịch sử/" + kingQID + ".json");
+                        kingJsonObject = getJSONFromFile(superpath + "data/nhân vật lịch sử/" + kingQID + ".json");
                     }
                     kingClaims = kingJsonObject.getJSONObject("claims");
                     kingName = kingJsonObject.getString("label");
@@ -310,10 +311,10 @@ public class WikiAnalys extends WikiData{
                     kingRefJsonObject.getJSONArray("triều đại").put(kingRef);
                 }
                 kingJsonObject.put("references", kingRefJsonObject);
-                writeFile("data/nhân vật lịch sử/" + kingQID + ".json", kingJsonObject.toString(), false);
+                writeFile(superpath +"data/nhân vật lịch sử/" + kingQID + ".json", kingJsonObject.toString(), false);
             }
             dynastyJsonObject.put("references", (new JSONObject()).put("vua", dynastyRefArr));
-            writeFile("data/triều đại lịch sử/" + dynastyQID + ".json", dynastyJsonObject.toString(), false);
+            writeFile(superpath + "data/triều đại lịch sử/" + dynastyQID + ".json", dynastyJsonObject.toString(), false);
             //break;
         }
         
@@ -534,12 +535,6 @@ public class WikiAnalys extends WikiData{
     {
         HashSet<String> allQRefFile = listAllFiles(superpath + "EntityReference/");
         HashMap<String, HashSet<String> > refList = new HashMap<String, HashSet<String>>();
-        for (String fileName: allQFile)
-        {
-            String qID = fileName.replace(".json", "");
-            HashSet<String> h = new HashSet<>();
-            refList.putIfAbsent(qID, h);
-        }
         for (String fileName: allQRefFile)
         {
             String qID = fileName.replace(".txt", "");
@@ -902,8 +897,9 @@ public class WikiAnalys extends WikiData{
 
     public final void export() throws Exception
     {
+        //getFestivals();
         String categoryPath = superpath + "WikiAnalys/Category";
-        String exportPath = "data";
+        String exportPath = superpath + "/data";
         createFolder(exportPath);
         //String exportPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/Category/New folder/export";
         JSONObject bigCategories = getJSONFromFile(categoryPath + "/Split.json");
@@ -912,8 +908,7 @@ public class WikiAnalys extends WikiData{
             String bigCate = bigCategory.next();
             createFolder(exportPath + "/" + bigCate);
         }
-        
-        /*
+
         HashSet<String> files = listAllFiles(finalEntityPath);
         for (String fileName: files)
         {
@@ -959,14 +954,8 @@ public class WikiAnalys extends WikiData{
                                     json.remove("references");
                                     //List vua vietnam here
                                 }
-                                if (bigCate.equals("lễ hội văn hóa"))
-                                {
-                                    if (!fileExist(exportPath + "/" + bigCate + "/" + fileName))
-                                    {
-                                        print(fileName);
-                                        writeFile(exportPath + "/" + bigCate + "/" + fileName, json.toString(), false);
-                                    }
-                                }
+                                //print(fileName);
+                                writeFile(exportPath + "/" + bigCate + "/" + fileName, json.toString(), false);
                                     
                             }
                         }
@@ -974,21 +963,22 @@ public class WikiAnalys extends WikiData{
                 }
             }
         }
-        */
 
         HashSet<String> acceptEntitySet = new HashSet<>();
         bigCategory = ((JSONObject) bigCategories).keys();
         while (bigCategory.hasNext()) {
             String bigCate = bigCategory.next();
-            for (String fileName: listAllFiles("data/" + bigCate))
+            for (String fileName: listAllFiles(superpath + "data/" + bigCate))
             {
                 acceptEntitySet.add(fileName.replace(".json", ""));
             }
         }
+
         bigCategory = ((JSONObject) bigCategories).keys();
         while (bigCategory.hasNext()) {
             String bigCate = bigCategory.next();
             String folderName = exportPath + "/" + bigCate;
+
             for (String fileName: listAllFiles(folderName))
             {
                 StringBuffer filePath = new StringBuffer(folderName);
@@ -1062,5 +1052,6 @@ public class WikiAnalys extends WikiData{
                 writeFile(filePath.toString(), json.toString(), false);
             }
         }
+        getKings();
     }
 }

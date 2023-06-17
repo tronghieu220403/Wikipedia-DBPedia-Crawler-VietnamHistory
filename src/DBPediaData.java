@@ -541,12 +541,12 @@ public class DBPediaData extends EntityHandling {
         String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
         String wikiEntityPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/EntityJson";
         String wikiPropPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/EntityProperties";
-        String dbpediaExportPath = "E:/Code/Java/OOP_Project/saveddata/DBPedia/export/";
+        String dbpediaExportPath = "E:/Code/Java/OOP_Project/saveddata/DBPedia/data/";
         String exportDataFolder = "data";
         createFolder(exportDataFolder);
         for (String bigCategory: bigCategories)
         {
-            String path = "data/" + bigCategory;
+            String path = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/data/" + bigCategory;
             String exportDataSubFolder = exportDataFolder + "/" + bigCategory;
             createFolder(exportDataSubFolder);
             HashSet<String> fileList = listAllFiles(path);
