@@ -29,6 +29,14 @@ public class WikiData extends EntityHandling{
         createFolder(superpath + "WebHTML");
     }
 
+    public WikiData(String folderPath)
+    {
+        super(folderPath);
+        if (fileExist(folderPath))
+        createFolder(superpath + "EntityReference");
+        createFolder(superpath + "WebHTML");
+    }
+
     public static void main(String[] args) throws Exception {
         WikiData wikiData = new WikiData();
         //wikiData.getData();

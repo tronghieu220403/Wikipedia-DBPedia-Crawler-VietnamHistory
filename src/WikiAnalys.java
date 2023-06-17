@@ -14,16 +14,25 @@ import org.jsoup.nodes.Element;
 
 public class WikiAnalys extends WikiData{
     public static void main(String[] args) throws Exception {
+        
         WikiAnalys myWikiAnalys = new WikiAnalys();
         //myWikiAnalys.getInvalidEntities();
         //myWikiAnalys.urlToEntities();
         //myWikiAnalys.entityRefFinal();
         //myWikiAnalys.entityFinal();
-        //myWikiAnalys.getFestival();
-        myWikiAnalys.export();
+        //myWikiAnalys.getFestivals();
+        myWikiAnalys.getKings();
+        //myWikiAnalys.export();
     }
 
-    private void getFestival() throws Exception
+    public WikiAnalys()
+    {
+        createFolder(superpath + "/WikiAnalys");
+        //createFolder(superpath + );
+    }
+
+
+    private void getFestivals() throws Exception
     {
         allPFile = listAllFiles("E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\EntityProperties");
         Set<String> bannedFestivalURLs = new HashSet<>(Arrays.asList("https://vi.wikipedia.org/wiki/Lễ_hội_các_dân_tộc_Việt_Nam",
@@ -53,7 +62,6 @@ public class WikiAnalys extends WikiData{
                     if (!urlSet.contains(craftURL))
                     {
                         urlSet.add(craftURL);
-                        writeFile("gg.txt", craftURL + "\n", true);
                     }
                 }
             }
@@ -116,10 +124,136 @@ public class WikiAnalys extends WikiData{
         }
     }
 
-    public WikiAnalys()
+    private void getKings() throws Exception
     {
-        createFolder(superpath + "/WikiAnalys");
-        //createFolder(superpath + );
+        JSONObject urlMapped = getJSONFromFile(superpath + "/WikiAnalys/URLToEntities.json");
+        String[] kingProp = {"Miếu hiệu", "Tôn hiệu hoặc Thụy hiệu", "Niên hiệu", "Thế thứ", "Trị vì"};
+        JSONObject allDynastyJsonObject = getJSONFromFile(superpath + "/VVN.json");
+        HashMap<String, String> dynastyHashMap = new HashMap<>();
+        int cnt = 1;
+        for (String fileName: listAllFiles("data/triều đại lịch sử"))
+        {
+            JSONObject json = getJSONFromFile("data/triều đại lịch sử/" + fileName);
+            String dynastyName = json.getString("label");
+            dynastyHashMap.put(dynastyName, json.getString("id"));
+        }
+
+        for (String dynastyName: getAllKeys(allDynastyJsonObject))
+        {
+            JSONObject dynastyJsonObject = new JSONObject();
+            if (!dynastyHashMap.containsKey(dynastyName))
+            {
+                JSONObject claims = new JSONObject();
+                JSONArray jsonArr = new JSONArray();
+                String qID = "Q" + Integer.toString(cnt) + "X";
+                cnt++;
+                dynastyHashMap.put(dynastyName, qID);
+                JSONObject addObj = new JSONObject();
+                addObj.put("value", "triều đại");
+                addObj.put("type", "string");
+                jsonArr.put(addObj);
+                claims.put("là một", jsonArr);
+                jsonArr = new JSONArray();
+                JSONObject addObj2 = new JSONObject();
+                addObj2.put("value", "Việt Nam");
+                addObj2.put("type", "string");
+                jsonArr.put(addObj2);
+                claims.put("quốc gia", jsonArr);
+                cnt++;
+                dynastyJsonObject.put("claims", claims);
+                dynastyJsonObject.put("overview",  dynastyName + " là một triều đại phong kiến trong lịch sử Việt Nam.");
+                dynastyJsonObject.put("aliases", new JSONArray());
+                dynastyJsonObject.put("id", qID);
+            }
+            else
+            {
+                dynastyJsonObject = getJSONFromFile("data/nhân vật lịch sử/" + dynastyHashMap.get(dynastyName) + ".json");
+            }
+
+            String dynastyQID = dynastyHashMap.get(dynastyName);
+            JSONArray refKingArr = new JSONArray();
+            JSONArray kingArr = allDynastyJsonObject.getJSONArray(dynastyName);
+            for (int i = 0; i < kingArr.length(); i++)
+            {
+                String qID = "";
+                JSONObject king = kingArr.getJSONObject(i);
+                String kingURL = urlDecode(king.getString("link"));
+                JSONObject kingJsonObject = new JSONObject();
+                JSONObject kingClaims = new JSONObject();
+                JSONObject kingRef = new JSONObject();
+                String name = "";
+                if (urlMapped.has(kingURL))
+                {
+                    qID = urlMapped.getString(kingURL);
+                    kingJsonObject = getJSONFromFile("data/nhân vật lịch sử/" + qID + ".json");
+                    kingClaims = kingJsonObject.getJSONObject("claims");
+                    name = kingJsonObject.getString("label");
+                }
+                else
+                {
+                    qID = "Q" + Integer.toString(cnt) + "X";
+                    cnt++;
+                    name = king.getString("Vua");
+                    kingJsonObject.put("label", name);
+                    JSONArray jsonArr = new JSONArray();
+                    JSONObject addObj = new JSONObject();
+                    addObj.put("value", "người");
+                    addObj.put("type", "string");
+                    jsonArr.put(addObj);
+                    kingClaims.put("là một", jsonArr);
+                    jsonArr = new JSONArray();
+                    JSONObject addObj2 = new JSONObject();
+                    addObj2.put("value", "Việt Nam");
+                    addObj2.put("type", "string");
+                    jsonArr.put(addObj2);
+                    kingClaims.put("quốc tịch", jsonArr);
+                    cnt++;
+                }
+                JSONArray kingInstances = kingClaims.getJSONArray("là một");
+                JSONObject kingInstanceObj = new JSONObject();
+                kingInstanceObj.put("type", "string");
+                kingInstanceObj.put("value", "vua");
+                kingInstances.put(kingInstanceObj);
+
+                for (String prop: kingProp)
+                {
+                    JSONArray arr = new JSONArray();
+                    JSONObject propObj = new JSONObject();
+                    propObj.put("type", "string");
+                    propObj.put("value", king.getString(prop));
+                    arr.put(propObj);
+                    kingClaims.put(prop, arr);
+                }
+                if (qID.contains("X"))
+                {
+                    kingJsonObject.put("claims", kingClaims);
+                    kingJsonObject.put("aliases", new JSONArray());
+                    kingJsonObject.put("overview",  dynastyName + " là một vị vua trong lịch sử Việt Nam.");
+                    kingJsonObject.put("id", qID);
+                    kingJsonObject.put("references", new JSONObject());
+                    urlMapped.put(kingURL, qID);
+                }
+                JSONObject refJSONObj = new JSONObject();
+                refJSONObj.put("type", "wikibase-item");
+                refJSONObj.put("value", name);
+                refJSONObj.put("id", qID);
+                refKingArr.put(refJSONObj);
+
+                if (!kingJsonObject.has("triều đại"))
+                {
+                    kingRef.put("type", "wikibase-item");
+                    kingRef.put("value", dynastyName);
+                    kingRef.put("id", dynastyQID);
+                    JSONArray kingRefArr = new JSONArray();
+                    kingRefArr.put(kingRef);
+                    kingJsonObject.put("triều đại", kingRefArr);
+                }
+            }
+            dynastyJsonObject.put("references", (new JSONObject()).put("vua", refKingArr));
+            writeFile("gg.json", dynastyJsonObject.toString(), false);
+            break;
+        }
+        
     }
 
     HashMap<String, String> urlToEntitiesHashMap = new HashMap<>();
