@@ -21,6 +21,7 @@ public class Testing extends DataHandling {
                 filePaths.add(path + "/" + fileName);
             }
         }
+        /*
         for (String bigCategory: bigCategories)
         {
             String path = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/data/" + bigCategory;
@@ -30,21 +31,23 @@ public class Testing extends DataHandling {
                 filePaths.add(path + "/" + fileName);
             }
         }
+        */
         String path = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/EntityFinal";
         for (String fileName: listAllFiles(path))
         {
-            filePaths.add(path + "/" + fileName);
+            //filePaths.add(path + "/" + fileName);
         }
         path = "E:\\Code\\Java\\OOP_Project\\saveddata\\DBPedia\\data";
         for (String fileName: listAllFiles(path))
         {
-            filePaths.add(path + "\\" + fileName);
+            //filePaths.add(path + "\\" + fileName);
         }
-        String str = "nằm trong phạm vi của khu vực hành chính của";
+        String str = "nằm trong phạm vi của khu vực hành chính";
 
+        /*
         int cnt = 0;
-        String erase = "nằm trong phạm vi của khu vực hành chính";
-        String replace = "khu vực";
+        String erase = "Lãnh chúa (Anh Quốc)";
+        String replace = "lãnh chúa";
         for (String filePath: filePaths)
         {
             String s = readFileAll(filePath);
@@ -57,10 +60,19 @@ public class Testing extends DataHandling {
             }
         }
         print(cnt);
+        */
         for (String filePath: filePaths)
         {
-            if (filePath.length()>0) continue;
-            JSONObject json = getJSONFromFile(filePath);
+            //if (filePath.length()>0) continue;
+            try{
+                JSONObject json = getJSONFromFile(filePath);
+            }
+            catch (Exception e)
+            {
+                print(filePath);
+                return;
+            }
+            /*
             boolean check = false;
             if (json.has("claims"))
             {
@@ -69,12 +81,6 @@ public class Testing extends DataHandling {
                 {
                     claims.put(replace, claims.get(erase));
                     claims.remove(erase);
-                    check = true;
-                }
-                if (claims.has(erase + " của"))
-                {
-                    claims.put(replace + " của", claims.get(erase + " của"));
-                    claims.remove(erase + " của");
                     check = true;
                 }
             }
@@ -94,8 +100,9 @@ public class Testing extends DataHandling {
                 //print(filePath);
                 //writeFile(filePath, json.toString(), false);
             }
+            */
         }
-        print(cnt);
+        //print(cnt);
 
         /*
 

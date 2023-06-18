@@ -20,7 +20,7 @@ public class DBPediaData extends EntityHandling {
         DBPediaData dbpediaData = new DBPediaData();
         //dbpediaData.getData();
         dbpediaData.syncData();
-        dbpediaData.merge();
+        //dbpediaData.merge();
     }
 
     /**
