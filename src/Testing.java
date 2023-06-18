@@ -37,7 +37,7 @@ public class Testing extends DataHandling {
             //filePaths.add(path + "/" + fileName);
         }
         int cnt = 0;
-        String erase = "bản mẫu chính của chủ đề";
+        String erase = "trang Web";
         for (String filePath: filePaths)
         {
             JSONObject json = getJSONFromFile(filePath);
