@@ -40,11 +40,11 @@ public class Testing extends DataHandling {
         {
             filePaths.add(path + "\\" + fileName);
         }
-        String str = "nằm trong phạm vi của khu vực hành chính";
+        String str = "nằm trong phạm vi của khu vực hành chính của";
 
         int cnt = 0;
-        String erase = "Lãnh chúa (Anh Quốc)";
-        String replace = "lãnh chúa";
+        String erase = "nằm trong phạm vi của khu vực hành chính";
+        String replace = "khu vực";
         for (String filePath: filePaths)
         {
             String s = readFileAll(filePath);
@@ -69,6 +69,12 @@ public class Testing extends DataHandling {
                 {
                     claims.put(replace, claims.get(erase));
                     claims.remove(erase);
+                    check = true;
+                }
+                if (claims.has(erase + " của"))
+                {
+                    claims.put(replace + " của", claims.get(erase + " của"));
+                    claims.remove(erase + " của");
                     check = true;
                 }
             }
