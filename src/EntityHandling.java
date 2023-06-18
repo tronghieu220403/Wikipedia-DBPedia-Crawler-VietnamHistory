@@ -172,6 +172,11 @@ public class EntityHandling extends DataHandling{
         }
     }
 
+    public void callBack()
+    {
+        return;
+    }
+
     /**
      * Check if the URL is valid.
      * @return {@code true} if the URL is valid; otherwise, return {@code false}.
