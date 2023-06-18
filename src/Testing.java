@@ -21,7 +21,6 @@ public class Testing extends DataHandling {
                 filePaths.add(path + "/" + fileName);
             }
         }
-        /*
         for (String bigCategory: bigCategories)
         {
             String path = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/data/" + bigCategory;
@@ -31,23 +30,23 @@ public class Testing extends DataHandling {
                 filePaths.add(path + "/" + fileName);
             }
         }
-        */
         String path = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/EntityFinal";
         for (String fileName: listAllFiles(path))
         {
-            //filePaths.add(path + "/" + fileName);
+            filePaths.add(path + "/" + fileName);
         }
         path = "E:\\Code\\Java\\OOP_Project\\saveddata\\DBPedia\\data";
         for (String fileName: listAllFiles(path))
         {
-            //filePaths.add(path + "\\" + fileName);
+            filePaths.add(path + "\\" + fileName);
         }
-        String str = "nằm trong phạm vi của khu vực hành chính";
+        String str = "địa điểm";
+
+        int cnt = 0;
+        String erase = "nằm trong phạm vi của khu vực hành chính";
+        String replace = "địa phương";
 
         /*
-        int cnt = 0;
-        String erase = "Lãnh chúa (Anh Quốc)";
-        String replace = "lãnh chúa";
         for (String filePath: filePaths)
         {
             String s = readFileAll(filePath);
@@ -64,22 +63,22 @@ public class Testing extends DataHandling {
         for (String filePath: filePaths)
         {
             //if (filePath.length()>0) continue;
+            JSONObject json;
             try{
-                JSONObject json = getJSONFromFile(filePath);
+                json = getJSONFromFile(filePath);
             }
             catch (Exception e)
             {
                 print(filePath);
                 return;
             }
-            /*
             boolean check = false;
             if (json.has("claims"))
             {
                 JSONObject claims = json.getJSONObject("claims");
                 if (claims.has(erase))
                 {
-                    claims.put(replace, claims.get(erase));
+                    //claims.put(replace, claims.get(erase));
                     claims.remove(erase);
                     check = true;
                 }
@@ -89,7 +88,7 @@ public class Testing extends DataHandling {
                 JSONObject ref = json.getJSONObject("references");
                 if (ref.has(erase))
                 {
-                    ref.put(replace, ref.get(erase));
+                    //ref.put(replace, ref.get(erase));
                     ref.remove(erase);
                     check = true;
                 }
@@ -100,9 +99,8 @@ public class Testing extends DataHandling {
                 //print(filePath);
                 //writeFile(filePath, json.toString(), false);
             }
-            */
         }
-        //print(cnt);
+        print(cnt);
 
         /*
 
