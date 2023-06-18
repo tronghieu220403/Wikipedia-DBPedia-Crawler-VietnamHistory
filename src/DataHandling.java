@@ -276,21 +276,6 @@ abstract class DataHandling {
     }
 
     /**
-     * Check if a file exists
-     * @param filePath Path to file.
-     * @return return {@code true} if file exists; otherwise, return {@code false}.
-     */
-    public final static boolean isFileExists(String filePath)
-    {
-        File file = new File(filePath);
-
-        if (file.exists()) {
-            return true;
-        }
-        return false;
-    }
-
-    /**
      * Check if a string contains upper case character.
      * @param str
      * @return return {@code true} if the string contains upper case character; otherwise, return {@code false}.

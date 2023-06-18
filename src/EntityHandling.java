@@ -17,7 +17,6 @@ public class EntityHandling extends DataHandling{
     protected final String INITIALIZE_PATH;
     protected final String LOGS_PATH;
     protected final String ENTITY_JSON_PATH;
-
     //files
     protected final String BEGIN_URLS_PATH;
     protected final String CRAFTED_URLS_PATH;
@@ -46,7 +45,6 @@ public class EntityHandling extends DataHandling{
         createFolder(LOGS_PATH);
         ENTITY_JSON_PATH = LOGS_PATH + "/EntityJson/";
         createFolder(ENTITY_JSON_PATH);
-        
         BEGIN_URLS_PATH = LOGS_PATH + "BeginURLs.txt";
         CRAFTED_URLS_PATH = LOGS_PATH + "CraftedURLs.txt";
         ANALYSED_URLS_PATH = LOGS_PATH + "AnalysedURLs.txt";
@@ -131,7 +129,7 @@ public class EntityHandling extends DataHandling{
     /**
      Add URL and its depth to crafed URL list.
      */
-    protected final void addURLToCrafed(String urlString, int depth) throws Exception
+    protected final void addToCrafedURL(String urlString, int depth) throws Exception
     {
         if (craftedURLsHashMap.containsKey(urlString) == false) {
             if (depth < 3)
@@ -158,7 +156,7 @@ public class EntityHandling extends DataHandling{
 
     protected final void addToAnalysedURL(String urlString) throws Exception
     {
-        if (!analysedURLsHashSet.contains(urlString))
+        if (!existInAnalysedURL(urlString))
         {
             analysedURLsHashSet.add(urlString);
             writeFile(ANALYSED_URLS_PATH, urlString + '\n', true);
@@ -167,7 +165,7 @@ public class EntityHandling extends DataHandling{
 
     protected final void addToFailedURL(String urlString) throws Exception
     {
-        if (!failedURLsHashSet.contains(urlString))
+        if (!existInAnalysedURL(urlString))
         {
             failedURLsHashSet.add(urlString);
             writeFile(FAILED_URLS_PATH, urlString + '\n', true);
