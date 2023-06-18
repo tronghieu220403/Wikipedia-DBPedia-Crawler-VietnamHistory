@@ -103,6 +103,7 @@ public class EntityHandling extends DataHandling{
             }
             deque.removeFirst();
         }
+        callBack();
     }
 
     /**
@@ -172,7 +173,7 @@ public class EntityHandling extends DataHandling{
         }
     }
 
-    public void callBack()
+    public void callBack() throws Exception
     {
         return;
     }

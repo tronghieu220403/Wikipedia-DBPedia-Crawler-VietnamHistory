@@ -25,7 +25,6 @@ public class WikiData extends EntityHandling{
     public static void main(String[] args) throws Exception {
         WikiData wikiData = new WikiData("E:/Code/Java/OOP_Project/saveddata/Wikipedia/");
         wikiData.getData();
-        wikiData.getProperties();
     }
 
     private final String ENTITY_PROPERTIES_PATH = LOGS_PATH + "/EntityProperties/";
@@ -45,12 +44,14 @@ public class WikiData extends EntityHandling{
         }
         createFolder(ENTITY_PROPERTIES_PATH);
         createFolder(ENTITY_REFERENCE_PATH);
+        createFolder(HTML_PATH);
     }
 
 
     @Override
-    public void callBack()
+    public void callBack() throws Exception
     {
+        getProperties();
         return;
     }
 
