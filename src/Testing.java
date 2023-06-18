@@ -34,32 +34,31 @@ public class Testing extends DataHandling {
         HashSet<String> fileList = listAllFiles(path);
         for (String fileName: fileList)
         {
-            //filePaths.add(path + "/" + fileName);
+            filePaths.add(path + "/" + fileName);
         }
         int cnt = 0;
-        String erase = "trang Web";
+        String erase = "Endemia";
+        String replace = "dịch lưu hành địa phương";
         for (String filePath: filePaths)
         {
             JSONObject json = getJSONFromFile(filePath);
             boolean check = false;
-            JSONObject claims = new JSONObject();
             if (json.has("claims"))
-                claims = json.getJSONObject("claims");
-            else
             {
-                print("No claims " + filePath);
-                break;
-            }
-            if (claims.has(erase))
-            {
-                claims.remove(erase);
-                check = true;
+                JSONObject claims = json.getJSONObject("claims");
+                if (claims.has(erase))
+                {
+                    claims.put(replace, claims.get(erase));
+                    claims.remove(erase);
+                    check = true;
+                }
             }
             if (json.has("references"))
             {   
                 JSONObject ref = json.getJSONObject("references");
                 if (ref.has(erase))
                 {
+                    ref.put(replace, ref.get(erase));
                     ref.remove(erase);
                     check = true;
                 }
