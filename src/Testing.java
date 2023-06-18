@@ -31,11 +31,17 @@ public class Testing extends DataHandling {
             }
         }
         String path = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/EntityFinal";
-        HashSet<String> fileList = listAllFiles(path);
-        for (String fileName: fileList)
+        for (String fileName: listAllFiles(path))
         {
             filePaths.add(path + "/" + fileName);
         }
+        path = "E:\\Code\\Java\\OOP_Project\\saveddata\\DBPedia\\data";
+        for (String fileName: listAllFiles(path))
+        {
+            filePaths.add(path + "\\" + fileName);
+        }
+        String str = "nằm trong phạm vi của khu vực hành chính";
+
         int cnt = 0;
         String erase = "Endemia";
         String replace = "dịch lưu hành địa phương";
@@ -46,21 +52,30 @@ public class Testing extends DataHandling {
             if (json.has("claims"))
             {
                 JSONObject claims = json.getJSONObject("claims");
-                if (claims.has(erase))
+                HashSet<String> del = new HashSet<>();
+                for (String p: getAllKeys(claims))
                 {
-                    claims.put(replace, claims.get(erase));
-                    claims.remove(erase);
-                    check = true;
+                    if (!p.matches(".*[a-zA-Z].*"))
+                    {
+                        claims.remove(p);
+                        //print(p);
+                        
+                        //System.exit(0);
+                        check = true;
+                    }
                 }
+
             }
             if (json.has("references"))
             {   
                 JSONObject ref = json.getJSONObject("references");
-                if (ref.has(erase))
+                for (String p: getAllKeys(ref))
                 {
-                    ref.put(replace, ref.get(erase));
-                    ref.remove(erase);
-                    check = true;
+                    if (!p.matches(".*[a-zA-Z].*"))
+                    {
+                        ref.remove(p);
+                        check = true;
+                    }
                 }
             }   
             if (check == true)
