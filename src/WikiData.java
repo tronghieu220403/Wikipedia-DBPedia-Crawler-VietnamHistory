@@ -58,6 +58,9 @@ public class WikiData extends EntityHandling{
     @Override
     public void getVietnamRelatedEntity() throws Exception{
 
+        if (fileExist(INITIALIZE_PATH + "/FromVietnam.json")){
+            throw new FileNotFoundException("Please create file FromVietnam.json that contains entities related to Vietnam in this folder: " + INITIALIZE_PATH);
+        }
         JSONArray myJsonArray = new JSONArray(readFileAll(INITIALIZE_PATH + "/FromVietnam.json"));
         vietnamEntityHashSet.clear();
 
