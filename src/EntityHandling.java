@@ -6,27 +6,30 @@ import java.util.List;
 
 
 public class EntityHandling extends DataHandling{
-    protected boolean isRelated = false;
+
     protected HashSet<String> vietnamEntityHashSet = new HashSet<>();
     protected HashSet<String> propertyHashSet = new HashSet<>();
     //root path:
-    protected String superpath;
-    //files
-    protected String beginURLsPath;
-    protected String craftedURLsPath;
-    protected String analysedURLsPath;
-    protected String failedURLsPath;
-    //folders:
-    protected static String entityJsonPath;
-    protected static String entityPropertiesPath;
-    protected String htmlPath;
+    protected final String ROOT_PATH;
 
-    protected Deque<Pair> deque = new ArrayDeque<>();
-    protected HashSet<String> failedURLsHashSet;
-    protected HashSet<String> analysedURLsHashSet;
-    protected HashMap<String, Integer> craftedURLsHashMap = new HashMap<>();
-    protected int totalAnalysed;
-    protected int limitAmountAnalysis = 15000;
+    //folders:
+    protected final String DATA_PATH;
+    protected final String INITIALIZE_PATH;
+    protected final String LOGS_PATH;
+    protected final String ENTITY_JSON_PATH;
+
+    //files
+    protected final String BEGIN_URLS_PATH;
+    protected final String CRAFTED_URLS_PATH;
+    protected final String ANALYSED_URLS_PATH;  // Đổi tên thành AcceptedURL
+    protected final String FAILED_URLS_PATH;    // Đổi tên thành RejectedURL
+
+    private Deque<Pair> deque = new ArrayDeque<>();
+    private HashSet<String> failedURLsHashSet;
+    private HashSet<String> analysedURLsHashSet;
+    private HashMap<String, Integer> craftedURLsHashMap = new HashMap<>();
+    private int totalAnalysed;
+    private int limitAmountAnalysis = 15000;
 
     /**
      * Set up an environment for saving data.
@@ -34,16 +37,20 @@ public class EntityHandling extends DataHandling{
      */
     public EntityHandling(String path)
     {
-        superpath = path;
-        craftedURLsPath = superpath + "CraftedURLs.txt";
-        analysedURLsPath = superpath + "AnalysedURLs.txt";
-        failedURLsPath = superpath + "FailedURLs.txt";
-        beginURLsPath = superpath + "BeginURLs.txt";
-        htmlPath = superpath + "WebHtml";
-        entityJsonPath = superpath + "EntityJson";
-        entityPropertiesPath = superpath + "EntityProperties";
-        createFolder(entityJsonPath);
-        createFolder(entityPropertiesPath);
+        ROOT_PATH = path;
+        DATA_PATH = path + "/data/";
+        createFolder(DATA_PATH);
+        INITIALIZE_PATH = path + "/initialize/";
+        createFolder(INITIALIZE_PATH);
+        LOGS_PATH = path + "/logs/";
+        createFolder(LOGS_PATH);
+        ENTITY_JSON_PATH = LOGS_PATH + "/EntityJson/";
+        createFolder(ENTITY_JSON_PATH);
+        
+        BEGIN_URLS_PATH = LOGS_PATH + "BeginURLs.txt";
+        CRAFTED_URLS_PATH = LOGS_PATH + "CraftedURLs.txt";
+        ANALYSED_URLS_PATH = LOGS_PATH + "AnalysedURLs.txt";
+        FAILED_URLS_PATH = LOGS_PATH + "FailedURLs.txt";
     }
 
     public EntityHandling()
@@ -58,19 +65,18 @@ public class EntityHandling extends DataHandling{
     public final void getData() throws Exception
     {
         getVietnamRelatedEntity();
-        failedURLsHashSet = new HashSet<>(readFileAllLine(failedURLsPath));
-        analysedURLsHashSet = new HashSet<>(readFileAllLine(analysedURLsPath));
+        failedURLsHashSet = new HashSet<>(readFileAllLine(FAILED_URLS_PATH));
+        analysedURLsHashSet = new HashSet<>(readFileAllLine(ANALYSED_URLS_PATH));
         totalAnalysed += failedURLsHashSet.size() + analysedURLsHashSet.size();
         if (totalAnalysed > limitAmountAnalysis)
         {
             return;
         }
-        List<String> craftedURLsList = readFileAllLine(craftedURLsPath);
+        List<String> craftedURLsList = readFileAllLine(CRAFTED_URLS_PATH);
         if (craftedURLsList.size()==0)
         {
-            String beginURLs = readFileAll(beginURLsPath);
-            writeFile(craftedURLsPath, beginURLs + 
-            "\n0\n", false);
+            String beginURLs = readFileAll(BEGIN_URLS_PATH);
+            writeFile(CRAFTED_URLS_PATH, beginURLs + "\n0\n", false);
             deque.addLast(new Pair(beginURLs, 0));
             craftedURLsHashMap.put(beginURLs, 0);
         }
@@ -132,7 +138,7 @@ public class EntityHandling extends DataHandling{
             {
                 deque.add(new Pair(urlString, depth + 1));
                 String content = urlString + '\n' + String.valueOf(depth+1)+ '\n';
-                writeFile(craftedURLsPath, content, true);
+                writeFile(CRAFTED_URLS_PATH, content, true);
                 craftedURLsHashMap.put(urlString, depth + 1);
             }
         }
@@ -148,6 +154,24 @@ public class EntityHandling extends DataHandling{
         if (failedURLsHashSet.contains(urlString)) return true;
         if (analysedURLsHashSet.contains(urlString)) return true;
         return false;
+    }
+
+    protected final void addToAnalysedURL(String urlString) throws Exception
+    {
+        if (!analysedURLsHashSet.contains(urlString))
+        {
+            analysedURLsHashSet.add(urlString);
+            writeFile(ANALYSED_URLS_PATH, urlString + '\n', true);
+        }
+    }
+
+    protected final void addToFailedURL(String urlString) throws Exception
+    {
+        if (!failedURLsHashSet.contains(urlString))
+        {
+            failedURLsHashSet.add(urlString);
+            writeFile(FAILED_URLS_PATH, urlString + '\n', true);
+        }
     }
 
     /**

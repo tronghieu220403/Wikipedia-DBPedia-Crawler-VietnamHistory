@@ -140,11 +140,9 @@ abstract class DataHandling {
     {
         List<String> lines = new ArrayList<>();
 
-        File file = new File(filePath);
-        if ((boolean)(file.isFile()) == false){
+        if (fileExist(filePath)){
             return lines;
         }
-
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -201,11 +199,6 @@ abstract class DataHandling {
 
     /**
      * Creates the directory named by this abstract pathname.
-     *
-     * @throws  SecurityException
-     *          If a security manager exists and its {@link
-     *          java.lang.SecurityManager#checkWrite(java.lang.String)}
-     *          method does not permit the named directory to be created
      */
     public final static void createFolder(String folderPath)
     {
