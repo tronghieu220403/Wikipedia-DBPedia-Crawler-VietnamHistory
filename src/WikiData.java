@@ -94,25 +94,25 @@ public class WikiData extends EntityHandling{
             print("Error in " + urlString);
             return;
         }
-
-        // Parse the HTML using Jsoup
         
-        // Write the entity data to "EntityJson" folder if there's exist an qID
         if (existInAnalysedURL(urlString)){
             return;
         }
-        if (checkRelated(wikiPageData) == false){
-            addToFailedURL(urlString);
-            return;
+        
+        // Write the entity data to "EntityJson" and "WebHtml" folder if there's exist a qID
+        if (checkRelated(wikiPageData)){
+            addToAnalysedURL(urlString);
         }
         else{
-            addToAnalysedURL(urlString);
+            addToFailedURL(urlString);
+            return;
         }
                 
         /*
          * Get related URL for this entity.
          * The related URLs is in "EntityReference" folder. 
          */
+        // Parse the HTML using Jsoup
         Document doc = Jsoup.parse(wikiPageData);
         String qID = getEntityID(doc);
 
@@ -132,7 +132,6 @@ public class WikiData extends EntityHandling{
         "#","T%E1%BA%ADp_tin"
     };
     
-
     @Override
     public boolean checkURL(String urlString) {
         if (!urlString.contains("http")) return false;  
@@ -264,10 +263,11 @@ public class WikiData extends EntityHandling{
         return true;
     }
 
+    private static HashMap<String, String> viLabelHashMap = new HashMap<>();
     /**
      * Get the label of entity
      */
-    private String getViLabel(String qID) throws Exception
+    private final String getViLabel(String qID) throws Exception
     {
         if (viLabelHashMap.containsKey(qID))
         {
@@ -298,7 +298,6 @@ public class WikiData extends EntityHandling{
     /**
      * Get the label of entity
      */
-    private static HashMap<String, String> viLabelHashMap = new HashMap<>();
     public static String getViLabel(JSONObject jsonContent, String qID) throws Exception
     {
         String viLabelValue = "";
