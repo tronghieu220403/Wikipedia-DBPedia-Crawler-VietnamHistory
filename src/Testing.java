@@ -23,6 +23,15 @@ public class Testing extends DataHandling {
         }
         for (String bigCategory: bigCategories)
         {
+            String path = "E:\\Code\\Github\\VietNamHistory\\src\\data\\" + bigCategory;
+            HashSet<String> fileList = listAllFiles(path);
+            for (String fileName: fileList)
+            {
+                filePaths.add(path + "\\" + fileName);
+            }
+        }
+        for (String bigCategory: bigCategories)
+        {
             String path = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/data/" + bigCategory;
             HashSet<String> fileList = listAllFiles(path);
             for (String fileName: fileList)
@@ -40,6 +49,7 @@ public class Testing extends DataHandling {
         {
             filePaths.add(path + "\\" + fileName);
         }
+        
         String str = "địa điểm";
 
         int cnt = 0;
