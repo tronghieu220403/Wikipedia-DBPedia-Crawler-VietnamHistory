@@ -1,15 +1,10 @@
 //import java.net.URLEncoder;
-import java.security.Key;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -25,7 +20,7 @@ public class DBPediaData extends EntityHandling {
         DBPediaData dbpediaData = new DBPediaData();
         //dbpediaData.getData();
         dbpediaData.syncData();
-        dbpediaData.merge();
+        //dbpediaData.merge();
     }
 
     /**
@@ -113,15 +108,13 @@ public class DBPediaData extends EntityHandling {
         return;
     }
 
-    private HashSet<Character> bannedChr = new HashSet<>(Arrays.asList( '/', '/', '?', '*', ':', '>', '<', '|', '\"'));
+    private static final char[] BANNED_CHRS = {'/', '/', '?', '*', ':', '>', '<', '|', '\"'};
     
     @Override
     public boolean checkURL(String url) throws Exception {
         url = url.replace("http:", "https:");
-        if (!url.contains("https://dbpedia.org/resource/"))
-        {
-            if (!url.contains("https://dbpedia.org/data/"))
-                return false;
+        if (!url.contains("https://dbpedia.org/resource/") && !url.contains("https://dbpedia.org/data/")){
+            return false;
         }
         if (url.chars().filter(ch -> ch == ':').count() > 1) {
             return false;
@@ -133,10 +126,8 @@ public class DBPediaData extends EntityHandling {
         }
         String name = unicodeDecode(url.replace(url.substring(0, index), ""));
 
-        for (char c: bannedChr)
-        {
-            if (name.contains(Character.toString(c)))
-            {
+        for (char c: BANNED_CHRS){
+            if (name.contains(Character.toString(c))){
                 return false;
             }
         }
