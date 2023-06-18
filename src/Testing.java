@@ -34,33 +34,44 @@ public class Testing extends DataHandling {
         HashSet<String> fileList = listAllFiles(path);
         for (String fileName: fileList)
         {
-            filePaths.add(path + "/" + fileName);
+            //filePaths.add(path + "/" + fileName);
         }
+        int cnt = 0;
+        String erase = "bản mẫu chính của chủ đề";
         for (String filePath: filePaths)
         {
             JSONObject json = getJSONFromFile(filePath);
-            JSONObject claims = json.getJSONObject("claims");
-            for (String propName: getAllKeys(claims))
+            boolean check = false;
+            JSONObject claims = new JSONObject();
+            if (json.has("claims"))
+                claims = json.getJSONObject("claims");
+            else
             {
-                JSONArray jsonArr = claims.getJSONArray(propName);
-                for (int i = 0; i < jsonArr.length(); i++)
-                {
-                    JSONObject obj = jsonArr.getJSONObject(i);   
-                    if (obj.has("qualifiers"))
-                    {
-                        if (obj.getJSONObject("qualifiers").has("lý do lỗi thời"))
-                        {
-                            obj.getJSONObject("qualifiers").remove("lý do lỗi thời");
-                            if (obj.getJSONObject("qualifiers").length() == 0)
-                            {
-                                obj.remove("qualifiers");
-                            }
-                        }
-                    }
-                }
+                print("No claims " + filePath);
+                break;
             }
-            writeFile(filePath, json.toString(), false);
+            if (claims.has(erase))
+            {
+                claims.remove(erase);
+                check = true;
+            }
+            if (json.has("references"))
+            {   
+                JSONObject ref = json.getJSONObject("references");
+                if (ref.has(erase))
+                {
+                    ref.remove(erase);
+                    check = true;
+                }
+            }   
+            if (check == true)
+            {
+                cnt++;
+                //print(filePath);
+                writeFile(filePath, json.toString(), false);
+            }
         }
+        print(cnt);
 
         /*
 
