@@ -49,7 +49,7 @@ public class WikiData extends EntityHandling{
 
 
     @Override
-    public void callBack() throws Exception
+    public void getDataCallBack() throws Exception
     {
         getProperties();
         return;
@@ -76,9 +76,9 @@ public class WikiData extends EntityHandling{
     /**
      * Analize an entity to make sure it is related to Vietnam and write it to logs.<p>
      * Get the HTML content of this URL, also get the entity data and related URLs for this.
-     * @apiNote The HTML content is in "WebHtml" folder. 
-     * @apiNote The entity data is in "EntityJson" folder. 
-     * @apiNote The related URLs is in "EntityReference" folder. 
+     * @apiNote The HTML content is in "logs/WebHtml" folder. 
+     * @apiNote The entity data is in "logs/EntityJson" folder. 
+     * @apiNote The related URLs is in "logs/EntityReference" folder. 
      */
     @Override
     protected void entityAnalys(String urlString, int depth) throws Exception {

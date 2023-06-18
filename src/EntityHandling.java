@@ -58,6 +58,7 @@ public class EntityHandling extends DataHandling{
 
     /**
      * This method is used to scrape data.
+     * @apiNote The getData() function merely retrieves the raw data. Override the getDataCallBack() function located at the end of the getData() function so that, if you need to, you can choose how to process the data to give the best final data.
      * @throws Exception
      */
     public final void getData() throws Exception
@@ -103,11 +104,11 @@ public class EntityHandling extends DataHandling{
             }
             deque.removeFirst();
         }
-        callBack();
+        getDataCallBack();
     }
 
     /**
-     * Set up the limitation of the number of entities to analyze.
+     * Set the limitation of the number of entities to analyze.
      * @param newLimit
      */
     public void setAnalyseLitmit(int newLimit)
@@ -155,6 +156,9 @@ public class EntityHandling extends DataHandling{
         return false;
     }
 
+    /**
+     * Add {@code urlString} to {@code ANALYSED_URLS_PATH}.
+     */
     protected final void addToAnalysedURL(String urlString) throws Exception
     {
         if (!existInAnalysedURL(urlString))
@@ -164,6 +168,9 @@ public class EntityHandling extends DataHandling{
         }
     }
 
+    /**
+     * Add {@code urlString} to {@code FAILED_URLS_PATH}.
+     */
     protected final void addToFailedURL(String urlString) throws Exception
     {
         if (!existInAnalysedURL(urlString))
@@ -173,7 +180,12 @@ public class EntityHandling extends DataHandling{
         }
     }
 
-    public void callBack() throws Exception
+    /**
+     * A callback fucntion for getData
+     * @apiNote 
+     * @throws Exception
+     */
+    public void getDataCallBack() throws Exception
     {
         return;
     }
