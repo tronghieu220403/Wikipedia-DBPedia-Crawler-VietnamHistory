@@ -182,9 +182,7 @@ abstract class DataHandling {
      */
     public final static void writeFile(String filePath, String content, boolean append) throws Exception
     {
-        if (!filePath.contains(":")) {
-            filePath = System.getProperty("user.dir").replace('\\', '/') + "/" + filePath;
-        }
+        filePath = getFullPath(filePath);
 
         File file = new File(filePath);
         if ((boolean)(file.isFile()) == false){
@@ -212,10 +210,7 @@ abstract class DataHandling {
 
     private final static void writeFile(String filePath, String content) throws Exception
     {
-        if (!filePath.contains(":"))
-        {
-            filePath = System.getProperty("user.dir").replace('/', '\\') + "/" + filePath;
-        }
+        filePath = getFullPath(filePath);
         
         File file = new File(filePath);
         if ((boolean)(file.isFile()) == false){
@@ -241,10 +236,7 @@ abstract class DataHandling {
      */
     public final static void createFolder(String folderPath)
     {
-        if (!folderPath.contains(":")) {
-            folderPath = System.getProperty("user.dir").replace('/', '\\') + "\\" + folderPath;
-        }
-        print(folderPath);
+        folderPath = getFullPath(folderPath);
         File folder = new File(folderPath);
         if (!folder.exists()) {  
             // Folder does not exist, create it    
@@ -348,10 +340,7 @@ abstract class DataHandling {
     
     private final static String writeToLogs(String filePath) throws Exception
     {
-        filePath = filePath.replace("/", "\\");
-        if (!filePath.contains(":")){
-            filePath = System.getProperty("user.dir").replace('/', '\\') + "\\" + filePath;
-        }
+        filePath = getFullPath(filePath);
         String s = readFileAll(filePath);
         String fileName = filePath.substring(filePath.lastIndexOf("\\")+1);
         String logsPath = filePath.substring(0,filePath.lastIndexOf("\\")+1) + "logs"+ "\\";
@@ -363,15 +352,24 @@ abstract class DataHandling {
     }
 
     /**
-     * Delete a file.
-     * @param filePath
+     * 
      */
-    public final static void deleteFile(String filePath) throws Exception
+    public final static String getFullPath(String filePath)
     {
         filePath = filePath.replace("/", "\\");
         if (!filePath.contains(":")){
             filePath = System.getProperty("user.dir").replace('/', '\\') + "\\" + filePath;
         }
+        return filePath;
+    }
+
+    /**
+     * Delete a file.
+     * @param filePath
+     */
+    public final static void deleteFile(String filePath) throws Exception
+    {
+        filePath = getFullPath(filePath);
         if (!fileExist(filePath))
             return;
         writeToLogs(filePath);
