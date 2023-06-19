@@ -9,7 +9,9 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashSet;
 import java.util.List;
 import java.io.BufferedReader;
@@ -25,6 +27,8 @@ import org.json.JSONObject;
 
 abstract class DataHandling {   
     protected static long timeNow = System.currentTimeMillis();
+
+    private static final String STR_DATE = (new SimpleDateFormat("yyyy-mm-dd hh:mm:ss")).format(Calendar.getInstance().getTime()).replace(':', '-');
 
     private static int requestRate = 100;
     /**
@@ -178,6 +182,10 @@ abstract class DataHandling {
      */
     public final static void writeFile(String filePath, String content, boolean append) throws Exception
     {
+        if (!filePath.contains(":")) {
+            filePath = System.getProperty("user.dir").replace('\\', '/') + "/" + filePath;
+        }
+
         File file = new File(filePath);
         if ((boolean)(file.isFile()) == false){
             try{
@@ -188,7 +196,38 @@ abstract class DataHandling {
                 throw new Exception("Unable to create file " + filePath);
             }
         }
+        else {
+            String s = readFileAll(filePath);
+            if (s.equals(content) && append == false) return;
+        }
+        writeToLogs(filePath);
         try (FileWriter fout = new FileWriter(filePath, append)){
+            fout.write(content);
+        }
+        catch (IOException e)
+        {
+            throw e;
+        }
+    }
+
+    private final static void writeFile(String filePath, String content) throws Exception
+    {
+        if (!filePath.contains(":"))
+        {
+            filePath = System.getProperty("user.dir").replace('/', '\\') + "/" + filePath;
+        }
+        
+        File file = new File(filePath);
+        if ((boolean)(file.isFile()) == false){
+            try{
+                file.createNewFile();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Unable to create file " + filePath);
+            }
+        }
+        try (FileWriter fout = new FileWriter(filePath, false)){
             fout.write(content);
         }
         catch (IOException e)
@@ -202,10 +241,14 @@ abstract class DataHandling {
      */
     public final static void createFolder(String folderPath)
     {
+        if (!folderPath.contains(":")) {
+            folderPath = System.getProperty("user.dir").replace('/', '\\') + "\\" + folderPath;
+        }
+        print(folderPath);
         File folder = new File(folderPath);
         if (!folder.exists()) {  
             // Folder does not exist, create it    
-            folder.mkdir();
+            folder.mkdirs();
         }
     }
 
@@ -303,25 +346,51 @@ abstract class DataHandling {
         }
     }
     
+    private final static String writeToLogs(String filePath) throws Exception
+    {
+        filePath = filePath.replace("/", "\\");
+        if (!filePath.contains(":")){
+            filePath = System.getProperty("user.dir").replace('/', '\\') + "\\" + filePath;
+        }
+        String s = readFileAll(filePath);
+        String fileName = filePath.substring(filePath.lastIndexOf("\\")+1);
+        String logsPath = filePath.substring(0,filePath.lastIndexOf("\\")+1) + "logs"+ "\\";
+        createFolder(logsPath);
+        createFolder(logsPath + STR_DATE);
+        //print(logsPath + STR_DATE + "\\" + fileName);
+        writeFile(logsPath + STR_DATE + "\\" + fileName, s);
+        return logsPath;
+    }
+
     /**
      * Delete a file.
      * @param filePath
      */
-    public final static void deleteFile(String filePath)
+    public final static void deleteFile(String filePath) throws Exception
     {
+        filePath = filePath.replace("/", "\\");
+        if (!filePath.contains(":")){
+            filePath = System.getProperty("user.dir").replace('/', '\\') + "\\" + filePath;
+        }
         if (!fileExist(filePath))
             return;
+        writeToLogs(filePath);
         File myObj = new File(filePath); 
         myObj.delete();
     }
 
     /**
-     * Move a file from one directory to another.
+     * Move a file from one directory to another.<p>
+     * Examples: <p>
+     * <blockquote><pre>
+     * moveFile("/source/Q1.json", "/destination/Q1.json");
+     * </pre></blockquote>
+     *
      * @param srcFilePath Path of the file to move.
      * @param tarFilePath Path of the file to move it to.
-     * @throws IOException
+     * @throws Exception
      */
-    public final static void moveFile(String srcFilePath, String tarFilePath) throws IOException
+    public final static void moveFile(String srcFilePath, String tarFilePath) throws Exception
     {
         if (fileExist(tarFilePath))
             return;
