@@ -88,21 +88,39 @@ public class Testing extends DataHandling {
             if (json.has("claims"))
             {
                 JSONObject claims = json.getJSONObject("claims");
+                for (String key: getAllKeys(claims))
+                {
+                    if (key.contains("wiki")||key.contains("Wiki"))
+                    {
+                        //print(key);
+                        claims.remove(key);
+                        check = true;
+                    }
+                }
                 if (claims.has(erase))
                 {
                     //claims.put(replace, claims.get(erase));
-                    claims.remove(erase);
-                    check = true;
+                    //claims.remove(erase);
+                    //check = true;
                 }
             }
             if (json.has("references"))
             {   
                 JSONObject ref = json.getJSONObject("references");
+                for (String key: getAllKeys(ref))
+                {
+                    if (key.contains("wiki")||key.contains("Wiki"))
+                    {
+                        //print(key);
+                        ref.remove(key);
+                        check = true;
+                    }
+                }
                 if (ref.has(erase))
                 {
                     //ref.put(replace, ref.get(erase));
-                    ref.remove(erase);
-                    check = true;
+                    //ref.remove(erase);
+                    //check = true;
                 }
             }   
             if (check == true)
