@@ -18,7 +18,7 @@ public class Testing extends DataHandling {
             HashSet<String> fileList = listAllFiles(path);
             for (String fileName: fileList)
             {
-                //filePaths.add(path + "/" + fileName);
+                filePaths.add(path + "/" + fileName);
             }
         }
         for (String bigCategory: bigCategories)
@@ -27,7 +27,7 @@ public class Testing extends DataHandling {
             HashSet<String> fileList = listAllFiles(path);
             for (String fileName: fileList)
             {
-                //filePaths.add(path + "\\" + fileName);
+                filePaths.add(path + "\\" + fileName);
             }
         }
         for (String bigCategory: bigCategories)
@@ -44,9 +44,9 @@ public class Testing extends DataHandling {
         for (String fileName: listAllFiles(path))
         {
             //filePaths.add(path + "/" + fileName);
-            cnt++;
+            //cnt++;
         }
-        print(cnt);
+        //print(cnt);
         path = "E:\\Code\\Java\\OOP_Project\\saveddata\\DBPedia\\data";
         for (String fileName: listAllFiles(path))
         {
@@ -55,7 +55,7 @@ public class Testing extends DataHandling {
         
         String str = "địa điểm";
 
-        String erase = "nằm trong phạm vi của khu vực hành chính";
+        String erase = "bài danh sách Wikimedia";
         String replace = "địa phương";
 
         /*
@@ -109,7 +109,7 @@ public class Testing extends DataHandling {
             {
                 cnt++;
                 //print(filePath);
-                //writeFile(filePath, json.toString(), false);
+                writeFile(filePath, json.toString(), false);
             }
         }
         print(cnt);
