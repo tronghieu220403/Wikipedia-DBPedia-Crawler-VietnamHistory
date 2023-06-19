@@ -1,3 +1,4 @@
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -27,7 +28,7 @@ public class Testing extends DataHandling {
             HashSet<String> fileList = listAllFiles(path);
             for (String fileName: fileList)
             {
-                filePaths.add(path + "\\" + fileName);
+                //filePaths.add(path + "\\" + fileName);
             }
         }
         for (String bigCategory: bigCategories)
@@ -55,6 +56,57 @@ public class Testing extends DataHandling {
         
         String str = "địa điểm";
 
+        JSONObject freq = new JSONObject();
+        JSONObject appear = new JSONObject();
+        JSONObject where = new JSONObject();
+        /*
+        for (String filePath: filePaths)
+        {
+            if (filePath.contains("nhân vật lịch sử"))
+            {
+                JSONObject json;
+                try{
+                    json = getJSONFromFile(filePath);
+                }
+                catch (Exception e)
+                {
+                    print(filePath);
+                    return;
+                }
+                if (json.has("claims"))
+                {
+                    JSONObject claims = json.getJSONObject("claims");
+                    for (String key: getAllKeys(claims))
+                    {
+                        if (!freq.has(key))
+                        {
+                            String value = claims.getJSONArray(key).getJSONObject(0).getString("value");
+                            freq.put(key, 1);
+                            appear.put(key, value);
+                            where.put(key, filePath);
+                        }
+                        else{
+                            freq.put(key, freq.getInt(key) + 1);
+                        }
+                    }
+                }
+            }
+        }
+        for (String key: getAllKeys(freq))
+        {
+            writeFile("human-prop.txt", where.getString(key) + '\n', true);
+            writeFile("human-prop.txt", "Name: " + key + "\n    Appear: " + Integer.valueOf(freq.getInt(key)) + '\n', true);
+            writeFile("human-prop.txt", "    " + key + ": " + appear.getString(key) + '\n', true);
+            writeFile("human-prop.txt", "\n", true);
+        }
+        */
+    
+        for (String filePath: filePaths)
+        {
+            if (!filePath.contains("nhân vật lịch sử"))
+                writeFile("non-human.txt", getJSONFromFile(filePath).getString("overview") + "\n" + filePath + "\n\n", true);
+        }
+        
         String erase = "bài danh sách Wikimedia";
         String replace = "địa phương";
 
@@ -127,7 +179,7 @@ public class Testing extends DataHandling {
             {
                 cnt++;
                 //print(filePath);
-                writeFile(filePath, json.toString(), false);
+                //writeFile(filePath, json.toString(), false);
             }
         }
         print(cnt);
