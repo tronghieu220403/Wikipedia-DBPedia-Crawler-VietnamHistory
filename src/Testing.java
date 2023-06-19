@@ -18,7 +18,7 @@ public class Testing extends DataHandling {
             HashSet<String> fileList = listAllFiles(path);
             for (String fileName: fileList)
             {
-                filePaths.add(path + "/" + fileName);
+                //filePaths.add(path + "/" + fileName);
             }
         }
         for (String bigCategory: bigCategories)
@@ -27,7 +27,7 @@ public class Testing extends DataHandling {
             HashSet<String> fileList = listAllFiles(path);
             for (String fileName: fileList)
             {
-                filePaths.add(path + "\\" + fileName);
+                //filePaths.add(path + "\\" + fileName);
             }
         }
         for (String bigCategory: bigCategories)
@@ -36,23 +36,25 @@ public class Testing extends DataHandling {
             HashSet<String> fileList = listAllFiles(path);
             for (String fileName: fileList)
             {
-                filePaths.add(path + "/" + fileName);
+                //filePaths.add(path + "/" + fileName);
             }
         }
-        String path = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/EntityFinal";
+        int cnt = 0;
+        String path = "E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\logs\\WikiAnalys\\EntityFinal\\";
         for (String fileName: listAllFiles(path))
         {
-            filePaths.add(path + "/" + fileName);
+            //filePaths.add(path + "/" + fileName);
+            cnt++;
         }
+        print(cnt);
         path = "E:\\Code\\Java\\OOP_Project\\saveddata\\DBPedia\\data";
         for (String fileName: listAllFiles(path))
         {
-            filePaths.add(path + "\\" + fileName);
+            //filePaths.add(path + "\\" + fileName);
         }
         
         String str = "địa điểm";
 
-        int cnt = 0;
         String erase = "nằm trong phạm vi của khu vực hành chính";
         String replace = "địa phương";
 

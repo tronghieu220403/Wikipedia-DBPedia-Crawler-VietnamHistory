@@ -1,9 +1,11 @@
 /**
  *  The "WikiData" class provides useful methods for analyzing Wikipedia pages and extracting relevant information related to entities in Vietnam.
  */
+import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+
 import org.json.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -22,44 +24,56 @@ class Pair
 
 public class WikiData extends EntityHandling{
     
+    public static void main(String[] args) throws Exception {
+        WikiData wikiData = new WikiData("E:/Code/Java/OOP_Project/saveddata/Wikipedia/");
+        wikiData.getData();
+    }
+
+    private final String ENTITY_PROPERTIES_PATH = LOGS_PATH + "/EntityProperties/";
+    private final String HTML_PATH = LOGS_PATH + "/WebHtml/";
+    protected final String ENTITY_REFERENCE_PATH = LOGS_PATH + "EntityReference/";;
+
     public WikiData()
     {
-        super("E:/Code/Java/OOP_Project/saveddata/Wikipedia/");
-        createFolder(superpath + "EntityReference");
-        createFolder(superpath + "WebHTML");
+        throw new IllegalArgumentException("File path must be provided.");
     }
 
-    public WikiData(String folderPath)
+    public WikiData(String folderPath) throws FileNotFoundException
     {
         super(folderPath);
-        if (fileExist(folderPath))
-        createFolder(superpath + "EntityReference");
-        createFolder(superpath + "WebHTML");
+        if (!fileExist(folderPath)) {
+            throw new FileNotFoundException("Folder doesn't exist: " + folderPath);
+        }
+        createFolder(ENTITY_PROPERTIES_PATH);
+        createFolder(ENTITY_REFERENCE_PATH);
+        createFolder(HTML_PATH);
     }
 
-    public static void main(String[] args) throws Exception {
-        WikiData wikiData = new WikiData();
-        //wikiData.getData();
-        wikiData.getAdditionalData();
-        //wikiData.getProperties();
-    }
 
-    HashSet<String> allQFile = listAllFiles(entityJsonPath);
-    HashSet<String> allPFile = listAllFiles(entityPropertiesPath);
+    @Override
+    public void getDataCallBack() throws Exception
+    {
+        getProperties();
+        return;
+    }
 
     @Override
     public void getVietnamRelatedEntity() throws Exception{
 
-        JSONArray myJsonArray = new JSONArray(readFileAll(superpath + "VietnamRelated/FromVietnam.json"));
+        if (fileExist(INITIALIZE_PATH + "/FromVietnam.json")){
+            throw new FileNotFoundException("Please create file FromVietnam.json that contains entities related to Vietnam in this folder: " + INITIALIZE_PATH);
+        }
+        JSONArray myJsonArray = new JSONArray(readFileAll(INITIALIZE_PATH + "/FromVietnam.json"));
         vietnamEntityHashSet.clear();
+
         for (int i = 0; i < myJsonArray.length(); i++) {
             JSONObject tmpJsonObject = myJsonArray.getJSONObject(i);
-            String tmpEntity = (String)tmpJsonObject.get("item");
+            String tmpEntity = tmpJsonObject.getString("item");
             tmpEntity = tmpEntity.replace("http://www.wikidata.org/entity/", "");
             vietnamEntityHashSet.add(tmpEntity);
         }
 
-        writeFile(superpath + "VietnamRelated/VietnamRelated.json", new JSONArray(vietnamEntityHashSet).toString(), false);
+        writeFile(INITIALIZE_PATH + "/VietnamRelated.json", new JSONArray(vietnamEntityHashSet).toString(), false);
 
         return;
     }
@@ -67,89 +81,69 @@ public class WikiData extends EntityHandling{
     /**
      * Analize an entity to make sure it is related to Vietnam and write it to logs.<p>
      * Get the HTML content of this URL, also get the entity data and related URLs for this.
-     * @apiNote The HTML content is in "WebHtml" folder. 
-     * @apiNote The entity data is in "EntityJson" folder. 
-     * @apiNote The related URLs is in "EntityReference" folder. 
+     * @apiNote The HTML content is in "logs/WebHtml" folder. 
+     * @apiNote The entity data is in "logs/EntityJson" folder. 
+     * @apiNote The related URLs is in "logs/EntityReference" folder. 
      */
     @Override
     protected void entityAnalys(String urlString, int depth) throws Exception {
         
+        // Check if urlString is a valid Wikipedia URL .
         urlString = urlString.replace("\n", "");
-        if (checkURL(urlString) == false)
-        {
+        if (checkURL(urlString) == false){
             return;
         }
-        String data = "";
+        String wikiPageData = "";
         try {
-            data = getDataFromURL(urlString).toString();
+            wikiPageData = getDataFromURL(urlString).toString();
         } catch (Exception e) {
-            //System.out.println("Error in " + url);    
-            return;
-        }
-
-        // Parse the HTML using Jsoup
-        Document doc = Jsoup.parse(data);
-        String qID = getEntityID(doc);
-        if (!qID.equals(""))
-        {
-            if (fileExist(superpath + "WebHtml/" + qID + ".html"))
-            {
-                if (fileExist(superpath + "EntityJson/" + qID + ".json"))
-                {
-                    writeFile(analysedURLsPath, urlString + '\n', true);
-                    return;
-                }
-                else {
-                    writeFile(failedURLsPath, urlString + '\n', true);
-                    return;
-                }
-            }
-            // Write the HTML content to "WebHtml" folder. 
-            writeFile(superpath + "WebHtml/" + qID + ".html", data, false);
-        }
-        else {
-            writeFile(failedURLsPath, urlString + '\n', true);
+            print("Error in " + urlString);
             return;
         }
         
-        // Write the entity data to "EntityJson" folder if there's exist an qID
-        if (!checkRelated(qID))
-        {
-            writeFile(failedURLsPath, urlString + '\n', true);
+        if (existInAnalysedURL(urlString)){
             return;
         }
         
-        writeFile(analysedURLsPath, urlString + '\n', true);
-        
+        // Write the entity data to "EntityJson" and "WebHtml" folder if there's exist a qID
+        if (!checkRelated(wikiPageData)){
+            addToFailedURL(urlString);
+            return;
+        }
+                
         /*
          * Get related URL for this entity.
          * The related URLs is in "EntityReference" folder. 
          */
+        // Parse the HTML using Jsoup
+        Document doc = Jsoup.parse(wikiPageData);
+        String qID = getEntityID(doc);
+
         Element divTag = doc.getElementById("mw-content-text"); 
         for (Element aTag : divTag.select("a")) {
             String href = aTag.attr("href");
             String refURL = "https://vi.wikipedia.org" + href; 
             if (!checkURL(refURL)) continue;         
             
-            writeFile(superpath + "EntityReference/" + qID + ".txt", refURL + '\n', true);
-            addURLToCrafed(refURL, depth);
+            writeFile(ENTITY_REFERENCE_PATH + qID + ".txt", refURL + '\n', true);
+            addToCrafedURL(refURL, depth);
         }
+        addToAnalysedURL(urlString);
         return;
     }
 
-    private String[] filter = {
-        "#","T%E1%BA%ADp_tin", 
-        "File:", "Wikipedia:",
-        "Th%E1%BB%83_lo%E1%BA%A1i:"
+    private final String[] FILTER = {
+        "#","T%E1%BA%ADp_tin"
     };
     
-
     @Override
     public boolean checkURL(String urlString) {
+        if (!urlString.contains("http")) return false;  
+
         if (urlString == null || urlString.isEmpty()) return false;  
         if (!urlString.contains("/wiki/")) return false;
         
-        for (String text : filter) {
+        for (String text : FILTER) {
             if (urlString.contains(text)) return false;
         }
         
@@ -165,42 +159,43 @@ public class WikiData extends EntityHandling{
      * @param entityJSON the JSON of an entity.
      * @return Member variable isRelated is {@code true} if that entity has any properties that are related to Vietnam, else {@code false}.
      */
-    private void JSONAnalysis(Object entityJSON)
+    private boolean JSONAnalysis(Object entityJSON)
     {
-        if (isRelated == true)
-            return;
         if (entityJSON instanceof JSONArray)
         {
             for (int i = 0; i < ((JSONArray) entityJSON).length(); i++) { 
-                JSONAnalysis(((JSONArray) entityJSON).get(i));
+                if (JSONAnalysis(((JSONArray) entityJSON).get(i)) == true) {
+                    return true;
+                }
             }
         }
         else if (entityJSON instanceof JSONObject)
         {
-            if (((JSONObject) entityJSON).has("numeric-id"))
+            JSONObject qJSON = (JSONObject) entityJSON;
+            if (qJSON.has("numeric-id"))
             {
-                if (vietnamEntityHashSet.contains(((JSONObject) entityJSON).get("id")))
-                {
-                    isRelated = true;
-                    return;
+                if (vietnamEntityHashSet.contains(qJSON.get("id"))) {
+                    return true;
                 }
             }
-            Iterator<String> keys = ((JSONObject) entityJSON).keys();
-            while (keys.hasNext()) {
-                String key = keys.next();
-                Object value = ((JSONObject) entityJSON).get(key);
-                
+            for(String key: getAllKeys(qJSON)){
+                Object value = qJSON.get(key);
                 if (value instanceof JSONObject) {
-                    JSONAnalysis((JSONObject) value);
+                    if (JSONAnalysis((JSONObject) value) == true){
+                        return true;
+                    }
                 } else if (value instanceof JSONArray) {
-                    JSONAnalysis((JSONArray) value);
+                    if (JSONAnalysis((JSONArray) value) == true){
+                        return true;
+                    }
                 }
             }
         }
+        return false;
     }
 
     /**
-     * Get the ID of an entity.
+     * Get the ID of an entity from a Wikipedia page.
      * @param soupHWND HTML content parsed by Jsoup library.
      * @return That entity's ID of that soupHWND
      */
@@ -220,57 +215,169 @@ public class WikiData extends EntityHandling{
         return qID;
     }
 
+
+    private final String VIETNAM_WORD[] = {"Vi\\u1ec7t Nam", "Vietnam","Việt Nam", "Viet Nam", "việt nam", };
+
     /**
      * Check if the entity is related to Vietnam.
      * @param qID
      * @return Return {@code true} if it is related; otherwise return {@code false}.
      */
+
     @Override
-    public boolean checkRelated(String qID) throws Exception {
-        if (qID.isEmpty())
+    public boolean checkRelated(String wikiPageData) throws Exception {
+        Document doc = Jsoup.parse(wikiPageData);
+        String qID = getEntityID(doc);
+        if (!qID.isEmpty())
         {
-            return false;
+            // Write the HTML content to "WebHtml" folder. 
+            writeFile(HTML_PATH + qID + ".html", wikiPageData, false);
         }
-        if (fileExist(superpath + "EntityJson/" + qID +".json") == true)
-        {
-            return true;
+        else {
+            return false;
         }
 
         String entityURL = "https://www.wikidata.org/wiki/Special:EntityData/" + qID + ".json";
-        JSONObject jsonData = getJSONFromURL(entityURL);
+        String content = getDataFromURL(entityURL).toString();
+        JSONObject json;
+        if (!content.isEmpty())
+            return false;
+        json = new JSONObject(content);
         
-        isRelated = false;
-        JSONAnalysis(jsonData);
-        if (isRelated == false)
+    
+        if (JSONAnalysis(json) == false)
             return false;
-        String content = (jsonData).toString();
-        try{
-            getViLabel(jsonData, qID);
+        if (getViLabel(json, qID).isEmpty())
+            return false;
+        
+        boolean check = false;
+        for (String vnWord: VIETNAM_WORD) {
+            if (content.contains(vnWord)){
+                check = true;
+                break;
+            }
         }
-        catch (Exception e)
-        {
+        if (check == false) return false;
+
+        JSONObject entities  = json.getJSONObject("entities");
+        JSONObject entitiyJson = entities.getJSONObject(qID);
+        // If an entity has no sitelinks to Wikipedia then that entity is virtual. We will put it into the ENTITY_PROPERTIES_PATH
+        if (getSitelink(entitiyJson, qID, "viwiki").equals("")) {
+            writeFile(ENTITY_PROPERTIES_PATH + qID +".json", content , false);
             return false;
         }
-        writeFile(superpath + "EntityJson/" + qID +".json", content , false);
+        
+        // If an entity is a human (Q5) and there exist at least one year, it must be less than 1962.
+        if (getInstance(entitiyJson).equals("Q5")){
+            int entityMinYear = getMinYear(entitiyJson);
+            if (entityMinYear > 1962 && entityMinYear != 100000) {
+                writeFile(ENTITY_PROPERTIES_PATH + qID +".json", content , false);
+            }
+        }
+
+        writeFile(ENTITY_JSON_PATH + qID +".json", content , false);
         return true;
+    }
+
+    private int getMinYear(Object entityJSON)
+    {
+        int minYear = 100000;
+        if (entityJSON instanceof JSONArray) {
+            for (int i = 0; i < ((JSONArray) entityJSON).length(); i++) { 
+                minYear = Math.min(getMinYear(((JSONArray)entityJSON).get(i)), minYear);
+                if (minYear < 1962) {
+                    return minYear;
+                }
+            }
+        }
+        else if (entityJSON instanceof JSONObject) {
+            JSONObject json = (JSONObject) entityJSON;
+            if (json.has("datatype")) {
+                if ((json.getString("datatype")).equals("time")) {
+                    if (!json.has("datavalue"))
+                        return minYear;
+                    JSONObject datavalue = json.getJSONObject("datavalue");
+                    if (datavalue.has("value")) {
+                        String time = datavalue.getJSONObject("value").getString("time");
+                        String sign = time.substring(0,1);
+                        if (sign.equals("-")) {
+                            minYear = 0; 
+                        }
+                        else minYear = Integer.parseInt(time.substring(1,5));
+                    }
+                }
+                return minYear;
+            }
+            for (String key: getAllKeys(json)){
+                if (key.equals("references")){
+                    continue;
+                }
+                Object value = json.get(key);
+                if (value instanceof JSONObject) {
+                    minYear = Math.min(getMinYear((JSONObject) value), minYear);
+                } else if (value instanceof JSONArray) {
+                    minYear = Math.min(getMinYear((JSONArray) value), minYear);
+                }
+                if (minYear < 1962) {
+                    return minYear;
+                }
+            }
+        }
+        return minYear;
+    }
+
+
+    private final String getSitelink(JSONObject entitiyContent, String qID, String wikiLang) throws Exception
+    {
+        JSONObject sitelinks = (JSONObject )entitiyContent.get("sitelinks");
+        String sitelink = "";
+        if (sitelinks.has(wikiLang)) {
+            sitelink = sitelinks.getJSONObject(wikiLang).getString("url");
+        }
+        return sitelink;
+    }
+
+    private final String getInstance(JSONObject entitiyContent)
+    {
+        String instance = "";
+        JSONObject claims = (JSONObject)entitiyContent.get("claims");
+        if (!claims.has("P31")){
+            return instance;
+        }
+        JSONArray p31Arr = (JSONArray)(claims.get("P31"));
+        for (int i = 0 ; i < p31Arr.length() ; i++)
+        {
+            JSONObject mainsnak = ((JSONObject)(p31Arr.getJSONObject(i).get("mainsnak")));
+            if (mainsnak.has("datavalue"))
+            {
+                JSONObject datavalue = (JSONObject)(mainsnak.get("datavalue"));
+                JSONObject value = (JSONObject)datavalue.get("value");
+                instance = (String )value.get("id");
+                if (!instance.equals("")) 
+                    break;
+            }
+        }
+        return instance;
+    }
+
+    private static HashMap<String, String> viLabelHashMap = new HashMap<>();
+    /**
+     * Get the label of entity
+     */
+    private final String getViLabel(String qID) throws Exception
+    {
+        if (viLabelHashMap.containsKey(qID)) {
+            return viLabelHashMap.get(qID);
+        }
+        return getViLabel(qID, ENTITY_JSON_PATH, ENTITY_PROPERTIES_PATH);
     }
 
     /**
      * Get the label of entity
      */
-    public String getViLabel(String qID) throws Exception
-    {
-        if (viLabelHashMap.containsKey(qID))
-        {
-            return viLabelHashMap.get(qID);
-        }
-        return getViLabel(qID, entityJsonPath, entityPropertiesPath);
-    }
-
     public static String getViLabel(String qID, String jsonPath1, String jsonPath2) throws Exception
     {
-        if (viLabelHashMap.containsKey(qID))
-        {
+        if (viLabelHashMap.containsKey(qID)) {
             return viLabelHashMap.get(qID);
         }
         String viLabelValue = "";
@@ -286,65 +393,44 @@ public class WikiData extends EntityHandling{
     /**
      * Get the label of entity
      */
-    static private HashMap<String, String> viLabelHashMap = new HashMap<>();
-    protected static String getViLabel(JSONObject jsonContent, String qID) throws Exception
+    public static String getViLabel(JSONObject jsonContent, String qID) throws Exception
     {
+        if (viLabelHashMap.containsKey(qID)) {
+            return viLabelHashMap.get(qID);
+        }
         String viLabelValue = "";
-        JSONObject entities = (JSONObject)jsonContent.get("entities");
-        JSONObject entity = (JSONObject)entities.get(qID);
-        JSONObject labels = (JSONObject)entity.get("labels");
+        if (!jsonContent.has("entities")) return viLabelValue;
+        JSONObject entities = jsonContent.getJSONObject("entities");
+        
+        if (!entities.has(qID)) return viLabelValue;
+        JSONObject entity = entities.getJSONObject(qID);
+       
+        if (!entity.has("labels")) return viLabelValue;
+        JSONObject labels = entity.getJSONObject("labels");
+
         if (labels.has("vi"))
         {
-            JSONObject viLabel = (JSONObject)labels.get("vi");
-            viLabelValue = (String)viLabel.get("value");
-            viLabelHashMap.put(qID, viLabelValue);
+            JSONObject viLabel = labels.getJSONObject("vi");
+            if (viLabel.has("value"))
+            {
+                viLabelValue = viLabel.getString("value");
+                viLabelHashMap.put(qID, viLabelValue);
+            }
         }
-        else
+        else if (entity.has("sitelinks"))
         {
-            JSONObject sitelinks;
-            sitelinks = (JSONObject)entity.get("sitelinks");
+            JSONObject sitelinks =  entity.getJSONObject("sitelinks");;
             if (sitelinks.has("viwiki"))
             {
-                JSONObject viwiki = (JSONObject)sitelinks.get("viwiki");
-                viLabelValue = (String)viwiki.get("title");
-                viLabelHashMap.put(qID, viLabelValue);
+                JSONObject viwiki = sitelinks.getJSONObject("viwiki");
+                if (viwiki.has("title")){
+                    viLabelValue = viwiki.getString("title");
+                    viLabelHashMap.put(qID, viLabelValue);
+                }
             }
         }
         return viLabelValue;
     }
-
-    protected String entityAdditionalJsonPath = superpath + "EntityJsonAdditional";
-    /**
-     * Get all entities contain "Vietnam" word.
-     * @throws Exception
-    */
-    protected void getAdditionalData() throws Exception
-    {
-        createFolder(entityAdditionalJsonPath);
-        HashSet<String> webHTML = listAllFiles(htmlPath);
-        HashSet<String> entityFileList = listAllFiles(entityJsonPath);
-        String vietnamWord[] = {"Vi\\u1ec7t Nam", "Vietnam","Việt Nam", "Viet Nam", "việt nam", };
-        for (String fileName: webHTML)
-        {
-            String name = fileName.replace(".html", ".json");
-            if (!entityFileList.contains(name))
-            {
-                String data;
-                data = getDataFromURL("https://www.wikidata.org/wiki/Special:EntityData/" + name).toString();
-                for (int i = 0; i < 5; i++)
-                {
-                    if (data.contains(vietnamWord[i]))
-                    {
-                        writeFile(superpath + "AnalysedURLsAdditional.txt", name.replace(".json", "") + '\n', true);
-                        writeFile(entityAdditionalJsonPath + "/" + name, data, false);
-                        break;
-                    }
-                }
-            }
-        }
-        copyFilesInFolder(entityAdditionalJsonPath, entityJsonPath);
-    }
-
 
     /**
      * Analyze a JSON Object and add all properties into propertyHashSet
@@ -353,37 +439,29 @@ public class WikiData extends EntityHandling{
      */
     private void jsonPropertiesAnalysis(Object entityJSON, HashSet<String> entityJSONFileList)
     {
-        if (entityJSON instanceof JSONArray)
-        {
+        if (entityJSON instanceof JSONArray) {
             for (int i = 0; i < ((JSONArray) entityJSON).length(); i++) { 
                 jsonPropertiesAnalysis(((JSONArray) entityJSON).get(i), entityJSONFileList);
             }
         }
-        else if (entityJSON instanceof JSONObject)
-        {
-            if (((JSONObject) entityJSON).has("datavalue") &&
-                ((JSONObject) entityJSON).has("property") &&
-                ((JSONObject) entityJSON).has("datatype"))
-            {
-                propertyHashSet.add((String)((JSONObject) entityJSON).get("property"));
-                String datatype = (String)((JSONObject) entityJSON).get("datatype");
-                if (!datatype.equals("wikibase-item") && !datatype.equals("wikibase-property"))
-                {
+        else if (entityJSON instanceof JSONObject) {
+            JSONObject qJSON = (JSONObject) entityJSON;
+            if (qJSON.has("datavalue") && qJSON.has("property") && qJSON.has("datatype")) {
+                propertyHashSet.add(qJSON.getString("property"));
+                String datatype = (String)qJSON.getString("datatype");
+                if (!datatype.equals("wikibase-item") && !datatype.equals("wikibase-property")) {
                     return;
                 }
-                JSONObject datavalue = (JSONObject)((JSONObject) entityJSON).get("datavalue");
-                JSONObject value = (JSONObject)((JSONObject) datavalue).get("value");
-                String id = (String)((JSONObject) value).get("id");
-                if (!entityJSONFileList.contains(id + ".json"))
-                {
+                JSONObject datavalue = qJSON.getJSONObject("datavalue");
+                JSONObject value = datavalue.getJSONObject("value");
+                String id = value.getString("id");
+                if (!entityJSONFileList.contains(id + ".json")) {
                     propertyHashSet.add(id);
                 }
                 return;
             }
-            Iterator<String> keys = ((JSONObject) entityJSON).keys();
-            while (keys.hasNext()) {
-                String key = keys.next();
-                Object value = ((JSONObject) entityJSON).get(key);
+            for (String key: getAllKeys(qJSON)) {
+                Object value = qJSON.get(key);
                 
                 if (value instanceof JSONObject) {
                     jsonPropertiesAnalysis((JSONObject) value, entityJSONFileList);
@@ -396,10 +474,9 @@ public class WikiData extends EntityHandling{
 
     protected void getPropertiesInJson(String root, String fileName, HashSet<String> entityJSONFileList) throws Exception
     {
-        String content = readFileAll(entityJsonPath + '/' + fileName);
+        String content = readFileAll(ENTITY_JSON_PATH + fileName);
         int last = 0;
-        while(true)
-        {
+        while(true) {
             int start = content.indexOf("http://www.wikidata.org/entity/", last);
             if (start == -1) break;
             int end = content.indexOf("\"", start);
@@ -407,8 +484,8 @@ public class WikiData extends EntityHandling{
             propertyHashSet.add(qID);
             last = end;
         }
-        JSONObject entityJSON = new JSONObject(readFileAll(entityJsonPath + '/' + fileName));
-        JSONObject claims = (JSONObject)(((JSONObject) ((JSONObject) entityJSON.get("entities")).get(fileName.replace(".json",""))).get("claims"));
+        JSONObject entityJSON = new JSONObject(readFileAll(ENTITY_JSON_PATH + fileName));
+        JSONObject claims = entityJSON.getJSONObject("entities").getJSONObject(fileName.replace(".json","")).getJSONObject("claims");
         jsonPropertiesAnalysis(claims, entityJSONFileList);
     }
 
@@ -419,60 +496,28 @@ public class WikiData extends EntityHandling{
     @Override
     protected void getProperties() throws Exception
     {
-        if (fileExist(superpath + "PropertiesList.json"))
-        {
-            JSONArray myJsonArray = new JSONArray(readFileAll(superpath + "PropertiesList.json"));
+        if (fileExist(LOGS_PATH + "PropertiesList.json")) {
+            JSONArray myJsonArray = new JSONArray(readFileAll(LOGS_PATH + "PropertiesList.json"));
             for (int i = 0; i < myJsonArray.length(); i++) { 
-                propertyHashSet.add((String)myJsonArray.get(i));
+                propertyHashSet.add(myJsonArray.getString(i));
             }
         }
-        else
-        {
-            HashSet<String> entityFileList = listAllFiles(entityJsonPath);
-            for (String fileName: entityFileList)
-            {
-                if (isFileExists(entityJsonPath + "/" + fileName))
-                {
-                    getPropertiesInJson(entityJsonPath,fileName, entityFileList);
+        else{
+            HashSet<String> entityFileList = listAllFiles(ENTITY_JSON_PATH);
+            for (String fileName: entityFileList){
+                if (fileExist(ENTITY_JSON_PATH + fileName)) {
+                    getPropertiesInJson(ENTITY_JSON_PATH, fileName, entityFileList);
                 }
             }
-            writeFile(superpath + "PropertiesList.json", (new JSONArray(propertyHashSet)).toString(), false);
+            writeFile(LOGS_PATH + "PropertiesList.json", (new JSONArray(propertyHashSet)).toString(), false);
         }
-        HashSet<String> propertyFileList = listAllFiles(entityPropertiesPath);
-        for (String property: propertyHashSet)
-        {
-            if (property.contains("P"))
-            {
-                if (!propertyFileList.contains(property + ".json"))
-                    writeFile(entityPropertiesPath + '/' + property + ".json", getDataFromURL("https://www.wikidata.org/wiki/Special:EntityData/" + property + ".json").toString(),false);
-            }
-        }
-        for (String property: propertyHashSet)
-        {
-            if (property.contains("Q"))
-            {
-                if (!propertyFileList.contains(property + ".json"))
-                    writeFile(entityPropertiesPath + '/' + property + ".json", getDataFromURL("https://www.wikidata.org/wiki/Special:EntityData/" + property + ".json").toString(),false);
-            }
-        }
-        allPFile = listAllFiles(entityPropertiesPath);
-        for (String fileName: allPFile)
-        {
-            try{
-                getViLabel(fileName.replace(".json", ""));
-            }
-            catch(Exception e){
-                deleteFile(entityPropertiesPath + "/" + fileName);
-                print(fileName);
-            }
-        }
-        allPFile = listAllFiles(entityPropertiesPath);
-        for (String fileName: allPFile)
-        {
-            if ((getViLabel(fileName.replace(".json", ""))).isEmpty())
-            {
-                deleteFile(entityPropertiesPath + "/" +fileName);
-                print(fileName);
+        HashSet<String> propertyFileList = listAllFiles(ENTITY_PROPERTIES_PATH);
+        for (String pID: propertyHashSet) {
+            if (!propertyFileList.contains(pID + ".json")) {
+                String data = getDataFromURL("https://www.wikidata.org/wiki/Special:EntityData/" + pID + ".json").toString();
+                if (!getViLabel(new JSONObject(data), pID).isEmpty()) {
+                    writeFile(ENTITY_PROPERTIES_PATH + pID + ".json", data, false);
+                }
             }
         }
     }
