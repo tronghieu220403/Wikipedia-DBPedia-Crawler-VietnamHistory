@@ -2,9 +2,10 @@
  *  The "WikiData" class provides useful methods for analyzing Wikipedia pages and extracting relevant information related to entities in Vietnam.
  */
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
+import java.util.Set;
 
 import org.json.*;
 import org.jsoup.Jsoup;
@@ -53,10 +54,106 @@ public class WikiData extends EntityHandling{
     @Override
     public void getDataCallBack() throws Exception
     {
+        getFestivals();
+        getKings();
         getProperties();
+        
         return;
     }
 
+    private void getFestivals() throws Exception
+    {
+        Set<String> bannedFestivalURLs = new HashSet<>(Arrays.asList("https://vi.wikipedia.org/wiki/Lễ_hội_các_dân_tộc_Việt_Nam",
+            "https://vi.wikipedia.org/wiki/Lễ_hội_Lào",
+            "https://vi.wikipedia.org/wiki/Lễ_hội_Nhật_Bản",
+            "https://vi.wikipedia.org/wiki/Lễ_hội_Thái_Lan", "https://vi.wikipedia.org/wiki/Lễ_hội", "https://vi.wikipedia.org/wiki/Lễ_hội_Việt_Nam"));
+        String urls[] = {"https://vi.wikipedia.org/wiki/L%E1%BB%85_h%E1%BB%99i_c%C3%A1c_d%C3%A2n_t%E1%BB%99c_Vi%E1%BB%87t_Nam", "https://vi.wikipedia.org/wiki/L%E1%BB%85_h%E1%BB%99i_Vi%E1%BB%87t_Nam"};
+        HashSet<String> urlSet = new HashSet<>();
+        urlSet.add("https://vi.wikipedia.org/wiki/Giỗ_Tổ_Hùng_Vương");
+        for (String urlString: urls)
+        {
+            String data = "";
+            try {
+                data = getDataFromURL(urlString).toString();
+            } catch (Exception e) {
+                System.out.println("Error in " + urlString);    
+                return;
+            }
+            Document doc = Jsoup.parse(data);
+            Element divTag = doc.getElementById("mw-content-text"); 
+
+            for (Element aTag : divTag.select("a")) {
+                String href = aTag.attr("href");
+                String craftURL = "https://vi.wikipedia.org" + href; 
+                if (!checkURL(craftURL)) continue;
+                craftURL = urlDecode(craftURL);
+                if ((craftURL.contains("Lễ_hội") || craftURL.contains("Hội")) && !bannedFestivalURLs.contains(craftURL)){
+                    if (!urlSet.contains(craftURL))
+                    {
+                        urlSet.add(craftURL);
+                    }
+                }
+            }
+        }
+        HashSet<String> qIDSet = new HashSet<>();
+        for (String urlString: urlSet)
+        {
+            String data = "";
+            try {
+                data = getDataFromURL(urlString).toString();
+            } catch (Exception e) {
+                //System.out.println("Error in " + url);    
+                return;
+            }
+            Document doc = Jsoup.parse(data);
+            String qID = getEntityID(doc);
+            if (qID.equals("")) continue;
+            writeFile(superpath + "WebHtml/" + qID + ".html", data, false);
+            qIDSet.add(qID);
+            String entityURL = "https://www.wikidata.org/wiki/Special:EntityData/" + qID + ".json";
+            JSONObject jsonData = getJSONFromURL(entityURL);
+            writeFile(superpath + "EntityJson/" + qID +".json", jsonData.toString() , false);
+
+            /*
+            * Get related URL for this entity.
+            * The related URLs is in "EntityReference" folder. 
+            */
+            if (!fileExist(superpath + "EntityReference/" + qID + ".txt"))
+            {
+                Element divTag = doc.getElementById("mw-content-text"); 
+                for (Element aTag : divTag.select("a")) {
+                    String href = aTag.attr("href");
+                    String refURL = "https://vi.wikipedia.org" + href; 
+                    if (!checkURL(refURL)) continue;         
+                    
+                    writeFile(superpath + "EntityReference/" + qID + ".txt", urlDecode(refURL) + '\n', true);
+                }
+            }
+            JSONObject json = getVietnameseWikiReadable(qID + ".json");
+            //json.getJSONObject("claims").
+            JSONObject claims = json.getJSONObject("claims");
+            JSONObject addObj = new JSONObject();
+            addObj.put("value", "lễ hội");
+            addObj.put("type", "string");
+            JSONArray jsonArr = new JSONArray();
+            jsonArr.put(addObj);
+            claims.put("là một", jsonArr);
+            if (!claims.has("quốc gia"))
+            {
+                JSONObject addObj2 = new JSONObject();
+                addObj2.put("value", "Việt Nam");
+                addObj2.put("type", "wikibase-item");
+                addObj2.put("id", "Q881");
+                jsonArr = new JSONArray();
+                jsonArr.put(addObj2);
+                claims.put("quốc gia", jsonArr);
+            }
+            writeFile("E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\WikiAnalys\\Category\\export\\lễ hội văn hóa\\" + qID + ".json", json.toString(), false);
+            writeFile("E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\WikiAnalys\\EntityFinal\\" + qID + ".json", json.toString(), false);
+        }
+    }
+
+    
     @Override
     public void getVietnamRelatedEntity() throws Exception{
 
@@ -86,7 +183,7 @@ public class WikiData extends EntityHandling{
      * @apiNote The related URLs is in "logs/EntityReference" folder. 
      */
     @Override
-    protected void entityAnalys(String urlString, int depth) throws Exception {
+    protected void entityAnalys(String urlString, int depth, boolean checkRelated) throws Exception {
         
         // Check if urlString is a valid Wikipedia URL .
         urlString = urlString.replace("\n", "");
@@ -106,11 +203,11 @@ public class WikiData extends EntityHandling{
         }
         
         // Write the entity data to "EntityJson" and "WebHtml" folder if there's exist a qID
-        if (!checkRelated(wikiPageData)){
+        if (checkRelated == true && !checkRelated(wikiPageData)){
             addToFailedURL(urlString);
             return;
         }
-                
+
         /*
          * Get related URL for this entity.
          * The related URLs is in "EntityReference" folder. 
@@ -225,7 +322,7 @@ public class WikiData extends EntityHandling{
      */
 
     @Override
-    public boolean checkRelated(String wikiPageData) throws Exception {
+    public boolean checkRelated(String wikiPageData, boolean forceRelated) throws Exception {
         Document doc = Jsoup.parse(wikiPageData);
         String qID = getEntityID(doc);
         if (!qID.isEmpty())
@@ -243,7 +340,6 @@ public class WikiData extends EntityHandling{
         if (!content.isEmpty())
             return false;
         json = new JSONObject(content);
-        
     
         if (JSONAnalysis(json) == false)
             return false;

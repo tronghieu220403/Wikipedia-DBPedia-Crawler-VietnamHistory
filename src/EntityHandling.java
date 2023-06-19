@@ -99,7 +99,7 @@ public class EntityHandling extends DataHandling{
             String urlString = deque.getFirst().first;
             if ( depth <= 3 && totalAnalysed <= limitAmountAnalysis)
             {
-                entityAnalys(urlString, depth);
+                entityAnalys(urlString, depth, true);
                 totalAnalysed++;
             }
             deque.removeFirst();
@@ -212,7 +212,7 @@ public class EntityHandling extends DataHandling{
         throw new UnsupportedOperationException("Unimplemented method 'checkRelated' from EntityHandling. Must be overriden in subclasss.");
     }
 
-    protected void entityAnalys(String url, int depth) throws Exception {
+    protected void entityAnalys(String url, int depth, boolean checkRelated) throws Exception {
         throw new UnsupportedOperationException("Unimplemented method 'entityAnalys' from EntityHandling. Must be overriden in subclasss.");
     }
 

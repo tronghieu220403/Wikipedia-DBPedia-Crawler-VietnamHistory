@@ -17,8 +17,8 @@ public class WikiAnalys extends WikiData{
         
         WikiAnalys myWikiAnalys = new WikiAnalys();
         myWikiAnalys.getInvalidEntities();
-        //myWikiAnalys.urlToEntities();
-        //myWikiAnalys.entityRefFinal();
+        myWikiAnalys.urlToEntities();
+        myWikiAnalys.entityRefFinal();
         //myWikiAnalys.entityFinal();
         //myWikiAnalys.getFestivals();
         //myWikiAnalys.getKings();
@@ -41,6 +41,7 @@ public class WikiAnalys extends WikiData{
             "https://vi.wikipedia.org/wiki/Lễ_hội_Thái_Lan", "https://vi.wikipedia.org/wiki/Lễ_hội", "https://vi.wikipedia.org/wiki/Lễ_hội_Việt_Nam"));
         String urls[] = {"https://vi.wikipedia.org/wiki/L%E1%BB%85_h%E1%BB%99i_c%C3%A1c_d%C3%A2n_t%E1%BB%99c_Vi%E1%BB%87t_Nam", "https://vi.wikipedia.org/wiki/L%E1%BB%85_h%E1%BB%99i_Vi%E1%BB%87t_Nam"};
         HashSet<String> urlSet = new HashSet<>();
+        urlSet.add("https://vi.wikipedia.org/wiki/Giỗ_Tổ_Hùng_Vương");
         for (String urlString: urls)
         {
             String data = "";
@@ -66,7 +67,6 @@ public class WikiAnalys extends WikiData{
                 }
             }
         }
-        urlSet.add("https://vi.wikipedia.org/wiki/Giỗ_Tổ_Hùng_Vương");
         HashSet<String> qIDSet = new HashSet<>();
         for (String urlString: urlSet)
         {
