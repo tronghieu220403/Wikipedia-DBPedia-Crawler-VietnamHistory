@@ -19,10 +19,10 @@ public class WikiAnalys extends WikiData{
         myWikiAnalys.getInvalidEntities();
         myWikiAnalys.urlToEntities();
         myWikiAnalys.entityRefFinal();
-        //myWikiAnalys.entityFinal();
+        myWikiAnalys.entityFinal();
         //myWikiAnalys.getFestivals();
         //myWikiAnalys.getKings();
-        myWikiAnalys.export();
+        myWikiAnalys.;
     }
 
     public WikiAnalys()
@@ -74,7 +74,7 @@ public class WikiAnalys extends WikiData{
             try {
                 data = getDataFromURL(urlString).toString();
             } catch (Exception e) {
-                //System.out.println("Error in " + url);    
+                System.out.println("Error in " + url);    
                 return;
             }
             Document doc = Jsoup.parse(data);
@@ -398,42 +398,38 @@ public class WikiAnalys extends WikiData{
         writeFile(wikiAnalysPath + "/" + "URLToEntities.json" , (new JSONObject(urlToEntitiesHashMap)).toString(), false);
     }
 
-    public final void entityRefFinal() throws Exception
+    private final void getEntityRef(String qID)
     {
-        HashSet<String> allQRefFile = listAllFiles(superpath + "EntityReference/");
-        HashMap<String, HashSet<String> > refList = new HashMap<String, HashSet<String>>();
-        for (String fileName: allQRefFile)
+        String qID = fileName.replace(".txt", "");
+        List<String> qRef = readFileAllLine(superpath + "EntityReference/" + fileName);
+        for (String urlString: qRef)
         {
-            String qID = fileName.replace(".txt", "");
-            List<String> qRef = readFileAllLine(superpath + "EntityReference/" + fileName);
-            for (String urlString: qRef)
+            urlString = urlDecode(urlString);
+            if (urlToEntitiesHashMap.containsKey(urlString))
             {
-                urlString = urlDecode(urlString);
-                if (urlToEntitiesHashMap.containsKey(urlString))
+                String entityID1 = urlToEntitiesHashMap.get(urlString);
+                if (!refList.containsKey(qID))
                 {
-                    String entityID1 = urlToEntitiesHashMap.get(urlString);
-                    if (!refList.containsKey(qID))
-                    {
-                        HashSet<String> h = new HashSet<>();
-                        h.add(entityID1);
-                        refList.put(qID, h);
-                    }
-                    else
-                    {
-                        refList.get(qID).add(entityID1);
-                    }
-                    if (!refList.containsKey(entityID1))
-                    {
-                        HashSet<String> h = new HashSet<>();
-                        h.add(qID);
-                        refList.put(entityID1, h);
-                    }
-                    else
-                    {
-                        refList.get(entityID1).add(qID);
-                    }
+                    HashSet<String> h = new HashSet<>();
+                    h.add(entityID1);
+                    refList.put(qID, h);
+                }
+                else
+                {
+                    refList.get(qID).add(entityID1);
+                }
+                if (!refList.containsKey(entityID1))
+                {
+                    HashSet<String> h = new HashSet<>();
+                    h.add(qID);
+                    refList.put(entityID1, h);
+                }
+                else
+                {
+                    refList.get(entityID1).add(qID);
                 }
             }
+        }
         }
         refList.forEach((key, value) -> {
             try {
@@ -441,7 +437,8 @@ public class WikiAnalys extends WikiData{
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        });
+        };
+
     }
 
     public String getOverview(String qID)
@@ -478,98 +475,8 @@ public class WikiAnalys extends WikiData{
         return overview;
     }
 
-    private final JSONObject propertyProcess(JSONObject infoObj) throws Exception
-    {
-        JSONObject jsonObj = new JSONObject();
-        String datatype = (String)infoObj.get("datatype");
-        JSONObject datavalue = new JSONObject();
-        if (!infoObj.has("datavalue"))
-        {
-            return jsonObj;
-        }
-        datavalue = (JSONObject)infoObj.get("datavalue");
-        if (datatype.equals("wikibase-item") || datatype.equals("wikibase-property"))
-        {
-            JSONObject value = (JSONObject)datavalue.get("value");
-            String id = (String)value.get("id");
-            if (allQFile.contains(id + ".json")){
-                jsonObj.put("value", getViLabel(id));
-                jsonObj.put("id", id);
-                jsonObj.put("type", "wikibase-item");
-            }
-            else if (allPFile.contains(id + ".json"))
-            {
-                String viLabel = getViLabel(id);
-                if (!viLabel.isEmpty()){
-                    jsonObj.put("value", viLabel);
-                    jsonObj.put("type", "string");
-                }
 
-            }
-        }
-        else if (datatype.equals("quantity"))
-        {
-            JSONObject value = (JSONObject)datavalue.get("value");
-            String amount = ((String)value.get("amount")).replace("+", "");
-            String unit = (String)value.get("unit");
-            if (unit.equals("1"))
-            {
-                unit = " ";
-            }
-            else
-            {
-                String qID = unit.replace("http://www.wikidata.org/entity/", "");
-                unit = getViLabel(qID); 
-            }
-            jsonObj.put("value", amount + " " + unit);
-            jsonObj.put("type", "string");
-
-        }
-        else if (datatype.equals("string"))
-        {
-            String value = (String)datavalue.get("value");
-            jsonObj.put("value", value);
-            jsonObj.put("type", "string");
-        }
-        else if (datatype.equals("monolingualtext"))
-        {
-            JSONObject value = (JSONObject)datavalue.get("value");
-            String lang = (String)value.get("language");
-            if (lang.equals("vi"))
-            {
-                jsonObj.put("value", (String)value.get("text"));
-                jsonObj.put("type", "string");
-            }
-        }
-        else if (datatype.equals("time"))
-        {
-            JSONObject value = (JSONObject)datavalue.get("value");
-            String time = (String)value.get("time");
-            String year = time.substring(0, 5);
-            String formatDMY = "";
-            if (!year.contains("0000"))
-            {
-                String month = time.substring(6, 8);
-                if (!month.contains("00"))
-                {
-                    String day = time.substring(9, 11);
-                    if (!day.contains("00"))
-                    {
-                        formatDMY = "Ngày " + day + " ";
-                    }
-                    formatDMY += "Tháng " + month + " ";
-                }
-                formatDMY += "Năm " + year.substring(1, 5);
-                if (year.contains("-"))
-                    formatDMY += " trước công nguyên";
-            }
-            jsonObj.put("value", formatDMY);
-            jsonObj.put("type", "string");
-        }
-        return jsonObj;
-    }
-
-    private JSONObject getVietnameseWikiReadable(String fileName) throws Exception
+    private JSONObject getVietnameseWikiReadable(String qID) throws Exception
     {
         if (!fileName.contains(".json"))
         {

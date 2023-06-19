@@ -208,11 +208,13 @@ public class EntityHandling extends DataHandling{
     /**
      * Analize an entity to make sure it is related to Vietnam and write it into logs.
      */
-    protected boolean checkRelated(String data) throws Exception {
+    /*
+    protected boolean checkRelated(String data, boolean forceRelated) throws Exception {
         throw new UnsupportedOperationException("Unimplemented method 'checkRelated' from EntityHandling. Must be overriden in subclasss.");
     }
+    */
 
-    protected void entityAnalys(String url, int depth, boolean checkRelated) throws Exception {
+    protected void entityAnalys(String url, int depth, boolean forceRelated) throws Exception {
         throw new UnsupportedOperationException("Unimplemented method 'entityAnalys' from EntityHandling. Must be overriden in subclasss.");
     }
 
