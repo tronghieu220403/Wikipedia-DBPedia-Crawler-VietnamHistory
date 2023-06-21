@@ -79,14 +79,18 @@ public class WikiData extends EntityHandling{
     public void getDataCallBack() throws Exception
     {
         getFestivals();
+        //getDynasties();
+        //getHumans();
+        //getLocations();
         getProperties();
-        getKings();
         entityRefFinal();
         entityFinal();
 
         handleFestival();
-        handleKing();
-        export();
+        //handleDynasties();
+        //handleHumans();
+        //handleLocations();
+        //export();
         return;
     }
 
@@ -296,22 +300,20 @@ public class WikiData extends EntityHandling{
         * Get claims of entity
         */
         JSONObject myClaims = new JSONObject();
-        JSONObject claims = (JSONObject)entity.get("claims");
-        Iterator<String> properties = ((JSONObject) claims).keys();
-        while (properties.hasNext()) {
-            String propertyID = properties.next();
+        JSONObject claims = entity.getJSONObject("claims");
+        for (String propertyID: getAllKeys(claims))
+        {
             /* Choose that entity if that entity has a name in Vietnamese */
             String propertyName = getViLabel(propertyID);
             if (propertyName.isEmpty())
                 continue;
             
-            JSONArray propertyInfoArr = new JSONArray();
-            propertyInfoArr = (JSONArray)(claims).getJSONArray(propertyID);
+            JSONArray propertyInfoArr = claims.getJSONArray(propertyID);
             JSONArray jsonArray = new JSONArray();
             for (Object info: propertyInfoArr)
             {
                 JSONObject infoObj = (JSONObject) info;
-                JSONObject mainsnak = (JSONObject)infoObj.get("mainsnak");
+                JSONObject mainsnak = infoObj.getJSONObject("mainsnak");
                 JSONObject jsonObj = propertyProcess(mainsnak);
 
                 if (jsonObj.length() == 0) continue;
@@ -322,10 +324,9 @@ public class WikiData extends EntityHandling{
                 if (infoObj.has("qualifiers"))
                 {
                     JSONObject qualifiersJsonObj = new JSONObject();
-                    JSONObject qualifiers = (JSONObject)infoObj.get("qualifiers");
-                    Iterator<String> keys = ((JSONObject) qualifiers).keys();
-                    while (keys.hasNext()) {
-                        String key = keys.next();
+                    JSONObject qualifiers = infoObj.getJSONObject("qualifiers");
+                    for (String key: getAllKeys(qualifiers))
+                    {
                         JSONArray myQualifiersPropertyJsonArray = new JSONArray();
                         JSONArray qualifiersPropertyJsonArr = qualifiers.getJSONArray(key);
                         for (Object propertyInfo: qualifiersPropertyJsonArr)

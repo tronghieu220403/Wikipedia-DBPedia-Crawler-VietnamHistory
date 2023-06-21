@@ -10,6 +10,8 @@ import org.json.JSONObject;
 public class Testing extends DataHandling {
     public static void main(String[] args) throws Exception {
         //String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
+        print(System.getProperty("user.dir"));
+        writeFile("human.txt", "aa", true);
         String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
         StringBuffer sb = new StringBuffer();
         HashSet<String> filePaths = new HashSet<>();
@@ -104,7 +106,9 @@ public class Testing extends DataHandling {
         for (String filePath: filePaths)
         {
             if (!filePath.contains("nhân vật lịch sử"))
-                writeFile("non-human.txt", getJSONFromFile(filePath).getString("overview") + "\n" + filePath + "\n\n", true);
+            {
+                //writeFile("non-human.txt", getJSONFromFile(filePath).getString("overview") + "\n" + filePath + "\n\n", true);
+            }
         }
         
         String erase = "bài danh sách Wikimedia";
