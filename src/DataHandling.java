@@ -354,7 +354,7 @@ abstract class DataHandling {
     /**
      * 
      */
-    public final static String getFullPath(String filePath)
+    private final static String getFullPath(String filePath)
     {
         filePath = filePath.replace("/", "\\");
         if (!filePath.contains(":")){
