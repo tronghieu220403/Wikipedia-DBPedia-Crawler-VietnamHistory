@@ -32,7 +32,9 @@ public class WikiData extends EntityHandling{
     
     public static void main(String[] args) throws Exception {
         WikiData wikiData = new WikiData("E:/Code/Java/OOP_Project/saveddata/Wikipedia/");
+        wikiData.setAnalyseLitmit(0);
         wikiData.getData();
+        wikiData.getDataCallBack();
     }
 
     private HashMap<String, String> urlToEntityHashMap = new HashMap<>();
@@ -49,6 +51,10 @@ public class WikiData extends EntityHandling{
     private final String ENTITY_FINAL_PATH = LOGS_PATH + "EntityFinal/";
     private final String ENTITY_REF_FINAL_PATH = LOGS_PATH + "EntityRefFinal/";
 
+    private HashSet<String> allQFile = listAllFiles(ENTITY_JSON_PATH);
+    private HashSet<String> allPFile = listAllFiles(ENTITY_PROPERTIES_PATH);
+
+
     public WikiData()
     {
         throw new IllegalArgumentException("File path must be provided.");
@@ -57,7 +63,7 @@ public class WikiData extends EntityHandling{
     public WikiData(String folderPath) throws Exception
     {
         super(folderPath);
-        if (!fileExist(folderPath)) {
+        if (!folderExist(folderPath)) {
             throw new FileNotFoundException("Folder doesn't exist: " + folderPath);
         }
         createFolder(ENTITY_PROPERTIES_PATH);
@@ -81,51 +87,17 @@ public class WikiData extends EntityHandling{
         return;
     }
 
-    public final void urlToEntities() throws Exception
-    {
-        if (fileExist(LOGS_PATH + "URLToEntities.json"))
-        {
-            JSONObject jsonContent = getJSONFromFile(LOGS_PATH + "URLToEntities.json");
-            Iterator<String> keys = ((JSONObject) jsonContent).keys();
-            while (keys.hasNext()) {
-                String key = keys.next();
-                urlToEntityHashMap.put(key,(String)((jsonContent).get(key)));
-            }
-            return;
-        }
-        for (String fileName: listAllFiles(ENTITY_JSON_PATH))
-        {
-            JSONObject content = getJSONFromFile(ENTITY_JSON_PATH + fileName);
-            JSONObject entities  = (JSONObject )content.get("entities");
-            String qID = fileName.replace(".json", "");
-            JSONObject entitiyID = (JSONObject )entities.get(qID);
-            JSONObject sitelinks = (JSONObject )entitiyID.get("sitelinks");
-            String sitelinkVN = "";
-            String sitelinkENG = "";
-            if (sitelinks.has("viwiki"))
-            {
-                sitelinkVN = (String )(((JSONObject )(sitelinks.get("viwiki"))).get("url"));
-                urlToEntityHashMap.put(urlDecode(sitelinkVN), qID);
-            }
-            if (sitelinks.has("enwiki"))
-            {
-                sitelinkENG = (String )(((JSONObject )(sitelinks.get("enwiki"))).get("url"));
-                urlToEntityHashMap.put(sitelinkENG, qID);
-            }
-        }
-        writeFile(LOGS_PATH +  "URLToEntities.json" , (new JSONObject(urlToEntityHashMap)).toString(), false);
-    }
-
 
     @Override
     public void getDataCallBack() throws Exception
     {
+        //urlToEntities();
         //getFestivals();
         //getHumans();
         //getLocations();
         //getProperties();
         //entityRefFinal();
-        //entityFinal();
+        entityFinal();
 
         //handleFestival();
         //getDynasties();
@@ -135,6 +107,41 @@ public class WikiData extends EntityHandling{
         //export();
         return;
     }
+
+    public final void urlToEntities() throws Exception
+    {
+        if (fileExist(LOGS_PATH + "URLToEntities.json"))
+        {
+            JSONObject jsonContent = getJSONFromFile(LOGS_PATH + "URLToEntities.json");
+            for (String key: getAllKeys(jsonContent)){
+                urlToEntityHashMap.put(key,jsonContent.getString(key));
+            }
+            return;
+        }
+        for (String fileName: listAllFiles(ENTITY_JSON_PATH))
+        {
+            JSONObject content = getJSONFromFile(ENTITY_JSON_PATH + fileName);
+            JSONObject entities  = content.getJSONObject("entities");
+            String qID = fileName.replace(".json", "");
+            JSONObject entitiyID = entities.getJSONObject(qID);
+            JSONObject sitelinks = entitiyID.getJSONObject("sitelinks");
+            String sitelinkVN = "";
+            String sitelinkENG = "";
+            if (sitelinks.has("viwiki"))
+            {
+                sitelinkVN = sitelinks.getJSONObject("viwiki").getString("url");
+                urlToEntityHashMap.put(urlDecode(sitelinkVN), qID);
+            }
+            if (sitelinks.has("enwiki"))
+            {
+                sitelinkENG = sitelinks.getJSONObject("enwiki").getString("url");
+                urlToEntityHashMap.put(sitelinkENG, qID);
+            }
+        }
+        writeFile(LOGS_PATH +  "URLToEntities.json" , (new JSONObject(urlToEntityHashMap)).toString(), false);
+    }
+
+
 
     private void getDynasties() throws Exception
     {
@@ -360,6 +367,7 @@ public class WikiData extends EntityHandling{
     }
 
     private HashSet<String> festivalHashSet = new HashSet<>();
+
     private void getFestivals() throws Exception
     {
         Set<String> bannedFestivalURLs = new HashSet<>(Arrays.asList("https://vi.wikipedia.org/wiki/Lễ_hội_các_dân_tộc_Việt_Nam",
@@ -392,7 +400,9 @@ public class WikiData extends EntityHandling{
             entityAnalys(urlString, 3, true);
             String qID = urlToEntityHashMap.get(urlString);
             festivalHashSet.add(qID);
+            //print(qID);
         }
+        writeFile(LOGS_PATH +  "URLToEntities.json" , (new JSONObject(urlToEntityHashMap)).toString(), false);
     }
 
     private void handleFestival() throws Exception
@@ -421,7 +431,7 @@ public class WikiData extends EntityHandling{
         }
     }
 
-    public final void entityRefFinal() throws Exception
+    private void entityRefFinal() throws Exception
     {
         HashSet<String> allQRefFile = listAllFiles(ENTITY_REFERENCE_PATH);
         HashMap<String, HashSet<String> > refList = new HashMap<String, HashSet<String>>();
@@ -432,6 +442,7 @@ public class WikiData extends EntityHandling{
             for (String urlString: qRef)
             {
                 urlString = urlDecode(urlString);
+                if (urlString.isEmpty()) continue;
                 if (urlToEntityHashMap.containsKey(urlString))
                 {
                     String qID1 = urlToEntityHashMap.get(urlString);
@@ -462,29 +473,34 @@ public class WikiData extends EntityHandling{
             try {
                 writeFile(ENTITY_REF_FINAL_PATH + key + ".json", (new JSONArray(value)).toString() , false);
             } catch (Exception e) {
-                e.printStackTrace();
+                print("Can not write to file: " + ENTITY_REF_FINAL_PATH + key + ".json", "content: ", (new JSONArray(value)).toString());
             }
         });
     }
 
+
+
     public final void entityFinal() throws Exception
     {
-        String entityFinalPath = ENTITY_FINAL_PATH;
-        HashSet<String> allPFile = listAllFiles(ENTITY_PROPERTIES_PATH);
-        HashSet<String> allQFile = listAllFiles(ENTITY_JSON_PATH);
+        //HashSet<String> allPFile = listAllFiles(ENTITY_PROPERTIES_PATH);
+        allQFile = listAllFiles(ENTITY_JSON_PATH);
+        allPFile = listAllFiles(ENTITY_PROPERTIES_PATH);
+
+        /*
         HashSet<String> propertyEntityHashSet = new HashSet<>();
         for (String fileName: allPFile)
         {
             propertyEntityHashSet.add(fileName.replace(".json",""));
         }
+        */
         for (String fileName: allQFile)
         {
             if (fileExist(ENTITY_FINAL_PATH + fileName)) {
-                continue;
+                //continue;
             }
             String qID = fileName.replace(".json", "");
             JSONObject json = getVietnameseWikiReadable(qID);
-            String writePath = entityFinalPath + "/" + fileName;
+            String writePath = ENTITY_FINAL_PATH + fileName;
             String writeContent = json.toString();
             writeFile(writePath, writeContent, false);
         }
@@ -497,8 +513,8 @@ public class WikiData extends EntityHandling{
         JSONObject json = new JSONObject();
 
         JSONObject content = getJSONFromFile(ENTITY_JSON_PATH + fileName);
-        JSONObject entities = (JSONObject)content.get("entities");
-        JSONObject entity = (JSONObject)entities.get(qID);
+        JSONObject entities = content.getJSONObject("entities");
+        JSONObject entity = entities.getJSONObject(qID);
 
         /*
         * Get ID of entity
@@ -514,11 +530,11 @@ public class WikiData extends EntityHandling{
         * Get description of entity
         */
         String viDescriptionValue = "";
-        JSONObject descriptions = (JSONObject)entity.get("descriptions");
+        JSONObject descriptions = entity.getJSONObject("descriptions");
         if (descriptions.has("vi"))
         {
-            JSONObject viDescriptions = (JSONObject)descriptions.get("vi");
-            viDescriptionValue = (String)viDescriptions.get("value");
+            JSONObject viDescriptions = descriptions.getJSONObject("vi");
+            viDescriptionValue = viDescriptions.getString("value");
             json.put("description", viDescriptionValue);
         }
 
@@ -530,14 +546,14 @@ public class WikiData extends EntityHandling{
         /*
         * Get aliases of entity
         */
-        JSONObject aliases = (JSONObject)entity.get("aliases");
+        JSONObject aliases = entity.getJSONObject("aliases");
         ArrayList<String> myAliases = new ArrayList<>();
         if (aliases.has("vi"))
         {
-            JSONArray viAlias = (JSONArray)aliases.get("vi");
+            JSONArray viAlias = aliases.getJSONArray("vi");
             for (int i = 0 ; i < viAlias.length() ; i++)
             {
-                String viAliasValue = (String)(((JSONObject)(viAlias.get(i))).get("value"));
+                String viAliasValue = viAlias.getJSONObject(i).getString("value");
                 myAliases.add(viAliasValue);
             }
         }
@@ -699,8 +715,10 @@ public class WikiData extends EntityHandling{
                 if ((tag.tagName()).equals("p"))
                 {
                     String tagContent = tag.text();
-                    if (!tagContent.matches(".*[a-zA-Z].*")) continue;
-                    tagContent = tagContent.replaceAll("/[.*?/]","");
+                    String regex = "\\s*\\[[^\\]]*\\]\\s*";
+                    if (tagContent.matches(regex)){
+                        tagContent = tagContent.replaceAll(regex, "");
+                    }
                     overviewSB.append(tagContent);
                     break;
                 }
@@ -714,7 +732,7 @@ public class WikiData extends EntityHandling{
     @Override
     public void getVietnamRelatedEntity() throws Exception{
 
-        if (fileExist(INITIALIZE_PATH + "/FromVietnam.json")){
+        if (!fileExist(INITIALIZE_PATH + "FromVietnam.json")){
             throw new FileNotFoundException("Please create file FromVietnam.json that contains entities related to Vietnam in this folder: " + INITIALIZE_PATH);
         }
         JSONArray myJsonArray = new JSONArray(readFileAll(INITIALIZE_PATH + "/FromVietnam.json"));
@@ -757,7 +775,7 @@ public class WikiData extends EntityHandling{
         if (urlToEntityHashMap.containsKey(urlString))
         {
             qID = urlToEntityHashMap.get(urlString);
-            wikiPageData = readFileAll(HTML_PATH + qID + "json");
+            wikiPageData = readFileAll(HTML_PATH + qID + ".html");
         }
         else{
             // Get page data from Wiki API
@@ -1190,8 +1208,6 @@ public class WikiData extends EntityHandling{
             return jsonObj;
         }
         JSONObject datavalue = infoObj.getJSONObject("datavalue");
-        HashSet<String> allQFile = listAllFiles(ENTITY_JSON_PATH);
-        HashSet<String> allPFile = listAllFiles(ENTITY_PROPERTIES_PATH);
         if (datatype.equals("wikibase-item") || datatype.equals("wikibase-property"))
         {
             JSONObject value = datavalue.getJSONObject("value");
@@ -1208,7 +1224,6 @@ public class WikiData extends EntityHandling{
                     jsonObj.put("value", viLabel);
                     jsonObj.put("type", "string");
                 }
-
             }
         }
         else if (datatype.equals("quantity"))
@@ -1251,14 +1266,14 @@ public class WikiData extends EntityHandling{
             String formatDMY = "";
             if (!year.contains("0000")) {
                 String month = time.substring(6, 8);
-                if (!month.contains("00")) {
+                if (!month.contains("00") && ! month.equals("01")) {
                     String day = time.substring(9, 11);
-                    if (!day.contains("00")) {
-                        formatDMY = "Ngày " + day + " ";
+                    if (!day.equals("00") && ! day.equals("01")) {
+                        formatDMY = "ngày " + day + " ";
                     }
-                    formatDMY += "Tháng " + month + " ";
+                    formatDMY += "tháng " + month + " ";
                 }
-                formatDMY += "Năm " + year.substring(1, 5);
+                formatDMY += "năm " + year.substring(1, 5);
                 if (year.contains("-")) {
                     formatDMY += " trước công nguyên";
                 }
