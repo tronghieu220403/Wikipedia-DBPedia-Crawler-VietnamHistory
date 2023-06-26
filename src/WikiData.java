@@ -15,6 +15,7 @@ import org.json.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 class Pair
 {
@@ -53,7 +54,7 @@ public class WikiData extends EntityHandling{
         throw new IllegalArgumentException("File path must be provided.");
     }
 
-    public WikiData(String folderPath) throws FileNotFoundException
+    public WikiData(String folderPath) throws Exception
     {
         super(folderPath);
         if (!fileExist(folderPath)) {
@@ -70,23 +71,64 @@ public class WikiData extends EntityHandling{
 
         createFolder(ENTITY_FINAL_PATH);
         createFolder(ENTITY_REF_FINAL_PATH);
+        if(fileExist(LOGS_PATH + "URLToEntities.json"))
+        {
+            JSONObject jsonContent = getJSONFromFile(LOGS_PATH + "URLToEntities.json");
+            for (String key: getAllKeys(jsonContent)){
+                urlToEntityHashMap.put(key,(jsonContent).getString(key));
+            }
+        }
+        return;
+    }
 
-
+    public final void urlToEntities() throws Exception
+    {
+        if (fileExist(LOGS_PATH + "URLToEntities.json"))
+        {
+            JSONObject jsonContent = getJSONFromFile(LOGS_PATH + "URLToEntities.json");
+            Iterator<String> keys = ((JSONObject) jsonContent).keys();
+            while (keys.hasNext()) {
+                String key = keys.next();
+                urlToEntityHashMap.put(key,(String)((jsonContent).get(key)));
+            }
+            return;
+        }
+        for (String fileName: listAllFiles(ENTITY_JSON_PATH))
+        {
+            JSONObject content = getJSONFromFile(ENTITY_JSON_PATH + fileName);
+            JSONObject entities  = (JSONObject )content.get("entities");
+            String qID = fileName.replace(".json", "");
+            JSONObject entitiyID = (JSONObject )entities.get(qID);
+            JSONObject sitelinks = (JSONObject )entitiyID.get("sitelinks");
+            String sitelinkVN = "";
+            String sitelinkENG = "";
+            if (sitelinks.has("viwiki"))
+            {
+                sitelinkVN = (String )(((JSONObject )(sitelinks.get("viwiki"))).get("url"));
+                urlToEntityHashMap.put(urlDecode(sitelinkVN), qID);
+            }
+            if (sitelinks.has("enwiki"))
+            {
+                sitelinkENG = (String )(((JSONObject )(sitelinks.get("enwiki"))).get("url"));
+                urlToEntityHashMap.put(sitelinkENG, qID);
+            }
+        }
+        writeFile(LOGS_PATH +  "URLToEntities.json" , (new JSONObject(urlToEntityHashMap)).toString(), false);
     }
 
 
     @Override
     public void getDataCallBack() throws Exception
     {
-        getFestivals();
+        //getFestivals();
         //getHumans();
         //getLocations();
-        getProperties();
-        entityRefFinal();
-        entityFinal();
+        //getProperties();
+        //entityRefFinal();
+        //entityFinal();
 
-        handleFestival();
-        getDynasties();
+        //handleFestival();
+        //getDynasties();
 
         //handleHumans();
         //handleLocations();
@@ -286,6 +328,26 @@ public class WikiData extends EntityHandling{
 
         Document doc = Jsoup.parse(htmlData);
         Element divTag = doc.getElementById("mw-content-text"); 
+        
+        Elements tables = divTag.select("table[align=right]");
+        for (Element table : tables) {
+            table.remove();
+        }
+
+        Element xemThemTag = divTag.selectFirst("h2:has(span#Xem_th\\.C3\\.AAm)"); // Get the Xem thêm tag
+        if (xemThemTag != null) {
+            Element nextElement = xemThemTag.nextElementSibling(); // Get the next element after Xem thêm tag
+            while (nextElement != null) {
+                Element toRemove = nextElement; // Store the current element to remove
+                nextElement = nextElement.nextElementSibling(); // Get the next element
+                toRemove.remove(); // Remove the current element from the DOM
+            }
+        }
+
+        Elements navboxElements = divTag.select("div.navbox"); // Get all elements with class navbox
+        for (Element navboxElement : navboxElements) {
+            navboxElement.remove(); // Remove each navbox element from the DOM
+        }
 
         for (Element aTag : divTag.select("a")) {
             String href = aTag.attr("href");
@@ -691,23 +753,31 @@ public class WikiData extends EntityHandling{
         }
 
         String wikiPageData = "";
-        try {
-            wikiPageData = getDataFromURL(urlString).toString();
-        } catch (Exception e) {
-            print("Error in " + urlString);
-            return;
+        String qID = "";
+        if (urlToEntityHashMap.containsKey(urlString))
+        {
+            qID = urlToEntityHashMap.get(urlString);
+            wikiPageData = readFileAll(HTML_PATH + qID + "json");
         }
-        
-        Document doc = Jsoup.parse(wikiPageData);
-        String qID = getEntityID(doc);
-        if (!qID.isEmpty()){
-            urlToEntityHashMap.put(urlString, qID);
-        }
-        // Write the entity data to "EntityJson" and "WebHtml" folder if there's exist a qID
-        if (!checkRelated(qID, wikiPageData, forceRelated)){
-            if (forceRelated == false)
-                addToFailedURL(urlString);
-            return;
+        else{
+            // Get page data from Wiki API
+            try {
+                wikiPageData = getDataFromURL(urlString).toString();
+            } catch (Exception e) {
+                print("Error in " + urlString);
+                return;
+            }
+            Document doc = Jsoup.parse(wikiPageData);
+            qID = getEntityID(doc);
+            if (!qID.isEmpty()){
+                urlToEntityHashMap.put(urlString, qID);
+            }
+            // Write the entity data to "EntityJson" and "WebHtml" folder if there's exist a qID
+            if (!checkRelated(qID, wikiPageData, forceRelated)){
+                if (forceRelated == false)
+                    addToFailedURL(urlString);
+                return;
+            }
         }
 
         /*
