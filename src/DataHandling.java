@@ -125,7 +125,7 @@ abstract class DataHandling {
             String inputLine;
             while ((inputLine = finp.readLine()) != null)
             {
-                content.append(inputLine);
+                content.append(inputLine + "\n");
             }
         }
         catch (IOException e)
@@ -144,7 +144,7 @@ abstract class DataHandling {
     {
         List<String> lines = new ArrayList<>();
 
-        if (fileExist(filePath)){
+        if (!fileExist(filePath)){
             return lines;
         }
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
@@ -158,6 +158,21 @@ abstract class DataHandling {
 
         return lines;
     }
+
+    /**
+     * Check if a folder exists.
+     * @param folderPath The path to the file to be checked.
+     * @return If the file exists, return {@code true}; otherwise, return {@code false}.
+     */
+    public final static boolean folderExist(String folderPath)
+    {
+        File file = new File(folderPath);
+        if ((boolean)(file.isDirectory()) == false){
+            return false;
+        }
+        return true;
+    }
+
 
     /**
      * Check if a file exists.
@@ -262,7 +277,14 @@ abstract class DataHandling {
      */
     public final static String urlDecode(String urlString) throws Exception
     {
-        return java.net.URLDecoder.decode(urlString, StandardCharsets.UTF_8.name());
+        try {
+            return java.net.URLDecoder.decode(urlString, StandardCharsets.UTF_8.name());
+        }
+        catch (Exception e)
+        {
+            //print("Can not decode string: " + urlString);
+        }
+        return "";
     }
 
     /**
