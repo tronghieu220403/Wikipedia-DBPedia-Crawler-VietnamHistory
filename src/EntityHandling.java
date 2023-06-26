@@ -28,7 +28,7 @@ public class EntityHandling extends DataHandling{
     private HashSet<String> analysedURLsHashSet;
     private HashMap<String, Integer> craftedURLsHashMap = new HashMap<>();
     private int totalAnalysed;
-    private int limitAmountAnalysis = 15000;
+    private int limitAmountAnalysis = 150000;
 
     /**
      * Set up an environment for saving data.

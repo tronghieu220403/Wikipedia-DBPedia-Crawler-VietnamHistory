@@ -5,11 +5,84 @@ import java.util.Iterator;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 
 public class Testing extends DataHandling {
+
+    private final static String[] FILTER = {
+        "#","T%E1%BA%ADp_tin"
+    };
+
+    public static boolean checkURL(String urlString) {
+        if (!urlString.contains("http")) return false;  
+
+        if (urlString == null || urlString.isEmpty()) return false;  
+        if (!urlString.contains("/wiki/")) return false;
+        
+        for (String text : FILTER) {
+            if (urlString.contains(text)) return false;
+        }
+        
+        if (urlString.chars().filter(ch -> ch == ':').count() > 1) {
+            return false;  
+        }
+        
+        return true;  
+    }
+
+
+    private final static HashSet<String> getAllHref(String htmlData) throws Exception
+    {
+
+        HashSet<String> hrefList = new HashSet<>();
+
+        Document doc = Jsoup.parse(htmlData);
+        Element divTag = doc.getElementById("mw-content-text"); 
+        
+        Elements tables = divTag.select("table[align=right]");
+        for (Element table : tables) {
+            table.remove();
+        }
+
+        Element xemThemTag = divTag.selectFirst("h2:has(span#Xem_th\\.C3\\.AAm)"); // Get the Xem thêm tag
+        if (xemThemTag != null) {
+            Element nextElement = xemThemTag.nextElementSibling(); // Get the next element after Xem thêm tag
+            while (nextElement != null) {
+                Element toRemove = nextElement; // Store the current element to remove
+                nextElement = nextElement.nextElementSibling(); // Get the next element
+                toRemove.remove(); // Remove the current element from the DOM
+            }
+        }
+
+        Elements navboxElements = divTag.select("div.navbox"); // Get all elements with class navbox
+        for (Element navboxElement : navboxElements) {
+            navboxElement.remove(); // Remove each navbox element from the DOM
+        }
+        
+        for (Element aTag : divTag.select("a")) {
+            String href = aTag.attr("href");
+            String fullURL = "https://vi.wikipedia.org" + href;
+            if (!checkURL(fullURL)) continue;
+            fullURL = urlDecode(fullURL);
+            hrefList.add(fullURL);
+        }
+        return hrefList;
+    }
+
+
     public static void main(String[] args) throws Exception {
         //String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
+        for (String craftURL: getAllHref(readFileAll("E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\logs\\WebHtml\\Q1010530.html"))){
+            writeFile("gg.txt", craftURL + '\n', true);
+        }
+    }
+
+    public static void trash() throws Exception
+    {
         print(System.getProperty("user.dir"));
         writeFile("human.txt", "aa", true);
         String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
@@ -26,11 +99,11 @@ public class Testing extends DataHandling {
         }
         for (String bigCategory: bigCategories)
         {
-            String path = "E:\\Code\\Github\\VietNamHistory\\src\\data\\" + bigCategory;
+            String path = "E:/Code/Github/VietNamHistory/src/data/" + bigCategory;
             HashSet<String> fileList = listAllFiles(path);
             for (String fileName: fileList)
             {
-                //filePaths.add(path + "\\" + fileName);
+                //filePaths.add(path + "/" + fileName);
             }
         }
         for (String bigCategory: bigCategories)
@@ -43,17 +116,17 @@ public class Testing extends DataHandling {
             }
         }
         int cnt = 0;
-        String path = "E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\logs\\WikiAnalys\\EntityFinal\\";
+        String path = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/logs/WikiAnalys/EntityFinal/";
         for (String fileName: listAllFiles(path))
         {
             //filePaths.add(path + "/" + fileName);
             //cnt++;
         }
         //print(cnt);
-        path = "E:\\Code\\Java\\OOP_Project\\saveddata\\DBPedia\\data";
+        path = "E:/Code/Java/OOP_Project/saveddata/DBPedia/data";
         for (String fileName: listAllFiles(path))
         {
-            //filePaths.add(path + "\\" + fileName);
+            //filePaths.add(path + "/" + fileName);
         }
         
         String str = "địa điểm";
@@ -269,7 +342,7 @@ public class Testing extends DataHandling {
         }
         writeFile("hehe.txt",sb.toString(), false);
         */
+
     }
 
-    
 }
