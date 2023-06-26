@@ -75,10 +75,37 @@ public class Testing extends DataHandling {
 
 
     public static void main(String[] args) throws Exception {
+        print("1[2][4]3".replaceAll("\\s*\\[[^\\]]*\\]\\s*", ""));
+        String a = "E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\logs\\EntityFinal\\";
+        for (String fileName: listAllFiles(a))
+        {
+            JSONObject o = getJSONFromFile(a + fileName);
+            String overv = o.getString("overview");
+            String gg = overv.replaceAll("\\s*\\[[^\\]]*\\]\\s*", "");
+            if (!gg.equals(overv))
+            {
+                o.put("overview", gg);
+                writeFile(a + fileName, o.toString(), false);
+                //print(fileName);
+            }
+        }
+        /*
         //String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
+        String a = "E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\logs\\EntityReference\\";
+        for (String fileName: listAllFiles(a))
+        {
+            String qID = fileName.replace(".txt", "");
+            for (String craftURL: getAllHref(readFileAll("E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\logs\\WebHtml\\" + qID +  ".html"))){
+                writeFile(a + fileName, craftURL + '\n', true);
+            }
+            //String path = a + fileName;
+            //writeFile(path, "", false);
+        }
+        /*
         for (String craftURL: getAllHref(readFileAll("E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\logs\\WebHtml\\Q1010530.html"))){
             writeFile("gg.txt", craftURL + '\n', true);
         }
+        */
     }
 
     public static void trash() throws Exception
