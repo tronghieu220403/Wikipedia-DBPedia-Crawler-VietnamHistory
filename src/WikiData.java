@@ -97,7 +97,7 @@ public class WikiData extends EntityHandling{
         //getLocations();
         //getProperties();
         //entityRefFinal();
-        entityFinal();
+        //entityFinal();
 
         //handleFestival();
         //getDynasties();
@@ -723,7 +723,14 @@ public class WikiData extends EntityHandling{
                     break;
                 }
             }
-            overview = overviewSB.toString();
+            if (overviewSB.length() > 0 && overviewSB.charAt(overviewSB.length()-1) == (char)(':'))
+            {
+                int dot = overviewSB.lastIndexOf(".", overviewSB.length()-1);
+                overview = overviewSB.substring(0, dot + 1);
+            }
+            else{
+                overview = overviewSB.toString();
+            }
         }
         return overview;
     }
