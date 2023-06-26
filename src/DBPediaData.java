@@ -442,7 +442,7 @@ public class DBPediaData extends EntityHandling {
                                     info.put("type", "string");
                                     String dateStr = thirdFloorProp.getString("value");
                                     LocalDate date = LocalDate.parse(dateStr);
-                                    String formattedDate = date.format(DateTimeFormatter.ofPattern("'Ngày' dd 'Tháng' MM 'Năm' yyyy"));
+                                    String formattedDate = date.format(DateTimeFormatter.ofPattern("'ngày' dd 'tháng' MM 'năm' yyyy"));
                                     info.put("value", formattedDate);
                                     analizedJsonArray.put(info);
                                 }
