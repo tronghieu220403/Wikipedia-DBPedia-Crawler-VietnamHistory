@@ -36,14 +36,18 @@ public class EntityHandling extends DataHandling{
      */
     public EntityHandling(String path)
     {
+        if (path.charAt(path.length()-1) != (char)('/') && path.charAt(path.length()-1) != (char)('\\'))
+        {
+            path = path + "/";
+        }
         ROOT_PATH = path;
-        DATA_PATH = path + "/data/";
+        DATA_PATH = path + "data/";
         createFolder(DATA_PATH);
-        INITIALIZE_PATH = path + "/initialize/";
+        INITIALIZE_PATH = path + "initialize/";
         createFolder(INITIALIZE_PATH);
-        LOGS_PATH = path + "/logs/";
+        LOGS_PATH = path + "logs/";
         createFolder(LOGS_PATH);
-        ENTITY_JSON_PATH = LOGS_PATH + "/EntityJson/";
+        ENTITY_JSON_PATH = LOGS_PATH + "EntityJson/";
         createFolder(ENTITY_JSON_PATH);
         BEGIN_URLS_PATH = LOGS_PATH + "BeginURLs.txt";
         CRAFTED_URLS_PATH = LOGS_PATH + "CraftedURLs.txt";
