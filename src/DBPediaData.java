@@ -47,7 +47,7 @@ public class DBPediaData extends EntityHandling {
      * @apiNote The entity data is in "EntityJson" folder. 
      */
     @Override
-    protected void entityAnalys(String url, int depth) throws Exception {
+    protected void entityAnalys(String url, int depth, boolean forceRelated) throws Exception {
         if (checkURL(url)==false) return;
         url = filterURL(url);
         url = url.replace("http:", "https:");
@@ -59,11 +59,11 @@ public class DBPediaData extends EntityHandling {
 
         String entityName = url.replace("https://dbpedia.org/data/", "");
         String content;
-        if (fileExist(superpath + "EntityJson/" + entityName) == true)
+        if (fileExist(ENTITY_JSON_PATH + entityName) == true)
         {
             if (!existInAnalysedURL(url))
             {
-                writeFile(analysedURLsPath, url + '\n', true);
+                writeFile(ANALYSED_URLS_PATH, url + '\n', true);
             }
         }
         else
@@ -72,21 +72,21 @@ public class DBPediaData extends EntityHandling {
             // Check related
             if (checkRelated(content) == false)
             {
-                writeFile(failedURLsPath, url + '\n', true);
+                writeFile(FAILED_URLS_PATH, url + '\n', true);
                 return;
             }
 
-            writeFile(superpath + "EntityJson/" + entityName, content , false);
+            writeFile(ENTITY_JSON_PATH + entityName, content , false);
             if (!existInAnalysedURL(url))
             {
-                writeFile(analysedURLsPath, url + '\n', true);
+                writeFile(ANALYSED_URLS_PATH, url + '\n', true);
             }
         }
 
         int strBegin = 0;
         int strEnd = 0;
         
-        content = readFileAll(superpath + "EntityJson/" + entityName);
+        content = readFileAll(ENTITY_JSON_PATH + entityName);
         while(true)
         {
             strBegin = content.indexOf("http://dbpedia.org/resource/", strEnd);
@@ -103,7 +103,7 @@ public class DBPediaData extends EntityHandling {
                 refURL = refURL + ".json";
             }
             refURL = filterURL(refURL);
-            addURLToCrafed(refURL, depth);
+            addToCrafedURL(refURL, depth);
         }
         return;
     }
@@ -139,7 +139,6 @@ public class DBPediaData extends EntityHandling {
      * @param data String content of DBPedia JSON item.
      * @return Return {@code true} if it is related; otherwise return {@code false}.
      */
-    @Override
     public boolean checkRelated(String data) throws Exception {
         for (String vietnamEntity: vietnamEntityHashSet)
         {
@@ -164,24 +163,24 @@ public class DBPediaData extends EntityHandling {
     @Override
     protected void getProperties() throws Exception
     {
-        if (fileExist(superpath + "PropertiesList.json"))
+        if (fileExist(ROOT_PATH + "PropertiesList.json"))
         {
-            JSONArray myJsonArray = new JSONArray(readFileAll(superpath + "PropertiesList.json"));
+            JSONArray myJsonArray = new JSONArray(readFileAll(ROOT_PATH + "PropertiesList.json"));
             for (int i = 0; i < myJsonArray.length(); i++) { 
                 propertyHashSet.add((String)myJsonArray.get(i));
             }
         }
         else
         {
-            HashSet<String> entityFileList = listAllFiles(entityJsonPath);
+            HashSet<String> entityFileList = listAllFiles(ENTITY_JSON_PATH);
             for (String fileName: entityFileList)
             {
-                if (isFileExists(entityJsonPath + "/" + fileName))
+                if (fileExist(ENTITY_JSON_PATH + fileName))
                 {
-                    getPropertiesInJson(entityJsonPath,fileName, entityFileList);
+                    getPropertiesInJson(ENTITY_JSON_PATH,fileName, entityFileList);
                 }
             }
-            writeFile(superpath + "PropertiesList.json", (new JSONArray(propertyHashSet)).toString(), false);
+            writeFile(ROOT_PATH + "PropertiesList.json", (new JSONArray(propertyHashSet)).toString(), false);
         }
     }
 
@@ -217,7 +216,7 @@ public class DBPediaData extends EntityHandling {
                 qIDHashSet.add(fileName.replaceAll(".json",""));
             }
         }
-        String dbEntityFolder = superpath + "EntityJson/";
+        String dbEntityFolder = ENTITY_JSON_PATH;
 
         JSONObject wikiUrlMapped = new JSONObject();
         JSONObject rawWikiUrlMapped = getJSONFromFile("E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/URLToEntities.json");
@@ -230,7 +229,7 @@ public class DBPediaData extends EntityHandling {
         JSONObject selected = new JSONObject(); 
         JSONObject selectedP = new JSONObject();
 
-        if (!fileExist(superpath + "wikiMapped.json") || !fileExist(superpath + "wikiMappedProp.json"))
+        if (!fileExist(ROOT_PATH + "wikiMapped.json") || !fileExist(ROOT_PATH + "wikiMappedProp.json"))
         {
             HashSet<String> files = listAllFiles(dbEntityFolder);
 
@@ -274,17 +273,17 @@ public class DBPediaData extends EntityHandling {
                     }
                 }   
             }
-            writeFile(superpath + "wikiMapped.json", selected.toString(), false);
-            writeFile(superpath + "wikiMappedProp.json", selectedP.toString(), false);
+            writeFile(ROOT_PATH + "wikiMapped.json", selected.toString(), false);
+            writeFile(ROOT_PATH + "wikiMappedProp.json", selectedP.toString(), false);
         }
         else
         {
-            selected = getJSONFromFile(superpath + "wikiMapped.json");
-            selectedP = getJSONFromFile(superpath + "wikiMappedProp.json");
+            selected = getJSONFromFile(ROOT_PATH + "wikiMapped.json");
+            selectedP = getJSONFromFile(ROOT_PATH + "wikiMappedProp.json");
         }
                 
         JSONObject mappedWikiProp = new JSONObject();
-        if (!fileExist(superpath + "MappedWikiProp.json"))
+        if (!fileExist(ROOT_PATH + "MappedWikiProp.json"))
         {
             HashSet<String> files = listAllFiles(wikiPropPath);
             for (String fileName: files)
@@ -307,17 +306,17 @@ public class DBPediaData extends EntityHandling {
                     mappedWikiProp.put(alias, propViLabel);
                 }
             }
-            writeFile(superpath + "MappedWikiProp.json", mappedWikiProp.toString(), false);
+            writeFile(ROOT_PATH + "MappedWikiProp.json", mappedWikiProp.toString(), false);
         }
         else
         {
-            mappedWikiProp = getJSONFromFile(superpath + "MappedWikiProp.json");
+            mappedWikiProp = getJSONFromFile(ROOT_PATH + "MappedWikiProp.json");
         }
 
         JSONObject dbpediaPropertyTranslate = new JSONObject();
-        if (!fileExist(superpath + "DBPediaPropertyTranslate.json"))
+        if (!fileExist(ROOT_PATH + "DBPediaPropertyTranslate.json"))
         {
-            if (!fileExist(superpath + "AllProperties.txt"))
+            if (!fileExist(ROOT_PATH + "AllProperties.txt"))
             {
                 Iterator<String> keys = selected.keys();
                 while(keys.hasNext())
@@ -353,13 +352,13 @@ public class DBPediaData extends EntityHandling {
                 Iterator<String> propKeys = dbpediaPropertyTranslate.keys();
                 while(propKeys.hasNext())
                 {
-                    writeFile(superpath + "AllProperties.txt", propKeys.next() + "\n", true);
+                    writeFile(ROOT_PATH + "AllProperties.txt", propKeys.next() + "\n", true);
                 }
             }
             else
             {
-                List<String> lines = readFileAllLine(superpath + "AllProperties.txt");
-                List<String> trans = readFileAllLine(superpath + "Translate.txt");
+                List<String> lines = readFileAllLine(ROOT_PATH + "AllProperties.txt");
+                List<String> trans = readFileAllLine(ROOT_PATH + "Translate.txt");
 
                 for (int i = 0; i < lines.size(); i++)
                 {
@@ -373,15 +372,15 @@ public class DBPediaData extends EntityHandling {
                         dbpediaPropertyTranslate.put(lines.get(i), trans.get(i));
                     }
                 }
-                writeFile(superpath + "DBPediaPropertyTranslate.json", dbpediaPropertyTranslate.toString(), false);
+                writeFile(ROOT_PATH + "DBPediaPropertyTranslate.json", dbpediaPropertyTranslate.toString(), false);
             }
         }
         else
         {
-            dbpediaPropertyTranslate = getJSONFromFile(superpath + "DBPediaPropertyTranslate.json");
+            dbpediaPropertyTranslate = getJSONFromFile(ROOT_PATH + "DBPediaPropertyTranslate.json");
         }
 
-        createFolder(superpath + "data");
+        createFolder(ROOT_PATH + "data");
         /*
          * Iterate all selected files
          */
@@ -521,17 +520,18 @@ public class DBPediaData extends EntityHandling {
             if (claims.length() == 0) continue;
             analizedJSON.put("claims", claims);
             String qID = selected.getString(fileName);
-            String writePath = superpath + "data/" + qID + ".json";
+            String writePath = ROOT_PATH + "data/" + qID + ".json";
             writeFile(writePath,  analizedJSON.toString(), false);
         }
 
     }
 
+
     void merge() throws Exception
     {
         String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
-        String wikiEntityPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/EntityJson";
-        String wikiPropPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/EntityProperties";
+        //String wikiEntityPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/EntityJson";
+        //String wikiPropPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/EntityProperties";
         String dbpediaExportPath = "E:/Code/Java/OOP_Project/saveddata/DBPedia/data/";
         String exportDataFolder = "data";
         createFolder(exportDataFolder);
