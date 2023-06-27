@@ -167,8 +167,13 @@ public class WikiData extends EntityHandling{
         int cnt = 0;
         for (String urlString: urlSet)
         {
-            entityAnalys(urlString, 3, true);
             String qID = urlToEntityHashMap.get(urlString);
+            if (qID!=null)
+            {
+                continue;
+            }
+            entityAnalys(urlString, 3, true);
+            qID = urlToEntityHashMap.get(urlString);
             if (qID!=null)
             {
                 humanHashSet.add(qID);
@@ -1049,7 +1054,7 @@ public class WikiData extends EntityHandling{
 
         String entityURL = "https://www.wikidata.org/wiki/Special:EntityData/" + qID + ".json";
         String content = getDataFromURL(entityURL).toString();
-        if (forceRelated == true){
+        if (forceRelated == false){
             if (content.isEmpty())
                 return false;
             JSONObject json = new JSONObject(content);
