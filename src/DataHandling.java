@@ -68,14 +68,20 @@ abstract class DataHandling {
             //throw new Exception("Error response code: " + responseCode);
             return response;
         }
-
-        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-        String inputLine;
-        
-        while ((inputLine = in.readLine()) != null) { 
-            response.append(inputLine);
+        try{
+            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            String inputLine;
+            
+            while ((inputLine = in.readLine()) != null) { 
+                response.append(inputLine);
+            }
+            in.close();
         }
-        in.close();
+        catch (Exception e)
+        {
+            System.out.println("Error in " + urlString);
+            response = new StringBuffer("");
+        }
         return response;
     }
 
@@ -282,7 +288,7 @@ abstract class DataHandling {
         }
         catch (Exception e)
         {
-            //print("Can not decode string: " + urlString);
+            print("Can not decode string: " + urlString);
         }
         return "";
     }
