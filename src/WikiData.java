@@ -40,6 +40,8 @@ public class WikiData extends EntityHandling{
 
     private final String ENTITY_PROPERTIES_PATH = LOGS_PATH + "EntityProperties/";
     private final String HTML_PATH = LOGS_PATH + "WebHtml/";
+    private final String SCARLARLY_PATH = LOGS_PATH + "Scarlarly/";
+
     private final String ENTITY_REFERENCE_PATH = LOGS_PATH + "EntityReference/";;
     private final String EVENT_PATH = DATA_PATH + "sự kiện lịch sử";
     private final String PLACE_PATH = DATA_PATH + "địa điểm du lịch, di tích lịch sử/";
@@ -55,6 +57,7 @@ public class WikiData extends EntityHandling{
 
     private HashSet<String> festivalHashSet = new HashSet<>();
     private HashSet<String> locationHashSet = new HashSet<>();
+    private HashSet<String> humanHashSet = new HashSet<>();
 
     public WikiData()
     {
@@ -69,6 +72,7 @@ public class WikiData extends EntityHandling{
         }
         createFolder(ENTITY_PROPERTIES_PATH);
         createFolder(ENTITY_REFERENCE_PATH);
+        createFolder(SCARLARLY_PATH);
 
         createFolder(EVENT_PATH);
         createFolder(HUMAN_PATH);
@@ -78,6 +82,7 @@ public class WikiData extends EntityHandling{
 
         createFolder(ENTITY_FINAL_PATH);
         createFolder(ENTITY_REF_FINAL_PATH);
+
         if(fileExist(LOGS_PATH + "URLToEntities.json"))
         {
             JSONObject jsonContent = getJSONFromFile(LOGS_PATH + "URLToEntities.json");
@@ -94,8 +99,8 @@ public class WikiData extends EntityHandling{
     {
         //urlToEntities();
         //getFestivals();
-        //getHumans();
-        getLocations();
+        getHumans();
+        //getLocations();
         //getProperties();
         //entityRefFinal();
         //entityFinal();
@@ -109,27 +114,78 @@ public class WikiData extends EntityHandling{
         return;
     }
 
-    private void getLocations() throws Exception
+
+    private void getAllURL(String catString, int floor, boolean getCat, HashSet<String> urlSet) throws Exception
     {
-        String urlCat[] = {"https://vi.wikipedia.org/wiki/Thể_loại:Khu_bảo_tồn_Việt_Nam", "https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_tại_Hà_Nội"};
-        List<String> firstFloorCat = new ArrayList<>();
-        for (String urlString: urlCat){
-            String wikiPageData = getDataFromURL(urlString).toString();
-            for (String craftURL: getAllHref(wikiPageData, "mw-subcategories", true)){
-                firstFloorCat.add(craftURL);
-            }
-        }
-
-        firstFloorCat.add("https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_quốc_gia_đặc_biệt");
-        firstFloorCat.add("https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_tại_Hà_Nội");
-        HashSet<String> urlSet = new HashSet<>();
-        for (String urlString: firstFloorCat)
+        if (floor >= 4) return;
+        String wikiPageData = "";
+        while(true)
         {
-            String wikiPageData = getDataFromURL(urlString).toString();
-
-            for (String craftURL: getAllHref(wikiPageData, "mw-pages", false)){
+            wikiPageData = getDataFromURL(catString).toString();
+            for (String craftURL: getAllHref(wikiPageData,"mw-pages",false))
+            {
                 urlSet.add(craftURL);
             }
+            Element divTag = getWikiHtmlElement(wikiPageData, "mw-pages");
+            String nextPageUrl = "";
+            if (divTag!=null)
+            {                
+                for (Element aTag : divTag.select("a")) {
+                    if (!aTag.text().equals("Trang sau")) continue;
+                    //print(aTag.attr("href"));
+                    nextPageUrl = ("https://vi.wikipedia.org" + aTag.attr("href"));
+                    break;
+                }
+            }
+            if (nextPageUrl.isEmpty())
+                break;
+            else catString = nextPageUrl;
+        }
+        if (getCat == true)
+        {
+            for (String craftURL: getAllHref(wikiPageData, "mw-subcategories", true)){
+                getAllURL(craftURL, floor + 1, getCat, urlSet);
+            }
+        }
+    }
+
+    private void getHumans() throws Exception {
+        HashSet<String> urlSet = new HashSet<>();
+        if (!fileExist(SCARLARLY_PATH + "humans.json"))
+        {
+            getAllURL("https://vi.wikipedia.org/wiki/Th%E1%BB%83_lo%E1%BA%A1i:Nh%C3%A0_c%C3%A1ch_m%E1%BA%A1ng_Vi%E1%BB%87t_Nam", 0 , false, urlSet);
+            getAllURL("https://vi.wikipedia.org/wiki/Th%E1%BB%83_lo%E1%BA%A1i:Nh%C3%A2n_v%E1%BA%ADt_l%E1%BB%8Bch_s%E1%BB%AD_Vi%E1%BB%87t_Nam", 0 , true, urlSet);
+
+            writeFile(SCARLARLY_PATH + "humans.json", (new JSONArray(urlSet)).toString(), false);
+        }
+        else{
+            for (Object key: new JSONArray(readFileAll(SCARLARLY_PATH + "humans.json")))
+            {
+                urlSet.add((String)key);
+            }
+        }
+        int cnt = 0;
+        for (String urlString: urlSet)
+        {
+            entityAnalys(urlString, 3, true);
+            String qID = urlToEntityHashMap.get(urlString);
+            if (qID!=null)
+            {
+                humanHashSet.add(qID);
+            }
+            print(cnt);
+            cnt++;
+        }
+        writeFile(LOGS_PATH +  "URLToEntities.json" , (new JSONObject(urlToEntityHashMap)).toString(), false);
+    }
+
+
+    private void getLocations() throws Exception
+    {
+        HashSet<String> urlSet = new HashSet<>();
+        String urlCat[] = {"https://vi.wikipedia.org/wiki/Thể_loại:Khu_bảo_tồn_Việt_Nam", "https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_tại_Hà_Nội", "https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_quốc_gia_đặc_biệt", "https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_tại_Hà_Nội"};
+        for (String catString: urlCat){
+            getAllURL(catString, 0, true, urlSet);
         }
 
         for (String urlString: urlSet)
@@ -368,15 +424,15 @@ public class WikiData extends EntityHandling{
         
     }
 
-    private HashSet<String> getAllHref(String htmlData, String subID, boolean getCategory) throws Exception{
-        HashSet<String> hrefList = new HashSet<>();
-
-        Document doc = Jsoup.parse(htmlData);
+    private Element getWikiHtmlElement(String wikiPageData, String subID)
+    {
+        Document doc = Jsoup.parse(wikiPageData);
         
         Elements elements = doc.select("#catlinks");
         elements.remove();
 
         Element divTag = doc.getElementById("mw-content-text"); 
+        if (divTag == null) return null;
         
         Elements tables = divTag.select("table[align=right]");
         for (Element table : tables) {
@@ -402,7 +458,14 @@ public class WikiData extends EntityHandling{
         {
             divTag = divTag.getElementById(subID);
         }
+        return divTag;
+    }
+
+    private HashSet<String> getAllHref(String wikiPageData, String subID, boolean getCategory) throws Exception{
         
+        HashSet<String> hrefList = new HashSet<>();
+        Element divTag = getWikiHtmlElement(wikiPageData, subID);
+
         if (divTag!=null)
         {
             for (Element aTag : divTag.select("a")) {
@@ -417,9 +480,9 @@ public class WikiData extends EntityHandling{
 
     }
 
-    private HashSet<String> getAllHref(String htmlData) throws Exception
+    private HashSet<String> getAllHref(String wikiPageData) throws Exception
     {
-        return getAllHref(htmlData, "", false);
+        return getAllHref(wikiPageData, "", false);
     }
 
     private void getFestivals() throws Exception
@@ -869,7 +932,7 @@ public class WikiData extends EntityHandling{
     }
 
     private final String[] FILTER = {
-        "#","T%E1%BA%ADp_tin"
+        "#","T%E1%BA%ADp_tin", "B%E1%BA%A3n_m%E1%BA%ABu"
     };
     
     @Override
@@ -987,7 +1050,7 @@ public class WikiData extends EntityHandling{
         String entityURL = "https://www.wikidata.org/wiki/Special:EntityData/" + qID + ".json";
         String content = getDataFromURL(entityURL).toString();
         if (forceRelated == true){
-            if (!content.isEmpty())
+            if (content.isEmpty())
                 return false;
             JSONObject json = new JSONObject(content);
         
