@@ -75,15 +75,16 @@ public class Testing extends DataHandling {
 
 
     public static void main(String[] args) throws Exception {
-        print("1[2][4]3".replaceAll("\\s*\\[[^\\]]*\\]\\s*", ""));
         String a = "E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\logs\\EntityFinal\\";
         for (String fileName: listAllFiles(a))
         {
             JSONObject o = getJSONFromFile(a + fileName);
             String overv = o.getString("overview");
-            String gg = overv.replaceAll("\\s*\\[[^\\]]*\\]\\s*", "");
-            if (!gg.equals(overv))
+            if (overv.length()>=1)
+            if (overv.charAt(overv.length()-1) == (char)(':'))
             {
+                int dot = overv.lastIndexOf(".", overv.length()-1);
+                String gg = overv.substring(0, dot + 1);
                 o.put("overview", gg);
                 writeFile(a + fileName, o.toString(), false);
                 //print(fileName);
