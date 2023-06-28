@@ -120,9 +120,9 @@ public class WikiData extends EntityHandling{
     }
 
     private void analyzeSelectiveData()throws Exception{
-        handleFestival();
+        //handleFestival();
         //handleHumans();
-        //handleLocations();
+        handleLocations();
     }
 
     private void tableDataQueries() throws Exception{
@@ -416,7 +416,6 @@ public class WikiData extends EntityHandling{
             JSONObject claims = json.getJSONObject("claims");
             addPropertiesToEntity(claims, "là một", "lễ hội");
             addPropertiesToEntity(claims, "quốc gia", "Việt Nam");
-            print(qID);
             writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
         }
     }
@@ -428,10 +427,20 @@ public class WikiData extends EntityHandling{
             JSONObject claims = json.getJSONObject("claims");
             addPropertiesToEntity(claims, "là một", "người");
             addPropertiesToEntity(claims, "quốc tịch", "Việt Nam");
-            //writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
+            writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
         }
     }
 
+    private void handleLocations() throws Exception {
+        for (String qID: locationHashSet)
+        {
+            JSONObject json = getVietnameseWikiReadable(qID);
+            JSONObject claims = json.getJSONObject("claims");
+            addPropertiesToEntity(claims, "là một", "địa điểm");
+            addPropertiesToEntity(claims, "quốc gia", "Việt Nam");
+            writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
+        }
+    }
 
 
     private void tableDynastiesQueries() throws Exception
