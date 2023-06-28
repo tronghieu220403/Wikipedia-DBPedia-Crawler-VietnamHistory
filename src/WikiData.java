@@ -98,8 +98,8 @@ public class WikiData extends EntityHandling{
     public void getDataCallBack() throws Exception
     {
         selectiveDataQueries();
-        analyzeBruteForceData();
-        //analyzeSelectiveData();
+        //analyzeBruteForceData();
+        analyzeSelectiveData();
 
         //tableDataQueries();
         //export();
@@ -116,12 +116,11 @@ public class WikiData extends EntityHandling{
         urlToEntities();
         getProperties();
         entityRefFinal();
-        print("oke");
         entityFinal();
     }
 
     private void analyzeSelectiveData()throws Exception{
-        //handleFestival();
+        handleFestival();
         //handleHumans();
         //handleLocations();
     }
@@ -317,6 +316,122 @@ public class WikiData extends EntityHandling{
         writeFile(LOGS_PATH +  "URLToEntities.json" , (new JSONObject(urlToEntityHashMap)).toString(), false);
     }
 
+    private Element getWikiHtmlElement(String wikiPageData, String subID)
+    {
+        Document doc = Jsoup.parse(wikiPageData);
+        
+        Elements elements = doc.select("#catlinks");
+        elements.remove();
+
+        Element divTag = doc.getElementById("mw-content-text"); 
+        if (divTag == null) return null;
+        
+        Elements tables = divTag.select("table[align=right]");
+        for (Element table : tables) {
+            table.remove();
+        }
+
+        Element xemThemTag = divTag.selectFirst("h2:has(span#Xem_th\\.C3\\.AAm)"); // Get the Xem thêm tag
+        if (xemThemTag != null) {
+            Element nextElement = xemThemTag.nextElementSibling(); // Get the next element after Xem thêm tag
+            while (nextElement != null) {
+                Element toRemove = nextElement; // Store the current element to remove
+                nextElement = nextElement.nextElementSibling(); // Get the next element
+                toRemove.remove(); // Remove the current element from the DOM
+            }
+        }
+
+        Elements navboxElements = divTag.select("div.navbox"); // Get all elements with class navbox
+        for (Element navboxElement : navboxElements) {
+            navboxElement.remove(); // Remove each navbox element from the DOM
+        }
+
+        if (!subID.isEmpty())
+        {
+            divTag = divTag.getElementById(subID);
+        }
+        return divTag;
+    }
+
+    private HashSet<String> getAllHref(String wikiPageData, String subID, boolean getCategory) throws Exception{
+        
+        HashSet<String> hrefList = new HashSet<>();
+        Element divTag = getWikiHtmlElement(wikiPageData, subID);
+
+        if (divTag!=null)
+        {
+            for (Element aTag : divTag.select("a")) {
+                String href = aTag.attr("href");
+                String fullURL = "https://vi.wikipedia.org" + href;
+                if (!checkURL(fullURL, getCategory)) continue;
+                fullURL = urlDecode(fullURL);
+                hrefList.add(fullURL);
+            }
+        }
+        return hrefList;
+
+    }
+
+    private HashSet<String> getAllHref(String wikiPageData) throws Exception
+    {
+        return getAllHref(wikiPageData, "", false);
+    }
+
+
+    private JSONObject addPropertiesToEntity(JSONObject myJsonClaims, String propName, String value)
+    {
+        JSONObject addObj = new JSONObject();
+        addObj.put("value", value);
+        addObj.put("type", "string");
+
+        if (!myJsonClaims.has(propName)){
+            JSONArray jsonArr = new JSONArray();
+            jsonArr.put(addObj);
+            myJsonClaims.put(propName, jsonArr);
+        }
+        else{
+            JSONArray jsonArr = myJsonClaims.getJSONArray(propName);
+            boolean check = false;
+            for (int i = 0; i < jsonArr.length(); i++)
+            {
+                JSONObject obj = jsonArr.getJSONObject(i);
+                if ((obj).getString("value").equals(value)){
+                    check = true;
+                    break;
+                }
+            }
+            if (check == false)
+            {
+                jsonArr.put(addObj);
+            }
+        }
+        return myJsonClaims;
+    }
+
+    private void handleFestival() throws Exception
+    {
+        for (String qID: festivalHashSet)
+        {
+            JSONObject json = getVietnameseWikiReadable(qID);
+            JSONObject claims = json.getJSONObject("claims");
+            addPropertiesToEntity(claims, "là một", "lễ hội");
+            addPropertiesToEntity(claims, "quốc gia", "Việt Nam");
+            print(qID);
+            writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
+        }
+    }
+
+    private void handleHumans() throws Exception {
+        for (String qID: humanHashSet)
+        {
+            JSONObject json = getVietnameseWikiReadable(qID);
+            JSONObject claims = json.getJSONObject("claims");
+            addPropertiesToEntity(claims, "là một", "người");
+            addPropertiesToEntity(claims, "quốc tịch", "Việt Nam");
+            //writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
+        }
+    }
+
 
 
     private void tableDynastiesQueries() throws Exception
@@ -505,93 +620,6 @@ public class WikiData extends EntityHandling{
         
     }
 
-    private Element getWikiHtmlElement(String wikiPageData, String subID)
-    {
-        Document doc = Jsoup.parse(wikiPageData);
-        
-        Elements elements = doc.select("#catlinks");
-        elements.remove();
-
-        Element divTag = doc.getElementById("mw-content-text"); 
-        if (divTag == null) return null;
-        
-        Elements tables = divTag.select("table[align=right]");
-        for (Element table : tables) {
-            table.remove();
-        }
-
-        Element xemThemTag = divTag.selectFirst("h2:has(span#Xem_th\\.C3\\.AAm)"); // Get the Xem thêm tag
-        if (xemThemTag != null) {
-            Element nextElement = xemThemTag.nextElementSibling(); // Get the next element after Xem thêm tag
-            while (nextElement != null) {
-                Element toRemove = nextElement; // Store the current element to remove
-                nextElement = nextElement.nextElementSibling(); // Get the next element
-                toRemove.remove(); // Remove the current element from the DOM
-            }
-        }
-
-        Elements navboxElements = divTag.select("div.navbox"); // Get all elements with class navbox
-        for (Element navboxElement : navboxElements) {
-            navboxElement.remove(); // Remove each navbox element from the DOM
-        }
-
-        if (!subID.isEmpty())
-        {
-            divTag = divTag.getElementById(subID);
-        }
-        return divTag;
-    }
-
-    private HashSet<String> getAllHref(String wikiPageData, String subID, boolean getCategory) throws Exception{
-        
-        HashSet<String> hrefList = new HashSet<>();
-        Element divTag = getWikiHtmlElement(wikiPageData, subID);
-
-        if (divTag!=null)
-        {
-            for (Element aTag : divTag.select("a")) {
-                String href = aTag.attr("href");
-                String fullURL = "https://vi.wikipedia.org" + href;
-                if (!checkURL(fullURL, getCategory)) continue;
-                fullURL = urlDecode(fullURL);
-                hrefList.add(fullURL);
-            }
-        }
-        return hrefList;
-
-    }
-
-    private HashSet<String> getAllHref(String wikiPageData) throws Exception
-    {
-        return getAllHref(wikiPageData, "", false);
-    }
-
-
-    private void handleFestival() throws Exception
-    {
-        for (String qID: festivalHashSet)
-        {
-            JSONObject json = getVietnameseWikiReadable(qID);
-            JSONObject claims = json.getJSONObject("claims");
-            JSONObject addObj = new JSONObject();
-            addObj.put("value", "lễ hội");
-            addObj.put("type", "string");
-            JSONArray jsonArr = new JSONArray();
-            jsonArr.put(addObj);
-            claims.put("là một", jsonArr);
-            if (!claims.has("quốc gia"))
-            {
-                JSONObject addObj2 = new JSONObject();
-                addObj2.put("value", "Việt Nam");
-                addObj2.put("type", "wikibase-item");
-                addObj2.put("id", "Q881");
-                jsonArr = new JSONArray();
-                jsonArr.put(addObj2);
-                claims.put("quốc gia", jsonArr);
-            }
-            writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
-        }
-    }
 
     private void entityRefFinal() throws Exception
     {
