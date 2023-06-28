@@ -97,24 +97,38 @@ public class WikiData extends EntityHandling{
     @Override
     public void getDataCallBack() throws Exception
     {
+        selectiveDataQueries();
+        analyzeBruteForceData();
+        //analyzeSelectiveData();
+
+        //tableDataQueries();
+        //export();
+        return;
+    }
+
+    private void selectiveDataQueries() throws Exception{
         getFestivals(); // done;
         getHumans();  // done;
         getLocations(); // done;
+    }
+
+    private void analyzeBruteForceData() throws Exception{
         urlToEntities();
         getProperties();
         entityRefFinal();
-        print("OKE");
+        print("oke");
         entityFinal();
+    }
 
+    private void analyzeSelectiveData()throws Exception{
         //handleFestival();
         //handleHumans();
         //handleLocations();
-        //handleDynasties();
+    }
 
-        //handleHumans();
-        //handleLocations();
-        //export();
-        return;
+    private void tableDataQueries() throws Exception{
+        //tableDynastiesQueries();
+        //tableFestivalsQueries();
     }
 
 
@@ -160,14 +174,16 @@ public class WikiData extends EntityHandling{
             String qID = urlToEntityHashMap.get(urlString);
             if (qID!=null)
             {
-                humanHashSet.add(qID);
+                //print(qID);
+                categoryHashSet.add(qID);
                 continue;
             }
             entityAnalys(urlString, 3, true);
             qID = urlToEntityHashMap.get(urlString);
             if (qID!=null)
             {
-                humanHashSet.add(qID);
+                //print(qID);
+                categoryHashSet.add(qID);
             }
             else{
                 removeURLs.add(urlString);
@@ -251,7 +267,7 @@ public class WikiData extends EntityHandling{
         HashSet<String> urlSet = new HashSet<>();
         if (!fileExist(SCARLARLY_PATH + "locations.json"))
         {
-            String urlCat[] = {"https://vi.wikipedia.org/wiki/Thể_loại:Khu_bảo_tồn_Việt_Nam", "https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_tại_Hà_Nội", "https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_quốc_gia_đặc_biệt", "https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_tại_Hà_Nội"};
+            String urlCat[] = {"https://vi.wikipedia.org/wiki/Thể_loại:Khu_bảo_tồn_Việt_Nam", "https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_tại_Hà_Nội", "https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_quốc_gia_đặc_biệt", "https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_tại_Hà_Nội","https://vi.wikipedia.org/wiki/Thể_loại:Chùa_Việt_Nam_theo_tỉnh_thành","https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_quốc_gia_Việt_Nam"};
             for (String catString: urlCat){
                 getAllURL(catString, 0, true, urlSet);
             }
@@ -262,7 +278,6 @@ public class WikiData extends EntityHandling{
                 urlSet.add((String)key);
             }
         }
-
         analyzeScarlarlyURLs(urlSet, locationHashSet);
 
         writeFile(SCARLARLY_PATH + "locations.json", (new JSONArray(urlSet)).toString(), false);
@@ -304,7 +319,7 @@ public class WikiData extends EntityHandling{
 
 
 
-    private void handleDynasties() throws Exception
+    private void tableDynastiesQueries() throws Exception
     {
         JSONObject urlMapped = getJSONFromFile(LOGS_PATH + "/WikiAnalys/URLToEntities.json");
         JSONObject allDynastyJsonObject = getJSONFromFile(INITIALIZE_PATH + "VVN.json");
