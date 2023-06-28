@@ -97,11 +97,11 @@ public class WikiData extends EntityHandling{
     @Override
     public void getDataCallBack() throws Exception
     {
-        selectiveDataQueries();
+        //selectiveDataQueries();
         //analyzeBruteForceData();
-        analyzeSelectiveData();
+        //analyzeSelectiveData();
 
-        //tableDataQueries();
+        tableDataQueries();
         //export();
         return;
     }
@@ -122,11 +122,11 @@ public class WikiData extends EntityHandling{
     private void analyzeSelectiveData()throws Exception{
         //handleFestival();
         //handleHumans();
-        handleLocations();
+        //handleLocations();
     }
 
     private void tableDataQueries() throws Exception{
-        //tableDynastiesQueries();
+        tableDynastiesQueries();
         //tableFestivalsQueries();
     }
 
@@ -380,10 +380,21 @@ public class WikiData extends EntityHandling{
 
     private JSONObject addPropertiesToEntity(JSONObject myJsonClaims, String propName, String value)
     {
+        return addPropertiesToEntity(myJsonClaims, propName, value, "");
+    }
+
+    private JSONObject addPropertiesToEntity(JSONObject myJsonClaims, String propName, String value, String qID)
+    {
         JSONObject addObj = new JSONObject();
         addObj.put("value", value);
-        addObj.put("type", "string");
-
+        if (!qID.isEmpty())
+        {
+            addObj.put("type", "wikibase-item");
+            addObj.put("id", qID);
+        }
+        else{
+            addObj.put("type", "string");
+        }
         if (!myJsonClaims.has(propName)){
             JSONArray jsonArr = new JSONArray();
             jsonArr.put(addObj);
@@ -407,6 +418,7 @@ public class WikiData extends EntityHandling{
         }
         return myJsonClaims;
     }
+
 
     private void handleFestival() throws Exception
     {
@@ -445,15 +457,23 @@ public class WikiData extends EntityHandling{
 
     private void tableDynastiesQueries() throws Exception
     {
-        JSONObject urlMapped = getJSONFromFile(LOGS_PATH + "/WikiAnalys/URLToEntities.json");
         JSONObject allDynastyJsonObject = getJSONFromFile(INITIALIZE_PATH + "VVN.json");
         HashMap<String, String> dynastyHashMap = new HashMap<>();
-        int cnt = 1;
-        for (String fileName: listAllFiles(DYNASTY_PATH))
+        for (String fileName: listAllFiles(ENTITY_FINAL_PATH))
         {
-            JSONObject json = getJSONFromFile(DYNASTY_PATH + fileName);
-            String dynastyName = json.getString("label");
-            dynastyHashMap.put(dynastyName, json.getString("id"));
+            JSONObject json = getJSONFromFile(ENTITY_FINAL_PATH + fileName);
+            if (json.getJSONObject("claims").has("là một")){
+                JSONArray jsonArr = json.getJSONObject("claims").getJSONArray("là một");
+                for (int i = 0; i < jsonArr.length(); i++)
+                {
+                    if (jsonArr.getJSONObject(i).getString("value").equals("triều đại"))
+                    {
+                        String dynastyName = json.getString("label");
+                        dynastyHashMap.put(dynastyName, json.getString("id"));
+                        break;
+                    }
+                }
+            }
         }
 
         String[] kingProp = {"Miếu hiệu", "Tôn hiệu hoặc Thụy hiệu", "Tôn hiệu", "Niên hiệu", "Thế thứ", "Trị vì"};
@@ -463,27 +483,15 @@ public class WikiData extends EntityHandling{
             if (!dynastyHashMap.containsKey(dynastyName))
             {
                 JSONObject claims = new JSONObject();
-                JSONArray jsonArr = new JSONArray();
-                String qID = "Q" + Integer.toString(cnt) + "X";
-                cnt++;
-                dynastyHashMap.put(dynastyName, qID);
-                JSONObject addObj = new JSONObject();
-                addObj.put("value", "triều đại");
-                addObj.put("type", "string");
-                jsonArr.put(addObj);
-                claims.put("là một", jsonArr);
-                jsonArr = new JSONArray();
-                JSONObject addObj2 = new JSONObject();
-                addObj2.put("value", "Việt Nam");
-                addObj2.put("type", "string");
-                jsonArr.put(addObj2);
-                claims.put("quốc gia", jsonArr);
-                cnt++;
+                String qID = "Q" + Integer.toString(dynastyName.hashCode()).replace("-", "") + "X";
+                addPropertiesToEntity(claims, "quốc gia", "Việt Nam");
+                addPropertiesToEntity(claims, "là một", "triều đại");
                 dynastyJsonObject.put("claims", claims);
                 dynastyJsonObject.put("overview",  dynastyName + " là một triều đại phong kiến trong lịch sử Việt Nam.");
                 dynastyJsonObject.put("aliases", new JSONArray());
                 dynastyJsonObject.put("id", qID);
                 dynastyJsonObject.put("label", dynastyName);
+                dynastyHashMap.put(dynastyName, qID);
             }
             else
             {
@@ -508,82 +516,37 @@ public class WikiData extends EntityHandling{
                 JSONObject kingClaims = new JSONObject();
 
                 String kingName = "";
-                if (urlMapped.has(kingURL))
+                if (urlToEntityHashMap.containsKey(kingURL))
                 {
-                    kingQID = urlMapped.getString(kingURL);
-                    if (!fileExist(HUMAN_PATH + kingQID + ".json"))
-                    {
-                        kingJsonObject = getVietnameseWikiReadable(kingQID);
-                        writeFile(HUMAN_PATH + kingQID + ".json", kingJsonObject.toString(), false);
-                    }
-                    else
-                    {
-                        kingJsonObject = getJSONFromFile(HUMAN_PATH + kingQID + ".json");
-                    }
+                    kingQID = urlToEntityHashMap.get(kingURL);
+                    kingJsonObject = getJSONFromFile(ENTITY_FINAL_PATH + kingQID + ".json");
                     kingClaims = kingJsonObject.getJSONObject("claims");
                     kingName = kingJsonObject.getString("label");
                 }
                 else
                 {
-                    kingQID = "Q" + Integer.toString(cnt) + "X";
-                    cnt++;
                     String[] kingType = {"Vua", "Tước hiệu", "Thủ lĩnh", "Tiết độ sứ"};
                     for (int j = 0; j < kingType.length; j++) {
-                        if (king.has(kingType[i])) {
-                            kingName = king.getString(kingType[i]);
+                        if (king.has(kingType[j])) {
+                            kingName = king.getString(kingType[j]);
                             break;
                         }
                     }
-                    if (kingName.isEmpty())
-                    {
-                        print(kingQID);
-                    }
-                    kingJsonObject.put("label", kingName);
-                    JSONArray jsonArr = new JSONArray();
-                    JSONObject addObj = new JSONObject();
-                    addObj.put("value", "người");
-                    addObj.put("type", "string");
-                    jsonArr.put(addObj);
-                    kingClaims.put("là một", jsonArr);
-                    jsonArr = new JSONArray();
-                    JSONObject addObj2 = new JSONObject();
-                    addObj2.put("value", "Việt Nam");
-                    addObj2.put("type", "string");
-                    jsonArr.put(addObj2);
-                    kingClaims.put("quốc tịch", jsonArr);
-                    cnt++;
+                    kingQID = "Q" + Integer.toString(kingName.hashCode()).replace("-", "") + "X";
                 }
 
-                JSONArray kingInstances = kingClaims.getJSONArray("là một");
-                List<Integer> eraseArr = new ArrayList<Integer>();
-                for (int k = 0; k < kingInstances.length(); k++)
-                {
-                    if (kingInstances.getJSONObject(k).getString("value").equals("vua"))
-                    {
-                        eraseArr.add(k);
-                    }
-                }
-                for (int k = eraseArr.size() - 1; k >= 0; k--)
-                {
-                    kingInstances.remove(eraseArr.get(k));
-                }
-                JSONObject kingInstanceObj = new JSONObject();
-                kingInstanceObj.put("type", "string");
-                kingInstanceObj.put("value", "vua");
-                kingInstances.put(kingInstanceObj);
+                addPropertiesToEntity(kingClaims, "là một", "người");
+                addPropertiesToEntity(kingClaims, "là một", "vua");
+                addPropertiesToEntity(kingClaims, "quốc tịch", "Việt Nam");
 
                 for (String prop: kingProp)
                 {
                     if (!king.has(prop)) continue;
-                    JSONArray arr = new JSONArray();
-                    JSONObject propObj = new JSONObject();
-                    propObj.put("type", "string");
                     String value = king.getString(prop);
                     if (value.isEmpty()) continue;
-                    propObj.put("value", value);
-                    arr.put(propObj);
-                    kingClaims.put(prop, arr);
+                    addPropertiesToEntity(kingClaims, prop.toLowerCase(), value);
                 }
+
                 if (kingQID.contains("X"))
                 {
                     kingJsonObject.put("claims", kingClaims);
@@ -592,7 +555,7 @@ public class WikiData extends EntityHandling{
                     kingJsonObject.put("id", kingQID);
                     kingJsonObject.put("references", new JSONObject());
                     kingJsonObject.put("label", kingName);
-                    urlMapped.put(kingURL, kingQID);
+                    urlToEntityHashMap.put(kingURL, kingQID);
                 }
                 JSONObject refJSONObj = new JSONObject();
                 refJSONObj.put("type", "wikibase-item");
@@ -604,27 +567,13 @@ public class WikiData extends EntityHandling{
                 if (kingJsonObject.has("references"))
                     kingRefJsonObject = kingJsonObject.getJSONObject("references");
 
-                JSONObject kingRef = new JSONObject();
+                addPropertiesToEntity(kingRefJsonObject, "triều đại", dynastyName, dynastyQID);
 
-                kingRef.put("type", "wikibase-item");
-                kingRef.put("value", dynastyName);
-                kingRef.put("id", dynastyQID);
-
-                if (!kingRefJsonObject.has("triều đại"))
-                {
-                    JSONArray kingRefArr = new JSONArray();
-                    kingRefArr.put(kingRef);
-                    kingRefJsonObject.put("triều đại", kingRefArr);
-                }
-                else if (dynastyQID.contains("X")){
-                    kingRefJsonObject.getJSONArray("triều đại").put(kingRef);
-                }
                 kingJsonObject.put("references", kingRefJsonObject);
-                writeFile(HUMAN_PATH + kingQID + ".json", kingJsonObject.toString(), false);
+                writeFile(ENTITY_FINAL_PATH + kingQID + ".json", kingJsonObject.toString(), false);
             }
             dynastyJsonObject.put("references", (new JSONObject()).put("vua", dynastyRefArr));
-            writeFile(DYNASTY_PATH + dynastyQID + ".json", dynastyJsonObject.toString(), false);
-            //break;
+            writeFile(ENTITY_FINAL_PATH + dynastyQID + ".json", dynastyJsonObject.toString(), false);
         }
         
     }
