@@ -281,7 +281,7 @@ abstract class DataHandling {
      * @param urlString
      * @return Decode string for that url.
      */
-    public final static String urlDecode(String urlString) throws Exception
+    public final static String urlDecode(String urlString)
     {
         try {
             return java.net.URLDecoder.decode(urlString, StandardCharsets.UTF_8.name());
