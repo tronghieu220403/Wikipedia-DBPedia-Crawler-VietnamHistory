@@ -98,8 +98,8 @@ public class WikiData extends EntityHandling{
     public void getDataCallBack() throws Exception
     {
         selectiveDataQueries();
+        analyzeBruteForceData();
         analyzeSelectiveData();
-        analyzeBruteForceAndSelectiveData();
         tableDataQueries();
         //export();
         return;
@@ -111,7 +111,7 @@ public class WikiData extends EntityHandling{
         selectiveLocationsQueries(); // done;
     }
 
-    private void analyzeBruteForceAndSelectiveData() throws Exception{
+    private void analyzeBruteForceData() throws Exception{
         urlToEntities();
         getProperties();
         entityRefFinal();
