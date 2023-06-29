@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -31,9 +32,10 @@ public class WikiData extends EntityHandling{
     
     public static void main(String[] args) throws Exception {
         WikiData wikiData = new WikiData("E:/Code/Java/OOP_Project/saveddata/Wikipedia/");
-        wikiData.setAnalyseLitmit(0);
-        wikiData.getData();
-        wikiData.getDataCallBack();
+        //wikiData.setAnalyseLitmit(0);
+        //wikiData.getData();
+        //wikiData.getDataCallBack();
+        wikiData.export();
     }
 
     private HashMap<String, String> urlToEntityHashMap = new HashMap<>();
@@ -1571,6 +1573,155 @@ public class WikiData extends EntityHandling{
             jsonObj.put("type", "string");
         }
         return jsonObj;
+    }
+    
+    HashSet<String> acceptedCountries = new HashSet<>(Arrays.asList("Việt Nam", "Đại Việt","Nam Việt", "Đại Cồ Việt", "Đại Ngu", "Xích Quỷ", "Văn Lang", "Âu Lạc", "Giao Chỉ", "Lĩnh Nam", "Giao Châu", "An Nam", "Trấn Nam", "Tĩnh Hải quân", "Đại Nam", "Việt Nam Cộng hòa", "Việt Nam Dân chủ Cộng hòa"));
+
+    HashSet<String> bannedProperties = new HashSet<>(Arrays.asList("mã sân bay IATA", "chuyến bay vũ trụ", "Romaja quốc ngữ", "trang Commons Creator", "tập hình Commons", "có trong danh sách chú trọng của dự án Wikimedia", "thể loại ở Commons", "chuyển tự McCune–Reischauer", "thể loại chính của đề tài", "thể loại cho nhóm người", "thể loại có liên quan", "bài danh sách Wikimedia", "trang định hướng Wikimedia", "bản mẫu chính của chủ đề", "trang Web"));
+
+    public final void export() throws Exception
+    {
+        JSONObject bigCategories = getJSONFromFile(INITIALIZE_PATH + "CategorySplit.json");
+        Iterator<String> bigCategory = ((JSONObject) bigCategories).keys();
+        while (bigCategory.hasNext()) {
+            String bigCate = bigCategory.next();
+            createFolder(DATA_PATH + bigCate);
+        }
+
+        HashSet<String> files = listAllFiles(ENTITY_FINAL_PATH);
+        for (String fileName: files)
+        {
+            JSONObject json = getJSONFromFile(ENTITY_FINAL_PATH + fileName);
+            if(json.has("claims"))
+            {
+                JSONObject claims = (JSONObject)json.get("claims");
+                if (claims.has("là một"))
+                {
+                    JSONArray isIncstanceOf = (JSONArray)(claims.get("là một"));
+                    for(Object instance: isIncstanceOf)
+                    {
+                        JSONObject instanceObj = (JSONObject)instance;
+                        String value = (String)instanceObj.get("value");
+                        if (value.equals("người"))
+                        {
+                            if (claims.has("quốc tịch"))
+                            {
+                                JSONArray quocTichs = (JSONArray)(claims.get("quốc tịch"));
+                                boolean check = false;
+                                for(Object quocTich: quocTichs)
+                                {
+                                    JSONObject quocTichObj = (JSONObject)quocTich;
+                                    if (acceptedCountries.contains((String)quocTichObj.get("value")))
+                                    {
+                                        check = true;
+                                    }
+                                }
+                                if (check==false)
+                                {
+                                    break;
+                                }
+                            }
+                        }
+                        for (String bigCate: getAllKeys(bigCategories)){
+                            JSONObject subCategories = bigCategories.getJSONObject(bigCate);
+                            if(subCategories.has(value))
+                            {
+                                writeFile(DATA_PATH + bigCate + "/" + fileName, json.toString(), false);                                    
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        HashSet<String> acceptEntitySet = new HashSet<>();
+        bigCategory = ((JSONObject) bigCategories).keys();
+        while (bigCategory.hasNext()) {
+            String bigCate = bigCategory.next();
+            for (String fileName: listAllFiles(DATA_PATH + bigCate))
+            {
+                acceptEntitySet.add(fileName.replace(".json", ""));
+            }
+        }
+
+        bigCategory = ((JSONObject) bigCategories).keys();
+        while (bigCategory.hasNext()) {
+            String bigCate = bigCategory.next();
+            String folderName = DATA_PATH + bigCate;
+
+            for (String fileName: listAllFiles(folderName))
+            {
+                StringBuffer filePath = new StringBuffer(folderName);
+                filePath.append("/");
+                filePath.append(fileName);
+                JSONObject json = getJSONFromFile(filePath.toString());
+                if (json.has("claims"))
+                {
+                    JSONObject claims = (JSONObject)json.get("claims");
+                    Iterator<String> claimKeys = claims.keys();
+                    List<String> deleteProperties = new ArrayList<String>();
+                    while(claimKeys.hasNext())
+                    {
+                        String key = claimKeys.next();
+                        if (bannedProperties.contains(key))
+                        {
+                            deleteProperties.add(key);
+                            continue;
+                        }
+                        JSONArray jsonArr = claims.getJSONArray(key);
+                        for (Object ele: jsonArr)
+                        {
+                            JSONObject propertyObj = (JSONObject)ele;
+                            if ( ((String)propertyObj.get("type")).equals("wikibase-item") )
+                            {
+                                String qID = (String)propertyObj.get("id");
+                                if (!acceptEntitySet.contains(qID))
+                                {
+                                    propertyObj.remove("id");
+                                    propertyObj.put("type", "string");
+                                }
+                            }
+                        }
+                    }
+                    for (String p: deleteProperties)
+                    {
+                        claims.remove(p);
+                    }
+                }
+                if (json.has("references"))
+                {
+                    JSONObject references = (JSONObject)json.get("references");
+                    List<String> delete = new ArrayList<String>();
+                    for (String key: getAllKeys(references))
+                    {
+                        if (bannedProperties.contains(key))
+                        {
+                            delete.add(key);
+                            continue;
+                        }
+                        JSONArray refArr = references.getJSONArray(key);
+                        for (Object ele: refArr)
+                        {
+                            JSONObject propertyObj = (JSONObject)ele;
+                            if ( ((String)propertyObj.get("type")).equals("wikibase-item") )
+                            {
+                                String qID = (String)propertyObj.get("id");
+                                if (!acceptEntitySet.contains(qID))
+                                {
+                                    propertyObj.remove("id");
+                                    propertyObj.put("type", "string");
+                                }
+                            }
+                        }
+                        for (String p: delete)
+                        {
+                            references.remove(p);
+                        }
+                    }
+                }
+                writeFile(filePath.toString(), json.toString(), false);
+            }
+        }
     }
 
 }
