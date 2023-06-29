@@ -32,9 +32,9 @@ public class WikiData extends EntityHandling{
     
     public static void main(String[] args) throws Exception {
         WikiData wikiData = new WikiData("E:/Code/Java/OOP_Project/saveddata/Wikipedia/");
-        //wikiData.setAnalyseLitmit(0);
-        //wikiData.getData();
-        //wikiData.getDataCallBack();
+        wikiData.setAnalyseLitmit(0);
+        wikiData.getData();
+        wikiData.getDataCallBack();
         wikiData.export();
     }
 
@@ -777,7 +777,7 @@ public class WikiData extends EntityHandling{
     }
 
 
-    private JSONObject getVietnameseWikiReadable(String qID) throws Exception
+    public JSONObject getVietnameseWikiReadable(String qID) throws Exception
     {
         String fileName = qID + ".json";
         JSONObject json = new JSONObject();
@@ -985,6 +985,7 @@ public class WikiData extends EntityHandling{
                 if ((tag.tagName()).equals("p"))
                 {
                     String tagContent = tag.text();
+                    if (tagContent.isEmpty()) continue;
                     String regex = "\\s*\\[[^\\]]*\\]\\s*";
                     if (tagContent.matches(regex)){
                         tagContent = tagContent.replaceAll(regex, "");
@@ -1002,6 +1003,7 @@ public class WikiData extends EntityHandling{
                 overview = overviewSB.toString();
             }
         }
+        overview = overview.replaceAll("\\s*\\[[^\\]]*\\]\\s*", "");
         return overview;
     }
 

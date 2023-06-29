@@ -19,7 +19,7 @@ public class DBPediaData extends EntityHandling {
     public static void main(String[] args) throws Exception {
         DBPediaData dbpediaData = new DBPediaData();
         //dbpediaData.getData();
-        dbpediaData.syncData();
+        //dbpediaData.syncData();
         dbpediaData.merge();
     }
 
