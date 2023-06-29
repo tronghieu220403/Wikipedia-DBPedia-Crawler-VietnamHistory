@@ -20,7 +20,7 @@ public class DBPediaData extends EntityHandling {
         DBPediaData dbpediaData = new DBPediaData();
         //dbpediaData.getData();
         dbpediaData.syncData();
-        //dbpediaData.merge();
+        dbpediaData.merge();
     }
 
     /**
@@ -508,8 +508,6 @@ public class DBPediaData extends EntityHandling {
     void merge() throws Exception
     {
         String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
-        //String wikiEntityPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/EntityJson";
-        //String wikiPropPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/EntityProperties";
         String dbpediaExportPath = "E:/Code/Java/OOP_Project/saveddata/DBPedia/data/";
         String exportDataFolder = "data";
         createFolder(exportDataFolder);
