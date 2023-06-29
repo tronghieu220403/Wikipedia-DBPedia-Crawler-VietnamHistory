@@ -16,13 +16,13 @@ public class WikiAnalys extends WikiData{
     public static void main(String[] args) throws Exception {
         
         WikiAnalys myWikiAnalys = new WikiAnalys();
-        //myWikiAnalys.getInvalidEntities();
-        //myWikiAnalys.urlToEntities();
-        //myWikiAnalys.entityRefFinal();
-        //myWikiAnalys.entityFinal();
+        myWikiAnalys.getInvalidEntities();
+        myWikiAnalys.urlToEntities();
+        myWikiAnalys.entityRefFinal();
+        myWikiAnalys.entityFinal();
         //myWikiAnalys.getFestivals();
         //myWikiAnalys.getKings();
-        myWikiAnalys.export();
+        myWikiAnalys.;
     }
 
     public WikiAnalys()
@@ -41,6 +41,7 @@ public class WikiAnalys extends WikiData{
             "https://vi.wikipedia.org/wiki/Lễ_hội_Thái_Lan", "https://vi.wikipedia.org/wiki/Lễ_hội", "https://vi.wikipedia.org/wiki/Lễ_hội_Việt_Nam"));
         String urls[] = {"https://vi.wikipedia.org/wiki/L%E1%BB%85_h%E1%BB%99i_c%C3%A1c_d%C3%A2n_t%E1%BB%99c_Vi%E1%BB%87t_Nam", "https://vi.wikipedia.org/wiki/L%E1%BB%85_h%E1%BB%99i_Vi%E1%BB%87t_Nam"};
         HashSet<String> urlSet = new HashSet<>();
+        urlSet.add("https://vi.wikipedia.org/wiki/Giỗ_Tổ_Hùng_Vương");
         for (String urlString: urls)
         {
             String data = "";
@@ -66,7 +67,6 @@ public class WikiAnalys extends WikiData{
                 }
             }
         }
-        urlSet.add("https://vi.wikipedia.org/wiki/Giỗ_Tổ_Hùng_Vương");
         HashSet<String> qIDSet = new HashSet<>();
         for (String urlString: urlSet)
         {
@@ -74,7 +74,7 @@ public class WikiAnalys extends WikiData{
             try {
                 data = getDataFromURL(urlString).toString();
             } catch (Exception e) {
-                //System.out.println("Error in " + url);    
+                System.out.println("Error in " + url);    
                 return;
             }
             Document doc = Jsoup.parse(data);
@@ -330,116 +330,6 @@ public class WikiAnalys extends WikiData{
 
     String wikiAnalysPath = superpath + "/WikiAnalys";
 
-    public final void getInvalidEntities() throws Exception
-    {
-        for (String fileName: allQFile)
-        {
-            JSONObject content = getJSONFromFile(entityJsonPath + "/" + fileName);
-            JSONObject entities  = (JSONObject )content.get("entities");
-            String qID = fileName.replace(".json", "");
-            JSONObject entitiyContent = (JSONObject )entities.get(qID);
-            if (getSitelink(entitiyContent, qID, "viwiki").equals(""))
-            {
-                moveFile(entityJsonPath + "/" + qID + ".json", entityPropertiesPath + "/" + qID + ".json");
-                continue;
-            }
-            String instance = getInstance(entitiyContent);
-            if (instance.equals("Q5"))
-            {
-                int entityMinYear = getMinYear(entitiyContent);
-                if (entityMinYear == 100000)
-                {
-                    continue;
-                }    
-                if (entityMinYear > 1962) {
-                    moveFile(entityJsonPath + "/" + qID + ".json", entityPropertiesPath + "/" + qID + ".json");
-                }
-                continue;
-            }
-        }
-    }
-
-    private int getMinYear(Object entityJSON)
-    {
-        int minYear = 100000;
-        if (entityJSON instanceof JSONArray)
-        {
-            for (int i = 0; i < ((JSONArray) entityJSON).length(); i++) { 
-                minYear = Math.min(getMinYear(((JSONArray)entityJSON).get(i)),minYear);
-                if (minYear < 1962)
-                {
-                    return minYear;
-                }
-            }
-        }
-        else if (entityJSON instanceof JSONObject)
-        {
-            if (((JSONObject) entityJSON).has("datatype"))
-            {
-                if (((String)((JSONObject) entityJSON).get("datatype")).equals("time"))
-                {
-                    if (!((JSONObject) entityJSON).has("datavalue"))
-                        return minYear;
-                    JSONObject datavalue = (JSONObject) ((JSONObject) entityJSON).get("datavalue");
-                    if (datavalue.has("value"))
-                    {
-                        JSONObject value = (JSONObject)(datavalue.get("value"));
-                        String time = (String)(value.get("time"));
-                        String sign = time.substring(0,1);
-                        if (sign.equals("-"))
-                        {
-                            minYear = 0; 
-                        }
-                        else minYear = Integer.parseInt(time.substring(1,5));
-                    }
-                }
-                return minYear;
-            }
-            Iterator<String> keys = ((JSONObject) entityJSON).keys();
-            while (keys.hasNext()) {
-                String key = keys.next();
-                if (key.equals("references")){
-                    continue;
-                }
-                Object value = ((JSONObject) entityJSON).get(key);
-                
-                if (value instanceof JSONObject) {
-                    minYear = Math.min(getMinYear((JSONObject) value), minYear);
-                } else if (value instanceof JSONArray) {
-                    minYear = Math.min(getMinYear((JSONArray) value), minYear);
-                }
-                if (minYear < 1962)
-                {
-                    return minYear;
-                }
-            }
-        }
-        return minYear;
-    }
-
-
-    private final String getInstance(JSONObject entitiyContent)
-    {
-        String instance = "";
-        JSONObject claims = (JSONObject)entitiyContent.get("claims");
-        if (!claims.has("P31")){
-            return instance;
-        }
-        JSONArray p31Arr = (JSONArray)(claims.get("P31"));
-        for (int i = 0 ; i < p31Arr.length() ; i++)
-        {
-            JSONObject mainsnak = ((JSONObject)(p31Arr.getJSONObject(i).get("mainsnak")));
-            if (mainsnak.has("datavalue"))
-            {
-                JSONObject datavalue = (JSONObject)(mainsnak.get("datavalue"));
-                JSONObject value = (JSONObject)datavalue.get("value");
-                instance = (String )value.get("id");
-                if (!instance.equals("")) 
-                    break;
-            }
-        }
-        return instance;
-    }
 
     public final String getInstance(String qID) throws Exception
     {
@@ -472,29 +362,6 @@ public class WikiAnalys extends WikiData{
         return instance;
     }
 
-    private final String getSitelink(JSONObject entitiyContent, String qID, String wikiLang) throws Exception
-    {
-        JSONObject sitelinks = (JSONObject )entitiyContent.get("sitelinks");
-        String sitelinkVN = "";
-        String sitelinkENG = "";
-        if (wikiLang.equals("viwiki"))
-        {
-            if (sitelinks.has("viwiki"))
-            {
-                sitelinkVN = (String )(((JSONObject )(sitelinks.get("viwiki"))).get("url"));
-            }
-            return sitelinkVN;
-        }
-        if (wikiLang.equals("enwiki"))
-        {
-            if (sitelinks.has("enwiki"))
-            {
-                sitelinkENG = (String )(((JSONObject )(sitelinks.get("enwiki"))).get("url"));
-            }
-            return sitelinkENG;
-        }
-        return sitelinkVN;
-    }
 
     public final void urlToEntities() throws Exception
     {
@@ -531,42 +398,38 @@ public class WikiAnalys extends WikiData{
         writeFile(wikiAnalysPath + "/" + "URLToEntities.json" , (new JSONObject(urlToEntitiesHashMap)).toString(), false);
     }
 
-    public final void entityRefFinal() throws Exception
+    private final void getEntityRef(String qID)
     {
-        HashSet<String> allQRefFile = listAllFiles(superpath + "EntityReference/");
-        HashMap<String, HashSet<String> > refList = new HashMap<String, HashSet<String>>();
-        for (String fileName: allQRefFile)
+        String qID = fileName.replace(".txt", "");
+        List<String> qRef = readFileAllLine(superpath + "EntityReference/" + fileName);
+        for (String urlString: qRef)
         {
-            String qID = fileName.replace(".txt", "");
-            List<String> qRef = readFileAllLine(superpath + "EntityReference/" + fileName);
-            for (String urlString: qRef)
+            urlString = urlDecode(urlString);
+            if (urlToEntitiesHashMap.containsKey(urlString))
             {
-                urlString = urlDecode(urlString);
-                if (urlToEntitiesHashMap.containsKey(urlString))
+                String entityID1 = urlToEntitiesHashMap.get(urlString);
+                if (!refList.containsKey(qID))
                 {
-                    String entityID1 = urlToEntitiesHashMap.get(urlString);
-                    if (!refList.containsKey(qID))
-                    {
-                        HashSet<String> h = new HashSet<>();
-                        h.add(entityID1);
-                        refList.put(qID, h);
-                    }
-                    else
-                    {
-                        refList.get(qID).add(entityID1);
-                    }
-                    if (!refList.containsKey(entityID1))
-                    {
-                        HashSet<String> h = new HashSet<>();
-                        h.add(qID);
-                        refList.put(entityID1, h);
-                    }
-                    else
-                    {
-                        refList.get(entityID1).add(qID);
-                    }
+                    HashSet<String> h = new HashSet<>();
+                    h.add(entityID1);
+                    refList.put(qID, h);
+                }
+                else
+                {
+                    refList.get(qID).add(entityID1);
+                }
+                if (!refList.containsKey(entityID1))
+                {
+                    HashSet<String> h = new HashSet<>();
+                    h.add(qID);
+                    refList.put(entityID1, h);
+                }
+                else
+                {
+                    refList.get(entityID1).add(qID);
                 }
             }
+        }
         }
         refList.forEach((key, value) -> {
             try {
@@ -574,7 +437,8 @@ public class WikiAnalys extends WikiData{
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        });
+        };
+
     }
 
     public String getOverview(String qID)
@@ -611,98 +475,8 @@ public class WikiAnalys extends WikiData{
         return overview;
     }
 
-    private final JSONObject propertyProcess(JSONObject infoObj) throws Exception
-    {
-        JSONObject jsonObj = new JSONObject();
-        String datatype = (String)infoObj.get("datatype");
-        JSONObject datavalue = new JSONObject();
-        if (!infoObj.has("datavalue"))
-        {
-            return jsonObj;
-        }
-        datavalue = (JSONObject)infoObj.get("datavalue");
-        if (datatype.equals("wikibase-item") || datatype.equals("wikibase-property"))
-        {
-            JSONObject value = (JSONObject)datavalue.get("value");
-            String id = (String)value.get("id");
-            if (allQFile.contains(id + ".json")){
-                jsonObj.put("value", getViLabel(id));
-                jsonObj.put("id", id);
-                jsonObj.put("type", "wikibase-item");
-            }
-            else if (allPFile.contains(id + ".json"))
-            {
-                String viLabel = getViLabel(id);
-                if (!viLabel.isEmpty()){
-                    jsonObj.put("value", viLabel);
-                    jsonObj.put("type", "string");
-                }
 
-            }
-        }
-        else if (datatype.equals("quantity"))
-        {
-            JSONObject value = (JSONObject)datavalue.get("value");
-            String amount = ((String)value.get("amount")).replace("+", "");
-            String unit = (String)value.get("unit");
-            if (unit.equals("1"))
-            {
-                unit = " ";
-            }
-            else
-            {
-                String qID = unit.replace("http://www.wikidata.org/entity/", "");
-                unit = getViLabel(qID); 
-            }
-            jsonObj.put("value", amount + " " + unit);
-            jsonObj.put("type", "string");
-
-        }
-        else if (datatype.equals("string"))
-        {
-            String value = (String)datavalue.get("value");
-            jsonObj.put("value", value);
-            jsonObj.put("type", "string");
-        }
-        else if (datatype.equals("monolingualtext"))
-        {
-            JSONObject value = (JSONObject)datavalue.get("value");
-            String lang = (String)value.get("language");
-            if (lang.equals("vi"))
-            {
-                jsonObj.put("value", (String)value.get("text"));
-                jsonObj.put("type", "string");
-            }
-        }
-        else if (datatype.equals("time"))
-        {
-            JSONObject value = (JSONObject)datavalue.get("value");
-            String time = (String)value.get("time");
-            String year = time.substring(0, 5);
-            String formatDMY = "";
-            if (!year.contains("0000"))
-            {
-                String month = time.substring(6, 8);
-                if (!month.contains("00"))
-                {
-                    String day = time.substring(9, 11);
-                    if (!day.contains("00"))
-                    {
-                        formatDMY = "Ngày " + day + " ";
-                    }
-                    formatDMY += "Tháng " + month + " ";
-                }
-                formatDMY += "Năm " + year.substring(1, 5);
-                if (year.contains("-"))
-                    formatDMY += " trước công nguyên";
-            }
-            jsonObj.put("value", formatDMY);
-            jsonObj.put("type", "string");
-        }
-        return jsonObj;
-    }
-
-    private JSONObject getVietnameseWikiReadable(String fileName) throws Exception
+    private JSONObject getVietnameseWikiReadable(String qID) throws Exception
     {
         if (!fileName.contains(".json"))
         {
@@ -891,7 +665,7 @@ public class WikiAnalys extends WikiData{
         }
     }
 
-    HashSet<String> acceptedCountries = new HashSet<>(Arrays.asList("Việt Nam", "Đại Việt","Nam Việt", "Đại Cồ Việt", "Đại Ngu", "Xích Quỷ", "Văn Lang", "Âu Lạc", "Giao Chỉ", "Lĩnh Nam", "Giao Châu", "An Nam", "Trấn Nam", "Tĩnh Hải quân", "Đại Nam"));
+    HashSet<String> acceptedCountries = new HashSet<>(Arrays.asList("Việt Nam", "Đại Việt","Nam Việt", "Đại Cồ Việt", "Đại Ngu", "Xích Quỷ", "Văn Lang", "Âu Lạc", "Giao Chỉ", "Lĩnh Nam", "Giao Châu", "An Nam", "Trấn Nam", "Tĩnh Hải quân", "Đại Nam", "Việt Nam Cộng hòa", "Việt Nam Dân chủ Cộng hòa"));
 
     HashSet<String> bannedProperties = new HashSet<>(Arrays.asList("mã sân bay IATA", "chuyến bay vũ trụ", "Romaja quốc ngữ", "trang Commons Creator", "tập hình Commons", "có trong danh sách chú trọng của dự án Wikimedia", "thể loại ở Commons", "chuyển tự McCune–Reischauer", "thể loại chính của đề tài", "thể loại cho nhóm người", "thể loại có liên quan", "bài danh sách Wikimedia", "trang định hướng Wikimedia", "bản mẫu chính của chủ đề", "trang Web"));
 

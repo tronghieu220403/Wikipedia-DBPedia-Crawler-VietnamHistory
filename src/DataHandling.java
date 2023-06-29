@@ -9,7 +9,9 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashSet;
 import java.util.List;
 import java.io.BufferedReader;
@@ -25,6 +27,8 @@ import org.json.JSONObject;
 
 abstract class DataHandling {   
     protected static long timeNow = System.currentTimeMillis();
+
+    private static final String STR_DATE = (new SimpleDateFormat("yyyy-mm-dd hh:mm:ss")).format(Calendar.getInstance().getTime()).replace(':', '-');
 
     private static int requestRate = 100;
     /**
@@ -64,14 +68,20 @@ abstract class DataHandling {
             //throw new Exception("Error response code: " + responseCode);
             return response;
         }
-
-        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-        String inputLine;
-        
-        while ((inputLine = in.readLine()) != null) { 
-            response.append(inputLine);
+        try{
+            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            String inputLine;
+            
+            while ((inputLine = in.readLine()) != null) { 
+                response.append(inputLine);
+            }
+            in.close();
         }
-        in.close();
+        catch (Exception e)
+        {
+            System.out.println("Error in " + urlString);
+            response = new StringBuffer("");
+        }
         return response;
     }
 
@@ -121,7 +131,7 @@ abstract class DataHandling {
             String inputLine;
             while ((inputLine = finp.readLine()) != null)
             {
-                content.append(inputLine);
+                content.append(inputLine + "\n");
             }
         }
         catch (IOException e)
@@ -140,11 +150,9 @@ abstract class DataHandling {
     {
         List<String> lines = new ArrayList<>();
 
-        File file = new File(filePath);
-        if ((boolean)(file.isFile()) == false){
+        if (!fileExist(filePath)){
             return lines;
         }
-
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -156,6 +164,21 @@ abstract class DataHandling {
 
         return lines;
     }
+
+    /**
+     * Check if a folder exists.
+     * @param folderPath The path to the file to be checked.
+     * @return If the file exists, return {@code true}; otherwise, return {@code false}.
+     */
+    public final static boolean folderExist(String folderPath)
+    {
+        File file = new File(folderPath);
+        if ((boolean)(file.isDirectory()) == false){
+            return false;
+        }
+        return true;
+    }
+
 
     /**
      * Check if a file exists.
@@ -180,6 +203,8 @@ abstract class DataHandling {
      */
     public final static void writeFile(String filePath, String content, boolean append) throws Exception
     {
+        filePath = getFullPath(filePath);
+
         File file = new File(filePath);
         if ((boolean)(file.isFile()) == false){
             try{
@@ -190,7 +215,35 @@ abstract class DataHandling {
                 throw new Exception("Unable to create file " + filePath);
             }
         }
+        else {
+            String s = readFileAll(filePath);
+            if (s.equals(content) && append == false) return;
+        }
+        writeToLogs(filePath);
         try (FileWriter fout = new FileWriter(filePath, append)){
+            fout.write(content);
+        }
+        catch (IOException e)
+        {
+            throw e;
+        }
+    }
+
+    private final static void writeFile(String filePath, String content) throws Exception
+    {
+        filePath = getFullPath(filePath);
+        
+        File file = new File(filePath);
+        if ((boolean)(file.isFile()) == false){
+            try{
+                file.createNewFile();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Unable to create file " + filePath);
+            }
+        }
+        try (FileWriter fout = new FileWriter(filePath, false)){
             fout.write(content);
         }
         catch (IOException e)
@@ -201,18 +254,14 @@ abstract class DataHandling {
 
     /**
      * Creates the directory named by this abstract pathname.
-     *
-     * @throws  SecurityException
-     *          If a security manager exists and its {@link
-     *          java.lang.SecurityManager#checkWrite(java.lang.String)}
-     *          method does not permit the named directory to be created
      */
     public final static void createFolder(String folderPath)
     {
+        folderPath = getFullPath(folderPath);
         File folder = new File(folderPath);
         if (!folder.exists()) {  
             // Folder does not exist, create it    
-            folder.mkdir();
+            folder.mkdirs();
         }
     }
 
@@ -232,9 +281,16 @@ abstract class DataHandling {
      * @param urlString
      * @return Decode string for that url.
      */
-    public final static String urlDecode(String urlString) throws Exception
+    public final static String urlDecode(String urlString)
     {
-        return java.net.URLDecoder.decode(urlString, StandardCharsets.UTF_8.name());
+        try {
+            return java.net.URLDecoder.decode(urlString, StandardCharsets.UTF_8.name());
+        }
+        catch (Exception e)
+        {
+            print("Can not decode string: " + urlString);
+        }
+        return "";
     }
 
     /**
@@ -283,21 +339,6 @@ abstract class DataHandling {
     }
 
     /**
-     * Check if a file exists
-     * @param filePath Path to file.
-     * @return return {@code true} if file exists; otherwise, return {@code false}.
-     */
-    public final static boolean isFileExists(String filePath)
-    {
-        File file = new File(filePath);
-
-        if (file.exists()) {
-            return true;
-        }
-        return false;
-    }
-
-    /**
      * Check if a string contains upper case character.
      * @param str
      * @return return {@code true} if the string contains upper case character; otherwise, return {@code false}.
@@ -325,25 +366,57 @@ abstract class DataHandling {
         }
     }
     
+    private final static String writeToLogs(String filePath) throws Exception
+    {
+        filePath = getFullPath(filePath);
+        String s = readFileAll(filePath);
+        String fileName = filePath.substring(filePath.lastIndexOf("\\")+1);
+        String logsPath = filePath.substring(0,filePath.lastIndexOf("\\")+1) + "logs"+ "\\";
+        createFolder(logsPath);
+        createFolder(logsPath + STR_DATE);
+        //print(logsPath + STR_DATE + "\\" + fileName);
+        writeFile(logsPath + STR_DATE + "\\" + fileName, s);
+        return logsPath;
+    }
+
+    /**
+     * 
+     */
+    private final static String getFullPath(String filePath)
+    {
+        filePath = filePath.replace("/", "\\");
+        if (!filePath.contains(":")){
+            filePath = System.getProperty("user.dir").replace('/', '\\') + "\\" + filePath;
+        }
+        return filePath;
+    }
+
     /**
      * Delete a file.
      * @param filePath
      */
-    public final static void deleteFile(String filePath)
+    public final static void deleteFile(String filePath) throws Exception
     {
+        filePath = getFullPath(filePath);
         if (!fileExist(filePath))
             return;
+        writeToLogs(filePath);
         File myObj = new File(filePath); 
         myObj.delete();
     }
 
     /**
-     * Move a file from one directory to another.
+     * Move a file from one directory to another.<p>
+     * Examples: <p>
+     * <blockquote><pre>
+     * moveFile("/source/Q1.json", "/destination/Q1.json");
+     * </pre></blockquote>
+     *
      * @param srcFilePath Path of the file to move.
      * @param tarFilePath Path of the file to move it to.
-     * @throws IOException
+     * @throws Exception
      */
-    public final static void moveFile(String srcFilePath, String tarFilePath) throws IOException
+    public final static void moveFile(String srcFilePath, String tarFilePath) throws Exception
     {
         if (fileExist(tarFilePath))
             return;
@@ -357,4 +430,6 @@ abstract class DataHandling {
     {
         return new HashSet<>(jsonObject.keySet());
     }
+
+    
 }
