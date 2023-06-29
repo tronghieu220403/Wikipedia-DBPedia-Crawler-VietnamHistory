@@ -97,22 +97,21 @@ public class WikiData extends EntityHandling{
     @Override
     public void getDataCallBack() throws Exception
     {
-        //selectiveDataQueries();
-        //analyzeBruteForceData();
-        //analyzeSelectiveData();
-
+        selectiveDataQueries();
+        analyzeSelectiveData();
+        analyzeBruteForceAndSelectiveData();
         tableDataQueries();
         //export();
         return;
     }
 
     private void selectiveDataQueries() throws Exception{
-        getFestivals(); // done;
-        getHumans();  // done;
-        getLocations(); // done;
+        selectiveFestivalsQueries(); // done;
+        selectiveHumansQueries();  // done;
+        selectiveLocationsQueries(); // done;
     }
 
-    private void analyzeBruteForceData() throws Exception{
+    private void analyzeBruteForceAndSelectiveData() throws Exception{
         urlToEntities();
         getProperties();
         entityRefFinal();
@@ -120,16 +119,16 @@ public class WikiData extends EntityHandling{
     }
 
     private void analyzeSelectiveData()throws Exception{
-        //handleFestival();
-        //handleHumans();
-        //handleLocations();
+        analyzeSelectiveFestivalData();
+        analyzeSelectiveHumanData();
+        analyzeSelectiveLocationData();
     }
 
     private void tableDataQueries() throws Exception{
         tableDynastiesQueries();
         //tableFestivalsQueries();
+        tableLocationsQueries();
     }
-
 
     private void getAllURL(String catString, int floor, boolean getCat, HashSet<String> urlSet) throws Exception
     {
@@ -193,7 +192,7 @@ public class WikiData extends EntityHandling{
         }
     }
 
-    private void getFestivals() throws Exception
+    private void selectiveFestivalsQueries() throws Exception
     {
         HashSet<String> urlSet = new HashSet<>();
         if (!fileExist(SCARLARLY_PATH + "festivals.json"))
@@ -240,7 +239,7 @@ public class WikiData extends EntityHandling{
     }
 
 
-    private void getHumans() throws Exception {
+    private void selectiveHumansQueries() throws Exception {
         HashSet<String> urlSet = new HashSet<>();
         if (!fileExist(SCARLARLY_PATH + "humans.json"))
         {
@@ -261,7 +260,7 @@ public class WikiData extends EntityHandling{
     }
 
 
-    private void getLocations() throws Exception
+    private void selectiveLocationsQueries() throws Exception
     {
         HashSet<String> urlSet = new HashSet<>();
         if (!fileExist(SCARLARLY_PATH + "locations.json"))
@@ -278,6 +277,24 @@ public class WikiData extends EntityHandling{
             }
         }
         analyzeScarlarlyURLs(urlSet, locationHashSet);
+
+        JSONArray allLocationsArr = new JSONArray(readFileAll(INITIALIZE_PATH + "HistoricalSite.json"));
+        for (int i = 0; i < allLocationsArr.length(); i++)
+        {
+            JSONObject locationJSON = allLocationsArr.getJSONObject(i);
+            String urlString = urlDecode(locationJSON.getString("link"));
+            String qID = "";
+            if (checkURL(urlString)){
+                if (!urlToEntityHashMap.containsKey(urlString)){
+                    entityAnalys(urlString, 3, true);
+                    qID = urlToEntityHashMap.get(urlString);
+                    if (qID != null){
+                        urlSet.add(urlString);
+                        locationHashSet.add(qID);
+                    }
+                }
+            }
+        }
 
         writeFile(SCARLARLY_PATH + "locations.json", (new JSONArray(urlSet)).toString(), false);
         writeFile(LOGS_PATH +  "URLToEntities.json" , (new JSONObject(urlToEntityHashMap)).toString(), false);
@@ -378,12 +395,12 @@ public class WikiData extends EntityHandling{
     }
 
 
-    private JSONObject addPropertiesToEntity(JSONObject myJsonClaims, String propName, String value)
+    private JSONObject addProperties(JSONObject myJsonClaims, String propName, String value)
     {
-        return addPropertiesToEntity(myJsonClaims, propName, value, "");
+        return addProperties(myJsonClaims, propName, value, "");
     }
 
-    private JSONObject addPropertiesToEntity(JSONObject myJsonClaims, String propName, String value, String qID)
+    private JSONObject addProperties(JSONObject myJsonClaims, String propName, String value, String qID)
     {
         JSONObject addObj = new JSONObject();
         addObj.put("value", value);
@@ -420,36 +437,36 @@ public class WikiData extends EntityHandling{
     }
 
 
-    private void handleFestival() throws Exception
+    private void analyzeSelectiveFestivalData() throws Exception
     {
         for (String qID: festivalHashSet)
         {
             JSONObject json = getVietnameseWikiReadable(qID);
             JSONObject claims = json.getJSONObject("claims");
-            addPropertiesToEntity(claims, "là một", "lễ hội");
-            addPropertiesToEntity(claims, "quốc gia", "Việt Nam");
+            addProperties(claims, "là một", "lễ hội");
+            addProperties(claims, "quốc gia", "Việt Nam");
             writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
         }
     }
 
-    private void handleHumans() throws Exception {
+    private void analyzeSelectiveHumanData() throws Exception {
         for (String qID: humanHashSet)
         {
             JSONObject json = getVietnameseWikiReadable(qID);
             JSONObject claims = json.getJSONObject("claims");
-            addPropertiesToEntity(claims, "là một", "người");
-            addPropertiesToEntity(claims, "quốc tịch", "Việt Nam");
+            addProperties(claims, "là một", "người");
+            addProperties(claims, "quốc tịch", "Việt Nam");
             writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
         }
     }
 
-    private void handleLocations() throws Exception {
+    private void analyzeSelectiveLocationData() throws Exception {
         for (String qID: locationHashSet)
         {
             JSONObject json = getVietnameseWikiReadable(qID);
             JSONObject claims = json.getJSONObject("claims");
-            addPropertiesToEntity(claims, "là một", "địa điểm");
-            addPropertiesToEntity(claims, "quốc gia", "Việt Nam");
+            addProperties(claims, "là một", "địa điểm");
+            addProperties(claims, "quốc gia", "Việt Nam");
             writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
         }
     }
@@ -484,19 +501,23 @@ public class WikiData extends EntityHandling{
             {
                 JSONObject claims = new JSONObject();
                 String qID = "Q" + Integer.toString(dynastyName.hashCode()).replace("-", "") + "X";
-                addPropertiesToEntity(claims, "quốc gia", "Việt Nam");
-                addPropertiesToEntity(claims, "là một", "triều đại");
-                dynastyJsonObject.put("claims", claims);
-                dynastyJsonObject.put("overview",  dynastyName + " là một triều đại phong kiến trong lịch sử Việt Nam.");
-                dynastyJsonObject.put("aliases", new JSONArray());
-                dynastyJsonObject.put("id", qID);
-                dynastyJsonObject.put("label", dynastyName);
+                addProperties(claims, "quốc gia", "Việt Nam");
+                addProperties(claims, "là một", "triều đại");
+                createNewObject(dynastyJsonObject, 
+                    qID, 
+                    dynastyName, 
+                    dynastyName + " là một triều đại phong kiến trong lịch sử Việt Nam.", 
+                    "", 
+                    new JSONArray(), 
+                    claims, 
+                    new JSONObject()
+                );
                 dynastyHashMap.put(dynastyName, qID);
             }
             else
             {
                 try{
-                    dynastyJsonObject = getJSONFromFile(DYNASTY_PATH + dynastyHashMap.get(dynastyName) + ".json");
+                    dynastyJsonObject = getJSONFromFile(ENTITY_FINAL_PATH + dynastyHashMap.get(dynastyName) + ".json");
                 }
                 catch (Exception e) {
                     System.out.println("[ERROR] Can't find file: data/triều đại lịch sử/" + dynastyHashMap.get(dynastyName));
@@ -535,26 +556,29 @@ public class WikiData extends EntityHandling{
                     kingQID = "Q" + Integer.toString(kingName.hashCode()).replace("-", "") + "X";
                 }
 
-                addPropertiesToEntity(kingClaims, "là một", "người");
-                addPropertiesToEntity(kingClaims, "là một", "vua");
-                addPropertiesToEntity(kingClaims, "quốc tịch", "Việt Nam");
+                addProperties(kingClaims, "là một", "người");
+                addProperties(kingClaims, "là một", "vua");
+                addProperties(kingClaims, "quốc tịch", "Việt Nam");
 
                 for (String prop: kingProp)
                 {
                     if (!king.has(prop)) continue;
                     String value = king.getString(prop);
                     if (value.isEmpty()) continue;
-                    addPropertiesToEntity(kingClaims, prop.toLowerCase(), value);
+                    addProperties(kingClaims, prop.toLowerCase(), value);
                 }
 
                 if (kingQID.contains("X"))
                 {
-                    kingJsonObject.put("claims", kingClaims);
-                    kingJsonObject.put("aliases", new JSONArray());
-                    kingJsonObject.put("overview",  kingName + " là một vị vua trong lịch sử Việt Nam.");
-                    kingJsonObject.put("id", kingQID);
-                    kingJsonObject.put("references", new JSONObject());
-                    kingJsonObject.put("label", kingName);
+                    createNewObject(kingJsonObject, 
+                        kingQID, 
+                        kingName, 
+                        kingName + " là một vị vua trong lịch sử Việt Nam.", 
+                        "", 
+                        new JSONArray(), 
+                        kingClaims,
+                        new JSONObject()
+                    );
                     urlToEntityHashMap.put(kingURL, kingQID);
                 }
                 JSONObject refJSONObj = new JSONObject();
@@ -567,15 +591,111 @@ public class WikiData extends EntityHandling{
                 if (kingJsonObject.has("references"))
                     kingRefJsonObject = kingJsonObject.getJSONObject("references");
 
-                addPropertiesToEntity(kingRefJsonObject, "triều đại", dynastyName, dynastyQID);
+                addProperties(kingRefJsonObject, "triều đại", dynastyName, dynastyQID);
 
                 kingJsonObject.put("references", kingRefJsonObject);
                 writeFile(ENTITY_FINAL_PATH + kingQID + ".json", kingJsonObject.toString(), false);
             }
-            dynastyJsonObject.put("references", (new JSONObject()).put("vua", dynastyRefArr));
+            dynastyJsonObject.getJSONObject("references").put("vua", dynastyRefArr);
             writeFile(ENTITY_FINAL_PATH + dynastyQID + ".json", dynastyJsonObject.toString(), false);
         }
         
+    }
+
+    private JSONObject createNewObject(JSONObject myJsonObject)
+    {
+        return createNewObject(myJsonObject, "", "", "", "", new JSONArray(), new JSONObject(), new JSONObject());
+    }
+
+    private JSONObject createNewObject(JSONObject myJsonObject, String qID, String label,  String overview, String description, JSONArray aliases, JSONObject claims, JSONObject references)
+    {
+        myJsonObject.put("id", qID);
+        myJsonObject.put("label", label);
+        myJsonObject.put("overview",  overview);
+        myJsonObject.put("description",  description);
+        myJsonObject.put("aliases", aliases);
+        myJsonObject.put("claims", claims);
+        myJsonObject.put("references", references);
+        return myJsonObject;
+    }
+
+    private void tableLocationsQueries() throws Exception {
+        JSONArray allLocationsArr = new JSONArray(readFileAll(INITIALIZE_PATH + "HistoricalSite.json"));
+        for (int i = 0; i < allLocationsArr.length(); i++)
+        {
+            JSONObject locationJSON = allLocationsArr.getJSONObject(i);
+            String urlString = urlDecode(locationJSON.getString("link"));
+            JSONObject json = new JSONObject();
+            String qID = "";
+            if (checkURL(urlString)){
+                if (!urlToEntityHashMap.containsKey(urlString)){
+                    entityAnalys(urlString, 3, true);
+                    qID = urlToEntityHashMap.get(urlString);
+                    if (qID != null){
+                        json = getVietnameseWikiReadable(qID);
+                    }
+                    else{
+                        createNewObject(json);
+                    }
+                }
+                else{
+                    qID = urlToEntityHashMap.get(urlString);
+                    if (fileExist(ENTITY_FINAL_PATH + qID + ".json"))
+                    {
+                        json = getJSONFromFile(ENTITY_FINAL_PATH + qID + ".json");
+                    }
+                    else{
+                        json = getVietnameseWikiReadable(qID);
+                    }
+                }
+            }
+            else{
+                createNewObject(json);
+            }
+            String locationName = locationJSON.getString("Di tích");
+
+            if (locationName.isEmpty())
+                continue;
+            if (json.getString("label").isEmpty()){
+                json.put("label", locationName);
+            }
+            String locationType = "";
+            if (locationJSON.has("Loại di tích")){
+                locationType = locationJSON.getString("Loại di tích").toLowerCase();
+            }
+
+            if (json.getString("overview").isEmpty()){
+                String txt = "";
+                if (!locationType.isEmpty()) txt = locationType + " ";
+                json.put("overview", locationName + " là một di tích " + txt + "tại Việt Nam.");
+            }
+            if (json.getString("id").isEmpty()){
+                qID = "Q" + Integer.toString(locationName.hashCode()).replace("-", "") + "X";
+                json.put("id", qID);
+            }
+            JSONObject claims = json.getJSONObject("claims");
+            if (!locationType.isEmpty())
+                addProperties(claims, "loại di tích", locationType);
+            addProperties(claims, "là một", "di tích");
+            addProperties(claims, "quốc gia", "Việt Nam");
+            if (locationJSON.has("Vị trí")){
+                if (!locationJSON.getString("Vị trí").isEmpty()){
+                    addProperties(claims, "vị trí", locationJSON.getString("Vị trí"));
+                }
+            }  
+            if (locationJSON.has("Năm CN") && !locationJSON.getString("Năm CN").isEmpty()){
+                String date = locationJSON.getString("Năm CN");
+                if (date.contains("/"))
+                {
+                    date = date.replaceFirst("/", " tháng ");
+                    date = date.replaceFirst("/", " năm ");
+                    date = "ngày " + date;
+                }
+                else date = "năm " + date;
+                addProperties(claims, "thời gian công nhận di tích", date);
+            }
+            writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
+        }
     }
 
 
@@ -970,9 +1090,8 @@ public class WikiData extends EntityHandling{
 
     public boolean checkURL(String urlString, boolean getCategory) throws Exception
     {
-        if (!urlString.contains("http")) return false;  
-
         if (urlString == null || urlString.isEmpty()) return false;  
+        if (!urlString.contains("http")) return false;  
         if (!urlString.contains("/wiki/")) return false;
         
         if (getCategory == true)
