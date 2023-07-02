@@ -6,7 +6,7 @@ import org.json.*;
 public class Testing extends DataHandling {
 
     public static String dataFolderPath = "/data/";
-    public static final String[] BIG_CATEGORIES = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
+    public static final String[] BIG_CATEGORIES = {"triều đại lịch sử","địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "sự kiện lịch sử", "nhân vật lịch sử"};
 
     public static void main(String[] args) throws Exception {
         new Testing();
@@ -39,19 +39,52 @@ public class Testing extends DataHandling {
          * 11011: không chọn triều đại lịch sử
          * Cuối file viết có liệt kê tất cả các thực thể, tiện copy luôn.
          */
-        findByOverview("nhạc sĩ", 11111, "nhac_si.txt");
+        //findByOverview("diễn viên", 11111, "filter/dien_vien.txt");
         /*
          * lấy tất cả các thực thể có thuộc tính với giá trị xác định
          * Cuối file viết có liệt kê tất cả các thực thể, tiện copy luôn.
          */
-        findByProp("quốc gia", "Pháp", "france.txt", false);
+        //findByProp("quốc gia", "Pháp", "france.txt", false);
         /*
          * lấy tất cả các giá trị của một thuộc tính
          */
-        getAllValueOfProp("quốc gia", "quoc_gia.txt");
-
-
+        //getAllValueOfProp("quốc gia", "filter/quoc_gia.txt");
+        //getAllValueOfProp("quốc gia xuất xứ", "filter/quoc_gia_xuat_xu.txt");
+        getAllValueOfProp("là một", "filter/instance.txt");
+        //getAllValueOfProp("vị trí trong đội", "filter/trash.txt");
+        /*
+         * Lấy tất cả thuộc tính:
+         */
+        //getAllProp("prop.txt");
          // Vùng viết code nằm trên đây.
+
+    }
+
+    private void getAllProp(String fileWrite) throws Exception{
+        StringBuffer s = new StringBuffer();
+        HashSet<String> prop = new HashSet<>();
+        
+        for (String cat: BIG_CATEGORIES)
+        {
+            for (String fileName: listAllFiles(dataFolderPath + cat)){
+                if (fileName.contains("X")) continue;
+                JSONObject json = getJSONFromFile(dataFolderPath+cat+"/"+fileName);
+                JSONObject claims = json.getJSONObject("claims");
+                for (String propName: getAllKeys(claims))
+                    if (!prop.contains(propName))
+                    {
+                        JSONArray arr = claims.getJSONArray(propName);
+                        JSONObject obj = arr.getJSONObject(0);
+                        s.append("\"" + propName + "\": \"\",").append("\n");
+                        s.append(obj.getString("value")).append("\n");
+                        s.append("https://www.wikidata.org/wiki/" + fileName.replace(".json", "")).append("\n");
+                        s.append("\n\n");
+                        prop.add(propName);
+                    }
+            }
+        }
+        writeFile(fileWrite, s.toString(), false);
+
     }
 
     void getAllValueOfProp(String propName, String fileWrite) throws Exception{

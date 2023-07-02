@@ -101,18 +101,18 @@ public class WikiData extends EntityHandling{
     public void getDataCallBack() throws Exception
     {
         selectiveDataQueries();
-        //analyzeBruteForceData();
-        //analyzeSelectiveData();
-        //tableDataQueries();
-        //export();
+        analyzeBruteForceData();
+        analyzeSelectiveData();
+        tableDataQueries();
+        export();
         return;
     }
 
     private void selectiveDataQueries() throws Exception{
-        //selectiveFestivalsQueries(); // done;
-        //selectiveHumansQueries();  // done;
-        //selectiveLocationsQueries(); // done;
-        //selectiveEventsQueries(); // done
+        selectiveFestivalsQueries(); // done;
+        selectiveHumansQueries();  // done;
+        selectiveLocationsQueries(); // done;
+        selectiveEventsQueries(); // done
     }
 
     private void analyzeBruteForceData() throws Exception{
@@ -123,10 +123,10 @@ public class WikiData extends EntityHandling{
     }
 
     private void analyzeSelectiveData()throws Exception{
-        //analyzeSelectiveFestivalData();   // done
-        //analyzeSelectiveHumanData();  // done
-        //analyzeSelectiveLocationData();   // done
-        //analyzeSelectiveEventData();    // done
+        analyzeSelectiveFestivalData();   // done
+        analyzeSelectiveHumanData();  // done
+        analyzeSelectiveLocationData();   // done
+        analyzeSelectiveEventData();    // done
     }
 
     private void tableDataQueries() throws Exception{
@@ -523,7 +523,7 @@ public class WikiData extends EntityHandling{
             JSONObject claims = json.getJSONObject("claims");
             addProperties(claims, "là một", "sự kiện lịch sử");
             addProperties(claims, "quốc gia", "Việt Nam");
-            print(qID);
+            //print(qID);
             writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
         }
     }
@@ -1045,7 +1045,7 @@ public class WikiData extends EntityHandling{
                     if (tagContent.isEmpty()) continue;
                     String regex = "\\s*\\[[^\\]]*\\]\\s*";
                     if (tagContent.matches(regex)){
-                        tagContent = tagContent.replaceAll(regex, "");
+                        tagContent = tagContent.replaceAll(regex, " ");
                     }
                     overviewSB.append(tagContent);
                     break;
@@ -1060,7 +1060,7 @@ public class WikiData extends EntityHandling{
                 overview = overviewSB.toString();
             }
         }
-        overview = overview.replaceAll("\\s*\\[[^\\]]*\\]\\s*", "");
+        overview = overview.replaceAll("\\s*\\[[^\\]]*\\]\\s*", " ");
         return overview;
     }
 
