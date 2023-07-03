@@ -1,376 +1,273 @@
-import java.nio.file.Files;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.*;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
+import org.json.*;
 
 
 public class Testing extends DataHandling {
 
-    private final static String[] FILTER = {
-        "#","T%E1%BA%ADp_tin"
-    };
-
-    public static boolean checkURL(String urlString) {
-        if (!urlString.contains("http")) return false;  
-
-        if (urlString == null || urlString.isEmpty()) return false;  
-        if (!urlString.contains("/wiki/")) return false;
-        
-        for (String text : FILTER) {
-            if (urlString.contains(text)) return false;
-        }
-        
-        if (urlString.chars().filter(ch -> ch == ':').count() > 1) {
-            return false;  
-        }
-        
-        return true;  
-    }
-
-
-    private final static HashSet<String> getAllHref(String htmlData) throws Exception
-    {
-
-        HashSet<String> hrefList = new HashSet<>();
-
-        Document doc = Jsoup.parse(htmlData);
-        Element divTag = doc.getElementById("mw-content-text"); 
-        
-        Elements tables = divTag.select("table[align=right]");
-        for (Element table : tables) {
-            table.remove();
-        }
-
-        Element xemThemTag = divTag.selectFirst("h2:has(span#Xem_th\\.C3\\.AAm)"); // Get the Xem thêm tag
-        if (xemThemTag != null) {
-            Element nextElement = xemThemTag.nextElementSibling(); // Get the next element after Xem thêm tag
-            while (nextElement != null) {
-                Element toRemove = nextElement; // Store the current element to remove
-                nextElement = nextElement.nextElementSibling(); // Get the next element
-                toRemove.remove(); // Remove the current element from the DOM
-            }
-        }
-
-        Elements navboxElements = divTag.select("div.navbox"); // Get all elements with class navbox
-        for (Element navboxElement : navboxElements) {
-            navboxElement.remove(); // Remove each navbox element from the DOM
-        }
-        
-        for (Element aTag : divTag.select("a")) {
-            String href = aTag.attr("href");
-            String fullURL = "https://vi.wikipedia.org" + href;
-            if (!checkURL(fullURL)) continue;
-            fullURL = urlDecode(fullURL);
-            hrefList.add(fullURL);
-        }
-        return hrefList;
-    }
-
+    public static String dataFolderPath = "/data/";
+    public static final String[] BIG_CATEGORIES = {"triều đại lịch sử","địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "sự kiện lịch sử", "nhân vật lịch sử"};
 
     public static void main(String[] args) throws Exception {
-        String a = "E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\logs\\EntityFinal\\";
-        for (String fileName: listAllFiles(a))
-        {
-            JSONObject o = getJSONFromFile(a + fileName);
-            String overv = o.getString("overview");
-            if (overv.length()>=1)
-            if (overv.charAt(overv.length()-1) == (char)(':'))
-            {
-                int dot = overv.lastIndexOf(".", overv.length()-1);
-                String gg = overv.substring(0, dot + 1);
-                o.put("overview", gg);
-                writeFile(a + fileName, o.toString(), false);
-                //print(fileName);
-            }
-        }
-        /*
-        //String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
-        String a = "E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\logs\\EntityReference\\";
-        for (String fileName: listAllFiles(a))
-        {
-            String qID = fileName.replace(".txt", "");
-            for (String craftURL: getAllHref(readFileAll("E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\logs\\WebHtml\\" + qID +  ".html"))){
-                writeFile(a + fileName, craftURL + '\n', true);
-            }
-            //String path = a + fileName;
-            //writeFile(path, "", false);
-        }
-        /*
-        for (String craftURL: getAllHref(readFileAll("E:\\Code\\Java\\OOP_Project\\saveddata\\Wikipedia\\logs\\WebHtml\\Q1010530.html"))){
-            writeFile("gg.txt", craftURL + '\n', true);
-        }
-        */
+        new Testing();
     }
 
-    public static void trash() throws Exception
-    {
-        print(System.getProperty("user.dir"));
-        writeFile("human.txt", "aa", true);
-        String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
-        StringBuffer sb = new StringBuffer();
-        HashSet<String> filePaths = new HashSet<>();
-        for (String bigCategory: bigCategories)
-        {
-            String path = "data/" + bigCategory;
-            HashSet<String> fileList = listAllFiles(path);
-            for (String fileName: fileList)
-            {
-                filePaths.add(path + "/" + fileName);
-            }
-        }
-        for (String bigCategory: bigCategories)
-        {
-            String path = "E:/Code/Github/VietNamHistory/src/data/" + bigCategory;
-            HashSet<String> fileList = listAllFiles(path);
-            for (String fileName: fileList)
-            {
-                //filePaths.add(path + "/" + fileName);
-            }
-        }
-        for (String bigCategory: bigCategories)
-        {
-            String path = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/data/" + bigCategory;
-            HashSet<String> fileList = listAllFiles(path);
-            for (String fileName: fileList)
-            {
-                //filePaths.add(path + "/" + fileName);
-            }
-        }
-        int cnt = 0;
-        String path = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/logs/WikiAnalys/EntityFinal/";
-        for (String fileName: listAllFiles(path))
-        {
-            //filePaths.add(path + "/" + fileName);
-            //cnt++;
-        }
-        //print(cnt);
-        path = "E:/Code/Java/OOP_Project/saveddata/DBPedia/data";
-        for (String fileName: listAllFiles(path))
-        {
-            //filePaths.add(path + "/" + fileName);
-        }
-        
-        String str = "địa điểm";
+    HashSet<String> entityHashSet = new HashSet<>();
 
-        JSONObject freq = new JSONObject();
-        JSONObject appear = new JSONObject();
-        JSONObject where = new JSONObject();
-        /*
-        for (String filePath: filePaths)
+    Testing() throws Exception{
+
+        // Chỉnh đường dẫn đến thư mục chứa data.
+        dataFolderPath = "data/";
+        
+        
+        for (String cat: BIG_CATEGORIES)
         {
-            if (filePath.contains("nhân vật lịch sử"))
+            for (String fileName: listAllFiles(dataFolderPath + cat))
             {
-                JSONObject json;
-                try{
-                    json = getJSONFromFile(filePath);
-                }
-                catch (Exception e)
+                entityHashSet.add(fileName.replace(".json", ""));
+            }
+        }
+
+        // Vùng viết code nằm dưới đây.
+
+
+        /*
+         * Tìm text trong overview và description
+         * 
+         * biến selection: đặt value ở vị trí nào bằng 0 thì không chọn vị trí đó trong BIG_CATEGORIES, có thể hiểu:
+         * 11011: không chọn nhân vật lịch sử
+         * 11011: không chọn triều đại lịch sử
+         * Cuối file viết có liệt kê tất cả các thực thể, tiện copy luôn.
+         */
+        //findByOverview("biên tập viên", 11111, "filter/dien_vien.txt");
+        /*
+         * lấy tất cả các thực thể có thuộc tính với giá trị xác định
+         * Cuối file viết có liệt kê tất cả các thực thể, tiện copy luôn.
+         */
+        //findByProp("quốc gia", "Pháp", "france.txt", false);
+        //findByProp("quốc tịch", "", 1, "filter/quốc tịch.txt", true);
+        /*
+         * lấy tất cả các giá trị của một thuộc tính
+         */
+        //getAllValueOfProp("quốc gia", "filter/quoc_gia.txt");
+        //getAllValueOfProp("quốc gia xuất xứ", "filter/quoc_gia_xuat_xu.txt");
+        //getAllValueOfProp("là một", "filter/instance.txt");
+        //getAllValueOfProp("vị trí trong đội", "filter/trash.txt");
+        /*
+         * Lấy tất cả thuộc tính:
+         */
+        //getAllProp("prop.txt");
+        getAllLocation("filter/loc.txt", "là một", "di tích", 1000);
+        // Vùng viết code nằm trên đây.
+
+    }
+
+    private void getAllLocation(String fileWrite, String propName, String propValue, int selection) throws Exception{
+        StringBuffer s = new StringBuffer();
+        StringBuffer gg = new StringBuffer();
+        int index = 4;
+        while(selection > 0)
+        {
+            if (selection % 10 == 1)
+            {
+                for (String fileName: listAllFiles(dataFolderPath + BIG_CATEGORIES[index]))
                 {
-                    print(filePath);
-                    return;
-                }
-                if (json.has("claims"))
-                {
+                    if (fileName.contains("X")) continue;
+                    JSONObject json = getJSONFromFile(dataFolderPath+BIG_CATEGORIES[index]+"/"+fileName);
                     JSONObject claims = json.getJSONObject("claims");
-                    for (String key: getAllKeys(claims))
+                    if (claims.has(propName))
                     {
-                        if (!freq.has(key))
+                        s.append(json.getString("label")).append("\n");
+                        s.append(json.getString("overview") + '\n');
+                        s.append(json.getString("id") + "\n");
+                        s.append("https://www.wikidata.org/wiki/" + fileName.replace(".json", "") + "\n\n");
+                        gg.append(fileName.replace(".json", "") + '\n');
+                        continue;
+                    }
+                    if (claims.has("quốc gia")){
+                        if (unicodeDecode(claims.getJSONArray("quốc gia").getJSONObject(0).getString("value")).equals(unicodeDecode("Việt Nam")))
                         {
-                            String value = claims.getJSONArray(key).getJSONObject(0).getString("value");
-                            freq.put(key, 1);
-                            appear.put(key, value);
-                            where.put(key, filePath);
-                        }
-                        else{
-                            freq.put(key, freq.getInt(key) + 1);
+                            //continue;
                         }
                     }
-                }
-            }
-        }
-        for (String key: getAllKeys(freq))
-        {
-            writeFile("human-prop.txt", where.getString(key) + '\n', true);
-            writeFile("human-prop.txt", "Name: " + key + "\n    Appear: " + Integer.valueOf(freq.getInt(key)) + '\n', true);
-            writeFile("human-prop.txt", "    " + key + ": " + appear.getString(key) + '\n', true);
-            writeFile("human-prop.txt", "\n", true);
-        }
-        */
-    
-        for (String filePath: filePaths)
-        {
-            if (!filePath.contains("nhân vật lịch sử"))
-            {
-                //writeFile("non-human.txt", getJSONFromFile(filePath).getString("overview") + "\n" + filePath + "\n\n", true);
-            }
-        }
-        
-        String erase = "bài danh sách Wikimedia";
-        String replace = "địa phương";
-
-        /*
-        for (String filePath: filePaths)
-        {
-            String s = readFileAll(filePath);
-            int oldSize = s.length();
-            s = s.replace(erase, replace);
-            if (s.length()!=oldSize)
-            {
-                cnt++;
-                writeFile(filePath, s, false);
-            }
-        }
-        print(cnt);
-        */
-        for (String filePath: filePaths)
-        {
-            //if (filePath.length()>0) continue;
-            JSONObject json;
-            try{
-                json = getJSONFromFile(filePath);
-            }
-            catch (Exception e)
-            {
-                print(filePath);
-                return;
-            }
-            boolean check = false;
-            if (json.has("claims"))
-            {
-                JSONObject claims = json.getJSONObject("claims");
-                for (String key: getAllKeys(claims))
-                {
-                    if (key.contains("wiki")||key.contains("Wiki"))
+                    if (claims.has(propName))
                     {
-                        //print(key);
-                        claims.remove(key);
-                        check = true;
-                    }
-                }
-                if (claims.has(erase))
-                {
-                    //claims.put(replace, claims.get(erase));
-                    //claims.remove(erase);
-                    //check = true;
-                }
-            }
-            if (json.has("references"))
-            {   
-                JSONObject ref = json.getJSONObject("references");
-                for (String key: getAllKeys(ref))
-                {
-                    if (key.contains("wiki")||key.contains("Wiki"))
-                    {
-                        //print(key);
-                        ref.remove(key);
-                        check = true;
-                    }
-                }
-                if (ref.has(erase))
-                {
-                    //ref.put(replace, ref.get(erase));
-                    //ref.remove(erase);
-                    //check = true;
-                }
-            }   
-            if (check == true)
-            {
-                cnt++;
-                //print(filePath);
-                //writeFile(filePath, json.toString(), false);
-            }
-        }
-        print(cnt);
-
-        /*
-
-        for (String bigCategory: bigCategories)
-        {
-            String path = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/data/" + bigCategory;
-            HashSet<String> fileList = listAllFiles(path);
-            for (String fileName: fileList)
-            {
-                String s = readFileAll(path + "/" + fileName);
-                int oldSize = s.length();
-                s = s.replace("Bight (địa lý)", "");
-                if (s.length()!=oldSize)
-                {
-                    writeFile(path + "/" + fileName, s, false);
-                }
-            }
-        }
-
-        String path = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/EntityFinal";
-        HashSet<String> fileList = listAllFiles(path);
-        for (String fileName: fileList)
-        {
-            String s = readFileAll(path + "/" + fileName);
-            int oldSize = s.length();
-            s = s.replace("Bight (địa lý)", "");
-            if (s.length()!=oldSize)
-            {
-                writeFile(path + "/" + fileName, s, false);
-            }
-        }
-
-
-
-        JSONObject json = getJSONFromFile("E:/Code/Java/OOP_Project/saveddata/Wikipedia/WikiAnalys/Category/export1/nhân vật lịch sử/Q36014.json");
-        JSONObject claims = (JSONObject)json.get("claims");
-        Iterator<String> properties = ((JSONObject) claims).keys();
-        StringBuilder sb = new StringBuilder();
-        while (properties.hasNext()) {
-            String propertyName = properties.next();
-            sb.append(propertyName + ": ");
-            JSONArray propertyArr = (JSONArray)claims.get(propertyName);
-            int count = 0;
-            for (Object propertyDetail: propertyArr)
-            {
-                if (count > 0)
-                {
-                    sb.append(", ");
-                }
-                JSONObject obj = (JSONObject)propertyDetail;
-                String value = (String)obj.get("value");
-                sb.append(value +" ");
-                if (obj.has("qualifiers"))
-                {
-                    sb.append("(");
-                    JSONObject qualifiersObj = (JSONObject)obj.get("qualifiers");
-                    Iterator<String> qualifierKeys = qualifiersObj.keys();
-                    int subCount = 0;
-                    while(qualifierKeys.hasNext())
-                    {
-                        if (subCount != 0) sb.append(", ");
-                        String qualifierPropertyName = qualifierKeys.next();
-                        sb.append(qualifierPropertyName + ": ");
-                        JSONArray qualifierPropertyArr = (JSONArray)qualifiersObj.get(qualifierPropertyName);
-                        int subSubCount = 0;
-                        for (Object ele: qualifierPropertyArr)
+                        JSONArray arr = claims.getJSONArray(propName);
+                        boolean check = false;
+                        for (int i = 0; i < arr.length(); i++)
                         {
-                            if (subSubCount != 0) sb.append(", ");
-                            JSONObject subQualifierProperty = (JSONObject)ele;
-                            sb.append(subQualifierProperty.get("value"));
-                            subSubCount++;
+                            JSONObject obj = arr.getJSONObject(i);
+                            if (obj.getString("value").equals(propValue) || obj.getString("value").equals("địa điểm"))
+                            {
+                                check = true;
+                                break;
+                            }
                         }
-                        subCount++;
+                        if (check == false)
+                        {
+                            s.append(json.getString("label")).append("\n");
+                            s.append(json.getString("overview") + '\n');
+                            s.append(json.getString("id") + "\n");
+                            s.append("https://www.wikidata.org/wiki/" + fileName.replace(".json", "") + "\n\n");
+                            gg.append(fileName.replace(".json", "") + '\n');
+                            break;
+
+                        }
                     }
-                    sb.append(")");
                 }
-                count++;
             }
-            sb.append("\n");
+            selection = selection / 10;
+            index--;
         }
-        writeFile("hehe.txt",sb.toString(), false);
-        */
+        writeFile(fileWrite, s.toString(), false);
 
     }
 
+    private void getAllProp(String fileWrite) throws Exception{
+        StringBuffer s = new StringBuffer();
+        HashSet<String> prop = new HashSet<>();
+        
+        for (String cat: BIG_CATEGORIES)
+        {
+            for (String fileName: listAllFiles(dataFolderPath + cat)){
+                if (fileName.contains("X")) continue;
+                JSONObject json = getJSONFromFile(dataFolderPath+cat+"/"+fileName);
+                JSONObject claims = json.getJSONObject("claims");
+                for (String propName: getAllKeys(claims))
+                    if (!prop.contains(propName))
+                    {
+                        JSONArray arr = claims.getJSONArray(propName);
+                        JSONObject obj = arr.getJSONObject(0);
+                        s.append("\"" + propName + "\": \"\",").append("\n");
+                        s.append(obj.getString("value")).append("\n");
+                        s.append("https://www.wikidata.org/wiki/" + fileName.replace(".json", "")).append("\n");
+                        s.append("\n\n");
+                        prop.add(propName);
+                    }
+            }
+        }
+        writeFile(fileWrite, s.toString(), false);
+
+    }
+
+    void getAllValueOfProp(String propName, String fileWrite) throws Exception{
+        StringBuffer s = new StringBuffer();
+        HashSet<String> gg = new HashSet<>();
+        for (String cat: BIG_CATEGORIES)
+        {
+            for (String fileName: listAllFiles(dataFolderPath + cat)){
+                if (fileName.contains("X")) continue;
+                JSONObject json = getJSONFromFile(dataFolderPath+cat+"/"+fileName);
+                JSONObject claims = json.getJSONObject("claims");
+                if (claims.has(propName))
+                {
+                    JSONArray arr = claims.getJSONArray(propName);
+                    for (int i = 0; i < arr.length(); i++)
+                    {
+                        JSONObject obj = arr.getJSONObject(i);
+                        gg.add(obj.getString("value"));
+                    }
+                }
+            }
+        }
+        for (String f: gg)
+        {
+            s.append(f).append("\n");
+        }
+        writeFile(fileWrite, s.toString(), false);
+
+    }
+
+    void findByProp(String propName, String propValue, int selection, String fileWrite, boolean printOverview) throws Exception
+    {
+        StringBuffer s = new StringBuffer();
+        StringBuffer gg = new StringBuffer();
+        int index = 4;
+        while(selection > 0)
+        {
+            if (selection % 10 == 1)
+            {
+                for (String fileName: listAllFiles(dataFolderPath + BIG_CATEGORIES[index]))
+                {
+                    if (fileName.contains("X")) continue;
+                    JSONObject json = getJSONFromFile(dataFolderPath+BIG_CATEGORIES[index]+"/"+fileName);
+                    JSONObject claims = json.getJSONObject("claims");
+                    if (propValue.isEmpty() && !claims.has(propName))
+                    {
+                        s.append(json.getString("label")).append("\n");
+                        if (printOverview)
+                        {
+                            s.append(json.getString("overview") + '\n');
+                        }
+                        s.append(json.getString("id") + "\n");
+                        s.append("https://www.wikidata.org/wiki/" + fileName.replace(".json", "") + "\n\n");
+                        gg.append(fileName.replace(".json", "") + '\n');
+                        continue;
+                    }
+                    
+                    if (claims.has(propName))
+                    {
+                        JSONArray arr = claims.getJSONArray(propName);
+                        for (int i = 0; i < arr.length(); i++)
+                        {
+                            JSONObject obj = arr.getJSONObject(i);
+                            if (obj.getString("value").equals(propValue))
+                            {
+                                if (printOverview)
+                                {
+                                    s.append(json.getString("overview") + '\n');
+                                }
+                                s.append(json.getString("id") + "\n");
+                                s.append("https://www.wikidata.org/wiki/" + fileName.replace(".json", "") + "\n\n");
+                                gg.append(fileName.replace(".json", "") + '\n');
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            selection = selection / 10;
+            index--;
+        }
+        writeFile(fileWrite, s.toString() + "\n\n\n" + gg.toString(), false);
+    }
+
+    void findByOverview(String txt, int selection, String fileWrite) throws Exception
+    {
+        int index = 4;
+        StringBuffer s = new StringBuffer();
+        StringBuffer gg = new StringBuffer();
+        while(selection > 0)
+        {
+            if (selection % 10 == 1)
+            {
+                for (String fileName: listAllFiles(dataFolderPath + BIG_CATEGORIES[index])){
+                    if (fileName.contains("X")) continue;
+                    JSONObject json = getJSONFromFile(dataFolderPath + BIG_CATEGORIES[index] + "/" + fileName);
+                    String overview = json.getString("overview");
+                    if (json.has("description"))
+                    {
+                        String des = json.getString("description");
+                        if (des.contains(txt))
+                        {
+                            s.append(overview + '\n');
+                            s.append("https://www.wikidata.org/wiki/" + fileName.replace(".json", "") + "\n\n");
+                            gg.append(fileName.replace(".json", "") + '\n');
+                            continue;
+                        }
+                    }
+                    if (overview.contains(txt))
+                    {
+                        s.append(overview + '\n');
+                        s.append("https://www.wikidata.org/wiki/" + fileName.replace(".json", "") + "\n\n");
+                        gg.append(fileName.replace(".json", "") + '\n');
+                        continue;
+                    }
+                }
+            }
+            selection = selection / 10;
+            index--;
+        }
+        writeFile(fileWrite, s.toString() + "\n\n\n" + gg.toString(), false);
+    }
 }

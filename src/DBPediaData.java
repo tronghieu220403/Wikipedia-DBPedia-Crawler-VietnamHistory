@@ -589,13 +589,6 @@ public class DBPediaData extends EntityHandling {
                         }
                         else
                         {
-                            /*
-                            for (int i = 0; i < wikiPropertyArr.length(); i++)
-                            {
-                                JSONObject wikiObj = wikiPropertyArr.getJSONObject(i);
-                                wikiObj.put("source", "Wikipedia");
-                            }
-                            */
                             exportClaims.put(propertyName, wikiPropertyArr);
                         }
                     }
@@ -603,14 +596,6 @@ public class DBPediaData extends EntityHandling {
                     {
                         if (!wikiClaims.has(propertyName))
                         {
-                            /*
-                            JSONArray dbpediaPropertyArr = dbpediaClaims.getJSONArray(propertyName);
-                            for (int i = 0; i < dbpediaPropertyArr.length(); i++)
-                            {
-                                JSONObject dbpediaObj = dbpediaPropertyArr.getJSONObject(i);
-                                dbpediaObj.put("source", "DBPedia");
-                            }
-                            */
                             exportClaims.put(propertyName, dbpediaClaims.getJSONArray(propertyName));
                         }
                     }

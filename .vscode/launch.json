@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ModifyData",
+            "request": "launch",
+            "mainClass": "ModifyData",
+            "projectName": "Wikipedia-DBPedia-Crawler-VietnamHistory_f4dc11d3"
+        },
+        {
+            "type": "java",
+            "name": "Testing",
+            "request": "launch",
+            "mainClass": "Testing",
+            "projectName": "Wikipedia-DBPedia-Crawler-VietnamHistory_6bfbf825"
+        },
+        {
+            "type": "java",
             "name": "WikiData",
             "request": "launch",
             "mainClass": "WikiData",

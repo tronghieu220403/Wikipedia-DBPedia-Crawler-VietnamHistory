@@ -60,6 +60,7 @@ public class WikiData extends EntityHandling{
     private HashSet<String> festivalHashSet = new HashSet<>();
     private HashSet<String> locationHashSet = new HashSet<>();
     private HashSet<String> humanHashSet = new HashSet<>();
+    private HashSet<String> eventHashSet = new HashSet<>();
 
     public WikiData()
     {
@@ -103,7 +104,6 @@ public class WikiData extends EntityHandling{
         analyzeBruteForceData();
         analyzeSelectiveData();
         tableDataQueries();
-        //export();
         return;
     }
 
@@ -111,25 +111,27 @@ public class WikiData extends EntityHandling{
         selectiveFestivalsQueries(); // done;
         selectiveHumansQueries();  // done;
         selectiveLocationsQueries(); // done;
+        selectiveEventsQueries(); // done
     }
 
     private void analyzeBruteForceData() throws Exception{
         urlToEntities();
         getProperties();
         entityRefFinal();
-        entityFinal();
+        entityFinal();  // must change this part, reference needs to be split in another method for running (before export);
     }
 
     private void analyzeSelectiveData()throws Exception{
-        analyzeSelectiveFestivalData();
-        analyzeSelectiveHumanData();
-        analyzeSelectiveLocationData();
+        analyzeSelectiveFestivalData();   // done
+        analyzeSelectiveHumanData();  // done
+        analyzeSelectiveLocationData();   // done
+        analyzeSelectiveEventData();    // done
     }
 
     private void tableDataQueries() throws Exception{
-        tableDynastiesQueries();
-        //tableFestivalsQueries();
-        tableLocationsQueries();
+        tableDynastiesQueries();    // done
+        tableFestivalsQueries();    
+        tableLocationsQueries();    // done
     }
 
     private void getAllURL(String catString, int floor, boolean getCat, HashSet<String> urlSet) throws Exception
@@ -302,6 +304,46 @@ public class WikiData extends EntityHandling{
         writeFile(LOGS_PATH +  "URLToEntities.json" , (new JSONObject(urlToEntityHashMap)).toString(), false);
     }
 
+    private void selectiveEventsQueries() throws Exception{
+        HashSet<String> urlSet = new HashSet<>();
+        if (!fileExist(SCARLARLY_PATH + "events.json"))
+        {
+            String urlCat[] = {"https://vi.wikipedia.org/wiki/Thể_loại:Trận_đánh_liên_quan_tới_Việt_Nam", "https://vi.wikipedia.org/wiki/Thể_loại:Trận_đánh_và_chiến_dịch_trong_Chiến_tranh_Việt_Nam", "https://vi.wikipedia.org/wiki/Thể_loại:Sự_kiện_lịch_sử_Việt_Nam",
+            "https://vi.wikipedia.org/wiki/Thể_loại:Chiến_tranh_liên_quan_tới_Việt_Nam"};
+            for (String catString: urlCat){
+                getAllURL(catString, 1, true, urlSet);
+            }
+            String accept[] = {"Chiến", "Trận", "Cuộc", "Nổi_dậy", "Hòa_ước", "Loạn", "Không_chiến", "Khởi_nghĩa", "Xung_đột", "Tạm_ước", "Hải_chiến", "Thảm_sát", "Sự_kiện"};
+            List<String> erase = new ArrayList<String>();
+            for (String urlString: urlSet)
+            {
+                boolean check = false;
+                for (String acceptBegin: accept){
+                    if (urlString.contains("/" + acceptBegin)){
+                        check = true;
+                        break;
+                    }
+                }
+                if (check == false) erase.add(urlString);
+            }
+            for (String urlString: erase)
+            {
+                urlSet.remove(urlString);
+            }
+        }
+        else{
+            for (Object key: new JSONArray(readFileAll(SCARLARLY_PATH + "events.json")))
+            {
+                urlSet.add((String)key);
+            }
+        }
+        analyzeScarlarlyURLs(urlSet, eventHashSet);
+        writeFile(SCARLARLY_PATH + "events.json", (new JSONArray(urlSet)).toString(), false);
+        writeFile(LOGS_PATH +  "URLToEntities.json" , (new JSONObject(urlToEntityHashMap)).toString(), false);
+
+    }
+
+
     public final void urlToEntities() throws Exception
     {
         if (fileExist(LOGS_PATH + "URLToEntities.json"))
@@ -473,6 +515,34 @@ public class WikiData extends EntityHandling{
         }
     }
 
+    private void analyzeSelectiveEventData() throws Exception {
+        for (String qID: eventHashSet)
+        {
+            JSONObject json = getVietnameseWikiReadable(qID);
+            JSONObject claims = json.getJSONObject("claims");
+            addProperties(claims, "là một", "sự kiện lịch sử");
+            addProperties(claims, "quốc gia", "Việt Nam");
+            //print(qID);
+            writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
+        }
+    }
+
+    private JSONObject createNewObject(JSONObject myJsonObject)
+    {
+        return createNewObject(myJsonObject, "", "", "", "", new JSONArray(), new JSONObject(), new JSONObject());
+    }
+
+    private JSONObject createNewObject(JSONObject myJsonObject, String qID, String label,  String overview, String description, JSONArray aliases, JSONObject claims, JSONObject references)
+    {
+        myJsonObject.put("id", qID);
+        myJsonObject.put("label", label);
+        myJsonObject.put("overview",  overview);
+        myJsonObject.put("description",  description);
+        myJsonObject.put("aliases", aliases);
+        myJsonObject.put("claims", claims);
+        myJsonObject.put("references", references);
+        return myJsonObject;
+    }
 
     private void tableDynastiesQueries() throws Exception
     {
@@ -604,21 +674,8 @@ public class WikiData extends EntityHandling{
         
     }
 
-    private JSONObject createNewObject(JSONObject myJsonObject)
-    {
-        return createNewObject(myJsonObject, "", "", "", "", new JSONArray(), new JSONObject(), new JSONObject());
-    }
-
-    private JSONObject createNewObject(JSONObject myJsonObject, String qID, String label,  String overview, String description, JSONArray aliases, JSONObject claims, JSONObject references)
-    {
-        myJsonObject.put("id", qID);
-        myJsonObject.put("label", label);
-        myJsonObject.put("overview",  overview);
-        myJsonObject.put("description",  description);
-        myJsonObject.put("aliases", aliases);
-        myJsonObject.put("claims", claims);
-        myJsonObject.put("references", references);
-        return myJsonObject;
+    
+    private void tableFestivalsQueries() {
     }
 
     private void tableLocationsQueries() throws Exception {
@@ -700,7 +757,6 @@ public class WikiData extends EntityHandling{
         }
     }
 
-
     private void entityRefFinal() throws Exception
     {
         HashSet<String> allQRefFile = listAllFiles(ENTITY_REFERENCE_PATH);
@@ -756,13 +812,6 @@ public class WikiData extends EntityHandling{
         allQFile = listAllFiles(ENTITY_JSON_PATH);
         allPFile = listAllFiles(ENTITY_PROPERTIES_PATH);
 
-        /*
-        HashSet<String> propertyEntityHashSet = new HashSet<>();
-        for (String fileName: allPFile)
-        {
-            propertyEntityHashSet.add(fileName.replace(".json",""));
-        }
-        */
         for (String fileName: allQFile)
         {
             if (fileExist(ENTITY_FINAL_PATH + fileName)) {
@@ -988,7 +1037,7 @@ public class WikiData extends EntityHandling{
                     if (tagContent.isEmpty()) continue;
                     String regex = "\\s*\\[[^\\]]*\\]\\s*";
                     if (tagContent.matches(regex)){
-                        tagContent = tagContent.replaceAll(regex, "");
+                        tagContent = tagContent.replaceAll(regex, " ");
                     }
                     overviewSB.append(tagContent);
                     break;
@@ -1003,7 +1052,7 @@ public class WikiData extends EntityHandling{
                 overview = overviewSB.toString();
             }
         }
-        overview = overview.replaceAll("\\s*\\[[^\\]]*\\]\\s*", "");
+        overview = overview.replaceAll("\\s*\\[[^\\]]*\\]\\s*", " ");
         return overview;
     }
 
@@ -1454,7 +1503,6 @@ public class WikiData extends EntityHandling{
      * Get all properties of all entities and save it to folder "Properties".
      * @throws Exception
      */
-    @Override
     protected void getProperties() throws Exception
     {
         if (fileExist(LOGS_PATH + "PropertiesList.json")) {
