@@ -813,13 +813,6 @@ public class WikiData extends EntityHandling{
         allQFile = listAllFiles(ENTITY_JSON_PATH);
         allPFile = listAllFiles(ENTITY_PROPERTIES_PATH);
 
-        /*
-        HashSet<String> propertyEntityHashSet = new HashSet<>();
-        for (String fileName: allPFile)
-        {
-            propertyEntityHashSet.add(fileName.replace(".json",""));
-        }
-        */
         for (String fileName: allQFile)
         {
             if (fileExist(ENTITY_FINAL_PATH + fileName)) {
