@@ -104,7 +104,6 @@ public class WikiData extends EntityHandling{
         analyzeBruteForceData();
         analyzeSelectiveData();
         tableDataQueries();
-        export();
         return;
     }
 
@@ -497,12 +496,14 @@ public class WikiData extends EntityHandling{
     private void analyzeSelectiveHumanData() throws Exception {
         for (String qID: humanHashSet)
         {
+            if (!qID.equals("Q10841729")) continue;
             JSONObject json = getVietnameseWikiReadable(qID);
             JSONObject claims = json.getJSONObject("claims");
             addProperties(claims, "là một", "người");
             addProperties(claims, "quốc tịch", "Việt Nam");
             writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
         }
+        return;
     }
 
     private void analyzeSelectiveLocationData() throws Exception {
