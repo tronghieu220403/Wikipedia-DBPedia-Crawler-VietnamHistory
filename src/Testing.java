@@ -57,8 +57,69 @@ public class Testing extends DataHandling {
          * Lấy tất cả thuộc tính:
          */
         //getAllProp("prop.txt");
-        getAllPropLocation("");
+        getAllLocation("filter/loc.txt", "là một", "di tích", 1000);
         // Vùng viết code nằm trên đây.
+
+    }
+
+    private void getAllLocation(String fileWrite, String propName, String propValue, int selection) throws Exception{
+        StringBuffer s = new StringBuffer();
+        StringBuffer gg = new StringBuffer();
+        int index = 4;
+        while(selection > 0)
+        {
+            if (selection % 10 == 1)
+            {
+                for (String fileName: listAllFiles(dataFolderPath + BIG_CATEGORIES[index]))
+                {
+                    if (fileName.contains("X")) continue;
+                    JSONObject json = getJSONFromFile(dataFolderPath+BIG_CATEGORIES[index]+"/"+fileName);
+                    JSONObject claims = json.getJSONObject("claims");
+                    if (propValue.isEmpty() && !claims.has(propName))
+                    {
+                        s.append(json.getString("label")).append("\n");
+                        s.append(json.getString("overview") + '\n');
+                        s.append(json.getString("id") + "\n");
+                        s.append("https://www.wikidata.org/wiki/" + fileName.replace(".json", "") + "\n\n");
+                        gg.append(fileName.replace(".json", "") + '\n');
+                        continue;
+                    }
+                    if (claims.has("quốc gia")){
+                        if (unicodeDecode(claims.getJSONArray("quốc gia").getJSONObject(0).getString("value")).equals(unicodeDecode("Việt Nam")))
+                        {
+                            continue;
+                        }
+                    }
+                    if (claims.has(propName))
+                    {
+                        JSONArray arr = claims.getJSONArray(propName);
+                        boolean check = false;
+                        for (int i = 0; i < arr.length(); i++)
+                        {
+                            JSONObject obj = arr.getJSONObject(i);
+                            if (obj.getString("value").equals(propValue) || obj.getString("value").equals("địa điểm"))
+                            {
+                                check = true;
+                                break;
+                            }
+                        }
+                        if (check == false)
+                        {
+                            s.append(json.getString("label")).append("\n");
+                            s.append(json.getString("overview") + '\n');
+                            s.append(json.getString("id") + "\n");
+                            s.append("https://www.wikidata.org/wiki/" + fileName.replace(".json", "") + "\n\n");
+                            gg.append(fileName.replace(".json", "") + '\n');
+                            break;
+
+                        }
+                    }
+                }
+            }
+            selection = selection / 10;
+            index--;
+        }
+        writeFile(fileWrite, s.toString(), false);
 
     }
 
