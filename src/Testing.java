@@ -39,18 +39,19 @@ public class Testing extends DataHandling {
          * 11011: không chọn triều đại lịch sử
          * Cuối file viết có liệt kê tất cả các thực thể, tiện copy luôn.
          */
-        //findByOverview("diễn viên", 11111, "filter/dien_vien.txt");
+        //findByOverview("biên tập viên", 11111, "filter/dien_vien.txt");
         /*
          * lấy tất cả các thực thể có thuộc tính với giá trị xác định
          * Cuối file viết có liệt kê tất cả các thực thể, tiện copy luôn.
          */
         //findByProp("quốc gia", "Pháp", "france.txt", false);
+        //findByProp("quốc tịch", "", 1, "filter/quốc tịch.txt", true);
         /*
          * lấy tất cả các giá trị của một thuộc tính
          */
         //getAllValueOfProp("quốc gia", "filter/quoc_gia.txt");
         //getAllValueOfProp("quốc gia xuất xứ", "filter/quoc_gia_xuat_xu.txt");
-        getAllValueOfProp("là một", "filter/instance.txt");
+        //getAllValueOfProp("là một", "filter/instance.txt");
         //getAllValueOfProp("vị trí trong đội", "filter/trash.txt");
         /*
          * Lấy tất cả thuộc tính:
@@ -115,36 +116,56 @@ public class Testing extends DataHandling {
 
     }
 
-    void findByProp(String propName, String propValue, String fileWrite, boolean printOverview) throws Exception
+    void findByProp(String propName, String propValue, int selection, String fileWrite, boolean printOverview) throws Exception
     {
         StringBuffer s = new StringBuffer();
         StringBuffer gg = new StringBuffer();
-        for (String cat: BIG_CATEGORIES)
+        int index = 4;
+        while(selection > 0)
         {
-            for (String fileName: listAllFiles(dataFolderPath + cat)){
-                if (fileName.contains("X")) continue;
-                JSONObject json = getJSONFromFile(dataFolderPath+cat+"/"+fileName);
-                JSONObject claims = json.getJSONObject("claims");
-                if (claims.has(propName))
+            if (selection % 10 == 1)
+            {
+                for (String fileName: listAllFiles(dataFolderPath + BIG_CATEGORIES[index]))
                 {
-                    JSONArray arr = claims.getJSONArray(propName);
-                    for (int i = 0; i < arr.length(); i++)
+                    if (fileName.contains("X")) continue;
+                    JSONObject json = getJSONFromFile(dataFolderPath+BIG_CATEGORIES[index]+"/"+fileName);
+                    JSONObject claims = json.getJSONObject("claims");
+                    if (propValue.isEmpty() && !claims.has(propName))
                     {
-                        JSONObject obj = arr.getJSONObject(i);
-                        if (obj.getString("value").equals(propValue))
+                        s.append(json.getString("label")).append("\n");
+                        if (printOverview)
                         {
-                            if (printOverview)
+                            s.append(json.getString("overview") + '\n');
+                        }
+                        s.append(json.getString("id") + "\n");
+                        s.append("https://www.wikidata.org/wiki/" + fileName.replace(".json", "") + "\n\n");
+                        gg.append(fileName.replace(".json", "") + '\n');
+                        continue;
+                    }
+                    
+                    if (claims.has(propName))
+                    {
+                        JSONArray arr = claims.getJSONArray(propName);
+                        for (int i = 0; i < arr.length(); i++)
+                        {
+                            JSONObject obj = arr.getJSONObject(i);
+                            if (obj.getString("value").equals(propValue))
                             {
-                                s.append(json.getString("overview") + '\n');
+                                if (printOverview)
+                                {
+                                    s.append(json.getString("overview") + '\n');
+                                }
+                                s.append(json.getString("id") + "\n");
+                                s.append("https://www.wikidata.org/wiki/" + fileName.replace(".json", "") + "\n\n");
+                                gg.append(fileName.replace(".json", "") + '\n');
+                                break;
                             }
-                            s.append(json.getString("id") + "\n");
-                            s.append("https://www.wikidata.org/wiki/" + fileName.replace(".json", "") + "\n\n");
-                            gg.append(fileName.replace(".json", "") + '\n');
-                            break;
                         }
                     }
                 }
             }
+            selection = selection / 10;
+            index--;
         }
         writeFile(fileWrite, s.toString() + "\n\n\n" + gg.toString(), false);
     }
