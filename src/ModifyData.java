@@ -152,14 +152,13 @@ public class ModifyData extends DataHandling{
             for (String fileName: listAllFiles("data/" + bigCategory))
             {
                 String qID = fileName.replace(".json","");
-                //if (!qID.equals("Q1013830")) continue;
                 if (rmHashSet.contains(qID)){
-                    //deleteFile("data/" + bigCategory + "/" + fileName);
+                    deleteFile("data/" + bigCategory + "/" + fileName);
                     continue;
                 }
                 JSONObject json = getJSONFromFile("data/" + bigCategory + "/" + fileName);
                 removeEntityInEntity(json, rmHashSet, changeName);
-                writeFile("E:/Code/Github/VietNamHistory/src/data/" + bigCategory + "/" + fileName, json.toString(), false);
+                writeFile("data/" + bigCategory + "/" + fileName, json.toString(), false);
                 continue;
             }
 
