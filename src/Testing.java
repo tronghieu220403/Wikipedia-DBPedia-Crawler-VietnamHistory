@@ -75,7 +75,7 @@ public class Testing extends DataHandling {
                     if (fileName.contains("X")) continue;
                     JSONObject json = getJSONFromFile(dataFolderPath+BIG_CATEGORIES[index]+"/"+fileName);
                     JSONObject claims = json.getJSONObject("claims");
-                    if (propValue.isEmpty() && !claims.has(propName))
+                    if (claims.has(propName))
                     {
                         s.append(json.getString("label")).append("\n");
                         s.append(json.getString("overview") + '\n');
@@ -87,7 +87,7 @@ public class Testing extends DataHandling {
                     if (claims.has("quốc gia")){
                         if (unicodeDecode(claims.getJSONArray("quốc gia").getJSONObject(0).getString("value")).equals(unicodeDecode("Việt Nam")))
                         {
-                            continue;
+                            //continue;
                         }
                     }
                     if (claims.has(propName))

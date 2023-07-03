@@ -1511,7 +1511,6 @@ public class WikiData extends EntityHandling{
      * Get all properties of all entities and save it to folder "Properties".
      * @throws Exception
      */
-    @Override
     protected void getProperties() throws Exception
     {
         if (fileExist(LOGS_PATH + "PropertiesList.json")) {

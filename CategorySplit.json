@@ -50,7 +50,6 @@
 		"pháo đài": 3,
 		"bờ biển": 1,
 		"khu bảo tồn thiên nhiên": 7,
-		"đảo chính": 4,
 		"dòng sông": 5,
 		"địa điểm": 5,
 		"Ám tiêu": 53,
@@ -83,6 +82,7 @@
 		"Danh lam thắng cảnh": 1,
 	},
 	"sự kiện lịch sử": {
+		"đảo chính": 4,
 		"hiệp ước": 0,
 		"tuyên ngôn độc lập": 2,
 		"Chiến tranh ủy nhiệm": 1,
