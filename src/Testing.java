@@ -57,7 +57,8 @@ public class Testing extends DataHandling {
          * Lấy tất cả thuộc tính:
          */
         //getAllProp("prop.txt");
-         // Vùng viết code nằm trên đây.
+        getAllPropLocation("");
+        // Vùng viết code nằm trên đây.
 
     }
 
