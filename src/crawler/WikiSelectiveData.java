@@ -54,11 +54,11 @@ public class WikiSelectiveData extends WikiData {
         while(true)
         {
             wikiPageData = getDataFromURL(catString).toString();
-            for (String craftURL: getAllHref(wikiPageData,"mw-pages",false))
+            for (String craftURL: WikiDataHandling.getAllWikiHref(wikiPageData,"mw-pages",false))
             {
                 urlSet.add(craftURL);
             }
-            Element divTag = getWikiHtmlElement(wikiPageData, "mw-pages");
+            Element divTag = WikiDataHandling.getWikiHtmlElement(wikiPageData, "mw-pages");
             String nextPageUrl = "";
             if (divTag!=null)
             {                
@@ -75,7 +75,7 @@ public class WikiSelectiveData extends WikiData {
         }
         if (getCat == true)
         {
-            for (String craftURL: getAllHref(wikiPageData, "mw-subcategories", true)){
+            for (String craftURL: WikiDataHandling.getAllWikiHref(wikiPageData, "mw-subcategories", true)){
                 getAllURL(craftURL, floor + 1, getCat, urlSet);
             }
         }
@@ -130,7 +130,7 @@ public class WikiSelectiveData extends WikiData {
             {
                 String wikiPageData = getDataFromURL(urlString).toString();
 
-                for (String craftURL: getAllHref(wikiPageData)){
+                for (String craftURL: WikiDataHandling.getAllWikiHref(wikiPageData)){
                     if ((craftURL.contains("Lễ_hội") || craftURL.contains("Hội")) && !bannedFestivalURLs.contains(craftURL)){
                         if (!urlSet.contains(craftURL)) {
                             urlSet.add(craftURL);
@@ -259,8 +259,8 @@ public class WikiSelectiveData extends WikiData {
         {
             JSONObject json = getVietnameseWikiReadable(qID);
             JSONObject claims = json.getJSONObject("claims");
-            addProperties(claims, "là một", "lễ hội");
-            addProperties(claims, "quốc gia", "Việt Nam");
+            WikiDataHandling.addProperties(claims, "là một", "lễ hội");
+            WikiDataHandling.addProperties(claims, "quốc gia", "Việt Nam");
             writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
         }
     }
@@ -270,8 +270,8 @@ public class WikiSelectiveData extends WikiData {
         {
             JSONObject json = getVietnameseWikiReadable(qID);
             JSONObject claims = json.getJSONObject("claims");
-            addProperties(claims, "là một", "người");
-            addProperties(claims, "quốc tịch", "Việt Nam");
+            WikiDataHandling.addProperties(claims, "là một", "người");
+            WikiDataHandling.addProperties(claims, "quốc tịch", "Việt Nam");
             writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
         }
     }
@@ -281,8 +281,8 @@ public class WikiSelectiveData extends WikiData {
         {
             JSONObject json = getVietnameseWikiReadable(qID);
             JSONObject claims = json.getJSONObject("claims");
-            addProperties(claims, "là một", "địa điểm");
-            addProperties(claims, "quốc gia", "Việt Nam");
+            WikiDataHandling.addProperties(claims, "là một", "địa điểm");
+            WikiDataHandling.addProperties(claims, "quốc gia", "Việt Nam");
             writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
         }
     }
@@ -292,8 +292,8 @@ public class WikiSelectiveData extends WikiData {
         {
             JSONObject json = getVietnameseWikiReadable(qID);
             JSONObject claims = json.getJSONObject("claims");
-            addProperties(claims, "là một", "sự kiện lịch sử");
-            addProperties(claims, "quốc gia", "Việt Nam");
+            WikiDataHandling.addProperties(claims, "là một", "sự kiện lịch sử");
+            WikiDataHandling.addProperties(claims, "quốc gia", "Việt Nam");
             writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
         }
     }

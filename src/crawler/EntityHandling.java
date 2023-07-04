@@ -9,6 +9,17 @@ import java.util.List;
 
 public class EntityHandling extends DataHandling{
 
+    class Pair
+    {
+        public String first;
+        public int second;
+        public Pair(String a, int b)
+        {
+            first = a;
+            second = b;
+        }
+    }
+
     protected HashSet<String> vietnamEntityHashSet = new HashSet<>();
     protected HashSet<String> propertyHashSet = new HashSet<>();
     //root path:
