@@ -431,5 +431,26 @@ abstract class DataHandling {
         return new HashSet<>(jsonObject.keySet());
     }
 
-    
+    /*
+     * Create a chunk of prop
+     */
+    public static JSONObject createPropValue(String value, String qID, String source, JSONObject qualifiers){
+        JSONObject obj = new JSONObject();
+        obj.put("value", value);
+        if (qID != null){
+            obj.put("type", "wikibase-item");
+            obj.put("id", qID);
+        }
+        else{
+            obj.put("type", "string");
+        }
+        if (source != null){
+            obj.put("source", source);
+        }
+        if (qualifiers != null){
+            obj.put("qualifiers", qualifiers);
+        }
+        return obj;
+    }
+
 }

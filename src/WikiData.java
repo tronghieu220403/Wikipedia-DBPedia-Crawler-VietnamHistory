@@ -1632,7 +1632,7 @@ public class WikiData extends EntityHandling{
     public final void export() throws Exception
     {
         JSONObject bigCategories = getJSONFromFile(INITIALIZE_PATH + "CategorySplit.json");
-        Iterator<String> bigCategory = ((JSONObject) bigCategories).keys();
+        Iterator<String> bigCategory = bigCategories.keys();
         while (bigCategory.hasNext()) {
             String bigCate = bigCategory.next();
             createFolder(DATA_PATH + bigCate);
@@ -1694,7 +1694,7 @@ public class WikiData extends EntityHandling{
             }
         }
 
-        bigCategory = ((JSONObject) bigCategories).keys();
+        bigCategory = (bigCategories).keys();
         while (bigCategory.hasNext()) {
             String bigCate = bigCategory.next();
             String folderName = DATA_PATH + bigCate;
