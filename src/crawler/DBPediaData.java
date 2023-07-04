@@ -161,7 +161,7 @@ public class DBPediaData extends EntityHandling {
      * @throws Exception
      */
     @Override
-    protected void getProperties() throws Exception
+    protected void getWikiProperties() throws Exception
     {
         return;
     }
@@ -244,7 +244,7 @@ public class DBPediaData extends EntityHandling {
                         selected.put(fileName, qID);
                     }
                     else{
-                        String label = WikiData.getViLabel(qID, wikiEntityPath, wikiPropPath);
+                        String label = WikiData.getWikiEntityViLabel(qID, wikiEntityPath, wikiPropPath);
                         if (!label.isEmpty())
                         {
                             selectedP.put(fileName, label);
@@ -269,7 +269,7 @@ public class DBPediaData extends EntityHandling {
             {
                 if (!fileName.contains("P")) continue;
                 String pID = fileName.replace(".json", "");
-                String propViLabel = WikiData.getViLabel(pID, wikiPropPath, wikiPropPath);
+                String propViLabel = WikiData.getWikiEntityViLabel(pID, wikiPropPath, wikiPropPath);
                 if (propViLabel.isEmpty()) continue;
                 JSONObject json = getJSONFromFile(wikiPropPath + "/" + fileName);
                 JSONObject entity = json.getJSONObject("entities").getJSONObject(pID);
@@ -400,7 +400,7 @@ public class DBPediaData extends EntityHandling {
                                     info.put("type", "wikibase-item");
                                     String id = selected.getString(value);
                                     info.put("id", id);
-                                    info.put("value", WikiData.getViLabel(id, wikiEntityPath, wikiPropPath));
+                                    info.put("value", WikiData.getWikiEntityViLabel(id, wikiEntityPath, wikiPropPath));
                                     analizedJsonArray.put(info);
                                 }
                                 else if (selectedP.has(value))
@@ -442,7 +442,7 @@ public class DBPediaData extends EntityHandling {
                         info.put("type", "wikibase-item");
                         String id = selected.getString(key);
                         info.put("id", id);
-                        info.put("value", WikiData.getViLabel(id, wikiEntityPath, wikiPropPath));
+                        info.put("value", WikiData.getWikiEntityViLabel(id, wikiEntityPath, wikiPropPath));
                     }
                     else
                     {

@@ -224,7 +224,7 @@ public class EntityHandling extends DataHandling{
         throw new UnsupportedOperationException("Unimplemented method 'entityAnalys' from EntityHandling. Must be overriden in subclasss.");
     }
 
-    protected void getProperties() throws Exception{
+    protected void getWikiProperties() throws Exception{
         throw new UnsupportedOperationException("Unimplemented method 'entityAnalys' from EntityHandling. Must be overriden in subclasss.");
     }
 }
