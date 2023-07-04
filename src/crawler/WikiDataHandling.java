@@ -623,5 +623,4 @@ public class WikiDataHandling extends DataHandling {
         }
         return myClaims;
     }
-
 }
