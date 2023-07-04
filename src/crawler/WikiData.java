@@ -161,8 +161,6 @@ public class WikiData extends EntityHandling{
         });
     }
 
-
-
     public final void entityFinal() throws Exception
     {
         //HashSet<String> allPFile = listAllFiles(ENTITY_PROPERTIES_PATH);
@@ -182,126 +180,22 @@ public class WikiData extends EntityHandling{
         }
     }
 
-    private String getWikiEntityDescription(JSONObject entityJSON){
-        String viDescriptionValue = "";
-        JSONObject descriptions = entityJSON.getJSONObject("descriptions");
-        if (descriptions.has("vi"))
-        {
-            JSONObject viDescriptions = descriptions.getJSONObject("vi");
-            viDescriptionValue = viDescriptions.getString("value");
-        }
-        return viDescriptionValue;
+    public final String getRawEntityFirstInstance(String qID) throws Exception
+    {
+        return WikiDataHandling.getRawEntityFirstInstance(qID, ENTITY_JSON_PATH, ENTITY_PROPERTIES_PATH);
     }
 
-    private ArrayList<String> getWikiEntityAliases(JSONObject entityJSON){
-        if (!entityJSON.has("aliases")) 
-            return new ArrayList<>();
-        JSONObject aliases = entityJSON.getJSONObject("aliases");
-        ArrayList<String> myAliases = new ArrayList<>();
-        if (aliases.has("vi"))
-        {
-            JSONArray viAlias = aliases.getJSONArray("vi");
-            for (int i = 0 ; i < viAlias.length() ; i++)
-            {
-                String viAliasValue = viAlias.getJSONObject(i).getString("value");
-                myAliases.add(viAliasValue);
-            }
-        }
-        return myAliases;
+    public String getOverview(String qID) 
+    {
+        return WikiDataHandling.getOverview(qID, HTML_PATH);
     }
 
     private JSONObject getWikiEntityClaims(JSONObject entityJSON) throws Exception{
-        JSONObject myClaims = new JSONObject();
-        JSONObject claims = entityJSON.getJSONObject("claims");
-        for (String propertyID: getAllKeys(claims))
-        {
-            /* Choose that entity if that entity has a name in Vietnamese */
-            String propertyName = getWikiEntityViLabel(propertyID);
-            if (propertyName.isEmpty())
-                continue;
-            
-            JSONArray propertyInfoArr = claims.getJSONArray(propertyID);
-            JSONArray jsonArray = new JSONArray();
-            for (Object info: propertyInfoArr)
-            {
-                JSONObject infoObj = (JSONObject) info;
-                JSONObject jsonObj = propertyCompression(infoObj.getJSONObject("mainsnak"));
-
-                if (jsonObj.length() == 0) continue;
-                
-                /*
-                * Get qualifiers of a property (a qualifier field will describe a property more clear)
-                */
-                if (infoObj.has("qualifiers"))
-                {
-                    JSONObject qualifiersJsonObj = new JSONObject();
-                    JSONObject qualifiers = infoObj.getJSONObject("qualifiers");
-                    for (String key: getAllKeys(qualifiers))
-                    {
-                        JSONArray myQualifiersPropertyJsonArray = new JSONArray();
-                        JSONArray qualifiersPropertyJsonArr = qualifiers.getJSONArray(key);
-                        for (Object propertyInfo: qualifiersPropertyJsonArr)
-                        {
-                            JSONObject propertyInfoJson = (JSONObject)propertyInfo;
-                            JSONObject propertyJsonObj = propertyCompression(propertyInfoJson);
-                            if (propertyJsonObj.length()>0)
-                                myQualifiersPropertyJsonArray.put(propertyJsonObj);
-                        }
-                        if (myQualifiersPropertyJsonArray.length()>0)
-                        {
-                            qualifiersJsonObj.put(getWikiEntityViLabel(key), myQualifiersPropertyJsonArray);
-                        }
-                    }
-                    if (qualifiersJsonObj.length()>0)
-                        jsonObj.put("qualifiers", qualifiersJsonObj);
-
-                }
-                if (jsonObj.length()>0)
-                    jsonArray.put(jsonObj);
-
-            }
-            if  (jsonArray.length()>0)
-                myClaims.put(propertyName, jsonArray);
-        }
-        return myClaims;
+        return WikiDataHandling.getWikiEntityClaims(entityJSON, allQFile, allPFile, ENTITY_JSON_PATH, ENTITY_PROPERTIES_PATH);
     }
 
-    private JSONObject getWikiEntityClaims(String fileName) throws Exception{
-        JSONObject myRef = new JSONObject();
-        if (fileExist(ENTITY_REF_FINAL_PATH + fileName))
-        {
-            HashMap<String, String> idInstance = new HashMap<>();
-            String fileContent = readFileAll(ENTITY_REF_FINAL_PATH + fileName);
-            JSONArray jsonArray = new JSONArray(fileContent);
-            for (Object iter: jsonArray)
-            {
-                String refEntityID = (String)iter;
-                String instanceName = "";
-
-                if (!idInstance.containsKey(refEntityID))
-                {
-                    String instanceID = getInstance(refEntityID);
-                    if(instanceID.isEmpty()) continue;
-                    instanceName = getWikiEntityViLabel(instanceID);
-                    idInstance.put(refEntityID, instanceName);
-                }
-                else
-                    instanceName = idInstance.get(refEntityID);
-                if (instanceName.isEmpty()) continue;
-                JSONObject refEntityIdObject = WikiDataHandling.createPropValue(getWikiEntityViLabel(refEntityID), refEntityID, null, null);
-                if (!myRef.has(instanceName))
-                {
-                    JSONArray h = new JSONArray();
-                    h.put(refEntityIdObject);
-                    myRef.put(instanceName, h);
-                }
-                else
-                {
-                    myRef.getJSONArray(instanceName).put(refEntityIdObject);
-                }
-            }
-        }
-        return myRef;
+    private JSONObject getWikiEntityReferences(String fileName) throws Exception{
+        return WikiDataHandling.getWikiEntityReferences(fileName, ENTITY_REF_FINAL_PATH, ENTITY_JSON_PATH, ENTITY_PROPERTIES_PATH);
     }
 
     protected JSONObject getVietnameseWikiReadable(String qID) throws Exception
@@ -315,90 +209,14 @@ public class WikiData extends EntityHandling{
 
         json.put("id",entityJSON.getString("id"));
         json.put("label", getWikiEntityViLabel(qID));
-        json.put("description", getWikiEntityDescription(entityJSON));
+        json.put("description", WikiDataHandling.getWikiEntityDescription(entityJSON));
         json.put("overview", getOverview(qID));
-        json.put("aliases", new JSONArray(getWikiEntityAliases(entityJSON)));
+        json.put("aliases", new JSONArray(WikiDataHandling.getWikiEntityAliases(entityJSON)));
         json.put("claims", getWikiEntityClaims(entityJSON));
-        json.put("references",getWikiEntityClaims(fileName));
+        json.put("references",getWikiEntityReferences(fileName));
 
         return json;
     }
-
-    public final String getInstance(String qID) throws Exception
-    {
-        String instance = "";
-        JSONObject json;
-        if (fileExist(ENTITY_JSON_PATH + qID + ".json"))
-            json = getJSONFromFile(ENTITY_JSON_PATH + qID + ".json");
-        else if (fileExist(ENTITY_PROPERTIES_PATH + qID + ".json"))
-            json = getJSONFromFile(ENTITY_PROPERTIES_PATH + qID + ".json");
-        else return instance;
-        JSONObject claims = json.getJSONObject("entities").getJSONObject(qID).getJSONObject("claims");
-        if (!claims.has("P31")){
-            return instance;
-        }
-        JSONArray p31Arr = (JSONArray)(claims.get("P31"));
-        for (int i = 0 ; i < p31Arr.length() ; i++)
-        {
-            JSONObject mainsnak = p31Arr.getJSONObject(i).getJSONObject("mainsnak");
-            if (mainsnak.has("datavalue"))
-            {
-                JSONObject datavalue = mainsnak.getJSONObject("datavalue");
-                JSONObject value = datavalue.getJSONObject("value");
-                instance = value.getString("id");
-                if (!instance.equals("")) 
-                    break;
-            }
-        }
-        return instance;
-    }
-
-
-    public String getOverview(String qID)
-    {
-        String filePath = HTML_PATH + qID + ".html";
-        String overview = "";
-        if (fileExist(filePath))
-        {
-            String data = "";
-            try {
-                data = readFileAll(filePath);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            Document doc = Jsoup.parse(data);
-            Element divID = doc.getElementById("mw-content-text"); 
-            Element divTag = divID.select("div.mw-parser-output").first(); 
-            StringBuffer overviewSB = new StringBuffer();
-            for (Element tag: divTag.children())
-            {
-                if ((tag.tagName()).equals("meta")) break;
-                if ((tag.tagName()).equals("h2")) break;
-                if ((tag.tagName()).equals("p"))
-                {
-                    String tagContent = tag.text();
-                    if (tagContent.isEmpty()) continue;
-                    String regex = "\\s*\\[[^\\]]*\\]\\s*";
-                    if (tagContent.matches(regex)){
-                        tagContent = tagContent.replaceAll(regex, " ");
-                    }
-                    overviewSB.append(tagContent);
-                    break;
-                }
-            }
-            if (overviewSB.length() > 0 && overviewSB.charAt(overviewSB.length()-1) == (char)(':'))
-            {
-                int dot = overviewSB.lastIndexOf(".", overviewSB.length()-1);
-                overview = overviewSB.substring(0, dot + 1);
-            }
-            else{
-                overview = overviewSB.toString();
-            }
-        }
-        overview = overview.replaceAll("\\s*\\[[^\\]]*\\]\\s*", " ");
-        return overview;
-    }
-
 
     @Override
     public void getVietnamRelatedEntity() throws Exception{
@@ -671,10 +489,5 @@ public class WikiData extends EntityHandling{
             }
             writeFile(LOGS_PATH + "PropertiesList.json", (new JSONArray(propertyHashSet)).toString(), false);
         }
-    }
-
-    private final JSONObject propertyCompression(JSONObject infoObj) throws Exception
-    {
-        return WikiDataHandling.propertyCompression(infoObj, allQFile, allPFile, ENTITY_JSON_PATH, ENTITY_PROPERTIES_PATH);
     }
 }
