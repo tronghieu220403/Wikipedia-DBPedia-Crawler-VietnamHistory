@@ -68,7 +68,7 @@ public class WikiBruteForceData extends BruteForceData {
     protected void entityAnalys(String urlString, int depth, boolean forceRelated) throws Exception {
         // Check if urlString is a valid Wikipedia URL .
         urlString = DataHandling.urlDecode(urlString.replace("\n", ""));
-        if (checkURL(urlString) == false){
+        if (WikiDataHandling.checkURL(urlString, false) == false){
             return;
         }
         if (forceRelated == false && existInAnalysedURL(urlString)){

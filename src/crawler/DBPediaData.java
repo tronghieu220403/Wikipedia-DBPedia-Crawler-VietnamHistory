@@ -48,7 +48,7 @@ public class DBPediaData extends BruteForceData {
      */
     @Override
     protected void entityAnalys(String url, int depth, boolean forceRelated) throws Exception {
-        if (checkURL(url)==false) return;
+        if (WikiDataHandling.checkURL(url, false)==false) return;
         url = filterURL(url);
         url = url.replace("http:", "https:");
         if (url.contains("/resource/"))

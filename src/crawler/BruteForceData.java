@@ -103,7 +103,7 @@ public class BruteForceData extends DataFolder {
                 String urlString = craftedURLsList.get(i);
                 urlString = filterURL(urlString);
                 int depth = Integer.parseInt(craftedURLsList.get(i+1));
-                if (checkURL(urlString) == false) continue;
+                if (WikiDataHandling.checkURL(urlString, false) == false) continue;
                 if (existInAnalysedURL(urlString)) continue;
                 craftedURLsHashMap.put(urlString, depth);
                 deque.addLast(new Pair(urlString, depth));

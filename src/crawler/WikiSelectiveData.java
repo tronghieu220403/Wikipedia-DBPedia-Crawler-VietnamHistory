@@ -199,7 +199,7 @@ public class WikiSelectiveData extends WikiBruteForceData {
             JSONObject locationJSON = allLocationsArr.getJSONObject(i);
             String urlString = DataHandling.urlDecode(locationJSON.getString("link"));
             String qID = "";
-            if (checkURL(urlString)){
+            if (WikiDataHandling.checkURL(urlString, false)){
                 if (!urlToEntityHashMap.containsKey(urlString)){
                     entityAnalys(urlString, 3, true);
                     qID = urlToEntityHashMap.get(urlString);
