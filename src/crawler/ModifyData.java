@@ -18,39 +18,7 @@ public class ModifyData extends DataHandling{
 
     public static boolean cmpPropValue(JSONObject obj1, JSONObject obj2)
     {
-        if (!obj1.has("value") || !obj2.has("value") || !obj1.has("type") || !obj1.has("type")){
-            return false;
-        }
-        if(obj1.getString("value").equals(obj2.getString("value"))){
-            return false;
-        }
-        if(obj1.getString("type").equals(obj2.getString("type"))){
-            return false;
-        }
-        if(obj1.has("id") && obj2.has("id") && !obj1.getString("id").equals(obj2.getString("id"))){
-            return false;
-        }
-        if (obj1.has("qualifiers") != obj2.has("qualifiers")){
-            return false;
-        }
-        if (!obj1.has("qualifiers")){
-            return true;
-        }
-        JSONArray arr1 = obj1.getJSONArray("qualifiers");
-        JSONArray arr2 = obj2.getJSONArray("qualifiers");
-        for (int i = 0; i < arr1.length(); i++){
-            boolean check = false;
-            for (int j = 0; j < arr2.length(); j++){
-                if (cmpPropValue(arr1.getJSONObject(i), arr2.getJSONObject(j))){
-                    check = true;
-                    break;
-                }
-            }
-            if (check == false){
-                return false;
-            }
-        }
-        return true;
+        return obj1.toString().equals(obj2.toString());
     }
 
     private JSONObject addProperties(JSONObject myJsonClaims, String propName, JSONObject addObj)
@@ -108,7 +76,6 @@ public class ModifyData extends DataHandling{
                 modifyEntity(json, rmHashSet, changeName);
                 writeFile("data/" + bigCategory + "/" + fileName, json.toString(), false);
             }
-
         }
     }
 
