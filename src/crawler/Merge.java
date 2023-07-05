@@ -18,18 +18,18 @@ public class Merge {
 
     public void merge(String exportPath, String path1, String path2, JSONArray src1, JSONArray src2) throws Exception
     {
-        path1 += "data";
-        path2 += "data";
+        path1 += "data/";
+        path2 += "data/";
         DataHandling.createFolder(exportPath);
         for (String bigCategory: bigCategories)
         {
-            String path = path1 + "/" + bigCategory;
+            String path = path1 + bigCategory + "/";
             String exportDataSubFolder = exportPath + "/" + bigCategory;
             DataHandling.createFolder(exportDataSubFolder);
             HashSet<String> fileList = DataHandling.listAllFiles(path);
             for (String fileName: fileList)
             {
-                JSONObject wikiJSON = DataHandling.getJSONFromFile(path + "/" + fileName);
+                JSONObject wikiJSON = DataHandling.getJSONFromFile(path + fileName);
                 if (DataHandling.fileExist(path2 + fileName))
                 {
                     JSONObject dbpediaJSON = DataHandling.getJSONFromFile(path2 + fileName);
@@ -120,6 +120,7 @@ public class Merge {
         for (String source: srcHashSet){
             srcArr.add(source);
         }
+        Collections.sort(srcArr); 
         for (String str: srcArr){
             srcMergeJsonArray.put(str);
         }
