@@ -166,10 +166,10 @@ public class WikiTableData extends WikiBruteForceData {
                 WikiDataHandling.addProperties(kingRefJsonObject, "triều đại", dynastyName, dynastyQID);
 
                 kingJsonObject.put("references", kingRefJsonObject);
-                DataHandling.writeFile(ENTITY_FINAL_PATH + kingQID + ".json", kingJsonObject.toString(), false);
+                //DataHandling.writeFile(ENTITY_FINAL_PATH + kingQID + ".json", kingJsonObject.toString(), false);
             }
             dynastyJsonObject.getJSONObject("references").put("vua", dynastyRefArr);
-            DataHandling.writeFile(ENTITY_FINAL_PATH + dynastyQID + ".json", dynastyJsonObject.toString(), false);
+            //DataHandling.writeFile(ENTITY_FINAL_PATH + dynastyQID + ".json", dynastyJsonObject.toString(), false);
         }
         
     }
@@ -178,58 +178,56 @@ public class WikiTableData extends WikiBruteForceData {
         return WikiDataHandling.getVietnameseWikiReadable(qID, allQFile, allPFile, ENTITY_JSON_PATH, ENTITY_PROPERTIES_PATH, ENTITY_REF_FINAL_PATH, HTML_PATH);
     }
 
+    private JSONObject createLocationObj(String urlString) throws Exception{
+        JSONObject json = new JSONObject();
+        String qID = "";
+        if (WikiDataHandling.checkURL(urlString, false)){
+            if (!urlToEntityHashMap.containsKey(urlString)){
+                entityAnalys(urlString, 3, true);
+                qID = urlToEntityHashMap.get(urlString);
+                if (qID != null){
+                    json = getVietnameseWikiReadable(qID);
+                }
+                else{
+                    json = WikiDataHandling.createNewEntity();
+                }
+            }
+            else{
+                qID = urlToEntityHashMap.get(urlString);
+                if (DataHandling.fileExist(ENTITY_FINAL_PATH + qID + ".json"))
+                {
+                    json = DataHandling.getJSONFromFile(ENTITY_FINAL_PATH + qID + ".json");
+                }
+                else{
+                    json = getVietnameseWikiReadable(qID);
+                }
+            }
+        }
+        else{
+            json = WikiDataHandling.createNewEntity();
+        }
+        return json;
+    }
 
     private void tableLocationsQueries() throws Exception {
         JSONArray allLocationsArr = new JSONArray(DataHandling.readFileAll(INITIALIZE_PATH + "HistoricalSite.json"));
         for (int i = 0; i < allLocationsArr.length(); i++)
         {
             JSONObject locationJSON = allLocationsArr.getJSONObject(i);
-            String urlString = DataHandling.urlDecode(locationJSON.getString("link"));
-            JSONObject json = new JSONObject();
-            String qID = "";
-            if (WikiDataHandling.checkURL(urlString, false)){
-                if (!urlToEntityHashMap.containsKey(urlString)){
-                    entityAnalys(urlString, 3, true);
-                    qID = urlToEntityHashMap.get(urlString);
-                    if (qID != null){
-                        json = getVietnameseWikiReadable(qID);
-                    }
-                    else{
-                        json = WikiDataHandling.createNewEntity();
-                    }
-                }
-                else{
-                    qID = urlToEntityHashMap.get(urlString);
-                    if (DataHandling.fileExist(ENTITY_FINAL_PATH + qID + ".json"))
-                    {
-                        json = DataHandling.getJSONFromFile(ENTITY_FINAL_PATH + qID + ".json");
-                    }
-                    else{
-                        json = getVietnameseWikiReadable(qID);
-                    }
-                }
-            }
-            else{
-                json = WikiDataHandling.createNewEntity();
-            }
+            JSONObject json = createLocationObj(DataHandling.urlDecode(locationJSON.getString("link")));
             String locationName = locationJSON.getString("Di tích");
-
             if (locationName.isEmpty())
                 continue;
             if (json.getString("label").isEmpty()){
                 json.put("label", locationName);
             }
-            String locationType = "";
-            if (locationJSON.has("Loại di tích")){
-                locationType = locationJSON.getString("Loại di tích").toLowerCase();
-            }
+            String locationType = locationJSON.has("Loại di tích") ? locationJSON.getString("Loại di tích").toLowerCase() : "";
 
             if (json.getString("overview").isEmpty()){
-                String txt = "";
-                if (!locationType.isEmpty()) txt = locationType + " ";
-                json.put("overview", locationName + " là một di tích " + txt + "tại Việt Nam.");
+                json.put("overview", locationName + " là một di tích " + (locationType.isEmpty() ? "" : locationType + " ") + "tại Việt Nam.");
             }
-            if (json.getString("id").isEmpty()){
+            String qID = json.getString("id");
+            if (qID.isEmpty()){
                 qID = "Q" + Integer.toString(locationName.hashCode()).replace("-", "") + "X";
                 json.put("id", qID);
             }
@@ -254,7 +252,7 @@ public class WikiTableData extends WikiBruteForceData {
                 else date = "năm " + date;
                 WikiDataHandling.addProperties(claims, "thời gian công nhận di tích", date);
             }
-            DataHandling.writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
+            //DataHandling.writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
         }
     }
 }
