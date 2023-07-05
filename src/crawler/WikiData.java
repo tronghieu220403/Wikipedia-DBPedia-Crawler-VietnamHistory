@@ -160,6 +160,10 @@ public class WikiData extends EntityHandling{
         });
     }
 
+    public final JSONObject getVietnameseWikiReadable(String qID) throws Exception{
+        return WikiDataHandling.getVietnameseWikiReadable(qID, allQFile, allPFile, ENTITY_JSON_PATH, ENTITY_PROPERTIES_PATH, ENTITY_REF_FINAL_PATH, HTML_PATH);
+    }
+
     public final void entityFinal() throws Exception
     {
         //HashSet<String> allPFile = listAllFiles(ENTITY_PROPERTIES_PATH);
@@ -189,54 +193,6 @@ public class WikiData extends EntityHandling{
         return WikiDataHandling.getOverview(qID, HTML_PATH);
     }
 
-    private JSONObject getWikiEntityClaims(JSONObject entityJSON) throws Exception{
-        return WikiDataHandling.getWikiEntityClaims(entityJSON, allQFile, allPFile, ENTITY_JSON_PATH, ENTITY_PROPERTIES_PATH);
-    }
-
-    private JSONObject getWikiEntityReferences(String fileName) throws Exception{
-        return WikiDataHandling.getWikiEntityReferences(fileName, ENTITY_REF_FINAL_PATH, ENTITY_JSON_PATH, ENTITY_PROPERTIES_PATH);
-    }
-
-    protected JSONObject getVietnameseWikiReadable(String qID) throws Exception
-    {
-        String fileName = qID + ".json";
-        JSONObject json = new JSONObject();
-
-        JSONObject content = getJSONFromFile(ENTITY_JSON_PATH + fileName);
-        JSONObject entities = content.getJSONObject("entities");
-        JSONObject entityJSON = entities.getJSONObject(qID);
-
-        json.put("id",entityJSON.getString("id"));
-        json.put("label", getWikiEntityViLabel(qID));
-        json.put("description", WikiDataHandling.getWikiEntityDescription(entityJSON));
-        json.put("overview", getOverview(qID));
-        json.put("aliases", new JSONArray(WikiDataHandling.getWikiEntityAliases(entityJSON)));
-        json.put("claims", getWikiEntityClaims(entityJSON));
-        json.put("references",getWikiEntityReferences(fileName));
-
-        return json;
-    }
-
-    @Override
-    public void getVietnamRelatedEntity() throws Exception{
-
-        if (!fileExist(INITIALIZE_PATH + "FromVietnam.json")){
-            throw new FileNotFoundException("Please create file FromVietnam.json that contains entities related to Vietnam in this folder: " + INITIALIZE_PATH);
-        }
-        JSONArray myJsonArray = new JSONArray(readFileAll(INITIALIZE_PATH + "/FromVietnam.json"));
-        vietnamEntityHashSet.clear();
-
-        for (int i = 0; i < myJsonArray.length(); i++) {
-            JSONObject tmpJsonObject = myJsonArray.getJSONObject(i);
-            String tmpEntity = tmpJsonObject.getString("item");
-            tmpEntity = tmpEntity.replace("http://www.wikidata.org/entity/", "");
-            vietnamEntityHashSet.add(tmpEntity);
-        }
-
-        writeFile(INITIALIZE_PATH + "/VietnamRelated.json", new JSONArray(vietnamEntityHashSet).toString(), false);
-
-        return;
-    }
 
     /**
      * Analize an entity to make sure it is related to Vietnam and write it to logs.<p>
@@ -263,7 +219,7 @@ public class WikiData extends EntityHandling{
             String qID = "";
             if (wikiPageData.isEmpty()) return;
             Document doc = Jsoup.parse(wikiPageData);
-            qID = getEntityIdFromHtml(doc);
+            qID = WikiDataHandling.getEntityIdFromHtml(doc);
             if (!qID.isEmpty()){
                 urlToEntityHashMap.put(urlString, qID);
             }
@@ -295,68 +251,9 @@ public class WikiData extends EntityHandling{
         return WikiDataHandling.checkURL(urlString, false);  
     }
 
-
-    /**
-     * Check if the JSON of an entity has any properties that are related to Vietnam.
-     * @param entityJSON the JSON of an entity.
-     * @return Member variable isRelated is {@code true} if that entity has any properties that are related to Vietnam, else {@code false}.
-     */
-    private boolean jsonAnalysis(Object entityJSON)
-    {
-        if (entityJSON instanceof JSONArray)
-        {
-            for (int i = 0; i < ((JSONArray) entityJSON).length(); i++) { 
-                if (jsonAnalysis(((JSONArray) entityJSON).get(i)) == true) {
-                    return true;
-                }
-            }
-        }
-        else if (entityJSON instanceof JSONObject)
-        {
-            JSONObject qJSON = (JSONObject) entityJSON;
-            if (qJSON.has("numeric-id"))
-            {
-                if (vietnamEntityHashSet.contains(qJSON.get("id"))) {
-                    return true;
-                }
-            }
-            for(String key: getAllKeys(qJSON)){
-                Object value = qJSON.get(key);
-                if (value instanceof JSONObject) {
-                    if (jsonAnalysis((JSONObject) value) == true){
-                        return true;
-                    }
-                } else if (value instanceof JSONArray) {
-                    if (jsonAnalysis((JSONArray) value) == true){
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
+    private boolean jsonAnalysis(Object json){
+        return WikiDataHandling.jsonAnalysis(json, vietnamEntityHashSet);
     }
-
-    /**
-     * Get the ID of an entity from a Wikipedia page.
-     * @param soupHWND HTML content parsed by Jsoup library.
-     * @return That entity's ID of that soupHWND
-     */
-    public String getEntityIdFromHtml(Document soupHWND) 
-    {
-        String entityURL = "";
-        Element liTag = soupHWND.getElementById("t-wikibase");
-        if (liTag == null)
-            return "";
-        for (Element aTag : liTag.select("a")) {
-            entityURL = aTag.attr("href");
-            break;
-        }
-        if (entityURL.equals(""))
-            return "";
-        String qID = entityURL.replace("https://www.wikidata.org/wiki/Special:EntityPage/","");
-        return qID;
-    }
-
 
     /**
      * Check if the entity is related to Vietnam.
@@ -409,18 +306,6 @@ public class WikiData extends EntityHandling{
         }
         writeFile(ENTITY_JSON_PATH + qID +".json", content , false);
         return true;
-    }
-
-    private static HashMap<String, String> viLabelHashMap = new HashMap<>();
-    /**
-     * Get the label of entity
-     */
-    private final String getWikiEntityViLabel(String qID) throws Exception
-    {
-        if (viLabelHashMap.containsKey(qID)) {
-            return viLabelHashMap.get(qID);
-        }
-        return WikiDataHandling.getWikiEntityViLabel(qID, ENTITY_JSON_PATH, ENTITY_PROPERTIES_PATH);
     }
 
     /**

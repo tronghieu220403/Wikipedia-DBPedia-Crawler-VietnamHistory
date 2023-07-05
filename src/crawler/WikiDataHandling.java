@@ -623,4 +623,87 @@ public class WikiDataHandling extends DataHandling {
         }
         return myClaims;
     }
+
+    public static JSONObject getVietnameseWikiReadable(String qID, HashSet<String> allQFile, HashSet<String> allPFile, String ENTITY_JSON_PATH, String ENTITY_PROPERTIES_PATH, String ENTITY_REF_FINAL_PATH, String HTML_PATH) throws Exception
+    {
+        String fileName = qID + ".json";
+        JSONObject json = new JSONObject();
+
+        JSONObject content = getJSONFromFile(ENTITY_JSON_PATH + fileName);
+        JSONObject entities = content.getJSONObject("entities");
+        JSONObject entityJSON = entities.getJSONObject(qID);
+
+        json.put("id",entityJSON.getString("id"));
+        json.put("label", getWikiEntityViLabel(qID, ENTITY_JSON_PATH, ENTITY_PROPERTIES_PATH));
+        json.put("description", getWikiEntityDescription(entityJSON));
+        json.put("overview", getOverview(qID, HTML_PATH));
+        json.put("aliases", new JSONArray(getWikiEntityAliases(entityJSON)));
+        json.put("claims", getWikiEntityClaims(entityJSON, allQFile, allPFile, ENTITY_JSON_PATH, ENTITY_PROPERTIES_PATH));
+        json.put("references",getWikiEntityReferences(fileName, ENTITY_REF_FINAL_PATH, ENTITY_JSON_PATH, ENTITY_PROPERTIES_PATH));
+
+        return json;
+    }
+
+    /**
+     * Get the ID of an entity from a Wikipedia page.
+     * @param soupHWND HTML content parsed by Jsoup library.
+     * @return That entity's ID of that soupHWND
+     */
+    public static String getEntityIdFromHtml(Document soupHWND) 
+    {
+        String entityURL = "";
+        Element liTag = soupHWND.getElementById("t-wikibase");
+        if (liTag == null)
+            return "";
+        for (Element aTag : liTag.select("a")) {
+            entityURL = aTag.attr("href");
+            break;
+        }
+        if (entityURL.equals(""))
+            return "";
+        String qID = entityURL.replace("https://www.wikidata.org/wiki/Special:EntityPage/","");
+        return qID;
+    }
+
+        /**
+     * Check if the JSON of an entity has any properties that are related to Vietnam.
+     * @param entityJSON the JSON of an entity.
+     * @return Member variable isRelated is {@code true} if that entity has any properties that are related to Vietnam, else {@code false}.
+     */
+    public static boolean jsonAnalysis(Object entityJSON, HashSet<String> vietnamEntityHashSet)
+    {
+        if (entityJSON instanceof JSONArray)
+        {
+            for (int i = 0; i < ((JSONArray) entityJSON).length(); i++) { 
+                if (jsonAnalysis(((JSONArray) entityJSON).get(i), vietnamEntityHashSet) == true) {
+                    return true;
+                }
+            }
+        }
+        else if (entityJSON instanceof JSONObject)
+        {
+            JSONObject qJSON = (JSONObject) entityJSON;
+            if (qJSON.has("numeric-id"))
+            {
+                if (vietnamEntityHashSet.contains(qJSON.getString("id"))) {
+                    return true;
+                }
+            }
+            for(String key: getAllKeys(qJSON)){
+                Object value = qJSON.get(key);
+                if (value instanceof JSONObject) {
+                    if (jsonAnalysis((JSONObject) value, vietnamEntityHashSet) == true){
+                        return true;
+                    }
+                } else if (value instanceof JSONArray) {
+                    if (jsonAnalysis((JSONArray) value, vietnamEntityHashSet) == true){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+
 }

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class WikiTableData extends WikiData {
+public class WikiTableData extends WikiBruteForceData {
 
     public static void main(String[] args) throws Exception {
         WikiTableData wikiTableData = new WikiTableData("E:/Code/Java/OOP_Project/saveddata/Wikipedia/");
@@ -24,15 +24,23 @@ public class WikiTableData extends WikiData {
 
     public WikiTableData(String folderPath) throws Exception{
         super(folderPath);
+        if(DataHandling.fileExist(LOGS_PATH + "URLToEntities.json"))
+        {
+            JSONObject jsonContent = DataHandling.getJSONFromFile(LOGS_PATH + "URLToEntities.json");
+            for (String key: DataHandling.getAllKeys(jsonContent)){
+                urlToEntityHashMap.put(key,(jsonContent).getString(key));
+            }
+        }
+        return;
     }
 
     private void tableDynastiesQueries() throws Exception
     {
-        JSONObject allDynastyJsonObject = getJSONFromFile(INITIALIZE_PATH + "VVN.json");
+        JSONObject allDynastyJsonObject = DataHandling.getJSONFromFile(INITIALIZE_PATH + "VVN.json");
         HashMap<String, String> dynastyHashMap = new HashMap<>();
-        for (String fileName: listAllFiles(ENTITY_FINAL_PATH))
+        for (String fileName: DataHandling.listAllFiles(ENTITY_FINAL_PATH))
         {
-            JSONObject json = getJSONFromFile(ENTITY_FINAL_PATH + fileName);
+            JSONObject json = DataHandling.getJSONFromFile(ENTITY_FINAL_PATH + fileName);
             if (json.getJSONObject("claims").has("là một")){
                 JSONArray jsonArr = json.getJSONObject("claims").getJSONArray("là một");
                 for (int i = 0; i < jsonArr.length(); i++)
@@ -48,7 +56,7 @@ public class WikiTableData extends WikiData {
         }
 
         String[] kingProp = {"Miếu hiệu", "Tôn hiệu hoặc Thụy hiệu", "Tôn hiệu", "Niên hiệu", "Thế thứ", "Trị vì"};
-        for (String dynastyName: getAllKeys(allDynastyJsonObject))
+        for (String dynastyName: DataHandling.getAllKeys(allDynastyJsonObject))
         {
             JSONObject dynastyJsonObject = new JSONObject();
             if (!dynastyHashMap.containsKey(dynastyName))
@@ -71,7 +79,7 @@ public class WikiTableData extends WikiData {
             else
             {
                 try{
-                    dynastyJsonObject = getJSONFromFile(ENTITY_FINAL_PATH + dynastyHashMap.get(dynastyName) + ".json");
+                    dynastyJsonObject = DataHandling.getJSONFromFile(ENTITY_FINAL_PATH + dynastyHashMap.get(dynastyName) + ".json");
                 }
                 catch (Exception e) {
                     System.out.println("[ERROR] Can't find file: data/triều đại lịch sử/" + dynastyHashMap.get(dynastyName));
@@ -85,7 +93,7 @@ public class WikiTableData extends WikiData {
             {
                 String kingQID = "";
                 JSONObject king = kingArr.getJSONObject(i);
-                String kingURL = urlDecode(king.getString("link"));
+                String kingURL = DataHandling.urlDecode(king.getString("link"));
                 
                 JSONObject kingJsonObject = new JSONObject();
                 JSONObject kingClaims = new JSONObject();
@@ -94,7 +102,7 @@ public class WikiTableData extends WikiData {
                 if (urlToEntityHashMap.containsKey(kingURL))
                 {
                     kingQID = urlToEntityHashMap.get(kingURL);
-                    kingJsonObject = getJSONFromFile(ENTITY_FINAL_PATH + kingQID + ".json");
+                    kingJsonObject = DataHandling.getJSONFromFile(ENTITY_FINAL_PATH + kingQID + ".json");
                     kingClaims = kingJsonObject.getJSONObject("claims");
                     kingName = kingJsonObject.getString("label");
                 }
@@ -148,23 +156,28 @@ public class WikiTableData extends WikiData {
                 WikiDataHandling.addProperties(kingRefJsonObject, "triều đại", dynastyName, dynastyQID);
 
                 kingJsonObject.put("references", kingRefJsonObject);
-                writeFile(ENTITY_FINAL_PATH + kingQID + ".json", kingJsonObject.toString(), false);
+                DataHandling.writeFile(ENTITY_FINAL_PATH + kingQID + ".json", kingJsonObject.toString(), false);
             }
             dynastyJsonObject.getJSONObject("references").put("vua", dynastyRefArr);
-            writeFile(ENTITY_FINAL_PATH + dynastyQID + ".json", dynastyJsonObject.toString(), false);
+            DataHandling.writeFile(ENTITY_FINAL_PATH + dynastyQID + ".json", dynastyJsonObject.toString(), false);
         }
         
     }
 
+    private JSONObject getVietnameseWikiReadable(String qID) throws Exception{
+        return WikiDataHandling.getVietnameseWikiReadable(qID, allQFile, allPFile, ENTITY_JSON_PATH, ENTITY_PROPERTIES_PATH, ENTITY_REF_FINAL_PATH, HTML_PATH);
+    }
+
+
     private void tableLocationsQueries() throws Exception {
-        JSONArray allLocationsArr = new JSONArray(readFileAll(INITIALIZE_PATH + "HistoricalSite.json"));
+        JSONArray allLocationsArr = new JSONArray(DataHandling.readFileAll(INITIALIZE_PATH + "HistoricalSite.json"));
         for (int i = 0; i < allLocationsArr.length(); i++)
         {
             JSONObject locationJSON = allLocationsArr.getJSONObject(i);
-            String urlString = urlDecode(locationJSON.getString("link"));
+            String urlString = DataHandling.urlDecode(locationJSON.getString("link"));
             JSONObject json = new JSONObject();
             String qID = "";
-            if (checkURL(urlString)){
+            if (WikiDataHandling.checkURL(urlString, false)){
                 if (!urlToEntityHashMap.containsKey(urlString)){
                     entityAnalys(urlString, 3, true);
                     qID = urlToEntityHashMap.get(urlString);
@@ -177,9 +190,9 @@ public class WikiTableData extends WikiData {
                 }
                 else{
                     qID = urlToEntityHashMap.get(urlString);
-                    if (fileExist(ENTITY_FINAL_PATH + qID + ".json"))
+                    if (DataHandling.fileExist(ENTITY_FINAL_PATH + qID + ".json"))
                     {
-                        json = getJSONFromFile(ENTITY_FINAL_PATH + qID + ".json");
+                        json = DataHandling.getJSONFromFile(ENTITY_FINAL_PATH + qID + ".json");
                     }
                     else{
                         json = getVietnameseWikiReadable(qID);
@@ -231,7 +244,7 @@ public class WikiTableData extends WikiData {
                 else date = "năm " + date;
                 WikiDataHandling.addProperties(claims, "thời gian công nhận di tích", date);
             }
-            writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
+            DataHandling.writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
         }
     }
 }

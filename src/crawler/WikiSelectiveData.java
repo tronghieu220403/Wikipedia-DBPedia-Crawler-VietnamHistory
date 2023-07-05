@@ -10,7 +10,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.jsoup.nodes.Element;
 
-public class WikiSelectiveData extends WikiData {
+public class WikiSelectiveData extends WikiBruteForceData {
 
     public static void main(String[] args) throws Exception {
         WikiSelectiveData wikiSelectiveData = new WikiSelectiveData("E:/Code/Java/OOP_Project/saveddata/Wikipedia/");
@@ -53,7 +53,7 @@ public class WikiSelectiveData extends WikiData {
         String wikiPageData = "";
         while(true)
         {
-            wikiPageData = getDataFromURL(catString).toString();
+            wikiPageData = DataHandling.getDataFromURL(catString).toString();
             for (String craftURL: WikiDataHandling.getAllWikiHref(wikiPageData,"mw-pages",false))
             {
                 urlSet.add(craftURL);
@@ -110,7 +110,7 @@ public class WikiSelectiveData extends WikiData {
     private void selectiveFestivalsQueries() throws Exception
     {
         HashSet<String> urlSet = new HashSet<>();
-        if (!fileExist(SCARLARLY_PATH + "festivals.json"))
+        if (!DataHandling.fileExist(SCARLARLY_PATH + "festivals.json"))
         {    
             Set<String> bannedFestivalURLs = new HashSet<>(Arrays.asList("https://vi.wikipedia.org/wiki/Lễ_hội_các_dân_tộc_Việt_Nam",
                 "https://vi.wikipedia.org/wiki/Lễ_hội_Lào",
@@ -120,7 +120,7 @@ public class WikiSelectiveData extends WikiData {
             urlSet.add("https://vi.wikipedia.org/wiki/Giỗ_Tổ_Hùng_Vương");
 
             urlToEntityHashMap.forEach((key, value) -> {
-                String urlString = urlDecode(key);
+                String urlString = DataHandling.urlDecode(key);
                 if ((urlString.contains("/Lễ"))  && !bannedFestivalURLs.contains(urlString)){
                     festivalHashSet.add(value);
                     urlSet.add(urlString);
@@ -128,7 +128,7 @@ public class WikiSelectiveData extends WikiData {
             });
             for (String urlString: urls)
             {
-                String wikiPageData = getDataFromURL(urlString).toString();
+                String wikiPageData = DataHandling.getDataFromURL(urlString).toString();
 
                 for (String craftURL: WikiDataHandling.getAllWikiHref(wikiPageData)){
                     if ((craftURL.contains("Lễ_hội") || craftURL.contains("Hội")) && !bannedFestivalURLs.contains(craftURL)){
@@ -141,7 +141,7 @@ public class WikiSelectiveData extends WikiData {
 
         }
         else{
-            for (Object key: new JSONArray(readFileAll(SCARLARLY_PATH + "festivals.json")))
+            for (Object key: new JSONArray(DataHandling.readFileAll(SCARLARLY_PATH + "festivals.json")))
             {
                 urlSet.add((String)key);
             }
@@ -149,20 +149,20 @@ public class WikiSelectiveData extends WikiData {
 
         analyzeScarlarlyURLs(urlSet, festivalHashSet);
 
-        writeFile(SCARLARLY_PATH + "festivals.json", (new JSONArray(urlSet)).toString(), false);
-        writeFile(LOGS_PATH +  "URLToEntities.json" , (new JSONObject(urlToEntityHashMap)).toString(), false);
+        DataHandling.writeFile(SCARLARLY_PATH + "festivals.json", (new JSONArray(urlSet)).toString(), false);
+        DataHandling.writeFile(LOGS_PATH +  "URLToEntities.json" , (new JSONObject(urlToEntityHashMap)).toString(), false);
     }
 
 
     private void selectiveHumansQueries() throws Exception {
         HashSet<String> urlSet = new HashSet<>();
-        if (!fileExist(SCARLARLY_PATH + "humans.json"))
+        if (!DataHandling.fileExist(SCARLARLY_PATH + "humans.json"))
         {
             getAllURL("https://vi.wikipedia.org/wiki/Th%E1%BB%83_lo%E1%BA%A1i:Nh%C3%A0_c%C3%A1ch_m%E1%BA%A1ng_Vi%E1%BB%87t_Nam", 0 , false, urlSet);
             getAllURL("https://vi.wikipedia.org/wiki/Th%E1%BB%83_lo%E1%BA%A1i:Nh%C3%A2n_v%E1%BA%ADt_l%E1%BB%8Bch_s%E1%BB%AD_Vi%E1%BB%87t_Nam", 0 , true, urlSet);
         }
         else{
-            for (Object key: new JSONArray(readFileAll(SCARLARLY_PATH + "humans.json")))
+            for (Object key: new JSONArray(DataHandling.readFileAll(SCARLARLY_PATH + "humans.json")))
             {
                 urlSet.add((String)key);
             }
@@ -170,15 +170,15 @@ public class WikiSelectiveData extends WikiData {
 
         analyzeScarlarlyURLs(urlSet, humanHashSet);
 
-        writeFile(SCARLARLY_PATH + "humans.json", (new JSONArray(urlSet)).toString(), false);
-        writeFile(LOGS_PATH +  "URLToEntities.json" , (new JSONObject(urlToEntityHashMap)).toString(), false);
+        DataHandling.writeFile(SCARLARLY_PATH + "humans.json", (new JSONArray(urlSet)).toString(), false);
+        DataHandling.writeFile(LOGS_PATH +  "URLToEntities.json" , (new JSONObject(urlToEntityHashMap)).toString(), false);
     }
 
 
     private void selectiveLocationsQueries() throws Exception
     {
         HashSet<String> urlSet = new HashSet<>();
-        if (!fileExist(SCARLARLY_PATH + "locations.json"))
+        if (!DataHandling.fileExist(SCARLARLY_PATH + "locations.json"))
         {
             String urlCat[] = {"https://vi.wikipedia.org/wiki/Thể_loại:Khu_bảo_tồn_Việt_Nam", "https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_tại_Hà_Nội", "https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_quốc_gia_đặc_biệt", "https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_tại_Hà_Nội","https://vi.wikipedia.org/wiki/Thể_loại:Chùa_Việt_Nam_theo_tỉnh_thành","https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_quốc_gia_Việt_Nam"};
             for (String catString: urlCat){
@@ -186,18 +186,18 @@ public class WikiSelectiveData extends WikiData {
             }
         }
         else{
-            for (Object key: new JSONArray(readFileAll(SCARLARLY_PATH + "locations.json")))
+            for (Object key: new JSONArray(DataHandling.readFileAll(SCARLARLY_PATH + "locations.json")))
             {
                 urlSet.add((String)key);
             }
         }
         analyzeScarlarlyURLs(urlSet, locationHashSet);
 
-        JSONArray allLocationsArr = new JSONArray(readFileAll(INITIALIZE_PATH + "HistoricalSite.json"));
+        JSONArray allLocationsArr = new JSONArray(DataHandling.readFileAll(INITIALIZE_PATH + "HistoricalSite.json"));
         for (int i = 0; i < allLocationsArr.length(); i++)
         {
             JSONObject locationJSON = allLocationsArr.getJSONObject(i);
-            String urlString = urlDecode(locationJSON.getString("link"));
+            String urlString = DataHandling.urlDecode(locationJSON.getString("link"));
             String qID = "";
             if (checkURL(urlString)){
                 if (!urlToEntityHashMap.containsKey(urlString)){
@@ -211,13 +211,13 @@ public class WikiSelectiveData extends WikiData {
             }
         }
 
-        writeFile(SCARLARLY_PATH + "locations.json", (new JSONArray(urlSet)).toString(), false);
-        writeFile(LOGS_PATH +  "URLToEntities.json" , (new JSONObject(urlToEntityHashMap)).toString(), false);
+        DataHandling.writeFile(SCARLARLY_PATH + "locations.json", (new JSONArray(urlSet)).toString(), false);
+        DataHandling.writeFile(LOGS_PATH +  "URLToEntities.json" , (new JSONObject(urlToEntityHashMap)).toString(), false);
     }
 
     private void selectiveEventsQueries() throws Exception{
         HashSet<String> urlSet = new HashSet<>();
-        if (!fileExist(SCARLARLY_PATH + "events.json"))
+        if (!DataHandling.fileExist(SCARLARLY_PATH + "events.json"))
         {
             String urlCat[] = {"https://vi.wikipedia.org/wiki/Thể_loại:Trận_đánh_liên_quan_tới_Việt_Nam", "https://vi.wikipedia.org/wiki/Thể_loại:Trận_đánh_và_chiến_dịch_trong_Chiến_tranh_Việt_Nam", "https://vi.wikipedia.org/wiki/Thể_loại:Sự_kiện_lịch_sử_Việt_Nam",
             "https://vi.wikipedia.org/wiki/Thể_loại:Chiến_tranh_liên_quan_tới_Việt_Nam"};
@@ -243,15 +243,20 @@ public class WikiSelectiveData extends WikiData {
             }
         }
         else{
-            for (Object key: new JSONArray(readFileAll(SCARLARLY_PATH + "events.json")))
+            for (Object key: new JSONArray(DataHandling.readFileAll(SCARLARLY_PATH + "events.json")))
             {
                 urlSet.add((String)key);
             }
         }
         analyzeScarlarlyURLs(urlSet, eventHashSet);
-        writeFile(SCARLARLY_PATH + "events.json", (new JSONArray(urlSet)).toString(), false);
-        writeFile(LOGS_PATH +  "URLToEntities.json" , (new JSONObject(urlToEntityHashMap)).toString(), false);
+        DataHandling.writeFile(SCARLARLY_PATH + "events.json", (new JSONArray(urlSet)).toString(), false);
+        DataHandling.writeFile(LOGS_PATH +  "URLToEntities.json" , (new JSONObject(urlToEntityHashMap)).toString(), false);
     }
+
+    public final JSONObject getVietnameseWikiReadable(String qID) throws Exception{
+        return WikiDataHandling.getVietnameseWikiReadable(qID, allQFile, allPFile, ENTITY_JSON_PATH, ENTITY_PROPERTIES_PATH, ENTITY_REF_FINAL_PATH, HTML_PATH);
+    }
+
 
     private void analyzeSelectiveFestivalData() throws Exception
     {
@@ -261,7 +266,7 @@ public class WikiSelectiveData extends WikiData {
             JSONObject claims = json.getJSONObject("claims");
             WikiDataHandling.addProperties(claims, "là một", "lễ hội");
             WikiDataHandling.addProperties(claims, "quốc gia", "Việt Nam");
-            writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
+            DataHandling.writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
         }
     }
 
@@ -272,7 +277,7 @@ public class WikiSelectiveData extends WikiData {
             JSONObject claims = json.getJSONObject("claims");
             WikiDataHandling.addProperties(claims, "là một", "người");
             WikiDataHandling.addProperties(claims, "quốc tịch", "Việt Nam");
-            writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
+            DataHandling.writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
         }
     }
 
@@ -283,7 +288,7 @@ public class WikiSelectiveData extends WikiData {
             JSONObject claims = json.getJSONObject("claims");
             WikiDataHandling.addProperties(claims, "là một", "địa điểm");
             WikiDataHandling.addProperties(claims, "quốc gia", "Việt Nam");
-            writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
+            DataHandling.writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
         }
     }
 
@@ -294,7 +299,7 @@ public class WikiSelectiveData extends WikiData {
             JSONObject claims = json.getJSONObject("claims");
             WikiDataHandling.addProperties(claims, "là một", "sự kiện lịch sử");
             WikiDataHandling.addProperties(claims, "quốc gia", "Việt Nam");
-            writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
+            DataHandling.writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
         }
     }
 
