@@ -166,10 +166,10 @@ public class WikiTableData extends WikiBruteForceData {
                 WikiDataHandling.addProperties(kingRefJsonObject, "triều đại", dynastyName, dynastyQID);
 
                 kingJsonObject.put("references", kingRefJsonObject);
-                //DataHandling.writeFile(ENTITY_FINAL_PATH + kingQID + ".json", kingJsonObject.toString(), false);
+                DataHandling.writeFile(ENTITY_FINAL_PATH + kingQID + ".json", kingJsonObject.toString(), false);
             }
             dynastyJsonObject.getJSONObject("references").put("vua", dynastyRefArr);
-            //DataHandling.writeFile(ENTITY_FINAL_PATH + dynastyQID + ".json", dynastyJsonObject.toString(), false);
+            DataHandling.writeFile(ENTITY_FINAL_PATH + dynastyQID + ".json", dynastyJsonObject.toString(), false);
         }
         
     }
@@ -252,7 +252,7 @@ public class WikiTableData extends WikiBruteForceData {
                 else date = "năm " + date;
                 WikiDataHandling.addProperties(claims, "thời gian công nhận di tích", date);
             }
-            //DataHandling.writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
+            DataHandling.writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
         }
     }
 }

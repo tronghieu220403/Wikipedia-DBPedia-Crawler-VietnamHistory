@@ -8,7 +8,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class WikiDataExport extends WikiData {
+public class WikiDataExport extends WikiFolder {
     public static void main(String[] args) throws Exception {
         WikiDataExport wikiDataExport = new WikiDataExport("E:/Code/Java/OOP_Project/saveddata/Wikipedia/");
         wikiDataExport.export();
@@ -48,15 +48,15 @@ public class WikiDataExport extends WikiData {
 
     private void createFolderForExport(HashSet<String> categories){
         for(String bigCategory: categories){
-            createFolder(DATA_PATH + bigCategory);
+            DataHandling.createFolder(DATA_PATH + bigCategory);
         }
     }
 
     private void writeToDataPath(JSONObject bigCategories) throws Exception{
-        HashSet<String> files = listAllFiles(ENTITY_FINAL_PATH);
+        HashSet<String> files = DataHandling.listAllFiles(ENTITY_FINAL_PATH);
         for (String fileName: files)
         {
-            JSONObject json = getJSONFromFile(ENTITY_FINAL_PATH + fileName);
+            JSONObject json = DataHandling.getJSONFromFile(ENTITY_FINAL_PATH + fileName);
             if(json.has("claims"))
             {
                 JSONObject claims = json.getJSONObject("claims");
@@ -76,11 +76,11 @@ public class WikiDataExport extends WikiData {
                                 }
                             }
                         }
-                        for (String bigCate: getAllKeys(bigCategories)){
+                        for (String bigCate: DataHandling.getAllKeys(bigCategories)){
                             JSONObject subCategories = bigCategories.getJSONObject(bigCate);
                             if(subCategories.has(value))
                             {
-                                writeFile(DATA_PATH + bigCate + "/" + fileName, json.toString(), false);                                    
+                                DataHandling.writeFile(DATA_PATH + bigCate + "/" + fileName, json.toString(), false);                                    
                             }
                         }
                     }
@@ -95,7 +95,7 @@ public class WikiDataExport extends WikiData {
     private HashSet<String> getAccepetedEntites(HashSet<String> categories){
         HashSet<String> acceptSet = new HashSet<>();
         for (String bigCategory: categories){
-            for (String fileName: listAllFiles(DATA_PATH + bigCategory))
+            for (String fileName: DataHandling.listAllFiles(DATA_PATH + bigCategory))
                 {
                     acceptSet.add(fileName.replace(".json", ""));
                 }
@@ -105,7 +105,7 @@ public class WikiDataExport extends WikiData {
 
     private void downgradedUnacceptEntites(JSONObject json, HashSet<String> acceptEntitySet){
         List<String> deleteList = new ArrayList<String>();
-        for(String key: getAllKeys(json)){
+        for(String key: DataHandling.getAllKeys(json)){
             if (bannedProperties.contains(key))
             {
                 deleteList.add(key);
@@ -134,9 +134,9 @@ public class WikiDataExport extends WikiData {
 
     public void export() throws Exception
     {
-        JSONObject bigCategories = getJSONFromFile(INITIALIZE_PATH + "CategorySplit.json");
+        JSONObject bigCategories = DataHandling.getJSONFromFile(INITIALIZE_PATH + "CategorySplit.json");
 
-        HashSet<String> bigCategoriesList = getAllKeys(bigCategories);
+        HashSet<String> bigCategoriesList = DataHandling.getAllKeys(bigCategories);
 
         createFolderForExport(bigCategoriesList);
         writeToDataPath(bigCategories);
@@ -145,12 +145,12 @@ public class WikiDataExport extends WikiData {
 
         for (String bigCategory: bigCategoriesList){
             String folderName = DATA_PATH + bigCategory;
-            for (String fileName: listAllFiles(folderName))
+            for (String fileName: DataHandling.listAllFiles(folderName))
             {
                 StringBuffer filePath = new StringBuffer(folderName);
                 filePath.append("/");
                 filePath.append(fileName);
-                JSONObject json = getJSONFromFile(filePath.toString());
+                JSONObject json = DataHandling.getJSONFromFile(filePath.toString());
                 if (json.has("claims"))
                 {
                     downgradedUnacceptEntites(json.getJSONObject("claims"), acceptEntitySet);
@@ -159,7 +159,7 @@ public class WikiDataExport extends WikiData {
                 {
                     downgradedUnacceptEntites(json.getJSONObject("references"), acceptEntitySet);
                 }
-                writeFile(filePath.toString(), json.toString(), false);
+                DataHandling.writeFile(filePath.toString(), json.toString(), false);
             }
         }
     }

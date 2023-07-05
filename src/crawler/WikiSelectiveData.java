@@ -256,50 +256,31 @@ public class WikiSelectiveData extends WikiBruteForceData {
         return WikiDataHandling.getVietnameseWikiReadable(qID, allQFile, allPFile, ENTITY_JSON_PATH, ENTITY_PROPERTIES_PATH, ENTITY_REF_FINAL_PATH, HTML_PATH);
     }
 
-
-    private void analyzeSelectiveFestivalData() throws Exception
-    {
-        for (String qID: festivalHashSet)
+    private void analyzeSelectiveData(HashSet<String> qIDHashSet, String instance) throws Exception{
+        for (String qID: qIDHashSet)
         {
             JSONObject json = getVietnameseWikiReadable(qID);
             JSONObject claims = json.getJSONObject("claims");
-            WikiDataHandling.addProperties(claims, "là một", "lễ hội");
+            WikiDataHandling.addProperties(claims, "là một", instance);
             WikiDataHandling.addProperties(claims, "quốc gia", "Việt Nam");
             DataHandling.writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
         }
+    }
+
+    private void analyzeSelectiveFestivalData() throws Exception {
+        analyzeSelectiveData(festivalHashSet, "lễ hội");
     }
 
     private void analyzeSelectiveHumanData() throws Exception {
-        for (String qID: humanHashSet)
-        {
-            JSONObject json = getVietnameseWikiReadable(qID);
-            JSONObject claims = json.getJSONObject("claims");
-            WikiDataHandling.addProperties(claims, "là một", "người");
-            WikiDataHandling.addProperties(claims, "quốc tịch", "Việt Nam");
-            DataHandling.writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
-        }
+        analyzeSelectiveData(humanHashSet, "người");
     }
 
     private void analyzeSelectiveLocationData() throws Exception {
-        for (String qID: locationHashSet)
-        {
-            JSONObject json = getVietnameseWikiReadable(qID);
-            JSONObject claims = json.getJSONObject("claims");
-            WikiDataHandling.addProperties(claims, "là một", "địa điểm");
-            WikiDataHandling.addProperties(claims, "quốc gia", "Việt Nam");
-            DataHandling.writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
-        }
+        analyzeSelectiveData(locationHashSet, "địa điểm");
     }
 
     private void analyzeSelectiveEventData() throws Exception {
-        for (String qID: eventHashSet)
-        {
-            JSONObject json = getVietnameseWikiReadable(qID);
-            JSONObject claims = json.getJSONObject("claims");
-            WikiDataHandling.addProperties(claims, "là một", "sự kiện lịch sử");
-            WikiDataHandling.addProperties(claims, "quốc gia", "Việt Nam");
-            DataHandling.writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
-        }
+        analyzeSelectiveData(eventHashSet, "sự kiện lịch sử");
     }
 
 }
