@@ -1,6 +1,7 @@
 package crawler;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -219,7 +220,7 @@ public class WikiBruteForceData extends BruteForceData {
         DataHandling.writeFile(LOGS_PATH +  "URLToEntities.json" , (new JSONObject(urlToEntityHashMap)).toString(), false);
     }
 
-    private void entityRefFinal() throws Exception
+    public void entityRefFinal() throws Exception
     {
         HashSet<String> allQRefFile = DataHandling.listAllFiles(ENTITY_REFERENCE_PATH);
         HashMap<String, HashSet<String> > refList = new HashMap<String, HashSet<String>>();
@@ -275,7 +276,7 @@ public class WikiBruteForceData extends BruteForceData {
         for (String fileName: allQFile)
         {
             if (DataHandling.fileExist(ENTITY_FINAL_PATH + fileName)) {
-                //continue;
+                continue;
             }
             String qID = fileName.replace(".json", "");
             JSONObject json = WikiDataHandling.getVietnameseWikiReadable(qID, allQFile, allPFile, ENTITY_JSON_PATH, ENTITY_PROPERTIES_PATH, ENTITY_REF_FINAL_PATH, HTML_PATH);
@@ -285,5 +286,85 @@ public class WikiBruteForceData extends BruteForceData {
         }
     }
 
+    public final void resetEntityRef() throws Exception
+    {
+        //HashSet<String> allPFile = listAllFiles(ENTITY_PROPERTIES_PATH);
+        allQFile = DataHandling.listAllFiles(ENTITY_JSON_PATH);
+        for (String fileName: allQFile)
+        {
+            JSONObject json = DataHandling.getJSONFromFile(ENTITY_FINAL_PATH + fileName);
+            json.put("references", WikiDataHandling.getWikiEntityReferences(fileName, ENTITY_REF_FINAL_PATH, ENTITY_JSON_PATH, ENTITY_PROPERTIES_PATH));
+            String writePath = ENTITY_FINAL_PATH + fileName;
+            String writeContent = json.toString();
+            DataHandling.writeFile(writePath, writeContent, false);
+        }
+    }
+
+    /**
+     * Analyze a JSON Object and add all properties into propertyHashSet
+     * @param entityJSON A Wikidata JSON Object.
+     * @param entityJSONFileList A list of files in "EntityJSON" folder.
+     */
+    private void jsonGetPropertiesFromEntity(Object entityJSON, HashSet<String> entityJSONFileList)
+    {
+        WikiDataHandling.jsonGetPropertiesFromEntity(entityJSON, entityJSONFileList, propertyHashSet);
+    }
+
+    protected void getPropertiesInJson(String root, String fileName, HashSet<String> entityJSONFileList) throws Exception
+    {
+        String content = DataHandling.readFileAll(ENTITY_JSON_PATH + fileName);
+        int last = 0;
+        while(true) {
+            int start = content.indexOf("http://www.wikidata.org/entity/", last);
+            if (start == -1) break;
+            int end = content.indexOf("\"", start);
+            String qID = (content.substring(start, end)).replace("http://www.wikidata.org/entity/", "");
+            propertyHashSet.add(qID);
+            last = end;
+        }
+        JSONObject entityJSON = new JSONObject(DataHandling.readFileAll(ENTITY_JSON_PATH + fileName));
+        JSONObject claims = entityJSON.getJSONObject("entities").getJSONObject(fileName.replace(".json","")).getJSONObject("claims");
+        jsonGetPropertiesFromEntity(claims, entityJSONFileList);
+    }
+
+    /**
+     * Get all properties of all entities and save it to folder "Properties".
+     * @throws Exception
+     */
+    protected void getWikiProperties() throws Exception
+    {
+        if (DataHandling.fileExist(LOGS_PATH + "PropertiesList.json")) {
+            JSONArray myJsonArray = new JSONArray(DataHandling.readFileAll(LOGS_PATH + "PropertiesList.json"));
+            for (int i = 0; i < myJsonArray.length(); i++) {
+                String pID = myJsonArray.getString(i);
+                propertyHashSet.add(pID);
+            }
+        }
+        else{
+            HashSet<String> entityFileList = DataHandling.listAllFiles(ENTITY_JSON_PATH);
+            for (String fileName: entityFileList){
+                if (DataHandling.fileExist(ENTITY_JSON_PATH + fileName)) {
+                    getPropertiesInJson(ENTITY_JSON_PATH, fileName, entityFileList);
+                }
+            }
+            HashSet<String> propertyFileList = DataHandling.listAllFiles(ENTITY_PROPERTIES_PATH);
+            List<String> removePID = new ArrayList<>();
+            for (String pID: propertyHashSet) {
+                if (!propertyFileList.contains(pID + ".json")) {
+                    String data = DataHandling.getDataFromURL("https://www.wikidata.org/wiki/Special:EntityData/" + pID + ".json").toString();
+                    if (!WikiDataHandling.getWikiEntityViLabel(new JSONObject(data), pID).isEmpty()) {
+                        DataHandling.writeFile(ENTITY_PROPERTIES_PATH + pID + ".json", data, false);
+                    }
+                    else{
+                        removePID.add(pID);
+                    }
+                }
+            }
+            for (String pID: removePID){
+                propertyHashSet.remove(pID);
+            }
+            DataHandling.writeFile(LOGS_PATH + "PropertiesList.json", (new JSONArray(propertyHashSet)).toString(), false);
+        }
+    }
 
 }

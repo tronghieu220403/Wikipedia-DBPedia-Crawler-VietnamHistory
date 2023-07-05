@@ -55,7 +55,7 @@ public class ModifyData extends DataHandling{
         changePropNameInEntity(ref, changeName);
     }
 
-    private void removeEntity() throws Exception{
+    public void removeEntity() throws Exception{
         List<String> list = readFileAllLine("delete.txt");
         JSONObject changeName = getJSONFromFile("change_name.json");
         HashSet<String> rmHashSet = new HashSet<>();

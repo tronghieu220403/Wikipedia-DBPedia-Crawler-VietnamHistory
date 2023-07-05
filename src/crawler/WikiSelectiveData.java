@@ -33,14 +33,14 @@ public class WikiSelectiveData extends WikiBruteForceData {
         super(folderPath);
     }
 
-    private void selectiveDataQueries() throws Exception{
+    public void selectiveDataQueries() throws Exception{
         selectiveFestivalsQueries(); // done;
         selectiveHumansQueries();  // done;
         selectiveLocationsQueries(); // done;
         selectiveEventsQueries(); // done
     }
 
-    private void analyzeSelectiveData()throws Exception{
+    public void analyzeSelectiveData()throws Exception{
         analyzeSelectiveFestivalData();   // done
         analyzeSelectiveHumanData();  // done
         analyzeSelectiveLocationData();   // done

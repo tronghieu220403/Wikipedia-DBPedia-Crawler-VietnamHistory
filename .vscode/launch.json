@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CrawlData",
+            "request": "launch",
+            "mainClass": "crawler.CrawlData",
+            "projectName": "Wikipedia-DBPedia-Crawler-VietnamHistory_f4dc11d3"
+        },
+        {
+            "type": "java",
+            "name": "Merge",
+            "request": "launch",
+            "mainClass": "crawler.Merge",
+            "projectName": "Wikipedia-DBPedia-Crawler-VietnamHistory_f4dc11d3"
+        },
+        {
+            "type": "java",
             "name": "WikiDataExport",
             "request": "launch",
             "mainClass": "crawler.WikiDataExport",

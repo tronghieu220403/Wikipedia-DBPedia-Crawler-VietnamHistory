@@ -85,42 +85,41 @@ public class BruteForceData extends DataFolder {
         failedURLsHashSet = new HashSet<>(DataHandling.readFileAllLine(FAILED_URLS_PATH));
         analysedURLsHashSet = new HashSet<>(DataHandling.readFileAllLine(ANALYSED_URLS_PATH));
         totalAnalysed += failedURLsHashSet.size() + analysedURLsHashSet.size();
-        if (totalAnalysed > limitAmountAnalysis)
+        if (totalAnalysed < limitAmountAnalysis)
         {
-            return;
-        }
-        List<String> craftedURLsList = DataHandling.readFileAllLine(CRAFTED_URLS_PATH);
-        if (craftedURLsList.size()==0)
-        {
-            String beginURLs = DataHandling.readFileAll(BEGIN_URLS_PATH);
-            DataHandling.writeFile(CRAFTED_URLS_PATH, beginURLs + "\n0\n", false);
-            deque.addLast(new Pair(beginURLs, 0));
-            craftedURLsHashMap.put(beginURLs, 0);
-        }
-        else
-        {
-            for (int i = 0; i < craftedURLsList.size(); i+=2)
+            List<String> craftedURLsList = DataHandling.readFileAllLine(CRAFTED_URLS_PATH);
+            if (craftedURLsList.size()==0)
             {
-                String urlString = craftedURLsList.get(i);
-                urlString = filterURL(urlString);
-                int depth = Integer.parseInt(craftedURLsList.get(i+1));
-                if (WikiDataHandling.checkURL(urlString, false) == false) continue;
-                if (existInAnalysedURL(urlString)) continue;
-                craftedURLsHashMap.put(urlString, depth);
-                deque.addLast(new Pair(urlString, depth));
+                String beginURLs = DataHandling.readFileAll(BEGIN_URLS_PATH);
+                DataHandling.writeFile(CRAFTED_URLS_PATH, beginURLs + "\n0\n", false);
+                deque.addLast(new Pair(beginURLs, 0));
+                craftedURLsHashMap.put(beginURLs, 0);
             }
-        }
+            else
+            {
+                for (int i = 0; i < craftedURLsList.size(); i+=2)
+                {
+                    String urlString = craftedURLsList.get(i);
+                    urlString = filterURL(urlString);
+                    int depth = Integer.parseInt(craftedURLsList.get(i+1));
+                    if (WikiDataHandling.checkURL(urlString, false) == false) continue;
+                    if (existInAnalysedURL(urlString)) continue;
+                    craftedURLsHashMap.put(urlString, depth);
+                    deque.addLast(new Pair(urlString, depth));
+                }
+            }
 
-        while(deque.size()!=0)
-        {
-            int depth = deque.getFirst().second;
-            String urlString = deque.getFirst().first;
-            if ( depth <= 3 && totalAnalysed <= limitAmountAnalysis)
+            while(deque.size()!=0)
             {
-                entityAnalys(urlString, depth, true);
-                totalAnalysed++;
+                int depth = deque.getFirst().second;
+                String urlString = deque.getFirst().first;
+                if ( depth <= 3 && totalAnalysed <= limitAmountAnalysis)
+                {
+                    entityAnalys(urlString, depth, true);
+                    totalAnalysed++;
+                }
+                deque.removeFirst();
             }
-            deque.removeFirst();
         }
         getDataCallBack();
     }
