@@ -10,19 +10,21 @@ import org.json.JSONObject;
 
 public class Merge {
     public static void main(String[] args) throws Exception {
-        Merge mergeData = new Merge();
-        mergeData.merge("data", "E:/Code/Java/OOP_Project/saveddata/DBPedia/data/", createSource("Wikipedia"), createSource("DBPedia"));
+        //Merge mergeData = new Merge();
+        //mergeData.merge("data","E:/Code/Java/OOP_Project/saveddata/Wikipedia/", "E:/Code/Java/OOP_Project/saveddata/DBPedia/data/", createSource("Wikipedia"), createSource("DBPedia"));
     }
 
     public static String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
 
-    void merge(String path1, String path2, JSONArray src1, JSONArray src2) throws Exception
+    public void merge(String exportPath, String path1, String path2, JSONArray src1, JSONArray src2) throws Exception
     {
-        DataHandling.createFolder(path1);
+        path1 += "data";
+        path2 += "data";
+        DataHandling.createFolder(exportPath);
         for (String bigCategory: bigCategories)
         {
             String path = path1 + "/" + bigCategory;
-            String exportDataSubFolder = path1 + "/" + bigCategory;
+            String exportDataSubFolder = exportPath + "/" + bigCategory;
             DataHandling.createFolder(exportDataSubFolder);
             HashSet<String> fileList = DataHandling.listAllFiles(path);
             for (String fileName: fileList)

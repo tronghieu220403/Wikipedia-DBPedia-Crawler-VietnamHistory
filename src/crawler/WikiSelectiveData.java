@@ -262,7 +262,8 @@ public class WikiSelectiveData extends WikiBruteForceData {
             JSONObject json = getVietnameseWikiReadable(qID);
             JSONObject claims = json.getJSONObject("claims");
             WikiDataHandling.addProperties(claims, "là một", instance);
-            WikiDataHandling.addProperties(claims, "quốc gia", "Việt Nam");
+            if (instance.equals("người"))
+            WikiDataHandling.addProperties(claims, instance.equals("người") ? "quốc tịch" : "quốc gia", "Việt Nam");
             DataHandling.writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
         }
     }
