@@ -3649,6 +3649,50 @@
 				"value": "tiếng Việt"
 			}
 		],
+		"trường học": [
+			{
+				"source": [
+					"Wikipedia"
+				],
+				"type": "string",
+				"value": "Trường Đại học Lao động Cộng sản Phương Đông"
+			},
+			{
+				"source": [
+					"Wikipedia"
+				],
+				"type": "string",
+				"value": "Trường Trung học phổ thông chuyên Quốc Học – Huế"
+			}
+		],
+		"có tác phẩm trong bộ sưu tập": [
+			{
+				"id": "Q5370414",
+				"source": [
+					"Wikipedia"
+				],
+				"type": "wikibase-item",
+				"value": "Bảo tàng Lịch sử Việt Nam"
+			}
+		],
+		"tên bản ngữ": [
+			{
+				"source": [
+					"Wikipedia"
+				],
+				"type": "string",
+				"value": "Hồ Chí Minh"
+			}
+		],
+		"trạng thái bản quyền với tư cách là người sáng tạo": [
+			{
+				"source": [
+					"Wikipedia"
+				],
+				"type": "string",
+				"value": "tác phẩm được bảo hộ bản quyền"
+			}
+		],
 		"miêu tả trong": [
 			{
 				"qualifiers": {
@@ -3764,6 +3808,25 @@
 				"value": "người"
 			}
 		],
+		"trúng cử ở": [
+			{
+				"source": [
+					"DBPedia"
+				],
+				"type": "string",
+				"value": "Bầu cử Quốc hội Việt Nam khóa I"
+			}
+		],
+		"ngày mất": [
+			{
+				"source": [
+					"DBPedia",
+					"Wikipedia"
+				],
+				"type": "string",
+				"value": "ngày 02 tháng 09 năm 1969"
+			}
+		],
 		"hình thái chết": [
 			{
 				"source": [
@@ -3806,27 +3869,29 @@
 				"value": "người Việt"
 			}
 		],
-		"khánh thành của": [
+		"chỉ huy của": [
 			{
 				"source": [
 					"DBPedia"
 				],
 				"type": "string",
-				"value": "Bộ trưởng Bộ Ngoại giao"
+				"value": "Chiến dịch Flaming Dart"
 			},
 			{
+				"id": "Q3365438",
 				"source": [
 					"DBPedia"
 				],
-				"type": "string",
-				"value": "Chủ tịch nước Việt Nam"
+				"type": "wikibase-item",
+				"value": "Nam Bộ kháng chiến"
 			},
 			{
+				"id": "Q769960",
 				"source": [
 					"DBPedia"
 				],
-				"type": "string",
-				"value": "Thủ tướng Việt Nam"
+				"type": "wikibase-item",
+				"value": "Cách mạng Tháng Tám"
 			}
 		],
 		"khác với": [
@@ -3925,270 +3990,6 @@
 				"value": "Đảng Xã hội Pháp"
 			}
 		],
-		"quân hàm": [
-			{
-				"source": [
-					"Wikipedia"
-				],
-				"type": "string",
-				"value": "sĩ quan cấp tướng"
-			}
-		],
-		"bí danh": [
-			{
-				"source": [
-					"Wikipedia"
-				],
-				"type": "string",
-				"value": "Nguyễn Ái Quốc"
-			},
-			{
-				"source": [
-					"Wikipedia"
-				],
-				"type": "string",
-				"value": "Hồ Chí Minh"
-			}
-		],
-		"giới tính": [
-			{
-				"source": [
-					"Wikipedia"
-				],
-				"type": "string",
-				"value": "nam"
-			}
-		],
-		"kế thừa": [
-			{
-				"id": "Q545539",
-				"source": [
-					"DBPedia"
-				],
-				"type": "wikibase-item",
-				"value": "Trường Chinh"
-			}
-		],
-		"tác giả của": [
-			{
-				"source": [
-					"DBPedia"
-				],
-				"type": "string",
-				"value": "Con đường dẫn tôi đến chủ nghĩa Lênin"
-			},
-			{
-				"id": "Q10755041",
-				"source": [
-					"DBPedia"
-				],
-				"type": "wikibase-item",
-				"value": "Di chúc Hồ Chí Minh"
-			}
-		],
-		"nguyên nhân chết": [
-			{
-				"source": [
-					"Wikipedia"
-				],
-				"type": "string",
-				"value": "suy tim"
-			}
-		],
-		"ngày sinh": [
-			{
-				"source": [
-					"DBPedia",
-					"Wikipedia"
-				],
-				"type": "string",
-				"value": "ngày 19 tháng 05 năm 1890"
-			}
-		],
-		"tên": [
-			{
-				"qualifiers": {
-					"đối tượng có vai trò": [
-						{
-							"type": "string",
-							"value": "biệt hiệu"
-						}
-					]
-				},
-				"source": [
-					"Wikipedia"
-				],
-				"type": "string",
-				"value": "Quốc"
-			},
-			{
-				"qualifiers": {
-					"lý do ưu tiên": [
-						{
-							"type": "string",
-							"value": "giá trị thường xuyên nhất"
-						}
-					],
-					"đối tượng có vai trò": [
-						{
-							"type": "string",
-							"value": "biệt hiệu"
-						}
-					]
-				},
-				"source": [
-					"Wikipedia"
-				],
-				"type": "string",
-				"value": "Minh"
-			},
-			{
-				"source": [
-					"Wikipedia"
-				],
-				"type": "string",
-				"value": "Thành"
-			},
-			{
-				"qualifiers": {
-					"đối tượng có vai trò": [
-						{
-							"type": "string",
-							"value": "tên khai sinh"
-						}
-					]
-				},
-				"source": [
-					"Wikipedia"
-				],
-				"type": "string",
-				"value": "Cung"
-			}
-		],
-		"cuộc xung đột": [
-			{
-				"id": "Q8740",
-				"source": [
-					"Wikipedia"
-				],
-				"type": "wikibase-item",
-				"value": "Chiến tranh Việt Nam"
-			},
-			{
-				"id": "Q748780",
-				"source": [
-					"Wikipedia"
-				],
-				"type": "wikibase-item",
-				"value": "Chiến tranh Đông Dương"
-			}
-		],
-		"nơi chôn cất": [
-			{
-				"id": "Q874234",
-				"source": [
-					"DBPedia",
-					"Wikipedia"
-				],
-				"type": "wikibase-item",
-				"value": "Lăng Chủ tịch Hồ Chí Minh"
-			},
-			{
-				"source": [
-					"DBPedia"
-				],
-				"type": "string",
-				"value": "Hà Nội"
-			}
-		],
-		"trường học": [
-			{
-				"source": [
-					"Wikipedia"
-				],
-				"type": "string",
-				"value": "Trường Đại học Lao động Cộng sản Phương Đông"
-			},
-			{
-				"source": [
-					"Wikipedia"
-				],
-				"type": "string",
-				"value": "Trường Trung học phổ thông chuyên Quốc Học – Huế"
-			}
-		],
-		"có tác phẩm trong bộ sưu tập": [
-			{
-				"id": "Q5370414",
-				"source": [
-					"Wikipedia"
-				],
-				"type": "wikibase-item",
-				"value": "Bảo tàng Lịch sử Việt Nam"
-			}
-		],
-		"tên bản ngữ": [
-			{
-				"source": [
-					"Wikipedia"
-				],
-				"type": "string",
-				"value": "Hồ Chí Minh"
-			}
-		],
-		"trạng thái bản quyền với tư cách là người sáng tạo": [
-			{
-				"source": [
-					"Wikipedia"
-				],
-				"type": "string",
-				"value": "tác phẩm được bảo hộ bản quyền"
-			}
-		],
-		"trúng cử ở": [
-			{
-				"source": [
-					"DBPedia"
-				],
-				"type": "string",
-				"value": "Bầu cử Quốc hội Việt Nam khóa I"
-			}
-		],
-		"ngày mất": [
-			{
-				"source": [
-					"DBPedia",
-					"Wikipedia"
-				],
-				"type": "string",
-				"value": "ngày 02 tháng 09 năm 1969"
-			}
-		],
-		"chỉ huy của": [
-			{
-				"source": [
-					"DBPedia"
-				],
-				"type": "string",
-				"value": "Chiến dịch Flaming Dart"
-			},
-			{
-				"id": "Q3365438",
-				"source": [
-					"DBPedia"
-				],
-				"type": "wikibase-item",
-				"value": "Nam Bộ kháng chiến"
-			},
-			{
-				"id": "Q769960",
-				"source": [
-					"DBPedia"
-				],
-				"type": "wikibase-item",
-				"value": "Cách mạng Tháng Tám"
-			}
-		],
 		"họ": [
 			{
 				"qualifiers": {
@@ -4235,6 +4036,15 @@
 				],
 				"type": "wikibase-item",
 				"value": "Lăng Chủ tịch Hồ Chí Minh"
+			}
+		],
+		"quân hàm": [
+			{
+				"source": [
+					"Wikipedia"
+				],
+				"type": "string",
+				"value": "sĩ quan cấp tướng"
 			}
 		],
 		"người phối ngẫu": [
@@ -4291,6 +4101,22 @@
 				],
 				"type": "string",
 				"value": "tiếng Việt"
+			}
+		],
+		"bí danh": [
+			{
+				"source": [
+					"Wikipedia"
+				],
+				"type": "string",
+				"value": "Nguyễn Ái Quốc"
+			},
+			{
+				"source": [
+					"Wikipedia"
+				],
+				"type": "string",
+				"value": "Hồ Chí Minh"
 			}
 		],
 		"nghề nghiệp": [
@@ -4354,6 +4180,42 @@
 				],
 				"type": "wikibase-item",
 				"value": "Tôn Đức Thắng"
+			}
+		],
+		"giới tính": [
+			{
+				"source": [
+					"Wikipedia"
+				],
+				"type": "string",
+				"value": "nam"
+			}
+		],
+		"kế thừa": [
+			{
+				"id": "Q545539",
+				"source": [
+					"DBPedia"
+				],
+				"type": "wikibase-item",
+				"value": "Trường Chinh"
+			}
+		],
+		"tác giả của": [
+			{
+				"source": [
+					"DBPedia"
+				],
+				"type": "string",
+				"value": "Con đường dẫn tôi đến chủ nghĩa Lênin"
+			},
+			{
+				"id": "Q10755041",
+				"source": [
+					"DBPedia"
+				],
+				"type": "wikibase-item",
+				"value": "Di chúc Hồ Chí Minh"
 			}
 		],
 		"chức vụ": [
@@ -4496,6 +4358,22 @@
 				],
 				"type": "string",
 				"value": "Thủ tướng Việt Nam"
+			},
+			{
+				"source": [
+					"DBPedia"
+				],
+				"type": "string",
+				"value": "Bộ trưởng Bộ Ngoại giao"
+			}
+		],
+		"nguyên nhân chết": [
+			{
+				"source": [
+					"Wikipedia"
+				],
+				"type": "string",
+				"value": "suy tim"
 			}
 		],
 		"nơi sinh": [
@@ -4541,6 +4419,76 @@
 				"value": "Đoàn Thanh niên Cộng sản Hồ Chí Minh"
 			}
 		],
+		"ngày sinh": [
+			{
+				"source": [
+					"DBPedia",
+					"Wikipedia"
+				],
+				"type": "string",
+				"value": "ngày 19 tháng 05 năm 1890"
+			}
+		],
+		"tên": [
+			{
+				"qualifiers": {
+					"đối tượng có vai trò": [
+						{
+							"type": "string",
+							"value": "biệt hiệu"
+						}
+					]
+				},
+				"source": [
+					"Wikipedia"
+				],
+				"type": "string",
+				"value": "Quốc"
+			},
+			{
+				"qualifiers": {
+					"lý do ưu tiên": [
+						{
+							"type": "string",
+							"value": "giá trị thường xuyên nhất"
+						}
+					],
+					"đối tượng có vai trò": [
+						{
+							"type": "string",
+							"value": "biệt hiệu"
+						}
+					]
+				},
+				"source": [
+					"Wikipedia"
+				],
+				"type": "string",
+				"value": "Minh"
+			},
+			{
+				"source": [
+					"Wikipedia"
+				],
+				"type": "string",
+				"value": "Thành"
+			},
+			{
+				"qualifiers": {
+					"đối tượng có vai trò": [
+						{
+							"type": "string",
+							"value": "tên khai sinh"
+						}
+					]
+				},
+				"source": [
+					"Wikipedia"
+				],
+				"type": "string",
+				"value": "Cung"
+			}
+		],
 		"lãnh đạo của": [
 			{
 				"source": [
@@ -4555,6 +4503,42 @@
 				],
 				"type": "string",
 				"value": "Đoàn Thanh niên Cộng sản Hồ Chí Minh"
+			}
+		],
+		"cuộc xung đột": [
+			{
+				"id": "Q8740",
+				"source": [
+					"Wikipedia"
+				],
+				"type": "wikibase-item",
+				"value": "Chiến tranh Việt Nam"
+			},
+			{
+				"id": "Q748780",
+				"source": [
+					"Wikipedia"
+				],
+				"type": "wikibase-item",
+				"value": "Chiến tranh Đông Dương"
+			}
+		],
+		"nơi chôn cất": [
+			{
+				"id": "Q874234",
+				"source": [
+					"DBPedia",
+					"Wikipedia"
+				],
+				"type": "wikibase-item",
+				"value": "Lăng Chủ tịch Hồ Chí Minh"
+			},
+			{
+				"source": [
+					"DBPedia"
+				],
+				"type": "string",
+				"value": "Hà Nội"
 			}
 		]
 	},

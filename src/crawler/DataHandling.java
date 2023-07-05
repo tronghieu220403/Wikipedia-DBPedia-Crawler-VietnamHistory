@@ -214,7 +214,7 @@ abstract class DataHandling {
             String s = readFileAll(filePath);
             if (s.equals(content) && !append) return;
         }
-        writeToLogs(filePath);
+        //writeToLogs(filePath);
         try (FileWriter fout = new FileWriter(filePath, append)){
             fout.write(content);
         }
