@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "WikiTableData",
+            "request": "launch",
+            "mainClass": "crawler.WikiTableData",
+            "projectName": "Wikipedia-DBPedia-Crawler-VietnamHistory_f4dc11d3"
+        },
+        {
+            "type": "java",
             "name": "ModifyData",
             "request": "launch",
             "mainClass": "crawler.ModifyData",

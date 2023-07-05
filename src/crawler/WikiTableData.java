@@ -27,9 +27,7 @@ public class WikiTableData extends WikiBruteForceData {
         return;
     }
 
-    private void tableDynastiesQueries() throws Exception
-    {
-        JSONObject allDynastyJsonObject = DataHandling.getJSONFromFile(INITIALIZE_PATH + "VVN.json");
+    private HashMap<String, String> matchDynasties() throws Exception{
         HashMap<String, String> dynastyHashMap = new HashMap<>();
         for (String fileName: DataHandling.listAllFiles(ENTITY_FINAL_PATH))
         {
@@ -47,104 +45,123 @@ public class WikiTableData extends WikiBruteForceData {
                 }
             }
         }
+        return dynastyHashMap;
+    }
 
-        String[] kingProp = {"Miếu hiệu", "Tôn hiệu hoặc Thụy hiệu", "Tôn hiệu", "Niên hiệu", "Thế thứ", "Trị vì"};
+    private static String[] kingProp = {"Miếu hiệu", "Tôn hiệu hoặc Thụy hiệu", "Tôn hiệu", "Niên hiệu", "Thế thứ", "Trị vì"};
+
+    private void addKingProp(JSONObject kingClaims, JSONObject rawKingObj){
+        WikiDataHandling.addProperties(kingClaims, "là một", "người");
+        WikiDataHandling.addProperties(kingClaims, "là một", "vua");
+        WikiDataHandling.addProperties(kingClaims, "quốc tịch", "Việt Nam");
+
+        for (String prop: kingProp)
+        {
+            if (!rawKingObj.has(prop)) continue;
+            String value = rawKingObj.getString(prop);
+            if (value.isEmpty()) continue;
+            WikiDataHandling.addProperties(kingClaims, prop.toLowerCase(), value);
+        }
+    }
+
+    private JSONObject createKingObj(JSONObject rawKingObj) throws Exception{
+        String kingQID = "";
+        String kingURL = DataHandling.urlDecode(rawKingObj.getString("link"));
+        
+        JSONObject kingJsonObject = new JSONObject();
+        JSONObject kingClaims = new JSONObject();
+
+        String kingName = "";
+        if (urlToEntityHashMap.containsKey(kingURL))
+        {
+            kingQID = urlToEntityHashMap.get(kingURL);
+            kingJsonObject = DataHandling.getJSONFromFile(ENTITY_FINAL_PATH + kingQID + ".json");
+            kingClaims = kingJsonObject.getJSONObject("claims");
+            kingName = kingJsonObject.getString("label");
+        }
+        else
+        {
+            String[] kingType = {"Vua", "Tước hiệu", "Thủ lĩnh", "Tiết độ sứ"};
+            for (int j = 0; j < kingType.length; j++) {
+                if (rawKingObj.has(kingType[j])) {
+                    kingName = rawKingObj.getString(kingType[j]);
+                    break;
+                }
+            }
+            kingQID = "Q" + Integer.toString(kingName.hashCode()).replace("-", "") + "X";
+        }
+
+        addKingProp(kingClaims, rawKingObj);
+
+        if (kingQID.contains("X"))
+        {
+            WikiDataHandling.createNewEntity(kingJsonObject, 
+                kingQID, 
+                kingName, 
+                kingName + " là một vị vua trong lịch sử Việt Nam.", 
+                "", 
+                new JSONArray(), 
+                kingClaims,
+                new JSONObject()
+            );
+            urlToEntityHashMap.put(kingURL, kingQID);
+        }
+        return kingJsonObject;
+    }
+
+    private JSONObject createDynastyObj(String dynastyName, HashMap<String, String> dynastyHashMap) throws Exception{
+        JSONObject dynastyJsonObject = new JSONObject();
+        if (!dynastyHashMap.containsKey(dynastyName))
+        {
+            JSONObject claims = new JSONObject();
+            String qID = "Q" + Integer.toString(dynastyName.hashCode()).replace("-", "") + "X";
+            WikiDataHandling.addProperties(claims, "quốc gia", "Việt Nam");
+            WikiDataHandling.addProperties(claims, "là một", "triều đại");
+            WikiDataHandling.createNewEntity(dynastyJsonObject, 
+                qID, 
+                dynastyName, 
+                dynastyName + " là một triều đại phong kiến trong lịch sử Việt Nam.", 
+                "", 
+                new JSONArray(), 
+                claims, 
+                new JSONObject()
+            );
+            dynastyHashMap.put(dynastyName, qID);
+        }
+        else
+        {
+            try{
+                dynastyJsonObject = DataHandling.getJSONFromFile(ENTITY_FINAL_PATH + dynastyHashMap.get(dynastyName) + ".json");
+            }
+            catch (Exception e) {
+                System.out.println("[ERROR] Can't find file: data/triều đại lịch sử/" + dynastyHashMap.get(dynastyName));
+            }
+        }
+        return dynastyJsonObject;
+    }
+
+    private void tableDynastiesQueries() throws Exception
+    {
+        JSONObject allDynastyJsonObject = DataHandling.getJSONFromFile(INITIALIZE_PATH + "VVN.json");
+        HashMap<String, String> dynastyHashMap = matchDynasties();
+
         for (String dynastyName: DataHandling.getAllKeys(allDynastyJsonObject))
         {
-            JSONObject dynastyJsonObject = new JSONObject();
-            if (!dynastyHashMap.containsKey(dynastyName))
-            {
-                JSONObject claims = new JSONObject();
-                String qID = "Q" + Integer.toString(dynastyName.hashCode()).replace("-", "") + "X";
-                WikiDataHandling.addProperties(claims, "quốc gia", "Việt Nam");
-                WikiDataHandling.addProperties(claims, "là một", "triều đại");
-                WikiDataHandling.createNewEntity(dynastyJsonObject, 
-                    qID, 
-                    dynastyName, 
-                    dynastyName + " là một triều đại phong kiến trong lịch sử Việt Nam.", 
-                    "", 
-                    new JSONArray(), 
-                    claims, 
-                    new JSONObject()
-                );
-                dynastyHashMap.put(dynastyName, qID);
-            }
-            else
-            {
-                try{
-                    dynastyJsonObject = DataHandling.getJSONFromFile(ENTITY_FINAL_PATH + dynastyHashMap.get(dynastyName) + ".json");
-                }
-                catch (Exception e) {
-                    System.out.println("[ERROR] Can't find file: data/triều đại lịch sử/" + dynastyHashMap.get(dynastyName));
-                }
-            }
+            JSONObject dynastyJsonObject = createDynastyObj(dynastyName, dynastyHashMap);
 
             String dynastyQID = dynastyHashMap.get(dynastyName);
             JSONArray dynastyRefArr = new JSONArray();
             JSONArray kingArr = allDynastyJsonObject.getJSONArray(dynastyName);
             for (int i = 0; i < kingArr.length(); i++)
             {
-                String kingQID = "";
-                JSONObject king = kingArr.getJSONObject(i);
-                String kingURL = DataHandling.urlDecode(king.getString("link"));
-                
-                JSONObject kingJsonObject = new JSONObject();
-                JSONObject kingClaims = new JSONObject();
+                JSONObject rawKingObj = kingArr.getJSONObject(i);
 
-                String kingName = "";
-                if (urlToEntityHashMap.containsKey(kingURL))
-                {
-                    kingQID = urlToEntityHashMap.get(kingURL);
-                    kingJsonObject = DataHandling.getJSONFromFile(ENTITY_FINAL_PATH + kingQID + ".json");
-                    kingClaims = kingJsonObject.getJSONObject("claims");
-                    kingName = kingJsonObject.getString("label");
-                }
-                else
-                {
-                    String[] kingType = {"Vua", "Tước hiệu", "Thủ lĩnh", "Tiết độ sứ"};
-                    for (int j = 0; j < kingType.length; j++) {
-                        if (king.has(kingType[j])) {
-                            kingName = king.getString(kingType[j]);
-                            break;
-                        }
-                    }
-                    kingQID = "Q" + Integer.toString(kingName.hashCode()).replace("-", "") + "X";
-                }
-
-                WikiDataHandling.addProperties(kingClaims, "là một", "người");
-                WikiDataHandling.addProperties(kingClaims, "là một", "vua");
-                WikiDataHandling.addProperties(kingClaims, "quốc tịch", "Việt Nam");
-
-                for (String prop: kingProp)
-                {
-                    if (!king.has(prop)) continue;
-                    String value = king.getString(prop);
-                    if (value.isEmpty()) continue;
-                    WikiDataHandling.addProperties(kingClaims, prop.toLowerCase(), value);
-                }
-
-                if (kingQID.contains("X"))
-                {
-                    WikiDataHandling.createNewEntity(kingJsonObject, 
-                        kingQID, 
-                        kingName, 
-                        kingName + " là một vị vua trong lịch sử Việt Nam.", 
-                        "", 
-                        new JSONArray(), 
-                        kingClaims,
-                        new JSONObject()
-                    );
-                    urlToEntityHashMap.put(kingURL, kingQID);
-                }
-                JSONObject refJSONObj = new JSONObject();
-                refJSONObj.put("type", "wikibase-item");
-                refJSONObj.put("value", kingName);
-                refJSONObj.put("id", kingQID);
+                JSONObject kingJsonObject = createKingObj(rawKingObj);
+                String kingQID = kingJsonObject.getString("id");
+                JSONObject refJSONObj = WikiDataHandling.createPropValue(kingJsonObject.getString("label"), kingQID, null, null);
                 dynastyRefArr.put(refJSONObj);
 
-                JSONObject kingRefJsonObject = new JSONObject();
-                if (kingJsonObject.has("references"))
-                    kingRefJsonObject = kingJsonObject.getJSONObject("references");
+                JSONObject kingRefJsonObject = kingJsonObject.has("references") ? kingJsonObject.getJSONObject("references") : new JSONObject();
 
                 WikiDataHandling.addProperties(kingRefJsonObject, "triều đại", dynastyName, dynastyQID);
 
