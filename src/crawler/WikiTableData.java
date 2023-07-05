@@ -24,13 +24,6 @@ public class WikiTableData extends WikiBruteForceData {
 
     public WikiTableData(String folderPath) throws Exception{
         super(folderPath);
-        if(DataHandling.fileExist(LOGS_PATH + "URLToEntities.json"))
-        {
-            JSONObject jsonContent = DataHandling.getJSONFromFile(LOGS_PATH + "URLToEntities.json");
-            for (String key: DataHandling.getAllKeys(jsonContent)){
-                urlToEntityHashMap.put(key,(jsonContent).getString(key));
-            }
-        }
         return;
     }
 

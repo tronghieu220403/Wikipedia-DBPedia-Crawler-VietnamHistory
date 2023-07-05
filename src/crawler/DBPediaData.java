@@ -2,6 +2,7 @@ package crawler;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -536,33 +537,21 @@ public class DBPediaData extends BruteForceData {
                             for (int i = 0; i < wikiPropertyArr.length(); i++)
                             {
                                 JSONObject wikiObj = wikiPropertyArr.getJSONObject(i);
-                                String wikiObjValue = wikiObj.getString("value");
                                 boolean isUnique = true;
                                 for (int j = 0; j < dbpediaPropertyArr.length(); j++)
                                 {
                                     JSONObject dbpediaObj = dbpediaPropertyArr.getJSONObject(j);
-                                    String dbpediaObjValue = dbpediaObj.getString("value");
-                                    if (wikiObjValue.equals(dbpediaObjValue))
+                                    if (dbpediaObj.toString().equals(wikiObj.toString()))
                                     {
-                                        if (wikiObj.has("qualifiers"))
-                                        {
-                                            wikiObj.put("source", "Wikipedia");
-                                            dbpediaObj.put("source", "DBPedia");
-                                            fullJoinArr.put(wikiObj);   
-                                            fullJoinArr.put(dbpediaObj);
-                                        }
-                                        else
-                                        {
-                                            wikiObj.put("source", "both");
-                                            fullJoinArr.put(wikiObj);
-                                        }
+                                        wikiObj.put("source", createSource("Wikipedia", "DBPedia"));
+                                        fullJoinArr.put(wikiObj);
                                         isUnique = false;
                                         break;
                                     }
                                 }
                                 if (isUnique == true)
                                 {
-                                    wikiObj.put("source", "Wikipedia");
+                                    wikiObj.put("source", createSource("Wikipedia"));
                                     fullJoinArr.put(wikiObj);
                                 }
                             }
@@ -581,7 +570,7 @@ public class DBPediaData extends BruteForceData {
                                     }
                                 }
                                 if (isUnique == true){
-                                    dbpediaObj.put("source", "DBPedia");
+                                    dbpediaObj.put("source", createSource("DBPedia"));
                                     fullJoinArr.put(dbpediaObj);
                                 }
                             }
@@ -589,6 +578,11 @@ public class DBPediaData extends BruteForceData {
                         }
                         else
                         {
+                            for (int i = 0; i < wikiPropertyArr.length(); i++)
+                            {
+                                JSONObject wikiObj = wikiPropertyArr.getJSONObject(i);
+                                wikiObj.put("source", createSource("Wikipedia"));
+                            }
                             exportClaims.put(propertyName, wikiPropertyArr);
                         }
                     }
@@ -596,6 +590,12 @@ public class DBPediaData extends BruteForceData {
                     {
                         if (!wikiClaims.has(propertyName))
                         {
+                            JSONArray dbpediaPropertyArr = dbpediaClaims.getJSONArray(propertyName);
+                            for (int i = 0; i < dbpediaPropertyArr.length(); i++)
+                            {
+                                JSONObject dbpediaObj = dbpediaPropertyArr.getJSONObject(i);
+                                dbpediaObj.put("source", createSource("DBPedia"));
+                            }
                             exportClaims.put(propertyName, dbpediaClaims.getJSONArray(propertyName));
                         }
                     }
@@ -605,4 +605,18 @@ public class DBPediaData extends BruteForceData {
             }
         }
     }
+
+    public static JSONArray createSource(String... sources){
+        JSONArray srcArray = new JSONArray();
+        List<String> arr = new ArrayList<>();
+        for (String source: sources){
+            arr.add(source);
+        }
+        Collections.sort(arr); 
+        for (String str: arr){
+            srcArray.put(str);
+        }
+        return srcArray;
+    }
+
 }

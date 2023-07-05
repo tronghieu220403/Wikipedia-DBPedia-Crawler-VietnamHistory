@@ -48,6 +48,7 @@ public class BruteForceData extends DataFolder {
      */
     public BruteForceData(String path)
     {
+        super(path);
         if (path.charAt(path.length()-1) != (char)('/') && path.charAt(path.length()-1) != (char)('\\'))
         {
             path = path + "/";

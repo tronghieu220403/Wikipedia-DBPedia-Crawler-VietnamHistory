@@ -64,7 +64,6 @@ public class WikiSelectiveData extends WikiBruteForceData {
             {                
                 for (Element aTag : divTag.select("a")) {
                     if (!aTag.text().equals("Trang sau")) continue;
-                    //print(aTag.attr("href"));
                     nextPageUrl = ("https://vi.wikipedia.org" + aTag.attr("href"));
                     break;
                 }

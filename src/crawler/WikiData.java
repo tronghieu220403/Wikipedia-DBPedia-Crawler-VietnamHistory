@@ -12,7 +12,6 @@ import java.util.List;
 import org.json.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 
 public class WikiData extends EntityHandling{
     
