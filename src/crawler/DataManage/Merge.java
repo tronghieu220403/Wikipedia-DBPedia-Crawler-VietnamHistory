@@ -9,20 +9,25 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import crawler.DataManage.BruteForceData.Pair;
+
 public class Merge {
     public static void main(String[] args) throws Exception {
         //Merge mergeData = new Merge();
         //mergeData.merge("data","E:/Code/Java/OOP_Project/saveddata/Wikipedia/", "E:/Code/Java/OOP_Project/saveddata/DBPedia/data/", createSource("Wikipedia"), createSource("DBPedia"));
     }
 
-    public static String[] BIG_CATEGORIES = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
+    public static String[] BIG_CATEGORIES = {"triều đại lịch sử", "nhân vật lịch sử", "địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "sự kiện lịch sử"};
 
-    JSONObject getAllEntityFiles(String path){
+    private JSONObject getAllEntityFiles(String path){
         JSONObject map = new JSONObject();
         HashSet<String> fileList = DataHandling.listAllFiles(path);
         if (fileList.size() == 0){
             for (String cat: BIG_CATEGORIES){
                 for (String fileName: DataHandling.listAllFiles(path + cat)){
+                    if (map.has(fileName)){
+                        DataHandling.print(fileName);
+                    }
                     map.put(fileName, path + cat + "/" + fileName);
                 }
             }

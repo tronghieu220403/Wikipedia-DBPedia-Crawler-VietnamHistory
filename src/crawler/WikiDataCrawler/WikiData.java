@@ -39,11 +39,10 @@ public class WikiData{
         wikiTableData.tableDataQueries();
         DataHandling.print("Done get table Wiki data");
 
-        /*
         wikiBruteForceData.entityRefFinal();
         wikiBruteForceData.resetEntityRef();
         DataHandling.print("Done rewrite ref of Wiki data");
-        */
+
         WikiDataExport wikiDataExport = new WikiDataExport(wikiPath);
         wikiDataExport.export();
         DataHandling.print("Done Wiki data export");

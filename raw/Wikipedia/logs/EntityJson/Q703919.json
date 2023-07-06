@@ -1,1 +1,660 @@
-{"entities":{"Q703919":{"aliases":{"vi":[{"language":"vi","value":"Nhà Ngô Việt Nam"},{"language":"vi","value":"Ngô Vương"},{"language":"vi","value":"Triều Ngô"}],"ru":[{"language":"ru","value":"Нго"}],"ko":[{"language":"ko","value":"오 왕조"},{"language":"ko","value":"오조"}],"en":[{"language":"en","value":"Tĩnh Hải quân"},{"language":"en","value":"The Military region of Tranquil Sea"},{"language":"en","value":"Military region of Tranquil Sea"},{"language":"en","value":"Ngo dynasty"}]},"ns":0,"claims":{"P576":[{"mainsnak":{"datavalue":{"type":"time","value":{"before":0,"timezone":0,"precision":9,"time":"+0965-00-00T00:00:00Z","after":0,"calendarmodel":"http://www.wikidata.org/entity/Q1985786"}},"datatype":"time","property":"P576","snaktype":"value","hash":"1b4a81112a1d6142cc1410a0265945bf92a6ecd9"},"references":[{"snaks-order":["P143"],"snaks":{"P143":[{"datavalue":{"type":"wikibase-entityid","value":{"entity-type":"item","numeric-id":328,"id":"Q328"}},"datatype":"wikibase-item","property":"P143","snaktype":"value","hash":"e4f6d9441d0600513c4533c672b5ab472dc73694"}]},"hash":"fa278ebfc458360e5aed63d5058cca83c46134f1"}],"qualifiers":{"P31":[{"datavalue":{"type":"wikibase-entityid","value":{"entity-type":"item","numeric-id":26961029,"id":"Q26961029"}},"datatype":"wikibase-item","property":"P31","snaktype":"value","hash":"d5ac6d02e7a8948b72184d9e39cf10acbc5e61ed"}]},"rank":"normal","id":"Q703919$7CFE8EB5-38C3-4AED-9DE3-F41F3FE2657E","type":"statement","qualifiers-order":["P31"]}],"P36":[{"mainsnak":{"datavalue":{"type":"wikibase-entityid","value":{"entity-type":"item","numeric-id":798059,"id":"Q798059"}},"datatype":"wikibase-item","property":"P36","snaktype":"value","hash":"6803701f9d9f5c0a4efd2166165a81be0ec2f1e7"},"references":[{"snaks-order":["P143"],"snaks":{"P143":[{"datavalue":{"type":"wikibase-entityid","value":{"entity-type":"item","numeric-id":328,"id":"Q328"}},"datatype":"wikibase-item","property":"P143","snaktype":"value","hash":"e4f6d9441d0600513c4533c672b5ab472dc73694"}]},"hash":"fa278ebfc458360e5aed63d5058cca83c46134f1"}],"rank":"normal","id":"Q703919$9C2E3513-60B5-4F0D-BDF4-46F3A39E3090","type":"statement"}],"P242":[{"mainsnak":{"datavalue":{"type":"string","value":"Imperial Dynasties in China 917 CE (Chinese).png"},"datatype":"commonsMedia","property":"P242","snaktype":"value","hash":"981784072684d98e4d269e4303d8187d00ce351a"},"rank":"normal","id":"Q703919$D5F2ECDD-EC33-4C30-A880-27C49DA5FB06","type":"statement"}],"P18":[{"mainsnak":{"datavalue":{"type":"string","value":"LangMoNgoQuyen.jpg"},"datatype":"commonsMedia","property":"P18","snaktype":"value","hash":"5fe0d9bb6d37906563f0c2843824a1e0c814c3a1"},"rank":"normal","id":"Q703919$4AF7BA0D-7FF5-4724-AD0A-076F58555580","type":"statement"}],"P571":[{"mainsnak":{"datavalue":{"type":"time","value":{"before":0,"timezone":0,"precision":9,"time":"+0939-00-00T00:00:00Z","after":0,"calendarmodel":"http://www.wikidata.org/entity/Q1985786"}},"datatype":"time","property":"P571","snaktype":"value","hash":"30693cf23a451c7515f7eb240c45e565dccdeaf6"},"references":[{"snaks-order":["P143"],"snaks":{"P143":[{"datavalue":{"type":"wikibase-entityid","value":{"entity-type":"item","numeric-id":328,"id":"Q328"}},"datatype":"wikibase-item","property":"P143","snaktype":"value","hash":"e4f6d9441d0600513c4533c672b5ab472dc73694"}]},"hash":"fa278ebfc458360e5aed63d5058cca83c46134f1"}],"rank":"normal","id":"Q703919$B2347F18-DC68-4769-81FD-D4B284CCD3EA","type":"statement"}],"P373":[{"mainsnak":{"datavalue":{"type":"string","value":"Ngô dynasty"},"datatype":"string","property":"P373","snaktype":"value","hash":"e09759b7374cf0418efd16c52b5ba7bd70fd1ced"},"references":[{"snaks-order":["P143"],"snaks":{"P143":[{"datavalue":{"type":"wikibase-entityid","value":{"entity-type":"item","numeric-id":328,"id":"Q328"}},"datatype":"wikibase-item","property":"P143","snaktype":"value","hash":"e4f6d9441d0600513c4533c672b5ab472dc73694"}]},"hash":"fa278ebfc458360e5aed63d5058cca83c46134f1"}],"rank":"normal","id":"Q703919$E0C2CA33-8274-4A85-965F-C7D0F0DDD24E","type":"statement"}],"P646":[{"mainsnak":{"datavalue":{"type":"string","value":"/m/084jrj"},"datatype":"external-id","property":"P646","snaktype":"value","hash":"1a4eebee55b225a452bdb1f557c95e28e478167f"},"references":[{"snaks-order":["P248","P577"],"snaks":{"P577":[{"datavalue":{"type":"time","value":{"before":0,"timezone":0,"precision":11,"time":"+2013-10-28T00:00:00Z","after":0,"calendarmodel":"http://www.wikidata.org/entity/Q1985727"}},"datatype":"time","property":"P577","snaktype":"value","hash":"fde79ecb015112d2f29229ccc1ec514ed3e71fa2"}],"P248":[{"datavalue":{"type":"wikibase-entityid","value":{"entity-type":"item","numeric-id":15241312,"id":"Q15241312"}},"datatype":"wikibase-item","property":"P248","snaktype":"value","hash":"a94b740202b097dd33355e0e6c00e54b9395e5e0"}]},"hash":"2b00cb481cddcac7623114367489b5c194901c4a"}],"rank":"normal","id":"Q703919$180285CD-EF56-48BF-A02F-AEA84CF921C9","type":"statement"}],"P910":[{"mainsnak":{"datavalue":{"type":"wikibase-entityid","value":{"entity-type":"item","numeric-id":8678593,"id":"Q8678593"}},"datatype":"wikibase-item","property":"P910","snaktype":"value","hash":"bc1d6e71180a622f13322c0224861066fe934934"},"references":[{"snaks-order":["P143"],"snaks":{"P143":[{"datavalue":{"type":"wikibase-entityid","value":{"entity-type":"item","numeric-id":328,"id":"Q328"}},"datatype":"wikibase-item","property":"P143","snaktype":"value","hash":"e4f6d9441d0600513c4533c672b5ab472dc73694"}]},"hash":"fa278ebfc458360e5aed63d5058cca83c46134f1"}],"rank":"normal","id":"Q703919$E63926CC-87D9-456F-9300-67DE1002FB07","type":"statement"}],"P31":[{"mainsnak":{"datavalue":{"type":"wikibase-entityid","value":{"entity-type":"item","numeric-id":164950,"id":"Q164950"}},"datatype":"wikibase-item","property":"P31","snaktype":"value","hash":"e438b0957be454eddb27411af01c8b8998e93a16"},"rank":"normal","id":"Q703919$B8D1FFBF-D1EE-49D1-B845-CC750665CCD1","type":"statement"},{"mainsnak":{"datavalue":{"type":"wikibase-entityid","value":{"entity-type":"item","numeric-id":11514315,"id":"Q11514315"}},"datatype":"wikibase-item","property":"P31","snaktype":"value","hash":"c0e510dcab1d5b2084e7ef4aa34b86ed61d22f07"},"rank":"normal","id":"Q703919$abc8c9a0-403f-f781-8038-e093a637348f","type":"statement"},{"mainsnak":{"datavalue":{"type":"wikibase-entityid","value":{"entity-type":"item","numeric-id":417175,"id":"Q417175"}},"datatype":"wikibase-item","property":"P31","snaktype":"value","hash":"835949c65c74f310e08f60bcb16a885634566df4"},"rank":"normal","id":"Q703919$76521acb-4633-e18c-1fec-86d85dcc5b8d","type":"statement"}]},"modified":"2022-12-18T17:21:21Z","sitelinks":{"ruwiki":{"badges":[],"site":"ruwiki","title":"Династия Нго","url":"https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%BD%D0%B0%D1%81%D1%82%D0%B8%D1%8F_%D0%9D%D0%B3%D0%BE"},"ukwiki":{"badges":[],"site":"ukwiki","title":"Династія Нго","url":"https://uk.wikipedia.org/wiki/%D0%94%D0%B8%D0%BD%D0%B0%D1%81%D1%82%D1%96%D1%8F_%D0%9D%D0%B3%D0%BE"},"zh_min_nanwiki":{"badges":[],"site":"zh_min_nanwiki","title":"Ngô Tiâu","url":"https://zh-min-nan.wikipedia.org/wiki/Ng%C3%B4_Ti%C3%A2u"},"enwiki":{"badges":[],"site":"enwiki","title":"Ngô dynasty","url":"https://en.wikipedia.org/wiki/Ng%C3%B4_dynasty"},"idwiki":{"badges":[],"site":"idwiki","title":"Dinasti Ngô","url":"https://id.wikipedia.org/wiki/Dinasti_Ng%C3%B4"},"cawiki":{"badges":[],"site":"cawiki","title":"Dinastia Ngô","url":"https://ca.wikipedia.org/wiki/Dinastia_Ng%C3%B4"},"frwiki":{"badges":[],"site":"frwiki","title":"Dynastie Ngô","url":"https://fr.wikipedia.org/wiki/Dynastie_Ng%C3%B4"},"nlwiki":{"badges":[],"site":"nlwiki","title":"Ngo-dynastie","url":"https://nl.wikipedia.org/wiki/Ngo-dynastie"},"wuuwiki":{"badges":[],"site":"wuuwiki","title":"吴朝","url":"https://wuu.wikipedia.org/wiki/%E5%90%B4%E6%9C%9D"},"jawiki":{"badges":[],"site":"jawiki","title":"呉朝","url":"https://ja.wikipedia.org/wiki/%E5%91%89%E6%9C%9D"},"viwiki":{"badges":[],"site":"viwiki","title":"Nhà Ngô","url":"https://vi.wikipedia.org/wiki/Nh%C3%A0_Ng%C3%B4"},"dewiki":{"badges":[],"site":"dewiki","title":"Ngô-Dynastie","url":"https://de.wikipedia.org/wiki/Ng%C3%B4-Dynastie"},"kmwiki":{"badges":[],"site":"kmwiki","title":"រាជវង្សង៉ូ","url":"https://km.wikipedia.org/wiki/%E1%9E%9A%E1%9E%B6%E1%9E%87%E1%9E%9C%E1%9E%84%E1%9F%92%E1%9E%9F%E1%9E%84%E1%9F%89%E1%9E%BC"},"kowiki":{"badges":[],"site":"kowiki","title":"응오 왕조","url":"https://ko.wikipedia.org/wiki/%EC%9D%91%EC%98%A4_%EC%99%95%EC%A1%B0"},"zhwiki":{"badges":[],"site":"zhwiki","title":"吳朝","url":"https://zh.wikipedia.org/wiki/%E5%90%B3%E6%9C%9D"}},"id":"Q703919","pageid":662241,"title":"Q703919","type":"item","lastrevid":1792077238,"descriptions":{"de":{"language":"de","value":"vietnamesische Herrscherdynastie im zehnten Jahrhundert"},"zh-hant":{"language":"zh-hant","value":"歷史權力"},"en":{"language":"en","value":"first Vietnamese dynasty after the Third Chinese domination of Vietnam (939\u2013965)"}},"labels":{"de":{"language":"de","value":"Ngô-Dynastie"},"km":{"language":"km","value":"រាជវង្សង៉ូ"},"ru":{"language":"ru","value":"Династия Нго"},"en-ca":{"language":"en-ca","value":"Ngô dynasty"},"ko":{"language":"ko","value":"응오 왕조"},"zh-hant":{"language":"zh-hant","value":"吳朝"},"zh-hk":{"language":"zh-hk","value":"吳朝"},"zh-hans":{"language":"zh-hans","value":"吴朝"},"en":{"language":"en","value":"Ngô dynasty"},"fr":{"language":"fr","value":"Dynastie Ngô"},"es":{"language":"es","value":"dinastía Ngô"},"zh":{"language":"zh","value":"吳朝"},"vi":{"language":"vi","value":"Nhà Ngô"},"vec":{"language":"vec","value":"dinastia Ngô"},"wuu":{"language":"wuu","value":"吴朝"},"uk":{"language":"uk","value":"Династія Нго"},"ja":{"language":"ja","value":"呉朝"},"nan":{"language":"nan","value":"Ngô͘ Tiâu"},"id":{"language":"id","value":"Dinasti Ngô"},"nl":{"language":"nl","value":"Ngo-dynastie"},"ca":{"language":"ca","value":"dinastia Ngô"},"de-ch":{"language":"de-ch","value":"Ngô-Dynastie"},"en-gb":{"language":"en-gb","value":"Ngô dynasty"}}}}}
+{
+	"entities": {
+		"Q703919": {
+			"aliases": {
+				"vi": [
+					{
+						"language": "vi",
+						"value": "Nhà Ngô Việt Nam"
+					},
+					{
+						"language": "vi",
+						"value": "Ngô Vương"
+					},
+					{
+						"language": "vi",
+						"value": "Triều Ngô"
+					}
+				],
+				"ru": [
+					{
+						"language": "ru",
+						"value": "Нго"
+					}
+				],
+				"ko": [
+					{
+						"language": "ko",
+						"value": "오 왕조"
+					},
+					{
+						"language": "ko",
+						"value": "오조"
+					}
+				],
+				"en": [
+					{
+						"language": "en",
+						"value": "Tĩnh Hải quân"
+					},
+					{
+						"language": "en",
+						"value": "The Military region of Tranquil Sea"
+					},
+					{
+						"language": "en",
+						"value": "Military region of Tranquil Sea"
+					},
+					{
+						"language": "en",
+						"value": "Ngo dynasty"
+					}
+				]
+			},
+			"ns": 0,
+			"claims": {
+				"P576": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "time",
+								"value": {
+									"before": 0,
+									"timezone": 0,
+									"precision": 9,
+									"time": "+0965-00-00T00:00:00Z",
+									"after": 0,
+									"calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+								}
+							},
+							"datatype": "time",
+							"property": "P576",
+							"snaktype": "value",
+							"hash": "1b4a81112a1d6142cc1410a0265945bf92a6ecd9"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P143"
+								],
+								"snaks": {
+									"P143": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 328,
+													"id": "Q328"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P143",
+											"snaktype": "value",
+											"hash": "e4f6d9441d0600513c4533c672b5ab472dc73694"
+										}
+									]
+								},
+								"hash": "fa278ebfc458360e5aed63d5058cca83c46134f1"
+							}
+						],
+						"qualifiers": {
+							"P31": [
+								{
+									"datavalue": {
+										"type": "wikibase-entityid",
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 26961029,
+											"id": "Q26961029"
+										}
+									},
+									"datatype": "wikibase-item",
+									"property": "P31",
+									"snaktype": "value",
+									"hash": "d5ac6d02e7a8948b72184d9e39cf10acbc5e61ed"
+								}
+							]
+						},
+						"rank": "normal",
+						"id": "Q703919$7CFE8EB5-38C3-4AED-9DE3-F41F3FE2657E",
+						"type": "statement",
+						"qualifiers-order": [
+							"P31"
+						]
+					}
+				],
+				"P36": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 798059,
+									"id": "Q798059"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P36",
+							"snaktype": "value",
+							"hash": "6803701f9d9f5c0a4efd2166165a81be0ec2f1e7"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P143"
+								],
+								"snaks": {
+									"P143": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 328,
+													"id": "Q328"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P143",
+											"snaktype": "value",
+											"hash": "e4f6d9441d0600513c4533c672b5ab472dc73694"
+										}
+									]
+								},
+								"hash": "fa278ebfc458360e5aed63d5058cca83c46134f1"
+							}
+						],
+						"rank": "normal",
+						"id": "Q703919$9C2E3513-60B5-4F0D-BDF4-46F3A39E3090",
+						"type": "statement"
+					}
+				],
+				"P242": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "Imperial Dynasties in China 917 CE (Chinese).png"
+							},
+							"datatype": "commonsMedia",
+							"property": "P242",
+							"snaktype": "value",
+							"hash": "981784072684d98e4d269e4303d8187d00ce351a"
+						},
+						"rank": "normal",
+						"id": "Q703919$D5F2ECDD-EC33-4C30-A880-27C49DA5FB06",
+						"type": "statement"
+					}
+				],
+				"P18": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "LangMoNgoQuyen.jpg"
+							},
+							"datatype": "commonsMedia",
+							"property": "P18",
+							"snaktype": "value",
+							"hash": "5fe0d9bb6d37906563f0c2843824a1e0c814c3a1"
+						},
+						"rank": "normal",
+						"id": "Q703919$4AF7BA0D-7FF5-4724-AD0A-076F58555580",
+						"type": "statement"
+					}
+				],
+				"P571": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "time",
+								"value": {
+									"before": 0,
+									"timezone": 0,
+									"precision": 9,
+									"time": "+0939-00-00T00:00:00Z",
+									"after": 0,
+									"calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+								}
+							},
+							"datatype": "time",
+							"property": "P571",
+							"snaktype": "value",
+							"hash": "30693cf23a451c7515f7eb240c45e565dccdeaf6"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P143"
+								],
+								"snaks": {
+									"P143": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 328,
+													"id": "Q328"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P143",
+											"snaktype": "value",
+											"hash": "e4f6d9441d0600513c4533c672b5ab472dc73694"
+										}
+									]
+								},
+								"hash": "fa278ebfc458360e5aed63d5058cca83c46134f1"
+							}
+						],
+						"rank": "normal",
+						"id": "Q703919$B2347F18-DC68-4769-81FD-D4B284CCD3EA",
+						"type": "statement"
+					}
+				],
+				"P373": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "Ngô dynasty"
+							},
+							"datatype": "string",
+							"property": "P373",
+							"snaktype": "value",
+							"hash": "e09759b7374cf0418efd16c52b5ba7bd70fd1ced"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P143"
+								],
+								"snaks": {
+									"P143": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 328,
+													"id": "Q328"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P143",
+											"snaktype": "value",
+											"hash": "e4f6d9441d0600513c4533c672b5ab472dc73694"
+										}
+									]
+								},
+								"hash": "fa278ebfc458360e5aed63d5058cca83c46134f1"
+							}
+						],
+						"rank": "normal",
+						"id": "Q703919$E0C2CA33-8274-4A85-965F-C7D0F0DDD24E",
+						"type": "statement"
+					}
+				],
+				"P646": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "/m/084jrj"
+							},
+							"datatype": "external-id",
+							"property": "P646",
+							"snaktype": "value",
+							"hash": "1a4eebee55b225a452bdb1f557c95e28e478167f"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P248",
+									"P577"
+								],
+								"snaks": {
+									"P577": [
+										{
+											"datavalue": {
+												"type": "time",
+												"value": {
+													"before": 0,
+													"timezone": 0,
+													"precision": 11,
+													"time": "+2013-10-28T00:00:00Z",
+													"after": 0,
+													"calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+												}
+											},
+											"datatype": "time",
+											"property": "P577",
+											"snaktype": "value",
+											"hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2"
+										}
+									],
+									"P248": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 15241312,
+													"id": "Q15241312"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P248",
+											"snaktype": "value",
+											"hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0"
+										}
+									]
+								},
+								"hash": "2b00cb481cddcac7623114367489b5c194901c4a"
+							}
+						],
+						"rank": "normal",
+						"id": "Q703919$180285CD-EF56-48BF-A02F-AEA84CF921C9",
+						"type": "statement"
+					}
+				],
+				"P910": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 8678593,
+									"id": "Q8678593"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P910",
+							"snaktype": "value",
+							"hash": "bc1d6e71180a622f13322c0224861066fe934934"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P143"
+								],
+								"snaks": {
+									"P143": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 328,
+													"id": "Q328"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P143",
+											"snaktype": "value",
+											"hash": "e4f6d9441d0600513c4533c672b5ab472dc73694"
+										}
+									]
+								},
+								"hash": "fa278ebfc458360e5aed63d5058cca83c46134f1"
+							}
+						],
+						"rank": "normal",
+						"id": "Q703919$E63926CC-87D9-456F-9300-67DE1002FB07",
+						"type": "statement"
+					}
+				],
+				"P31": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 164950,
+									"id": "Q164950"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P31",
+							"snaktype": "value",
+							"hash": "e438b0957be454eddb27411af01c8b8998e93a16"
+						},
+						"rank": "normal",
+						"id": "Q703919$B8D1FFBF-D1EE-49D1-B845-CC750665CCD1",
+						"type": "statement"
+					},
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 11514315,
+									"id": "Q11514315"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P31",
+							"snaktype": "value",
+							"hash": "c0e510dcab1d5b2084e7ef4aa34b86ed61d22f07"
+						},
+						"rank": "normal",
+						"id": "Q703919$abc8c9a0-403f-f781-8038-e093a637348f",
+						"type": "statement"
+					}
+				]
+			},
+			"modified": "2022-12-18T17:21:21Z",
+			"sitelinks": {
+				"ruwiki": {
+					"badges": [],
+					"site": "ruwiki",
+					"title": "Династия Нго",
+					"url": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%BD%D0%B0%D1%81%D1%82%D0%B8%D1%8F_%D0%9D%D0%B3%D0%BE"
+				},
+				"ukwiki": {
+					"badges": [],
+					"site": "ukwiki",
+					"title": "Династія Нго",
+					"url": "https://uk.wikipedia.org/wiki/%D0%94%D0%B8%D0%BD%D0%B0%D1%81%D1%82%D1%96%D1%8F_%D0%9D%D0%B3%D0%BE"
+				},
+				"zh_min_nanwiki": {
+					"badges": [],
+					"site": "zh_min_nanwiki",
+					"title": "Ngô Tiâu",
+					"url": "https://zh-min-nan.wikipedia.org/wiki/Ng%C3%B4_Ti%C3%A2u"
+				},
+				"enwiki": {
+					"badges": [],
+					"site": "enwiki",
+					"title": "Ngô dynasty",
+					"url": "https://en.wikipedia.org/wiki/Ng%C3%B4_dynasty"
+				},
+				"idwiki": {
+					"badges": [],
+					"site": "idwiki",
+					"title": "Dinasti Ngô",
+					"url": "https://id.wikipedia.org/wiki/Dinasti_Ng%C3%B4"
+				},
+				"cawiki": {
+					"badges": [],
+					"site": "cawiki",
+					"title": "Dinastia Ngô",
+					"url": "https://ca.wikipedia.org/wiki/Dinastia_Ng%C3%B4"
+				},
+				"frwiki": {
+					"badges": [],
+					"site": "frwiki",
+					"title": "Dynastie Ngô",
+					"url": "https://fr.wikipedia.org/wiki/Dynastie_Ng%C3%B4"
+				},
+				"nlwiki": {
+					"badges": [],
+					"site": "nlwiki",
+					"title": "Ngo-dynastie",
+					"url": "https://nl.wikipedia.org/wiki/Ngo-dynastie"
+				},
+				"wuuwiki": {
+					"badges": [],
+					"site": "wuuwiki",
+					"title": "吴朝",
+					"url": "https://wuu.wikipedia.org/wiki/%E5%90%B4%E6%9C%9D"
+				},
+				"jawiki": {
+					"badges": [],
+					"site": "jawiki",
+					"title": "呉朝",
+					"url": "https://ja.wikipedia.org/wiki/%E5%91%89%E6%9C%9D"
+				},
+				"viwiki": {
+					"badges": [],
+					"site": "viwiki",
+					"title": "Nhà Ngô",
+					"url": "https://vi.wikipedia.org/wiki/Nh%C3%A0_Ng%C3%B4"
+				},
+				"dewiki": {
+					"badges": [],
+					"site": "dewiki",
+					"title": "Ngô-Dynastie",
+					"url": "https://de.wikipedia.org/wiki/Ng%C3%B4-Dynastie"
+				},
+				"kmwiki": {
+					"badges": [],
+					"site": "kmwiki",
+					"title": "រាជវង្សង៉ូ",
+					"url": "https://km.wikipedia.org/wiki/%E1%9E%9A%E1%9E%B6%E1%9E%87%E1%9E%9C%E1%9E%84%E1%9F%92%E1%9E%9F%E1%9E%84%E1%9F%89%E1%9E%BC"
+				},
+				"kowiki": {
+					"badges": [],
+					"site": "kowiki",
+					"title": "응오 왕조",
+					"url": "https://ko.wikipedia.org/wiki/%EC%9D%91%EC%98%A4_%EC%99%95%EC%A1%B0"
+				},
+				"zhwiki": {
+					"badges": [],
+					"site": "zhwiki",
+					"title": "吳朝",
+					"url": "https://zh.wikipedia.org/wiki/%E5%90%B3%E6%9C%9D"
+				}
+			},
+			"id": "Q703919",
+			"pageid": 662241,
+			"title": "Q703919",
+			"type": "item",
+			"lastrevid": 1792077238,
+			"descriptions": {
+				"de": {
+					"language": "de",
+					"value": "vietnamesische Herrscherdynastie im zehnten Jahrhundert"
+				},
+				"zh-hant": {
+					"language": "zh-hant",
+					"value": "歷史權力"
+				},
+				"en": {
+					"language": "en",
+					"value": "first Vietnamese dynasty after the Third Chinese domination of Vietnam (939–965)"
+				}
+			},
+			"labels": {
+				"de": {
+					"language": "de",
+					"value": "Ngô-Dynastie"
+				},
+				"km": {
+					"language": "km",
+					"value": "រាជវង្សង៉ូ"
+				},
+				"ru": {
+					"language": "ru",
+					"value": "Династия Нго"
+				},
+				"en-ca": {
+					"language": "en-ca",
+					"value": "Ngô dynasty"
+				},
+				"ko": {
+					"language": "ko",
+					"value": "응오 왕조"
+				},
+				"zh-hant": {
+					"language": "zh-hant",
+					"value": "吳朝"
+				},
+				"zh-hk": {
+					"language": "zh-hk",
+					"value": "吳朝"
+				},
+				"zh-hans": {
+					"language": "zh-hans",
+					"value": "吴朝"
+				},
+				"en": {
+					"language": "en",
+					"value": "Ngô dynasty"
+				},
+				"fr": {
+					"language": "fr",
+					"value": "Dynastie Ngô"
+				},
+				"es": {
+					"language": "es",
+					"value": "dinastía Ngô"
+				},
+				"zh": {
+					"language": "zh",
+					"value": "吳朝"
+				},
+				"vi": {
+					"language": "vi",
+					"value": "Nhà Ngô"
+				},
+				"vec": {
+					"language": "vec",
+					"value": "dinastia Ngô"
+				},
+				"wuu": {
+					"language": "wuu",
+					"value": "吴朝"
+				},
+				"uk": {
+					"language": "uk",
+					"value": "Династія Нго"
+				},
+				"ja": {
+					"language": "ja",
+					"value": "呉朝"
+				},
+				"nan": {
+					"language": "nan",
+					"value": "Ngô͘ Tiâu"
+				},
+				"id": {
+					"language": "id",
+					"value": "Dinasti Ngô"
+				},
+				"nl": {
+					"language": "nl",
+					"value": "Ngo-dynastie"
+				},
+				"ca": {
+					"language": "ca",
+					"value": "dinastia Ngô"
+				},
+				"de-ch": {
+					"language": "de-ch",
+					"value": "Ngô-Dynastie"
+				},
+				"en-gb": {
+					"language": "en-gb",
+					"value": "Ngô dynasty"
+				}
+			}
+		}
+	}
+}

@@ -19,24 +19,37 @@ public class Statistical {
     Statistical(String dataFolderPath) throws Exception{
         JSONObject stat = new JSONObject();
         stat.put("Number of entity", new JSONObject());
-        JSONObject e = new JSONObject();
+        JSONObject dbpedia = new JSONObject();
+        JSONObject wikipedia = new JSONObject();
         int associated = 0;
         JSONObject hm = new JSONObject();
         for (String cat: BIG_CATEGORIES){
             String folderPath = dataFolderPath + cat + "/";
+            int dbCount = 0;
             for (String fileName: DataHandling.listAllFiles(folderPath)){
+                boolean checkDB = false;
                 JSONObject json = DataHandling.getJSONFromFile(folderPath + fileName);
                 HashSet<String> qIDHashSet = new HashSet<>();
                 JSONObject claims = json.getJSONObject("claims");
                 JSONArray instance = claims.getJSONArray("là một");
                 for (int i = 0; i < instance.length(); i++){
-                    String s = instance.getJSONObject(i).getString("value");
-                    if (!e.has(s)){
-                        e.put(s, 1);
+                    /*
+                    if (!instance.getJSONObject(i).has("source"))
+                    {
+                        DataHandling.print(i);
+
                     }
-                    else{
-                        e.put(s, e.getInt(s)+1);
+                    JSONArray arr = instance.getJSONObject(i).getJSONArray("source");
+                    for (int j = 0; j < arr.length(); j++){
+                        if (arr.getString(j).equals("DBPedia")){
+                            checkDB = true;
+                            break;
+                        }
+                    }*/
+                    if (instance.getJSONObject(i).getString("value").equals("thời kỳ lịch sử")){
+                        DataHandling.print(fileName.replaceAll(".json", ""));
                     }
+
                 }
                 for (String key: DataHandling.getAllKeys(claims)){
                     JSONArray arr = claims.getJSONArray(key);
@@ -60,15 +73,18 @@ public class Statistical {
                     }
                 }
                 associated += qIDHashSet.size();
+                if (checkDB){
+                    dbCount++;
+                }
                 hm.put(fileName.replace(".json", ""), qIDHashSet.size());
             }
-            stat.getJSONObject("Number of entity").put(cat, DataHandling.listAllFiles(folderPath).size());
+            dbpedia.put(cat, dbCount);
+            wikipedia.put(cat, DataHandling.listAllFiles(folderPath).size());
         }
-        stat.put("Number of entity for each type", e);
         stat.put("Number of relation", associated);
-        stat.put("Number of relation of each entity", hm);
         //DataHandling.print(hm);
-        
+        stat.getJSONObject("Number of entity").put("Wikipedia", wikipedia);
+        stat.getJSONObject("Number of entity").put("DBPedia", dbpedia);
         DataHandling.writeFile("statistic.json", stat.toString(), false);
     }
 }
