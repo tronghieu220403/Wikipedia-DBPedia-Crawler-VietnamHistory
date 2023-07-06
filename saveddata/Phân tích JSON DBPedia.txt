@@ -1,0 +1,34 @@
+
+data sẽ lấy ở: format -> rdf -> json. ví dụ:
+https://dbpedia.org/data/Battle_of_B%C3%ACnh_L%E1%BB%87_Nguy%C3%AAn.json
+
+cách nối các thuộc tính:
+	2 trang wiki và dbpedia chỉ đến một thực thể khi:
+
+	There are a few ways you can check if a Wikipedia page and a DBpedia resource refer to the same entity:
+
+	1) Compare the URLs - Usually, the Wikipedia page URL and DBpedia resource URL will be closely related. For example:
+		Wikipedia URL: https://en.wikipedia.org/wiki/Mount_Everest
+		DBpedia URL: http://dbpedia.org/resource/Mount_Everest
+	2) Compare the titles - The Wikipedia page title and DBpedia resource label will often be the same or very similar.
+	3) Có owl:sameAs trỏ đến trang wikidata của thực thể đó trên Wikipedia
+	4) Có foaf:isPrimaryTopicOf	trỏ đến trang wiki đó
+		"http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ { "type" : "uri", "value" : "http://en.wikipedia.org/wiki/V\u00F5_Nguy\u00EAn_Gi\u00E1p" } ] ,
+
+	5) Compare the Wikipedia page ID - Wikipedia page have unique numeric IDs. DBpedia resources corresponding to Wikipedia pages will have a wikipedia_page_id property with this ID. For example:
+		Wikipedia page ID: 562 (for Mount Everest page)
+		DBpedia resource wikipedia_page_id: 562
+		khi ta truy cập
+		https://en.wikipedia.org/?curid=42179
+		sẽ trả ra
+		https://en.wikipedia.org/wiki/Mount_Everest
+
+
+thuộc tính trong dbpedia kí hiệu là dbp và dbo (nếu trùng thì lấy 1): (lọc kết quả thì chỉ lọc cái này thôi)
+
+nối các thuộc tính:
+	lấy tất cả thông tin các thuộc tính trong wikidata và ontology của dbpedia dưới dạng JSON
+	lấy label ontology (en) (chỉ có đúng 1 cái) so sánh các "labels" và "aliases" trong file json wiki (trong json wiki có thể có nhiều aliases)
+	nếu có thông tin giống nhau -> thuộc tính giống, lưu vào 1 file riêng.
+
+

@@ -6,6 +6,55 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CrawlData",
+            "request": "launch",
+            "mainClass": "crawler.CrawlData",
+            "projectName": "Wikipedia-DBPedia-Crawler-VietnamHistory_f4dc11d3"
+        },
+        {
+            "type": "java",
+            "name": "Merge",
+            "request": "launch",
+            "mainClass": "crawler.Merge",
+            "projectName": "Wikipedia-DBPedia-Crawler-VietnamHistory_f4dc11d3"
+        },
+        {
+            "type": "java",
+            "name": "WikiDataExport",
+            "request": "launch",
+            "mainClass": "crawler.WikiDataExport",
+            "projectName": "Wikipedia-DBPedia-Crawler-VietnamHistory_f4dc11d3"
+        },
+        {
+            "type": "java",
+            "name": "WikiSelectiveData",
+            "request": "launch",
+            "mainClass": "crawler.WikiSelectiveData",
+            "projectName": "Wikipedia-DBPedia-Crawler-VietnamHistory_f4dc11d3"
+        },
+        {
+            "type": "java",
+            "name": "WikiTableData",
+            "request": "launch",
+            "mainClass": "crawler.WikiTableData",
+            "projectName": "Wikipedia-DBPedia-Crawler-VietnamHistory_f4dc11d3"
+        },
+        {
+            "type": "java",
+            "name": "ModifyData",
+            "request": "launch",
+            "mainClass": "crawler.ModifyData",
+            "projectName": "Wikipedia-DBPedia-Crawler-VietnamHistory_f4dc11d3"
+        },
+        {
+            "type": "java",
+            "name": "DBPediaData",
+            "request": "launch",
+            "mainClass": "crawler.DBPediaData",
+            "projectName": "Wikipedia-DBPedia-Crawler-VietnamHistory_f4dc11d3"
+        },
+        {
+            "type": "java",
             "name": "ModifyData",
             "request": "launch",
             "mainClass": "ModifyData",

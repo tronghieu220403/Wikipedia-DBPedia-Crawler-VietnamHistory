@@ -1,0 +1,139 @@
+Tìm trong failedURLs.txt: 
++) Lấy các thực thể có chữ vietnam, Vietnam, Viet Nam, Việt Nam trong tên hoặc miêu tả.
++) Lấy các thực thể mà trong 'sitelinks' chỉ có viwiki (và/hoặc enwiki).
+
+File JSON có các trường sau:
+dict_keys(['pageid', 'ns', 'title', 'lastrevid', 'modified', 'type', 'id', 'labels', 'descriptions', 'aliases', 'claims', 'sitelinks'])
+
+Các phần hiển thị cho người dùng:
+'labels': Tên thực thể
+'descriptions': Mô tả về thực thể (ngắn)
+'aliases': Biệt danh
+'claims': Các thuộc tính
+'sitelinks': Liên kết đến trang wikipedia của thực thể đó (phần "viwiki" và "enwiki")
+
+các loại "datatype" và ví dụ:
+Nên hiển thị:
+	wikibase-item		-> chuyển về dạng wiki-entity
+		Q1000140.json
+	time				-> chuyển về dạng time
+		Q1000140.json
+	quantity			-> chuyển về dạng string
+		Q1000140.json
+	string
+		Q1000140.json
+	monolingualtext		-> chuyển về dạng string
+		Q100230960.json
+	wikibase-property	-> chuyển về dạng wiki-entity
+		Q1005.json
+
+Phức tạp, không cần thiết, không nên hiển thị:
+	geo-shape
+		Q1005.json
+	url
+		Q10007.json
+	commonsMedia
+		Q1000140.json
+	globe-coordinate
+		Q1000140.json
+	external-id
+		Q1000140.json
+
+lọc và xóa hết các thực thể 
+nếu thực thể không có labels, gán label của thực thể thành lables của viwiki trong sitelinks
+
+Kiểm tra thực thể, thực thể invalid khi:
++ Là người người, có mốc thời gian nhưng không có mốc nào có năm dưới 1962
++ Không có viwiki
+
+Chuyển file json của các thực thể sang định dạng dễ nhìn hơn:
+'labels': Tên thực thể
+'descriptions': Mô tả về thực thể (ngắn)
+"overview": Mô tả về thực thể, dài.
+'aliases': Biệt danh
+'claims': Các thuộc tính
+'ref': Các thực thể có liên quan.
+
+Ví dụ về một file JSON wiki Final:
+{
+	"id": "mã thực thể"
+	"label": "tên tiếng việt",
+	"overview": "mô tả tiếng việt",
+	"description": "mô tả tiếng việt",
+	
+	"aliases": [
+		"biệt danh 1",
+		"biệt danh 2",
+		...
+	]
+	"claims": {
+		"mã thuộc tính 1": [
+			{
+				"value": "...",
+				"type": "...",
+				"qualifiers": [
+					"mã thuộc tính": [
+						{
+							"value": "...",
+							"type": "..."
+						},
+						{
+							"value": "...",
+							"type": "..."
+						},
+						...
+					],
+					"mã thuộc tính": [
+						{
+							"value": "...",
+							"type": "..."
+						},
+						{
+							"value": "...",
+							"type": "..."
+						},
+						...
+					]
+				],
+				"qualifiers-order":[
+					"mã thuộc tính"
+				]
+				
+			},
+			{
+				"value": "...",
+				"type": "..."
+			}
+		],
+		"mã thuộc tính 2": [
+			{
+				"value": "...",
+				"type": "..."
+			},
+			{
+				"value": "...",
+				"type": "..."
+			}
+		],
+		...
+	}
+	"ref": [
+		"loại thực thể": [
+			"mã thực thể 1",
+			"mã thực thể 2",
+			...
+		]
+		...
+	]
+}
+
+Chú ý:
++) Chỉ tiếng việt.
++) Khi lấy "claims", nếu thực thể không phải là thực thể liên quan đến Việt Nam -> chỉ cần hiển thị labels của thực thể (ở trong folder "EntityProperties")
++) Nếu không có labels, lấy text viwiki trong sitelinks để thay thế.
++) monolingualtext chỉ lấy "language": "vi"
++) Các thực thể có liên quan phải lọc đi các thực thể đã xuất hiện trong "claims"
+
+Bổ sung thêm nếu người có country of citizen ship mà không có việt nam -> cho lượn
+
+những thứ nào có country mà không có việt nam -> cho lượn
