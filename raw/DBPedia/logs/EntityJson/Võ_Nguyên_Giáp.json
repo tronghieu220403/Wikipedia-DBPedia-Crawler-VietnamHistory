@@ -1,0 +1,4652 @@
+{
+	"http://dbpedia.org/resource/List_of_Vietnamese_people": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/State_funeral": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Index_of_World_War_II_articles_(V)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Intelligence_analysis": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Ahmad_Shah_Massoud": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/December_1946": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/March_1946": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Vietnam:_The_Australian_War": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Cold_War_(1953–1962)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Hoàng_Văn_Thái": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/property/minister": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Leaders_of_the_Vietnam_War": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/2nd_Corps_(Vietnam)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Campaign_139": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/1940–1946_in_French_Indochina": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Radio_Hanoi": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Mitsunobu_Nakahara": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Lê_Trọng_Tấn": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Lệ_Thủy_district": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Zone_5_Military_Museum,_Danang": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/1st_Corps_(Vietnam)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/308th_Infantry_Division_(Vietnam)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/3rd_Corps_(Vietnam)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/4th_Corps_(Vietnam)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/First_Battle_of_Loc_Ninh": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Phạm_Duy": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Kou_Kiet": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Nguyễn_Hữu_An": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Nguyễn_Văn_Hiếu": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Operation_Xieng_Dong": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Quảng_Bình_province": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Political_organizations_and_armed_forces_in_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Trương_Gia_Bình": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://en.wikipedia.org/wiki/Võ_Nguyên_Giáp": {
+		"http://xmlns.com/foaf/0.1/primaryTopic": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Henry_Kissinger": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Robert_McNamara": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Communist_Party_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Minister_of_Defence_(Vietnam)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/10th_National_Congress_of_the_Communist_Party_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/August_Revolution": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Trường_Chinh": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Laotian_Civil_War": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Fall_of_Saigon": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Võ_Nguyên_Giáp": {
+		"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/ontology/MilitaryPerson"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Minister110320863"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Theorist110706812"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatMilitaryTheorists"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/YagoLegalActorGeo"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/YagoLegalActor"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Official110372373"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Politician110450303"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatGeneralsOfThePeople'sArmyOfVietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Object100002684"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Whole100003553"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Communicator109610660"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/ontology/Politician"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Adult109605289"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Leader109623038"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/GeneralOfficer110125786"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Writer110794014"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/General110123844"
+			},
+			{
+				"type": "uri",
+				"value": "http://xmlns.com/foaf/0.1/Person"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Executive110069645"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.wikidata.org/entity/Q19088"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.wikidata.org/entity/Q215627"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Owner110389398"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Officeholder110371450"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Holder110180178"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Person100007846"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/ontology/Species"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatVietnamesePeople"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.wikidata.org/entity/Q5"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/ontology/Eukaryote"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.wikidata.org/entity/Q729"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/CausalAgent100007347"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/ontology/Animal"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Organism100004475"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/LivingThing100004258"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/ontology/Person"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatDefenceMinisters"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Oldster110376523"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Centenarian109904208"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatPeopleFromQuangBinhProvince"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatVietnameseGenerals"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/PhysicalEntity100001930"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatMinistersOfInternalAffairsByCountry"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/CommissionedOfficer109942970"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.wikidata.org/entity/Q82955"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Radical110503452"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Revolutionist110527334"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatVietnamesePoliticians"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatDeputyPrimeMinistersOfVietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatVietnameseRevolutionaries"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatGuerrillas"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Guerrilla110150556"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatGuerrillaWarfareTheorists"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatPeopleOfTheFirstIndochinaWar"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/CommissionedMilitaryOfficer109943239"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatPeopleOfTheVietnamWar"
+			},
+			{
+				"type": "uri",
+				"value": "http://schema.org/Person"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.w3.org/2002/07/owl#Thing"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/MilitaryOfficer110317007"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Warrior110768585"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Head110162991"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Administrator109770949"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/SkilledWorker110605985"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Serviceman110582746"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatMinistersOfDefenceOfVietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Intellectual109621545"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatVietnamesePeopleOfWorldWarII"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatGovernmentMinistersOfVietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatVietnameseCentenarians"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatVietnameseMilitaryWriters"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Worker109632518"
+			}
+		],
+		"http://www.w3.org/2000/01/rdf-schema#label": [
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp",
+				"lang": "sv"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp",
+				"lang": "pt"
+			},
+			{
+				"type": "literal",
+				"value": "فون نجوين جياب",
+				"lang": "ar"
+			},
+			{
+				"type": "literal",
+				"value": "Vo Nguyen Giap",
+				"lang": "in"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp",
+				"lang": "fr"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp",
+				"lang": "it"
+			},
+			{
+				"type": "literal",
+				"value": "Βο Νγκουγιέν Ζαπ",
+				"lang": "el"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp",
+				"lang": "de"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp",
+				"lang": "es"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp",
+				"lang": "nl"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp",
+				"lang": "ca"
+			},
+			{
+				"type": "literal",
+				"value": "Во Нгуєн Зіап",
+				"lang": "uk"
+			},
+			{
+				"type": "literal",
+				"value": "ヴォー・グエン・ザップ",
+				"lang": "ja"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp",
+				"lang": "pl"
+			},
+			{
+				"type": "literal",
+				"value": "Во Нгуен Зяп",
+				"lang": "ru"
+			},
+			{
+				"type": "literal",
+				"value": "武元甲",
+				"lang": "zh"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp",
+				"lang": "cs"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp",
+				"lang": "eu"
+			},
+			{
+				"type": "literal",
+				"value": "보응우옌잡",
+				"lang": "ko"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp",
+				"lang": "eo"
+			}
+		],
+		"http://www.w3.org/2000/01/rdf-schema#comment": [
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp (Quảng Bình, 25 augustus 1911 – Hanoi, 4 oktober 2013) was een Vietnamees militair leider. Zijn familienaam is Võ. Võ Nguyên Giáp werd geboren in 1911 in de provincie Quảng Bình. In die tijd was Vietnam nog een kolonie van Frankrijk. Tijdens zijn studie aan de werd Võ beïnvloed door de geschriften van Hồ Chí Minh, waarna hij zich in de jaren dertig aansloot bij de Indochinese communistische partij. Võ was in die tijd leraar geschiedenis.",
+				"lang": "nl"
+			},
+			{
+				"type": "literal",
+				"value": "Ο Βο Νγκουγιέν Ζαπ (25 Αυγούστου 1911 – 4 Οκτωβρίου 2013) ήταν Βιετναμέζος στρατηγός και πολιτικός. Συγκαταλέγεται μεταξύ των μεγαλύτερων στρατιωτικών του 20ού αιώνα. από τους μεγαλύτερους στρατιωτικούς του 20ου αιώνα. Έγινε γνωστός στην περίοδο του Β΄ Παγκοσμίου Πολέμου, όπου υπηρετούσε ως στρατιωτικός ηγέτης των Βιέτ Μινχ, του κινήματος αντίστασης των Βιετναμέζων ενάντια στην Ιαπωνική κατοχή. Ο Ζαπ ήταν κρίσιμος στρατιωτικός διοικητής σε δύο πολέμους: στον Πρώτο Πόλεμο της Ινδοκίνας (1946-1954) και τον Πόλεμο του Βιετνάμ (1955-1975) Συμμετείχε σε διάφορες ιστορικές μάχες, όπως οι μάχες Λανγκ Σον (1950), Κουόνγκ Χα (1951-1952), Ντιέν Μπιέν Φου (1954), καθώς και στις επιθέσεις Τετ (1968) και Πάσχα (1972). Η τελευταία του μάχη ως στρατηγός ήταν η κατάληψη του Χο Τσι Μιν το 1975.",
+				"lang": "el"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp (* 25. August 1911 in Lệ Thủy, Quảng Bình; † 4. Oktober 2013 in Hanoi) war ein vietnamesischer General, Politiker und Guerillakämpfer. Er war militärischer Führer der Việt-Minh-Truppen im Unabhängigkeitskampf gegen die französische Kolonialherrschaft. Von 1946 bis 1977 war er Sekretär der Zentralen Militärkommission der Kommunistischen Partei Vietnams sowie von 1948 bis 1980 Verteidigungsminister der Demokratischen Republik Vietnam und damit Oberbefehlshaber der (Nord-)Vietnamesischen Volksarmee während des Vietnamkriegs.",
+				"lang": "de"
+			},
+			{
+				"type": "literal",
+				"value": "الجنرال فو نجوين جياب (25 أغسطس سنة 1911 - 4 أكتوبر سنة 2013) هو عسكري وسياسي فيتنامي وضابط سابق في الجيش الشعبي الفيتنامي، يُعد من أهم شخصيات حرب فيتنام، وهو أيضاً صاحب خطة معركة ديان بيان فو التي هزمت فيها فرنسا في 7 يونيو سنة 1954. وكذلك تمكن من هزيمة القوات الأمريكية بعد ذلك وقد تولى بعد ذلك منصب وزير الدفاع في بلاده.",
+				"lang": "ar"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp (výslovnost \"záp\"), nar. 25. srpna 1911, provincie Quảng Bình – 4. října 2013, byl vietnamský generál a státník.",
+				"lang": "cs"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp (Lộc Thủy, Quảng Bình, 25 de agosto de 1911 - Hanói, 4 de octubre de 2013)​ fue un político y general del Ejército Popular de Vietnam. Giáp desempeñó la jefatura de las fuerzas armadas en dos guerras: la Primera Guerra de Indochina (1946–1954) y la guerra de Vietnam (1955–1975). Participó en las siguientes batallas, todas estas de importancia histórica: Lạng Sơn (1950); (1951–1952); Điện Biên Phủ (1954); la Ofensiva del Tet (1968); la Ofensiva de Pascua (1972) y la Campaña final de Hồ Chí Minh (1975).",
+				"lang": "es"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp, né le 25 août 1911 à An Xá (actuel Viêt Nam, alors en Annam, Indochine française) et mort le 4 octobre 2013 à Hanoï, à l'âge de 102 ans, est un général et homme politique vietnamien. Chef de l'Armée populaire vietnamienne pendant la guerre d'Indochine et ministre de la défense du Nord Viêt Nam durant la guerre du Viêt Nam, il est le seul général ayant vaincu à la fois l'armée française et l'armée américaine au cours de sa vie. Il est connu pour être le vainqueur de la bataille de Ðiện Biên Phủ (1954), qui a sonné la défaite et le départ des Français d'Indochine.",
+				"lang": "fr"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp militar komunista bat izan zen, Ho Chi Minhekin batera Indotxinako Gerrako (1946–1954) eta Vietnamgo Gerrako (1955–1975) heroia, bere herrialdea askatzeko borrokan. Bi gerra antikolonialista horietatik lehenengoan, Frantziaren aurka borrokatu zen; bigarrenean, Ameriketako Estatu Batuen aurka. XX. mendeko estratega hoberenetakotzat joa, ezaguna da Nguyenen esaera hau: «Estrategian bat hamarren aurka, taktikan hamar baten kontra» (hau da, baliteke txikiak handiari irabaztea epe luzean, egunez egunekoan etsaia baino boteretsuagoa baldin bada).",
+				"lang": "eu"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp (Vietnamese: [vɔ̌ˀ ŋʷīən jǎːp]; 25 August 1911 – 4 October 2013) was a Vietnamese general and communist politician who is regarded as having been one of the greatest military strategists of the 20th century. He served as interior minister in President Hồ Chí Minh's Việt Minh government, the military commander of the Việt Minh, the commander of the People's Army of Vietnam (PAVN), minister of defence, and deputy prime minister. He also served as a member of the Politburo of the Vietnam Workers' Party, which in 1976 became the Communist Party of Vietnam.",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "Vo Nguyen Giap (província de Quang Binh, 25 de agosto de 1911 – Hanói, 4 de outubro de 2013) foi um general vietnamita, fundador e comandante supremo do Exército do Povo do Vietnã e um dos mais importantes estrategistas militares do século XX, que comandou as forças do Vietnã, que derrotaram tanto o exército francês, na Batalha de Dien Bien Phu em 1954, encerrando o domínio colonial europeu no país, com a divisão entre o Vietnã do Norte e o Vietnã do Sul, quando derrotaram o Exército dos Estados Unidos na Guerra do Vietnã, logrando a reunificação do Vietnã, sob a égide do partido comunista.",
+				"lang": "pt"
+			},
+			{
+				"type": "literal",
+				"value": "Во Нгуе́н Зяп (по устаревшей транскрипции — Во Нгуен Зиап; вьетн. Võ Nguyên Giáp; 25 августа 1911 — 4 октября 2013) — вьетнамский генерал и политик. Принимал участие в Индокитайской и Вьетнамской войнах. Он также известен как министр внутренних дел правительства Хо Ши Мина, главнокомандующий войсками Вьетминя, главнокомандующий Народной армией Вьетнама, министр обороны и член политбюро Коммунистической партии Вьетнама.",
+				"lang": "ru"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp (naskiĝis la 25-an de aŭgusto 1911, mortis la 4-an de oktobro 2013) estis Generalo de la kaj politikisto. Giáp estis la ĉefa komandanto en du militoj: la Unua Hindoĉina Milito (1946–1954) kaj la Vjetnama milito (1960–1975). Li partoprenis en la sekvaj historie signifaj bataloj: (1950); (1951–1952); Dien Bien Phu (1954); la (1968); la (1972); kaj la fina (1975). Li estis la plej elstara militista komandanto, apud Ho Chi Minh, dum la Vjetnama milito, kaj estis respondeca pri la plej gravaj operacoj kaj gvidantaro ĝis la fino de la milito.",
+				"lang": "eo"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp ([vɔ̌ˀ ŋʷīən zǎːp]; , 25 agosto 1911 – Hanoi, 4 ottobre 2013) è stato un generale, politico, scrittore e rivoluzionario vietnamita.Fu il capo militare del Viet Minh di Ho Chi Minh nella guerra d'Indocina e dell'Esercito popolare vietnamita della Repubblica Democratica del Vietnam nella guerra del Vietnam.",
+				"lang": "it"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp, född 25 augusti 1911 i An Xá, Lệ Thủy i Quang Binh i dåvarande Franska Indokina, död 4 oktober 2013 i Hanoi, var en fyrstjärnig general i den vietnamesiska armén under Ho Chi Minhs politiska ledning.",
+				"lang": "sv"
+			},
+			{
+				"type": "literal",
+				"value": "Vo Nguyen Giap (25 Agustus 1911 – 4 Oktober 2013) adalah Jenderal dan wakil perdana menteri Vietnam. Ia lahir di provinsi Quang Binh, Vietnam. Dia lulus dari universitas hukum di Hanoi. Dia berhasil dalam pertempuran terkemuka di Dien Bien Phu dan perang Vietnam. Pertempuran Dien Bien Phu (Chiến dịch Điện Biên Phủ) adalah yang terakhir dalam Perang Indochina Pertama antara Prancis dan Viet Minh. Pertempuran ini terjadi antara Maret dan Mei 1954, dan berakhir dengan kekalahan Prancis secara besar-besaran yang akhirnya menyudahi peperangan itu.",
+				"lang": "in"
+			},
+			{
+				"type": "literal",
+				"value": "보응우옌잡(베트남어: Võ Nguyên Giáp, 武元甲, 무원갑, 1911년 8월 25일 ~ 2013년 10월 4일)은 베트남의 장군이자 정치인으로, 《인디펜던트》에서는 보응우옌잡을 \"20세기의 가장 뛰어난 장군 중 한 명\"으로 평가했다. 보응우옌잡은 호찌민 정부의 내무부 장관, 비엣민과 베트남 인민군의 사령관, 베트남 국방부 장관, 베트남의 부총리를 지냈다. 보응우옌잡은 1976년 베트남 공산당으로 명칭을 바꾸는 베트남 노동당의 정치국 위원이기도 했다. 베트남 전쟁 당시 베트남 인민군의 사령관으로서, 보응우옌잡은 미국과 남베트남을 상대로 승리를 거둔 북베트남의 승리에 대해 언급할 때 자주 등장한다. 최근 학자들은 반띠엔중, 와 같은 다른 북베트남 군사 지도자들도 주목하고 있지만, 그럼에도 불구하고 보응우옌잡은 재래전에서 더 강력한 군대였던 베트남 공화국군에게 큰 피해를 입힐 정도로 베트남 인민군을 기계화된 제병연합부대로 탈바꿈시켰다는 데에서 중요한 역할을 했다고 평가받는다.",
+				"lang": "ko"
+			},
+			{
+				"type": "literal",
+				"value": "武元甲（越南语：Võ Nguyên Giáp／武元甲，1911年8月25日－2013年10月4日），曾經化名為楊懷南，是越南共产党、越南民主共和国、越南社会主义共和国和越南人民军的主要缔造者和领导人之一。越南人民军大将，曾任越共中央政治局委员、中央军事委员会书记、越南政府副總理、越南國防部部長等職。指揮第一次印度支那戰爭和第二次印度支那戰爭的功臣，曾參與永安、底江、那產、奠邊府、新春、復活節攻勢等歷史性的戰役。被美国《时代》杂志称为「紅色拿破崙」。",
+				"lang": "zh"
+			},
+			{
+				"type": "literal",
+				"value": "ヴォー・グエン・ザップ（ベトナム語: Võ Nguyên Giáp、漢字：武原甲/武源甲/武元甲、1911年8月25日 - 2013年10月4日）は、ベトナムの軍人、政治家。ベトナム共産党政治局員。ベトナム人民軍（QĐND）総司令官。最終階級は大将であった。 優れた軍事戦術家であったザップは機動性を重視した戦略を好み、その動きは神出鬼没と呼ばれた。フランスの植民地支配の際、ディエンビエンフーの戦いによって、フランス領インドシナからベトナムを解放し、ベトナム戦争ではベトナム人民軍の指導者としてアメリカ軍及び南ベトナム軍との戦いを指揮し、ベトナムを再統一する大きな原動力となった。その名采配から、西側諸国からは「赤いナポレオン」と呼ばれ、ベトナム人民からは「ベトナム救国の英雄」として、ホー・チ・ミンと共に、深い敬愛と尊敬を集めた。",
+				"lang": "ja"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp [vɔ̌ˀ ŋʷīən zǎːp] (ur. 25 sierpnia 1911 w (prowincja Quảng Bình), zm. 4 października 2013 w Hanoi) – wietnamski dowódca wojskowy, generał. Osiągał liczne sukcesy w prowadzeniu wojny partyzanckiej w rejonie Indochin i przyczynił się, walcząc kolejno z Japończykami, Francuzami i Amerykanami, do uzyskania przez Wietnam niepodległości, a następnie powstania zjednoczonej Socjalistycznej Republiki Wietnamu. Przez Wietnamczyków uważany za „świętość narodową”, a na świecie uznawany za mistrza wojny partyzanckiej.",
+				"lang": "pl"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp (Lộc Thủy, 25 d'agost de 1911 - Hanoi, 4 d'octubre de 2013) fou un militar i polític vietnamita. Va ser comandant de les forces del Vietnam comunista entre 1946 i 1976 i és considerat per molts com el gran estratega responsable de les derrotes de França i els Estats Units contra el Vietnam.",
+				"lang": "ca"
+			},
+			{
+				"type": "literal",
+				"value": "Во Нгуєн Зіап, Во Нґуєн Зяп (в'єт. Võ Nguyên Giáp, вимова: [vɔ̌ˀ ŋʷīən zǎːp]; * 25 серпня 1911 с. Анкса, Куангбінь, Французький Індокитай — † 4 жовтня 2013) — в'єтнамський воєначальник та політичний діяч, генерал армії, міністр оборони В'єтнаму, головнокомандувач В'єтміня часів В'єтнамської війни.",
+				"lang": "uk"
+			}
+		],
+		"http://xmlns.com/foaf/0.1/depiction": [
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/Vo_Nguyen_Giap_2008.jpg"
+			},
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/Vietnam_Fatherland_Defense_Order_ribbon.png"
+			},
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/Vietnam_Feat_Order_2kl_rib.png"
+			},
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/Vietnam_Military_Exploit_Order_ribbon.png"
+			},
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/Vietnam_Friendship_Order_ribbon.png"
+			},
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/Vietnam_Feat_Order_3kl_rib.png"
+			},
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/Vietnam_Feat_Order_ribbon.png"
+			},
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/Hanoi_Citadel_0361.jpg"
+			},
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/Tomb_of_Vo_Nguyen_Giap.jpg"
+			},
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/Giap-Ho.jpg"
+			},
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/Vo_Nguyen_Giap4.jpg"
+			},
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/Resolution_for_Victory_Order_ribbon.png"
+			},
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/Vietnam_Gold_Star_ribbon.png"
+			},
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/General_Giáp_signature.svg"
+			},
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/Mr._Vo_Nguyen_Giap.jpg"
+			},
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/Vietnam_Hochiminh_Order_ribbon.png"
+			}
+		],
+		"http://purl.org/dc/terms/subject": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:1911_births"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Vietnamese_people_of_World_War_II"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Vietnamese_military_writers"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:People_of_the_First_Indochina_War"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Vietnamese_communists"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Vietnamese_Marxists"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Government_ministers_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Vietnamese_revolutionaries"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Guerrilla_warfare_theorists"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Members_of_the_Politburo_of_the_Communist_Party_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Vietnamese_nationalists"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:North_Vietnamese_military_personnel_of_the_Vietnam_War"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Generals_of_the_People's_Army_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Men_centenarians"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:People_from_Quảng_Bình_province"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:2013_deaths"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Recipients_of_the_Order_of_Ho_Chi_Minh"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Vietnamese_centenarians"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Ministers_of_Defence_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:People_educated_at_Lycee_Albert_Sarraut"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:People_of_the_Laotian_Civil_War"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:World_War_II_resistance_members"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Anti-revisionists"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Deputy_Prime_Ministers_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Viet_Minh_members"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Vietnamese_Buddhists"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Anti-imperialism"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Hero_of_the_People's_Armed_Forces"
+			}
+		],
+		"http://dbpedia.org/ontology/abstract": [
+			{
+				"type": "literal",
+				"value": "الجنرال فو نجوين جياب (25 أغسطس سنة 1911 - 4 أكتوبر سنة 2013) هو عسكري وسياسي فيتنامي وضابط سابق في الجيش الشعبي الفيتنامي، يُعد من أهم شخصيات حرب فيتنام، وهو أيضاً صاحب خطة معركة ديان بيان فو التي هزمت فيها فرنسا في 7 يونيو سنة 1954. وكذلك تمكن من هزيمة القوات الأمريكية بعد ذلك وقد تولى بعد ذلك منصب وزير الدفاع في بلاده.",
+				"lang": "ar"
+			},
+			{
+				"type": "literal",
+				"value": "Vo Nguyen Giap (província de Quang Binh, 25 de agosto de 1911 – Hanói, 4 de outubro de 2013) foi um general vietnamita, fundador e comandante supremo do Exército do Povo do Vietnã e um dos mais importantes estrategistas militares do século XX, que comandou as forças do Vietnã, que derrotaram tanto o exército francês, na Batalha de Dien Bien Phu em 1954, encerrando o domínio colonial europeu no país, com a divisão entre o Vietnã do Norte e o Vietnã do Sul, quando derrotaram o Exército dos Estados Unidos na Guerra do Vietnã, logrando a reunificação do Vietnã, sob a égide do partido comunista.",
+				"lang": "pt"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp ([vɔ̌ˀ ŋʷīən zǎːp]; , 25 agosto 1911 – Hanoi, 4 ottobre 2013) è stato un generale, politico, scrittore e rivoluzionario vietnamita.Fu il capo militare del Viet Minh di Ho Chi Minh nella guerra d'Indocina e dell'Esercito popolare vietnamita della Repubblica Democratica del Vietnam nella guerra del Vietnam. Brillante tattico e stratega in campo militare, Giap comandò le forze Viet Minh che liberarono il Vietnam dal dominio coloniale francese nella guerra d'Indocina, ottenendo una clamorosa vittoria campale nella battaglia di Dien Bien Phu. Come comandante dell'Esercito popolare del Vietnam del Nord combatté con successo le forze statunitensi e sudvietnamite nella guerra del Vietnam. Dopo la riunificazione, prestò servizio come ministro della Difesa vietnamita e in seguito come vice primo ministro. Giáp, teorico della \"guerra di popolo\" e stratega preparato e originale, raggiunse uno straordinario prestigio in tutto il mondo per il suo ruolo nelle due guerre d'indipendenza del Vietnam, divenendo negli anni sessanta e settanta un simbolo della lotta delle masse del Terzo mondo contro l'imperialismo delle grandi potenze occidentali.",
+				"lang": "it"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp (Quảng Bình, 25 augustus 1911 – Hanoi, 4 oktober 2013) was een Vietnamees militair leider. Zijn familienaam is Võ. Võ Nguyên Giáp werd geboren in 1911 in de provincie Quảng Bình. In die tijd was Vietnam nog een kolonie van Frankrijk. Tijdens zijn studie aan de werd Võ beïnvloed door de geschriften van Hồ Chí Minh, waarna hij zich in de jaren dertig aansloot bij de Indochinese communistische partij. Võ was in die tijd leraar geschiedenis. In 1940 vluchtte Võ naar Zuid-China, waar hij Hồ en (de latere premier van Noord-Vietnam) ontmoette. Zij besloten het verzet in Tonkin te organiseren. Võ nam deze taak op zich. De eerste guerrillagroepjes werden in 1941 actief. In de loop van de jaren werden deze groepjes langzamerhand samengebundeld tot een strijdmacht die het bergachtige noordoosten van Tonkin ging beheersen. Deze strijdmacht kreeg op 22 december 1944 formeel de naam .",
+				"lang": "nl"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp (* 25. August 1911 in Lệ Thủy, Quảng Bình; † 4. Oktober 2013 in Hanoi) war ein vietnamesischer General, Politiker und Guerillakämpfer. Er war militärischer Führer der Việt-Minh-Truppen im Unabhängigkeitskampf gegen die französische Kolonialherrschaft. Von 1946 bis 1977 war er Sekretär der Zentralen Militärkommission der Kommunistischen Partei Vietnams sowie von 1948 bis 1980 Verteidigungsminister der Demokratischen Republik Vietnam und damit Oberbefehlshaber der (Nord-)Vietnamesischen Volksarmee während des Vietnamkriegs.",
+				"lang": "de"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp (Vietnamese: [vɔ̌ˀ ŋʷīən jǎːp]; 25 August 1911 – 4 October 2013) was a Vietnamese general and communist politician who is regarded as having been one of the greatest military strategists of the 20th century. He served as interior minister in President Hồ Chí Minh's Việt Minh government, the military commander of the Việt Minh, the commander of the People's Army of Vietnam (PAVN), minister of defence, and deputy prime minister. He also served as a member of the Politburo of the Vietnam Workers' Party, which in 1976 became the Communist Party of Vietnam. Giáp first rose to prominence during World War II, when he served as the military leader of the Viet Minh resistance against the Japanese occupation of Vietnam. He had no direct military training and was a history teacher at a French-speaking academy, influenced by historical military leaders and personally citing T. E. Lawrence and Napoleon as his two greatest influences. He later earned the moniker \"Red Napoleon\" from some Western sources. Giáp was a crucial military commander in two wars: the First Indochina War of 1946–1954, fighting against the French, and the Vietnam War of 1955–1975, fighting against South Vietnam and its American backers. He participated in several historically significant battles, including Vĩnh Yên in 1951, Nà Sản in 1952, Điện Biên Phủ in 1954, the Tet Offensive in 1968, the Easter Offensive in 1972, and the final Ho Chi Minh Campaign of 1975. Giáp was a mastermind military builder; during the First Indochina War, he had transformed a rag-tag band of rebels to a 'fine light-infantry army' fielding cryptography, artillery and advanced logistics and capable of challenging a larger, modernised French Far East Expeditionary Corps and the Vietnamese National Army. He was also a very effective logistician, laying the foundation of the Ho Chi Minh trail, recognised as one of the great feats of military engineering of the 20th century. As head of the army during the Vietnam War, Giáp is often credited with North Vietnam's military victory over South Vietnam and the United States. Recent scholarship indicates other leaders had played more prominent roles, with former subordinates and now rivals Văn Tiến Dũng and Hoàng Văn Thái assuming a more direct military responsibility than Giáp. Nevertheless, he played a pivotal role in the second transformation of the PAVN into \"one of the largest, most formidable\" mechanised and combined-arms fighting force capable of delivering a knockout blow to an increasingly more powerful rival Army of the Republic of Vietnam (ARVN) in conventional warfare.",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "Во Нгуєн Зіап, Во Нґуєн Зяп (в'єт. Võ Nguyên Giáp, вимова: [vɔ̌ˀ ŋʷīən zǎːp]; * 25 серпня 1911 с. Анкса, Куангбінь, Французький Індокитай — † 4 жовтня 2013) — в'єтнамський воєначальник та політичний діяч, генерал армії, міністр оборони В'єтнаму, головнокомандувач В'єтміня часів В'єтнамської війни.",
+				"lang": "uk"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp, né le 25 août 1911 à An Xá (actuel Viêt Nam, alors en Annam, Indochine française) et mort le 4 octobre 2013 à Hanoï, à l'âge de 102 ans, est un général et homme politique vietnamien. Chef de l'Armée populaire vietnamienne pendant la guerre d'Indochine et ministre de la défense du Nord Viêt Nam durant la guerre du Viêt Nam, il est le seul général ayant vaincu à la fois l'armée française et l'armée américaine au cours de sa vie. Il est connu pour être le vainqueur de la bataille de Ðiện Biên Phủ (1954), qui a sonné la défaite et le départ des Français d'Indochine. Le général Vo Nguyên Giap est entré dans l’histoire militaire et les études militaires et stratégiques de son vivant, admiré par ses amis et ennemis, dont le général français Raoul Salan et le général américain William Westmoreland. « Général autodidacte », selon ses propres termes, il n'a suivi aucun cours d'une quelconque académie militaire.",
+				"lang": "fr"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp [vɔ̌ˀ ŋʷīən zǎːp] (ur. 25 sierpnia 1911 w (prowincja Quảng Bình), zm. 4 października 2013 w Hanoi) – wietnamski dowódca wojskowy, generał. Osiągał liczne sukcesy w prowadzeniu wojny partyzanckiej w rejonie Indochin i przyczynił się, walcząc kolejno z Japończykami, Francuzami i Amerykanami, do uzyskania przez Wietnam niepodległości, a następnie powstania zjednoczonej Socjalistycznej Republiki Wietnamu. Przez Wietnamczyków uważany za „świętość narodową”, a na świecie uznawany za mistrza wojny partyzanckiej.",
+				"lang": "pl"
+			},
+			{
+				"type": "literal",
+				"value": "Vo Nguyen Giap (25 Agustus 1911 – 4 Oktober 2013) adalah Jenderal dan wakil perdana menteri Vietnam. Ia lahir di provinsi Quang Binh, Vietnam. Dia lulus dari universitas hukum di Hanoi. Dia berhasil dalam pertempuran terkemuka di Dien Bien Phu dan perang Vietnam. Pertempuran Dien Bien Phu (Chiến dịch Điện Biên Phủ) adalah yang terakhir dalam Perang Indochina Pertama antara Prancis dan Viet Minh. Pertempuran ini terjadi antara Maret dan Mei 1954, dan berakhir dengan kekalahan Prancis secara besar-besaran yang akhirnya menyudahi peperangan itu. Hasil dari serangkaian kekeliruan dalam proses pengambilan keputusan Prancis ialah bahwa Prancis berusaha menciptakan sebuah basis pemasokan lewat udara di Dien Bien Phu, jauh di daerah perbukitan Vietnam. Tujuannya adalah untuk memotong jalur pasokan Viet Minh ke Laos. Sebaliknya, Viet Minh di bawah Jenderal Vo Nguyen Giap, sanggup mengitari dan mengepung Prancis. Pecahlah pertarungan sengit di darat. Viet Minh menduduki daerah perbukitan di sekitar Dien Bien Phu, dan mampu menembak ke bawah secara akurat ke posisi-posisi Prancis. Pasukan Prancis berulang-ulang membalas serangan-serangan Viet Min di posisi-posisi mereka, dengan sesekali menerjunkan pasukan-pasukan tambahan. Namun pada akhirnya Viet Minh berhasil merebut basis pertahanan Prancis dan memaksa Prancis menyerah.",
+				"lang": "in"
+			},
+			{
+				"type": "literal",
+				"value": "보응우옌잡(베트남어: Võ Nguyên Giáp, 武元甲, 무원갑, 1911년 8월 25일 ~ 2013년 10월 4일)은 베트남의 장군이자 정치인으로, 《인디펜던트》에서는 보응우옌잡을 \"20세기의 가장 뛰어난 장군 중 한 명\"으로 평가했다. 보응우옌잡은 호찌민 정부의 내무부 장관, 비엣민과 베트남 인민군의 사령관, 베트남 국방부 장관, 베트남의 부총리를 지냈다. 보응우옌잡은 1976년 베트남 공산당으로 명칭을 바꾸는 베트남 노동당의 정치국 위원이기도 했다. 보응우옌잡은 제2차 세계 대전 당시 일본의 베트남 점령에 맞서 비엣민 저항군을 이끈 군 지도자로 복무했다. 보응우옌잡은 군사 훈련을 받지는 않았으며 당시 프랑스어 학교에서 역사 선생을 맡고 있었고, 나폴레옹과 T. E. 로렌스 같은 역사적 군 지도자들의 영향을 받았다. 일부 서구 자료에서는 보응우옌잡을 별명인 '붉은 나폴레옹'이라고 부르기도 한다. 제1차 인도차이나 전쟁 때 보응우옌잡은 비엣민을 암호학을 익힌 정예보병으로 바꾸어놓았고, 비엣민은 포병과 병참 체계가 갖춰졌으며, 현대화된 과 을 상대할 수 있게 되었다. 제임스 A. 워렌에 따르면, 보응우옌잡은 매우 훌륭한 병참 전문가로, 가디언지가 20세기 가장 뛰어난 건축물 중 하나로 꼽은 호찌민 루트는 보응우옌잡이 초석을 다진 것이다. 베트남 전쟁 당시 베트남 인민군의 사령관으로서, 보응우옌잡은 미국과 남베트남을 상대로 승리를 거둔 북베트남의 승리에 대해 언급할 때 자주 등장한다. 최근 학자들은 반띠엔중, 와 같은 다른 북베트남 군사 지도자들도 주목하고 있지만, 그럼에도 불구하고 보응우옌잡은 재래전에서 더 강력한 군대였던 베트남 공화국군에게 큰 피해를 입힐 정도로 베트남 인민군을 기계화된 제병연합부대로 탈바꿈시켰다는 데에서 중요한 역할을 했다고 평가받는다.",
+				"lang": "ko"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp (Lộc Thủy, Quảng Bình, 25 de agosto de 1911 - Hanói, 4 de octubre de 2013)​ fue un político y general del Ejército Popular de Vietnam. Giáp desempeñó la jefatura de las fuerzas armadas en dos guerras: la Primera Guerra de Indochina (1946–1954) y la guerra de Vietnam (1955–1975). Participó en las siguientes batallas, todas estas de importancia histórica: Lạng Sơn (1950); (1951–1952); Điện Biên Phủ (1954); la Ofensiva del Tet (1968); la Ofensiva de Pascua (1972) y la Campaña final de Hồ Chí Minh (1975). Giáp fue también periodista, Ministro del Interior durante la presidencia de Hồ Chí Minh en el Viet Minh, jefe militar del Việt Minh, jefe del Ejército Popular de Vietnam y Ministro de Defensa. Asimismo fue miembro del politburó del Partido de los Trabajadores de Vietnam, el cual se transformó en el Partido Comunista de Vietnam en 1976.",
+				"lang": "es"
+			},
+			{
+				"type": "literal",
+				"value": "武元甲（越南语：Võ Nguyên Giáp／武元甲，1911年8月25日－2013年10月4日），曾經化名為楊懷南，是越南共产党、越南民主共和国、越南社会主义共和国和越南人民军的主要缔造者和领导人之一。越南人民军大将，曾任越共中央政治局委员、中央军事委员会书记、越南政府副總理、越南國防部部長等職。指揮第一次印度支那戰爭和第二次印度支那戰爭的功臣，曾參與永安、底江、那產、奠邊府、新春、復活節攻勢等歷史性的戰役。被美国《时代》杂志称为「紅色拿破崙」。",
+				"lang": "zh"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp (výslovnost \"záp\"), nar. 25. srpna 1911, provincie Quảng Bình – 4. října 2013, byl vietnamský generál a státník.",
+				"lang": "cs"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp (naskiĝis la 25-an de aŭgusto 1911, mortis la 4-an de oktobro 2013) estis Generalo de la kaj politikisto. Giáp estis la ĉefa komandanto en du militoj: la Unua Hindoĉina Milito (1946–1954) kaj la Vjetnama milito (1960–1975). Li partoprenis en la sekvaj historie signifaj bataloj: (1950); (1951–1952); Dien Bien Phu (1954); la (1968); la (1972); kaj la fina (1975). Giáp estis ankaŭ ĵurnalisto, ministro pri internaj aferoj en la registaro Việt Minh de Prezidanto Ho Chi Minh, la militista komandanto de Việt Minh, la komandanto de la (APV), kaj ministro pri defendo. Li ankaŭ servis kiel membro de la Politburoo de la Vjetnama Laborista Partio, kiu en 1976 fariĝis la Vjetnama Komunista Partio. Li estis la plej elstara militista komandanto, apud Ho Chi Minh, dum la Vjetnama milito, kaj estis respondeca pri la plej gravaj operacoj kaj gvidantaro ĝis la fino de la milito.",
+				"lang": "eo"
+			},
+			{
+				"type": "literal",
+				"value": "Ο Βο Νγκουγιέν Ζαπ (25 Αυγούστου 1911 – 4 Οκτωβρίου 2013) ήταν Βιετναμέζος στρατηγός και πολιτικός. Συγκαταλέγεται μεταξύ των μεγαλύτερων στρατιωτικών του 20ού αιώνα. από τους μεγαλύτερους στρατιωτικούς του 20ου αιώνα. Έγινε γνωστός στην περίοδο του Β΄ Παγκοσμίου Πολέμου, όπου υπηρετούσε ως στρατιωτικός ηγέτης των Βιέτ Μινχ, του κινήματος αντίστασης των Βιετναμέζων ενάντια στην Ιαπωνική κατοχή. Ο Ζαπ ήταν κρίσιμος στρατιωτικός διοικητής σε δύο πολέμους: στον Πρώτο Πόλεμο της Ινδοκίνας (1946-1954) και τον Πόλεμο του Βιετνάμ (1955-1975) Συμμετείχε σε διάφορες ιστορικές μάχες, όπως οι μάχες Λανγκ Σον (1950), Κουόνγκ Χα (1951-1952), Ντιέν Μπιέν Φου (1954), καθώς και στις επιθέσεις Τετ (1968) και Πάσχα (1972). Η τελευταία του μάχη ως στρατηγός ήταν η κατάληψη του Χο Τσι Μιν το 1975.",
+				"lang": "el"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp militar komunista bat izan zen, Ho Chi Minhekin batera Indotxinako Gerrako (1946–1954) eta Vietnamgo Gerrako (1955–1975) heroia, bere herrialdea askatzeko borrokan. Bi gerra antikolonialista horietatik lehenengoan, Frantziaren aurka borrokatu zen; bigarrenean, Ameriketako Estatu Batuen aurka. XX. mendeko estratega hoberenetakotzat joa, ezaguna da Nguyenen esaera hau: «Estrategian bat hamarren aurka, taktikan hamar baten kontra» (hau da, baliteke txikiak handiari irabaztea epe luzean, egunez egunekoan etsaia baino boteretsuagoa baldin bada).",
+				"lang": "eu"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp (Lộc Thủy, 25 d'agost de 1911 - Hanoi, 4 d'octubre de 2013) fou un militar i polític vietnamita. Va ser comandant de les forces del Vietnam comunista entre 1946 i 1976 i és considerat per molts com el gran estratega responsable de les derrotes de França i els Estats Units contra el Vietnam.",
+				"lang": "ca"
+			},
+			{
+				"type": "literal",
+				"value": "ヴォー・グエン・ザップ（ベトナム語: Võ Nguyên Giáp、漢字：武原甲/武源甲/武元甲、1911年8月25日 - 2013年10月4日）は、ベトナムの軍人、政治家。ベトナム共産党政治局員。ベトナム人民軍（QĐND）総司令官。最終階級は大将であった。 優れた軍事戦術家であったザップは機動性を重視した戦略を好み、その動きは神出鬼没と呼ばれた。フランスの植民地支配の際、ディエンビエンフーの戦いによって、フランス領インドシナからベトナムを解放し、ベトナム戦争ではベトナム人民軍の指導者としてアメリカ軍及び南ベトナム軍との戦いを指揮し、ベトナムを再統一する大きな原動力となった。その名采配から、西側諸国からは「赤いナポレオン」と呼ばれ、ベトナム人民からは「ベトナム救国の英雄」として、ホー・チ・ミンと共に、深い敬愛と尊敬を集めた。",
+				"lang": "ja"
+			},
+			{
+				"type": "literal",
+				"value": "Võ Nguyên Giáp, född 25 augusti 1911 i An Xá, Lệ Thủy i Quang Binh i dåvarande Franska Indokina, död 4 oktober 2013 i Hanoi, var en fyrstjärnig general i den vietnamesiska armén under Ho Chi Minhs politiska ledning.",
+				"lang": "sv"
+			},
+			{
+				"type": "literal",
+				"value": "Во Нгуе́н Зяп (по устаревшей транскрипции — Во Нгуен Зиап; вьетн. Võ Nguyên Giáp; 25 августа 1911 — 4 октября 2013) — вьетнамский генерал и политик. Принимал участие в Индокитайской и Вьетнамской войнах. Он также известен как министр внутренних дел правительства Хо Ши Мина, главнокомандующий войсками Вьетминя, главнокомандующий Народной армией Вьетнама, министр обороны и член политбюро Коммунистической партии Вьетнама.",
+				"lang": "ru"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Generals_of_the_People's_Army_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:North_Vietnamese_military_personnel_of_the_Vietnam_War"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Viet_Cong"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Operation_Linebacker_II"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Battles_of_Khai_Phat_and_Na_Ngan"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/French_Union"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Mường_Thanh_Valley"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Sun_Tzu"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Geneva"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Metropolitan_France"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Vietnamese_communists"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Vietnamese_Marxists"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:People_of_the_First_Indochina_War"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Popular_Front_(France)"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/North_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Army_of_the_Republic_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Gulf_of_Tonkin_incident"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Vietnamese_revolutionaries"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:2013_deaths"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Anti-revisionists"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Cryptography"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Government_ministers_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/South_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Marshall_Plan"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Saigon"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Japanese_occupation_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/French_Indochina"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Operation_Léa"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Indochina"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Tet_Offensive"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Ngô_Đình_Diệm"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:People_of_the_Laotian_Civil_War"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Potsdam_Conference"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Winston_Churchill"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/State_funeral"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Nùng_people"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Bảo_Đại"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/William_Westmoreland"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Battle_of_Vĩnh_Yên"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Battle_of_Hòa_Bình"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Ho_Chi_Minh"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Battle_of_Mạo_Khê"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Paris_Peace_Accords"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Dwight_D._Eisenhower"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Richard_Nixon"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Jean-Paul_Sartre"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Molotov–Ribbentrop_Pact"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Chí_Công"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Harry_S._Truman"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/First_Indochina_War"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Vietnam_War"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Lycée_Albert_Sarraut"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Fatherland_Defense_Order"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Battle_of_Dien_Bien_Phu"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Tân_Việt_Revolutionary_Party"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/French_Foreign_Legion"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Vietnamese_military_writers"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Recipients_of_the_Order_of_Ho_Chi_Minh"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Lệ_Thủy"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Colonialism"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:People_from_Quảng_Bình_province"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/CNN"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Phạm_Văn_Đồng"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Quảng_Bình"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Viet_Minh"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Vietnamese_National_Army"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Đỗ_Mười"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Trường_Chinh"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Vietnamese_nationalists"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Members_of_the_Politburo_of_the_Communist_Party_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/File:Giap-Ho.jpg"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Anti-imperialism"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Gold_Star_Order"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Lê_Duẩn"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Bauxite_mining_in_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Easter_Offensive"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/C-SPAN"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Politburo_of_the_Communist_Party_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Henri_Martin_affair"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Lao_Bảo_Prison"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Vietnam_National_University,_Hanoi"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Communist_Party_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hanoi"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Vichy_France"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Minister_of_Defence_(Vietnam)"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Le_Travail_Movement"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Archimedes_Patti"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Tactical_nuclear_weapon"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:People_educated_at_Lycee_Albert_Sarraut"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hoa_Lo_Central_Prison"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Vietnamese_centenarians"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Battle_of_Nà_Sản"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Ministers_of_Defence_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Viet_Minh_members"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Quảng_Bình_province"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Deputy_Prime_Ministers_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Khmer_Rouge"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Ðiện_Biên_Phủ"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/File:Vo_Nguyen_Giap_2008.jpg"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Vietnamese_nationalist"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Indochinese_University"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/File:Vo_Nguyen_Giap4.jpg"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/File:Tomb_of_Vo_Nguyen_Giap.jpg"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/File:Hanoi_Citadel_0361.JPG"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Deputy_Prime_Minister_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nhai_District"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Empire_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/People's_Liberation_Army"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Battle_of_the_Day_River"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Army_general"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Lycée"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Văn_Tiến_Dũng"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Ho_Chi_Minh_Order"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Guerrilla_warfare_theorists"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:1911_births"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/French_Fourth_Republic"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Quảng_Bình_Province"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Military_Exploit_Order"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/T._E._Lawrence"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hero_of_the_People's_Armed_Forces"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Emperor_of_Annam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Seven_Pillars_of_Wisdom"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/108_Hospital"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Georges_Thierry_d'Argenlieu"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/People's_Army_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Cần_Vương_movement"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Charles_Piroth"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Henri_Navarre"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Howitzer"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/French_Far_East_Expeditionary_Corps"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Haiphong"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/French_cruiser_Suffren"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Tran_Hung_Dao"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Communism"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Huỳnh_Thúc_Kháng"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Vietnamese_Buddhists"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Lyndon_B._Johnson"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Phạm_Hùng"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Ho_Chi_Minh_trail"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Fontainebleau"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Central_Highlands_(Vietnam)"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Napoleon"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Robert_McNamara"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Cambodian–Vietnamese_War"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Nationalist_Chinese"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:World_War_II_resistance_members"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Order_of_Ho_Chi_Minh"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Sino-Vietnamese_War"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Vietnamese_people_of_World_War_II"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Huế"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Tôn_Đức_Thắng"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Cambodian_genocide"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Christian_de_Castries"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Joseph_Stalin"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Men_centenarians"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Feat_Order"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Ho_Chi_Minh_Campaign"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Hero_of_the_People's_Armed_Forces"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Case–Church_Amendment"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/World_War_II"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Resolution_for_Victory_Order"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hoàng_Văn_Thái"
+			}
+		],
+		"http://dbpedia.org/property/wikiPageUsesTemplate": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Avoid_wrap"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Use_dmy_dates"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Ubl"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:ISBN"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:IPA-vi"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Commons_category"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Tree_list/end"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Tree_list"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Ribbon_devices"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Armed_forces"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:4th_Politburo_of_the_Communist_Party_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:2nd_Politburo_of_the_Communist_Party_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:3rd_Politburo_of_the_Communist_Party_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Flagu"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:1st_Politburo_of_the_Communist_Party_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Vietnam_People's_Army_Generals"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Birth_date"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Ministers_of_Defence_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Death_date_and_age"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Main"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Specify"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Wikiquote"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Infobox_officeholder"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Cite_book"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Authority_control"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Family_name_hatnote"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Ubli"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Reflist"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Webarchive"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Short_description"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Quote"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Refend"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Refbegin"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:More_citations_needed_section"
+			}
+		],
+		"http://dbpedia.org/property/wordnet_type": [
+			{
+				"type": "uri",
+				"value": "http://www.w3.org/2006/03/wn/wn20/instances/synset-person-noun-1"
+			}
+		],
+		"http://dbpedia.org/ontology/thumbnail": [
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/Mr._Vo_Nguyen_Giap.jpg?width=300"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRevisionID": [
+			{
+				"type": "literal",
+				"value": 1124192434,
+				"datatype": "http://www.w3.org/2001/XMLSchema#integer"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageExternalLink": [
+			{
+				"type": "uri",
+				"value": "https://www.pbs.org/wgbh/peoplescentury/episodes/guerrillawars/giaptranscript.html"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.spartacus-educational.com/VNgiap.htm"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.spartacus-educational.com/VNnlf.htm"
+			},
+			{
+				"type": "uri",
+				"value": "https://web.archive.org/web/20000925045256/http:/www.cnn.com/SPECIALS/cold.war/episodes/11/interviews/giap/"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.clemson.edu/caah/history/facultypages/EdMoise/commlead.html%23giap"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.britannica.com/EBchecked/topic/631640/Vo-Nguyen-Giap"
+			},
+			{
+				"type": "uri",
+				"value": "https://www.c-span.org/video/%3F49562-1/giap-victor-vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.saigontouring.com/vn_history.html"
+			},
+			{
+				"type": "uri",
+				"value": "https://web.archive.org/web/20090509093124/http:/www.time.com/time/magazine/article/0,9171,1555023,00.html"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageLength": [
+			{
+				"type": "literal",
+				"value": "55283",
+				"datatype": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageID": [
+			{
+				"type": "literal",
+				"value": 66049,
+				"datatype": "http://www.w3.org/2001/XMLSchema#integer"
+			}
+		],
+		"http://dbpedia.org/property/title": [
+			{
+				"type": "literal",
+				"value": "\"Vo Nguyen Giap\"",
+				"lang": "en"
+			}
+		],
+		"http://dbpedia.org/property/caption": [
+			{
+				"type": "literal",
+				"value": "Giáp in 1957",
+				"lang": "en"
+			}
+		],
+		"http://www.w3.org/2002/07/owl#sameAs": [
+			{
+				"type": "uri",
+				"value": "http://ru.dbpedia.org/resource/Во_Нгуен_Зяп"
+			},
+			{
+				"type": "uri",
+				"value": "http://af.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://ckb.dbpedia.org/resource/ڤۆ_نگوین_جیاپ"
+			},
+			{
+				"type": "uri",
+				"value": "http://ca.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://lb.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://uk.dbpedia.org/resource/Во_Нгуєн_Зіап"
+			},
+			{
+				"type": "uri",
+				"value": "http://hu.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://nl.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.wikidata.org/entity/Q179910"
+			},
+			{
+				"type": "uri",
+				"value": "http://fi.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://war.dbpedia.org/resource/Vo_Nguyen_Giap"
+			},
+			{
+				"type": "uri",
+				"value": "http://la.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://pl.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://d-nb.info/gnd/1090358520"
+			},
+			{
+				"type": "uri",
+				"value": "http://gl.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://zh.dbpedia.org/resource/武元甲"
+			},
+			{
+				"type": "uri",
+				"value": "http://si.dbpedia.org/resource/වාඅං_වීයෙං_සෑප්"
+			},
+			{
+				"type": "uri",
+				"value": "http://az.dbpedia.org/resource/Vo_Nquyen_Zyap"
+			},
+			{
+				"type": "uri",
+				"value": "http://fa.dbpedia.org/resource/وو_نوین_جیاپ"
+			},
+			{
+				"type": "uri",
+				"value": "http://bn.dbpedia.org/resource/ভো_নগুয়েন_গিয়াপ"
+			},
+			{
+				"type": "uri",
+				"value": "http://sv.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://cs.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://hy.dbpedia.org/resource/Վո_Նգուեն_Զիապ"
+			},
+			{
+				"type": "uri",
+				"value": "http://oc.dbpedia.org/resource/Vo_Nguyen_Giap"
+			},
+			{
+				"type": "uri",
+				"value": "http://de.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://tr.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://no.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://d-nb.info/gnd/118694634"
+			},
+			{
+				"type": "uri",
+				"value": "http://he.dbpedia.org/resource/וו_נגויין_גיאפ"
+			},
+			{
+				"type": "uri",
+				"value": "http://sco.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://sr.dbpedia.org/resource/Во_Нгујен_Ђап"
+			},
+			{
+				"type": "uri",
+				"value": "http://th.dbpedia.org/resource/หวอ_เงวียน_ซ้าป"
+			},
+			{
+				"type": "uri",
+				"value": "http://ko.dbpedia.org/resource/보응우옌잡"
+			},
+			{
+				"type": "uri",
+				"value": "http://cy.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://simple.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://d-nb.info/gnd/177882719"
+			},
+			{
+				"type": "uri",
+				"value": "http://ar.dbpedia.org/resource/فون_نجوين_جياب"
+			},
+			{
+				"type": "uri",
+				"value": "http://ast.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://it.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://fr.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://el.dbpedia.org/resource/Βο_Νγκουγιέν_Ζαπ"
+			},
+			{
+				"type": "uri",
+				"value": "http://pms.dbpedia.org/resource/Vo_Nguyen_Giap"
+			},
+			{
+				"type": "uri",
+				"value": "http://an.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://lv.dbpedia.org/resource/Vo_Ngujens_Zaps"
+			},
+			{
+				"type": "uri",
+				"value": "http://pt.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://ht.dbpedia.org/resource/Vo_Nguyen_Giap"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://vi.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://arz.dbpedia.org/resource/فون_نجوين_جياب"
+			},
+			{
+				"type": "uri",
+				"value": "http://rdf.freebase.com/ns/m.0hh56"
+			},
+			{
+				"type": "uri",
+				"value": "http://br.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "https://global.dbpedia.org/id/jaSE"
+			},
+			{
+				"type": "uri",
+				"value": "http://be.dbpedia.org/resource/Во_Нгуен_Зіяп"
+			},
+			{
+				"type": "uri",
+				"value": "http://hi.dbpedia.org/resource/वो_गुएन_गियाप"
+			},
+			{
+				"type": "uri",
+				"value": "http://sk.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://musicbrainz.org/artist/0fb0bd98-e926-4516-909c-4d29960f2c5c"
+			},
+			{
+				"type": "uri",
+				"value": "http://sl.dbpedia.org/resource/Vo_Nguyen_Giap"
+			},
+			{
+				"type": "uri",
+				"value": "http://ja.dbpedia.org/resource/ヴォー・グエン・ザップ"
+			},
+			{
+				"type": "uri",
+				"value": "http://tl.dbpedia.org/resource/Vo_Nguyen_Giap"
+			},
+			{
+				"type": "uri",
+				"value": "http://ms.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://mg.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://bar.dbpedia.org/resource/Vo_Nguyen_Giap"
+			},
+			{
+				"type": "uri",
+				"value": "http://eo.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://my.dbpedia.org/resource/ငုရင်ဂီယက်"
+			},
+			{
+				"type": "uri",
+				"value": "http://da.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://data.bibliotheken.nl/id/thes/p075164469"
+			},
+			{
+				"type": "uri",
+				"value": "http://hr.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://bg.dbpedia.org/resource/Во_Нгуйен_Зап"
+			},
+			{
+				"type": "uri",
+				"value": "http://viaf.org/viaf/111084565"
+			},
+			{
+				"type": "uri",
+				"value": "http://sh.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://ta.dbpedia.org/resource/வோ_இங்குயென்_கியாப்"
+			},
+			{
+				"type": "uri",
+				"value": "http://id.dbpedia.org/resource/Vo_Nguyen_Giap"
+			},
+			{
+				"type": "uri",
+				"value": "http://eu.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://es.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			},
+			{
+				"type": "uri",
+				"value": "http://ro.dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://purl.org/linguistics/gold/hypernym": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/General"
+			}
+		],
+		"http://www.w3.org/ns/prov#wasDerivedFrom": [
+			{
+				"type": "uri",
+				"value": "http://en.wikipedia.org/wiki/Võ_Nguyên_Giáp?oldid=1124192434&ns=0"
+			}
+		],
+		"http://dbpedia.org/property/type": [
+			{
+				"type": "literal",
+				"value": "oak",
+				"lang": "en"
+			}
+		],
+		"http://dbpedia.org/property/ribbon": [
+			{
+				"type": "literal",
+				"value": "Vietnam_Feat_Order_2kl_rib.png",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "Vietnam_Feat_Order_ribbon.png",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "Resolution_for_Victory_Order_ribbon.png",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "Vietnam_Hochiminh_Order_ribbon.png",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "Vietnam_Fatherland_Defense_Order_ribbon.png",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "Vietnam_Feat_Order_3kl_rib.png",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "Vietnam_Friendship_Order_ribbon.png",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "Vietnam_Gold_Star_ribbon.png",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "Vietnam_Military_Exploit_Order_ribbon.png",
+				"lang": "en"
+			}
+		],
+		"http://xmlns.com/foaf/0.1/isPrimaryTopicOf": [
+			{
+				"type": "uri",
+				"value": "http://en.wikipedia.org/wiki/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/property/termStart": [
+			{
+				"type": "literal",
+				"value": "1955-09-20",
+				"datatype": "http://www.w3.org/2001/XMLSchema#date"
+			},
+			{
+				"type": "literal",
+				"value": "1946-05-11",
+				"datatype": "http://www.w3.org/2001/XMLSchema#date"
+			},
+			{
+				"type": "literal",
+				"value": 1948,
+				"datatype": "http://www.w3.org/2001/XMLSchema#integer"
+			}
+		],
+		"http://dbpedia.org/property/office": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Deputy_Prime_Minister_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Minister_of_Defence_(Vietnam)"
+			}
+		],
+		"http://dbpedia.org/property/termEnd": [
+			{
+				"type": "literal",
+				"value": 1980,
+				"datatype": "http://www.w3.org/2001/XMLSchema#integer"
+			},
+			{
+				"type": "literal",
+				"value": "1947-05-08",
+				"datatype": "http://www.w3.org/2001/XMLSchema#date"
+			},
+			{
+				"type": "literal",
+				"value": "1991-08-08",
+				"datatype": "http://www.w3.org/2001/XMLSchema#date"
+			}
+		],
+		"http://dbpedia.org/ontology/termPeriod": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp__Tenure__1"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp__Tenure__2"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp__Tenure__3"
+			}
+		],
+		"http://dbpedia.org/property/party": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Communist_Party_of_Vietnam"
+			}
+		],
+		"http://dbpedia.org/ontology/party": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Communist_Party_of_Vietnam"
+			}
+		],
+		"http://dbpedia.org/property/primeminister": [
+			{
+				"type": "literal",
+				"value": "Hồ Chí Minh",
+				"lang": "en"
+			}
+		],
+		"http://dbpedia.org/property/birthPlace": [
+			{
+				"type": "literal",
+				"value": "Lệ Thủy, Quảng Bình,",
+				"lang": "en"
+			}
+		],
+		"http://dbpedia.org/property/birthDate": [
+			{
+				"type": "literal",
+				"value": "1911-08-25",
+				"datatype": "http://www.w3.org/2001/XMLSchema#date"
+			}
+		],
+		"http://dbpedia.org/ontology/birthPlace": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Lệ_Thủy"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Quảng_Bình"
+			}
+		],
+		"http://dbpedia.org/ontology/birthDate": [
+			{
+				"type": "literal",
+				"value": "1911-08-25",
+				"datatype": "http://www.w3.org/2001/XMLSchema#date"
+			}
+		],
+		"http://dbpedia.org/property/url": [
+			{
+				"type": "uri",
+				"value": "https://web.archive.org/web/20000925045256/http:/www.cnn.com/SPECIALS/cold.war/episodes/11/interviews/giap/"
+			}
+		],
+		"http://dbpedia.org/property/almaMater": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Indochinese_University"
+			}
+		],
+		"http://dbpedia.org/ontology/almaMater": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Indochinese_University"
+			}
+		],
+		"http://dbpedia.org/property/battles": [
+			{
+				"type": "literal",
+				"value": "* World War II\n* First Indochina War\n**Operation Léa\n**Battle of Vĩnh Yên\n**Battle of Mạo Khê\n**Battle of the Day River\n**Battle of Hòa Bình\n**Battle of Nà Sản\n**Battle of Dien Bien Phu\n* Vietnam War\n* Sino-Vietnamese War",
+				"lang": "en"
+			}
+		],
+		"http://dbpedia.org/property/successor": [
+			{
+				"type": "literal",
+				"value": "Tạ Quang Bửu",
+				"lang": "en"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Văn_Tiến_Dũng"
+			}
+		],
+		"http://dbpedia.org/property/predecessor": [
+			{
+				"type": "literal",
+				"value": "Phan Anh",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "Tạ Quang Bửu",
+				"lang": "en"
+			}
+		],
+		"http://dbpedia.org/property/date": [
+			{
+				"type": "literal",
+				"value": "2000-09-25",
+				"datatype": "http://www.w3.org/2001/XMLSchema#date"
+			}
+		],
+		"http://dbpedia.org/property/width": [
+			{
+				"type": "literal",
+				"value": 110,
+				"datatype": "http://www.w3.org/2001/XMLSchema#integer"
+			}
+		],
+		"http://dbpedia.org/property/deathPlace": [
+			{
+				"type": "literal",
+				"value": "Hanoi, Vietnam",
+				"lang": "en"
+			}
+		],
+		"http://dbpedia.org/property/deathDate": [
+			{
+				"type": "literal",
+				"value": "2013-10-04",
+				"datatype": "http://www.w3.org/2001/XMLSchema#date"
+			}
+		],
+		"http://dbpedia.org/ontology/deathDate": [
+			{
+				"type": "literal",
+				"value": "2013-10-04",
+				"datatype": "http://www.w3.org/2001/XMLSchema#date"
+			}
+		],
+		"http://dbpedia.org/property/signature": [
+			{
+				"type": "literal",
+				"value": "General Giáp signature.svg",
+				"lang": "en"
+			}
+		],
+		"http://dbpedia.org/property/number": [
+			{
+				"type": "literal",
+				"value": 0,
+				"datatype": "http://www.w3.org/2001/XMLSchema#integer"
+			}
+		],
+		"http://dbpedia.org/ontology/deathPlace": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hanoi"
+			}
+		],
+		"http://dbpedia.org/property/serviceyears": [
+			{
+				"type": "literal",
+				"value": 1944,
+				"datatype": "http://www.w3.org/2001/XMLSchema#integer"
+			}
+		],
+		"http://dbpedia.org/property/rank": [
+			{
+				"type": "literal",
+				"value": "Army general",
+				"lang": "en"
+			}
+		],
+		"http://dbpedia.org/property/children": [
+			{
+				"type": "literal",
+				"value": 5,
+				"datatype": "http://www.w3.org/2001/XMLSchema#integer"
+			}
+		],
+		"http://dbpedia.org/ontology/militaryService": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp__MilitaryService__1"
+			}
+		],
+		"http://dbpedia.org/ontology/signature": [
+			{
+				"type": "literal",
+				"value": "General Giáp signature.svg"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Lê_Duẩn": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/property/predecessor": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Vietnamese_nationalism": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Viet_Minh": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/property/leaderName": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Phạm_Văn_Đồng": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Battle_of_Dien_Bien_Phu": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Central_Committee_of_the_Communist_Party_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/People's_Century": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/May_1959": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/August_1911": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Sun_Tzu": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Resolution_for_Victory_Order": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Low-intensity_conflict": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/List_of_national_days_of_mourning_(2000–2019)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/January_1968": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/1954_in_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Operation_Vulture": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/First_Indochina_War": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/10th_anniversary_of_the_People's_Republic_of_China": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/United_States–Vietnam_relations": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Vietnamese_democracy_movement": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Việt_Nam_Quốc_Dân_Đảng": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Early_Lý_dynasty": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/List_of_military_writers": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Military_history_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Lê_Vũ_Anh": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Tôn_Thất_Thiện": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Foreign_policy_of_the_Richard_Nixon_administration": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Paracel_Islands": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Poland–Vietnam_relations": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Outline_of_the_Vietnam_War": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/W._Thomas_Smith_Jr.": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/1959_in_the_Vietnam_War": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/1960_in_the_Vietnam_War": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Hedgehog_defence": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Huỳnh_Thúc_Kháng": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/property/predecessor": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/2nd_Politburo_of_the_Communist_Party_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/3rd_Politburo_of_the_Communist_Party_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/4th_Politburo_of_the_Communist_Party_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Gold_Star_Order": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Trần_Tử_Bình": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Ngô_Đình_Khả": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/1st_Laotian_Parachute_Battalion": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/The_Art_of_War": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/1970_in_the_Vietnam_War": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Đồng_Sĩ_Nguyên": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/List_of_People's_Century_interviewees": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Battle_of_Coral–Balmoral": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/304th_Division_(Vietnam)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Easter_Offensive": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Vietnam_War_body_count_controversy": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Lạng_Sơn": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Operation_Atlante": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/property/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Operation_Bretagne": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/property/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Vietnam_War": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/August_25": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/October_4": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/1969_in_the_Vietnam_War": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/List_of_centenarians_(military_commanders_and_soldiers)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Battle_of_Huế": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Timeline_of_Vietnamese_history": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/1964_in_the_Vietnam_War": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/320th_Division_(Vietnam)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Interview_with_History": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Battle_of_Muong_Khoua": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Battle_of_Nghĩa_Lộ_(1952)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/property/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Battle_of_Ong_Thanh": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Bình_Long": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Angola–Vietnam_relations": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Dien_Bien_Phu_order_of_battle": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Missing_in_action": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Vietnam_National_University,_Hanoi": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/March_13": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Tet_Offensive": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/John_F._Kennedy_Jr.": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/1966_in_the_Vietnam_War": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/1968_in_the_Vietnam_War": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Early_life_and_military_career_of_John_McCain": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Vietnamese_name": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Oriana_Fallaci": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Ba_Đình_Hall": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Trần_Ngọc_Châu": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Operation_Camargue": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Sino-Vietnamese_War": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Cambodian–Vietnamese_War": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Battle_of_Ia_Drang": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Death_and_state_funeral_of_Võ_Nguyên_Giáp": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/1975_spring_offensive": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Văn_Tiến_Dũng": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/property/predecessor": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/FULRO_insurgency": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/History_of_Vietnam_(1945–present)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Phạm_Văn_Đổng": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Search_and_destroy": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/L'Avenir_(Tonkin)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Joint_warfare_in_South_Vietnam,_1963–1969": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/USS_Maddox_(DD-731)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Operation_Prairie_IV": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/property/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Rathvon_M._Tompkins": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/1947–1950_in_French_Indochina": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Military_history_of_Laos": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Left-wing_guerrilla_groups_of_Iran": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Vo_Nguyen_Giap": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Vietnam_People's_Air_Force": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/National_Security_Archive": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Tôn_Nữ_Thị_Ninh": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Deaths_in_October_2013": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Bùi_Tín": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/List_of_University_of_Calcutta_honorary_degree_recipients": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Battle_of_Hanoi_(1946)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/property/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Giap,_Vo_Nguyen": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/1st_Standing_Committee_of_the_Communist_Party_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/武元甲": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Giap": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Giap_Nguyen_Vo": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Giap_Vo": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Nguyen_Giap_Vo": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Nguyen_Vo_Giap": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Nguyên_Giáp_Võ": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Gen._Vo_Nguyen_Giap": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Giáp_Võ": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/General_Vo": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/General_Võ_Nguyên_Giáp": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Võ_Nguyễn_Giáp": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Wǔ_Yuánjiǎ": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Hoàng_Văn_Thái__Tenure__3": {
+		"http://dbpedia.org/ontology/minister": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Lê_Duẩn__Tenure__2": {
+		"http://dbpedia.org/ontology/predecessor": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Văn_Tiến_Dũng__Tenure__2": {
+		"http://dbpedia.org/ontology/predecessor": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Huỳnh_Thúc_Kháng__Tenure__3": {
+		"http://dbpedia.org/ontology/predecessor": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Battle_of_Khe_Sanh": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Vietnam_People's_Navy": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Commandos_Marine": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/List_of_covers_of_Time_magazine_(1960s)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/October_1950": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Royal_Lao_Army_Airborne": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Battle_of_Nà_Sản": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/property/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/List_of_central_officeholders_in_the_Communist_Party_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Ho_Chi_Minh": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/French_Indochina": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/1911": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/William_Westmoreland": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Gulf_of_Tonkin_incident": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/North_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Viet_Cong": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/2013": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/1954": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Điện_Biên_Phủ": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Operation_Castor": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/property/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/People's_Army_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Antonio_Luna": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/War_in_Vietnam_(1945–1946)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/History_of_the_Armée_de_l'Air_in_the_colonies_(1939–1962)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Operation_Léa": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Chief_of_the_General_Staff_(Vietnam)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/property/altOfficeholder": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/National_Assembly_Building_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/General_Vo_Nguyen_Giap": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/List_of_guerrillas": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Strategy_and_tactics_of_guerrilla_warfare": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/List_of_covers_of_Time_magazine_(1970s)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Great_Books_(TV_program)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Late_Night_Line-Up": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Swift_Vets_and_POWs_for_Truth": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Trần_Đăng_Ninh": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Viet_Minh__PersonFunction__2": {
+		"http://dbpedia.org/ontology/person": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Democratic_Kampuchea": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/VNU_University_of_Social_Sciences_and_Humanities": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Mieczysław_Maneli": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Tiana_Alexandra": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Battles_of_Khai_Phat_and_Na_Ngan": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Charles_Piroth": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/1940_Cochinchina_uprising": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Loss_exchange_ratio": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/General_Giap": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Hữu_Mai": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/OSS_Deer_Team": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Vũ": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/History_of_French_foreign_relations": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Phạm_Hùng": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Samuel_A._Adams": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/July_1967": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Jean_Delpech": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Bauxite_mining_in_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Battle_of_Hòa_Bình": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/property/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Battle_of_Mạo_Khê": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Battle_of_Route_Coloniale_4": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/property/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Battle_of_Vĩnh_Yên": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Lý_Nhã_Kỳ": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/1946_in_French_Indochina": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/History_of_the_Communist_Party_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Deputy_Prime_Minister_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/List_of_recipients_of_the_Gold_Star_Order": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Order_of_Ho_Chi_Minh": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Lộc_Thủy,_Quảng_Bình": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/7554": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Bắc_Kạn": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Le_Travail_movement": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/312th_Division_(Vietnam)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Chu_Văn_An_High_School_(Hanoi)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Army_general_(Vietnam)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Chen_Geng": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Imperial_Citadel_of_Thăng_Long": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Operation_Mouette": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Kiến_Giang": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Kiến_Giang_River": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Quốc_Học_–_Huế_High_School_for_the_Gifted": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Tô_Vĩnh_Diện": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Lycée_Albert_Sarraut": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Secretary_of_the_Central_Military_Commission_of_the_Communist_Party_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Phan_Đăng_Lưu": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Võ_Nguyên_Giáp_Gifted_High_School": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Haiphong_incident": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Battle_of_the_Day_River": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Võ_Nguyên_Giáp"
+			}
+		]
+	}
+}

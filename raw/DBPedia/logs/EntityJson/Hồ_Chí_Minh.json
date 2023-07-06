@@ -1,0 +1,1100 @@
+{
+	"http://dbpedia.org/resource/Ngo_Dinh_Diem": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/June_1905": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/The_Drayton_Court": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/1966_in_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/List_of_Vietnamese_provincial_and_territorial_symbols": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Vũ_Ngọc_Nhạ": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/President_for_life": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/State_funeral": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/D_with_stroke": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Nguyễn_Hữu_Hạnh": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://en.wikipedia.org/wiki/Hồ_Chí_Minh": {
+		"http://xmlns.com/foaf/0.1/primaryTopic": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Communist_Party_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		],
+		"http://dbpedia.org/property/founder": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Ho_Chi_Minh_Young_Pioneer_Organization": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Vietnamese_Fatherland_Front": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/National_Assembly_(Vietnam)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Hồ_Chí_Minh": {
+		"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/ontology/OfficeHolder"
+			}
+		],
+		"http://www.w3.org/2000/01/rdf-schema#label": [
+			{
+				"type": "literal",
+				"value": "Hồ Chí Minh",
+				"lang": "en"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Ho_Chi_Minh"
+			}
+		],
+		"http://dbpedia.org/property/wikiPageUsesTemplate": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:R_unprintworthy"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Redirect_category_shell"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:R_from_diacritics"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:R_from_alternative_language"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRevisionID": [
+			{
+				"type": "literal",
+				"value": 785508928,
+				"datatype": "http://www.w3.org/2001/XMLSchema#integer"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageLength": [
+			{
+				"type": "literal",
+				"value": "135",
+				"datatype": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageID": [
+			{
+				"type": "literal",
+				"value": 10265699,
+				"datatype": "http://www.w3.org/2001/XMLSchema#integer"
+			}
+		],
+		"http://www.w3.org/2002/07/owl#sameAs": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		],
+		"http://www.w3.org/ns/prov#wasDerivedFrom": [
+			{
+				"type": "uri",
+				"value": "http://en.wikipedia.org/wiki/Hồ_Chí_Minh?oldid=785508928&ns=0"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Ho_Chi_Minh"
+			}
+		],
+		"http://xmlns.com/foaf/0.1/isPrimaryTopicOf": [
+			{
+				"type": "uri",
+				"value": "http://en.wikipedia.org/wiki/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/August_Revolution": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Nông_Đức_Mạnh": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Võ_Nguyên_Giáp": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Proclamation_of_Independence_of_the_Democratic_Republic_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Phạm_Văn_Đồng": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Hà_Huy_Tập": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Battle_of_Dien_Bien_Phu": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Central_Committee_of_the_Communist_Party_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/History_of_Vietnam_(1945–present)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Alphonse_Favier": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Timeline_of_World_War_II_(1945–1991)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Hard_and_soft_C": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Phan_Thiết": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/1946_North_Vietnamese_legislative_election": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		],
+		"http://dbpedia.org/ontology/firstLeader": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		],
+		"http://dbpedia.org/property/leader": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Ho_Chi_Minh_City": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/First_Indochina_War": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Tet_Offensive": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/History_of_Vietnam_during_World_War_I": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Hoàng_Văn_Thái__Tenure__4": {
+		"http://dbpedia.org/ontology/president": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Trần_Trọng_Kim__Tenure__1": {
+		"http://dbpedia.org/ontology/successor": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/List_of_heads_of_state_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Huỳnh_Thúc_Kháng": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		],
+		"http://dbpedia.org/property/1namedata": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/List_of_presidents_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/International_Workers'_Day": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/OSS_Deer_Team": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/War_in_Vietnam_(1954–1959)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Hoàng_Văn_Thái__Tenure__1": {
+		"http://dbpedia.org/ontology/president": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/United_States_in_the_Vietnam_War": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Gia_Lam_Airport": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/History_of_the_Communist_Party_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Trần_Ngọc_Châu": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Thiếu_Sơn": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/List_of_ambassadors_of_the_United_States_to_South_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Phan_Đình_Phùng": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Council_for_National_Defense_and_Security_(Vietnam)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Hoàng_Văn_Thái": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		],
+		"http://dbpedia.org/property/president": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Algeria–Vietnam_relations": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Declarations_of_independence_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Nguyễn_Sinh_Khiêm": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Tiến_Quân_Ca": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Order_of_Ho_Chi_Minh": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Ba_Cụt": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/North_Vietnamese_đồng": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Ho_Chi_Minh_Highway": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Kim_Đồng": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Hoàng_Cơ_Minh": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Quốc_Học_–_Huế_High_School_for_the_Gifted": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Leaders_of_the_Vietnam_War": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/List_of_central_officeholders_in_the_Communist_Party_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Huang_(surname)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/National_Day_(Vietnam)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Zeng_Xueming": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		],
+		"http://dbpedia.org/property/spouse": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		],
+		"http://dbpedia.org/ontology/spouse": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Seals_of_the_Nguyễn_dynasty": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Land_reforms_by_country": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Platon_Nguyễn_Văn_Thành": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Trần_Đăng_Ninh": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Attack_on_Camp_Holloway": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Bảo_Đại": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		],
+		"http://dbpedia.org/property/successor": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		],
+		"http://dbpedia.org/ontology/successor": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/French_Indochina": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/13th_arrondissement_of_Paris": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Nguyễn_Khánh": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Nguyễn_Văn_Thiệu": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/North_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		],
+		"http://dbpedia.org/property/representative": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		],
+		"http://dbpedia.org/property/leader": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		],
+		"http://dbpedia.org/property/deputy": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Nguyễn_Cao_Kỳ": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Viet_Cong": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/1905": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Trần_Trọng_Kim": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		],
+		"http://dbpedia.org/property/successor": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Hoàng_Văn_Hoan": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		],
+		"http://dbpedia.org/property/1namedata": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Lê_Văn_Thiêm": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Trần_Đại_Nghĩa": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Chen_Geng": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Phan_Chu_Trinh": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Võ_Nguyên_Giáp__Tenure__3": {
+		"http://dbpedia.org/ontology/primeMinister": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Communism_in_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/List_of_ambassadors_of_Vietnam_to_China": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/China–Vietnam_border": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/War_in_Vietnam_(1959–1963)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Abdication_of_Bảo_Đại": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/History_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/October_1954": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Poland–Vietnam_relations": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Nguyễn_Chí_Thanh": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Tuần_Châu": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/The_Welldeserved_Fox": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		],
+		"http://dbpedia.org/ontology/writer": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/List_of_ambassadors_of_China_to_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/1st_Standing_Committee_of_the_Communist_Party_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Victory_over_Japan_Day": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Emblem_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Staley–Taylor_Plan": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Quỳnh_Lưu_uprising": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		],
+		"http://dbpedia.org/ontology/commander": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Revolutionary_Infrastructure": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Nguyễn_Lương_Bằng": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Nguyễn_Thị_Minh_Khai": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/2nd_Politburo_of_the_Communist_Party_of_Vietnam": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Đinh_Xuân_Lâm": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hồ_Chí_Minh"
+			}
+		]
+	}
+}

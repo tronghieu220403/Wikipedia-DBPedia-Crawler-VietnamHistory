@@ -1,0 +1,891 @@
+{
+	"http://en.wikipedia.org/wiki/Danh_Võ": {
+		"http://xmlns.com/foaf/0.1/primaryTopic": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Danh_Võ"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/List_of_gay,_lesbian_or_bisexual_people:_T–V": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Danh_Võ"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/The_Exorcist": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Danh_Võ"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Haegue_Yang": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Danh_Võ"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Danh_Võ": {
+		"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/ontology/Animal"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.wikidata.org/entity/Q19088"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/ontology/Artist"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.wikidata.org/entity/Q483501"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.wikidata.org/entity/Q5"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.wikidata.org/entity/Q729"
+			},
+			{
+				"type": "uri",
+				"value": "http://xmlns.com/foaf/0.1/Person"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.wikidata.org/entity/Q215627"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.w3.org/2002/07/owl#Thing"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/ontology/Species"
+			},
+			{
+				"type": "uri",
+				"value": "http://schema.org/Person"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/ontology/Person"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/ontology/Eukaryote"
+			}
+		],
+		"http://www.w3.org/2000/01/rdf-schema#label": [
+			{
+				"type": "literal",
+				"value": "Danh Vö",
+				"lang": "es"
+			},
+			{
+				"type": "literal",
+				"value": "Danh Vō",
+				"lang": "fr"
+			},
+			{
+				"type": "literal",
+				"value": "Danh Võ",
+				"lang": "de"
+			},
+			{
+				"type": "literal",
+				"value": "Danh Vo",
+				"lang": "sv"
+			},
+			{
+				"type": "literal",
+				"value": "Danh Võ",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "دان فوه",
+				"lang": "ar"
+			},
+			{
+				"type": "literal",
+				"value": "자인보",
+				"lang": "ko"
+			}
+		],
+		"http://www.w3.org/2000/01/rdf-schema#comment": [
+			{
+				"type": "literal",
+				"value": "Danh Vō (né en 1975) est un artiste conceptuel danois. Il vit et travaille à Berlin et à Mexico.",
+				"lang": "fr"
+			},
+			{
+				"type": "literal",
+				"value": "Danh Võ (* 1975 in Bà Rịa, Vietnam) ist ein dänischer Performance- und Konzeptkünstler.",
+				"lang": "de"
+			},
+			{
+				"type": "literal",
+				"value": "دان فوه (بالدنماركية: Danh Vō)‏ (وتُنطق يون فوه) (مواليد عام 1975) هو فنان فيتنامي المولد-دنماركي في فن الأداء المستوحى من الفن المفاهيمي. يعيش ويعمل في العاصمة الألمانية برلين ومكسيكو سيتي. يون فوه مثلي الجنس علنا.",
+				"lang": "ar"
+			},
+			{
+				"type": "literal",
+				"value": "Danh Vö (Bà Ria, 1975) es un artista conceptual, escultor e instalador danés de origen vietnamita. Actualmente vive y trabaja en Berlín, Alemania. En sus obras explora los temas de la apropiación y la fragmentación, incorporando su experiencia como ciudadano danés nacido en Vietnam y usando con frecuencia su propia vida como material.",
+				"lang": "es"
+			},
+			{
+				"type": "literal",
+				"value": "Danh Vō, född 1975 i Ba Ria i Vietnam 1975, är en dansk koncept- och installationskonstnär. Danh Vōs familj flyttades 1975 från provinsen Ba Ria-Vung Tau till ön Phu Quoc i Vietnam. När han var fyra år gammal flydde hans familj 1979 Phu Quoc i en båt, togs upp till havs av ett danskt fartyg och kom till Danmark. Danh Vō utbildade sig i målning på Det Kongelige Danske Kunstakademi i Köpenhamn och på Städelschule i Frankfurt i Tyskland. Han hade sin första separatutställning 2005 på Galerie Klosterfelde i Berlin. 2019 mottog han Prins Eugen-medaljen för framstående konstnärlig gärning.",
+				"lang": "sv"
+			},
+			{
+				"type": "literal",
+				"value": "자인보(베트남어: Danh Vō, 1975년 베트남 바리어붕따우 성 바리어 ~ )는 덴마크의 베트남계 미술가이다. 독일 베를린에서 작품 활동을 전개했다. 베트남 전쟁의 종식과 함께 푸꾸옥섬으로 이주했으며 4세에 가족들과 함께 덴마크 출신 해상 운송업자의 도움으로 덴마크로 이주했다. 유럽의 문화를 접한 뒤부터 수많은 미술 작품들을 제작했다.",
+				"lang": "ko"
+			},
+			{
+				"type": "literal",
+				"value": "Danh Võ (born Võ Trung Kỳ Danh, August 5, 1975) is a contemporary artist of Vietnamese descent. He lives and works in Berlin and Mexico City.",
+				"lang": "en"
+			}
+		],
+		"http://xmlns.com/foaf/0.1/name": [
+			{
+				"type": "literal",
+				"value": "Danh Võ",
+				"lang": "en"
+			}
+		],
+		"http://xmlns.com/foaf/0.1/depiction": [
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/Danh_Vo_(cropped).jpg"
+			},
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/Installation_view_of_We_The_People.jpg"
+			}
+		],
+		"http://purl.org/dc/terms/subject": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Vietnamese_expatriates_in_Germany"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:1975_births"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Städelschule_alumni"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Danish_contemporary_artists"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Vietnamese_artists"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Danish_performance_artists"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Vietnamese_emigrants_to_Denmark"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Living_people"
+			}
+		],
+		"http://dbpedia.org/ontology/abstract": [
+			{
+				"type": "literal",
+				"value": "Danh Vö (Bà Ria, 1975) es un artista conceptual, escultor e instalador danés de origen vietnamita. Actualmente vive y trabaja en Berlín, Alemania. En sus obras explora los temas de la apropiación y la fragmentación, incorporando su experiencia como ciudadano danés nacido en Vietnam y usando con frecuencia su propia vida como material.",
+				"lang": "es"
+			},
+			{
+				"type": "literal",
+				"value": "دان فوه (بالدنماركية: Danh Vō)‏ (وتُنطق يون فوه) (مواليد عام 1975) هو فنان فيتنامي المولد-دنماركي في فن الأداء المستوحى من الفن المفاهيمي. يعيش ويعمل في العاصمة الألمانية برلين ومكسيكو سيتي. يون فوه مثلي الجنس علنا.",
+				"lang": "ar"
+			},
+			{
+				"type": "literal",
+				"value": "Danh Vō, född 1975 i Ba Ria i Vietnam 1975, är en dansk koncept- och installationskonstnär. Danh Vōs familj flyttades 1975 från provinsen Ba Ria-Vung Tau till ön Phu Quoc i Vietnam. När han var fyra år gammal flydde hans familj 1979 Phu Quoc i en båt, togs upp till havs av ett danskt fartyg och kom till Danmark. Danh Vō utbildade sig i målning på Det Kongelige Danske Kunstakademi i Köpenhamn och på Städelschule i Frankfurt i Tyskland. Han hade sin första separatutställning 2005 på Galerie Klosterfelde i Berlin. Han deltog i Venedigbiennalen 2013. I januari 2017 utsågs han av Statens konstråd att utföra den konstnärligt utsmyckningen av den planerade nya underjordiska järnvägsstationen i Göteborg, en del av Västlänken. Vo är representerad vid bland annat Kalmar konstmuseum. 2019 mottog han Prins Eugen-medaljen för framstående konstnärlig gärning.",
+				"lang": "sv"
+			},
+			{
+				"type": "literal",
+				"value": "자인보(베트남어: Danh Vō, 1975년 베트남 바리어붕따우 성 바리어 ~ )는 덴마크의 베트남계 미술가이다. 독일 베를린에서 작품 활동을 전개했다. 베트남 전쟁의 종식과 함께 푸꾸옥섬으로 이주했으며 4세에 가족들과 함께 덴마크 출신 해상 운송업자의 도움으로 덴마크로 이주했다. 유럽의 문화를 접한 뒤부터 수많은 미술 작품들을 제작했다.",
+				"lang": "ko"
+			},
+			{
+				"type": "literal",
+				"value": "Danh Vō (né en 1975) est un artiste conceptuel danois. Il vit et travaille à Berlin et à Mexico.",
+				"lang": "fr"
+			},
+			{
+				"type": "literal",
+				"value": "Danh Võ (born Võ Trung Kỳ Danh, August 5, 1975) is a contemporary artist of Vietnamese descent. He lives and works in Berlin and Mexico City.",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "Danh Võ (* 1975 in Bà Rịa, Vietnam) ist ein dänischer Performance- und Konzeptkünstler.",
+				"lang": "de"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Colonia_Roma"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Galerie_Buchholz"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Venice_Biennale"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Tchotchke"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/M+"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Ansel_Adams"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Copenhagen"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/RAND_Corporation"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Plywood"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Crucifix"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Maersk"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Bà_Rịa–Vũng_Tàu_province"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Fall_of_Saigon"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:1975_births"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Isamu_Noguchi"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Sotheby's"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Statue_of_Liberty"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Living_people"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Communist_Party_of_Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Frankfurt"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hong_Kong"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Brandenburg"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Stechlin"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Cologne"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Bundesverband_der_Deutschen_Volksbanken_und_Raiffeisenbanken"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Laminated"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Shanghai"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Art_Press"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Walker_Art_Center"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Solomon_R._Guggenheim_Museum"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Musée_d'art_moderne_de_la_Ville_de_Paris"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Public_Art_Fund"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Haegue_Yang"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Vietnamese_expatriates_in_Germany"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Städelschule"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Galerie_Chantal_Crousel"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Art_Institute_of_Chicago"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/File:Installation_view_of_We_The_People.JPG"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Städelschule_alumni"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Brooklyn"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Gemeentemuseum_Den_Haag"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Phú_Quốc"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Brooklyn_Bridge_Park"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Hugo_Boss_Prize"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/White_Cube"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Mexico_City"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Vietnamese_emigrants_to_Denmark"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Denmark"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Vietnamese_artists"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Kunsthaus_Bregenz"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Danish_performance_artists"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Rirkrit_Tiravanija"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/New_York_City"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Nationalgalerie"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Gulf_of_Tonkin_incident"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Martin_Wong"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Vũng_Tàu"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Copper"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Marian_Goodman_Gallery"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Art_in_America"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Danish_contemporary_artists"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Carol_Rama"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Nairy_Baghramian"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/City_Hall_Park"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Paris"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Kadist_Art_Foundation"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Museo_Jumex"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Théophane_Vénard"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Nottingham_Contemporary"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Vietnam_War"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Minneapolis"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Royal_Danish_Academy_of_Fine_Arts"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Austria"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Robert_McNamara"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Kunsthalle_Mainz"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Los_Angeles"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Xavier_Hufkens"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Lower_Manhattan"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Germany"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Installation_art"
+			}
+		],
+		"http://dbpedia.org/property/wikiPageUsesTemplate": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Authority_control_(arts)"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Birth_date_and_age"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Reflist"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Dead_link"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Convert"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Infobox_artist"
+			}
+		],
+		"http://dbpedia.org/ontology/thumbnail": [
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/Danh_Vo_(cropped).jpg?width=300"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRevisionID": [
+			{
+				"type": "literal",
+				"value": 1080824449,
+				"datatype": "http://www.w3.org/2001/XMLSchema#integer"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageExternalLink": [
+			{
+				"type": "uri",
+				"value": "https://ocula.com/artists/danh-vo/"
+			},
+			{
+				"type": "uri",
+				"value": "https://www.westkowloon.hk/en/mplus/m-pavilion"
+			},
+			{
+				"type": "uri",
+				"value": "http://en.artpress.com/article/22/04/2013/danh-vo--the-refined-complexity-of-things/9301"
+			},
+			{
+				"type": "uri",
+				"value": "https://www.kunsthaus-bregenz.at/fileadmin/danh_vo/Heft_Danh_Vo.pdf"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.artinamericamagazine.com/features/living-history/"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.artinamericamagazine.com/news-opinion/finer-things/2013-03-15/danh-vo-channels-martin-wong-at-the-guggenheim-/"
+			},
+			{
+				"type": "uri",
+				"value": "https://stories.mplus.org.hk/en/blog/a-chat-with-danh-vo-about-noguchi-for-danh-vo-counterpoint/"
+			},
+			{
+				"type": "uri",
+				"value": "https://www.westkowloon.hk/en/mplus/about-m"
+			},
+			{
+				"type": "uri",
+				"value": "https://www.westkowloon.hk/en/whats-on/current-forthcoming/noguchi-for-danh-vo-counterpoint/event-type/highlights"
+			},
+			{
+				"type": "uri",
+				"value": "http://galeriebuchholz.com/index.php%3Fmenu_id=artists&artists_id=87/"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageLength": [
+			{
+				"type": "literal",
+				"value": "19475",
+				"datatype": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageID": [
+			{
+				"type": "literal",
+				"value": 38880731,
+				"datatype": "http://www.w3.org/2001/XMLSchema#integer"
+			}
+		],
+		"http://dbpedia.org/property/name": [
+			{
+				"type": "literal",
+				"value": "Danh Võ",
+				"lang": "en"
+			}
+		],
+		"http://dbpedia.org/property/caption": [
+			{
+				"type": "literal",
+				"value": "Võ in August of 2018",
+				"lang": "en"
+			}
+		],
+		"http://www.w3.org/2002/07/owl#sameAs": [
+			{
+				"type": "uri",
+				"value": "https://global.dbpedia.org/id/cEZA"
+			},
+			{
+				"type": "uri",
+				"value": "http://ar.dbpedia.org/resource/دان_فوه"
+			},
+			{
+				"type": "uri",
+				"value": "http://sv.dbpedia.org/resource/Danh_Vo"
+			},
+			{
+				"type": "uri",
+				"value": "http://viaf.org/viaf/272922607"
+			},
+			{
+				"type": "uri",
+				"value": "http://es.dbpedia.org/resource/Danh_Vö"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Danh_Võ"
+			},
+			{
+				"type": "uri",
+				"value": "http://ko.dbpedia.org/resource/자인보"
+			},
+			{
+				"type": "uri",
+				"value": "http://de.dbpedia.org/resource/Danh_Võ"
+			},
+			{
+				"type": "uri",
+				"value": "http://vi.dbpedia.org/resource/Danh_Võ"
+			},
+			{
+				"type": "uri",
+				"value": "http://fr.dbpedia.org/resource/Danh_Vō"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.wikidata.org/entity/Q16215625"
+			},
+			{
+				"type": "uri",
+				"value": "http://da.dbpedia.org/resource/Danh_Vo"
+			},
+			{
+				"type": "uri",
+				"value": "http://d-nb.info/gnd/135852455"
+			},
+			{
+				"type": "uri",
+				"value": "http://d-nb.info/gnd/1089483961"
+			},
+			{
+				"type": "uri",
+				"value": "http://data.bibliotheken.nl/id/thes/p418041792"
+			}
+		],
+		"http://www.w3.org/ns/prov#wasDerivedFrom": [
+			{
+				"type": "uri",
+				"value": "http://en.wikipedia.org/wiki/Danh_Võ?oldid=1080824449&ns=0"
+			}
+		],
+		"http://xmlns.com/foaf/0.1/isPrimaryTopicOf": [
+			{
+				"type": "uri",
+				"value": "http://en.wikipedia.org/wiki/Danh_Võ"
+			}
+		],
+		"http://dbpedia.org/property/birthPlace": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Vũng_Tàu"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Bà_Rịa–Vũng_Tàu_province"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Vietnam"
+			}
+		],
+		"http://dbpedia.org/property/birthDate": [
+			{
+				"type": "literal",
+				"value": "1975-08-05",
+				"datatype": "http://www.w3.org/2001/XMLSchema#date"
+			}
+		],
+		"http://dbpedia.org/ontology/birthPlace": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Bà_Rịa–Vũng_Tàu_province"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Vietnam"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Vũng_Tàu"
+			}
+		],
+		"http://dbpedia.org/ontology/birthDate": [
+			{
+				"type": "literal",
+				"value": "1975-08-05",
+				"datatype": "http://www.w3.org/2001/XMLSchema#date"
+			}
+		],
+		"http://dbpedia.org/property/almaMater": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Städelschule"
+			}
+		],
+		"http://dbpedia.org/ontology/nationality": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Denmark"
+			}
+		],
+		"http://dbpedia.org/property/nationality": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Denmark"
+			}
+		],
+		"http://dbpedia.org/ontology/birthName": [
+			{
+				"type": "literal",
+				"value": "Võ Trung Kỳ Danh",
+				"lang": "en"
+			}
+		],
+		"http://dbpedia.org/property/birthName": [
+			{
+				"type": "literal",
+				"value": "Võ Trung Kỳ Danh",
+				"lang": "en"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Heidi_Zuckerman": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Danh_Võ"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Danh_Vo": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Danh_Võ"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Danh_Võ"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Luise_Faurschou": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Danh_Võ"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Queer_art": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Danh_Võ"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Danh_Vō": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Danh_Võ"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Danh_Võ"
+			}
+		]
+	}
+}

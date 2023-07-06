@@ -1,0 +1,998 @@
+{
+	"http://dbpedia.org/resource/Kudzu": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Conifer_release": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Agent_White": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Picloram": {
+		"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Communication100033020"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatNitrogenHeterocycles"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatAromaticAmines"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatCarboxylicAcids"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatPyridines"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Relation100031921"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Base114618253"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Pyridine114692510"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Compound114818238"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Chemical114806838"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Substance100019613"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Matter100020827"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/ontology/ChemicalCompound"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/OrganicCompound114727670"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/MethaneSeries114951377"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/HeterocyclicCompound115025397"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Material114580897"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Amine114739004"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Abstraction100002137"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatHerbicides"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Acid114607521"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Statement106722453"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Herbicide114906850"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatAuxinicHerbicides"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/ontology/ChemicalSubstance"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.w3.org/2002/07/owl#Thing"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.wikidata.org/entity/Q11173"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/CarboxylicAcid114739360"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Message106598915"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/PhysicalEntity100001930"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Part113809207"
+			},
+			{
+				"type": "uri",
+				"value": "http://umbel.org/umbel/rc/ChemicalSubstanceType"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/MolecularFormula106817173"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/Formula106816935"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatMolecularFormulas"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/WikicatAminoAcids"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/AminoAcid114601829"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#ChemicalObject"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/class/yago/AliphaticCompound114601294"
+			}
+		],
+		"http://www.w3.org/2000/01/rdf-schema#label": [
+			{
+				"type": "literal",
+				"value": "Pikloram",
+				"lang": "pl"
+			},
+			{
+				"type": "literal",
+				"value": "Picloram",
+				"lang": "it"
+			},
+			{
+				"type": "literal",
+				"value": "بايكلورام",
+				"lang": "ar"
+			},
+			{
+				"type": "literal",
+				"value": "Picloram",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "Picloram",
+				"lang": "pt"
+			},
+			{
+				"type": "literal",
+				"value": "Піклорам",
+				"lang": "uk"
+			},
+			{
+				"type": "literal",
+				"value": "Picloram",
+				"lang": "nl"
+			},
+			{
+				"type": "literal",
+				"value": "Пиклорам",
+				"lang": "ru"
+			},
+			{
+				"type": "literal",
+				"value": "Picloram",
+				"lang": "de"
+			}
+		],
+		"http://www.w3.org/2000/01/rdf-schema#comment": [
+			{
+				"type": "literal",
+				"value": "Picloram ist ein chloriertes Derivat der Picolinsäure, einem Isomer der Nicotinsäure. Die heterocyclische Verbindung aus der Gruppe der Azine leitet sich vom Pyridin ab.Als Herbizid ist der Wirkstoff unter der Handelsbezeichnung Tordon bekannt.",
+				"lang": "de"
+			},
+			{
+				"type": "literal",
+				"value": "Picloram is a systemic herbicide used for general woody plant control. It also controls a wide range of broad-leaved weeds, but most grasses are resistant. A chlorinated derivative of picolinic acid, picloram is in the pyridine family of herbicides. Picloram can be sprayed on foliage, injected into plants, applied to cut surfaces, or placed at the base of the plant where it will leach to the roots. Once absorbed by the foliage, stem, or roots, picloram is transported throughout the plant.",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "Picloram ou tordon é um herbicida, caracterizado pela odor de cloro e pela solubilidade em compostos polares. É um sólido branco, encontrado no mercado como sal amínico ou potássico.",
+				"lang": "pt"
+			},
+			{
+				"type": "literal",
+				"value": "Il picloram è un erbicida sistemico usato per il controllo di infestanti arbustive, venduto con i nomi commerciali Tordon e Grazon. È efficace anche per il controllo di un ampio spettro di infestanti a foglia larga, ma la maggior parte delle erbe sono resistenti. Derivato dell'acido picolinico, il picloram appartiene alla famiglia degli erbicidi piridinici. Durante la guerra del Vietnam, una mistura di picloram e 2,4-D, conosciuto come Agente Bianco, era irrorato sopra la vegetazione che aveva resistito all'Agente Arancio (2,4,5-T e 2,4-D).",
+				"lang": "it"
+			},
+			{
+				"type": "literal",
+				"value": "Піклорам — хлорпохідна піколінової кислоти, системний гербіцид із групи піридинів, використовується для контролю деревних рослин. Також ефективний проти широкого спектра широколистих бур'янів, хоча більшість трав стійкі до його дії. Піклорам можна розпорошувати на листя, вводити у вигляді ін'єкцій, наносити на порізи рослин, або помістити біля основи рослини, де він може просочуватися до коріння. Поглинений листям, стеблом або корінням, піклорам поширюється по всій рослині.",
+				"lang": "uk"
+			},
+			{
+				"type": "literal",
+				"value": "Pikloram (tordon, kwas 4-amino-3,5,6-trichloropikolinowy) – organiczny związek chemiczny, jeden z najskuteczniejszych fitotoksycznych bojowych środków trujących. Tordon jest białym proszkiem, rozpuszcza się w wodzie, nierozpuszczalny w olejach. Jako pochodna należy do grupy herbicydów opartych na strukturze pirydyny. Tordon był stosowany przez Amerykanów podczas wojny w Wietnamie jako składnik mieszanki białej.",
+				"lang": "pl"
+			},
+			{
+				"type": "literal",
+				"value": "Picloram (ISO-naam) is een herbicide. Het is een chloorhoudend derivaat van picolinezuur, dat een isomeer is van nicotinezuur. In commerciële producten is picloram aanwezig in de vorm van een zout of een ester, meestal het kaliumzout picloram-kalium, of het tri-isopropanolaminezout picloram-TIPA. Deze zouten zijn wateroplosbaar. In de planten of in het milieu worden ze snel omgezet in de biologisch actieve zuurvorm.",
+				"lang": "nl"
+			},
+			{
+				"type": "literal",
+				"value": "بايكلورام هو مركب عضوي مبيد للأعشاب يستخدم للسيطرة بصورة عامة على النباتات الخشبية، كما أنه يتحكم في مجموعة واسعة من الأعشاب عريضة الأوراق، إلا أن معظم الأعشاب مقاومة لللبايكلورام. مركب البايكلورام هو مشتق مكلور من حمض البيكولينيك، وينتمي إلى عائلة البيريدين من مبيدات الأعشاب. يمكن رش البكلورام على أوراق الشجر أو حقنها في النباتات أو وضعها على الأسطح المقطوعة أو وضعها في قاعدة النبات حيث تتسرب إلى الجذور. بمجرد امتصاص أوراق الشجر أو الساق أو الجذور لها، ومن ثم ينتقل البايكلورام إلى جميع أنحاء النبات.",
+				"lang": "ar"
+			},
+			{
+				"type": "literal",
+				"value": "Пиклорам — хлорпроизводное пиколиновой кислоты системный гербицид из группы пиридинов, используется для контроля древесных растений. Он также эффективен против широкого спектра широколиственных сорняков, хотя большинство трав устойчивы к его действию. Пиклорам можно распылять на листву, вводить в виде инъекций, наносить на порезы растений, или поместить у основания растения, где он может просачиваться к корням. Поглощённый листвой, стеблем или корнями, пиклорам распространяется по всему растению.",
+				"lang": "ru"
+			}
+		],
+		"http://xmlns.com/foaf/0.1/depiction": [
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/Picloram.png"
+			},
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/Picloram-3D-spacefill.png"
+			}
+		],
+		"http://purl.org/dc/terms/subject": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Aminopyridines"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Carboxylic_acids"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Auxinic_herbicides"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Chloropyridines"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Herbicides"
+			}
+		],
+		"http://dbpedia.org/ontology/abstract": [
+			{
+				"type": "literal",
+				"value": "بايكلورام هو مركب عضوي مبيد للأعشاب يستخدم للسيطرة بصورة عامة على النباتات الخشبية، كما أنه يتحكم في مجموعة واسعة من الأعشاب عريضة الأوراق، إلا أن معظم الأعشاب مقاومة لللبايكلورام. مركب البايكلورام هو مشتق مكلور من حمض البيكولينيك، وينتمي إلى عائلة البيريدين من مبيدات الأعشاب. يمكن رش البكلورام على أوراق الشجر أو حقنها في النباتات أو وضعها على الأسطح المقطوعة أو وضعها في قاعدة النبات حيث تتسرب إلى الجذور. بمجرد امتصاص أوراق الشجر أو الساق أو الجذور لها، ومن ثم ينتقل البايكلورام إلى جميع أنحاء النبات. تُباع مبيدات الأعشاب التي تحتوي على مادة البايكلورام تحت أسماء تجارية متنوعة، فعلى سبيل المثال تبيع شركة دو للكيماويات بالولايات المتحدة الأمريكية مبيدات الأعشاب التي تحتوي علي مركبات البايكلورام تحت الاسم التجاري توردون. قامت القوات الأمريكية خلال حرب فيتنام بالجمع بين مادة البيكلورام ومبيدات الأعشاب الأخرى لجعل العامل الأبيض (المتاح تجاريًا باسم توردون 101) والعامل البرتقالي المعزز، والذي سبق وأن طور الجيش البريطاني أبحاته أثناء طوارئ الملايو، ومن ثم قامت القوات الأمريكية برش كميات كبيرة من مبيدات الأعشاب هذه في المناطق التي اعتبروا أن الثبات طويل الأمد لهذه المركبات مطلوب فيها مثل الغابات الداخلية.",
+				"lang": "ar"
+			},
+			{
+				"type": "literal",
+				"value": "Picloram ist ein chloriertes Derivat der Picolinsäure, einem Isomer der Nicotinsäure. Die heterocyclische Verbindung aus der Gruppe der Azine leitet sich vom Pyridin ab.Als Herbizid ist der Wirkstoff unter der Handelsbezeichnung Tordon bekannt.",
+				"lang": "de"
+			},
+			{
+				"type": "literal",
+				"value": "Picloram is a systemic herbicide used for general woody plant control. It also controls a wide range of broad-leaved weeds, but most grasses are resistant. A chlorinated derivative of picolinic acid, picloram is in the pyridine family of herbicides. Picloram can be sprayed on foliage, injected into plants, applied to cut surfaces, or placed at the base of the plant where it will leach to the roots. Once absorbed by the foliage, stem, or roots, picloram is transported throughout the plant. Herbicides containing picloram are sold under a variety of brand names. Dow Chemicals and now Dow AgroSciences sell herbicides containing it under the brand name Tordon. During the Vietnam War, picloram and other herbicides were combined to make Agent White (commercially available as Tordon 101) and enhanced Agent Orange, which was previously conducted by the British military during the Malayan Emergency. Large quantities of these herbicides were sprayed by U.S. forces in areas where they considered its long-term persistence desirable, such as inland forests.",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "Pikloram (tordon, kwas 4-amino-3,5,6-trichloropikolinowy) – organiczny związek chemiczny, jeden z najskuteczniejszych fitotoksycznych bojowych środków trujących. Tordon jest białym proszkiem, rozpuszcza się w wodzie, nierozpuszczalny w olejach. Jako pochodna należy do grupy herbicydów opartych na strukturze pirydyny. Jest skuteczny przeciwko roślinom dwuliściennym, natomiast większość traw jest na niego niewrażliwa. Wnika w glebę na głębokość 60-120 cm. Zachowuje aktywność nawet przez 2 lata. Działa przez układ korzeniowy, dobrze wnika przez części zielone roślin. Stosowany w ilościach rzędu kilku kilogramów na hektar. Jest mało toksyczny dla ludzi. Tordon był stosowany przez Amerykanów podczas wojny w Wietnamie jako składnik mieszanki białej.",
+				"lang": "pl"
+			},
+			{
+				"type": "literal",
+				"value": "Пиклорам — хлорпроизводное пиколиновой кислоты системный гербицид из группы пиридинов, используется для контроля древесных растений. Он также эффективен против широкого спектра широколиственных сорняков, хотя большинство трав устойчивы к его действию. Пиклорам можно распылять на листву, вводить в виде инъекций, наносить на порезы растений, или поместить у основания растения, где он может просачиваться к корням. Поглощённый листвой, стеблем или корнями, пиклорам распространяется по всему растению.",
+				"lang": "ru"
+			},
+			{
+				"type": "literal",
+				"value": "Picloram ou tordon é um herbicida, caracterizado pela odor de cloro e pela solubilidade em compostos polares. É um sólido branco, encontrado no mercado como sal amínico ou potássico.",
+				"lang": "pt"
+			},
+			{
+				"type": "literal",
+				"value": "Піклорам — хлорпохідна піколінової кислоти, системний гербіцид із групи піридинів, використовується для контролю деревних рослин. Також ефективний проти широкого спектра широколистих бур'янів, хоча більшість трав стійкі до його дії. Піклорам можна розпорошувати на листя, вводити у вигляді ін'єкцій, наносити на порізи рослин, або помістити біля основи рослини, де він може просочуватися до коріння. Поглинений листям, стеблом або корінням, піклорам поширюється по всій рослині.",
+				"lang": "uk"
+			},
+			{
+				"type": "literal",
+				"value": "Il picloram è un erbicida sistemico usato per il controllo di infestanti arbustive, venduto con i nomi commerciali Tordon e Grazon. È efficace anche per il controllo di un ampio spettro di infestanti a foglia larga, ma la maggior parte delle erbe sono resistenti. Derivato dell'acido picolinico, il picloram appartiene alla famiglia degli erbicidi piridinici. Il picloram può essere spruzzato sul fogliame, iniettato nei fusti delle piante, applicato su superfici di tagli od alla base della pianta dove percolerà fino alle radici. Una volta assorbito dalle foglie, fusti o radici, il picloram è trasportato attraverso la pianta. Durante la guerra del Vietnam, una mistura di picloram e 2,4-D, conosciuto come Agente Bianco, era irrorato sopra la vegetazione che aveva resistito all'Agente Arancio (2,4,5-T e 2,4-D). Il picloram è moderatamente tossico per gli occhi e la pelle. Non c'è traccia documentale di intossicazione umana da picloram per cui i sintomi da esposizione sono difficilmente caratterizzabili. Una possibile conseguenza dell'esposizione diretta a forti dosi di picloram è la comparsa di nausea. Il picloram è il più resistente della sua famiglia di erbicidi. Non impregna il suolo ma può filtrare nella falda acquifera. Nel suolo e nell'acqua viene degradata dall'azione microbica. Il picloram ha scarsa tendenza ad accumularsi nella fauna acquatica. I giardinieri che usano lo stabbio come fertilizzante dovrebbero accertarsi che gli animali dai quali è ricavato non abbiamo pascolato in campi trattati con picloram o non siano stati nutriti con fieno trattato con picloram, dal momento che lo stabbio potrebbe risultare potenzialmente erbicida.",
+				"lang": "it"
+			},
+			{
+				"type": "literal",
+				"value": "Picloram (ISO-naam) is een herbicide. Het is een chloorhoudend derivaat van picolinezuur, dat een isomeer is van nicotinezuur. In commerciële producten is picloram aanwezig in de vorm van een zout of een ester, meestal het kaliumzout picloram-kalium, of het tri-isopropanolaminezout picloram-TIPA. Deze zouten zijn wateroplosbaar. In de planten of in het milieu worden ze snel omgezet in de biologisch actieve zuurvorm. Picloram is ontwikkeld door Dow Chemical dat het verkoopt in de producten met de merknamen Tordon, Pathway en Grazon. Dit laatste bestaat uit een mengsel van picloram met triclopyr of 2,4-dichloorfenoxyazijnzuur. Het werd voor het eerst geregistreerd in 1963 in de Verenigde Staten. Picloram werd in de Vietnamoorlog gebruikt, in combinatie met 2,4-dichloorfenoxyazijnzuur in het ontbladeringsmiddel Agent Orange. Dezelfde combinatie wordt gebruikt in het product Tordon 101.",
+				"lang": "nl"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Carboxylic_acids"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Pyridine"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picolinic_acid"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Vietnam_War"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Dow_AgroSciences"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Agent_White"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Aminopyridines"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Malayan_Emergency"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Dow_Chemicals"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Agent_Orange"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Herbicides"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Chlorine"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Occupational_Safety_and_Health_Administration"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Chloropyridines"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Permissible_exposure_limit"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Category:Auxinic_herbicides"
+			}
+		],
+		"http://dbpedia.org/property/wikiPageUsesTemplate": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Redirect"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:PPDB"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Ebicite"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Chembox_Properties"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Chembox"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Chembox_Identifiers"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Chembox_Hazards"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Stdinchicite"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Fdacite"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Keggcite"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Herbicides"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Cascite"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Template:Chemspidercite"
+			}
+		],
+		"http://dbpedia.org/ontology/thumbnail": [
+			{
+				"type": "uri",
+				"value": "http://commons.wikimedia.org/wiki/Special:FilePath/Picloram.png?width=300"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRevisionID": [
+			{
+				"type": "literal",
+				"value": 1073487273,
+				"datatype": "http://www.w3.org/2001/XMLSchema#integer"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageLength": [
+			{
+				"type": "literal",
+				"value": "6034",
+				"datatype": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageID": [
+			{
+				"type": "literal",
+				"value": 2910512,
+				"datatype": "http://www.w3.org/2001/XMLSchema#integer"
+			}
+		],
+		"http://www.w3.org/2002/07/owl#sameAs": [
+			{
+				"type": "uri",
+				"value": "http://rdf.freebase.com/ns/m.08bzqf"
+			},
+			{
+				"type": "uri",
+				"value": "http://ru.dbpedia.org/resource/Пиклорам"
+			},
+			{
+				"type": "uri",
+				"value": "http://pt.dbpedia.org/resource/Picloram"
+			},
+			{
+				"type": "uri",
+				"value": "http://yago-knowledge.org/resource/Picloram"
+			},
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			},
+			{
+				"type": "uri",
+				"value": "http://fi.dbpedia.org/resource/Pikloraami"
+			},
+			{
+				"type": "uri",
+				"value": "http://nl.dbpedia.org/resource/Picloram"
+			},
+			{
+				"type": "uri",
+				"value": "http://ar.dbpedia.org/resource/بايكلورام"
+			},
+			{
+				"type": "uri",
+				"value": "http://fa.dbpedia.org/resource/پیکلورام"
+			},
+			{
+				"type": "uri",
+				"value": "http://sr.dbpedia.org/resource/Pikloram"
+			},
+			{
+				"type": "uri",
+				"value": "http://it.dbpedia.org/resource/Picloram"
+			},
+			{
+				"type": "uri",
+				"value": "http://gl.dbpedia.org/resource/Picloram"
+			},
+			{
+				"type": "uri",
+				"value": "https://global.dbpedia.org/id/3w4E7"
+			},
+			{
+				"type": "uri",
+				"value": "http://pl.dbpedia.org/resource/Pikloram"
+			},
+			{
+				"type": "uri",
+				"value": "http://www.wikidata.org/entity/Q424662"
+			},
+			{
+				"type": "uri",
+				"value": "http://th.dbpedia.org/resource/พิคลอแรม"
+			},
+			{
+				"type": "uri",
+				"value": "http://sh.dbpedia.org/resource/Pikloram"
+			},
+			{
+				"type": "uri",
+				"value": "http://uk.dbpedia.org/resource/Піклорам"
+			},
+			{
+				"type": "uri",
+				"value": "http://azb.dbpedia.org/resource/پیکلورام"
+			},
+			{
+				"type": "uri",
+				"value": "http://de.dbpedia.org/resource/Picloram"
+			}
+		],
+		"http://purl.org/linguistics/gold/hypernym": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Herbicide"
+			}
+		],
+		"http://www.w3.org/ns/prov#wasDerivedFrom": [
+			{
+				"type": "uri",
+				"value": "http://en.wikipedia.org/wiki/Picloram?oldid=1073487273&ns=0"
+			}
+		],
+		"http://xmlns.com/foaf/0.1/isPrimaryTopicOf": [
+			{
+				"type": "uri",
+				"value": "http://en.wikipedia.org/wiki/Picloram"
+			}
+		],
+		"http://dbpedia.org/property/othernames": [
+			{
+				"type": "literal",
+				"value": "Picloram",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "Tordon",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "Grazon",
+				"lang": "en"
+			}
+		],
+		"http://dbpedia.org/ontology/iupacName": [
+			{
+				"type": "literal",
+				"value": "4-Amino-3,5,6-trichloropyridine-2-carboxylic acid",
+				"lang": "en"
+			}
+		],
+		"http://dbpedia.org/property/verifiedfields": [
+			{
+				"type": "literal",
+				"value": "changed",
+				"lang": "en"
+			}
+		],
+		"http://dbpedia.org/ontology/alternativeName": [
+			{
+				"type": "literal",
+				"value": "Grazon",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "Picloram",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "Tordon",
+				"lang": "en"
+			}
+		],
+		"http://dbpedia.org/property/verifiedrevid": [
+			{
+				"type": "literal",
+				"value": 472033103,
+				"datatype": "http://www.w3.org/2001/XMLSchema#integer"
+			}
+		],
+		"http://dbpedia.org/property/watchedfields": [
+			{
+				"type": "literal",
+				"value": "changed",
+				"lang": "en"
+			}
+		],
+		"http://dbpedia.org/property/imagesize": [
+			{
+				"type": "literal",
+				"value": 160,
+				"datatype": "http://www.w3.org/2001/XMLSchema#integer"
+			}
+		],
+		"http://dbpedia.org/property/pin": [
+			{
+				"type": "literal",
+				"value": 4,
+				"datatype": "http://www.w3.org/2001/XMLSchema#integer"
+			}
+		],
+		"http://dbpedia.org/property/imagefile": [
+			{
+				"type": "literal",
+				"value": "Picloram.png",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "Picloram-3D-spacefill.png",
+				"lang": "en"
+			}
+		],
+		"http://dbpedia.org/property/imagealt": [
+			{
+				"type": "literal",
+				"value": "Picloram molecule",
+				"lang": "en"
+			},
+			{
+				"type": "literal",
+				"value": "Skeletal formula",
+				"lang": "en"
+			}
+		]
+	},
+	"http://en.wikipedia.org/wiki/Picloram": {
+		"http://xmlns.com/foaf/0.1/primaryTopic": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Organic_fertilizer": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Centaurea_calcitrapa": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Kudzu_in_the_United_States": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Index_of_pesticide_articles": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Delphinium_barbeyi": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Agent_Orange_Act_of_1991": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Carduus_pycnocephalus": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Gutierrezia_microcephala": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Herbicidal_warfare": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Aminopyralid": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Herbicide": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Operation_Ranch_Hand": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Schinus_terebinthifolia": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Clopyralid": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Woody_plant_encroachment": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/IARC_group_3": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Rainbow_Herbicides": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/List_of_MeSH_codes_(D03)": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Centaurea_solstitialis": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Atriplex_semibaccata": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Etrog": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Centaurea_iberica": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Convolvulus_arvensis": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Hypericum_perforatum": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Gila_National_Forest": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/Tordon": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/C6H3Cl3N2O2": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/4-Amino-3,5,6-trichloro-2-picolinic_acid": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/4-Amino-3,5,6-trichloropicolinic_acid": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/ATCP": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	},
+	"http://dbpedia.org/resource/TORDON": {
+		"http://dbpedia.org/ontology/wikiPageWikiLink": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		],
+		"http://dbpedia.org/ontology/wikiPageRedirects": [
+			{
+				"type": "uri",
+				"value": "http://dbpedia.org/resource/Picloram"
+			}
+		]
+	}
+}
