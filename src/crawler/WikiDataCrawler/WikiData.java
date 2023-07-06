@@ -27,6 +27,7 @@ public class WikiData{
         if (bruteForceLimit != -1){
             wikiBruteForceData.setBruteForceAnalyseLimit(bruteForceLimit);
         }
+
         wikiBruteForceData.getBruteForceData();
         DataHandling.print("Done brute force Wiki data");
 

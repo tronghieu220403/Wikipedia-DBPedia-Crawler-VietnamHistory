@@ -10,16 +10,17 @@ public class CrawlData {
     public static void main(String[] args) throws Exception {
         String wikiPath = "raw/Wikipedia/";
         String dbpediaPath = "raw/DBPedia/";
-
+        
         WikiData wikiData = new WikiData(wikiPath);
         wikiData.setBruteForceLimit(0);
         wikiData.getData();
-
+        
+        /*
         DBPediaData dbpediaData = new DBPediaData(dbpediaPath);
         dbpediaData.getBruteForceData();
         dbpediaData.syncData();
         DataHandling.print("Done dbpediaData");
-
+        */
         Merge mergeData = new Merge();
         mergeData.merge("data/", wikiPath, dbpediaPath, Merge.createSource("Wikipedia"), Merge.createSource("DBPedia"));
         DataHandling.print("Done merge");
