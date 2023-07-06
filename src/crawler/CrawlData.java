@@ -1,32 +1,20 @@
 package crawler;
 
+import crawler.DBPediaDataCrawler.DBPediaData;
+import crawler.DataManage.DataHandling;
+import crawler.DataManage.Merge;
+import crawler.DataManage.ModifyData;
+import crawler.WikiDataCrawler.*;
+
 public class CrawlData {
     public static void main(String[] args) throws Exception {
         String wikiPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/";
         String dbpediaPath = "E:/Code/Java/OOP_Project/saveddata/DBPedia/";
 
-        WikiBruteForceData wikiBruteForceData = new WikiBruteForceData(wikiPath);
-        wikiBruteForceData.setBruteForceAnalyseLitmit(0);
-        wikiBruteForceData.getBruteForceData();
-        DataHandling.print("Done brute force");
+        WikiData wikiData = new WikiData(wikiPath);
+        wikiData.setBruteForceLimit(100000);
+        wikiData.getData();
 
-        WikiSelectiveData wikiSelectiveData = new WikiSelectiveData(wikiPath);
-        wikiSelectiveData.selectiveDataQueries();
-        wikiSelectiveData.analyzeSelectiveData();
-        DataHandling.print("Done selective");
-        
-        WikiTableData wikiTableData = new WikiTableData(wikiPath);
-        wikiTableData.tableDataQueries();
-        DataHandling.print("Done table");
-
-        wikiBruteForceData.entityRefFinal();
-        wikiBruteForceData.resetEntityRef();
-        DataHandling.print("Done rewrite ref");
-
-        WikiDataExport wikiDataExport = new WikiDataExport(wikiPath);
-        wikiDataExport.export();
-        DataHandling.print("Done export");
-        
         DBPediaData dbpediaData = new DBPediaData(dbpediaPath);
         dbpediaData.getBruteForceData();
         dbpediaData.syncData();
@@ -34,7 +22,6 @@ public class CrawlData {
 
         Merge mergeData = new Merge();
         mergeData.merge("data", wikiPath, dbpediaPath, Merge.createSource("Wikipedia"), Merge.createSource("DBPedia"));
-
         DataHandling.print("Done merge");
 
         ModifyData md = new ModifyData();

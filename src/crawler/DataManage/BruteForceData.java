@@ -1,4 +1,6 @@
-package crawler;
+package crawler.DataManage;
+
+import crawler.WikiDataCrawler.WikiDataHandling;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -6,9 +8,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
-
-public class EntityHandling extends DataHandling{
-
+public class BruteForceData extends DataFolder {
     class Pair
     {
         public String first;
@@ -43,35 +43,38 @@ public class EntityHandling extends DataHandling{
     private int totalAnalysed;
     private int limitAmountAnalysis = 150000;
 
+
     /**
      * Set up an environment for saving data.
      * @param path Your path where the crawled data will be stored.
      */
-    public EntityHandling(String path)
+    public BruteForceData(String path)
     {
+        super(path);
         if (path.charAt(path.length()-1) != (char)('/') && path.charAt(path.length()-1) != (char)('\\'))
         {
             path = path + "/";
         }
         ROOT_PATH = path;
         DATA_PATH = path + "data/";
-        createFolder(DATA_PATH);
+        DataHandling.createFolder(DATA_PATH);
         INITIALIZE_PATH = path + "initialize/";
-        createFolder(INITIALIZE_PATH);
+        DataHandling.createFolder(INITIALIZE_PATH);
         LOGS_PATH = path + "logs/";
-        createFolder(LOGS_PATH);
+        DataHandling.createFolder(LOGS_PATH);
         ENTITY_JSON_PATH = LOGS_PATH + "EntityJson/";
-        createFolder(ENTITY_JSON_PATH);
+        DataHandling.createFolder(ENTITY_JSON_PATH);
         BEGIN_URLS_PATH = LOGS_PATH + "BeginURLs.txt";
         CRAFTED_URLS_PATH = LOGS_PATH + "CraftedURLs.txt";
         ANALYSED_URLS_PATH = LOGS_PATH + "AnalysedURLs.txt";
         FAILED_URLS_PATH = LOGS_PATH + "FailedURLs.txt";
     }
 
-    public EntityHandling()
+    public BruteForceData()
     {
         throw new IllegalArgumentException("File path must be provided");
     }
+
 
     /**
      * This method is used to scrape data.
@@ -81,45 +84,44 @@ public class EntityHandling extends DataHandling{
     public final void getBruteForceData() throws Exception
     {
         getVietnamRelatedEntity();
-        failedURLsHashSet = new HashSet<>(readFileAllLine(FAILED_URLS_PATH));
-        analysedURLsHashSet = new HashSet<>(readFileAllLine(ANALYSED_URLS_PATH));
+        failedURLsHashSet = new HashSet<>(DataHandling.readFileAllLine(FAILED_URLS_PATH));
+        analysedURLsHashSet = new HashSet<>(DataHandling.readFileAllLine(ANALYSED_URLS_PATH));
         totalAnalysed += failedURLsHashSet.size() + analysedURLsHashSet.size();
-        if (totalAnalysed > limitAmountAnalysis)
+        if (totalAnalysed < limitAmountAnalysis)
         {
-            return;
-        }
-        List<String> craftedURLsList = readFileAllLine(CRAFTED_URLS_PATH);
-        if (craftedURLsList.size()==0)
-        {
-            String beginURLs = readFileAll(BEGIN_URLS_PATH);
-            writeFile(CRAFTED_URLS_PATH, beginURLs + "\n0\n", false);
-            deque.addLast(new Pair(beginURLs, 0));
-            craftedURLsHashMap.put(beginURLs, 0);
-        }
-        else
-        {
-            for (int i = 0; i < craftedURLsList.size(); i+=2)
+            List<String> craftedURLsList = DataHandling.readFileAllLine(CRAFTED_URLS_PATH);
+            if (craftedURLsList.size()==0)
             {
-                String urlString = craftedURLsList.get(i);
-                urlString = filterURL(urlString);
-                int depth = Integer.parseInt(craftedURLsList.get(i+1));
-                if (WikiDataHandling.checkURL(urlString, false) == false) continue;
-                if (existInAnalysedURL(urlString)) continue;
-                craftedURLsHashMap.put(urlString, depth);
-                deque.addLast(new Pair(urlString, depth));
+                String beginURLs = DataHandling.readFileAll(BEGIN_URLS_PATH);
+                DataHandling.writeFile(CRAFTED_URLS_PATH, beginURLs + "\n0\n", false);
+                deque.addLast(new Pair(beginURLs, 0));
+                craftedURLsHashMap.put(beginURLs, 0);
             }
-        }
+            else
+            {
+                for (int i = 0; i < craftedURLsList.size(); i+=2)
+                {
+                    String urlString = craftedURLsList.get(i);
+                    urlString = filterURL(urlString);
+                    int depth = Integer.parseInt(craftedURLsList.get(i+1));
+                    if (WikiDataHandling.checkURL(urlString, false) == false) continue;
+                    if (existInAnalysedURL(urlString)) continue;
+                    craftedURLsHashMap.put(urlString, depth);
+                    deque.addLast(new Pair(urlString, depth));
+                }
+            }
 
-        while(deque.size()!=0)
-        {
-            int depth = deque.getFirst().second;
-            String urlString = deque.getFirst().first;
-            if ( depth <= 3 && totalAnalysed <= limitAmountAnalysis)
+            while(deque.size()!=0)
             {
-                entityAnalys(urlString, depth, true);
-                totalAnalysed++;
+                int depth = deque.getFirst().second;
+                String urlString = deque.getFirst().first;
+                if ( depth <= 3 && totalAnalysed <= limitAmountAnalysis)
+                {
+                    entityAnalys(urlString, depth, true);
+                    totalAnalysed++;
+                }
+                deque.removeFirst();
             }
-            deque.removeFirst();
         }
         getDataCallBack();
     }
@@ -128,7 +130,7 @@ public class EntityHandling extends DataHandling{
      * Set the limitation of the number of entities to analyze.
      * @param newLimit
      */
-    public void setBruteForceAnalyseLitmit(int newLimit)
+    public void setBruteForceAnalyseLimit(int newLimit)
     {
         limitAmountAnalysis = newLimit;
     }
@@ -155,7 +157,7 @@ public class EntityHandling extends DataHandling{
             {
                 deque.add(new Pair(urlString, depth + 1));
                 String content = urlString + '\n' + String.valueOf(depth+1)+ '\n';
-                writeFile(CRAFTED_URLS_PATH, content, true);
+                DataHandling.writeFile(CRAFTED_URLS_PATH, content, true);
                 craftedURLsHashMap.put(urlString, depth + 1);
             }
         }
@@ -181,7 +183,7 @@ public class EntityHandling extends DataHandling{
         if (!existInAnalysedURL(urlString))
         {
             analysedURLsHashSet.add(urlString);
-            writeFile(ANALYSED_URLS_PATH, urlString + '\n', true);
+            DataHandling.writeFile(ANALYSED_URLS_PATH, urlString + '\n', true);
         }
     }
 
@@ -193,7 +195,7 @@ public class EntityHandling extends DataHandling{
         if (!existInAnalysedURL(urlString))
         {
             failedURLsHashSet.add(urlString);
-            writeFile(FAILED_URLS_PATH, urlString + '\n', true);
+            DataHandling.writeFile(FAILED_URLS_PATH, urlString + '\n', true);
         }
     }
 
@@ -238,4 +240,5 @@ public class EntityHandling extends DataHandling{
     protected void getWikiProperties() throws Exception{
         throw new UnsupportedOperationException("Unimplemented method 'entityAnalys' from EntityHandling. Must be overriden in subclasss.");
     }
+
 }

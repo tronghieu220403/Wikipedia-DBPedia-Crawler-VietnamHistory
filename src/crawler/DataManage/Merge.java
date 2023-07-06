@@ -1,4 +1,4 @@
-package crawler;
+package crawler.DataManage;
 
 import java.util.ArrayList;
 import java.util.Collections;

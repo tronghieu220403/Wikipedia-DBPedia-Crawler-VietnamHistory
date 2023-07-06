@@ -1,4 +1,4 @@
-package crawler;
+package crawler.WikiDataCrawler;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,6 +7,9 @@ import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import crawler.DataManage.DataHandling;
+
 
 public class WikiDataExport extends WikiFolder {
     public static void main(String[] args) throws Exception {

@@ -1,4 +1,6 @@
-package crawler;
+package crawler.WikiDataCrawler;
+
+import crawler.DataManage.DataHandling;
 
 import java.io.IOException;
 import java.util.ArrayList;
