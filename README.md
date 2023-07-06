@@ -2,12 +2,12 @@
 
 This is a mini-project in Object Oriented Programming course of SoICT - HUST.
 
-- [Problem](##problem)
+- [Problem](#problem)
 - [Solution](#solution)
-- [Folder structure](##structure)
+- [Folder structure](#structure)
 - [Result](#result)
-- [Contributors to this project](##contributors)
-- [VS Code for Java](##vs-code-java)
+- [Contributors to this project](#contributors)
+- [VS Code for Java](#vs-code-java)
 
 Problem
 -------
@@ -42,7 +42,7 @@ Historical figures of Hung King:
 Solution
 --------
 
-### Wikipedia
+## Wikipedia
 Entities web pages on Wikipedia often have a [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page) item (from the Wikipedia website: Tools -> Wikidata Item). When accessing, we will see a lot of properties of the entity in the form of tables. This is **Structured Data.**
 
 *"Each Item or Property has a persistent URI made up of the Wikidata concept namespace and the Item or Property ID (e.g., Q42, P31) as well as concrete data that can be accessed by that Item's or Property's data URL."*
@@ -55,7 +55,7 @@ I use the [`Wikidata query builder`](https://query.wikidata.org/querybuilder/?us
 
 Finally, our job now is to transform all of that Wikipedia's .json files into **human-readable** format.
 
-### DBPedia
+## DBPedia
 
 **Compared to Wikipedia, the data in the dbpedia JSON file is simpler, but it also contains a lot of inaccurate information.**
 Entities with **links to entities in Wikipedia** are the only ones I scratch and process. For each entity, I also only receive properties **whose components share the same data type**.
@@ -107,11 +107,11 @@ Sincere thanks to:
 
 VS Code for Java
 ------------
-### Getting Started
+## Getting Started
 
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
-### Folder Structure
+## Folder Structure
 
 The workspace contains two folders by default, where:
 
@@ -122,6 +122,6 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 
 > If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
 
-### Dependency Management
+## Dependency Management
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
