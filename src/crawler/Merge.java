@@ -14,14 +14,14 @@ public class Merge {
         //mergeData.merge("data","E:/Code/Java/OOP_Project/saveddata/Wikipedia/", "E:/Code/Java/OOP_Project/saveddata/DBPedia/data/", createSource("Wikipedia"), createSource("DBPedia"));
     }
 
-    public static String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
+    public static String[] BIG_CATEGORIES = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
 
     public void merge(String exportPath, String path1, String path2, JSONArray src1, JSONArray src2) throws Exception
     {
         path1 += "data/";
         path2 += "data/";
         DataHandling.createFolder(exportPath);
-        for (String bigCategory: bigCategories)
+        for (String bigCategory: BIG_CATEGORIES)
         {
             String path = path1 + bigCategory + "/";
             String exportDataSubFolder = exportPath + "/" + bigCategory;
@@ -29,46 +29,46 @@ public class Merge {
             HashSet<String> fileList = DataHandling.listAllFiles(path);
             for (String fileName: fileList)
             {
-                JSONObject wikiJSON = DataHandling.getJSONFromFile(path + fileName);
+                JSONObject objJson1 = DataHandling.getJSONFromFile(path + fileName);
                 if (DataHandling.fileExist(path2 + fileName))
                 {
-                    JSONObject dbpediaJSON = DataHandling.getJSONFromFile(path2 + fileName);
-                    JSONObject dbpediaClaims = dbpediaJSON.getJSONObject("claims");
-                    JSONObject wikiClaims = wikiJSON.getJSONObject("claims");
+                    JSONObject obj2JSON = DataHandling.getJSONFromFile(path2 + fileName);
+                    JSONObject obj2Claims = obj2JSON.getJSONObject("claims");
+                    JSONObject obj1Claims = objJson1.getJSONObject("claims");
                     JSONObject exportClaims = new JSONObject();
-                    for (String propertyName: DataHandling.getAllKeys(wikiClaims))
+                    for (String propertyName: DataHandling.getAllKeys(obj1Claims))
                     {                        
-                        JSONArray wikiPropertyArr = wikiClaims.getJSONArray(propertyName);
-                        if (dbpediaClaims.has(propertyName))
+                        JSONArray objPropertyArr1 = obj1Claims.getJSONArray(propertyName);
+                        if (obj2Claims.has(propertyName))
                         {
-                            JSONArray dbpediaPropertyArr = dbpediaClaims.getJSONArray(propertyName);
-                            JSONArray fullJoinArr = fullJoin(wikiPropertyArr, dbpediaPropertyArr, src1, src2);
+                            JSONArray obj2PropertyArr = obj2Claims.getJSONArray(propertyName);
+                            JSONArray fullJoinArr = fullJoin(objPropertyArr1, obj2PropertyArr, src1, src2);
                             exportClaims.put(propertyName, fullJoinArr);
                         }
                         else
                         {
-                            for (int i = 0; i < wikiPropertyArr.length(); i++)
+                            for (int i = 0; i < objPropertyArr1.length(); i++)
                             {
-                                wikiPropertyArr.getJSONObject(i).put("source", src1);
+                                objPropertyArr1.getJSONObject(i).put("source", src1);
                             }
-                            exportClaims.put(propertyName, wikiPropertyArr);
+                            exportClaims.put(propertyName, objPropertyArr1);
                         }
                     }
-                    for (String propertyName: DataHandling.getAllKeys(dbpediaClaims))
+                    for (String propertyName: DataHandling.getAllKeys(obj2Claims))
                     {
-                        if (!wikiClaims.has(propertyName))
+                        if (!obj1Claims.has(propertyName))
                         {
-                            JSONArray dbpediaPropertyArr = dbpediaClaims.getJSONArray(propertyName);
-                            for (int i = 0; i < dbpediaPropertyArr.length(); i++)
+                            JSONArray objPropertyArr2 = obj2Claims.getJSONArray(propertyName);
+                            for (int i = 0; i < objPropertyArr2.length(); i++)
                             {
-                                dbpediaPropertyArr.getJSONObject(i).put("source", src2);
+                                objPropertyArr2.getJSONObject(i).put("source", src2);
                             }
-                            exportClaims.put(propertyName, dbpediaClaims.getJSONArray(propertyName));
+                            exportClaims.put(propertyName, obj2Claims.getJSONArray(propertyName));
                         }
                     }
-                    wikiJSON.put("claims", exportClaims);
+                    objJson1.put("claims", exportClaims);
                 }
-                DataHandling.writeFile(exportDataSubFolder + "/" + fileName, wikiJSON.toString(), false);
+                DataHandling.writeFile(exportDataSubFolder + "/" + fileName, objJson1.toString(), false);
             }
         }
     }
@@ -84,6 +84,23 @@ public class Merge {
             srcArray.put(str);
         }
         return srcArray;
+    }
+
+    public static JSONArray createSource(JSONArray src1, JSONArray src2){
+        JSONArray srcArray = new JSONArray();
+        List<String> arr = new ArrayList<>();
+        for (Object source: src1){
+            arr.add((String )source);
+        }
+        for (Object source: src2){
+            arr.add((String )source);
+        }
+        Collections.sort(arr); 
+        for (String str: arr){
+            srcArray.put(str);
+        }
+        return srcArray;
+
     }
 
     public static boolean cmpPropObj(JSONObject obj1, JSONObject obj2){
@@ -108,22 +125,6 @@ public class Merge {
 
     private JSONArray fullJoin(JSONArray arr1, JSONArray arr2, JSONArray src1, JSONArray src2){
         JSONArray ansArr = new JSONArray();
-        JSONArray srcMergeJsonArray = new JSONArray();
-        HashSet<String> srcHashSet = new HashSet<>();
-        for (Object source: src1){
-            srcHashSet.add((String )source);
-        }
-        for (Object source: src2){
-            srcHashSet.add((String )source);
-        }
-        List<String> srcArr = new ArrayList<>();
-        for (String source: srcHashSet){
-            srcArr.add(source);
-        }
-        Collections.sort(srcArr); 
-        for (String str: srcArr){
-            srcMergeJsonArray.put(str);
-        }
         for (int i = 0; i < arr1.length(); i++)
         {
             JSONObject obj1 = arr1.getJSONObject(i);
@@ -132,7 +133,7 @@ public class Merge {
             {
                 JSONObject obj2 = arr2.getJSONObject(j);
                 if (cmpPropObj(obj1, obj2)) {
-                    obj1.put("source", srcMergeJsonArray);
+                    obj1.put("source", createSource(obj1.has("source") ? obj1.getJSONArray("source") : src1, obj2.has("source") ? obj2.getJSONArray("source") : src2));
                     ansArr.put(obj1);
                     isUnique = false;
                     break;
@@ -140,7 +141,7 @@ public class Merge {
             }
             if (isUnique == true)
             {
-                obj1.put("source", src1);
+                obj1.put("source", obj1.has("source") ? obj1.getJSONArray("source") : src1);
                 ansArr.put(obj1);
             }
         }
@@ -157,7 +158,7 @@ public class Merge {
                 }
             }
             if (isUnique == true){
-                obj2.put("source", src2);
+                obj2.put("source", obj2.has("source") ? obj2.getJSONArray("source") : src2);
                 ansArr.put(obj2);
             }
         }
