@@ -90,7 +90,8 @@ public class WikiTableData extends WikiBruteForceData {
                     break;
                 }
             }
-            kingQID = "Q" + Integer.toString(kingName.hashCode()).replace("-", "") + "X";
+            //kingQID = "Q" + Integer.toString(kingName.hashCode()).replace("-", "") + "X";
+            kingQID = DataHandling.createQID(kingName);
         }
 
         addKingProp(kingClaims, rawKingObj);
@@ -116,7 +117,8 @@ public class WikiTableData extends WikiBruteForceData {
         if (!dynastyHashMap.containsKey(dynastyName))
         {
             JSONObject claims = new JSONObject();
-            String qID = "Q" + Integer.toString(dynastyName.hashCode()).replace("-", "") + "X";
+            String qID = DataHandling.createQID(dynastyName);
+
             WikiDataHandling.addProperties(claims, "quốc gia", "Việt Nam");
             WikiDataHandling.addProperties(claims, "là một", "triều đại");
             WikiDataHandling.createNewEntity(dynastyJsonObject, 
@@ -230,7 +232,7 @@ public class WikiTableData extends WikiBruteForceData {
             }
             String qID = json.getString("id");
             if (qID.isEmpty()){
-                qID = "Q" + Integer.toString(locationName.hashCode()).replace("-", "") + "X";
+                qID = DataHandling.createQID(locationName);
                 json.put("id", qID);
             }
             JSONObject claims = json.getJSONObject("claims");

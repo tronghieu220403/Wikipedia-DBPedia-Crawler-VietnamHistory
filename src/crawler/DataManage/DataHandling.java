@@ -429,4 +429,11 @@ public class DataHandling {
     {
         return new HashSet<>(jsonObject.keySet());
     }
+
+    /*
+     * Create new QID for an entity
+     */
+    public static final String createQID(String entityName){
+        return "Q" + Integer.toString(entityName.hashCode()).replace("-", "") + "X";
+    }
 }
