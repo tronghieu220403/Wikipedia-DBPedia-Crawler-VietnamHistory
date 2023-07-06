@@ -1,0 +1,4151 @@
+{
+	"entities": {
+		"P6": {
+			"pageid": 3916689,
+			"ns": 120,
+			"title": "Property:P6",
+			"lastrevid": 1897194819,
+			"modified": "2023-05-16T13:40:40Z",
+			"type": "property",
+			"datatype": "wikibase-item",
+			"id": "P6",
+			"labels": {
+				"en": {
+					"language": "en",
+					"value": "head of government"
+				},
+				"it": {
+					"language": "it",
+					"value": "capo del governo"
+				},
+				"de": {
+					"language": "de",
+					"value": "Leiter der Regierung oder Verwaltung"
+				},
+				"fr": {
+					"language": "fr",
+					"value": "chef ou cheffe de l'exécutif"
+				},
+				"fi": {
+					"language": "fi",
+					"value": "hallituksen johtaja"
+				},
+				"cs": {
+					"language": "cs",
+					"value": "představitel"
+				},
+				"zh-hans": {
+					"language": "zh-hans",
+					"value": "政府首脑"
+				},
+				"hu": {
+					"language": "hu",
+					"value": "kormányzati vagy közigazgatási vezető"
+				},
+				"hr": {
+					"language": "hr",
+					"value": "čelnik vlade"
+				},
+				"es": {
+					"language": "es",
+					"value": "jefe de gobierno"
+				},
+				"ru": {
+					"language": "ru",
+					"value": "глава правительства"
+				},
+				"nl": {
+					"language": "nl",
+					"value": "bestuurshoofd"
+				},
+				"el": {
+					"language": "el",
+					"value": "επικεφαλής ανώτατου διοικητικού οργάνου"
+				},
+				"lmo": {
+					"language": "lmo",
+					"value": "sindéch"
+				},
+				"pl": {
+					"language": "pl",
+					"value": "szef rządu lub urzędu"
+				},
+				"sr": {
+					"language": "sr",
+					"value": "председник владе"
+				},
+				"ca": {
+					"language": "ca",
+					"value": "cap de govern"
+				},
+				"zh": {
+					"language": "zh",
+					"value": "政府首脑"
+				},
+				"ilo": {
+					"language": "ilo",
+					"value": "daulo ti lokal a gobierno"
+				},
+				"be": {
+					"language": "be",
+					"value": "кіраўнік адміністрацыі"
+				},
+				"fa": {
+					"language": "fa",
+					"value": "رئیس‌جمهور یا شهردار"
+				},
+				"nb": {
+					"language": "nb",
+					"value": "øverste politiske forvaltningsleder"
+				},
+				"pt-br": {
+					"language": "pt-br",
+					"value": "chefe do executivo"
+				},
+				"ko": {
+					"language": "ko",
+					"value": "행정부 수반"
+				},
+				"ja": {
+					"language": "ja",
+					"value": "行政府の長"
+				},
+				"uk": {
+					"language": "uk",
+					"value": "керівник виконавчої влади"
+				},
+				"lv": {
+					"language": "lv",
+					"value": "valdības vadītājs"
+				},
+				"eo": {
+					"language": "eo",
+					"value": "estro"
+				},
+				"th": {
+					"language": "th",
+					"value": "หัวหน้ารัฐบาล"
+				},
+				"be-tarask": {
+					"language": "be-tarask",
+					"value": "кіраўнік адміністрацыі"
+				},
+				"nds": {
+					"language": "nds",
+					"value": "Baas vun de Verwaltung"
+				},
+				"ro": {
+					"language": "ro",
+					"value": "șef de guvern"
+				},
+				"vi": {
+					"language": "vi",
+					"value": "người đứng đầu chính quyền"
+				},
+				"id": {
+					"language": "id",
+					"value": "kepala pemerintahan"
+				},
+				"min": {
+					"language": "min",
+					"value": "kapalo pamarintahan satampek"
+				},
+				"ka": {
+					"language": "ka",
+					"value": "მთავრობის მეთაური"
+				},
+				"uz": {
+					"language": "uz",
+					"value": "mahalliy hokimiyat boshligʻi"
+				},
+				"gl": {
+					"language": "gl",
+					"value": "xefe do goberno"
+				},
+				"pt": {
+					"language": "pt",
+					"value": "chefe de governo"
+				},
+				"zh-tw": {
+					"language": "zh-tw",
+					"value": "政府首長"
+				},
+				"zh-hant": {
+					"language": "zh-hant",
+					"value": "政府首長"
+				},
+				"en-gb": {
+					"language": "en-gb",
+					"value": "head of government"
+				},
+				"af": {
+					"language": "af",
+					"value": "hoof van plaaslike regering"
+				},
+				"da": {
+					"language": "da",
+					"value": "leder af forvaltning"
+				},
+				"sv": {
+					"language": "sv",
+					"value": "regeringschef"
+				},
+				"sco": {
+					"language": "sco",
+					"value": "heid o govrenment"
+				},
+				"en-ca": {
+					"language": "en-ca",
+					"value": "head of government"
+				},
+				"sk": {
+					"language": "sk",
+					"value": "vedúci predstaviteľ"
+				},
+				"nds-nl": {
+					"language": "nds-nl",
+					"value": "heufd van lokaal bestuur"
+				},
+				"nn": {
+					"language": "nn",
+					"value": "styresmaktsleiar"
+				},
+				"bn": {
+					"language": "bn",
+					"value": "সরকারের প্রধান"
+				},
+				"oc": {
+					"language": "oc",
+					"value": "cap de l'executiu"
+				},
+				"mk": {
+					"language": "mk",
+					"value": "шеф на владата/управата"
+				},
+				"tl": {
+					"language": "tl",
+					"value": "puno ng pamahalaan"
+				},
+				"gu": {
+					"language": "gu",
+					"value": "સરકારના વડા"
+				},
+				"sl": {
+					"language": "sl",
+					"value": "nosilec oblasti"
+				},
+				"ms": {
+					"language": "ms",
+					"value": "ketua kerajaan"
+				},
+				"ckb": {
+					"language": "ckb",
+					"value": "سەرۆک"
+				},
+				"yi": {
+					"language": "yi",
+					"value": "רעגירונג הויפט"
+				},
+				"sr-ec": {
+					"language": "sr-ec",
+					"value": "председник владе"
+				},
+				"zh-cn": {
+					"language": "zh-cn",
+					"value": "政府首脑"
+				},
+				"is": {
+					"language": "is",
+					"value": "stjórnarleiðtogi"
+				},
+				"mzn": {
+					"language": "mzn",
+					"value": "حکومتِ رییس"
+				},
+				"rm": {
+					"language": "rm",
+					"value": "schef da la regenza"
+				},
+				"et": {
+					"language": "et",
+					"value": "valitsusjuht"
+				},
+				"ta": {
+					"language": "ta",
+					"value": "அரசின் தலைவர்"
+				},
+				"la": {
+					"language": "la",
+					"value": "gubernator"
+				},
+				"tt": {
+					"language": "tt",
+					"value": "хөкүмәт башлыгы"
+				},
+				"te": {
+					"language": "te",
+					"value": "ప్రభుత్వ ముఖ్యాధికారి"
+				},
+				"zh-hk": {
+					"language": "zh-hk",
+					"value": "政府首長"
+				},
+				"or": {
+					"language": "or",
+					"value": "ସରକାର ମୁଖ୍ୟ"
+				},
+				"he": {
+					"language": "he",
+					"value": "ראש הרשות המושלת"
+				},
+				"hi": {
+					"language": "hi",
+					"value": "शासनाध्यक्ष"
+				},
+				"br": {
+					"language": "br",
+					"value": "penn an aotrouniezh"
+				},
+				"ia": {
+					"language": "ia",
+					"value": "capite de governamento"
+				},
+				"sr-el": {
+					"language": "sr-el",
+					"value": "predsednik vlade"
+				},
+				"mg": {
+					"language": "mg",
+					"value": "filohan'ny governemanta"
+				},
+				"eu": {
+					"language": "eu",
+					"value": "gobernuburua"
+				},
+				"scn": {
+					"language": "scn",
+					"value": "capu dû guvernu"
+				},
+				"bs": {
+					"language": "bs",
+					"value": "predsjednik vlade"
+				},
+				"ne": {
+					"language": "ne",
+					"value": "सरकार प्रमुख"
+				},
+				"ar": {
+					"language": "ar",
+					"value": "رئيس الحكومة"
+				},
+				"cy": {
+					"language": "cy",
+					"value": "pennaeth llywodraeth"
+				},
+				"lt": {
+					"language": "lt",
+					"value": "vyriausybės vadovas"
+				},
+				"ast": {
+					"language": "ast",
+					"value": "cabezaleru del gobiernu"
+				},
+				"ps": {
+					"language": "ps",
+					"value": "د حکومت مشر"
+				},
+				"kn": {
+					"language": "kn",
+					"value": "ಸರ್ಕಾರದ ಮುಖ್ಯಸ್ಥರು"
+				},
+				"zh-mo": {
+					"language": "zh-mo",
+					"value": "政府首長"
+				},
+				"hsb": {
+					"language": "hsb",
+					"value": "nawoda knježerstwa abo zarjadnistwa"
+				},
+				"pa": {
+					"language": "pa",
+					"value": "ਸਰਕਾਰ ਦਾ ਮੁਖੀ"
+				},
+				"ml": {
+					"language": "ml",
+					"value": "ഭരണാധികാരി"
+				},
+				"ku-latn": {
+					"language": "ku-latn",
+					"value": "serokê rêveberiyê"
+				},
+				"tg": {
+					"language": "tg",
+					"value": "сарвари ҳукумат"
+				},
+				"hy": {
+					"language": "hy",
+					"value": "կառավարության ղեկավար"
+				},
+				"ba": {
+					"language": "ba",
+					"value": "хөкүмәт башлығы"
+				},
+				"bg": {
+					"language": "bg",
+					"value": "ръководител"
+				},
+				"zh-sg": {
+					"language": "zh-sg",
+					"value": "政府首长"
+				},
+				"lb": {
+					"language": "lb",
+					"value": "Chef vun der Regierung oder Verwaltung"
+				},
+				"tcy": {
+					"language": "tcy",
+					"value": "ಸರ್ಕಾರೊತ ಗುರ್ಕಾರೆರ್"
+				},
+				"yo": {
+					"language": "yo",
+					"value": "olorí ìjọba"
+				},
+				"tr": {
+					"language": "tr",
+					"value": "yönetimin başı"
+				},
+				"sq": {
+					"language": "sq",
+					"value": "kryetar i qeverisjes"
+				},
+				"tg-cyrl": {
+					"language": "tg-cyrl",
+					"value": "сардори ҳукумат"
+				},
+				"az": {
+					"language": "az",
+					"value": "hökumət başçısı"
+				},
+				"ur": {
+					"language": "ur",
+					"value": "سربراہ حکومت"
+				},
+				"arz": {
+					"language": "arz",
+					"value": "رئيس الحكومه"
+				},
+				"ce": {
+					"language": "ce",
+					"value": "правительствон корта"
+				},
+				"tt-cyrl": {
+					"language": "tt-cyrl",
+					"value": "хөкүмәт башлыгы"
+				},
+				"mr": {
+					"language": "mr",
+					"value": "सरकारचे प्रमुख"
+				},
+				"ha": {
+					"language": "ha",
+					"value": "shugaban gwamnati"
+				},
+				"ga": {
+					"language": "ga",
+					"value": "ceannaire an rialtais"
+				},
+				"diq": {
+					"language": "diq",
+					"value": "Serdar"
+				},
+				"fo": {
+					"language": "fo",
+					"value": "stjórnarleiðari"
+				},
+				"hyw": {
+					"language": "hyw",
+					"value": "ղելավարի պաշտօն"
+				},
+				"nqo": {
+					"language": "nqo",
+					"value": "ߟߥߊ߬ߟߌ߬ߟߌ ߞߎ߲߬ߕߌ߮"
+				},
+				"olo": {
+					"language": "olo",
+					"value": "Halličuksen johtai"
+				},
+				"szl": {
+					"language": "szl",
+					"value": "szef regyrōnku abo amtu"
+				},
+				"ms-arab": {
+					"language": "ms-arab",
+					"value": "کتوا کراجاءن"
+				},
+				"kab": {
+					"language": "kab",
+					"value": "aɣella aslekman"
+				},
+				"vec": {
+					"language": "vec",
+					"value": "cao de goerno"
+				},
+				"gsw": {
+					"language": "gsw",
+					"value": "Leiter vo dr Regierig oder vo dr Verwaltig"
+				},
+				"xmf": {
+					"language": "xmf",
+					"value": "თარობაშ მადუდე"
+				},
+				"dag": {
+					"language": "dag",
+					"value": "Tiŋgbani zuɣ'lana"
+				},
+				"pap": {
+					"language": "pap",
+					"value": "kabes di gobièrnu"
+				},
+				"pap-aw": {
+					"language": "pap-aw",
+					"value": "cabes di gobierno"
+				},
+				"nap": {
+					"language": "nap",
+					"value": "capo d''o governo"
+				},
+				"gd": {
+					"language": "gd",
+					"value": "ceannard an riaghaltais"
+				},
+				"ig": {
+					"language": "ig",
+					"value": "Onyeisi gọọmenti"
+				},
+				"kcg": {
+					"language": "kcg",
+					"value": "a̱kwak a̱son a̱gwomna̱ti"
+				},
+				"ff": {
+					"language": "ff",
+					"value": "Hooreejo leydi"
+				},
+				"kw": {
+					"language": "kw",
+					"value": "penn governans"
+				},
+				"gpe": {
+					"language": "gpe",
+					"value": "government hin head"
+				},
+				"mn": {
+					"language": "mn",
+					"value": "засгийн газрын тэргүүн"
+				},
+				"ks": {
+					"language": "ks",
+					"value": "حکوٗمَتھُک سَربرا"
+				},
+				"pnb": {
+					"language": "pnb",
+					"value": "سرکار دا مکھی"
+				},
+				"sw": {
+					"language": "sw",
+					"value": "mkuu wa serikali"
+				},
+				"ary": {
+					"language": "ary",
+					"value": "لوزير اللول"
+				},
+				"udm": {
+					"language": "udm",
+					"value": "Кивалтэтлэн Тӧроез"
+				}
+			},
+			"descriptions": {
+				"en": {
+					"language": "en",
+					"value": "head of the executive power of this town, city, municipality, state, country, or other governmental body"
+				},
+				"hr": {
+					"language": "hr",
+					"value": "izvršni funkcioner uprave grada, opštine ili drugog organa lokalne samouprave"
+				},
+				"fr": {
+					"language": "fr",
+					"value": "personne publique chargée du pouvoir exécutif (quel que soit le niveau, y compris national)"
+				},
+				"de": {
+					"language": "de",
+					"value": "Leiter einer Exekutive auf allen Ebenen, einschließlich der nationalen"
+				},
+				"es": {
+					"language": "es",
+					"value": "máxima autoridad administrativa y legislativa de un pueblo, ciudad, municipio, país u otros organismos gubernamentales"
+				},
+				"it": {
+					"language": "it",
+					"value": "capo amministrativo di uno Stato, città, comune o municipalità"
+				},
+				"he": {
+					"language": "he",
+					"value": "ראש עיר, ראש מועצה, מדינה"
+				},
+				"el": {
+					"language": "el",
+					"value": "κύριος διοικητής μιας χώρας, πόλης, κωμόπολης, δήμου"
+				},
+				"cs": {
+					"language": "cs",
+					"value": "šéf exekutivy tohoto města, státu nebo jiného orgánu výkonné moci"
+				},
+				"ilo": {
+					"language": "ilo",
+					"value": "kangrunaan nga administrador ti maysa nga ili, siudad wenno munisipalidad"
+				},
+				"pt-br": {
+					"language": "pt-br",
+					"value": "chefe administrativo de uma cidade, município, país ou outra divisão governamental"
+				},
+				"lv": {
+					"language": "lv",
+					"value": "pilsētas, pašvaldības, štata, valsts vai cita pārvaldes orgāna izpildvaras vadītājs"
+				},
+				"ca": {
+					"language": "ca",
+					"value": "cap del govern municipal, estatal, nacional o d'altres organismes de govern"
+				},
+				"fi": {
+					"language": "fi",
+					"value": "hallinnon johtaja kaupungissa, kunnassa, osavaltiossa, maassa tai muussa hallinnollisessa yksikössä"
+				},
+				"ro": {
+					"language": "ro",
+					"value": "șeful guvernului, sau administrației orașului, comunei"
+				},
+				"nl": {
+					"language": "nl",
+					"value": "hoofd van de uitvoerende macht van het bestuursniveau (burgemeester, gouverneur, regeringsleider, etc.)"
+				},
+				"id": {
+					"language": "id",
+					"value": "kepala pemerintahan kota, kabupaten, negara bagian, provinsi, negara atau lembaga pemerintahan lainnya"
+				},
+				"min": {
+					"language": "min",
+					"value": "kapalo administrasi kota atau kabupaten"
+				},
+				"uz": {
+					"language": "uz",
+					"value": "shahar, shaharcha yoki boshqa turdagi aholi punktining boshligʻi"
+				},
+				"fa": {
+					"language": "fa",
+					"value": "رئیس جمهور، استاندار، شهردار، دهدار"
+				},
+				"en-gb": {
+					"language": "en-gb",
+					"value": "head of the executive power of a town, city, municipality, state, country, or other governmental body"
+				},
+				"sv": {
+					"language": "sv",
+					"value": "premiärminister, borgmästare, kommunstyrelsens ordförande och liknande"
+				},
+				"ja": {
+					"language": "ja",
+					"value": "行政府（国、都道府県、市、町、その他の自治体）、政府機関の長"
+				},
+				"nb": {
+					"language": "nb",
+					"value": "verv som øverste politiske leder for den offentlige forvaltningen av en by, et fylke, et land eller annen administrativ inndelingsenhet"
+				},
+				"en-ca": {
+					"language": "en-ca",
+					"value": "head of the executive power of a town, city, municipality, state, country, or other governmental body"
+				},
+				"nds-nl": {
+					"language": "nds-nl",
+					"value": "Bi'jveurbeeld in ne gemeente den börgemeister"
+				},
+				"nn": {
+					"language": "nn",
+					"value": "leiar av eit offentleg forvaltningsorgan"
+				},
+				"da": {
+					"language": "da",
+					"value": "leder af forvaltning i lande og administrative inddelinger af lande (regeringschef, rådsformand, borgmester etc.)"
+				},
+				"ru": {
+					"language": "ru",
+					"value": "высшее административное лицо, глава исполнительного органа города, муниципалитета, страны или другой правительственной структуры"
+				},
+				"gu": {
+					"language": "gu",
+					"value": "ગામ, શહેર, નગરપાલિકા, દેશ અથવા અન્ય સરકારી એકમના વડા"
+				},
+				"zh-hant": {
+					"language": "zh-hant",
+					"value": "村鎮、城市、直轄區、國家或其他行政區域的最高管治者"
+				},
+				"zh-hans": {
+					"language": "zh-hans",
+					"value": "村镇、城市、直辖区、国家或其他行政区域的最高管治者"
+				},
+				"zh": {
+					"language": "zh",
+					"value": "村镇、城市、直辖区、国家或其他政府机构的行政首脑"
+				},
+				"ko": {
+					"language": "ko",
+					"value": "항목 주제인 행정부 또는 지자체의 수장"
+				},
+				"hu": {
+					"language": "hu",
+					"value": "államban, városban, önkormányzatban a végrehajtó hatalom vezetője"
+				},
+				"ta": {
+					"language": "ta",
+					"value": "நகர், மாநகர், நகராட்சி, மாநிலம், நாடு அல்லது அரசாங்க அமைப்பின் மேலாண்மை அதிகாரம் கொண்ட தலைவர்"
+				},
+				"te": {
+					"language": "te",
+					"value": "పట్టణ, నగర, రాష్ట్ర, దేశ లేదా ఇతర ప్రభుత్వ సంస్థ యొక్క ముఖ్య పరిపాలనాధికారి"
+				},
+				"zh-cn": {
+					"language": "zh-cn",
+					"value": "村镇、城市、直辖区、国家或其他行政区域的最高管治者"
+				},
+				"zh-hk": {
+					"language": "zh-hk",
+					"value": "村鎮、城市、直轄區、國家或其他行政區域的最高管治者"
+				},
+				"br": {
+					"language": "br",
+					"value": "den zo ar veli gantañ en ur gêr, bro pe Stad"
+				},
+				"uk": {
+					"language": "uk",
+					"value": "голова вищого органу місцевої або центральної влади, країни або іншої урядової структури певної юрисдикції"
+				},
+				"eu": {
+					"language": "eu",
+					"value": "herri, hiri, udalerri, eskualde edo herrialdearen agintari nagusia"
+				},
+				"scn": {
+					"language": "scn",
+					"value": "capu dû putiri esicutivu di na città, un cumuni, na riggioni, un paìsi, o n'autra sorta di enti guvernativu"
+				},
+				"ar": {
+					"language": "ar",
+					"value": "رئيس السلطة التنفيذية في قرية أو مدينة أو محافظة أو ولاية أو دولة أو أي هيئة حكومية أخرى"
+				},
+				"ast": {
+					"language": "ast",
+					"value": "cabezaleru del gobiernu d'una ciudá, conceyu, rexón, estáu o otra entidá gubernamental"
+				},
+				"kn": {
+					"language": "kn",
+					"value": "ನಗರ, ಮುನ್ಸಿಪಾಲಿಟಿ, ರಾಜ್ಯ ಅಥವಾ ದೇಶದ ಸರ್ಕಾರಗಳ ಅಧ್ಯಕ್ಷರು/ಮುಖ್ಯಸ್ಥರು"
+				},
+				"bn": {
+					"language": "bn",
+					"value": "একটি শহর, পৌরসভা, রাজ্য, দেশ, বা অন্যান্য সরকারি সংস্থার নির্বাহী ক্ষমতার প্রধান"
+				},
+				"hsb": {
+					"language": "hsb",
+					"value": "nawoda eksekutiwy na wšěch runinach"
+				},
+				"gl": {
+					"language": "gl",
+					"value": "máxima autoridade administrativa e lexislativa dun pobo, cidade, concello, país ou outros organismos gubernamentais"
+				},
+				"bg": {
+					"language": "bg",
+					"value": "ръководител на изпълнителната власт в село, град, община, област, правителство, държава и други правителствени организации"
+				},
+				"tcy": {
+					"language": "tcy",
+					"value": "ಮುನ್ಸಿಪಾಲಿಟಿ, ರಾಜ್ಯ ಅಥಂಡಾ ದೇಶತ ಸರ್ಕಾರೊತ ಗುರ್ಕಾರೆರ್"
+				},
+				"tl": {
+					"language": "tl",
+					"value": "pinuno ng ehekutibong kapangyarihan ng isang bayan, lungsod, munisipalidad, estado, bansa, o iba pang katawan ng pamahalaan"
+				},
+				"tg-cyrl": {
+					"language": "tg-cyrl",
+					"value": "шахси олии маъмурӣ, сардори ҳокимияти иҷроияи шаҳр, мунитсипалитети давлат ё дигар сохтори давлатӣ"
+				},
+				"az": {
+					"language": "az",
+					"value": "şəhər, bələdiyyə, dövlət və ya digər hökumət qurumunun icraedici orqanının rəhbəri"
+				},
+				"tr": {
+					"language": "tr",
+					"value": "bir kasaba, şehir, belediye, devlet, ülke veya diğer hükûmet organlarının yürütme yetkisinin başı"
+				},
+				"ms": {
+					"language": "ms",
+					"value": "ketua kuasa eksekutif sebuah bandar, bandar raya, perbandaran, negeri, negara, atau badan kerajaan lain"
+				},
+				"bs": {
+					"language": "bs",
+					"value": "izvršni funkcioner nekog organa javne uprave"
+				},
+				"mr": {
+					"language": "mr",
+					"value": "या शहराचे शहर, नगरपालिका, राज्य, देश, किंवा इतर शासकीय संस्थेचे कार्यकारी अधिकार प्रमुख"
+				},
+				"pt": {
+					"language": "pt",
+					"value": "chefe do poder executivo de uma cidade, município, estado ou província, país, ou outro tipo de organização governamental"
+				},
+				"zh-tw": {
+					"language": "zh-tw",
+					"value": "村里、城市、直轄市、省、國家或其他行政區域的最高管治者"
+				},
+				"sr": {
+					"language": "sr",
+					"value": "главни у извршној власти града, општине, државе или другог владиног тела"
+				},
+				"pl": {
+					"language": "pl",
+					"value": "szef organu władzy wykonawczej"
+				},
+				"fo": {
+					"language": "fo",
+					"value": "leiðari av stjórn ella umsiting í landi, kommunu, býi, øki"
+				},
+				"nqo": {
+					"language": "nqo",
+					"value": "ߡߍ߲ ߠߎ߬ ߦߋ߫ ߝߊ߲߬ߞߊ ߟߥߊߟߌ߫ ߟߊ߫ ߛߏ ߞߣߐ߫߸ ߖߡߊ߬ߣߊ ߞߣߐ߫߸ߞߊ߬ߝߏ ߞߣߐ߫߸ ߥߟߊ߫ ߞߎ߲߬ߠߊ߬ߛߌ߮ ߞߎ߲߬ߕߋߟߋ߲ ߠߎ߬ ߘߐ߫"
+				},
+				"be-tarask": {
+					"language": "be-tarask",
+					"value": "старшыня выканаўчай улады сваёй мясцовасьці"
+				},
+				"szl": {
+					"language": "szl",
+					"value": "szef ôrganu władzy wykōnawczyj"
+				},
+				"dag": {
+					"language": "dag",
+					"value": "zuɣulana zan ti tiŋ puuni, tiŋ kpaɣa, tiŋgbani bee gomnanti yaɣili"
+				},
+				"nap": {
+					"language": "nap",
+					"value": "capo 'e 'nu paese, 'e 'na città, 'e no commune o 'e 'na municipalità"
+				},
+				"gd": {
+					"language": "gd",
+					"value": "ceannard riaghaltais ann an dùthaich no sgìre no baile"
+				},
+				"ig": {
+					"language": "ig",
+					"value": "onye isi nke ọchịchị obodo a, obodo, ime obodo, steeti, mba ma ọ bụ otu gọọmentị ndị ọzọ"
+				},
+				"kcg": {
+					"language": "kcg",
+					"value": "a̱kwak a̱son a̱pyia̱ ncet a̱keang, a̱gba̱ndang a̱keang, si̱tet, jén, fam, a̱byin, ku sot a̱gwomna̱ti jhyang"
+				},
+				"gpe": {
+					"language": "gpe",
+					"value": "be de head for de executive power for dis town, city, municipality, state, country, or oda governmental body"
+				},
+				"ka": {
+					"language": "ka",
+					"value": "ქალაქის, მუნიციპალიტეტის, რეგიონის, ქვეყნის ან სხვა სამთავრობო სტრუქტურის ხელმძღვანელი"
+				},
+				"sw": {
+					"language": "sw",
+					"value": "mkuu wa mamlaka ya utendaji ya mji huu, jiji, manispaa, jimbo, nchi, au chombo kingine cha kiserikali"
+				},
+				"mzn": {
+					"language": "mzn",
+					"value": "تونده شهردار، اوستان‌دار، رییس‌جمهور یا دهیار بوئه"
+				}
+			},
+			"aliases": {
+				"en": [
+					{
+						"language": "en",
+						"value": "mayor"
+					},
+					{
+						"language": "en",
+						"value": "prime minister"
+					},
+					{
+						"language": "en",
+						"value": "premier"
+					},
+					{
+						"language": "en",
+						"value": "first minister"
+					},
+					{
+						"language": "en",
+						"value": "head of national government"
+					},
+					{
+						"language": "en",
+						"value": "chancellor"
+					},
+					{
+						"language": "en",
+						"value": "governor"
+					},
+					{
+						"language": "en",
+						"value": "government headed by"
+					},
+					{
+						"language": "en",
+						"value": "executive power headed by"
+					},
+					{
+						"language": "en",
+						"value": "president"
+					}
+				],
+				"hr": [
+					{
+						"language": "hr",
+						"value": "gradonačelnik"
+					}
+				],
+				"el": [
+					{
+						"language": "el",
+						"value": "κοινοτάρχης"
+					},
+					{
+						"language": "el",
+						"value": "δήμαρχος"
+					},
+					{
+						"language": "el",
+						"value": "πρόεδρος"
+					},
+					{
+						"language": "el",
+						"value": "ύπατος"
+					},
+					{
+						"language": "el",
+						"value": "πρωθυπουργός"
+					},
+					{
+						"language": "el",
+						"value": "περιφερειάρχης"
+					},
+					{
+						"language": "el",
+						"value": "νομάρχης"
+					},
+					{
+						"language": "el",
+						"value": "κυβερνήτης"
+					},
+					{
+						"language": "el",
+						"value": "διοικητής"
+					}
+				],
+				"fr": [
+					{
+						"language": "fr",
+						"value": "maire"
+					},
+					{
+						"language": "fr",
+						"value": "bourgmestre"
+					},
+					{
+						"language": "fr",
+						"value": "président de commune"
+					},
+					{
+						"language": "fr",
+						"value": "syndic"
+					},
+					{
+						"language": "fr",
+						"value": "président du gouvernement"
+					},
+					{
+						"language": "fr",
+						"value": "président du Conseil"
+					},
+					{
+						"language": "fr",
+						"value": "Premier ministre"
+					},
+					{
+						"language": "fr",
+						"value": "président de la République"
+					},
+					{
+						"language": "fr",
+						"value": "syndique"
+					},
+					{
+						"language": "fr",
+						"value": "cheffe de l'exécutif"
+					},
+					{
+						"language": "fr",
+						"value": "chef·fe de l'exécutif"
+					},
+					{
+						"language": "fr",
+						"value": "chef de l'exécutif"
+					}
+				],
+				"pl": [
+					{
+						"language": "pl",
+						"value": "mer"
+					},
+					{
+						"language": "pl",
+						"value": "prezydent miasta"
+					},
+					{
+						"language": "pl",
+						"value": "szef władzy wykonawczej"
+					},
+					{
+						"language": "pl",
+						"value": "starosta"
+					},
+					{
+						"language": "pl",
+						"value": "wójt"
+					},
+					{
+						"language": "pl",
+						"value": "prefekt"
+					},
+					{
+						"language": "pl",
+						"value": "gubernator"
+					},
+					{
+						"language": "pl",
+						"value": "premier"
+					},
+					{
+						"language": "pl",
+						"value": "sołtys"
+					},
+					{
+						"language": "pl",
+						"value": "wojewoda"
+					},
+					{
+						"language": "pl",
+						"value": "marszałek województwa"
+					}
+				],
+				"cs": [
+					{
+						"language": "cs",
+						"value": "starosta"
+					},
+					{
+						"language": "cs",
+						"value": "primátor"
+					},
+					{
+						"language": "cs",
+						"value": "guvernér"
+					},
+					{
+						"language": "cs",
+						"value": "premiér"
+					},
+					{
+						"language": "cs",
+						"value": "kancléř"
+					},
+					{
+						"language": "cs",
+						"value": "předseda vlády"
+					}
+				],
+				"ilo": [
+					{
+						"language": "ilo",
+						"value": "mayor"
+					},
+					{
+						"language": "ilo",
+						"value": "alkalde"
+					}
+				],
+				"ru": [
+					{
+						"language": "ru",
+						"value": "мэр"
+					},
+					{
+						"language": "ru",
+						"value": "глава муниципального образования"
+					},
+					{
+						"language": "ru",
+						"value": "глава коммуны"
+					},
+					{
+						"language": "ru",
+						"value": "глава общины"
+					},
+					{
+						"language": "ru",
+						"value": "бургомистр"
+					},
+					{
+						"language": "ru",
+						"value": "градоначальник"
+					},
+					{
+						"language": "ru",
+						"value": "глава администрации самоуправляемой территории"
+					},
+					{
+						"language": "ru",
+						"value": "премьер-министр"
+					},
+					{
+						"language": "ru",
+						"value": "губернатор"
+					},
+					{
+						"language": "ru",
+						"value": "префект"
+					},
+					{
+						"language": "ru",
+						"value": "президент территориальной единицы"
+					},
+					{
+						"language": "ru",
+						"value": "глава исполнительной власти"
+					},
+					{
+						"language": "ru",
+						"value": "глава кабинета министров"
+					},
+					{
+						"language": "ru",
+						"value": "глава города"
+					},
+					{
+						"language": "ru",
+						"value": "правительство возглавляет"
+					}
+				],
+				"de": [
+					{
+						"language": "de",
+						"value": "Ministerpräsident"
+					},
+					{
+						"language": "de",
+						"value": "Bürgermeister"
+					},
+					{
+						"language": "de",
+						"value": "Oberbürgermeister"
+					},
+					{
+						"language": "de",
+						"value": "Ratsvorsitzender"
+					},
+					{
+						"language": "de",
+						"value": "Ortsbürgermeister"
+					},
+					{
+						"language": "de",
+						"value": "Regierungschef"
+					},
+					{
+						"language": "de",
+						"value": "Premierminister"
+					},
+					{
+						"language": "de",
+						"value": "Landrat"
+					},
+					{
+						"language": "de",
+						"value": "Regierungspräsident"
+					},
+					{
+						"language": "de",
+						"value": "Gemeindepräsident"
+					}
+				],
+				"uk": [
+					{
+						"language": "uk",
+						"value": "міський голова"
+					},
+					{
+						"language": "uk",
+						"value": "мер"
+					},
+					{
+						"language": "uk",
+						"value": "уряд очолює:"
+					},
+					{
+						"language": "uk",
+						"value": "бургомістр"
+					},
+					{
+						"language": "uk",
+						"value": "прем'єр-міністр"
+					},
+					{
+						"language": "uk",
+						"value": "виконавчу владу очолює"
+					},
+					{
+						"language": "uk",
+						"value": "очільник виконавчої влади"
+					},
+					{
+						"language": "uk",
+						"value": "влада виконавча очолювана"
+					},
+					{
+						"language": "uk",
+						"value": "керівник виконавчої влади"
+					},
+					{
+						"language": "uk",
+						"value": "адміністрація очолюється"
+					},
+					{
+						"language": "uk",
+						"value": "очолює уряд"
+					},
+					{
+						"language": "uk",
+						"value": "глава уряду"
+					},
+					{
+						"language": "uk",
+						"value": "кабінет міністрів очолює"
+					}
+				],
+				"lv": [
+					{
+						"language": "lv",
+						"value": "mērs"
+					},
+					{
+						"language": "lv",
+						"value": "valdības galva"
+					}
+				],
+				"it": [
+					{
+						"language": "it",
+						"value": "sindaco"
+					},
+					{
+						"language": "it",
+						"value": "primo ministro"
+					},
+					{
+						"language": "it",
+						"value": "cancelliere"
+					},
+					{
+						"language": "it",
+						"value": "premier"
+					},
+					{
+						"language": "it",
+						"value": "presidente"
+					}
+				],
+				"ro": [
+					{
+						"language": "ro",
+						"value": "primar"
+					},
+					{
+						"language": "ro",
+						"value": "prim-ministru"
+					},
+					{
+						"language": "ro",
+						"value": "președinte al consiliului de miniștri"
+					},
+					{
+						"language": "ro",
+						"value": "premier"
+					}
+				],
+				"ja": [
+					{
+						"language": "ja",
+						"value": "知事"
+					},
+					{
+						"language": "ja",
+						"value": "市長"
+					},
+					{
+						"language": "ja",
+						"value": "町長"
+					},
+					{
+						"language": "ja",
+						"value": "村長"
+					},
+					{
+						"language": "ja",
+						"value": "首長"
+					},
+					{
+						"language": "ja",
+						"value": "首相"
+					},
+					{
+						"language": "ja",
+						"value": "総理大臣"
+					}
+				],
+				"es": [
+					{
+						"language": "es",
+						"value": "jefe del gobierno municipal"
+					},
+					{
+						"language": "es",
+						"value": "jefe de gobierno local"
+					},
+					{
+						"language": "es",
+						"value": "jefe de gobierno municipal"
+					},
+					{
+						"language": "es",
+						"value": "alcalde"
+					},
+					{
+						"language": "es",
+						"value": "presidente del gobierno"
+					},
+					{
+						"language": "es",
+						"value": "gobernador"
+					},
+					{
+						"language": "es",
+						"value": "primer ministro"
+					},
+					{
+						"language": "es",
+						"value": "corregidor municipal"
+					},
+					{
+						"language": "es",
+						"value": "magistrado municipal"
+					},
+					{
+						"language": "es",
+						"value": "regidor municipal"
+					},
+					{
+						"language": "es",
+						"value": "juez municipal"
+					}
+				],
+				"nl": [
+					{
+						"language": "nl",
+						"value": "burgemeester"
+					},
+					{
+						"language": "nl",
+						"value": "regeringsleider"
+					},
+					{
+						"language": "nl",
+						"value": "eerste minister"
+					},
+					{
+						"language": "nl",
+						"value": "gouverneur"
+					},
+					{
+						"language": "nl",
+						"value": "minister-president"
+					},
+					{
+						"language": "nl",
+						"value": "premier"
+					}
+				],
+				"be": [
+					{
+						"language": "be",
+						"value": "прэм'ер-міністр"
+					}
+				],
+				"ca": [
+					{
+						"language": "ca",
+						"value": "batlle"
+					},
+					{
+						"language": "ca",
+						"value": "pesident de govern"
+					},
+					{
+						"language": "ca",
+						"value": "governador"
+					},
+					{
+						"language": "ca",
+						"value": "primer ministre"
+					},
+					{
+						"language": "ca",
+						"value": "cap del govern"
+					},
+					{
+						"language": "ca",
+						"value": "conseller en cap"
+					}
+				],
+				"yi": [
+					{
+						"language": "yi",
+						"value": "בירגערמייסטער"
+					},
+					{
+						"language": "yi",
+						"value": "גובערנאטאר"
+					},
+					{
+						"language": "yi",
+						"value": "פרעזידענט"
+					}
+				],
+				"te": [
+					{
+						"language": "te",
+						"value": "ముఖ్యమంత్రి"
+					},
+					{
+						"language": "te",
+						"value": "ప్రధాన మంత్రి"
+					},
+					{
+						"language": "te",
+						"value": "మేయర్"
+					}
+				],
+				"hu": [
+					{
+						"language": "hu",
+						"value": "kormányfő"
+					},
+					{
+						"language": "hu",
+						"value": "polgármester"
+					},
+					{
+						"language": "hu",
+						"value": "főpolgármester"
+					},
+					{
+						"language": "hu",
+						"value": "miniszterelnök"
+					},
+					{
+						"language": "hu",
+						"value": "főispán"
+					}
+				],
+				"vi": [
+					{
+						"language": "vi",
+						"value": "thị trưởng"
+					},
+					{
+						"language": "vi",
+						"value": "thống đốc"
+					},
+					{
+						"language": "vi",
+						"value": "thủ tướng"
+					},
+					{
+						"language": "vi",
+						"value": "tổng thống"
+					}
+				],
+				"zh": [
+					{
+						"language": "zh",
+						"value": "政府首脑"
+					},
+					{
+						"language": "zh",
+						"value": "政府首长"
+					}
+				],
+				"lt": [
+					{
+						"language": "lt",
+						"value": "ministras pirmininkas"
+					},
+					{
+						"language": "lt",
+						"value": "premjeras"
+					},
+					{
+						"language": "lt",
+						"value": "pirmasis ministras"
+					},
+					{
+						"language": "lt",
+						"value": "meras"
+					}
+				],
+				"ko": [
+					{
+						"language": "ko",
+						"value": "정부 수반"
+					},
+					{
+						"language": "ko",
+						"value": "정부 대표"
+					},
+					{
+						"language": "ko",
+						"value": "시장"
+					},
+					{
+						"language": "ko",
+						"value": "군수"
+					},
+					{
+						"language": "ko",
+						"value": "특별시장"
+					},
+					{
+						"language": "ko",
+						"value": "광역시장"
+					},
+					{
+						"language": "ko",
+						"value": "특별자치시장"
+					},
+					{
+						"language": "ko",
+						"value": "도지사"
+					},
+					{
+						"language": "ko",
+						"value": "특별자치도지사"
+					},
+					{
+						"language": "ko",
+						"value": "구청장"
+					},
+					{
+						"language": "ko",
+						"value": "정부 수장"
+					},
+					{
+						"language": "ko",
+						"value": "지방 정부의 장"
+					},
+					{
+						"language": "ko",
+						"value": "지자체 대표"
+					},
+					{
+						"language": "ko",
+						"value": "지방 정부 대표"
+					},
+					{
+						"language": "ko",
+						"value": "지방 정부의 대표"
+					},
+					{
+						"language": "ko",
+						"value": "현지사"
+					},
+					{
+						"language": "ko",
+						"value": "지사"
+					},
+					{
+						"language": "ko",
+						"value": "지자체 수장"
+					},
+					{
+						"language": "ko",
+						"value": "행정부 수장"
+					},
+					{
+						"language": "ko",
+						"value": "이곳의 행정부 수반"
+					}
+				],
+				"ast": [
+					{
+						"language": "ast",
+						"value": "primer ministru"
+					},
+					{
+						"language": "ast",
+						"value": "presidente"
+					},
+					{
+						"language": "ast",
+						"value": "gobernador"
+					},
+					{
+						"language": "ast",
+						"value": "alcalde"
+					}
+				],
+				"kn": [
+					{
+						"language": "kn",
+						"value": "ಮುಖ್ಯಮಂತ್ರಿ"
+					},
+					{
+						"language": "kn",
+						"value": "ಮೇಯರ್"
+					},
+					{
+						"language": "kn",
+						"value": "ಪ್ರಧಾನಮಂತ್ರಿ"
+					}
+				],
+				"ta": [
+					{
+						"language": "ta",
+						"value": "நகரத் தலைவர்"
+					},
+					{
+						"language": "ta",
+						"value": "நகரப்பிதா"
+					},
+					{
+						"language": "ta",
+						"value": "முதன்மை அமைச்சர்"
+					},
+					{
+						"language": "ta",
+						"value": "பிரதமர்"
+					},
+					{
+						"language": "ta",
+						"value": "முதலமைச்சர்"
+					},
+					{
+						"language": "ta",
+						"value": "தேசிய அரசின் தலைவர்"
+					},
+					{
+						"language": "ta",
+						"value": "முதல்வர்"
+					}
+				],
+				"bn": [
+					{
+						"language": "bn",
+						"value": "মেয়র"
+					},
+					{
+						"language": "bn",
+						"value": "প্রধানমন্ত্রী"
+					}
+				],
+				"hsb": [
+					{
+						"language": "hsb",
+						"value": "měšćanosta"
+					},
+					{
+						"language": "hsb",
+						"value": "wjesnjanosta"
+					},
+					{
+						"language": "hsb",
+						"value": "ministerski prezident"
+					},
+					{
+						"language": "hsb",
+						"value": "šef knježerstwa"
+					}
+				],
+				"nb": [
+					{
+						"language": "nb",
+						"value": "statsminister"
+					},
+					{
+						"language": "nb",
+						"value": "ordfører"
+					},
+					{
+						"language": "nb",
+						"value": "fylkesordfører"
+					}
+				],
+				"da": [
+					{
+						"language": "da",
+						"value": "borgmester"
+					},
+					{
+						"language": "da",
+						"value": "statsminister"
+					},
+					{
+						"language": "da",
+						"value": "regeringschef"
+					},
+					{
+						"language": "da",
+						"value": "rådsformand"
+					},
+					{
+						"language": "da",
+						"value": "præsident"
+					},
+					{
+						"language": "da",
+						"value": "kansler"
+					},
+					{
+						"language": "da",
+						"value": "førsteminister"
+					},
+					{
+						"language": "da",
+						"value": "premierminister"
+					},
+					{
+						"language": "da",
+						"value": "regionsrådsformand"
+					}
+				],
+				"sv": [
+					{
+						"language": "sv",
+						"value": "premiärminister"
+					},
+					{
+						"language": "sv",
+						"value": "borgmästare"
+					},
+					{
+						"language": "sv",
+						"value": "ordförande"
+					}
+				],
+				"gl": [
+					{
+						"language": "gl",
+						"value": "alcalde"
+					}
+				],
+				"ba": [
+					{
+						"language": "ba",
+						"value": "мэр"
+					},
+					{
+						"language": "ba",
+						"value": "муниципаль берәмек башлығы"
+					},
+					{
+						"language": "ba",
+						"value": "коммуна башлығы"
+					},
+					{
+						"language": "ba",
+						"value": "президент"
+					},
+					{
+						"language": "ba",
+						"value": "губернатор"
+					},
+					{
+						"language": "ba",
+						"value": "префект"
+					},
+					{
+						"language": "ba",
+						"value": "бургомистр"
+					},
+					{
+						"language": "ba",
+						"value": "ҡала башлығы"
+					},
+					{
+						"language": "ba",
+						"value": "премьер-министр"
+					}
+				],
+				"eu": [
+					{
+						"language": "eu",
+						"value": "agintaria"
+					},
+					{
+						"language": "eu",
+						"value": "alkatea"
+					},
+					{
+						"language": "eu",
+						"value": "lehen ministroa"
+					},
+					{
+						"language": "eu",
+						"value": "presidentea"
+					}
+				],
+				"bg": [
+					{
+						"language": "bg",
+						"value": "кмет"
+					},
+					{
+						"language": "bg",
+						"value": "министър-председател"
+					},
+					{
+						"language": "bg",
+						"value": "президент"
+					},
+					{
+						"language": "bg",
+						"value": "председател"
+					},
+					{
+						"language": "bg",
+						"value": "областен управител"
+					}
+				],
+				"id": [
+					{
+						"language": "id",
+						"value": "walikota"
+					},
+					{
+						"language": "id",
+						"value": "perdana menteri"
+					},
+					{
+						"language": "id",
+						"value": "presiden"
+					},
+					{
+						"language": "id",
+						"value": "bupati"
+					}
+				],
+				"sl": [
+					{
+						"language": "sl",
+						"value": "predsednik Vlade"
+					},
+					{
+						"language": "sl",
+						"value": "župan"
+					},
+					{
+						"language": "sl",
+						"value": "premier"
+					},
+					{
+						"language": "sl",
+						"value": "kancler"
+					},
+					{
+						"language": "sl",
+						"value": "predsednik"
+					}
+				],
+				"ar": [
+					{
+						"language": "ar",
+						"value": "رئيس الوزراء"
+					},
+					{
+						"language": "ar",
+						"value": "رئيس مجلس الوزراء"
+					},
+					{
+						"language": "ar",
+						"value": "الوزير الأول"
+					}
+				],
+				"pt-br": [
+					{
+						"language": "pt-br",
+						"value": "presidente"
+					},
+					{
+						"language": "pt-br",
+						"value": "governador"
+					},
+					{
+						"language": "pt-br",
+						"value": "prefeito"
+					},
+					{
+						"language": "pt-br",
+						"value": "primeiro-ministro"
+					},
+					{
+						"language": "pt-br",
+						"value": "chanceler"
+					}
+				],
+				"sq": [
+					{
+						"language": "sq",
+						"value": "kryetar"
+					},
+					{
+						"language": "sq",
+						"value": "kryeministër"
+					},
+					{
+						"language": "sq",
+						"value": "kryebashkiak"
+					},
+					{
+						"language": "sq",
+						"value": "kancelar"
+					},
+					{
+						"language": "sq",
+						"value": "president"
+					},
+					{
+						"language": "sq",
+						"value": "guvernator"
+					}
+				],
+				"tr": [
+					{
+						"language": "tr",
+						"value": "devlet başkanı"
+					},
+					{
+						"language": "tr",
+						"value": "vali"
+					},
+					{
+						"language": "tr",
+						"value": "şansölye"
+					},
+					{
+						"language": "tr",
+						"value": "başkan"
+					},
+					{
+						"language": "tr",
+						"value": "cumhurbaşkanı"
+					}
+				],
+				"tl": [
+					{
+						"language": "tl",
+						"value": "alkalde"
+					},
+					{
+						"language": "tl",
+						"value": "punong lungsod"
+					},
+					{
+						"language": "tl",
+						"value": "punong bayan"
+					},
+					{
+						"language": "tl",
+						"value": "gobernador"
+					},
+					{
+						"language": "tl",
+						"value": "pangulo"
+					},
+					{
+						"language": "tl",
+						"value": "premiyer"
+					},
+					{
+						"language": "tl",
+						"value": "punong ministro"
+					}
+				],
+				"tg-cyrl": [
+					{
+						"language": "tg-cyrl",
+						"value": "сарвазир"
+					},
+					{
+						"language": "tg-cyrl",
+						"value": "нахуствазир"
+					},
+					{
+						"language": "tg-cyrl",
+						"value": "садри аъзам"
+					},
+					{
+						"language": "tg-cyrl",
+						"value": "раиси вилоят"
+					},
+					{
+						"language": "tg-cyrl",
+						"value": "раиси шаҳр"
+					},
+					{
+						"language": "tg-cyrl",
+						"value": "сардори ҳокимияти иҷроия"
+					},
+					{
+						"language": "tg-cyrl",
+						"value": "сардори ҳайати вазирон"
+					},
+					{
+						"language": "tg-cyrl",
+						"value": "префект"
+					},
+					{
+						"language": "tg-cyrl",
+						"value": "бургомистр"
+					},
+					{
+						"language": "tg-cyrl",
+						"value": "шаҳрдор"
+					},
+					{
+						"language": "tg-cyrl",
+						"value": "губернатор"
+					}
+				],
+				"az": [
+					{
+						"language": "az",
+						"value": "mer"
+					},
+					{
+						"language": "az",
+						"value": "bələdiyyə başçısı"
+					},
+					{
+						"language": "az",
+						"value": "baş nazir"
+					},
+					{
+						"language": "az",
+						"value": "birinci nazir"
+					},
+					{
+						"language": "az",
+						"value": "kansler"
+					},
+					{
+						"language": "az",
+						"value": "sədr"
+					},
+					{
+						"language": "az",
+						"value": "qubernator"
+					},
+					{
+						"language": "az",
+						"value": "icra başçısı"
+					}
+				],
+				"ur": [
+					{
+						"language": "ur",
+						"value": "میئر"
+					}
+				],
+				"th": [
+					{
+						"language": "th",
+						"value": "ประธานาธิบดี"
+					},
+					{
+						"language": "th",
+						"value": "นายกรัฐมนตรี"
+					},
+					{
+						"language": "th",
+						"value": "ประมุขแห่งประเทศ"
+					}
+				],
+				"en-ca": [
+					{
+						"language": "en-ca",
+						"value": "mayor"
+					},
+					{
+						"language": "en-ca",
+						"value": "prime minister"
+					},
+					{
+						"language": "en-ca",
+						"value": "premier"
+					},
+					{
+						"language": "en-ca",
+						"value": "first minister"
+					},
+					{
+						"language": "en-ca",
+						"value": "head of national government"
+					},
+					{
+						"language": "en-ca",
+						"value": "government heading by"
+					},
+					{
+						"language": "en-ca",
+						"value": "executive power heading by"
+					},
+					{
+						"language": "en-ca",
+						"value": "chancellor"
+					},
+					{
+						"language": "en-ca",
+						"value": "governor"
+					},
+					{
+						"language": "en-ca",
+						"value": "president"
+					}
+				],
+				"en-gb": [
+					{
+						"language": "en-gb",
+						"value": "mayor"
+					},
+					{
+						"language": "en-gb",
+						"value": "prime minister"
+					},
+					{
+						"language": "en-gb",
+						"value": "premier"
+					},
+					{
+						"language": "en-gb",
+						"value": "first minister"
+					},
+					{
+						"language": "en-gb",
+						"value": "head of national government"
+					},
+					{
+						"language": "en-gb",
+						"value": "government heading by"
+					},
+					{
+						"language": "en-gb",
+						"value": "executive power heading by"
+					},
+					{
+						"language": "en-gb",
+						"value": "chancellor"
+					},
+					{
+						"language": "en-gb",
+						"value": "governor"
+					},
+					{
+						"language": "en-gb",
+						"value": "president"
+					}
+				],
+				"ms": [
+					{
+						"language": "ms",
+						"value": "datuk bandar"
+					},
+					{
+						"language": "ms",
+						"value": "perdana menteri"
+					},
+					{
+						"language": "ms",
+						"value": "menteri pertama"
+					},
+					{
+						"language": "ms",
+						"value": "ketua kerajaan kebangsaan"
+					},
+					{
+						"language": "ms",
+						"value": "kerajaan diketuai oleh"
+					},
+					{
+						"language": "ms",
+						"value": "kuasa eksekutif diketuai oleh"
+					},
+					{
+						"language": "ms",
+						"value": "canselor"
+					},
+					{
+						"language": "ms",
+						"value": "gabenor"
+					},
+					{
+						"language": "ms",
+						"value": "presiden"
+					}
+				],
+				"bs": [
+					{
+						"language": "bs",
+						"value": "gradonačelnik"
+					},
+					{
+						"language": "bs",
+						"value": "premijer"
+					},
+					{
+						"language": "bs",
+						"value": "načelnik općine"
+					},
+					{
+						"language": "bs",
+						"value": "prvi čovjek uprave"
+					},
+					{
+						"language": "bs",
+						"value": "načelnik opštine"
+					}
+				],
+				"pt": [
+					{
+						"language": "pt",
+						"value": "prefeito"
+					},
+					{
+						"language": "pt",
+						"value": "primeiro ministro"
+					},
+					{
+						"language": "pt",
+						"value": "premiê"
+					},
+					{
+						"language": "pt",
+						"value": "governador"
+					},
+					{
+						"language": "pt",
+						"value": "presidente"
+					},
+					{
+						"language": "pt",
+						"value": "primeiro-ministro"
+					},
+					{
+						"language": "pt",
+						"value": "chefe de estado"
+					}
+				],
+				"zh-tw": [
+					{
+						"language": "zh-tw",
+						"value": "首長"
+					},
+					{
+						"language": "zh-tw",
+						"value": "市長"
+					}
+				],
+				"sr": [
+					{
+						"language": "sr",
+						"value": "градоначелник"
+					},
+					{
+						"language": "sr",
+						"value": "начелник"
+					},
+					{
+						"language": "sr",
+						"value": "премијер"
+					},
+					{
+						"language": "sr",
+						"value": "канцелар"
+					},
+					{
+						"language": "sr",
+						"value": "гувернер"
+					}
+				],
+				"he": [
+					{
+						"language": "he",
+						"value": "ראש עיר"
+					},
+					{
+						"language": "he",
+						"value": "ראש העיר"
+					},
+					{
+						"language": "he",
+						"value": "ראש המועצה"
+					},
+					{
+						"language": "he",
+						"value": "ראש מועצה"
+					},
+					{
+						"language": "he",
+						"value": "ראש הרשות המבצעת"
+					}
+				],
+				"fo": [
+					{
+						"language": "fo",
+						"value": "forsætisráðharri"
+					},
+					{
+						"language": "fo",
+						"value": "borgarstjóri"
+					},
+					{
+						"language": "fo",
+						"value": "forseti"
+					},
+					{
+						"language": "fo",
+						"value": "ráðsformaður"
+					}
+				],
+				"la": [
+					{
+						"language": "la",
+						"value": "praefectus"
+					}
+				],
+				"hyw": [
+					{
+						"language": "hyw",
+						"value": "քաղաքապետ"
+					},
+					{
+						"language": "hyw",
+						"value": "Երկրին նախագահ"
+					},
+					{
+						"language": "hyw",
+						"value": "Վարչապետ"
+					},
+					{
+						"language": "hyw",
+						"value": "Մարզպետ"
+					},
+					{
+						"language": "hyw",
+						"value": "շրջանային կառավարիչ"
+					},
+					{
+						"language": "hyw",
+						"value": "նահանգապետ"
+					},
+					{
+						"language": "hyw",
+						"value": "հրամանատար"
+					}
+				],
+				"min": [
+					{
+						"language": "min",
+						"value": "wali nagari"
+					},
+					{
+						"language": "min",
+						"value": "kapalo adaik"
+					}
+				],
+				"nqo": [
+					{
+						"language": "nqo",
+						"value": "ߞߏߕߌ߯ ߝߟߐ"
+					},
+					{
+						"language": "nqo",
+						"value": "ߞߎ߲߬ߠߊ߬ߛߌ߮ ߞߎ߲߬ߕߌ߮"
+					}
+				],
+				"be-tarask": [
+					{
+						"language": "be-tarask",
+						"value": "староста"
+					},
+					{
+						"language": "be-tarask",
+						"value": "мэр"
+					},
+					{
+						"language": "be-tarask",
+						"value": "губэрнатар"
+					},
+					{
+						"language": "be-tarask",
+						"value": "старшыня"
+					}
+				],
+				"nn": [
+					{
+						"language": "nn",
+						"value": "etatsjef"
+					},
+					{
+						"language": "nn",
+						"value": "etatleiar"
+					}
+				],
+				"szl": [
+					{
+						"language": "szl",
+						"value": "prezydynt miasta"
+					},
+					{
+						"language": "szl",
+						"value": "szef władzy wykōnawczyj"
+					},
+					{
+						"language": "szl",
+						"value": "landrat"
+					},
+					{
+						"language": "szl",
+						"value": "fojt"
+					},
+					{
+						"language": "szl",
+						"value": "gubernatōr"
+					},
+					{
+						"language": "szl",
+						"value": "prymier"
+					},
+					{
+						"language": "szl",
+						"value": "sołtys"
+					},
+					{
+						"language": "szl",
+						"value": "wojewoda"
+					},
+					{
+						"language": "szl",
+						"value": "marszałek wojewōdztwa"
+					},
+					{
+						"language": "szl",
+						"value": "burmistrz"
+					}
+				],
+				"dag": [
+					{
+						"language": "dag",
+						"value": "Tiŋgbani zuɣ'lana"
+					}
+				],
+				"kcg": [
+					{
+						"language": "kcg",
+						"value": "a̱pyia̱ a̱gwomna̱ti"
+					},
+					{
+						"language": "kcg",
+						"value": "gwomna"
+					},
+					{
+						"language": "kcg",
+						"value": "a̱kwak a̱son a̱byin"
+					}
+				],
+				"ff": [
+					{
+						"language": "ff",
+						"value": "Horejo leydi"
+					},
+					{
+						"language": "ff",
+						"value": "Arɗiɗo leddi"
+					},
+					{
+						"language": "ff",
+						"value": "Arɗiiɗo leydi"
+					}
+				],
+				"ka": [
+					{
+						"language": "ka",
+						"value": "მერი"
+					},
+					{
+						"language": "ka",
+						"value": "პრემიერ-მინისტრი"
+					},
+					{
+						"language": "ka",
+						"value": "მთავრობის თავმჯდომარე"
+					},
+					{
+						"language": "ka",
+						"value": "გუბერნატორი"
+					},
+					{
+						"language": "ka",
+						"value": "კანცლერი"
+					},
+					{
+						"language": "ka",
+						"value": "პრეზიდენტი"
+					}
+				],
+				"ary": [
+					{
+						"language": "ary",
+						"value": "رئيس لحوكومة"
+					},
+					{
+						"language": "ary",
+						"value": "رئيس لوزرا"
+					}
+				],
+				"mzn": [
+					{
+						"language": "mzn",
+						"value": "شهردار"
+					},
+					{
+						"language": "mzn",
+						"value": "رییس‌جمهور"
+					},
+					{
+						"language": "mzn",
+						"value": "نخست وزیر"
+					},
+					{
+						"language": "mzn",
+						"value": "رییس جمهور"
+					},
+					{
+						"language": "mzn",
+						"value": "رئیس جمهور"
+					},
+					{
+						"language": "mzn",
+						"value": "فرماندار"
+					},
+					{
+						"language": "mzn",
+						"value": "دهیار"
+					},
+					{
+						"language": "mzn",
+						"value": "استاندار"
+					}
+				]
+			},
+			"claims": {
+				"P1659": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1659",
+							"hash": "b49f4192194276d9e02c8183b621af3b2dd60e75",
+							"datavalue": {
+								"value": {
+									"entity-type": "property",
+									"numeric-id": 35,
+									"id": "P35"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-property"
+						},
+						"type": "statement",
+						"id": "P6$4ef85ccd-490f-aaaf-2c95-26ec36dd58d2",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1659",
+							"hash": "bd07d71ee1affeb6fa10fe82912d093be5a46da2",
+							"datavalue": {
+								"value": {
+									"entity-type": "property",
+									"numeric-id": 1313,
+									"id": "P1313"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-property"
+						},
+						"type": "statement",
+						"id": "P6$c98223ef-4784-e860-6860-947a6a58b6e2",
+						"rank": "normal"
+					}
+				],
+				"P1629": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1629",
+							"hash": "b3c96cdde6c7ab9425567f6d4bea9f0237546ed8",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 2285706,
+									"id": "Q2285706"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "P6$085d82a5-457e-8379-44d9-56a2c0bb5103",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1629",
+							"hash": "bb86439d3b622ea4c796fa66e6de0fd2576e4d31",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 30461,
+									"id": "Q30461"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "P6$a64a14b9-4d88-8e3a-806b-81f8183e81c7",
+						"rank": "normal"
+					}
+				],
+				"P1855": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1855",
+							"hash": "f46b7386ff5e7e44ccc610d016acae2b6bb71df5",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 183,
+									"id": "Q183"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P6": [
+								{
+									"snaktype": "value",
+									"property": "P6",
+									"hash": "bdff16b0e95d206dfcfecae2d4b033ed9cb6e294",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 567,
+											"id": "Q567"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P6"
+						],
+						"id": "P6$a815dad3-4d84-03c1-91f4-31eedb88ddd5",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1855",
+							"hash": "863d547242cfef4020b98aa6a92b992cdcc158fd",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 159,
+									"id": "Q159"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P6": [
+								{
+									"snaktype": "value",
+									"property": "P6",
+									"hash": "8ed5ab3754a0f27196b4f9bdc474c61d49686fc3",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 7747,
+											"id": "Q7747"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P6"
+						],
+						"id": "P6$a2090ed8-4e74-a1bc-82a5-e6f176dd9389",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1855",
+							"hash": "a70f960321cf4fe97f5685e3c140233132162d14",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 30,
+									"id": "Q30"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P6": [
+								{
+									"snaktype": "value",
+									"property": "P6",
+									"hash": "ba1b6663b1c8ece8bb4b1f5268a45b8a98197a9f",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 6279,
+											"id": "Q6279"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P6"
+						],
+						"id": "P6$a8b4325b-44b4-ae0e-7f9d-d347074295ab",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1855",
+							"hash": "7115260ec77608e951b41f0111bdd5fe592cd4c6",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 252,
+									"id": "Q252"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P6": [
+								{
+									"snaktype": "value",
+									"property": "P6",
+									"hash": "8e78d170c2247411e592e2a6ad3fa3a4dbcb5ffc",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 3318231,
+											"id": "Q3318231"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P6"
+						],
+						"id": "P6$9a107258-4cef-a4df-26fe-ce36364c377c",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1855",
+							"hash": "5d2806cc11c03536415c672d8ccd1223ddf402c7",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 43,
+									"id": "Q43"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P6": [
+								{
+									"snaktype": "value",
+									"property": "P6",
+									"hash": "96c17f890634b06ae04670803964bebbed50119e",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 39259,
+											"id": "Q39259"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P6"
+						],
+						"id": "P6$ebe6bac0-4729-a9d0-3d98-f95d140d6f68",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1855",
+							"hash": "9d3cc3a54ca37ff7b19d26051275f63564831189",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 41,
+									"id": "Q41"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P6": [
+								{
+									"snaktype": "value",
+									"property": "P6",
+									"hash": "9d60db644fddb2984718fb3acb7212dae75f3719",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 552751,
+											"id": "Q552751"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P6"
+						],
+						"id": "P6$2a325ae1-4599-6883-8f8d-57948d7f5bcc",
+						"rank": "normal"
+					}
+				],
+				"P31": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P31",
+							"hash": "3effd3e9b788d6aeabf05897a01758abcc183f01",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 22997934,
+									"id": "Q22997934"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "P6$368b28cf-4a34-b19e-08da-4e8f88e2509b",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P31",
+							"hash": "463412de901eb8a344b7ede69bb36e2bc31554aa",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 22984475,
+									"id": "Q22984475"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "P6$963173eb-4dca-c9eb-a40a-df4086b35a6d",
+						"rank": "normal"
+					}
+				],
+				"P2875": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2875",
+							"hash": "31201bdbf6b5c5801d569fd85a696a06f50d8581",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 20989996,
+									"id": "Q20989996"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "P6$03ab723b-4cc2-ac2f-e799-06aa27f48301",
+						"rank": "normal"
+					}
+				],
+				"P973": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P973",
+							"hash": "b0bbde115394e6702dd75c17e5200ae3f7eb6464",
+							"datavalue": {
+								"value": "https://www.wikidata.org/wiki/Wikidata:WikiProject_Heads_of_state_and_government",
+								"type": "string"
+							},
+							"datatype": "url"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P407": [
+								{
+									"snaktype": "value",
+									"property": "P407",
+									"hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 1860,
+											"id": "Q1860"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P407"
+						],
+						"id": "P6$139d7b58-441f-988f-f9fc-747a596ac971",
+						"rank": "normal"
+					}
+				],
+				"P2302": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2302",
+							"hash": "a00327947c6d834f33f6ee14916142d6a2008aef",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 21503250,
+									"id": "Q21503250"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P2308": [
+								{
+									"snaktype": "value",
+									"property": "P2308",
+									"hash": "38af83ea288c59844403416c3d77dfd32c6ff327",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 1048835,
+											"id": "Q1048835"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2308",
+									"hash": "1c5de3e78f6e0f29aab8bb0c58070546118be06a",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 7188,
+											"id": "Q7188"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2308",
+									"hash": "35d25435d2a69dd5211140037b8412e098080388",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 640506,
+											"id": "Q640506"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2308",
+									"hash": "fe9c604a6afa870819ec299effe63f0f4e8812d4",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 524572,
+											"id": "Q524572"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2308",
+									"hash": "dc24713ea3b28b1b481b17db924e298e1b224317",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 1145276,
+											"id": "Q1145276"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2308",
+									"hash": "f0bbdee90031c19eb63f45590eb774d206e052e8",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 64034456,
+											"id": "Q64034456"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2308",
+									"hash": "a4bb3b22bc768191a4ed214c5b677b8137bc9199",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 56061,
+											"id": "Q56061"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2308",
+									"hash": "f450ae9e8b459e8c74bcd472ef6c135f4a69d8d1",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 327333,
+											"id": "Q327333"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2308",
+									"hash": "98a0931bdfeba848de818208116efe60b253f09d",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 6866562,
+											"id": "Q6866562"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							],
+							"P2309": [
+								{
+									"snaktype": "value",
+									"property": "P2309",
+									"hash": "8d7afee22e0fa6211dd8c95f247e1dd7b38daf70",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 21503252,
+											"id": "Q21503252"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P2308",
+							"P2309"
+						],
+						"id": "P6$F2066F55-6BD4-45E8-96BC-5A7E426330AD",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2302",
+							"hash": "f682b0724a7ad8a25fffc7b602c4ecab3d8c6274",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 21510865,
+									"id": "Q21510865"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P2308": [
+								{
+									"snaktype": "value",
+									"property": "P2308",
+									"hash": "6507af56cd83ccb72044b460a8b439e1746afa1a",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 5,
+											"id": "Q5"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2308",
+									"hash": "265ccfbd021a4e58e205b62e064241f92d425a71",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 95074,
+											"id": "Q95074"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2308",
+									"hash": "1eeee99f60bec4bda960e1174bcba710f4544748",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 1006644,
+											"id": "Q1006644"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							],
+							"P2309": [
+								{
+									"snaktype": "value",
+									"property": "P2309",
+									"hash": "8d7afee22e0fa6211dd8c95f247e1dd7b38daf70",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 21503252,
+											"id": "Q21503252"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							],
+							"P2303": [
+								{
+									"snaktype": "value",
+									"property": "P2303",
+									"hash": "ef8d82dc6c54ef51b4036f9d308b59a50ae70b26",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 668224,
+											"id": "Q668224"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P2308",
+							"P2309",
+							"P2303"
+						],
+						"id": "P6$1C1EA552-9809-489A-9B60-92E161AF100D",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2302",
+							"hash": "6dc8a4d7709a521bc0d1672c9450283d7da7330b",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 21510864,
+									"id": "Q21510864"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P2306": [
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "1f71475fe6fc3233870b2dc8e2020cffc5e836b6",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 39,
+											"id": "P39"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P2306"
+						],
+						"id": "P6$B85BB345-44C1-4856-95B3-91F7F7406D4F",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2302",
+							"hash": "55cfe775ff19641cea395be018002e38e05f3749",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 21510851,
+									"id": "Q21510851"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P2306": [
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "4910ca558b9b0401e91b11626f400278702811bc",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 580,
+											"id": "P580"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "0720109791ffbb5500cf5a98c698a3156563cb72",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 582,
+											"id": "P582"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "a6be4e7a327c415e1c8d7d72c7fe6e7f784d4f57",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 585,
+											"id": "P585"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "faff7072a38e7665f630bb7020158af1b995ea5d",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 459,
+											"id": "P459"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "70877b0595c6b85cabb09815182a6a5e3a554615",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 1534,
+											"id": "P1534"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "8fd4092aebb06b7e8d6cbb2cb58038a51c556076",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 805,
+											"id": "P805"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "f417cf4de13328f2087d398805bcbf077480e2ce",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 1365,
+											"id": "P1365"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "7e95ce8a7c69f769b3d6f9161b9650ff40f4c0d1",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 1366,
+											"id": "P1366"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "7b37df9f6268175f1323ae763c0c20e63c91e0ba",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 1545,
+											"id": "P1545"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "3a817405abf49a34f2c83087570e2501410f8846",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 102,
+											"id": "P102"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "e9d201c66ee3b56503552b09e71b04821729a694",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 2868,
+											"id": "P2868"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "b7b2b2d31ff3460e580b1cbaa9444277a00ce47c",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 2241,
+											"id": "P2241"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "6b2485e2c2137f3688fe0dbb8af91308de46b999",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 7452,
+											"id": "P7452"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "1f71475fe6fc3233870b2dc8e2020cffc5e836b6",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 39,
+											"id": "P39"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "beb122180ebd95f0bc1a00967301dd81b899a65f",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 8555,
+											"id": "P8555"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "749196703a56da61182d6793cc3e2dd961ce7823",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 8554,
+											"id": "P8554"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "4d5ae67f4ec02fe631936d1a30f729254651e10e",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 1319,
+											"id": "P1319"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "27715681015ae0e055f4884c5ceac44b5882eaab",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 1326,
+											"id": "P1326"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "14f4c1e1bee234e9dbeb6aad48052b514ddb04de",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 2715,
+											"id": "P2715"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "c8d841036210f901ddf11727686177d0a32efed0",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 3415,
+											"id": "P3415"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "6fcbab5d3e02cf9df13a2acb5cedbded05896970",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 3416,
+											"id": "P3416"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P2306"
+						],
+						"id": "P6$FDCABCEB-2AE8-4433-9730-D744C480D5B3",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2302",
+							"hash": "793a77bb61b7ab2ebc9b8ef826c2c4c236eeccc1",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 53869507,
+									"id": "Q53869507"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P5314": [
+								{
+									"snaktype": "value",
+									"property": "P5314",
+									"hash": "a0202111cb525ed31611bf926974b74a2419b8ab",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 54828448,
+											"id": "Q54828448"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P5314"
+						],
+						"id": "P6$B282AC26-F9DF-4525-B8CF-4AA86246948C",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2302",
+							"hash": "d5e7d5e412e372792f72cf6fca2a6a1885c989ca",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 25796498,
+									"id": "Q25796498"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "P6$16768749-0347-4519-AE94-672D336A3BF9",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2302",
+							"hash": "5a26616612d76793d811f6e74313fc989bf0b540",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 21510856,
+									"id": "Q21510856"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P2306": [
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "4910ca558b9b0401e91b11626f400278702811bc",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 580,
+											"id": "P580"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P2306"
+						],
+						"id": "P6$54adb6d6-46b3-095d-1935-3b92acd45995",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2302",
+							"hash": "53d308536f097808b330155b19a3241548159443",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 52060874,
+									"id": "Q52060874"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P4155": [
+								{
+									"snaktype": "value",
+									"property": "P4155",
+									"hash": "e8d676da952341796e85cdedd29bdca265c6e592",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 518,
+											"id": "P518"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P4155",
+									"hash": "ef760c6ae4a2226d579735231f72a9b7bbffacd8",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 1001,
+											"id": "P1001"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P4155",
+									"hash": "7771ab84a6898bcbfd2cd37bc337fef61e01563b",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 3831,
+											"id": "P3831"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P4155",
+									"hash": "0db103e0d4c91299732832664c9a30dcdbbde8d5",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 580,
+											"id": "P580"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P4155",
+									"hash": "12c194a84be5637dc94bfbad44c86579610b34bb",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 3415,
+											"id": "P3415"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P4155",
+									"hash": "a75b9d4f8f84cfb2f4d1e370e187544021606362",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 3416,
+											"id": "P3416"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P4155",
+									"hash": "a6e7f4b823269ce9b2ac9755bd2a6ff341e11a88",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 582,
+											"id": "P582"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P4155",
+									"hash": "4e44749315ea800bb7a000cfe7bdc563750f8a11",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 1365,
+											"id": "P1365"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P4155",
+									"hash": "8985dfc662aaacfba077056e8400bac9aa86cc5d",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 1366,
+											"id": "P1366"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P4155"
+						],
+						"id": "P6$f61c1e57-4e15-3118-7c87-de8e03eb89ef",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2302",
+							"hash": "eba677434c5f12338ab5fd1ce6a834ab3139856a",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 52004125,
+									"id": "Q52004125"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P2305": [
+								{
+									"snaktype": "value",
+									"property": "P2305",
+									"hash": "76a83209b6ab9e5ea1a1dd8e2986281a5a0479d7",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 29934200,
+											"id": "Q29934200"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							],
+							"P2316": [
+								{
+									"snaktype": "value",
+									"property": "P2316",
+									"hash": "d50c571a43e6102d65b729ccc7049a0a2f867e34",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 21502408,
+											"id": "Q21502408"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P2305",
+							"P2316"
+						],
+						"id": "P6$a27ba959-4ba4-3289-35c1-a53474f84b42",
+						"rank": "normal"
+					}
+				],
+				"P3734": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P3734",
+							"hash": "44e6a9c1b2e11061a93deeebd05bc2ba0991e3ed",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 42533373,
+									"id": "Q42533373"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "P6$C1662A10-808E-4B79-B542-8E80D919A8B3",
+						"rank": "normal"
+					}
+				],
+				"P3254": [
+					{
+						"mainsnak": {
+							"snaktype": "novalue",
+							"property": "P3254",
+							"hash": "3c18212310d8b1a139eed68887f86ce6b7e5416c",
+							"datatype": "url"
+						},
+						"type": "statement",
+						"id": "P6$3d37a5dd-4a94-8820-4da8-bdca06290ae4",
+						"rank": "normal"
+					}
+				],
+				"P1647": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1647",
+							"hash": "d6c6cf1b4b2fc0b846da2fd51cade4e5bb2d080e",
+							"datavalue": {
+								"value": {
+									"entity-type": "property",
+									"numeric-id": 1037,
+									"id": "P1037"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-property"
+						},
+						"type": "statement",
+						"id": "P6$c40e25c9-4e08-20a6-4d13-9873e3d7afd4",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1647",
+							"hash": "e98a106baec52e1b764e249efea12653f935fec8",
+							"datavalue": {
+								"value": {
+									"entity-type": "property",
+									"numeric-id": 488,
+									"id": "P488"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-property"
+						},
+						"type": "statement",
+						"id": "P6$F5D92612-3301-42AF-B0E0-95A33612C156",
+						"rank": "normal"
+					}
+				],
+				"P7087": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P7087",
+							"hash": "4b5284c0a8a7c532361fa917f366907f20b13d4f",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 65964565,
+									"id": "Q65964565"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "P6$e894ba4c-4d26-6ba0-5eb5-d72a7d3a96be",
+						"rank": "normal"
+					}
+				],
+				"P2521": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2521",
+							"hash": "81857d821fb2183f341cd93ec1f266e980ab7312",
+							"datavalue": {
+								"value": {
+									"text": "jefa de gobierno",
+									"language": "es"
+								},
+								"type": "monolingualtext"
+							},
+							"datatype": "monolingualtext"
+						},
+						"type": "statement",
+						"id": "P6$b28f2a8c-4ae7-f717-193b-7c3507965722",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2521",
+							"hash": "36a354cd29b7d4da7c795148a5a089a8c0a48f96",
+							"datavalue": {
+								"value": {
+									"text": "gubernatrix",
+									"language": "la"
+								},
+								"type": "monolingualtext"
+							},
+							"datatype": "monolingualtext"
+						},
+						"type": "statement",
+						"id": "P6$14615918-4a71-50c5-9442-229f078a9609",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2521",
+							"hash": "407cba88497ba0a349d99e2e60052eeeee30240b",
+							"datavalue": {
+								"value": {
+									"text": "Leiterin der Regierung oder Verwaltung",
+									"language": "de"
+								},
+								"type": "monolingualtext"
+							},
+							"datatype": "monolingualtext"
+						},
+						"type": "statement",
+						"id": "P6$0704ae53-44ef-de82-9f58-2465a8a5da6a",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2521",
+							"hash": "ef1571ba3fb9db72cd9f9a82f566876626ae41cf",
+							"datavalue": {
+								"value": {
+									"text": "cheffe de l'exécutif",
+									"language": "fr"
+								},
+								"type": "monolingualtext"
+							},
+							"datatype": "monolingualtext"
+						},
+						"type": "statement",
+						"id": "P6$b8dd6ea8-48bc-5f04-364f-4f7181735fd6",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2521",
+							"hash": "66a041cf1b3c4f663ea6e9a78b44f1ab8d44b496",
+							"datavalue": {
+								"value": {
+									"text": "představitelka",
+									"language": "cs"
+								},
+								"type": "monolingualtext"
+							},
+							"datatype": "monolingualtext"
+						},
+						"type": "statement",
+						"id": "P6$21d28eb0-4819-2fbc-e152-431cab070054",
+						"rank": "normal"
+					}
+				],
+				"P3321": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P3321",
+							"hash": "bc0d74ebf5b87f407c1d93dd421fbf1a35246dd8",
+							"datavalue": {
+								"value": {
+									"text": "chef de l'exécutif",
+									"language": "fr"
+								},
+								"type": "monolingualtext"
+							},
+							"datatype": "monolingualtext"
+						},
+						"type": "statement",
+						"id": "P6$ec9b1ced-4793-9670-2dc3-2c41553b26e0",
+						"rank": "normal"
+					}
+				]
+			}
+		}
+	}
+}

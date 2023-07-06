@@ -1,0 +1,2306 @@
+{
+	"entities": {
+		"P10": {
+			"pageid": 3916937,
+			"ns": 120,
+			"title": "Property:P10",
+			"lastrevid": 1872291898,
+			"modified": "2023-04-11T01:03:37Z",
+			"type": "property",
+			"datatype": "commonsMedia",
+			"id": "P10",
+			"labels": {
+				"or": {
+					"language": "or",
+					"value": "ଭିଡ଼ିଓ"
+				},
+				"oc": {
+					"language": "oc",
+					"value": "vidèo"
+				},
+				"kn": {
+					"language": "kn",
+					"value": "ದೃಶ್ಯಾವಳಿ"
+				},
+				"tt-cyrl": {
+					"language": "tt-cyrl",
+					"value": "видео"
+				},
+				"ur": {
+					"language": "ur",
+					"value": "وڈیو"
+				},
+				"tl": {
+					"language": "tl",
+					"value": "bideyo"
+				},
+				"fr": {
+					"language": "fr",
+					"value": "vidéo"
+				},
+				"sr-el": {
+					"language": "sr-el",
+					"value": "video"
+				},
+				"eo": {
+					"language": "eo",
+					"value": "videodosiero"
+				},
+				"zh": {
+					"language": "zh",
+					"value": "视频"
+				},
+				"vi": {
+					"language": "vi",
+					"value": "video"
+				},
+				"fa": {
+					"language": "fa",
+					"value": "پروندهٔ ویدئویی"
+				},
+				"ko": {
+					"language": "ko",
+					"value": "동영상 파일"
+				},
+				"af": {
+					"language": "af",
+					"value": "video"
+				},
+				"fi": {
+					"language": "fi",
+					"value": "video"
+				},
+				"ta": {
+					"language": "ta",
+					"value": "காணொளி"
+				},
+				"lv": {
+					"language": "lv",
+					"value": "video"
+				},
+				"is": {
+					"language": "is",
+					"value": "myndband"
+				},
+				"pl": {
+					"language": "pl",
+					"value": "wideo"
+				},
+				"cs": {
+					"language": "cs",
+					"value": "video soubor"
+				},
+				"sco": {
+					"language": "sco",
+					"value": "video"
+				},
+				"nds": {
+					"language": "nds",
+					"value": "Datei"
+				},
+				"scn": {
+					"language": "scn",
+					"value": "vidiu"
+				},
+				"id": {
+					"language": "id",
+					"value": "video"
+				},
+				"zh-sg": {
+					"language": "zh-sg",
+					"value": "视频"
+				},
+				"zh-hant": {
+					"language": "zh-hant",
+					"value": "影片"
+				},
+				"hu": {
+					"language": "hu",
+					"value": "videó"
+				},
+				"th": {
+					"language": "th",
+					"value": "วิดีโอ"
+				},
+				"sr": {
+					"language": "sr",
+					"value": "видео"
+				},
+				"nds-nl": {
+					"language": "nds-nl",
+					"value": "filmken"
+				},
+				"en-gb": {
+					"language": "en-gb",
+					"value": "video"
+				},
+				"ca": {
+					"language": "ca",
+					"value": "vídeo"
+				},
+				"ro": {
+					"language": "ro",
+					"value": "video"
+				},
+				"sk": {
+					"language": "sk",
+					"value": "video"
+				},
+				"ms": {
+					"language": "ms",
+					"value": "video"
+				},
+				"zh-hans": {
+					"language": "zh-hans",
+					"value": "视频"
+				},
+				"en": {
+					"language": "en",
+					"value": "video"
+				},
+				"en-ca": {
+					"language": "en-ca",
+					"value": "video"
+				},
+				"pt": {
+					"language": "pt",
+					"value": "vídeo"
+				},
+				"bn": {
+					"language": "bn",
+					"value": "ভিডিও"
+				},
+				"be-tarask": {
+					"language": "be-tarask",
+					"value": "відэа"
+				},
+				"ckb": {
+					"language": "ckb",
+					"value": "ڤیدیۆ"
+				},
+				"sq": {
+					"language": "sq",
+					"value": "video"
+				},
+				"es": {
+					"language": "es",
+					"value": "video"
+				},
+				"tr": {
+					"language": "tr",
+					"value": "videosu"
+				},
+				"cy": {
+					"language": "cy",
+					"value": "fideo"
+				},
+				"mk": {
+					"language": "mk",
+					"value": "видеоснимка"
+				},
+				"be": {
+					"language": "be",
+					"value": "відэафайл"
+				},
+				"he": {
+					"language": "he",
+					"value": "וידאו בוויקישיתוף"
+				},
+				"ku-latn": {
+					"language": "ku-latn",
+					"value": "vîdyo"
+				},
+				"ia": {
+					"language": "ia",
+					"value": "video"
+				},
+				"io": {
+					"language": "io",
+					"value": "video"
+				},
+				"nb": {
+					"language": "nb",
+					"value": "videofil"
+				},
+				"sv": {
+					"language": "sv",
+					"value": "video"
+				},
+				"pt-br": {
+					"language": "pt-br",
+					"value": "vídeo"
+				},
+				"tt": {
+					"language": "tt",
+					"value": "видео"
+				},
+				"el": {
+					"language": "el",
+					"value": "βίντεο"
+				},
+				"nl": {
+					"language": "nl",
+					"value": "video"
+				},
+				"min": {
+					"language": "min",
+					"value": "video"
+				},
+				"br": {
+					"language": "br",
+					"value": "video"
+				},
+				"it": {
+					"language": "it",
+					"value": "video"
+				},
+				"de": {
+					"language": "de",
+					"value": "Video"
+				},
+				"mr": {
+					"language": "mr",
+					"value": "चलचित्र"
+				},
+				"hi": {
+					"language": "hi",
+					"value": "वीडियो"
+				},
+				"ja": {
+					"language": "ja",
+					"value": "映像"
+				},
+				"gl": {
+					"language": "gl",
+					"value": "vídeo"
+				},
+				"bg": {
+					"language": "bg",
+					"value": "видео"
+				},
+				"hy": {
+					"language": "hy",
+					"value": "տեսանյութ"
+				},
+				"eu": {
+					"language": "eu",
+					"value": "bideo"
+				},
+				"ml": {
+					"language": "ml",
+					"value": "വീഡിയോ"
+				},
+				"mg": {
+					"language": "mg",
+					"value": "horonantsary"
+				},
+				"ba": {
+					"language": "ba",
+					"value": "видео"
+				},
+				"ru": {
+					"language": "ru",
+					"value": "видеофайл"
+				},
+				"zh-cn": {
+					"language": "zh-cn",
+					"value": "视频"
+				},
+				"sr-ec": {
+					"language": "sr-ec",
+					"value": "видео"
+				},
+				"ar": {
+					"language": "ar",
+					"value": "تسجيل مرئي"
+				},
+				"ka": {
+					"language": "ka",
+					"value": "ვიდეო"
+				},
+				"ast": {
+					"language": "ast",
+					"value": "videu"
+				},
+				"te": {
+					"language": "te",
+					"value": "దృశ్యం"
+				},
+				"da": {
+					"language": "da",
+					"value": "video"
+				},
+				"bs": {
+					"language": "bs",
+					"value": "video"
+				},
+				"tg": {
+					"language": "tg",
+					"value": "видеофайл"
+				},
+				"gu": {
+					"language": "gu",
+					"value": "ચલચિત્ર"
+				},
+				"zh-tw": {
+					"language": "zh-tw",
+					"value": "影片"
+				},
+				"pa": {
+					"language": "pa",
+					"value": "ਵੀਡੀਓ"
+				},
+				"zh-hk": {
+					"language": "zh-hk",
+					"value": "影片"
+				},
+				"ilo": {
+					"language": "ilo",
+					"value": "video"
+				},
+				"fo": {
+					"language": "fo",
+					"value": "video"
+				},
+				"nn": {
+					"language": "nn",
+					"value": "video"
+				},
+				"uk": {
+					"language": "uk",
+					"value": "відео"
+				},
+				"hr": {
+					"language": "hr",
+					"value": "videozapis"
+				},
+				"lb": {
+					"language": "lb",
+					"value": "Video"
+				},
+				"my": {
+					"language": "my",
+					"value": "ဗီဒီယို"
+				},
+				"nqo": {
+					"language": "nqo",
+					"value": "ߖߌ߬ߦߊ߬ߖߟߎ"
+				},
+				"az": {
+					"language": "az",
+					"value": "video"
+				},
+				"ary": {
+					"language": "ary",
+					"value": "ڤيديو"
+				},
+				"vep": {
+					"language": "vep",
+					"value": "videofail"
+				},
+				"ga": {
+					"language": "ga",
+					"value": "físeán"
+				},
+				"lt": {
+					"language": "lt",
+					"value": "video failas"
+				},
+				"hsb": {
+					"language": "hsb",
+					"value": "widejo"
+				},
+				"dag": {
+					"language": "dag",
+					"value": "viidio"
+				},
+				"ban": {
+					"language": "ban",
+					"value": "vidéo"
+				},
+				"vec": {
+					"language": "vec",
+					"value": "vìdeo"
+				},
+				"sms": {
+					"language": "sms",
+					"value": "videoteâttõs"
+				},
+				"se": {
+					"language": "se",
+					"value": "videofiila"
+				},
+				"smn": {
+					"language": "smn",
+					"value": "videotiätuvuárkká"
+				},
+				"ms-arab": {
+					"language": "ms-arab",
+					"value": "ۏيديو"
+				},
+				"gd": {
+					"language": "gd",
+					"value": "bhideo"
+				},
+				"ig": {
+					"language": "ig",
+					"value": "vidiyo"
+				},
+				"kcg": {
+					"language": "kcg",
+					"value": "ghwughwu a̱guguut"
+				},
+				"ha": {
+					"language": "ha",
+					"value": "bidiyo"
+				},
+				"kw": {
+					"language": "kw",
+					"value": "gwydhyow"
+				},
+				"gpe": {
+					"language": "gpe",
+					"value": "video"
+				},
+				"pnb": {
+					"language": "pnb",
+					"value": "ویڈیاَو"
+				},
+				"sw": {
+					"language": "sw",
+					"value": "Video"
+				},
+				"haw": {
+					"language": "haw",
+					"value": "wikiō"
+				},
+				"tok": {
+					"language": "tok",
+					"value": "sitelen tawa"
+				},
+				"sl": {
+					"language": "sl",
+					"value": "video"
+				},
+				"bho": {
+					"language": "bho",
+					"value": "𑂒𑂱𑂞𑂹𑂩𑂒𑂪𑂱𑂞"
+				},
+				"ab": {
+					"language": "ab",
+					"value": "авидеофаил"
+				}
+			},
+			"descriptions": {
+				"or": {
+					"language": "or",
+					"value": "ପ୍ରାସଙ୍ଗିକ ଭିଡ଼ିଓ"
+				},
+				"kn": {
+					"language": "kn",
+					"value": "ಸಂಗತವಾದ ದೃಶ್ಯಾವಳಿ"
+				},
+				"ur": {
+					"language": "ur",
+					"value": "معتلقہ وڈیو"
+				},
+				"be": {
+					"language": "be",
+					"value": "відэазапіс, якая адпавядае элементу"
+				},
+				"he": {
+					"language": "he",
+					"value": "קובץ וידאו בוויקישיתוף (לתמונה השתמשו ב\"תמונה\" P18)"
+				},
+				"fr": {
+					"language": "fr",
+					"value": "fichier vidéo sur Commons. Pour les images, utilisez la propriété « image » (P18)."
+				},
+				"sr-el": {
+					"language": "sr-el",
+					"value": "video zapis"
+				},
+				"ia": {
+					"language": "ia",
+					"value": "video relevante"
+				},
+				"nb": {
+					"language": "nb",
+					"value": "relevant videofil fra Wikimedia Commons"
+				},
+				"zh": {
+					"language": "zh",
+					"value": "相关的视频。 对于图像，使用属性P18。 对于电影预告片，用“object has role”(P3831)=\"trailer\" (Q622550) 修饰"
+				},
+				"sv": {
+					"language": "sv",
+					"value": "videofil från Commons"
+				},
+				"fa": {
+					"language": "fa",
+					"value": "ویدئوی مرتبط"
+				},
+				"ko": {
+					"language": "ko",
+					"value": "항목 주제와 관련된 동영상 (위키미디어 공용에 올라온 것에 한하며 유튜브 동영상인 경우 P1651를 이용하세요)"
+				},
+				"el": {
+					"language": "el",
+					"value": "ένα σχετικό βίντεο"
+				},
+				"nl": {
+					"language": "nl",
+					"value": "videobestand van Commons. Gebruik voor afbeeldingen de \"afbeelding\"-eigenschap (P18). Gebruik voor audio P51."
+				},
+				"fi": {
+					"language": "fi",
+					"value": "aiheeseen liittyvä videotiedosto"
+				},
+				"min": {
+					"language": "min",
+					"value": "video takaik"
+				},
+				"br": {
+					"language": "br",
+					"value": "Restr video war Commons. Evit ar skeudennoù, implijit ar perzh \"skeudenn\" (P18)"
+				},
+				"it": {
+					"language": "it",
+					"value": "video rilevante da Commons. Se il file è un trailer del film, utilizzare P3831 = Q622550"
+				},
+				"ta": {
+					"language": "ta",
+					"value": "தொடர்புடைய காணொளி"
+				},
+				"de": {
+					"language": "de",
+					"value": "Videodatei gespeichert auf Commons. Wenn es sich bei der Datei um einen Filmtrailer handelt, verwenden Sie P3831 = Q622550"
+				},
+				"pl": {
+					"language": "pl",
+					"value": "plik z Commons, nie używaj do obrazów i dźwięków. Jeżeli plik jest trailerem filmowym, użyj (object has role) P3831 = (trailer) Q622550"
+				},
+				"cs": {
+					"language": "cs",
+					"value": "související video či animace; pro obrázek použijte P18"
+				},
+				"hi": {
+					"language": "hi",
+					"value": "प्रासंगिक वीडियो"
+				},
+				"ja": {
+					"language": "ja",
+					"value": "関連する映像"
+				},
+				"scn": {
+					"language": "scn",
+					"value": "ritagghiu filmatu rilativu a stu suggettu"
+				},
+				"gl": {
+					"language": "gl",
+					"value": "ficheiro multimedia en Commons"
+				},
+				"id": {
+					"language": "id",
+					"value": "video berkaitan"
+				},
+				"en-ca": {
+					"language": "en-ca",
+					"value": "relevant video"
+				},
+				"zh-hant": {
+					"language": "zh-hant",
+					"value": "來自共享資源的視訊檔案"
+				},
+				"hu": {
+					"language": "hu",
+					"value": "kapcsolódó videofájl a Commonsból"
+				},
+				"ml": {
+					"language": "ml",
+					"value": "പ്രസക്തമായ വീഡിയോ. ചിത്രങ്ങൾക്ക്, പ്രോപ്പർട്ടി P18 ഉപയോഗിക്കുക. ഫിലിം ട്രെയിലറുകൾക്ക്, \"object has role\" (P3831)=\"trailer\" (Q622550) ക്വാളിഫൈ ചേർക്കുക"
+				},
+				"sr": {
+					"language": "sr",
+					"value": "видео запис"
+				},
+				"te": {
+					"language": "te",
+					"value": "సంబంధిత వీడియో"
+				},
+				"ru": {
+					"language": "ru",
+					"value": "видеозапись из Склада Викимедиа, соответствующая элементу"
+				},
+				"en-gb": {
+					"language": "en-gb",
+					"value": "relevant video"
+				},
+				"ca": {
+					"language": "ca",
+					"value": "fitxer de Commons. Per a les imatges, cal fer servir la propietat \"imatge\""
+				},
+				"ro": {
+					"language": "ro",
+					"value": "fișier video relevant de la Commons; a se folosi P18 pentru imagini"
+				},
+				"ast": {
+					"language": "ast",
+					"value": "videu rellacionáu"
+				},
+				"ms": {
+					"language": "ms",
+					"value": "video berkaitan"
+				},
+				"zh-hans": {
+					"language": "zh-hans",
+					"value": "来自共享资源的视频文件"
+				},
+				"ka": {
+					"language": "ka",
+					"value": "ელემენტის შესაბამისი ვიდეოჩანაწერი"
+				},
+				"en": {
+					"language": "en",
+					"value": "relevant video. For images, use the property P18. For film trailers, qualify with \"object has role\" (P3831)=\"trailer\" (Q622550)"
+				},
+				"sr-ec": {
+					"language": "sr-ec",
+					"value": "видео запис"
+				},
+				"da": {
+					"language": "da",
+					"value": "videofil fra Commons"
+				},
+				"lv": {
+					"language": "lv",
+					"value": "Fails no Vikikrātuves. Attēliem jāizmanto \"attēlu\" īpašība (P18)."
+				},
+				"pt": {
+					"language": "pt",
+					"value": "ficheiro de vídeo do Commons"
+				},
+				"ilo": {
+					"language": "ilo",
+					"value": "ti maitutop a video"
+				},
+				"bn": {
+					"language": "bn",
+					"value": "প্রাসঙ্গিক ভিডিও"
+				},
+				"be-tarask": {
+					"language": "be-tarask",
+					"value": "дарэчнае відэа"
+				},
+				"gu": {
+					"language": "gu",
+					"value": "પ્રાસંગિક ચલચિત્ર"
+				},
+				"zh-tw": {
+					"language": "zh-tw",
+					"value": "來自共享資源的視訊檔案"
+				},
+				"pa": {
+					"language": "pa",
+					"value": "ਪ੍ਰਸੰਗਿਕ ਵੀਡੀਓ"
+				},
+				"nn": {
+					"language": "nn",
+					"value": "mediefil frå Commons"
+				},
+				"es": {
+					"language": "es",
+					"value": "archivo de video en Commons"
+				},
+				"tr": {
+					"language": "tr",
+					"value": "ilgili video. fragmanlar için nesnedeki rolü (P3831) = (Q622550) ile nitelendirin. Resimler için görsel (P18) kullanın."
+				},
+				"uk": {
+					"language": "uk",
+					"value": "відповідне відео у Вікісховищі"
+				},
+				"nqo": {
+					"language": "nqo",
+					"value": "ߖߌ߬ߦߊ߬ߖߟߎ ߟߋ߬ ߞߏ߫ ߦߋ߫. ߣߌ߫ ߖߌ߬ߦߊ߬ߓߍ ߟߋ߬߸ ߏ߬ ߟߊߓߊ߯ߙߊ߫ ߣߍ߲߫ ߦߋ߫ P18 ߟߋ߬ ߘߐ߫."
+				},
+				"az": {
+					"language": "az",
+					"value": "əlaqədar video"
+				},
+				"lt": {
+					"language": "lt",
+					"value": "video medžiagos failas išsaugotas Wikimedia Commons"
+				},
+				"hsb": {
+					"language": "hsb",
+					"value": "widejowa dataja na Commons"
+				},
+				"dag": {
+					"language": "dag",
+					"value": "viidio dinʒi Wikimedia Commons zuɣu"
+				},
+				"vi": {
+					"language": "vi",
+					"value": "video tương ứng. Với hình ảnh, dùng thuộc tính P18. Với đoạn giới thiệu phim, lượng số bằng \"đối tượng có vai trò\" (P3831)=\"phim giới thiệu\" (Q622550)"
+				},
+				"ig": {
+					"language": "ig",
+					"value": "vidiyo dị mkpa"
+				},
+				"kcg": {
+					"language": "kcg",
+					"value": "ghwughwu ku shyei a̱ni. Ka̱ nghwughwu nia, a nyia̱ ta̱m ma̱ng P18. Mat ti̱rela a̱yaafim, a mbeang \"a̱tyu wu byia̱ kap gu ku maat a̱ni\" (P3831)=\"ti̱rela\" (Q622550)"
+				},
+				"sw": {
+					"language": "sw",
+					"value": "video husika. Kwa picha, tumia mali P18. Kwa trela za filamu, hitimu na \"object has role\" (P3831)=\"trela\" (Q622550)"
+				},
+				"pt-br": {
+					"language": "pt-br",
+					"value": "arquivo de vídeo do Commons"
+				},
+				"tok": {
+					"language": "tok",
+					"value": "sitelen tawa ni li lon lipu Komon"
+				},
+				"bho": {
+					"language": "bho",
+					"value": "𑂣𑂹𑂩𑂰𑂮𑂁𑂏𑂱𑂍 𑂫𑂲𑂙𑂱𑂨𑂷 𑂥𑂰। 𑂓𑂫𑂱 𑂎𑂰𑂞𑂱𑂩, 𑂏𑂳𑂝 P18 𑂍𑂵 𑂅𑂮𑂹𑂞𑂵𑂧𑂰𑂪 𑂍𑂩𑂲𑂁। 𑂤𑂱𑂪𑂹𑂧 𑂍𑂵 𑂗𑂹𑂩𑂵𑂪𑂩 𑂎𑂰𑂞𑂱𑂩, \"𑂫𑂮𑂹𑂞𑂳 𑂍𑂵 𑂦𑂴𑂧𑂱𑂍𑂰\" (P3831)=\"𑂕𑂪𑂍\" (Q622550) 𑂍𑂵 𑂮𑂰𑂟 𑂍𑂹𑂫𑂰𑂪𑂱𑂤𑂰𑂆 𑂍𑂩𑂲𑂁।"
+				}
+			},
+			"aliases": {
+				"kn": [
+					{
+						"language": "kn",
+						"value": "ಮಾದ್ಯಮ"
+					}
+				],
+				"tt-cyrl": [
+					{
+						"language": "tt-cyrl",
+						"value": "видеофайл"
+					},
+					{
+						"language": "tt-cyrl",
+						"value": "медиа"
+					},
+					{
+						"language": "tt-cyrl",
+						"value": "медиафайл"
+					}
+				],
+				"ru": [
+					{
+						"language": "ru",
+						"value": "файл видео"
+					},
+					{
+						"language": "ru",
+						"value": "медиафайл"
+					},
+					{
+						"language": "ru",
+						"value": "запись видео"
+					},
+					{
+						"language": "ru",
+						"value": "видео"
+					}
+				],
+				"en-gb": [
+					{
+						"language": "en-gb",
+						"value": "media"
+					}
+				],
+				"ro": [
+					{
+						"language": "ro",
+						"value": "media"
+					}
+				],
+				"ast": [
+					{
+						"language": "ast",
+						"value": "mediu"
+					}
+				],
+				"ms": [
+					{
+						"language": "ms",
+						"value": "media"
+					}
+				],
+				"zh-hans": [
+					{
+						"language": "zh-hans",
+						"value": "媒体"
+					}
+				],
+				"zh": [
+					{
+						"language": "zh",
+						"value": "視訊"
+					},
+					{
+						"language": "zh",
+						"value": "影片"
+					}
+				],
+				"ka": [
+					{
+						"language": "ka",
+						"value": "ვიდეოფაილი"
+					}
+				],
+				"ta": [
+					{
+						"language": "ta",
+						"value": "ஊடகம்"
+					}
+				],
+				"en": [
+					{
+						"language": "en",
+						"value": "media"
+					},
+					{
+						"language": "en",
+						"value": "animation"
+					},
+					{
+						"language": "en",
+						"value": "gif"
+					},
+					{
+						"language": "en",
+						"value": "trailer"
+					}
+				],
+				"pt-br": [
+					{
+						"language": "pt-br",
+						"value": "ficheiro do Commons"
+					},
+					{
+						"language": "pt-br",
+						"value": "arquivo do Commons"
+					}
+				],
+				"tt": [
+					{
+						"language": "tt",
+						"value": "видеофайл"
+					},
+					{
+						"language": "tt",
+						"value": "медиа"
+					},
+					{
+						"language": "tt",
+						"value": "медиафайл"
+					}
+				],
+				"ko": [
+					{
+						"language": "ko",
+						"value": "미디어"
+					},
+					{
+						"language": "ko",
+						"value": "비디오"
+					},
+					{
+						"language": "ko",
+						"value": "비디오 파일"
+					},
+					{
+						"language": "ko",
+						"value": "영상"
+					},
+					{
+						"language": "ko",
+						"value": "영상 파일"
+					},
+					{
+						"language": "ko",
+						"value": "동영상"
+					},
+					{
+						"language": "ko",
+						"value": "녹화 영상"
+					},
+					{
+						"language": "ko",
+						"value": "녹화 파일"
+					},
+					{
+						"language": "ko",
+						"value": "녹화 영상 파일"
+					}
+				],
+				"nl": [
+					{
+						"language": "nl",
+						"value": "media"
+					}
+				],
+				"en-ca": [
+					{
+						"language": "en-ca",
+						"value": "media"
+					}
+				],
+				"ilo": [
+					{
+						"language": "ilo",
+						"value": "midia"
+					},
+					{
+						"language": "ilo",
+						"value": "video"
+					}
+				],
+				"bn": [
+					{
+						"language": "bn",
+						"value": "মিডিয়া"
+					}
+				],
+				"de": [
+					{
+						"language": "de",
+						"value": "Videodatei von Commons"
+					},
+					{
+						"language": "de",
+						"value": "Animation"
+					},
+					{
+						"language": "de",
+						"value": "GIF"
+					},
+					{
+						"language": "de",
+						"value": "Multimedia-Datei"
+					}
+				],
+				"zh-tw": [
+					{
+						"language": "zh-tw",
+						"value": "影音"
+					},
+					{
+						"language": "zh-tw",
+						"value": "視訊"
+					}
+				],
+				"pa": [
+					{
+						"language": "pa",
+						"value": "ਮੀਡੀਆ"
+					}
+				],
+				"ja": [
+					{
+						"language": "ja",
+						"value": "ビデオ"
+					},
+					{
+						"language": "ja",
+						"value": "メディア"
+					}
+				],
+				"scn": [
+					{
+						"language": "scn",
+						"value": "video"
+					}
+				],
+				"es": [
+					{
+						"language": "es",
+						"value": "archivo multimedia de Commons"
+					},
+					{
+						"language": "es",
+						"value": "vídeo"
+					}
+				],
+				"tr": [
+					{
+						"language": "tr",
+						"value": "filmi"
+					},
+					{
+						"language": "tr",
+						"value": "film"
+					},
+					{
+						"language": "tr",
+						"value": "fragman (Commons)"
+					},
+					{
+						"language": "tr",
+						"value": "animasyonu"
+					},
+					{
+						"language": "tr",
+						"value": "medyası"
+					},
+					{
+						"language": "tr",
+						"value": "hareketli resmi"
+					},
+					{
+						"language": "tr",
+						"value": "gifi"
+					},
+					{
+						"language": "tr",
+						"value": "video"
+					}
+				],
+				"zh-hant": [
+					{
+						"language": "zh-hant",
+						"value": "影音"
+					},
+					{
+						"language": "zh-hant",
+						"value": "視訊"
+					}
+				],
+				"uk": [
+					{
+						"language": "uk",
+						"value": "файл відео"
+					},
+					{
+						"language": "uk",
+						"value": "медіафайл"
+					},
+					{
+						"language": "uk",
+						"value": "запис відео"
+					},
+					{
+						"language": "uk",
+						"value": "мультимедіа-файл"
+					}
+				],
+				"fa": [
+					{
+						"language": "fa",
+						"value": "رسانه های ویکی انبار"
+					}
+				],
+				"th": [
+					{
+						"language": "th",
+						"value": "วีดิทัศน์"
+					}
+				],
+				"my": [
+					{
+						"language": "my",
+						"value": "မီဒီယာ"
+					},
+					{
+						"language": "my",
+						"value": "လှုပ်ရှားရုပ်ပုံ"
+					}
+				],
+				"id": [
+					{
+						"language": "id",
+						"value": "pemutar gambar"
+					},
+					{
+						"language": "id",
+						"value": "animasi"
+					}
+				],
+				"min": [
+					{
+						"language": "min",
+						"value": "pamuta gambar"
+					}
+				],
+				"nqo": [
+					{
+						"language": "nqo",
+						"value": "ߖߌ߬ߦߊ߬ߓߍ߫ ߕߎ߲߰ߣߍ߲߬ߢߐ߲߰ߠߊ"
+					},
+					{
+						"language": "nqo",
+						"value": "ߖߌ߬ߦߊ߬ߓߍ ߡߍ߲ ߦߴߊ߬ ߟߊߡߊ߰ ߟߊ߫"
+					}
+				],
+				"az": [
+					{
+						"language": "az",
+						"value": "oxşar video"
+					},
+					{
+						"language": "az",
+						"value": "video material"
+					},
+					{
+						"language": "az",
+						"value": "video faylı"
+					},
+					{
+						"language": "az",
+						"value": "media"
+					},
+					{
+						"language": "az",
+						"value": "treyler"
+					}
+				],
+				"pl": [
+					{
+						"language": "pl",
+						"value": "video"
+					},
+					{
+						"language": "pl",
+						"value": "animacja"
+					},
+					{
+						"language": "pl",
+						"value": "gif"
+					}
+				],
+				"it": [
+					{
+						"language": "it",
+						"value": "animazione"
+					},
+					{
+						"language": "it",
+						"value": "gif"
+					},
+					{
+						"language": "it",
+						"value": "file multimediale"
+					}
+				],
+				"vep": [
+					{
+						"language": "vep",
+						"value": "video"
+					},
+					{
+						"language": "vep",
+						"value": "mediafail"
+					}
+				],
+				"lt": [
+					{
+						"language": "lt",
+						"value": "filmas"
+					},
+					{
+						"language": "lt",
+						"value": "animacija"
+					},
+					{
+						"language": "lt",
+						"value": "vaizdinė medžiaga"
+					},
+					{
+						"language": "lt",
+						"value": "medija"
+					}
+				],
+				"hsb": [
+					{
+						"language": "hsb",
+						"value": "video"
+					}
+				],
+				"cs": [
+					{
+						"language": "cs",
+						"value": "video"
+					},
+					{
+						"language": "cs",
+						"value": "animace"
+					},
+					{
+						"language": "cs",
+						"value": "GIF"
+					}
+				],
+				"fr": [
+					{
+						"language": "fr",
+						"value": "gif"
+					},
+					{
+						"language": "fr",
+						"value": "video"
+					},
+					{
+						"language": "fr",
+						"value": "animation"
+					}
+				],
+				"eo": [
+					{
+						"language": "eo",
+						"value": "filmeto"
+					},
+					{
+						"language": "eo",
+						"value": "gif"
+					}
+				],
+				"dag": [
+					{
+						"language": "dag",
+						"value": "viidiyo"
+					}
+				],
+				"ml": [
+					{
+						"language": "ml",
+						"value": "ആനിമേഷൻ"
+					},
+					{
+						"language": "ml",
+						"value": "gif"
+					}
+				],
+				"ban": [
+					{
+						"language": "ban",
+						"value": "pidéo"
+					}
+				],
+				"he": [
+					{
+						"language": "he",
+						"value": "קובץ וידאו"
+					},
+					{
+						"language": "he",
+						"value": "קובץ אנימציה"
+					},
+					{
+						"language": "he",
+						"value": "קובץ מדיה בוויקישיתוף"
+					}
+				],
+				"sms": [
+					{
+						"language": "sms",
+						"value": "video"
+					},
+					{
+						"language": "sms",
+						"value": "videoteâttõs"
+					}
+				],
+				"fi": [
+					{
+						"language": "fi",
+						"value": "videotiedosto"
+					}
+				],
+				"se": [
+					{
+						"language": "se",
+						"value": "video"
+					},
+					{
+						"language": "se",
+						"value": "videofiila"
+					}
+				],
+				"smn": [
+					{
+						"language": "smn",
+						"value": "video"
+					},
+					{
+						"language": "smn",
+						"value": "videotiätuvuárkká"
+					}
+				],
+				"sv": [
+					{
+						"language": "sv",
+						"value": "videofil"
+					}
+				],
+				"vi": [
+					{
+						"language": "vi",
+						"value": "phương tiện"
+					}
+				],
+				"kcg": [
+					{
+						"language": "kcg",
+						"value": "vidiyo"
+					},
+					{
+						"language": "kcg",
+						"value": "vidyo"
+					},
+					{
+						"language": "kcg",
+						"value": "nyinyiit shei nkhang"
+					}
+				],
+				"kw": [
+					{
+						"language": "kw",
+						"value": "video"
+					}
+				],
+				"ar": [
+					{
+						"language": "ar",
+						"value": "فيديو"
+					},
+					{
+						"language": "ar",
+						"value": "تسجيل مُصوَّر"
+					},
+					{
+						"language": "ar",
+						"value": "تسجيل مصور"
+					}
+				],
+				"sw": [
+					{
+						"language": "sw",
+						"value": "media"
+					},
+					{
+						"language": "sw",
+						"value": "animation"
+					}
+				],
+				"sl": [
+					{
+						"language": "sl",
+						"value": "videoposnetek"
+					},
+					{
+						"language": "sl",
+						"value": "animacija"
+					},
+					{
+						"language": "sl",
+						"value": "gif"
+					},
+					{
+						"language": "sl",
+						"value": "trailer"
+					},
+					{
+						"language": "sl",
+						"value": "večpredstavnostna datoteka"
+					}
+				],
+				"ab": [
+					{
+						"language": "ab",
+						"value": "авидео афаил"
+					},
+					{
+						"language": "ab",
+						"value": "амедиа афаил"
+					},
+					{
+						"language": "ab",
+						"value": "авидео"
+					}
+				]
+			},
+			"claims": {
+				"P1659": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1659",
+							"hash": "d62637abae0b10af51e235206db12269aa4857fa",
+							"datavalue": {
+								"value": {
+									"entity-type": "property",
+									"numeric-id": 1651,
+									"id": "P1651"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-property"
+						},
+						"type": "statement",
+						"id": "P10$00d37488-4d1b-87bc-dd5e-59c705cacf62",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1659",
+							"hash": "4f4469d8eee36f79874ba21dfb5d62f733b04a43",
+							"datavalue": {
+								"value": {
+									"entity-type": "property",
+									"numeric-id": 51,
+									"id": "P51"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-property"
+						},
+						"type": "statement",
+						"id": "P10$f278323c-4d5c-4251-d935-1e3b75f11681",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1659",
+							"hash": "17c3ac1d7e3ee024b4c2e8e411be55b60ed9a1de",
+							"datavalue": {
+								"value": {
+									"entity-type": "property",
+									"numeric-id": 18,
+									"id": "P18"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-property"
+						},
+						"type": "statement",
+						"id": "P10$e1244f88-4595-f05e-8a8a-602e6053b9b4",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1659",
+							"hash": "775bc0de2f3e754647047c55e4348a96aebcbb58",
+							"datavalue": {
+								"value": {
+									"entity-type": "property",
+									"numeric-id": 4238,
+									"id": "P4238"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-property"
+						},
+						"type": "statement",
+						"id": "P10$9776a7fb-475a-531d-fbd0-85551a551095",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1659",
+							"hash": "d976c8b4c0aab4aed5f90a8f04c131bb69f261c2",
+							"datavalue": {
+								"value": {
+									"entity-type": "property",
+									"numeric-id": 4015,
+									"id": "P4015"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-property"
+						},
+						"type": "statement",
+						"id": "P10$d054f86d-47ab-1c0c-ef7e-ba5ea9cd57b9",
+						"rank": "normal"
+					}
+				],
+				"P1628": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1628",
+							"hash": "fe5fed6c902a3f208e7c75554b58803dabf4887f",
+							"datavalue": {
+								"value": "https://schema.org/video",
+								"type": "string"
+							},
+							"datatype": "url"
+						},
+						"type": "statement",
+						"id": "P10$3d9276ad-45d4-58ba-1595-1c6f97a27b6e",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1628",
+							"hash": "26bde38863a93b6590cf017e8d7f8105b5cff196",
+							"datavalue": {
+								"value": "http://www.w3.org/2006/vcard/ns#Video",
+								"type": "string"
+							},
+							"datatype": "url"
+						},
+						"type": "statement",
+						"id": "P10$31f34bf7-4ce8-d075-3a43-e03285daaf3d",
+						"rank": "normal"
+					}
+				],
+				"P1629": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1629",
+							"hash": "697500333a89fa43e6f554942742c4fa308fe167",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 34508,
+									"id": "Q34508"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "P10$ecb90df6-45e2-1c2f-14ea-6ab636adbd86",
+						"rank": "normal"
+					}
+				],
+				"P1855": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1855",
+							"hash": "07a6ac792e02732587dede672a77107f1fb90738",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 4504,
+									"id": "Q4504"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P10": [
+								{
+									"snaktype": "value",
+									"property": "P10",
+									"hash": "fdbb2ae6129dbd859922eb1e04aad0d55305ecba",
+									"datavalue": {
+										"value": "Komodo dragons video.ogv",
+										"type": "string"
+									},
+									"datatype": "commonsMedia"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P10"
+						],
+						"id": "P10$87244956-42b5-0c17-21d2-025ca5b9a5b4",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1855",
+							"hash": "1416d0db071e681d9a1de8139656d616ef08fc4a",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 69063653,
+									"id": "Q69063653"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P10": [
+								{
+									"snaktype": "value",
+									"property": "P10",
+									"hash": "ded7f76a65040502355b9ce0a87676072fa0cc63",
+									"datavalue": {
+										"value": "Couch Commander.webm",
+										"type": "string"
+									},
+									"datatype": "commonsMedia"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P10"
+						],
+						"id": "P10$cb5cf8cb-4605-0064-7d50-92c1a00a4165",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1855",
+							"hash": "a2546f5017d211af23d18bd19b95629977b22c0e",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 15075950,
+									"id": "Q15075950"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P10": [
+								{
+									"snaktype": "value",
+									"property": "P10",
+									"hash": "a972898e3265023d1b8bbc230899887eb0f65ffd",
+									"datavalue": {
+										"value": "Smoorverliefd 12 september.webm",
+										"type": "string"
+									},
+									"datatype": "commonsMedia"
+								}
+							],
+							"P3831": [
+								{
+									"snaktype": "value",
+									"property": "P3831",
+									"hash": "1dcc275535ce6914664a2fd3f6339c31ec9c0cbc",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 622550,
+											"id": "Q622550"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P10",
+							"P3831"
+						],
+						"id": "P10$fb75834f-4866-4f4c-b338-3a006b95f4b5",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1855",
+							"hash": "655df0ca1b2c9b63771c77416977f33cdcaaaaef",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 825197,
+									"id": "Q825197"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P10": [
+								{
+									"snaktype": "value",
+									"property": "P10",
+									"hash": "55c482a6ee73b180db2b5e443bcfcd2c10b64f1a",
+									"datavalue": {
+										"value": "Elephants Dream (2006).webm",
+										"type": "string"
+									},
+									"datatype": "commonsMedia"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P10"
+						],
+						"id": "P10$7c85d6f3-4baf-4896-7ec4-43d78cfe07d0",
+						"rank": "normal"
+					}
+				],
+				"P3254": [
+					{
+						"mainsnak": {
+							"snaktype": "novalue",
+							"property": "P3254",
+							"hash": "3c18212310d8b1a139eed68887f86ce6b7e5416c",
+							"datatype": "url"
+						},
+						"type": "statement",
+						"id": "P10$e7f47166-4b13-3b2c-4652-56b694a80cc4",
+						"rank": "normal"
+					}
+				],
+				"P31": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P31",
+							"hash": "c4fae07b0b83f02c61ca40e8cbe0149c7aa5cddf",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 18610173,
+									"id": "Q18610173"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "P10$8054f6cd-49e4-5a94-1591-9ee9e424b9b6",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P31",
+							"hash": "f4decee31e9752960d9623ea58d1dfd672b31341",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 19847637,
+									"id": "Q19847637"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "P10$7bc8e0a3-4453-432b-4550-1cceb034f5b1",
+						"rank": "normal"
+					}
+				],
+				"P2302": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2302",
+							"hash": "e73a5f036f31bb6d50421be620803e7374551ba8",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 21510852,
+									"id": "Q21510852"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P2307": [
+								{
+									"snaktype": "value",
+									"property": "P2307",
+									"hash": "6f0f66d85faac670ae81588dc58e6f17ce01e373",
+									"datavalue": {
+										"value": "File",
+										"type": "string"
+									},
+									"datatype": "string"
+								}
+							],
+							"P2316": [
+								{
+									"snaktype": "value",
+									"property": "P2316",
+									"hash": "d50c571a43e6102d65b729ccc7049a0a2f867e34",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 21502408,
+											"id": "Q21502408"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P2307",
+							"P2316"
+						],
+						"id": "P10$28240BCD-348B-45BD-9654-3B5B8E101FD6",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2302",
+							"hash": "3ab788a79997cfb672590fc69472661329379611",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 21502404,
+									"id": "Q21502404"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P1793": [
+								{
+									"snaktype": "value",
+									"property": "P1793",
+									"hash": "018d8c7cc1e6c0fee41eaa7ef1991c4fa28c234f",
+									"datavalue": {
+										"value": "(?i).+\\.(webm|ogv|ogg|mpg|gif|svg)",
+										"type": "string"
+									},
+									"datatype": "string"
+								}
+							],
+							"P2316": [
+								{
+									"snaktype": "value",
+									"property": "P2316",
+									"hash": "d50c571a43e6102d65b729ccc7049a0a2f867e34",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 21502408,
+											"id": "Q21502408"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							],
+							"P2916": [
+								{
+									"snaktype": "value",
+									"property": "P2916",
+									"hash": "81d761590bf21dd772345a1d145aa597c92383ce",
+									"datavalue": {
+										"value": {
+											"text": "filename with extension: webm, ogg, mpg, ogv, or gif (case insensitive)",
+											"language": "en"
+										},
+										"type": "monolingualtext"
+									},
+									"datatype": "monolingualtext"
+								}
+							],
+							"P6607": [
+								{
+									"snaktype": "value",
+									"property": "P6607",
+									"hash": "f5eb92c119b54ec34f30da425ef6365328b393d2",
+									"datavalue": {
+										"value": {
+											"text": "not to be used with still GIFs or non-scripted/-SMIL SVGs, or .oga that retain the .ogg extension",
+											"language": "en"
+										},
+										"type": "monolingualtext"
+									},
+									"datatype": "monolingualtext"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P1793",
+							"P2316",
+							"P2916",
+							"P6607"
+						],
+						"id": "P10$1529A843-91A8-4FEA-B43F-9A3258446A38",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2302",
+							"hash": "55cfe775ff19641cea395be018002e38e05f3749",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 21510851,
+									"id": "Q21510851"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P2306": [
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "cf63fd2fdfb652c09618d474a9230d5548d6194c",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 407,
+											"id": "P407"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "1be7d7fd72634556d47efb6ca06415438e3ab878",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 175,
+											"id": "P175"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "c4aa548070b0d0db30e207ceccb0891c02225d50",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 180,
+											"id": "P180"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "50b021e136b4f3c2b480c8326564d5d63ac6fbc3",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 577,
+											"id": "P577"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "a6be4e7a327c415e1c8d7d72c7fe6e7f784d4f57",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 585,
+											"id": "P585"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "a37e6269d51d859c3a19f78117ed05e2eae3a691",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 2096,
+											"id": "P2096"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "3efd1f494ba2c1ac4bdc572df5784d4cca879442",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 518,
+											"id": "P518"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "07140c61c8ce2da1772b95cd4ec3b24a1a611435",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 3831,
+											"id": "P3831"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "b7b2b2d31ff3460e580b1cbaa9444277a00ce47c",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 2241,
+											"id": "P2241"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2306",
+									"hash": "6b2485e2c2137f3688fe0dbb8af91308de46b999",
+									"datavalue": {
+										"value": {
+											"entity-type": "property",
+											"numeric-id": 7452,
+											"id": "P7452"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-property"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P2306"
+						],
+						"id": "P10$7078A980-32E7-4103-B102-B8F9DFB507E8",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2302",
+							"hash": "eba677434c5f12338ab5fd1ce6a834ab3139856a",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 52004125,
+									"id": "Q52004125"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P2305": [
+								{
+									"snaktype": "value",
+									"property": "P2305",
+									"hash": "76a83209b6ab9e5ea1a1dd8e2986281a5a0479d7",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 29934200,
+											"id": "Q29934200"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2305",
+									"hash": "3b5f700c5d27c01ea14a6e43d2354185eaa31900",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 54285715,
+											"id": "Q54285715"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								},
+								{
+									"snaktype": "value",
+									"property": "P2305",
+									"hash": "89d6ee00dec273a4ec43b0a29b74e5e48f6639f2",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 54285143,
+											"id": "Q54285143"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P2305"
+						],
+						"id": "P10$c6b7afe3-407f-550a-9d38-b076c501acb0",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2302",
+							"hash": "793a77bb61b7ab2ebc9b8ef826c2c4c236eeccc1",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 53869507,
+									"id": "Q53869507"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P5314": [
+								{
+									"snaktype": "value",
+									"property": "P5314",
+									"hash": "a0202111cb525ed31611bf926974b74a2419b8ab",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 54828448,
+											"id": "Q54828448"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								},
+								{
+									"snaktype": "value",
+									"property": "P5314",
+									"hash": "7f0b21bf6bef1987059626f383a532cf4375deb1",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 54828449,
+											"id": "Q54828449"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P5314"
+						],
+						"id": "P10$c6043ffd-45c6-add1-344d-f60fb046d83e",
+						"rank": "normal"
+					}
+				],
+				"P2875": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2875",
+							"hash": "b32746a6ffe1b82105c3597f301066b059f159f2",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 108853099,
+									"id": "Q108853099"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "P10$86d5fe50-4b0d-ecfa-624d-668bce93b023",
+						"rank": "normal"
+					}
+				],
+				"P1630": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1630",
+							"hash": "fd0b79290caaa958b37eb82d3a9bff886f393028",
+							"datavalue": {
+								"value": "https://commons.wikimedia.org/wiki/File:$1",
+								"type": "string"
+							},
+							"datatype": "string"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P407": [
+								{
+									"snaktype": "value",
+									"property": "P407",
+									"hash": "c757ac6da9712097bc0871742564687f009a3f64",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 20923490,
+											"id": "Q20923490"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P407"
+						],
+						"id": "P10$4ef67429-4d38-99af-14c8-d17d8a36d51f",
+						"rank": "normal"
+					}
+				],
+				"P2668": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2668",
+							"hash": "4572c19310f5dffc3f60e540cd40fcf6ece10ef8",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 24025284,
+									"id": "Q24025284"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "P10$916e40c0-464b-6189-5c57-4127d990f433",
+						"rank": "normal"
+					}
+				]
+			}
+		}
+	}
+}

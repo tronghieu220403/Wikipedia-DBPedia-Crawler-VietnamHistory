@@ -1,0 +1,501 @@
+{
+	"entities": {
+		"Q1047091": {
+			"pageid": 996158,
+			"ns": 0,
+			"title": "Q1047091",
+			"lastrevid": 1567002459,
+			"modified": "2022-01-23T16:26:48Z",
+			"type": "item",
+			"id": "Q1047091",
+			"labels": {
+				"zh-hans": {
+					"language": "zh-hans",
+					"value": "沥涔𣒱蔑之战"
+				},
+				"zh-hant": {
+					"language": "zh-hant",
+					"value": "瀝涔𣒱蔑之戰"
+				},
+				"zh-hk": {
+					"language": "zh-hk",
+					"value": "瀝涔𣒱蔑之戰"
+				},
+				"ja": {
+					"language": "ja",
+					"value": "ガム・ソアイムト水路の戦い"
+				},
+				"vi": {
+					"language": "vi",
+					"value": "Trận Rạch Gầm – Xoài Mút"
+				},
+				"ko": {
+					"language": "ko",
+					"value": "락검-쏘아이뭇 전투"
+				},
+				"en": {
+					"language": "en",
+					"value": "Battle of Rạch Gầm-Xoài Mút"
+				},
+				"en-ca": {
+					"language": "en-ca",
+					"value": "Battle of Rạch Gầm-Xoài Mút"
+				},
+				"en-gb": {
+					"language": "en-gb",
+					"value": "Battle of Rạch Gầm-Xoài Mút"
+				},
+				"fr": {
+					"language": "fr",
+					"value": "bataille de Rạch Gầm-Xoài Mút"
+				},
+				"zh": {
+					"language": "zh",
+					"value": "瀝涔𣒱蔑之戰"
+				},
+				"es": {
+					"language": "es",
+					"value": "Batalla de Rạch Gầm-Xoài Mút"
+				},
+				"th": {
+					"language": "th",
+					"value": "สงครามสยาม-เวียดนาม พ.ศ. 2327"
+				},
+				"yo": {
+					"language": "yo",
+					"value": "ogun Rạch Gầm-Xoài Mút"
+				}
+			},
+			"descriptions": {
+				"en": {
+					"language": "en",
+					"value": "battle"
+				},
+				"yo": {
+					"language": "yo",
+					"value": "ogun"
+				},
+				"vi": {
+					"language": "vi",
+					"value": "trận chiến"
+				}
+			},
+			"aliases": {
+				"vi": [
+					{
+						"language": "vi",
+						"value": "Trận Rạch Gầm — Xoài Mút"
+					},
+					{
+						"language": "vi",
+						"value": "Trận Rạch Gầm-Xoài Mút"
+					},
+					{
+						"language": "vi",
+						"value": "Trận Rạch Gầm - Xoài Mút"
+					}
+				],
+				"ko": [
+					{
+						"language": "ko",
+						"value": "락 검-쏘아이 뭇 전투"
+					}
+				]
+			},
+			"claims": {
+				"P625": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P625",
+							"hash": "ff082f7097969223c47981c83616a0b6b12648c4",
+							"datavalue": {
+								"value": {
+									"latitude": 10.33888889,
+									"longitude": 106.325,
+									"altitude": null,
+									"precision": 0.00027777777777778,
+									"globe": "http://www.wikidata.org/entity/Q2"
+								},
+								"type": "globecoordinate"
+							},
+							"datatype": "globe-coordinate"
+						},
+						"type": "statement",
+						"id": "Q1047091$E1725358-D92B-48A8-B727-22213DC86E70",
+						"rank": "normal",
+						"references": [
+							{
+								"hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+								"snaks": {
+									"P143": [
+										{
+											"snaktype": "value",
+											"property": "P143",
+											"hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+											"datavalue": {
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 328,
+													"id": "Q328"
+												},
+												"type": "wikibase-entityid"
+											},
+											"datatype": "wikibase-item"
+										}
+									]
+								},
+								"snaks-order": [
+									"P143"
+								]
+							}
+						]
+					}
+				],
+				"P646": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P646",
+							"hash": "71b79a760c1ebd996c0bb5b7c59180e5372c9ef2",
+							"datavalue": {
+								"value": "/m/0cl8tw",
+								"type": "string"
+							},
+							"datatype": "external-id"
+						},
+						"type": "statement",
+						"id": "Q1047091$655A54FD-48E8-448A-9352-DBA331519B14",
+						"rank": "normal",
+						"references": [
+							{
+								"hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+								"snaks": {
+									"P248": [
+										{
+											"snaktype": "value",
+											"property": "P248",
+											"hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+											"datavalue": {
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 15241312,
+													"id": "Q15241312"
+												},
+												"type": "wikibase-entityid"
+											},
+											"datatype": "wikibase-item"
+										}
+									],
+									"P577": [
+										{
+											"snaktype": "value",
+											"property": "P577",
+											"hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+											"datavalue": {
+												"value": {
+													"time": "+2013-10-28T00:00:00Z",
+													"timezone": 0,
+													"before": 0,
+													"after": 0,
+													"precision": 11,
+													"calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+												},
+												"type": "time"
+											},
+											"datatype": "time"
+										}
+									]
+								},
+								"snaks-order": [
+									"P248",
+									"P577"
+								]
+							}
+						]
+					}
+				],
+				"P31": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P31",
+							"hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 178561,
+									"id": "Q178561"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q1047091$40FD99B7-A01C-409E-AD53-C98FED0DB0AE",
+						"rank": "normal",
+						"references": [
+							{
+								"hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+								"snaks": {
+									"P143": [
+										{
+											"snaktype": "value",
+											"property": "P143",
+											"hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+											"datavalue": {
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 8447,
+													"id": "Q8447"
+												},
+												"type": "wikibase-entityid"
+											},
+											"datatype": "wikibase-item"
+										}
+									]
+								},
+								"snaks-order": [
+									"P143"
+								]
+							}
+						]
+					}
+				],
+				"P585": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P585",
+							"hash": "e1ee590d47f08f3a9a16fabc1cddc041fa1be06f",
+							"datavalue": {
+								"value": {
+									"time": "+1785-01-20T00:00:00Z",
+									"timezone": 0,
+									"before": 0,
+									"after": 0,
+									"precision": 11,
+									"calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+								},
+								"type": "time"
+							},
+							"datatype": "time"
+						},
+						"type": "statement",
+						"id": "Q1047091$5D990ADD-86C4-48B4-844D-C03C5AE69A81",
+						"rank": "normal",
+						"references": [
+							{
+								"hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+								"snaks": {
+									"P143": [
+										{
+											"snaktype": "value",
+											"property": "P143",
+											"hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+											"datavalue": {
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 8447,
+													"id": "Q8447"
+												},
+												"type": "wikibase-entityid"
+											},
+											"datatype": "wikibase-item"
+										}
+									]
+								},
+								"snaks-order": [
+									"P143"
+								]
+							}
+						]
+					}
+				],
+				"P361": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P361",
+							"hash": "dc13d370ef078fb690855f7385726c9a23dd2613",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 10788706,
+									"id": "Q10788706"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q1047091$8ACCB6E0-C8A1-487B-91B9-F72BA013BC54",
+						"rank": "normal",
+						"references": [
+							{
+								"hash": "d3fe8c23af94c4ecfe71105fcda164d2b8fb603d",
+								"snaks": {
+									"P143": [
+										{
+											"snaktype": "value",
+											"property": "P143",
+											"hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+											"datavalue": {
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 328,
+													"id": "Q328"
+												},
+												"type": "wikibase-entityid"
+											},
+											"datatype": "wikibase-item"
+										}
+									],
+									"P4656": [
+										{
+											"snaktype": "value",
+											"property": "P4656",
+											"hash": "96181d8be1c7c8b9a725ea0da37b86ec0a20547f",
+											"datavalue": {
+												"value": "https://en.wikipedia.org/w/index.php?title=Battle_of_Rạch_Gầm-Xoài_Mút&oldid=851270356",
+												"type": "string"
+											},
+											"datatype": "url"
+										}
+									]
+								},
+								"snaks-order": [
+									"P143",
+									"P4656"
+								]
+							}
+						]
+					}
+				],
+				"P373": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P373",
+							"hash": "e4478470836779f1e9ef4c4d9e471e7033eb4a43",
+							"datavalue": {
+								"value": "Battle of Rạch Gầm-Xoài Mút",
+								"type": "string"
+							},
+							"datatype": "string"
+						},
+						"type": "statement",
+						"id": "Q1047091$5e6f0937-46f2-e1b0-e07c-0730527c67bf",
+						"rank": "normal"
+					}
+				],
+				"P18": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P18",
+							"hash": "b6b6008b9536db64c83616cd4387a509ec8152ea",
+							"datavalue": {
+								"value": "Tượng đài Rạch Gầm-Xoài Mút.JPG",
+								"type": "string"
+							},
+							"datatype": "commonsMedia"
+						},
+						"type": "statement",
+						"id": "Q1047091$1D78B144-C7C1-42F2-AF5D-106976795529",
+						"rank": "normal",
+						"references": [
+							{
+								"hash": "60ba8866478872265d916c413a2232a86200feeb",
+								"snaks": {
+									"P143": [
+										{
+											"snaktype": "value",
+											"property": "P143",
+											"hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+											"datavalue": {
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 328,
+													"id": "Q328"
+												},
+												"type": "wikibase-entityid"
+											},
+											"datatype": "wikibase-item"
+										}
+									],
+									"P4656": [
+										{
+											"snaktype": "value",
+											"property": "P4656",
+											"hash": "1ee34b9e04659b8d47a53d569c469bb02b048022",
+											"datavalue": {
+												"value": "https://en.wikipedia.org/w/index.php?title=Battle_of_Rạch_Gầm-Xoài_Mút&oldid=947218001",
+												"type": "string"
+											},
+											"datatype": "url"
+										}
+									]
+								},
+								"snaks-order": [
+									"P143",
+									"P4656"
+								]
+							}
+						]
+					}
+				]
+			},
+			"sitelinks": {
+				"commonswiki": {
+					"site": "commonswiki",
+					"title": "Category:Battle of Rạch Gầm-Xoài Mút",
+					"badges": [],
+					"url": "https://commons.wikimedia.org/wiki/Category:Battle_of_R%E1%BA%A1ch_G%E1%BA%A7m-Xo%C3%A0i_M%C3%BAt"
+				},
+				"enwiki": {
+					"site": "enwiki",
+					"title": "Battle of Rạch Gầm-Xoài Mút",
+					"badges": [],
+					"url": "https://en.wikipedia.org/wiki/Battle_of_R%E1%BA%A1ch_G%E1%BA%A7m-Xo%C3%A0i_M%C3%BAt"
+				},
+				"frwiki": {
+					"site": "frwiki",
+					"title": "Bataille de Rạch Gầm-Xoài Mút",
+					"badges": [],
+					"url": "https://fr.wikipedia.org/wiki/Bataille_de_R%E1%BA%A1ch_G%E1%BA%A7m-Xo%C3%A0i_M%C3%BAt"
+				},
+				"jawiki": {
+					"site": "jawiki",
+					"title": "ラックガム＝ソアイムットの戦い",
+					"badges": [],
+					"url": "https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%83%E3%82%AF%E3%82%AC%E3%83%A0%EF%BC%9D%E3%82%BD%E3%82%A2%E3%82%A4%E3%83%A0%E3%83%83%E3%83%88%E3%81%AE%E6%88%A6%E3%81%84"
+				},
+				"kowiki": {
+					"site": "kowiki",
+					"title": "락검-쏘아이뭇 전투",
+					"badges": [],
+					"url": "https://ko.wikipedia.org/wiki/%EB%9D%BD%EA%B2%80-%EC%8F%98%EC%95%84%EC%9D%B4%EB%AD%87_%EC%A0%84%ED%88%AC"
+				},
+				"thwiki": {
+					"site": "thwiki",
+					"title": "สงครามสยาม-เวียดนาม พ.ศ. 2327",
+					"badges": [],
+					"url": "https://th.wikipedia.org/wiki/%E0%B8%AA%E0%B8%87%E0%B8%84%E0%B8%A3%E0%B8%B2%E0%B8%A1%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1-%E0%B9%80%E0%B8%A7%E0%B8%B5%E0%B8%A2%E0%B8%94%E0%B8%99%E0%B8%B2%E0%B8%A1_%E0%B8%9E.%E0%B8%A8._2327"
+				},
+				"viwiki": {
+					"site": "viwiki",
+					"title": "Trận Rạch Gầm – Xoài Mút",
+					"badges": [],
+					"url": "https://vi.wikipedia.org/wiki/Tr%E1%BA%ADn_R%E1%BA%A1ch_G%E1%BA%A7m_%E2%80%93_Xo%C3%A0i_M%C3%BAt"
+				},
+				"zhwiki": {
+					"site": "zhwiki",
+					"title": "瀝涔吹蔑之戰",
+					"badges": [],
+					"url": "https://zh.wikipedia.org/wiki/%E7%80%9D%E6%B6%94%E5%90%B9%E8%94%91%E4%B9%8B%E6%88%B0"
+				}
+			}
+		}
+	}
+}

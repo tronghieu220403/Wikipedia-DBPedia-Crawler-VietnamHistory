@@ -1,0 +1,629 @@
+{
+	"entities": {
+		"Q862051": {
+			"aliases": {
+				"vi": [
+					{
+						"language": "vi",
+						"value": "Đông Định Vương"
+					}
+				],
+				"ja": [
+					{
+						"language": "ja",
+						"value": "グエン・ルー"
+					},
+					{
+						"language": "ja",
+						"value": "東定王"
+					}
+				]
+			},
+			"ns": 0,
+			"claims": {
+				"P106": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 1402561,
+									"id": "Q1402561"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P106",
+							"snaktype": "value",
+							"hash": "30aa005ce5b8674961aa3bc55c1617369d24fd84"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P143"
+								],
+								"snaks": {
+									"P143": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 328,
+													"id": "Q328"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P143",
+											"snaktype": "value",
+											"hash": "e4f6d9441d0600513c4533c672b5ab472dc73694"
+										}
+									]
+								},
+								"hash": "fa278ebfc458360e5aed63d5058cca83c46134f1"
+							}
+						],
+						"rank": "normal",
+						"id": "Q862051$4c4180e3-d093-4f92-893d-430cfa0f959f",
+						"type": "statement"
+					}
+				],
+				"P1412": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 9199,
+									"id": "Q9199"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P1412",
+							"snaktype": "value",
+							"hash": "4c64130931cfd49b3ae2cb1526dae34e4d6e6ec2"
+						},
+						"rank": "normal",
+						"id": "Q862051$1DF065CD-7B11-4A7B-9689-85E3E30CA337",
+						"type": "statement"
+					}
+				],
+				"P8500": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 104596484,
+									"id": "Q104596484"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P8500",
+							"snaktype": "value",
+							"hash": "1ddf1769090c2aefa46fd63fea6dc34aab013c26"
+						},
+						"rank": "normal",
+						"id": "Q862051$e6567a0e-4820-919f-ea3d-ddb364bf443e",
+						"type": "statement"
+					}
+				],
+				"P569": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "time",
+								"value": {
+									"before": 0,
+									"timezone": 0,
+									"precision": 9,
+									"time": "+1754-01-01T00:00:00Z",
+									"after": 0,
+									"calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+								}
+							},
+							"datatype": "time",
+							"property": "P569",
+							"snaktype": "value",
+							"hash": "7c41ef1a949a996e606289140f04fafc2e3281ac"
+						},
+						"rank": "normal",
+						"id": "Q862051$38F30365-127B-4E73-8470-69DC8F2B08EA",
+						"type": "statement"
+					}
+				],
+				"P646": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "/m/0r4yhyj"
+							},
+							"datatype": "external-id",
+							"property": "P646",
+							"snaktype": "value",
+							"hash": "9be0ff47d10260620780a74c850ff9890125f224"
+						},
+						"rank": "normal",
+						"id": "Q862051$6BCE626D-1B6A-4B01-A481-9FC1599EE207",
+						"type": "statement"
+					}
+				],
+				"P734": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 21494402,
+									"id": "Q21494402"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P734",
+							"snaktype": "value",
+							"hash": "618dd4ee323aa72ccc8acfce45ed50bee86e8c1b"
+						},
+						"rank": "normal",
+						"id": "Q862051$302f4433-4f29-b770-cb58-049adcfe0851",
+						"type": "statement"
+					}
+				],
+				"P21": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 6581097,
+									"id": "Q6581097"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P21",
+							"snaktype": "value",
+							"hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939"
+						},
+						"rank": "normal",
+						"id": "Q862051$53EB83A3-5269-43B8-B013-4A2777FCD911",
+						"type": "statement"
+					}
+				],
+				"P31": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 5,
+									"id": "Q5"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P31",
+							"snaktype": "value",
+							"hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9"
+						},
+						"rank": "normal",
+						"id": "Q862051$E42695EC-6C9D-4FF2-B973-C5C401B77CF5",
+						"type": "statement"
+					}
+				],
+				"P20": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 36081,
+									"id": "Q36081"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P20",
+							"snaktype": "value",
+							"hash": "9773e0e63b0c242634fb49131375fc314374f5e4"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P143",
+									"P4656"
+								],
+								"snaks": {
+									"P143": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 328,
+													"id": "Q328"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P143",
+											"snaktype": "value",
+											"hash": "e4f6d9441d0600513c4533c672b5ab472dc73694"
+										}
+									],
+									"P4656": [
+										{
+											"datavalue": {
+												"type": "string",
+												"value": "https://en.wikipedia.org/w/index.php?title=Nguyễn_Lữ&oldid=866711743"
+											},
+											"datatype": "url",
+											"property": "P4656",
+											"snaktype": "value",
+											"hash": "32dcfe50bd1ff35ed8af812a9ccd79a9b484f108"
+										}
+									]
+								},
+								"hash": "324973e5bf5c781bc9efd36883f1698ef48df33c"
+							}
+						],
+						"rank": "normal",
+						"id": "Q862051$D5F327B8-2A73-470A-978C-D6BACC976AF7",
+						"type": "statement"
+					}
+				],
+				"P22": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 81748467,
+									"id": "Q81748467"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P22",
+							"snaktype": "value",
+							"hash": "373a2cbd3e126c70b3ac39b3aadb8c9044d2586c"
+						},
+						"rank": "normal",
+						"id": "Q862051$4827EDC0-90FC-43E8-8D54-0E2907194B42",
+						"type": "statement"
+					}
+				],
+				"P3373": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 586004,
+									"id": "Q586004"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P3373",
+							"snaktype": "value",
+							"hash": "954073e5f0e11c1b331c7185c002b8fe9d3b216b"
+						},
+						"rank": "normal",
+						"id": "Q862051$1e39edb2-4d9e-413d-6d0a-d11153b4b5f6",
+						"type": "statement"
+					},
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 379775,
+									"id": "Q379775"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P3373",
+							"snaktype": "value",
+							"hash": "2ba09123f325b358e5a3fe7bc2b7e5576bea4d72"
+						},
+						"rank": "normal",
+						"id": "Q862051$628d33e1-40b0-0f9c-6fce-2007558ab65c",
+						"type": "statement"
+					}
+				],
+				"P27": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 881,
+									"id": "Q881"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P27",
+							"snaktype": "value",
+							"hash": "64aeed12b67faac976d7c80296b79e1a5b7846ba"
+						},
+						"rank": "normal",
+						"id": "Q862051$7FB6F371-4AA6-45CF-A59F-1603FD987189",
+						"type": "statement"
+					}
+				],
+				"P18": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "Nguyen Lu.jpg"
+							},
+							"datatype": "commonsMedia",
+							"property": "P18",
+							"snaktype": "value",
+							"hash": "c31cbd63acee07baeeb6f139a3c84465e5fdb174"
+						},
+						"rank": "normal",
+						"id": "Q862051$17488040-4a42-ad61-f587-1e6f0fd9b449",
+						"type": "statement"
+					}
+				],
+				"P19": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 36693,
+									"id": "Q36693"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P19",
+							"snaktype": "value",
+							"hash": "0a0bc63a4ab4b212bd458a7143dbad8e1eaf5054"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P143",
+									"P4656"
+								],
+								"snaks": {
+									"P143": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 328,
+													"id": "Q328"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P143",
+											"snaktype": "value",
+											"hash": "e4f6d9441d0600513c4533c672b5ab472dc73694"
+										}
+									],
+									"P4656": [
+										{
+											"datavalue": {
+												"type": "string",
+												"value": "https://en.wikipedia.org/w/index.php?title=Nguyễn_Lữ&oldid=866711743"
+											},
+											"datatype": "url",
+											"property": "P4656",
+											"snaktype": "value",
+											"hash": "32dcfe50bd1ff35ed8af812a9ccd79a9b484f108"
+										}
+									]
+								},
+								"hash": "324973e5bf5c781bc9efd36883f1698ef48df33c"
+							}
+						],
+						"rank": "normal",
+						"id": "Q862051$7C514A7A-C543-49ED-A5F5-9E17B9DC652A",
+						"type": "statement"
+					}
+				],
+				"P373": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "Nguyễn Lữ"
+							},
+							"datatype": "string",
+							"property": "P373",
+							"snaktype": "value",
+							"hash": "9d3088d1f7974334bb4671643f56adce2f98e11d"
+						},
+						"rank": "normal",
+						"id": "Q862051$07c95d7a-20c2-4286-a935-a6c7c122d5c3",
+						"type": "statement"
+					}
+				],
+				"P570": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "time",
+								"value": {
+									"before": 0,
+									"timezone": 0,
+									"precision": 9,
+									"time": "+1787-01-01T00:00:00Z",
+									"after": 0,
+									"calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+								}
+							},
+							"datatype": "time",
+							"property": "P570",
+							"snaktype": "value",
+							"hash": "cf279dc2bdc12ca814a2e06a42682f3b9cd74a66"
+						},
+						"rank": "normal",
+						"id": "Q862051$5A8205C1-7D91-4775-9C94-C53D7CC89426",
+						"type": "statement"
+					}
+				],
+				"P361": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 10831079,
+									"id": "Q10831079"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P361",
+							"snaktype": "value",
+							"hash": "9245c41ac6115f0de581b7bf8d775df289393479"
+						},
+						"rank": "normal",
+						"id": "Q862051$3a6a497a-4de2-c87d-ef94-7adb7be8e182",
+						"type": "statement"
+					}
+				]
+			},
+			"modified": "2022-09-13T18:45:39Z",
+			"sitelinks": {
+				"enwiki": {
+					"badges": [],
+					"site": "enwiki",
+					"title": "Nguyễn Lữ",
+					"url": "https://en.wikipedia.org/wiki/Nguy%E1%BB%85n_L%E1%BB%AF"
+				},
+				"viwiki": {
+					"badges": [],
+					"site": "viwiki",
+					"title": "Nguyễn Lữ",
+					"url": "https://vi.wikipedia.org/wiki/Nguy%E1%BB%85n_L%E1%BB%AF"
+				},
+				"commonswiki": {
+					"badges": [],
+					"site": "commonswiki",
+					"title": "Category:Nguyễn Lữ",
+					"url": "https://commons.wikimedia.org/wiki/Category:Nguy%E1%BB%85n_L%E1%BB%AF"
+				},
+				"dewiki": {
+					"badges": [],
+					"site": "dewiki",
+					"title": "Nguyễn Lữ",
+					"url": "https://de.wikipedia.org/wiki/Nguy%E1%BB%85n_L%E1%BB%AF"
+				},
+				"kowiki": {
+					"badges": [],
+					"site": "kowiki",
+					"title": "응우옌르",
+					"url": "https://ko.wikipedia.org/wiki/%EC%9D%91%EC%9A%B0%EC%98%8C%EB%A5%B4"
+				},
+				"zhwiki": {
+					"badges": [],
+					"site": "zhwiki",
+					"title": "阮侶",
+					"url": "https://zh.wikipedia.org/wiki/%E9%98%AE%E4%BE%B6"
+				}
+			},
+			"id": "Q862051",
+			"pageid": 813518,
+			"title": "Q862051",
+			"type": "item",
+			"lastrevid": 1728024736,
+			"descriptions": {
+				"de": {
+					"language": "de",
+					"value": "vietnamesischer Rebellenführer und König"
+				},
+				"ast": {
+					"language": "ast",
+					"value": "líder militar vietnamín (1754–1787)"
+				},
+				"vi": {
+					"language": "vi",
+					"value": "tướng quân hậu cần nhà Tây Sơn"
+				},
+				"en": {
+					"language": "en",
+					"value": "Vietnamese general"
+				},
+				"ga": {
+					"language": "ga",
+					"value": "ginearál Vítneamach"
+				},
+				"nl": {
+					"language": "nl",
+					"value": "militair leider uit Vietnam (1754-1787)"
+				}
+			},
+			"labels": {
+				"de": {
+					"language": "de",
+					"value": "Nguyễn Lữ"
+				},
+				"ast": {
+					"language": "ast",
+					"value": "Nguyễn Lữ"
+				},
+				"sv": {
+					"language": "sv",
+					"value": "Nguyễn Lữ"
+				},
+				"ko": {
+					"language": "ko",
+					"value": "응우옌르"
+				},
+				"zh-hant": {
+					"language": "zh-hant",
+					"value": "阮侶"
+				},
+				"zh-hk": {
+					"language": "zh-hk",
+					"value": "阮侶"
+				},
+				"zh-hans": {
+					"language": "zh-hans",
+					"value": "阮侣"
+				},
+				"en": {
+					"language": "en",
+					"value": "Nguyễn Lữ"
+				},
+				"zh": {
+					"language": "zh",
+					"value": "阮侶"
+				},
+				"vi": {
+					"language": "vi",
+					"value": "Nguyễn Lữ"
+				},
+				"ja": {
+					"language": "ja",
+					"value": "阮文侶"
+				},
+				"ga": {
+					"language": "ga",
+					"value": "Nguyễn Lữ"
+				},
+				"da": {
+					"language": "da",
+					"value": "Nguyễn Lữ"
+				},
+				"nl": {
+					"language": "nl",
+					"value": "Nguyễn Lữ"
+				}
+			}
+		}
+	}
+}

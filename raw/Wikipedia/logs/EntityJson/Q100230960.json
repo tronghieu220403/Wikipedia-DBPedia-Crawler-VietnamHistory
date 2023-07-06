@@ -1,0 +1,1475 @@
+{
+	"entities": {
+		"Q100230960": {
+			"pageid": 97905434,
+			"ns": 0,
+			"title": "Q100230960",
+			"lastrevid": 1841630547,
+			"modified": "2023-02-26T03:52:03Z",
+			"type": "item",
+			"id": "Q100230960",
+			"labels": {
+				"fr": {
+					"language": "fr",
+					"value": "Phạm"
+				},
+				"vi": {
+					"language": "vi",
+					"value": "Phạm"
+				},
+				"nl": {
+					"language": "nl",
+					"value": "Phạm"
+				},
+				"uk": {
+					"language": "uk",
+					"value": "Фам"
+				},
+				"cy": {
+					"language": "cy",
+					"value": "Phạm"
+				},
+				"nb": {
+					"language": "nb",
+					"value": "Phạm"
+				},
+				"fit": {
+					"language": "fit",
+					"value": "Phạm"
+				},
+				"gsw": {
+					"language": "gsw",
+					"value": "Phạm"
+				},
+				"en": {
+					"language": "en",
+					"value": "Phạm"
+				},
+				"br": {
+					"language": "br",
+					"value": "Phạm"
+				},
+				"wa": {
+					"language": "wa",
+					"value": "Phạm"
+				},
+				"sma": {
+					"language": "sma",
+					"value": "Phạm"
+				},
+				"hsb": {
+					"language": "hsb",
+					"value": "Phạm"
+				},
+				"fi": {
+					"language": "fi",
+					"value": "Phạm"
+				},
+				"zu": {
+					"language": "zu",
+					"value": "Phạm"
+				},
+				"oc": {
+					"language": "oc",
+					"value": "Phạm"
+				},
+				"ca": {
+					"language": "ca",
+					"value": "Phạm"
+				},
+				"smj": {
+					"language": "smj",
+					"value": "Phạm"
+				},
+				"bs": {
+					"language": "bs",
+					"value": "Phạm"
+				},
+				"sn": {
+					"language": "sn",
+					"value": "Phạm"
+				},
+				"pt-br": {
+					"language": "pt-br",
+					"value": "Phạm"
+				},
+				"smn": {
+					"language": "smn",
+					"value": "Phạm"
+				},
+				"gl": {
+					"language": "gl",
+					"value": "Phạm"
+				},
+				"de": {
+					"language": "de",
+					"value": "Phạm"
+				},
+				"ga": {
+					"language": "ga",
+					"value": "Phạm"
+				},
+				"xh": {
+					"language": "xh",
+					"value": "Phạm"
+				},
+				"da": {
+					"language": "da",
+					"value": "Phạm"
+				},
+				"sl": {
+					"language": "sl",
+					"value": "Phạm"
+				},
+				"kk-tr": {
+					"language": "kk-tr",
+					"value": "Phạm"
+				},
+				"nds": {
+					"language": "nds",
+					"value": "Phạm"
+				},
+				"tg-latn": {
+					"language": "tg-latn",
+					"value": "Phạm"
+				},
+				"ig": {
+					"language": "ig",
+					"value": "Phạm"
+				},
+				"bar": {
+					"language": "bar",
+					"value": "Phạm"
+				},
+				"ksh": {
+					"language": "ksh",
+					"value": "Phạm"
+				},
+				"lt": {
+					"language": "lt",
+					"value": "Phạm"
+				},
+				"eu": {
+					"language": "eu",
+					"value": "Phạm"
+				},
+				"en-gb": {
+					"language": "en-gb",
+					"value": "Phạm"
+				},
+				"fo": {
+					"language": "fo",
+					"value": "Phạm"
+				},
+				"en-ca": {
+					"language": "en-ca",
+					"value": "Phạm"
+				},
+				"crh": {
+					"language": "crh",
+					"value": "Phạm"
+				},
+				"pl": {
+					"language": "pl",
+					"value": "Phạm"
+				},
+				"io": {
+					"language": "io",
+					"value": "Phạm"
+				},
+				"sv": {
+					"language": "sv",
+					"value": "Phạm"
+				},
+				"kk-latn": {
+					"language": "kk-latn",
+					"value": "Phạm"
+				},
+				"se": {
+					"language": "se",
+					"value": "Phạm"
+				},
+				"sw": {
+					"language": "sw",
+					"value": "Phạm"
+				},
+				"ro": {
+					"language": "ro",
+					"value": "Phạm"
+				},
+				"lb": {
+					"language": "lb",
+					"value": "Phạm"
+				},
+				"sq": {
+					"language": "sq",
+					"value": "Phạm"
+				},
+				"de-at": {
+					"language": "de-at",
+					"value": "Phạm"
+				},
+				"hr": {
+					"language": "hr",
+					"value": "Phạm"
+				},
+				"gd": {
+					"language": "gd",
+					"value": "Phạm"
+				},
+				"fy": {
+					"language": "fy",
+					"value": "Phạm"
+				},
+				"sk": {
+					"language": "sk",
+					"value": "Phạm"
+				},
+				"tr": {
+					"language": "tr",
+					"value": "Phạm"
+				},
+				"hu": {
+					"language": "hu",
+					"value": "Phạm"
+				},
+				"war": {
+					"language": "war",
+					"value": "Phạm"
+				},
+				"sr-el": {
+					"language": "sr-el",
+					"value": "Phạm"
+				},
+				"et": {
+					"language": "et",
+					"value": "Phạm"
+				},
+				"csb": {
+					"language": "csb",
+					"value": "Phạm"
+				},
+				"is": {
+					"language": "is",
+					"value": "Phạm"
+				},
+				"nn": {
+					"language": "nn",
+					"value": "Phạm"
+				},
+				"pt": {
+					"language": "pt",
+					"value": "Phạm"
+				},
+				"cs": {
+					"language": "cs",
+					"value": "Phạm"
+				},
+				"id": {
+					"language": "id",
+					"value": "Phạm"
+				},
+				"vro": {
+					"language": "vro",
+					"value": "Phạm"
+				},
+				"mi": {
+					"language": "mi",
+					"value": "Phạm"
+				},
+				"an": {
+					"language": "an",
+					"value": "Phạm"
+				},
+				"de-ch": {
+					"language": "de-ch",
+					"value": "Phạm"
+				},
+				"la": {
+					"language": "la",
+					"value": "Phạm"
+				},
+				"it": {
+					"language": "it",
+					"value": "Phạm"
+				},
+				"mt": {
+					"language": "mt",
+					"value": "Phạm"
+				},
+				"es": {
+					"language": "es",
+					"value": "Phạm"
+				},
+				"ast": {
+					"language": "ast",
+					"value": "Phạm"
+				},
+				"sco": {
+					"language": "sco",
+					"value": "Phạm"
+				},
+				"pms": {
+					"language": "pms",
+					"value": "Phạm"
+				},
+				"kw": {
+					"language": "kw",
+					"value": "Phạm"
+				},
+				"ms": {
+					"language": "ms",
+					"value": "Phạm"
+				},
+				"jv": {
+					"language": "jv",
+					"value": "Phạm"
+				},
+				"eo": {
+					"language": "eo",
+					"value": "Phạm"
+				},
+				"lad": {
+					"language": "lad",
+					"value": "Phạm"
+				},
+				"sje": {
+					"language": "sje",
+					"value": "Phạm"
+				},
+				"dag": {
+					"language": "dag",
+					"value": "Phạm"
+				},
+				"gv": {
+					"language": "gv",
+					"value": "Phạm"
+				},
+				"af": {
+					"language": "af",
+					"value": "Phạm"
+				},
+				"jut": {
+					"language": "jut",
+					"value": "Phạm"
+				},
+				"min": {
+					"language": "min",
+					"value": "Phạm"
+				},
+				"ru": {
+					"language": "ru",
+					"value": "Фам"
+				},
+				"ja": {
+					"language": "ja",
+					"value": "ファム"
+				}
+			},
+			"descriptions": {
+				"fr": {
+					"language": "fr",
+					"value": "nom de famille"
+				},
+				"nl": {
+					"language": "nl",
+					"value": "achternaam"
+				},
+				"la": {
+					"language": "la",
+					"value": "nomen gentilicium"
+				},
+				"bg": {
+					"language": "bg",
+					"value": "презиме"
+				},
+				"yi": {
+					"language": "yi",
+					"value": "פֿאַמיליע נאָמען"
+				},
+				"pt": {
+					"language": "pt",
+					"value": "sobrenome"
+				},
+				"zu": {
+					"language": "zu",
+					"value": "isibongo"
+				},
+				"en-ca": {
+					"language": "en-ca",
+					"value": "family name"
+				},
+				"nn": {
+					"language": "nn",
+					"value": "etternamn"
+				},
+				"gan": {
+					"language": "gan",
+					"value": "姓氏箋釋"
+				},
+				"mk": {
+					"language": "mk",
+					"value": "презиме"
+				},
+				"uz": {
+					"language": "uz",
+					"value": "familiya"
+				},
+				"sr-ec": {
+					"language": "sr-ec",
+					"value": "презиме"
+				},
+				"cv": {
+					"language": "cv",
+					"value": "хушамат"
+				},
+				"bn": {
+					"language": "bn",
+					"value": "পারিবারিক নাম"
+				},
+				"oc": {
+					"language": "oc",
+					"value": "nom d’ostal"
+				},
+				"sk": {
+					"language": "sk",
+					"value": "priezvisko"
+				},
+				"be-tarask": {
+					"language": "be-tarask",
+					"value": "прозьвішча"
+				},
+				"sn": {
+					"language": "sn",
+					"value": "Mazita eMhuri"
+				},
+				"de-ch": {
+					"language": "de-ch",
+					"value": "Familienname"
+				},
+				"ig": {
+					"language": "ig",
+					"value": "ahà nnà"
+				},
+				"bs": {
+					"language": "bs",
+					"value": "prezime"
+				},
+				"zh-hans": {
+					"language": "zh-hans",
+					"value": "姓氏"
+				},
+				"crh": {
+					"language": "crh",
+					"value": "soyadı"
+				},
+				"ast": {
+					"language": "ast",
+					"value": "apellíu"
+				},
+				"lt": {
+					"language": "lt",
+					"value": "pavardė"
+				},
+				"ga": {
+					"language": "ga",
+					"value": "sloinne"
+				},
+				"hu": {
+					"language": "hu",
+					"value": "vezetéknév"
+				},
+				"ko": {
+					"language": "ko",
+					"value": "성씨"
+				},
+				"mi": {
+					"language": "mi",
+					"value": "ingoa whānau"
+				},
+				"en-gb": {
+					"language": "en-gb",
+					"value": "surname"
+				},
+				"an": {
+					"language": "an",
+					"value": "apelliu"
+				},
+				"gan-hant": {
+					"language": "gan-hant",
+					"value": "姓氏箋釋"
+				},
+				"tg-cyrl": {
+					"language": "tg-cyrl",
+					"value": "насаб"
+				},
+				"it": {
+					"language": "it",
+					"value": "cognome"
+				},
+				"ja": {
+					"language": "ja",
+					"value": "姓"
+				},
+				"uk": {
+					"language": "uk",
+					"value": "прізвище"
+				},
+				"sma": {
+					"language": "sma",
+					"value": "fuelhkienomme"
+				},
+				"zh-sg": {
+					"language": "zh-sg",
+					"value": "姓氏"
+				},
+				"zh-mo": {
+					"language": "zh-mo",
+					"value": "姓氏"
+				},
+				"lzh": {
+					"language": "lzh",
+					"value": "姓氏"
+				},
+				"kk-kz": {
+					"language": "kk-kz",
+					"value": "тек, ата-тек, әулет есім"
+				},
+				"smj": {
+					"language": "smj",
+					"value": "maŋepnamma"
+				},
+				"kw": {
+					"language": "kw",
+					"value": "hanow"
+				},
+				"gv": {
+					"language": "gv",
+					"value": "sliennoo"
+				},
+				"war": {
+					"language": "war",
+					"value": "apelyidu"
+				},
+				"az": {
+					"language": "az",
+					"value": "soyadı"
+				},
+				"sv": {
+					"language": "sv",
+					"value": "efternamn"
+				},
+				"rue": {
+					"language": "rue",
+					"value": "прузвище"
+				},
+				"sq": {
+					"language": "sq",
+					"value": "mbiemër"
+				},
+				"th": {
+					"language": "th",
+					"value": "นามสกุล"
+				},
+				"af": {
+					"language": "af",
+					"value": "van"
+				},
+				"ru": {
+					"language": "ru",
+					"value": "фамилия"
+				},
+				"new": {
+					"language": "new",
+					"value": "उपनां"
+				},
+				"io": {
+					"language": "io",
+					"value": "surnomo"
+				},
+				"fa": {
+					"language": "fa",
+					"value": "نام خانوادگی"
+				},
+				"gl": {
+					"language": "gl",
+					"value": "apelido"
+				},
+				"bar": {
+					"language": "bar",
+					"value": "Schreibnam"
+				},
+				"sr-el": {
+					"language": "sr-el",
+					"value": "prezime"
+				},
+				"nb": {
+					"language": "nb",
+					"value": "etternavn"
+				},
+				"is": {
+					"language": "is",
+					"value": "eftirnafn"
+				},
+				"fit": {
+					"language": "fit",
+					"value": "sukunimi"
+				},
+				"gan-hans": {
+					"language": "gan-hans",
+					"value": "姓氏笺释"
+				},
+				"kk": {
+					"language": "kk",
+					"value": "тек, ата-тек, әулет есім"
+				},
+				"fy": {
+					"language": "fy",
+					"value": "efternamme"
+				},
+				"sw": {
+					"language": "sw",
+					"value": "jina la ukoo"
+				},
+				"mhr": {
+					"language": "mhr",
+					"value": "тукымлӱм"
+				},
+				"he": {
+					"language": "he",
+					"value": "שם משפחה"
+				},
+				"ta": {
+					"language": "ta",
+					"value": "குடும்பப் பெயர்"
+				},
+				"eu": {
+					"language": "eu",
+					"value": "abizen"
+				},
+				"hr": {
+					"language": "hr",
+					"value": "prezime"
+				},
+				"cy": {
+					"language": "cy",
+					"value": "cyfenw"
+				},
+				"pt-br": {
+					"language": "pt-br",
+					"value": "nome de familia"
+				},
+				"sl": {
+					"language": "sl",
+					"value": "priimek"
+				},
+				"cs": {
+					"language": "cs",
+					"value": "příjmení"
+				},
+				"zh-hant": {
+					"language": "zh-hant",
+					"value": "姓氏"
+				},
+				"fo": {
+					"language": "fo",
+					"value": "ættarnavn"
+				},
+				"tg-latn": {
+					"language": "tg-latn",
+					"value": "nasab"
+				},
+				"es": {
+					"language": "es",
+					"value": "apellido"
+				},
+				"ka": {
+					"language": "ka",
+					"value": "გვარი"
+				},
+				"csb": {
+					"language": "csb",
+					"value": "nôzwëskò"
+				},
+				"en": {
+					"language": "en",
+					"value": "family name"
+				},
+				"et": {
+					"language": "et",
+					"value": "perekonnanimi"
+				},
+				"sh": {
+					"language": "sh",
+					"value": "prezime"
+				},
+				"ca": {
+					"language": "ca",
+					"value": "cognom"
+				},
+				"sje": {
+					"language": "sje",
+					"value": "maŋŋepnamma"
+				},
+				"or": {
+					"language": "or",
+					"value": "ସାଙ୍ଗିଆ"
+				},
+				"da": {
+					"language": "da",
+					"value": "efternavn"
+				},
+				"ro": {
+					"language": "ro",
+					"value": "nume de familie"
+				},
+				"be": {
+					"language": "be",
+					"value": "прозвішча"
+				},
+				"yue": {
+					"language": "yue",
+					"value": "姓"
+				},
+				"de-at": {
+					"language": "de-at",
+					"value": "Familienname"
+				},
+				"te": {
+					"language": "te",
+					"value": "ఇంటి పేర్లు"
+				},
+				"lad": {
+					"language": "lad",
+					"value": "alkunya"
+				},
+				"hy": {
+					"language": "hy",
+					"value": "ազգանուն"
+				},
+				"nds": {
+					"language": "nds",
+					"value": "Familiennaam"
+				},
+				"pl": {
+					"language": "pl",
+					"value": "nazwisko"
+				},
+				"el": {
+					"language": "el",
+					"value": "επώνυμο"
+				},
+				"sco": {
+					"language": "sco",
+					"value": "faimily name"
+				},
+				"ms": {
+					"language": "ms",
+					"value": "nama keluarga"
+				},
+				"de": {
+					"language": "de",
+					"value": "Familienname"
+				},
+				"zh-hk": {
+					"language": "zh-hk",
+					"value": "姓氏"
+				},
+				"gu": {
+					"language": "gu",
+					"value": "અટક"
+				},
+				"tl": {
+					"language": "tl",
+					"value": "apelyido"
+				},
+				"xh": {
+					"language": "xh",
+					"value": "ifani"
+				},
+				"wa": {
+					"language": "wa",
+					"value": "no d’ famile"
+				},
+				"lv": {
+					"language": "lv",
+					"value": "uzvārds"
+				},
+				"ksh": {
+					"language": "ksh",
+					"value": "Nohnahme"
+				},
+				"ne": {
+					"language": "ne",
+					"value": "थर"
+				},
+				"sr": {
+					"language": "sr",
+					"value": "презиме"
+				},
+				"min": {
+					"language": "min",
+					"value": "namo asli"
+				},
+				"id": {
+					"language": "id",
+					"value": "nama keluarga"
+				},
+				"pms": {
+					"language": "pms",
+					"value": "cognòm"
+				},
+				"hi": {
+					"language": "hi",
+					"value": "उपनाम"
+				},
+				"se": {
+					"language": "se",
+					"value": "goargu"
+				},
+				"gsw": {
+					"language": "gsw",
+					"value": "Familiename"
+				},
+				"ar": {
+					"language": "ar",
+					"value": "اسم العائلة"
+				},
+				"jv": {
+					"language": "jv",
+					"value": "jeneng pancer"
+				},
+				"zh": {
+					"language": "zh",
+					"value": "姓氏"
+				},
+				"kk-cyrl": {
+					"language": "kk-cyrl",
+					"value": "тек, ата-тек, әулет есім"
+				},
+				"kk-tr": {
+					"language": "kk-tr",
+					"value": "tek, ata-tek, äwlet esim"
+				},
+				"mn": {
+					"language": "mn",
+					"value": "овог нэр"
+				},
+				"fi": {
+					"language": "fi",
+					"value": "sukunimi"
+				},
+				"tr": {
+					"language": "tr",
+					"value": "soyadı"
+				},
+				"lb": {
+					"language": "lb",
+					"value": "Familljennumm"
+				},
+				"zh-cn": {
+					"language": "zh-cn",
+					"value": "姓氏"
+				},
+				"zh-my": {
+					"language": "zh-my",
+					"value": "姓氏"
+				},
+				"gd": {
+					"language": "gd",
+					"value": "sloinneadh"
+				},
+				"br": {
+					"language": "br",
+					"value": "anv-tiegezh"
+				},
+				"os": {
+					"language": "os",
+					"value": "мыггаг"
+				},
+				"zh-tw": {
+					"language": "zh-tw",
+					"value": "姓氏"
+				},
+				"mt": {
+					"language": "mt",
+					"value": "kunjom"
+				},
+				"eo": {
+					"language": "eo",
+					"value": "familia nomo"
+				},
+				"jut": {
+					"language": "jut",
+					"value": "efternavn"
+				},
+				"kk-latn": {
+					"language": "kk-latn",
+					"value": "tek, ata-tek, äwlet esim"
+				},
+				"vi": {
+					"language": "vi",
+					"value": "Họ của người Á Đông"
+				},
+				"dag": {
+					"language": "dag",
+					"value": "Daŋ yuli"
+				},
+				"hsb": {
+					"language": "hsb",
+					"value": "swójbne mjeno"
+				},
+				"smn": {
+					"language": "smn",
+					"value": "suhânommâ"
+				},
+				"vro": {
+					"language": "vro",
+					"value": "Väärnimi"
+				},
+				"ml": {
+					"language": "ml",
+					"value": "കുടുംബ നാമം"
+				},
+				"tg": {
+					"language": "tg",
+					"value": "насаб (Phạm)"
+				}
+			},
+			"aliases": {
+				"en": [
+					{
+						"language": "en",
+						"value": "Phạm (family name)"
+					},
+					{
+						"language": "en",
+						"value": "Phạm (surname)"
+					}
+				],
+				"ka": [
+					{
+						"language": "ka",
+						"value": "Phạm"
+					}
+				],
+				"ta": [
+					{
+						"language": "ta",
+						"value": "Phạm"
+					}
+				],
+				"yi": [
+					{
+						"language": "yi",
+						"value": "Phạm"
+					}
+				],
+				"te": [
+					{
+						"language": "te",
+						"value": "Phạm"
+					}
+				],
+				"tg-cyrl": [
+					{
+						"language": "tg-cyrl",
+						"value": "Phạm"
+					}
+				],
+				"gan-hans": [
+					{
+						"language": "gan-hans",
+						"value": "Phạm"
+					}
+				],
+				"lv": [
+					{
+						"language": "lv",
+						"value": "Phạm"
+					}
+				],
+				"mhr": [
+					{
+						"language": "mhr",
+						"value": "Phạm"
+					}
+				],
+				"lzh": [
+					{
+						"language": "lzh",
+						"value": "Phạm"
+					}
+				],
+				"gu": [
+					{
+						"language": "gu",
+						"value": "Phạm"
+					}
+				],
+				"rue": [
+					{
+						"language": "rue",
+						"value": "Phạm"
+					}
+				],
+				"uz": [
+					{
+						"language": "uz",
+						"value": "Phạm"
+					}
+				],
+				"gan": [
+					{
+						"language": "gan",
+						"value": "Phạm"
+					}
+				],
+				"zh-sg": [
+					{
+						"language": "zh-sg",
+						"value": "Phạm"
+					}
+				],
+				"zh-cn": [
+					{
+						"language": "zh-cn",
+						"value": "Phạm"
+					}
+				],
+				"be-tarask": [
+					{
+						"language": "be-tarask",
+						"value": "Phạm"
+					}
+				],
+				"zh-hant": [
+					{
+						"language": "zh-hant",
+						"value": "Phạm"
+					}
+				],
+				"el": [
+					{
+						"language": "el",
+						"value": "Phạm"
+					}
+				],
+				"hy": [
+					{
+						"language": "hy",
+						"value": "Phạm"
+					}
+				],
+				"az": [
+					{
+						"language": "az",
+						"value": "Phạm"
+					}
+				],
+				"sh": [
+					{
+						"language": "sh",
+						"value": "Phạm"
+					}
+				],
+				"hi": [
+					{
+						"language": "hi",
+						"value": "Phạm"
+					}
+				],
+				"sr": [
+					{
+						"language": "sr",
+						"value": "Phạm"
+					}
+				],
+				"bg": [
+					{
+						"language": "bg",
+						"value": "Phạm"
+					}
+				],
+				"ru": [
+					{
+						"language": "ru",
+						"value": "Phạm"
+					}
+				],
+				"new": [
+					{
+						"language": "new",
+						"value": "Phạm"
+					}
+				],
+				"tg": [
+					{
+						"language": "tg",
+						"value": "Phạm"
+					}
+				],
+				"ar": [
+					{
+						"language": "ar",
+						"value": "Phạm"
+					}
+				],
+				"mk": [
+					{
+						"language": "mk",
+						"value": "Phạm"
+					}
+				],
+				"gan-hant": [
+					{
+						"language": "gan-hant",
+						"value": "Phạm"
+					}
+				],
+				"os": [
+					{
+						"language": "os",
+						"value": "Phạm"
+					}
+				],
+				"be": [
+					{
+						"language": "be",
+						"value": "Phạm"
+					}
+				],
+				"th": [
+					{
+						"language": "th",
+						"value": "Phạm"
+					}
+				],
+				"zh-hans": [
+					{
+						"language": "zh-hans",
+						"value": "Phạm"
+					}
+				],
+				"kk-cyrl": [
+					{
+						"language": "kk-cyrl",
+						"value": "Phạm"
+					}
+				],
+				"ne": [
+					{
+						"language": "ne",
+						"value": "Phạm"
+					}
+				],
+				"sr-ec": [
+					{
+						"language": "sr-ec",
+						"value": "Phạm"
+					}
+				],
+				"he": [
+					{
+						"language": "he",
+						"value": "Phạm"
+					}
+				],
+				"fa": [
+					{
+						"language": "fa",
+						"value": "Phạm"
+					}
+				],
+				"ml": [
+					{
+						"language": "ml",
+						"value": "Phạm"
+					}
+				],
+				"ko": [
+					{
+						"language": "ko",
+						"value": "Phạm"
+					}
+				],
+				"yue": [
+					{
+						"language": "yue",
+						"value": "Phạm"
+					}
+				],
+				"mn": [
+					{
+						"language": "mn",
+						"value": "Phạm"
+					}
+				],
+				"kk": [
+					{
+						"language": "kk",
+						"value": "Phạm"
+					}
+				],
+				"cv": [
+					{
+						"language": "cv",
+						"value": "Phạm"
+					}
+				],
+				"uk": [
+					{
+						"language": "uk",
+						"value": "Phạm"
+					}
+				],
+				"zh": [
+					{
+						"language": "zh",
+						"value": "Phạm"
+					}
+				],
+				"or": [
+					{
+						"language": "or",
+						"value": "Phạm"
+					}
+				],
+				"zh-my": [
+					{
+						"language": "zh-my",
+						"value": "Phạm"
+					}
+				],
+				"zh-hk": [
+					{
+						"language": "zh-hk",
+						"value": "Phạm"
+					}
+				],
+				"kk-kz": [
+					{
+						"language": "kk-kz",
+						"value": "Phạm"
+					}
+				],
+				"zh-tw": [
+					{
+						"language": "zh-tw",
+						"value": "Phạm"
+					}
+				],
+				"zh-mo": [
+					{
+						"language": "zh-mo",
+						"value": "Phạm"
+					}
+				],
+				"tl": [
+					{
+						"language": "tl",
+						"value": "Phạm"
+					}
+				],
+				"ja": [
+					{
+						"language": "ja",
+						"value": "Phạm"
+					}
+				],
+				"bn": [
+					{
+						"language": "bn",
+						"value": "Phạm"
+					}
+				]
+			},
+			"claims": {
+				"P31": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P31",
+							"hash": "3a01d0950849b76433d9aeec3107b57e86bb6378",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 101352,
+									"id": "Q101352"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q100230960$091c00f0-4a78-9797-58af-30c4a7bd77d1",
+						"rank": "normal"
+					}
+				],
+				"P1705": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1705",
+							"hash": "7836a8c8594fb1b3535883257295f0cfa346ca58",
+							"datavalue": {
+								"value": {
+									"text": "Phạm",
+									"language": "vi"
+								},
+								"type": "monolingualtext"
+							},
+							"datatype": "monolingualtext"
+						},
+						"type": "statement",
+						"id": "Q100230960$a1aa117b-4fcb-418d-b162-7248affde57b",
+						"rank": "normal"
+					}
+				],
+				"P282": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P282",
+							"hash": "47e0b4ef785581faae9bc4f8ac198ab612e6fd58",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 622712,
+									"id": "Q622712"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q100230960$96e23518-4957-5828-7b79-19801311ed51",
+						"rank": "normal"
+					}
+				],
+				"P1889": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1889",
+							"hash": "28f5d3ce38df5b227508a136e72d4e71d3de960d",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 37117214,
+									"id": "Q37117214"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q100230960$a81f7153-4b32-5402-1e41-aa5bcc3465f6",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1889",
+							"hash": "ff81bdc913b90983497b80ce4a05b31f381ec243",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 4481042,
+									"id": "Q4481042"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P1013": [
+								{
+									"snaktype": "value",
+									"property": "P1013",
+									"hash": "94271bee1daecc0a84c7ff0e80a6f5e76c330944",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 27924673,
+											"id": "Q27924673"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P1013"
+						],
+						"id": "Q100230960$e8bd554d-44f4-408f-fc66-fcd090be2d15",
+						"rank": "normal"
+					}
+				],
+				"P373": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P373",
+							"hash": "aaadcd53e87779fa6cfa39b535d41ccef425d794",
+							"datavalue": {
+								"value": "Phạm (surname)",
+								"type": "string"
+							},
+							"datatype": "string"
+						},
+						"type": "statement",
+						"id": "Q100230960$28C3D541-8CC9-4A68-A73B-F52EF9F453E1",
+						"rank": "normal"
+					}
+				]
+			},
+			"sitelinks": {
+				"commonswiki": {
+					"site": "commonswiki",
+					"title": "Category:Phạm (surname)",
+					"badges": [],
+					"url": "https://commons.wikimedia.org/wiki/Category:Ph%E1%BA%A1m_(surname)"
+				},
+				"cswiki": {
+					"site": "cswiki",
+					"title": "Phạm",
+					"badges": [],
+					"url": "https://cs.wikipedia.org/wiki/Ph%E1%BA%A1m"
+				},
+				"enwiki": {
+					"site": "enwiki",
+					"title": "Phạm",
+					"badges": [],
+					"url": "https://en.wikipedia.org/wiki/Ph%E1%BA%A1m"
+				},
+				"etwiki": {
+					"site": "etwiki",
+					"title": "Phạm",
+					"badges": [],
+					"url": "https://et.wikipedia.org/wiki/Ph%E1%BA%A1m"
+				},
+				"ruwiki": {
+					"site": "ruwiki",
+					"title": "Фам",
+					"badges": [],
+					"url": "https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%BC"
+				},
+				"ukwiki": {
+					"site": "ukwiki",
+					"title": "Фам",
+					"badges": [],
+					"url": "https://uk.wikipedia.org/wiki/%D0%A4%D0%B0%D0%BC"
+				},
+				"viwiki": {
+					"site": "viwiki",
+					"title": "Phạm (họ)",
+					"badges": [],
+					"url": "https://vi.wikipedia.org/wiki/Ph%E1%BA%A1m_(h%E1%BB%8D)"
+				}
+			}
+		}
+	}
+}

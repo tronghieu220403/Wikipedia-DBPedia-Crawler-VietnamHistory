@@ -1,0 +1,801 @@
+{
+	"entities": {
+		"Q1000140": {
+			"aliases": {
+				"ceb": [
+					{
+						"language": "ceb",
+						"value": "Phường Sa Pa"
+					}
+				],
+				"vi": [
+					{
+						"language": "vi",
+						"value": "Sa-pa"
+					},
+					{
+						"language": "vi",
+						"value": "Sapa"
+					},
+					{
+						"language": "vi",
+						"value": "Phường Sa Pa"
+					},
+					{
+						"language": "vi",
+						"value": "Chapa"
+					}
+				],
+				"en": [
+					{
+						"language": "en",
+						"value": "Phường Sa Pa"
+					}
+				],
+				"es": [
+					{
+						"language": "es",
+						"value": "Sapa"
+					}
+				]
+			},
+			"ns": 0,
+			"claims": {
+				"P214": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "150264916"
+							},
+							"datatype": "external-id",
+							"property": "P214",
+							"snaktype": "value",
+							"hash": "ef7414c6bbd1700024f7639c438a099939ce320f"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P248",
+									"P813"
+								],
+								"snaks": {
+									"P248": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 54919,
+													"id": "Q54919"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P248",
+											"snaktype": "value",
+											"hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd"
+										}
+									],
+									"P813": [
+										{
+											"datavalue": {
+												"type": "time",
+												"value": {
+													"before": 0,
+													"timezone": 0,
+													"precision": 11,
+													"time": "+2015-08-06T00:00:00Z",
+													"after": 0,
+													"calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+												}
+											},
+											"datatype": "time",
+											"property": "P813",
+											"snaktype": "value",
+											"hash": "a00cc299e508357647636e29593b8ca3e534077d"
+										}
+									]
+								},
+								"hash": "ad3713df772ae88af6a7458d084a40ad20b226d6"
+							}
+						],
+						"rank": "normal",
+						"id": "Q1000140$F4D704E9-798B-4730-AF44-7CA01B7C11E2",
+						"type": "statement"
+					}
+				],
+				"P269": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "203832140"
+							},
+							"datatype": "external-id",
+							"property": "P269",
+							"snaktype": "value",
+							"hash": "59c40a1992bd0943176857deebca716dcd26ffdc"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P248",
+									"P813",
+									"P214"
+								],
+								"snaks": {
+									"P214": [
+										{
+											"datavalue": {
+												"type": "string",
+												"value": "150264916"
+											},
+											"datatype": "external-id",
+											"property": "P214",
+											"snaktype": "value",
+											"hash": "ef7414c6bbd1700024f7639c438a099939ce320f"
+										}
+									],
+									"P248": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 54919,
+													"id": "Q54919"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P248",
+											"snaktype": "value",
+											"hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd"
+										}
+									],
+									"P813": [
+										{
+											"datavalue": {
+												"type": "time",
+												"value": {
+													"before": 0,
+													"timezone": 0,
+													"precision": 11,
+													"time": "+2022-07-06T00:00:00Z",
+													"after": 0,
+													"calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+												}
+											},
+											"datatype": "time",
+											"property": "P813",
+											"snaktype": "value",
+											"hash": "9c07da73b84889803ebd6601ba04b4579c39577d"
+										}
+									]
+								},
+								"hash": "da61eec6336f9c0034f7a7c82b0ffee4e728773d"
+							}
+						],
+						"rank": "normal",
+						"id": "Q1000140$74676484-3B41-4931-8E87-DBF5661A91AD",
+						"type": "statement"
+					}
+				],
+				"P244": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "n96117693"
+							},
+							"datatype": "external-id",
+							"property": "P244",
+							"snaktype": "value",
+							"hash": "5d9c909572bbdd409b492699aa31dec71c61b1f8"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P248",
+									"P813"
+								],
+								"snaks": {
+									"P248": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 54919,
+													"id": "Q54919"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P248",
+											"snaktype": "value",
+											"hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd"
+										}
+									],
+									"P813": [
+										{
+											"datavalue": {
+												"type": "time",
+												"value": {
+													"before": 0,
+													"timezone": 0,
+													"precision": 11,
+													"time": "+2019-03-06T00:00:00Z",
+													"after": 0,
+													"calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+												}
+											},
+											"datatype": "time",
+											"property": "P813",
+											"snaktype": "value",
+											"hash": "e0d08f96012770600b942d5e8563b2a3499cba8e"
+										}
+									]
+								},
+								"hash": "14fa5898ac764e0660517aa07ea0bbba505f262b"
+							}
+						],
+						"rank": "normal",
+						"id": "Q1000140$827DC09C-20E3-4879-8166-667758367029",
+						"type": "statement"
+					}
+				],
+				"P1566": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "1568043"
+							},
+							"datatype": "external-id",
+							"property": "P1566",
+							"snaktype": "value",
+							"hash": "162bed70905352a1f672a4c5b7ee9cd28cf5e30e"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P248"
+								],
+								"snaks": {
+									"P248": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 830106,
+													"id": "Q830106"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P248",
+											"snaktype": "value",
+											"hash": "1b3ef912a2bd61e18dd43abd184337eb010b2e96"
+										}
+									]
+								},
+								"hash": "88694a0f4d1486770c269f7db16a1982f74da69d"
+							}
+						],
+						"rank": "normal",
+						"id": "Q1000140$E4A4B262-0DF8-432E-B39C-EF5D8D400B6F",
+						"type": "statement"
+					}
+				],
+				"P8189": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "987007535509805171"
+							},
+							"datatype": "external-id",
+							"property": "P8189",
+							"snaktype": "value",
+							"hash": "e97eaf45efdb4131952fb89ab8787c18142b8609"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P248"
+								],
+								"snaks": {
+									"P248": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 106509962,
+													"id": "Q106509962"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P248",
+											"snaktype": "value",
+											"hash": "a03bb6ffe37be9554492f4eea5bd18afcb57df19"
+										}
+									]
+								},
+								"hash": "ecb7a39cf436eb1fba419853af168ef9f2ba1dab"
+							}
+						],
+						"rank": "normal",
+						"id": "Q1000140$FB28C450-92E2-4E00-9ED4-1C808CED64FC",
+						"type": "statement"
+					}
+				],
+				"P625": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "globecoordinate",
+								"value": {
+									"altitude": null,
+									"globe": "http://www.wikidata.org/entity/Q2",
+									"latitude": 22.335555555555556,
+									"precision": 0.0002777777777777778,
+									"longitude": 103.84194444444445
+								}
+							},
+							"datatype": "globe-coordinate",
+							"property": "P625",
+							"snaktype": "value",
+							"hash": "0e1e39cc91b21fa439b7618de5c1fa559cb5ceea"
+						},
+						"rank": "normal",
+						"id": "Q1000140$D609AB9A-872F-41AB-B216-5188CC31250C",
+						"type": "statement"
+					}
+				],
+				"P646": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "/m/07h8y7"
+							},
+							"datatype": "external-id",
+							"property": "P646",
+							"snaktype": "value",
+							"hash": "7b0b34ba60053ac195d773a9257f120351dbe323"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P248",
+									"P577"
+								],
+								"snaks": {
+									"P577": [
+										{
+											"datavalue": {
+												"type": "time",
+												"value": {
+													"before": 0,
+													"timezone": 0,
+													"precision": 11,
+													"time": "+2013-10-28T00:00:00Z",
+													"after": 0,
+													"calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+												}
+											},
+											"datatype": "time",
+											"property": "P577",
+											"snaktype": "value",
+											"hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2"
+										}
+									],
+									"P248": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 15241312,
+													"id": "Q15241312"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P248",
+											"snaktype": "value",
+											"hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0"
+										}
+									]
+								},
+								"hash": "2b00cb481cddcac7623114367489b5c194901c4a"
+							}
+						],
+						"rank": "normal",
+						"id": "Q1000140$CBD3D2CA-C1AF-41B6-83C2-C060B2D49EF4",
+						"type": "statement"
+					}
+				],
+				"P31": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 687188,
+									"id": "Q687188"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P31",
+							"snaktype": "value",
+							"hash": "e42898fce414f55a4b1b6f22ec6129e33b3f08e8"
+						},
+						"rank": "normal",
+						"id": "Q1000140$527AAE32-6273-4056-9F66-8938E3606AF9",
+						"type": "statement"
+					},
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 5119,
+									"id": "Q5119"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P31",
+							"snaktype": "value",
+							"hash": "2f57f52a7915cd4b47f6694b8b41f02ab4914036"
+						},
+						"rank": "normal",
+						"id": "Q1000140$d00fa19d-4fd4-c1b8-464e-828b930acf6a",
+						"type": "statement"
+					}
+				],
+				"P1376": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 7395483,
+									"id": "Q7395483"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P1376",
+							"snaktype": "value",
+							"hash": "e45887d5029ea79f80b36db53d52e4f1aac2f825"
+						},
+						"rank": "normal",
+						"id": "Q1000140$36072eb8-47f5-7e72-4da9-c12d35dff227",
+						"type": "statement"
+					}
+				],
+				"P2044": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "quantity",
+								"value": {
+									"amount": "+1500",
+									"unit": "http://www.wikidata.org/entity/Q11573"
+								}
+							},
+							"datatype": "quantity",
+							"property": "P2044",
+							"snaktype": "value",
+							"hash": "d4fb67e8503e76f1e0476856d1f3f372c4009f73"
+						},
+						"rank": "normal",
+						"id": "Q1000140$C0A4E194-9F7A-49CD-8219-2048B68E1EE9",
+						"type": "statement"
+					},
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "quantity",
+								"value": {
+									"amount": "+1718",
+									"unit": "http://www.wikidata.org/entity/Q11573"
+								}
+							},
+							"datatype": "quantity",
+							"property": "P2044",
+							"snaktype": "value",
+							"hash": "1aaabebd76101a97b5ff49cc05fe598327e8ce3a"
+						},
+						"rank": "normal",
+						"id": "Q1000140$97F79DC2-018F-4AD2-8B2F-E8787BE5C58B",
+						"type": "statement"
+					}
+				],
+				"P18": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "Nhà thờ đá Sa Pa.jpg"
+							},
+							"datatype": "commonsMedia",
+							"property": "P18",
+							"snaktype": "value",
+							"hash": "867d548e3fbb6c191dc28418730881c44bcbcf2a"
+						},
+						"rank": "normal",
+						"id": "Q1000140$EFA0A0FB-4E46-4E3B-B2CD-84E1970861ED",
+						"type": "statement"
+					}
+				],
+				"P17": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 881,
+									"id": "Q881"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P17",
+							"snaktype": "value",
+							"hash": "c40be02120fa6723ead45340635fe0835f073e90"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P143"
+								],
+								"snaks": {
+									"P143": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 328,
+													"id": "Q328"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P143",
+											"snaktype": "value",
+											"hash": "e4f6d9441d0600513c4533c672b5ab472dc73694"
+										}
+									]
+								},
+								"hash": "fa278ebfc458360e5aed63d5058cca83c46134f1"
+							},
+							{
+								"snaks-order": [
+									"P248",
+									"P577",
+									"P2326"
+								],
+								"snaks": {
+									"P577": [
+										{
+											"datavalue": {
+												"type": "time",
+												"value": {
+													"before": 0,
+													"timezone": 0,
+													"precision": 11,
+													"time": "+2018-06-11T00:00:00Z",
+													"after": 0,
+													"calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+												}
+											},
+											"datatype": "time",
+											"property": "P577",
+											"snaktype": "value",
+											"hash": "a372c95b03a3464736c5fd1d7ed86176f0c04973"
+										}
+									],
+									"P248": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 1194038,
+													"id": "Q1194038"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P248",
+											"snaktype": "value",
+											"hash": "7648f66055f57f6227dd1f872bc4ed26c70da7c6"
+										}
+									],
+									"P2326": [
+										{
+											"datavalue": {
+												"type": "string",
+												"value": "11686296"
+											},
+											"datatype": "external-id",
+											"property": "P2326",
+											"snaktype": "value",
+											"hash": "4f4001d245050c748ad045e81753d2e1ed1cf532"
+										}
+									]
+								},
+								"hash": "bdd2860a13f5d24a91b84efe382b6dbecb3bdfea"
+							}
+						],
+						"rank": "normal",
+						"id": "q1000140$935C864F-7E4B-47AC-AB8A-9AA48F3350AB",
+						"type": "statement"
+					}
+				],
+				"P373": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "Sa Pa ward"
+							},
+							"datatype": "string",
+							"property": "P373",
+							"snaktype": "value",
+							"hash": "78c750c41866a243bb671cbf3051b19cee98da6f"
+						},
+						"rank": "normal",
+						"id": "q1000140$CC4E3F05-2648-4C9F-938C-6DE1F8D7BA39",
+						"type": "statement"
+					}
+				],
+				"P131": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 7395483,
+									"id": "Q7395483"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P131",
+							"snaktype": "value",
+							"hash": "c364e11a6df1f3291a79bf32da8bcb13d82d83ed"
+						},
+						"rank": "normal",
+						"id": "Q1000140$8e1371c6-4bb0-f21f-d46b-13337b950bdd",
+						"type": "statement"
+					}
+				]
+			},
+			"modified": "2023-02-24T12:55:40Z",
+			"sitelinks": {
+				"nlwiki": {
+					"badges": [],
+					"site": "nlwiki",
+					"title": "Sa Pa (phường)",
+					"url": "https://nl.wikipedia.org/wiki/Sa_Pa_(ph%C6%B0%E1%BB%9Dng)"
+				},
+				"enwiki": {
+					"badges": [],
+					"site": "enwiki",
+					"title": "Sa Pa (ward)",
+					"url": "https://en.wikipedia.org/wiki/Sa_Pa_(ward)"
+				},
+				"urwiki": {
+					"badges": [],
+					"site": "urwiki",
+					"title": "سا پا",
+					"url": "https://ur.wikipedia.org/wiki/%D8%B3%D8%A7_%D9%BE%D8%A7"
+				},
+				"viwiki": {
+					"badges": [],
+					"site": "viwiki",
+					"title": "Sa Pa (phường)",
+					"url": "https://vi.wikipedia.org/wiki/Sa_Pa_(ph%C6%B0%E1%BB%9Dng)"
+				},
+				"commonswiki": {
+					"badges": [],
+					"site": "commonswiki",
+					"title": "Category:Sa Pa ward",
+					"url": "https://commons.wikimedia.org/wiki/Category:Sa_Pa_ward"
+				},
+				"zhwiki": {
+					"badges": [],
+					"site": "zhwiki",
+					"title": "沙垻坊",
+					"url": "https://zh.wikipedia.org/wiki/%E6%B2%99%E5%9E%BB%E5%9D%8A"
+				},
+				"cebwiki": {
+					"badges": [],
+					"site": "cebwiki",
+					"title": "Phường Sa Pa",
+					"url": "https://ceb.wikipedia.org/wiki/Ph%C6%B0%E1%BB%9Dng_Sa_Pa"
+				}
+			},
+			"id": "Q1000140",
+			"pageid": 949672,
+			"title": "Q1000140",
+			"type": "item",
+			"lastrevid": 1840546359,
+			"descriptions": {
+				"de": {
+					"language": "de",
+					"value": "Ort in Vietnam"
+				},
+				"vi": {
+					"language": "vi",
+					"value": "phường thuộc thị xã Sa Pa"
+				},
+				"uk": {
+					"language": "uk",
+					"value": "населений пункт"
+				},
+				"en": {
+					"language": "en",
+					"value": "human settlement"
+				},
+				"fr": {
+					"language": "fr",
+					"value": "ville du Viêt Nam"
+				},
+				"bn": {
+					"language": "bn",
+					"value": "মানববসতি"
+				},
+				"es": {
+					"language": "es",
+					"value": "ciudad de Vietnam"
+				},
+				"nl": {
+					"language": "nl",
+					"value": "thị trấn"
+				},
+				"sq": {
+					"language": "sq",
+					"value": "vendbanim"
+				}
+			},
+			"labels": {
+				"ceb": {
+					"language": "ceb",
+					"value": "Sa Pa"
+				},
+				"vi": {
+					"language": "vi",
+					"value": "Sa Pa"
+				},
+				"en": {
+					"language": "en",
+					"value": "Sa Pa"
+				},
+				"fr": {
+					"language": "fr",
+					"value": "Sa Pa"
+				},
+				"ur": {
+					"language": "ur",
+					"value": "سا پا"
+				},
+				"es": {
+					"language": "es",
+					"value": "Sa Pa"
+				},
+				"nl": {
+					"language": "nl",
+					"value": "Sa Pa"
+				},
+				"zh": {
+					"language": "zh",
+					"value": "沙坝坊"
+				}
+			}
+		}
+	}
+}

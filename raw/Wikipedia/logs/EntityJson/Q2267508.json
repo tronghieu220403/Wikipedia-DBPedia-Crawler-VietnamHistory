@@ -1,0 +1,418 @@
+{
+	"entities": {
+		"Q2267508": {
+			"pageid": 2190168,
+			"ns": 0,
+			"title": "Q2267508",
+			"lastrevid": 1449259962,
+			"modified": "2021-06-26T15:19:05Z",
+			"type": "item",
+			"id": "Q2267508",
+			"labels": {
+				"zh-hans": {
+					"language": "zh-hans",
+					"value": "郑主"
+				},
+				"zh-hant": {
+					"language": "zh-hant",
+					"value": "鄭主"
+				},
+				"zh-hk": {
+					"language": "zh-hk",
+					"value": "鄭主"
+				},
+				"vi": {
+					"language": "vi",
+					"value": "Chúa Trịnh"
+				},
+				"fr": {
+					"language": "fr",
+					"value": "Dynastie Trịnh"
+				},
+				"ru": {
+					"language": "ru",
+					"value": "Князья Чинь"
+				},
+				"en": {
+					"language": "en",
+					"value": "Trịnh lords"
+				},
+				"nl": {
+					"language": "nl",
+					"value": "Trinh-heren"
+				},
+				"ko": {
+					"language": "ko",
+					"value": "찐 왕조의 역대 왕"
+				},
+				"zh": {
+					"language": "zh",
+					"value": "鄭主"
+				},
+				"ja": {
+					"language": "ja",
+					"value": "鄭主"
+				},
+				"nan": {
+					"language": "nan",
+					"value": "Trịnh Chú"
+				}
+			},
+			"descriptions": {
+				"fr": {
+					"language": "fr",
+					"value": "dynastie vietnamienne de maires du palais qui s'imposa aux empereurs de la dynastie Lê de 1539 à 1786"
+				},
+				"vi": {
+					"language": "vi",
+					"value": "vong tộc phong kiến Việt Nam"
+				},
+				"en": {
+					"language": "en",
+					"value": "noble feudal Vietnamese clan"
+				}
+			},
+			"aliases": {
+				"zh": [
+					{
+						"language": "zh",
+						"value": "越南鄭氏"
+					},
+					{
+						"language": "zh",
+						"value": "鄭朝"
+					},
+					{
+						"language": "zh",
+						"value": "河北國"
+					},
+					{
+						"language": "zh",
+						"value": "北河國"
+					}
+				],
+				"vi": [
+					{
+						"language": "vi",
+						"value": "Nhà Trịnh"
+					}
+				],
+				"fr": [
+					{
+						"language": "fr",
+						"value": "Chúa Trịnh"
+					},
+					{
+						"language": "fr",
+						"value": "Dynastie Trinh"
+					}
+				],
+				"nl": [
+					{
+						"language": "nl",
+						"value": "Trinh-heersers"
+					},
+					{
+						"language": "nl",
+						"value": "Trinh heersers"
+					}
+				],
+				"ja": [
+					{
+						"language": "ja",
+						"value": "北河国"
+					}
+				]
+			},
+			"claims": {
+				"P646": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P646",
+							"hash": "df37c0e39a3b2cf408b3511f1b41cca081005fa0",
+							"datavalue": {
+								"value": "/m/0bynmg",
+								"type": "string"
+							},
+							"datatype": "external-id"
+						},
+						"type": "statement",
+						"id": "Q2267508$644C0B96-B740-4722-A19E-4EB00A5F1B22",
+						"rank": "normal",
+						"references": [
+							{
+								"hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+								"snaks": {
+									"P248": [
+										{
+											"snaktype": "value",
+											"property": "P248",
+											"hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+											"datavalue": {
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 15241312,
+													"id": "Q15241312"
+												},
+												"type": "wikibase-entityid"
+											},
+											"datatype": "wikibase-item"
+										}
+									],
+									"P577": [
+										{
+											"snaktype": "value",
+											"property": "P577",
+											"hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+											"datavalue": {
+												"value": {
+													"time": "+2013-10-28T00:00:00Z",
+													"timezone": 0,
+													"before": 0,
+													"after": 0,
+													"precision": 11,
+													"calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+												},
+												"type": "time"
+											},
+											"datatype": "time"
+										}
+									]
+								},
+								"snaks-order": [
+									"P248",
+									"P577"
+								]
+							}
+						]
+					}
+				],
+				"P910": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P910",
+							"hash": "669d9d7b1b8e14a5e02f483d3748e01c94933528",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 8873962,
+									"id": "Q8873962"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q2267508$19F5B246-B5F2-4A0B-9798-11F0B374C8A7",
+						"rank": "normal",
+						"references": [
+							{
+								"hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+								"snaks": {
+									"P143": [
+										{
+											"snaktype": "value",
+											"property": "P143",
+											"hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+											"datavalue": {
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 328,
+													"id": "Q328"
+												},
+												"type": "wikibase-entityid"
+											},
+											"datatype": "wikibase-item"
+										}
+									]
+								},
+								"snaks-order": [
+									"P143"
+								]
+							}
+						]
+					}
+				],
+				"P373": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P373",
+							"hash": "1b2d4f7d3ca51995dcd5809a246de3700588f0b4",
+							"datavalue": {
+								"value": "Trịnh lords",
+								"type": "string"
+							},
+							"datatype": "string"
+						},
+						"type": "statement",
+						"id": "Q2267508$599229B5-6226-40AF-AE82-65FA271D4DD0",
+						"rank": "normal",
+						"references": [
+							{
+								"hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+								"snaks": {
+									"P143": [
+										{
+											"snaktype": "value",
+											"property": "P143",
+											"hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+											"datavalue": {
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 328,
+													"id": "Q328"
+												},
+												"type": "wikibase-entityid"
+											},
+											"datatype": "wikibase-item"
+										}
+									]
+								},
+								"snaks-order": [
+									"P143"
+								]
+							}
+						]
+					}
+				],
+				"P3219": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P3219",
+							"hash": "f0ce5d09bc9142a16e9f5d57b856149addec21b0",
+							"datavalue": {
+								"value": "les-trinh",
+								"type": "string"
+							},
+							"datatype": "external-id"
+						},
+						"type": "statement",
+						"id": "Q2267508$4876B6D8-BA3C-4A4A-9931-D34D323DC0D9",
+						"rank": "normal"
+					}
+				],
+				"P1417": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1417",
+							"hash": "44d871869480bd7f2d10933169bf9462ceb8b3db",
+							"datavalue": {
+								"value": "topic/Trinh-family",
+								"type": "string"
+							},
+							"datatype": "external-id"
+						},
+						"type": "statement",
+						"id": "Q2267508$3FBC96C3-5A29-4266-A0A0-09D3F6483F2B",
+						"rank": "normal"
+					}
+				],
+				"P31": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P31",
+							"hash": "049cccbb4cd71d2af635488bf1e90c06fb7754c0",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 164950,
+									"id": "Q164950"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q2267508$bfd8024d-49f9-5a0b-61c1-10e1892435f1",
+						"rank": "normal"
+					}
+				],
+				"P625": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P625",
+							"hash": "766b231b05c2adfb26e3c836091706a833b9a64e",
+							"datavalue": {
+								"value": {
+									"latitude": 16.466666666666666,
+									"longitude": 107.6,
+									"altitude": null,
+									"precision": 0.016666666666666668,
+									"globe": "http://www.wikidata.org/entity/Q2"
+								},
+								"type": "globecoordinate"
+							},
+							"datatype": "globe-coordinate"
+						},
+						"type": "statement",
+						"id": "Q2267508$effadacf-52c8-4de1-a7ab-fbd95532ce77",
+						"rank": "normal"
+					}
+				]
+			},
+			"sitelinks": {
+				"enwiki": {
+					"site": "enwiki",
+					"title": "Trịnh lords",
+					"badges": [],
+					"url": "https://en.wikipedia.org/wiki/Tr%E1%BB%8Bnh_lords"
+				},
+				"frwiki": {
+					"site": "frwiki",
+					"title": "Dynastie Trịnh",
+					"badges": [],
+					"url": "https://fr.wikipedia.org/wiki/Dynastie_Tr%E1%BB%8Bnh"
+				},
+				"jawiki": {
+					"site": "jawiki",
+					"title": "鄭主",
+					"badges": [],
+					"url": "https://ja.wikipedia.org/wiki/%E9%84%AD%E4%B8%BB"
+				},
+				"kowiki": {
+					"site": "kowiki",
+					"title": "찐 주",
+					"badges": [],
+					"url": "https://ko.wikipedia.org/wiki/%EC%B0%90_%EC%A3%BC"
+				},
+				"nlwiki": {
+					"site": "nlwiki",
+					"title": "Trinh-heren",
+					"badges": [],
+					"url": "https://nl.wikipedia.org/wiki/Trinh-heren"
+				},
+				"ruwiki": {
+					"site": "ruwiki",
+					"title": "Князья Чинь",
+					"badges": [],
+					"url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BD%D1%8F%D0%B7%D1%8C%D1%8F_%D0%A7%D0%B8%D0%BD%D1%8C"
+				},
+				"viwiki": {
+					"site": "viwiki",
+					"title": "Chúa Trịnh",
+					"badges": [],
+					"url": "https://vi.wikipedia.org/wiki/Ch%C3%BAa_Tr%E1%BB%8Bnh"
+				},
+				"zh_min_nanwiki": {
+					"site": "zh_min_nanwiki",
+					"title": "Trịnh Chú",
+					"badges": [],
+					"url": "https://zh-min-nan.wikipedia.org/wiki/Tr%E1%BB%8Bnh_Ch%C3%BA"
+				},
+				"zhwiki": {
+					"site": "zhwiki",
+					"title": "鄭主",
+					"badges": [],
+					"url": "https://zh.wikipedia.org/wiki/%E9%84%AD%E4%B8%BB"
+				}
+			}
+		}
+	}
+}

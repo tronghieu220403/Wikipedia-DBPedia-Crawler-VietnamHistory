@@ -1,0 +1,1649 @@
+{
+	"entities": {
+		"Q12826225": {
+			"pageid": 14237132,
+			"ns": 0,
+			"title": "Q12826225",
+			"lastrevid": 1881941173,
+			"modified": "2023-04-24T14:02:33Z",
+			"type": "item",
+			"id": "Q12826225",
+			"labels": {
+				"uz": {
+					"language": "uz",
+					"value": "Lord"
+				},
+				"zh-hans": {
+					"language": "zh-hans",
+					"value": "勋爵"
+				},
+				"zh-hant": {
+					"language": "zh-hant",
+					"value": "勳爵"
+				},
+				"zh-hk": {
+					"language": "zh-hk",
+					"value": "勳爵"
+				},
+				"zh-cn": {
+					"language": "zh-cn",
+					"value": "勋爵"
+				},
+				"zh-sg": {
+					"language": "zh-sg",
+					"value": "勋爵"
+				},
+				"zh-tw": {
+					"language": "zh-tw",
+					"value": "勳爵"
+				},
+				"pl": {
+					"language": "pl",
+					"value": "lord"
+				},
+				"ko": {
+					"language": "ko",
+					"value": "영주"
+				},
+				"he": {
+					"language": "he",
+					"value": "לורד"
+				},
+				"es": {
+					"language": "es",
+					"value": "Lord"
+				},
+				"de": {
+					"language": "de",
+					"value": "Lord"
+				},
+				"ja": {
+					"language": "ja",
+					"value": "封建領主"
+				},
+				"br": {
+					"language": "br",
+					"value": "Aotrou"
+				},
+				"ar": {
+					"language": "ar",
+					"value": "رب"
+				},
+				"pt": {
+					"language": "pt",
+					"value": "senhor"
+				},
+				"eo": {
+					"language": "eo",
+					"value": "lordo"
+				},
+				"new": {
+					"language": "new",
+					"value": "भगवान"
+				},
+				"ru": {
+					"language": "ru",
+					"value": "лорд"
+				},
+				"en": {
+					"language": "en",
+					"value": "Lord"
+				},
+				"tr": {
+					"language": "tr",
+					"value": "Lort"
+				},
+				"mk": {
+					"language": "mk",
+					"value": "лорд"
+				},
+				"ca": {
+					"language": "ca",
+					"value": "Lord"
+				},
+				"fi": {
+					"language": "fi",
+					"value": "lordi"
+				},
+				"uk": {
+					"language": "uk",
+					"value": "Лорд"
+				},
+				"cs": {
+					"language": "cs",
+					"value": "pán"
+				},
+				"fa": {
+					"language": "fa",
+					"value": "لرد"
+				},
+				"sco": {
+					"language": "sco",
+					"value": "Laird"
+				},
+				"lt": {
+					"language": "lt",
+					"value": "Lordas"
+				},
+				"tl": {
+					"language": "tl",
+					"value": "Panginoon"
+				},
+				"da": {
+					"language": "da",
+					"value": "herre"
+				},
+				"hu": {
+					"language": "hu",
+					"value": "úr"
+				},
+				"zh": {
+					"language": "zh",
+					"value": "勳爵"
+				},
+				"gd": {
+					"language": "gd",
+					"value": "Tighearna"
+				},
+				"sv": {
+					"language": "sv",
+					"value": "lord"
+				},
+				"id": {
+					"language": "id",
+					"value": "Lord"
+				},
+				"fr": {
+					"language": "fr",
+					"value": "Lord"
+				},
+				"nl": {
+					"language": "nl",
+					"value": "heer"
+				},
+				"nb": {
+					"language": "nb",
+					"value": "lord"
+				},
+				"nds-nl": {
+					"language": "nds-nl",
+					"value": "heer"
+				},
+				"az": {
+					"language": "az",
+					"value": "Lord"
+				},
+				"nn": {
+					"language": "nn",
+					"value": "Herre"
+				},
+				"pa": {
+					"language": "pa",
+					"value": "ਰੱਬ"
+				},
+				"sh": {
+					"language": "sh",
+					"value": "Lord"
+				},
+				"fy": {
+					"language": "fy",
+					"value": "Hear"
+				},
+				"sw": {
+					"language": "sw",
+					"value": "Bwana"
+				},
+				"hy": {
+					"language": "hy",
+					"value": "Լորդ"
+				},
+				"it": {
+					"language": "it",
+					"value": "signore"
+				},
+				"cy": {
+					"language": "cy",
+					"value": "Arglwydd"
+				},
+				"sr": {
+					"language": "sr",
+					"value": "лорд"
+				},
+				"hr": {
+					"language": "hr",
+					"value": "Lord"
+				},
+				"ckb": {
+					"language": "ckb",
+					"value": "لۆرد"
+				},
+				"ga": {
+					"language": "ga",
+					"value": "tiarna"
+				},
+				"vi": {
+					"language": "vi",
+					"value": "lãnh chúa"
+				},
+				"lzh": {
+					"language": "lzh",
+					"value": "勳爵"
+				},
+				"ta": {
+					"language": "ta",
+					"value": "பிரபுக்கள்"
+				},
+				"be": {
+					"language": "be",
+					"value": "лорд"
+				},
+				"et": {
+					"language": "et",
+					"value": "Lord"
+				},
+				"vec": {
+					"language": "vec",
+					"value": "sior"
+				},
+				"arz": {
+					"language": "arz",
+					"value": "لورد"
+				},
+				"bg": {
+					"language": "bg",
+					"value": "Лорд"
+				},
+				"gl": {
+					"language": "gl",
+					"value": "Lord"
+				},
+				"cv": {
+					"language": "cv",
+					"value": "Лорд"
+				},
+				"sn": {
+					"language": "sn",
+					"value": "Ishe"
+				},
+				"eu": {
+					"language": "eu",
+					"value": "jaun"
+				},
+				"ro": {
+					"language": "ro",
+					"value": "Signor"
+				}
+			},
+			"descriptions": {
+				"en": {
+					"language": "en",
+					"value": "appellation for a person or deity who has authority, control, or power over others acting like a master, a chief, or a ruler"
+				},
+				"it": {
+					"language": "it",
+					"value": "titolo di nobiltà con proprietà e potere di controllo su di un territorio conferito da un Re o autorità religiose"
+				},
+				"fr": {
+					"language": "fr",
+					"value": "Titre de noblesse britannique, celui qui a le pouvoir de propriété et le contrôle d'un territoire donné par un roi ou les autorités religieuses"
+				},
+				"ar": {
+					"language": "ar",
+					"value": "لقب من ألقاب الشرف مع الملكية والسيطرة على السلطة على إقليم معين من قبل الملك أو السلطات الدينية"
+				},
+				"de": {
+					"language": "de",
+					"value": "Adelstitel mit Eigentum, Kontrolle und Macht, welcher über ein Gebiet von einem König oder religiösen Autoritäten verliehen wird"
+				},
+				"es": {
+					"language": "es",
+					"value": "título nobiliario británico"
+				},
+				"pl": {
+					"language": "pl",
+					"value": "tytuł szlachecki"
+				},
+				"cs": {
+					"language": "cs",
+					"value": "šlechtický titul"
+				},
+				"eo": {
+					"language": "eo",
+					"value": "nobela titolo"
+				},
+				"ckb": {
+					"language": "ckb",
+					"value": "یەکێک لە نازناوەکانی ڕێزلێنانە"
+				},
+				"ru": {
+					"language": "ru",
+					"value": "дворянский титул"
+				},
+				"sv": {
+					"language": "sv",
+					"value": "adelstitel"
+				},
+				"da": {
+					"language": "da",
+					"value": "adelstitel"
+				},
+				"fi": {
+					"language": "fi",
+					"value": "arvonimi"
+				},
+				"tr": {
+					"language": "tr",
+					"value": "soyluluk ya da üst mertebe anlamına gelen ve buna bağlı kullanımları olan sözcük"
+				},
+				"he": {
+					"language": "he",
+					"value": "תואר אצולה"
+				},
+				"nl": {
+					"language": "nl",
+					"value": "adellijke titel"
+				},
+				"ja": {
+					"language": "ja",
+					"value": "主君、藩公または領主のように振る舞う人物の呼称。他者と主従関係にある、または権威や権力を発揮する。または神のこと。"
+				},
+				"ro": {
+					"language": "ro",
+					"value": "titlu înzestrat cu drept de proprietate și putere de control asupra unui teritoriu acordat de către un rege sau o autoritate ecleziastică"
+				},
+				"ko": {
+					"language": "ko",
+					"value": "중세 유럽 봉건사회에서 농민을 지배한 정치권력자"
+				}
+			},
+			"aliases": {
+				"zh": [
+					{
+						"language": "zh",
+						"value": "勋爵"
+					},
+					{
+						"language": "zh",
+						"value": "Lord"
+					},
+					{
+						"language": "zh",
+						"value": "Signore"
+					}
+				],
+				"ko": [
+					{
+						"language": "ko",
+						"value": "봉건 영주"
+					},
+					{
+						"language": "ko",
+						"value": "봉건영주"
+					}
+				],
+				"ar": [
+					{
+						"language": "ar",
+						"value": "الرب"
+					},
+					{
+						"language": "ar",
+						"value": "لورد"
+					}
+				],
+				"pt": [
+					{
+						"language": "pt",
+						"value": "Lord"
+					}
+				],
+				"eo": [
+					{
+						"language": "eo",
+						"value": "Laird"
+					},
+					{
+						"language": "eo",
+						"value": "Lord"
+					}
+				],
+				"tr": [
+					{
+						"language": "tr",
+						"value": "Lord"
+					},
+					{
+						"language": "tr",
+						"value": "Signore"
+					}
+				],
+				"da": [
+					{
+						"language": "da",
+						"value": "Laird"
+					},
+					{
+						"language": "da",
+						"value": "Signore"
+					}
+				],
+				"nb": [
+					{
+						"language": "nb",
+						"value": "lorden"
+					},
+					{
+						"language": "nb",
+						"value": "herre"
+					}
+				],
+				"zh-hant": [
+					{
+						"language": "zh-hant",
+						"value": "耶穌"
+					}
+				],
+				"zh-cn": [
+					{
+						"language": "zh-cn",
+						"value": "耶稣"
+					},
+					{
+						"language": "zh-cn",
+						"value": "Signore"
+					}
+				],
+				"en": [
+					{
+						"language": "en",
+						"value": "signore"
+					},
+					{
+						"language": "en",
+						"value": "dominus"
+					},
+					{
+						"language": "en",
+						"value": "senior"
+					}
+				],
+				"it": [
+					{
+						"language": "it",
+						"value": "lord"
+					},
+					{
+						"language": "it",
+						"value": "seigneur"
+					},
+					{
+						"language": "it",
+						"value": "signoria di banno"
+					}
+				],
+				"fr": [
+					{
+						"language": "fr",
+						"value": "dame"
+					},
+					{
+						"language": "fr",
+						"value": "signore"
+					},
+					{
+						"language": "fr",
+						"value": "lord"
+					},
+					{
+						"language": "fr",
+						"value": "seigneuresse"
+					},
+					{
+						"language": "fr",
+						"value": "seigneur"
+					}
+				],
+				"de": [
+					{
+						"language": "de",
+						"value": "Signore"
+					}
+				],
+				"es": [
+					{
+						"language": "es",
+						"value": "Signore"
+					},
+					{
+						"language": "es",
+						"value": "Señor"
+					}
+				],
+				"ca": [
+					{
+						"language": "ca",
+						"value": "Signore"
+					}
+				],
+				"cs": [
+					{
+						"language": "cs",
+						"value": "lord"
+					}
+				],
+				"gd": [
+					{
+						"language": "gd",
+						"value": "Signore"
+					}
+				],
+				"hu": [
+					{
+						"language": "hu",
+						"value": "nemes úr"
+					},
+					{
+						"language": "hu",
+						"value": "uram"
+					},
+					{
+						"language": "hu",
+						"value": "nemes uram"
+					},
+					{
+						"language": "hu",
+						"value": "signore"
+					}
+				],
+				"id": [
+					{
+						"language": "id",
+						"value": "Signore"
+					}
+				],
+				"lt": [
+					{
+						"language": "lt",
+						"value": "Signore"
+					}
+				],
+				"nds-nl": [
+					{
+						"language": "nds-nl",
+						"value": "signore"
+					}
+				],
+				"nl": [
+					{
+						"language": "nl",
+						"value": "signore"
+					},
+					{
+						"language": "nl",
+						"value": "lord"
+					}
+				],
+				"nn": [
+					{
+						"language": "nn",
+						"value": "Signore"
+					}
+				],
+				"pl": [
+					{
+						"language": "pl",
+						"value": "Signore"
+					}
+				],
+				"sco": [
+					{
+						"language": "sco",
+						"value": "Signore"
+					}
+				],
+				"sh": [
+					{
+						"language": "sh",
+						"value": "Signore"
+					}
+				],
+				"ga": [
+					{
+						"language": "ga",
+						"value": "tighearna"
+					}
+				],
+				"vi": [
+					{
+						"language": "vi",
+						"value": "Lord"
+					},
+					{
+						"language": "vi",
+						"value": "Huân tước"
+					}
+				],
+				"ta": [
+					{
+						"language": "ta",
+						"value": "பிரபு"
+					}
+				],
+				"ja": [
+					{
+						"language": "ja",
+						"value": "主君"
+					},
+					{
+						"language": "ja",
+						"value": "殿"
+					},
+					{
+						"language": "ja",
+						"value": "ドミヌス"
+					},
+					{
+						"language": "ja",
+						"value": "高官"
+					}
+				],
+				"ro": [
+					{
+						"language": "ro",
+						"value": "senior"
+					}
+				]
+			},
+			"claims": {
+				"P373": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P373",
+							"hash": "f1bfa3a68aba91ea81f5b9a535e35e5ad1666968",
+							"datavalue": {
+								"value": "Lords",
+								"type": "string"
+							},
+							"datatype": "string"
+						},
+						"type": "statement",
+						"id": "Q12826225$D758EE3C-020B-4B1E-B428-CADBEE690E92",
+						"rank": "normal"
+					}
+				],
+				"P910": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P910",
+							"hash": "4e5e99ad31a8ba7e1385e5e18ad5d197937e8c8e",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 8972919,
+									"id": "Q8972919"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q12826225$93E53478-EDDB-4EF5-83DC-730920F9ADEE",
+						"rank": "normal"
+					}
+				],
+				"P1343": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1343",
+							"hash": "8162cca1bad1bd4a401fa1c7c67f2d8593a9a9c0",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 678259,
+									"id": "Q678259"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q12826225$C0B930D4-1417-4B84-9EDC-7EDA03366C82",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1343",
+							"hash": "62c309f8296338bd9647a7e758857137f3370310",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 2657718,
+									"id": "Q2657718"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P478": [
+								{
+									"snaktype": "value",
+									"property": "P478",
+									"hash": "ca3c5e6054c169ee3d0dfaf660f3eecd77942070",
+									"datavalue": {
+										"value": "4",
+										"type": "string"
+									},
+									"datatype": "string"
+								}
+							],
+							"P304": [
+								{
+									"snaktype": "value",
+									"property": "P304",
+									"hash": "30d050d4ac13a99ec11855d36d7abe72c6603883",
+									"datavalue": {
+										"value": "667",
+										"type": "string"
+									},
+									"datatype": "string"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P478",
+							"P304"
+						],
+						"id": "Q12826225$4E7587E1-71D8-4C5E-9176-B3B7DF8EB42E",
+						"rank": "normal",
+						"references": [
+							{
+								"hash": "8bc722e6797143f2ba971ee5fedaeb0a331268e6",
+								"snaks": {
+									"P143": [
+										{
+											"snaktype": "value",
+											"property": "P143",
+											"hash": "4b9ead388e47f64ea2ecb2b82c5d4f516003a8d5",
+											"datavalue": {
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 1975217,
+													"id": "Q1975217"
+												},
+												"type": "wikibase-entityid"
+											},
+											"datatype": "wikibase-item"
+										}
+									]
+								},
+								"snaks-order": [
+									"P143"
+								]
+							}
+						]
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1343",
+							"hash": "75dd89e79770a3e631dbba27144940f8f1bc1773",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 1768721,
+									"id": "Q1768721"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P805": [
+								{
+									"snaktype": "value",
+									"property": "P805",
+									"hash": "f3ce2e6ced8940f48eba441631c22d54268c4b86",
+									"datavalue": {
+										"value": {
+											"entity-type": "item",
+											"numeric-id": 96596293,
+											"id": "Q96596293"
+										},
+										"type": "wikibase-entityid"
+									},
+									"datatype": "wikibase-item"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P805"
+						],
+						"id": "Q12826225$A3ED3899-AF3C-438D-A51C-F3C29DE87AD2",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1343",
+							"hash": "4a29b0ce9d673c99f6f5dcbf2e207609650e731e",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 5217764,
+									"id": "Q5217764"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"qualifiers": {
+							"P1810": [
+								{
+									"snaktype": "value",
+									"property": "P1810",
+									"hash": "69a231d802fa344608b8313327d29aa310033112",
+									"datavalue": {
+										"value": "Lord",
+										"type": "string"
+									},
+									"datatype": "string"
+								}
+							]
+						},
+						"qualifiers-order": [
+							"P1810"
+						],
+						"id": "Q12826225$9efa7f1c-47cf-f3dc-6e62-9ec271184eb6",
+						"rank": "normal"
+					}
+				],
+				"P227": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P227",
+							"hash": "902e77d087fcbef94d6593a798e29e7787a78c17",
+							"datavalue": {
+								"value": "4589831-5",
+								"type": "string"
+							},
+							"datatype": "external-id"
+						},
+						"type": "statement",
+						"id": "Q12826225$3A803B42-E35D-4FAD-92F0-D7B669C60A3B",
+						"rank": "normal",
+						"references": [
+							{
+								"hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+								"snaks": {
+									"P143": [
+										{
+											"snaktype": "value",
+											"property": "P143",
+											"hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+											"datavalue": {
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 48183,
+													"id": "Q48183"
+												},
+												"type": "wikibase-entityid"
+											},
+											"datatype": "wikibase-item"
+										}
+									]
+								},
+								"snaks-order": [
+									"P143"
+								]
+							}
+						]
+					}
+				],
+				"P31": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P31",
+							"hash": "a456372c8e6a681381eca31ab0662159db12ab1e",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 355567,
+									"id": "Q355567"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q12826225$FEFD12B8-880A-497D-940E-3C4D87493BC8",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P31",
+							"hash": "22921a3d81e97a69bc1b06726862944caa1a093d",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 4164871,
+									"id": "Q4164871"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q12826225$20EC630D-9E12-41CF-8B9D-32B573CEC90C",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P31",
+							"hash": "864f4f6124c60ed97c50d36b5a050bccc123e775",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 12737077,
+									"id": "Q12737077"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q12826225$9620F697-7D93-4340-84C5-5F33C9562D26",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P31",
+							"hash": "394e1e5d61387c1b5b5558d3db7fef9feaa11da9",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 5767753,
+									"id": "Q5767753"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q12826225$42886696-8C12-4E6C-A3FD-49317D7C7D59",
+						"rank": "normal"
+					}
+				],
+				"P2521": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2521",
+							"hash": "11073fbd952b8dc4d8da5bce656364ae2a8f364a",
+							"datavalue": {
+								"value": {
+									"text": "dame",
+									"language": "fr"
+								},
+								"type": "monolingualtext"
+							},
+							"datatype": "monolingualtext"
+						},
+						"type": "statement",
+						"id": "Q12826225$973C29CA-2363-4A45-9331-42E491F277A3",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2521",
+							"hash": "b3d60063cadcf530279b25a8e249d65563acba3b",
+							"datavalue": {
+								"value": {
+									"text": "lordino",
+									"language": "eo"
+								},
+								"type": "monolingualtext"
+							},
+							"datatype": "monolingualtext"
+						},
+						"type": "statement",
+						"id": "Q12826225$70FE9E82-7473-48CC-9FD8-361E2266FFD2",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2521",
+							"hash": "fe9de84b2a772de1462cde4b9466b295d6df54e5",
+							"datavalue": {
+								"value": {
+									"text": "vrouwe",
+									"language": "nl"
+								},
+								"type": "monolingualtext"
+							},
+							"datatype": "monolingualtext"
+						},
+						"type": "statement",
+						"id": "Q12826225$c36166b4-4c7e-a45e-93ff-124cbfa740c5",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2521",
+							"hash": "316904bb3f111e86d9d8badaa0dc9b61f8085d3c",
+							"datavalue": {
+								"value": {
+									"text": "seigneuresse",
+									"language": "fr"
+								},
+								"type": "monolingualtext"
+							},
+							"datatype": "monolingualtext"
+						},
+						"type": "statement",
+						"id": "Q12826225$39a9838c-4892-6b0d-d550-ac25a7ee817e",
+						"rank": "normal"
+					}
+				],
+				"P279": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P279",
+							"hash": "98e1c0220c52e34778c96fd796a11e95c3f1f314",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 1097498,
+									"id": "Q1097498"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q12826225$4449EF44-F82F-4740-AF3C-5EB73C46707F",
+						"rank": "normal"
+					}
+				],
+				"P1417": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1417",
+							"hash": "53facb968095b6b25230cc1f6c00255114e81dad",
+							"datavalue": {
+								"value": "topic/seigneur",
+								"type": "string"
+							},
+							"datatype": "external-id"
+						},
+						"type": "statement",
+						"id": "Q12826225$1B84F28E-6451-4BC7-B55B-38CF087E6501",
+						"rank": "normal"
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1417",
+							"hash": "339cc5ea17c3d69982b376377fc65771aeaf8d72",
+							"datavalue": {
+								"value": "topic/lord",
+								"type": "string"
+							},
+							"datatype": "external-id"
+						},
+						"type": "statement",
+						"id": "Q12826225$FB6C21BE-3577-4704-A074-613BCF7619A8",
+						"rank": "normal"
+					}
+				],
+				"P8408": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P8408",
+							"hash": "1ffac6f5fe6688945e391fce746163f20f398653",
+							"datavalue": {
+								"value": "Lord",
+								"type": "string"
+							},
+							"datatype": "external-id"
+						},
+						"type": "statement",
+						"id": "Q12826225$443743B6-3EC9-4FE9-8B9D-435AD4876536",
+						"rank": "normal",
+						"references": [
+							{
+								"hash": "9a681f9dd95c90224547c404e11295f4f7dcf54e",
+								"snaks": {
+									"P248": [
+										{
+											"snaktype": "value",
+											"property": "P248",
+											"hash": "9d5780dddffa8746637a9929a936ab6b0f601e24",
+											"datavalue": {
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 64139102,
+													"id": "Q64139102"
+												},
+												"type": "wikibase-entityid"
+											},
+											"datatype": "wikibase-item"
+										}
+									],
+									"P813": [
+										{
+											"snaktype": "value",
+											"property": "P813",
+											"hash": "622a5a27fa5b25e7e7984974e9db494cf8460990",
+											"datavalue": {
+												"value": {
+													"time": "+2020-07-09T00:00:00Z",
+													"timezone": 0,
+													"before": 0,
+													"after": 0,
+													"precision": 11,
+													"calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+												},
+												"type": "time"
+											},
+											"datatype": "time"
+										}
+									]
+								},
+								"snaks-order": [
+									"P248",
+									"P813"
+								]
+							}
+						]
+					}
+				],
+				"P5063": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P5063",
+							"hash": "047030f5f6409ba7ceb0094655198ce53db39594",
+							"datavalue": {
+								"value": "i86772",
+								"type": "string"
+							},
+							"datatype": "external-id"
+						},
+						"type": "statement",
+						"id": "Q12826225$258CE722-486B-482D-9803-5F372BE3FAA3",
+						"rank": "normal"
+					}
+				],
+				"P1001": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1001",
+							"hash": "605c3e8dee58b03d9b288dacec1fc928df174275",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 179876,
+									"id": "Q179876"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q12826225$faa189cb-42ed-b913-49ee-03fad032fabf",
+						"rank": "normal"
+					}
+				],
+				"P646": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P646",
+							"hash": "beb68773c1f3cdf27639d85f59f783c855b8b666",
+							"datavalue": {
+								"value": "/m/0j1r3",
+								"type": "string"
+							},
+							"datatype": "external-id"
+						},
+						"type": "statement",
+						"id": "Q12826225$CA536D4A-7146-4602-B45D-66DDCEFF933A",
+						"rank": "normal"
+					}
+				],
+				"P1889": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1889",
+							"hash": "da0247caa3f808566107b6e62bef822d5efd1cc5",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 521862,
+									"id": "Q521862"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q12826225$FAB24199-EA5A-4A65-8B18-3CE012EF0348",
+						"rank": "normal",
+						"references": [
+							{
+								"hash": "9918ec62e450d8c4e823a087ec7dcbf3af0f83c5",
+								"snaks": {
+									"P143": [
+										{
+											"snaktype": "value",
+											"property": "P143",
+											"hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+											"datavalue": {
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 1551807,
+													"id": "Q1551807"
+												},
+												"type": "wikibase-entityid"
+											},
+											"datatype": "wikibase-item"
+										}
+									],
+									"P4656": [
+										{
+											"snaktype": "value",
+											"property": "P4656",
+											"hash": "c8c3440bf6e1b1ead8ec848779e5dc6ccfa33b46",
+											"datavalue": {
+												"value": "https://pl.wikipedia.org/w/index.php?title=Lord&oldid=61233765",
+												"type": "string"
+											},
+											"datatype": "url"
+										}
+									]
+								},
+								"snaks-order": [
+									"P143",
+									"P4656"
+								]
+							}
+						]
+					}
+				],
+				"P8313": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P8313",
+							"hash": "84bdece3bce5274aba9e05c1774d853c23c6fb76",
+							"datavalue": {
+								"value": "lord",
+								"type": "string"
+							},
+							"datatype": "external-id"
+						},
+						"type": "statement",
+						"id": "Q12826225$0C66B0F7-95F5-47B8-A19E-201F61B9D962",
+						"rank": "normal"
+					}
+				],
+				"P460": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P460",
+							"hash": "a3475805bbb925f34105ead92c3751804050576f",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 1378024,
+									"id": "Q1378024"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q12826225$6d0a1f38-4d24-8f21-82c1-a73acc9bfdc7",
+						"rank": "normal"
+					}
+				],
+				"P8168": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P8168",
+							"hash": "abb9464b2771275af57736c0466f0b58faa53008",
+							"datavalue": {
+								"value": "Q256502",
+								"type": "string"
+							},
+							"datatype": "external-id"
+						},
+						"type": "statement",
+						"id": "Q12826225$9E9D2D71-4765-444B-B1DB-AAA92A0EB896",
+						"rank": "normal"
+					}
+				],
+				"P9495": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P9495",
+							"hash": "a9b705eed54b7d5602c756d501cfc40af4e6289a",
+							"datavalue": {
+								"value": "term/24735A0D-B6AF-4A3D-980E-99B52C16FF20",
+								"type": "string"
+							},
+							"datatype": "external-id"
+						},
+						"type": "statement",
+						"id": "Q12826225$84A915F1-69B6-4640-8153-2ABF2C03CFD1",
+						"rank": "normal"
+					}
+				]
+			},
+			"sitelinks": {
+				"arwiki": {
+					"site": "arwiki",
+					"title": "رب",
+					"badges": [],
+					"url": "https://ar.wikipedia.org/wiki/%D8%B1%D8%A8"
+				},
+				"arzwiki": {
+					"site": "arzwiki",
+					"title": "لورد",
+					"badges": [],
+					"url": "https://arz.wikipedia.org/wiki/%D9%84%D9%88%D8%B1%D8%AF"
+				},
+				"bgwiki": {
+					"site": "bgwiki",
+					"title": "Лорд",
+					"badges": [],
+					"url": "https://bg.wikipedia.org/wiki/%D0%9B%D0%BE%D1%80%D0%B4"
+				},
+				"brwiki": {
+					"site": "brwiki",
+					"title": "Aotrou",
+					"badges": [],
+					"url": "https://br.wikipedia.org/wiki/Aotrou"
+				},
+				"cawiki": {
+					"site": "cawiki",
+					"title": "Lord",
+					"badges": [],
+					"url": "https://ca.wikipedia.org/wiki/Lord"
+				},
+				"ckbwiki": {
+					"site": "ckbwiki",
+					"title": "لۆرد",
+					"badges": [],
+					"url": "https://ckb.wikipedia.org/wiki/%D9%84%DB%86%D8%B1%D8%AF"
+				},
+				"cswiki": {
+					"site": "cswiki",
+					"title": "Lord",
+					"badges": [],
+					"url": "https://cs.wikipedia.org/wiki/Lord"
+				},
+				"cvwiki": {
+					"site": "cvwiki",
+					"title": "Лорд",
+					"badges": [],
+					"url": "https://cv.wikipedia.org/wiki/%D0%9B%D0%BE%D1%80%D0%B4"
+				},
+				"dawiki": {
+					"site": "dawiki",
+					"title": "Lord",
+					"badges": [],
+					"url": "https://da.wikipedia.org/wiki/Lord"
+				},
+				"dewiki": {
+					"site": "dewiki",
+					"title": "Lord",
+					"badges": [],
+					"url": "https://de.wikipedia.org/wiki/Lord"
+				},
+				"enwiki": {
+					"site": "enwiki",
+					"title": "Lord",
+					"badges": [],
+					"url": "https://en.wikipedia.org/wiki/Lord"
+				},
+				"enwikiquote": {
+					"site": "enwikiquote",
+					"title": "Lord",
+					"badges": [],
+					"url": "https://en.wikiquote.org/wiki/Lord"
+				},
+				"eowiki": {
+					"site": "eowiki",
+					"title": "Lordo",
+					"badges": [],
+					"url": "https://eo.wikipedia.org/wiki/Lordo"
+				},
+				"eswiki": {
+					"site": "eswiki",
+					"title": "Lord",
+					"badges": [],
+					"url": "https://es.wikipedia.org/wiki/Lord"
+				},
+				"etwikiquote": {
+					"site": "etwikiquote",
+					"title": "Lord",
+					"badges": [],
+					"url": "https://et.wikiquote.org/wiki/Lord"
+				},
+				"fawiki": {
+					"site": "fawiki",
+					"title": "ارباب",
+					"badges": [],
+					"url": "https://fa.wikipedia.org/wiki/%D8%A7%D8%B1%D8%A8%D8%A7%D8%A8"
+				},
+				"fiwiki": {
+					"site": "fiwiki",
+					"title": "Lordi",
+					"badges": [],
+					"url": "https://fi.wikipedia.org/wiki/Lordi"
+				},
+				"fywiki": {
+					"site": "fywiki",
+					"title": "Lord",
+					"badges": [],
+					"url": "https://fy.wikipedia.org/wiki/Lord"
+				},
+				"gdwiki": {
+					"site": "gdwiki",
+					"title": "Tighearna",
+					"badges": [],
+					"url": "https://gd.wikipedia.org/wiki/Tighearna"
+				},
+				"hewiki": {
+					"site": "hewiki",
+					"title": "לורד",
+					"badges": [],
+					"url": "https://he.wikipedia.org/wiki/%D7%9C%D7%95%D7%A8%D7%93"
+				},
+				"hrwiki": {
+					"site": "hrwiki",
+					"title": "Lord",
+					"badges": [],
+					"url": "https://hr.wikipedia.org/wiki/Lord"
+				},
+				"huwiki": {
+					"site": "huwiki",
+					"title": "Lord (főrend)",
+					"badges": [],
+					"url": "https://hu.wikipedia.org/wiki/Lord_(f%C5%91rend)"
+				},
+				"hywiki": {
+					"site": "hywiki",
+					"title": "Լորդ (կոչում)",
+					"badges": [],
+					"url": "https://hy.wikipedia.org/wiki/%D4%BC%D5%B8%D6%80%D5%A4_(%D5%AF%D5%B8%D5%B9%D5%B8%D6%82%D5%B4)"
+				},
+				"idwiki": {
+					"site": "idwiki",
+					"title": "Lord",
+					"badges": [],
+					"url": "https://id.wikipedia.org/wiki/Lord"
+				},
+				"jawiki": {
+					"site": "jawiki",
+					"title": "封建領主",
+					"badges": [],
+					"url": "https://ja.wikipedia.org/wiki/%E5%B0%81%E5%BB%BA%E9%A0%98%E4%B8%BB"
+				},
+				"kowiki": {
+					"site": "kowiki",
+					"title": "영주 (작위)",
+					"badges": [],
+					"url": "https://ko.wikipedia.org/wiki/%EC%98%81%EC%A3%BC_(%EC%9E%91%EC%9C%84)"
+				},
+				"ltwiki": {
+					"site": "ltwiki",
+					"title": "Lordas",
+					"badges": [],
+					"url": "https://lt.wikipedia.org/wiki/Lordas"
+				},
+				"mkwiki": {
+					"site": "mkwiki",
+					"title": "Лорд",
+					"badges": [],
+					"url": "https://mk.wikipedia.org/wiki/%D0%9B%D0%BE%D1%80%D0%B4"
+				},
+				"nowiki": {
+					"site": "nowiki",
+					"title": "Lord",
+					"badges": [],
+					"url": "https://no.wikipedia.org/wiki/Lord"
+				},
+				"plwiki": {
+					"site": "plwiki",
+					"title": "Lord",
+					"badges": [],
+					"url": "https://pl.wikipedia.org/wiki/Lord"
+				},
+				"ptwiki": {
+					"site": "ptwiki",
+					"title": "Lorde",
+					"badges": [],
+					"url": "https://pt.wikipedia.org/wiki/Lorde"
+				},
+				"ruwiki": {
+					"site": "ruwiki",
+					"title": "Лорд",
+					"badges": [],
+					"url": "https://ru.wikipedia.org/wiki/%D0%9B%D0%BE%D1%80%D0%B4"
+				},
+				"scowiki": {
+					"site": "scowiki",
+					"title": "Laird",
+					"badges": [],
+					"url": "https://sco.wikipedia.org/wiki/Laird"
+				},
+				"shwiki": {
+					"site": "shwiki",
+					"title": "Lord",
+					"badges": [],
+					"url": "https://sh.wikipedia.org/wiki/Lord"
+				},
+				"simplewiki": {
+					"site": "simplewiki",
+					"title": "Lord",
+					"badges": [],
+					"url": "https://simple.wikipedia.org/wiki/Lord"
+				},
+				"snwiki": {
+					"site": "snwiki",
+					"title": "Ishe",
+					"badges": [],
+					"url": "https://sn.wikipedia.org/wiki/Ishe"
+				},
+				"srwiki": {
+					"site": "srwiki",
+					"title": "Лорд",
+					"badges": [
+						"Q70894304"
+					],
+					"url": "https://sr.wikipedia.org/wiki/%D0%9B%D0%BE%D1%80%D0%B4"
+				},
+				"svwiki": {
+					"site": "svwiki",
+					"title": "Lord",
+					"badges": [],
+					"url": "https://sv.wikipedia.org/wiki/Lord"
+				},
+				"swwiki": {
+					"site": "swwiki",
+					"title": "Bwana",
+					"badges": [],
+					"url": "https://sw.wikipedia.org/wiki/Bwana"
+				},
+				"tawikiquote": {
+					"site": "tawikiquote",
+					"title": "பிரபுக்கள்",
+					"badges": [],
+					"url": "https://ta.wikiquote.org/wiki/%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%AA%E0%AF%81%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AE%B3%E0%AF%8D"
+				},
+				"tlwiki": {
+					"site": "tlwiki",
+					"title": "Panginoon",
+					"badges": [],
+					"url": "https://tl.wikipedia.org/wiki/Panginoon"
+				},
+				"trwiki": {
+					"site": "trwiki",
+					"title": "Lord",
+					"badges": [],
+					"url": "https://tr.wikipedia.org/wiki/Lord"
+				},
+				"ukwiki": {
+					"site": "ukwiki",
+					"title": "Лорд",
+					"badges": [],
+					"url": "https://uk.wikipedia.org/wiki/%D0%9B%D0%BE%D1%80%D0%B4"
+				},
+				"uzwiki": {
+					"site": "uzwiki",
+					"title": "Lord",
+					"badges": [],
+					"url": "https://uz.wikipedia.org/wiki/Lord"
+				},
+				"viwiki": {
+					"site": "viwiki",
+					"title": "Lãnh chúa",
+					"badges": [],
+					"url": "https://vi.wikipedia.org/wiki/L%C3%A3nh_ch%C3%BAa"
+				},
+				"zhwiki": {
+					"site": "zhwiki",
+					"title": "勳爵",
+					"badges": [],
+					"url": "https://zh.wikipedia.org/wiki/%E5%8B%B3%E7%88%B5"
+				}
+			}
+		}
+	}
+}

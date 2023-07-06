@@ -1,0 +1,201 @@
+{
+	"entities": {
+		"Q10771398": {
+			"aliases": {
+				"vi": [
+					{
+						"language": "vi",
+						"value": "Hưng Thông, Hưng Nguyên"
+					}
+				],
+				"en": [
+					{
+						"language": "en",
+						"value": "Hung Thong"
+					}
+				]
+			},
+			"ns": 0,
+			"claims": {
+				"P2671": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "/g/120z1xxf"
+							},
+							"datatype": "external-id",
+							"property": "P2671",
+							"snaktype": "value",
+							"hash": "587f8312a7c55aec6861ba882239435249e7db5f"
+						},
+						"rank": "normal",
+						"id": "Q10771398$56D090F8-3607-4E94-B174-09CE6B302ABE",
+						"type": "statement"
+					}
+				],
+				"P421": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 6940,
+									"id": "Q6940"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P421",
+							"snaktype": "value",
+							"hash": "a76f0b5cf7969cb64254594200ac404c76ff710f"
+						},
+						"rank": "normal",
+						"id": "Q10771398$DFAB5B01-6EAF-4E12-87A3-7613A1EE75FB",
+						"type": "statement"
+					}
+				],
+				"P17": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 881,
+									"id": "Q881"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P17",
+							"snaktype": "value",
+							"hash": "c40be02120fa6723ead45340635fe0835f073e90"
+						},
+						"rank": "normal",
+						"id": "Q10771398$B8CB1B07-890C-46A2-87D9-921BF519F7F6",
+						"type": "statement"
+					}
+				],
+				"P131": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 5942590,
+									"id": "Q5942590"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P131",
+							"snaktype": "value",
+							"hash": "7b701d44453823f7976f618ae4c6f2e9494999b6"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P143",
+									"P4656"
+								],
+								"snaks": {
+									"P143": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 200180,
+													"id": "Q200180"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P143",
+											"snaktype": "value",
+											"hash": "2ce37078fb0b73b39acff0a04fa4f988d1762233"
+										}
+									],
+									"P4656": [
+										{
+											"datavalue": {
+												"type": "string",
+												"value": "https://vi.wikipedia.org/w/index.php?title=Hưng_Thông&oldid=60028098"
+											},
+											"datatype": "url",
+											"property": "P4656",
+											"snaktype": "value",
+											"hash": "cf670d484b2fd148a9f09ab6b4772d9436f6748c"
+										}
+									]
+								},
+								"hash": "3a505d49874bcc32a2f50523b8f8bb924aef9e10"
+							}
+						],
+						"rank": "normal",
+						"id": "Q10771398$0A2F4228-EB43-44EA-A271-954F5B0CD195",
+						"type": "statement"
+					}
+				],
+				"P31": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 2389082,
+									"id": "Q2389082"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P31",
+							"snaktype": "value",
+							"hash": "a1cede3b8f83350f276961f8ae57f766b609d163"
+						},
+						"rank": "normal",
+						"id": "Q10771398$42DDC8DF-6732-4883-B719-44049B302A6D",
+						"type": "statement"
+					}
+				]
+			},
+			"modified": "2021-05-31T12:08:35Z",
+			"sitelinks": {
+				"viwiki": {
+					"badges": [],
+					"site": "viwiki",
+					"title": "Hưng Thông",
+					"url": "https://vi.wikipedia.org/wiki/H%C6%B0ng_Th%C3%B4ng"
+				}
+			},
+			"id": "Q10771398",
+			"pageid": 12045361,
+			"title": "Q10771398",
+			"type": "item",
+			"lastrevid": 1432294452,
+			"descriptions": {
+				"de": {
+					"language": "de",
+					"value": "Landgemeinde in Vietnam"
+				},
+				"ar": {
+					"language": "ar",
+					"value": "جماعة قروية في فيتنام"
+				},
+				"el": {
+					"language": "el",
+					"value": "οικισμός τoυ Βιετνάμ"
+				}
+			},
+			"labels": {
+				"vi": {
+					"language": "vi",
+					"value": "Hưng Thông"
+				},
+				"en": {
+					"language": "en",
+					"value": "Hưng Thông"
+				}
+			}
+		}
+	}
+}

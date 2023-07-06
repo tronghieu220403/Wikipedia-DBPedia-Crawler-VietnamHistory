@@ -1,0 +1,496 @@
+{
+	"entities": {
+		"Q10828637": {
+			"aliases": {
+				"vi": [
+					{
+						"language": "vi",
+						"value": "Trù Sơn, Đô Lương"
+					}
+				],
+				"en": [
+					{
+						"language": "en",
+						"value": "Tru Son"
+					},
+					{
+						"language": "en",
+						"value": "Xã Trù Sơn"
+					}
+				]
+			},
+			"ns": 0,
+			"claims": {
+				"P2044": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "quantity",
+								"value": {
+									"amount": "+21",
+									"unit": "http://www.wikidata.org/entity/Q11573"
+								}
+							},
+							"datatype": "quantity",
+							"property": "P2044",
+							"snaktype": "value",
+							"hash": "6152f97cb508e1c3ec620717a5eab6063d04a1f2"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P143"
+								],
+								"snaks": {
+									"P143": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 837615,
+													"id": "Q837615"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P143",
+											"snaktype": "value",
+											"hash": "d8fbf8671e3c630db61bfac691068cfb6857f243"
+										}
+									]
+								},
+								"hash": "43a0088c51fd85e5a85d1b46412c3a635e6d4edc"
+							}
+						],
+						"rank": "normal",
+						"id": "Q10828637$81816F2C-80F0-4317-B6A6-9680F8FFC4D6",
+						"type": "statement"
+					}
+				],
+				"P2671": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "/g/1hb_h5367"
+							},
+							"datatype": "external-id",
+							"property": "P2671",
+							"snaktype": "value",
+							"hash": "50b60cdc50585ddb441132b593f19a13b581916f"
+						},
+						"rank": "normal",
+						"id": "Q10828637$3418F11E-70D3-4AD9-B621-0967A7581A50",
+						"type": "statement"
+					}
+				],
+				"P421": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 6940,
+									"id": "Q6940"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P421",
+							"snaktype": "value",
+							"hash": "a76f0b5cf7969cb64254594200ac404c76ff710f"
+						},
+						"rank": "normal",
+						"id": "Q10828637$2788ACD3-B633-40E2-9EF0-20CD5A8D63FA",
+						"type": "statement"
+					}
+				],
+				"P17": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 881,
+									"id": "Q881"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P17",
+							"snaktype": "value",
+							"hash": "c40be02120fa6723ead45340635fe0835f073e90"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P248",
+									"P577",
+									"P2326"
+								],
+								"snaks": {
+									"P577": [
+										{
+											"datavalue": {
+												"type": "time",
+												"value": {
+													"before": 0,
+													"timezone": 0,
+													"precision": 11,
+													"time": "+2018-06-11T00:00:00Z",
+													"after": 0,
+													"calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+												}
+											},
+											"datatype": "time",
+											"property": "P577",
+											"snaktype": "value",
+											"hash": "a372c95b03a3464736c5fd1d7ed86176f0c04973"
+										}
+									],
+									"P248": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 1194038,
+													"id": "Q1194038"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P248",
+											"snaktype": "value",
+											"hash": "7648f66055f57f6227dd1f872bc4ed26c70da7c6"
+										}
+									],
+									"P2326": [
+										{
+											"datavalue": {
+												"type": "string",
+												"value": "11844925"
+											},
+											"datatype": "external-id",
+											"property": "P2326",
+											"snaktype": "value",
+											"hash": "e7e0b2fff803b0c92c83f6adba33b5541cb067c9"
+										}
+									]
+								},
+								"hash": "5fa087025ea298357c146a95a7b51edc3fa879ad"
+							}
+						],
+						"rank": "normal",
+						"id": "Q10828637$778F4CA3-4FCF-4CA5-87DA-E12FEF9180BC",
+						"type": "statement"
+					}
+				],
+				"P131": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 5286108,
+									"id": "Q5286108"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P131",
+							"snaktype": "value",
+							"hash": "b265845c53ccd1f305222a1708b1c37f64f5ca32"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P143"
+								],
+								"snaks": {
+									"P143": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 200180,
+													"id": "Q200180"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P143",
+											"snaktype": "value",
+											"hash": "2ce37078fb0b73b39acff0a04fa4f988d1762233"
+										}
+									]
+								},
+								"hash": "3ddf3400c3e6781db3e52ae79df04661d26c3169"
+							}
+						],
+						"rank": "normal",
+						"id": "Q10828637$573126AF-3988-464E-806F-BAA2C9254CBC",
+						"type": "statement"
+					}
+				],
+				"P1566": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "8627794"
+							},
+							"datatype": "external-id",
+							"property": "P1566",
+							"snaktype": "value",
+							"hash": "bad614d57eabafc9240cd03182872e0936466270"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P143"
+								],
+								"snaks": {
+									"P143": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 837615,
+													"id": "Q837615"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P143",
+											"snaktype": "value",
+											"hash": "d8fbf8671e3c630db61bfac691068cfb6857f243"
+										}
+									]
+								},
+								"hash": "43a0088c51fd85e5a85d1b46412c3a635e6d4edc"
+							}
+						],
+						"rank": "normal",
+						"id": "Q10828637$88C86CAB-52A6-4742-ABEA-73C582B2D260",
+						"type": "statement"
+					}
+				],
+				"P2326": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "11844925"
+							},
+							"datatype": "external-id",
+							"property": "P2326",
+							"snaktype": "value",
+							"hash": "e7e0b2fff803b0c92c83f6adba33b5541cb067c9"
+						},
+						"rank": "normal",
+						"id": "Q10828637$E13DEB0A-FB63-4160-8064-F66FF00BC52C",
+						"type": "statement"
+					}
+				],
+				"P625": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "globecoordinate",
+								"value": {
+									"altitude": null,
+									"globe": "http://www.wikidata.org/entity/Q2",
+									"latitude": 18.82138889,
+									"precision": 0.00001,
+									"longitude": 105.4355556
+								}
+							},
+							"datatype": "globe-coordinate",
+							"property": "P625",
+							"snaktype": "value",
+							"hash": "b478abd9360e720f6ee7ee8d81d756e3476d51f2"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P143"
+								],
+								"snaks": {
+									"P143": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 200180,
+													"id": "Q200180"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P143",
+											"snaktype": "value",
+											"hash": "2ce37078fb0b73b39acff0a04fa4f988d1762233"
+										}
+									]
+								},
+								"hash": "3ddf3400c3e6781db3e52ae79df04661d26c3169"
+							}
+						],
+						"rank": "normal",
+						"id": "Q10828637$381E65A8-6EA9-41B8-9F6E-24CE13EDCD5C",
+						"type": "statement"
+					},
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "globecoordinate",
+								"value": {
+									"altitude": null,
+									"globe": "http://www.wikidata.org/entity/Q2",
+									"latitude": 18.818888888889,
+									"precision": 0.00027777777777778,
+									"longitude": 105.43638888889
+								}
+							},
+							"datatype": "globe-coordinate",
+							"property": "P625",
+							"snaktype": "value",
+							"hash": "c6eca14dfc80a5885fc7f9d1b2a50d1fef244a68"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P248",
+									"P577",
+									"P2326"
+								],
+								"snaks": {
+									"P577": [
+										{
+											"datavalue": {
+												"type": "time",
+												"value": {
+													"before": 0,
+													"timezone": 0,
+													"precision": 11,
+													"time": "+2018-06-11T00:00:00Z",
+													"after": 0,
+													"calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+												}
+											},
+											"datatype": "time",
+											"property": "P577",
+											"snaktype": "value",
+											"hash": "a372c95b03a3464736c5fd1d7ed86176f0c04973"
+										}
+									],
+									"P248": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 1194038,
+													"id": "Q1194038"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P248",
+											"snaktype": "value",
+											"hash": "7648f66055f57f6227dd1f872bc4ed26c70da7c6"
+										}
+									],
+									"P2326": [
+										{
+											"datavalue": {
+												"type": "string",
+												"value": "11844925"
+											},
+											"datatype": "external-id",
+											"property": "P2326",
+											"snaktype": "value",
+											"hash": "e7e0b2fff803b0c92c83f6adba33b5541cb067c9"
+										}
+									]
+								},
+								"hash": "5fa087025ea298357c146a95a7b51edc3fa879ad"
+							}
+						],
+						"rank": "normal",
+						"id": "Q10828637$BCF5FF65-B6F6-4FD4-B0AC-8AE98E85BCBF",
+						"type": "statement"
+					}
+				],
+				"P31": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 2389082,
+									"id": "Q2389082"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P31",
+							"snaktype": "value",
+							"hash": "a1cede3b8f83350f276961f8ae57f766b609d163"
+						},
+						"rank": "normal",
+						"id": "Q10828637$8AF815D9-BAF9-42EF-8E16-102F54F5A9A6",
+						"type": "statement"
+					}
+				]
+			},
+			"modified": "2021-05-30T13:08:45Z",
+			"sitelinks": {
+				"viwiki": {
+					"badges": [],
+					"site": "viwiki",
+					"title": "Trù Sơn",
+					"url": "https://vi.wikipedia.org/wiki/Tr%C3%B9_S%C6%A1n"
+				},
+				"cebwiki": {
+					"badges": [],
+					"site": "cebwiki",
+					"title": "Xã Trù Sơn",
+					"url": "https://ceb.wikipedia.org/wiki/X%C3%A3_Tr%C3%B9_S%C6%A1n"
+				}
+			},
+			"id": "Q10828637",
+			"pageid": 12101343,
+			"title": "Q10828637",
+			"type": "item",
+			"lastrevid": 1431615364,
+			"descriptions": {
+				"de": {
+					"language": "de",
+					"value": "Landgemeinde in Vietnam"
+				},
+				"ar": {
+					"language": "ar",
+					"value": "جماعة قروية في فيتنام"
+				},
+				"el": {
+					"language": "el",
+					"value": "οικισμός τoυ Βιετνάμ"
+				}
+			},
+			"labels": {
+				"ceb": {
+					"language": "ceb",
+					"value": "Xã Trù Sơn"
+				},
+				"vi": {
+					"language": "vi",
+					"value": "Trù Sơn"
+				},
+				"en": {
+					"language": "en",
+					"value": "Trù Sơn"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,490 @@
+{
+	"entities": {
+		"Q10748679": {
+			"pageid": 12023345,
+			"ns": 0,
+			"title": "Q10748679",
+			"lastrevid": 1431591076,
+			"modified": "2021-05-30T12:24:09Z",
+			"type": "item",
+			"id": "Q10748679",
+			"labels": {
+				"vi": {
+					"language": "vi",
+					"value": "Chương Dương"
+				},
+				"en": {
+					"language": "en",
+					"value": "Chương Dương"
+				},
+				"ceb": {
+					"language": "ceb",
+					"value": "Xã Chương Dương"
+				}
+			},
+			"descriptions": {
+				"vi": {
+					"language": "vi",
+					"value": "xã thuộc Đông Hưng"
+				},
+				"el": {
+					"language": "el",
+					"value": "οικισμός τoυ Βιετνάμ"
+				},
+				"de": {
+					"language": "de",
+					"value": "Landgemeinde in Vietnam"
+				},
+				"ar": {
+					"language": "ar",
+					"value": "جماعة قروية في فيتنام"
+				}
+			},
+			"aliases": {
+				"en": [
+					{
+						"language": "en",
+						"value": "Chuong Duong, Dong Hung District"
+					}
+				]
+			},
+			"claims": {
+				"P31": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P31",
+							"hash": "a1cede3b8f83350f276961f8ae57f766b609d163",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 2389082,
+									"id": "Q2389082"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q10748679$6C23BA71-0F0B-4504-B715-CE2D52B0CA46",
+						"rank": "normal"
+					}
+				],
+				"P17": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P17",
+							"hash": "c40be02120fa6723ead45340635fe0835f073e90",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 881,
+									"id": "Q881"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q10748679$346DA40D-2F6D-4A86-9A0F-97CDF7BE6A69",
+						"rank": "normal",
+						"references": [
+							{
+								"hash": "0d44661de85c38c0d0b5512bfc0e7ae0ac165b05",
+								"snaks": {
+									"P248": [
+										{
+											"snaktype": "value",
+											"property": "P248",
+											"hash": "7648f66055f57f6227dd1f872bc4ed26c70da7c6",
+											"datavalue": {
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 1194038,
+													"id": "Q1194038"
+												},
+												"type": "wikibase-entityid"
+											},
+											"datatype": "wikibase-item"
+										}
+									],
+									"P577": [
+										{
+											"snaktype": "value",
+											"property": "P577",
+											"hash": "a372c95b03a3464736c5fd1d7ed86176f0c04973",
+											"datavalue": {
+												"value": {
+													"time": "+2018-06-11T00:00:00Z",
+													"timezone": 0,
+													"before": 0,
+													"after": 0,
+													"precision": 11,
+													"calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+												},
+												"type": "time"
+											},
+											"datatype": "time"
+										}
+									],
+									"P2326": [
+										{
+											"snaktype": "value",
+											"property": "P2326",
+											"hash": "a5ff7ee24f078c00005896e9e78b329ba9259573",
+											"datavalue": {
+												"value": "11789777",
+												"type": "string"
+											},
+											"datatype": "external-id"
+										}
+									]
+								},
+								"snaks-order": [
+									"P248",
+									"P577",
+									"P2326"
+								]
+							}
+						]
+					}
+				],
+				"P625": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P625",
+							"hash": "141b12147d082ce221750ed1ba71bf91dd46d1b9",
+							"datavalue": {
+								"value": {
+									"latitude": 20.54333,
+									"longitude": 106.29861,
+									"altitude": null,
+									"precision": 0.000001,
+									"globe": "http://www.wikidata.org/entity/Q2"
+								},
+								"type": "globecoordinate"
+							},
+							"datatype": "globe-coordinate"
+						},
+						"type": "statement",
+						"id": "Q10748679$1FECD017-A95F-4032-8944-2D8C9C8261BC",
+						"rank": "normal",
+						"references": [
+							{
+								"hash": "3ddf3400c3e6781db3e52ae79df04661d26c3169",
+								"snaks": {
+									"P143": [
+										{
+											"snaktype": "value",
+											"property": "P143",
+											"hash": "2ce37078fb0b73b39acff0a04fa4f988d1762233",
+											"datavalue": {
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 200180,
+													"id": "Q200180"
+												},
+												"type": "wikibase-entityid"
+											},
+											"datatype": "wikibase-item"
+										}
+									]
+								},
+								"snaks-order": [
+									"P143"
+								]
+							}
+						]
+					},
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P625",
+							"hash": "cce1feb3fec4d09fb093fac03390726154967534",
+							"datavalue": {
+								"value": {
+									"latitude": 20.543055555556,
+									"longitude": 106.30027777778,
+									"altitude": null,
+									"precision": 0.00027777777777778,
+									"globe": "http://www.wikidata.org/entity/Q2"
+								},
+								"type": "globecoordinate"
+							},
+							"datatype": "globe-coordinate"
+						},
+						"type": "statement",
+						"id": "Q10748679$B338648E-CDFC-4746-96BA-2ECF79B37868",
+						"rank": "normal",
+						"references": [
+							{
+								"hash": "0d44661de85c38c0d0b5512bfc0e7ae0ac165b05",
+								"snaks": {
+									"P248": [
+										{
+											"snaktype": "value",
+											"property": "P248",
+											"hash": "7648f66055f57f6227dd1f872bc4ed26c70da7c6",
+											"datavalue": {
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 1194038,
+													"id": "Q1194038"
+												},
+												"type": "wikibase-entityid"
+											},
+											"datatype": "wikibase-item"
+										}
+									],
+									"P577": [
+										{
+											"snaktype": "value",
+											"property": "P577",
+											"hash": "a372c95b03a3464736c5fd1d7ed86176f0c04973",
+											"datavalue": {
+												"value": {
+													"time": "+2018-06-11T00:00:00Z",
+													"timezone": 0,
+													"before": 0,
+													"after": 0,
+													"precision": 11,
+													"calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+												},
+												"type": "time"
+											},
+											"datatype": "time"
+										}
+									],
+									"P2326": [
+										{
+											"snaktype": "value",
+											"property": "P2326",
+											"hash": "a5ff7ee24f078c00005896e9e78b329ba9259573",
+											"datavalue": {
+												"value": "11789777",
+												"type": "string"
+											},
+											"datatype": "external-id"
+										}
+									]
+								},
+								"snaks-order": [
+									"P248",
+									"P577",
+									"P2326"
+								]
+							}
+						]
+					}
+				],
+				"P421": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P421",
+							"hash": "a76f0b5cf7969cb64254594200ac404c76ff710f",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 6940,
+									"id": "Q6940"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q10748679$4313DCF6-2C80-46EE-BEA0-2374ECC6CD81",
+						"rank": "normal"
+					}
+				],
+				"P131": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P131",
+							"hash": "cab8053c9ef68775ddbe6ea721aece00f442992f",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 5295738,
+									"id": "Q5295738"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q10748679$3F29DD0D-EDBE-4FE2-8090-10FA53126856",
+						"rank": "normal",
+						"references": [
+							{
+								"hash": "3ddf3400c3e6781db3e52ae79df04661d26c3169",
+								"snaks": {
+									"P143": [
+										{
+											"snaktype": "value",
+											"property": "P143",
+											"hash": "2ce37078fb0b73b39acff0a04fa4f988d1762233",
+											"datavalue": {
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 200180,
+													"id": "Q200180"
+												},
+												"type": "wikibase-entityid"
+											},
+											"datatype": "wikibase-item"
+										}
+									]
+								},
+								"snaks-order": [
+									"P143"
+								]
+							}
+						]
+					}
+				],
+				"P1566": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P1566",
+							"hash": "1bbe0eec1425d57f9d0f3401089c110f727e1717",
+							"datavalue": {
+								"value": "8569640",
+								"type": "string"
+							},
+							"datatype": "external-id"
+						},
+						"type": "statement",
+						"id": "Q10748679$591A0261-1993-4725-8319-0D06BCFE1CA9",
+						"rank": "normal",
+						"references": [
+							{
+								"hash": "43a0088c51fd85e5a85d1b46412c3a635e6d4edc",
+								"snaks": {
+									"P143": [
+										{
+											"snaktype": "value",
+											"property": "P143",
+											"hash": "d8fbf8671e3c630db61bfac691068cfb6857f243",
+											"datavalue": {
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 837615,
+													"id": "Q837615"
+												},
+												"type": "wikibase-entityid"
+											},
+											"datatype": "wikibase-item"
+										}
+									]
+								},
+								"snaks-order": [
+									"P143"
+								]
+							}
+						]
+					}
+				],
+				"P2044": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2044",
+							"hash": "9af93933816d16ae6f20096c26369b7316cd7d4b",
+							"datavalue": {
+								"value": {
+									"amount": "+1",
+									"unit": "http://www.wikidata.org/entity/Q11573"
+								},
+								"type": "quantity"
+							},
+							"datatype": "quantity"
+						},
+						"type": "statement",
+						"id": "Q10748679$0AD9E42D-0BE3-4E33-9B9F-CDA2673C6F15",
+						"rank": "normal",
+						"references": [
+							{
+								"hash": "43a0088c51fd85e5a85d1b46412c3a635e6d4edc",
+								"snaks": {
+									"P143": [
+										{
+											"snaktype": "value",
+											"property": "P143",
+											"hash": "d8fbf8671e3c630db61bfac691068cfb6857f243",
+											"datavalue": {
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 837615,
+													"id": "Q837615"
+												},
+												"type": "wikibase-entityid"
+											},
+											"datatype": "wikibase-item"
+										}
+									]
+								},
+								"snaks-order": [
+									"P143"
+								]
+							}
+						]
+					}
+				],
+				"P2326": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2326",
+							"hash": "a5ff7ee24f078c00005896e9e78b329ba9259573",
+							"datavalue": {
+								"value": "11789777",
+								"type": "string"
+							},
+							"datatype": "external-id"
+						},
+						"type": "statement",
+						"id": "Q10748679$2B17D157-3C2D-430C-92D1-8D46D698B428",
+						"rank": "normal"
+					}
+				],
+				"P2671": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P2671",
+							"hash": "cd8dc9866607eed0a081d6599879a10289e3e681",
+							"datavalue": {
+								"value": "/g/1217z1xr",
+								"type": "string"
+							},
+							"datatype": "external-id"
+						},
+						"type": "statement",
+						"id": "Q10748679$A906F69F-1AB0-4AE6-B744-033396B79099",
+						"rank": "normal"
+					}
+				]
+			},
+			"sitelinks": {
+				"cebwiki": {
+					"site": "cebwiki",
+					"title": "Xã Chương Dương",
+					"badges": [],
+					"url": "https://ceb.wikipedia.org/wiki/X%C3%A3_Ch%C6%B0%C6%A1ng_D%C6%B0%C6%A1ng"
+				},
+				"viwiki": {
+					"site": "viwiki",
+					"title": "Chương Dương, Đông Hưng",
+					"badges": [],
+					"url": "https://vi.wikipedia.org/wiki/Ch%C6%B0%C6%A1ng_D%C6%B0%C6%A1ng,_%C4%90%C3%B4ng_H%C6%B0ng"
+				}
+			}
+		}
+	}
+}

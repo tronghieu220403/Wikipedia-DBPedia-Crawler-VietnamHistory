@@ -1,0 +1,142 @@
+{
+	"entities": {
+		"Q32561351": {
+			"aliases": {},
+			"ns": 0,
+			"claims": {
+				"P2671": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "/g/11g9qwnpkl"
+							},
+							"datatype": "external-id",
+							"property": "P2671",
+							"snaktype": "value",
+							"hash": "0624f4f01c383dd7476193a8ed0e377203416cb7"
+						},
+						"rank": "normal",
+						"id": "Q32561351$B358ECF0-458F-4227-BB8C-A8B6599CC2CF",
+						"type": "statement"
+					}
+				],
+				"P17": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 881,
+									"id": "Q881"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P17",
+							"snaktype": "value",
+							"hash": "c40be02120fa6723ead45340635fe0835f073e90"
+						},
+						"rank": "normal",
+						"id": "Q32561351$D3A4A864-EB6E-40A9-959A-D44F0461486C",
+						"type": "statement"
+					}
+				],
+				"P570": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "time",
+								"value": {
+									"before": 0,
+									"timezone": 0,
+									"precision": 9,
+									"time": "+1789-00-00T00:00:00Z",
+									"after": 0,
+									"calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+								}
+							},
+							"datatype": "time",
+							"property": "P570",
+							"snaktype": "value",
+							"hash": "362eae433432b885388512784389e33bff2313a8"
+						},
+						"rank": "normal",
+						"id": "Q32561351$974d8544-4764-b1c9-4463-ed4c164306e9",
+						"type": "statement"
+					}
+				],
+				"P569": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "time",
+								"value": {
+									"before": 0,
+									"timezone": 0,
+									"precision": 9,
+									"time": "+1730-00-00T00:00:00Z",
+									"after": 0,
+									"calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+								}
+							},
+							"datatype": "time",
+							"property": "P569",
+							"snaktype": "value",
+							"hash": "8c0422d39258d2bf960ba64127e06523c3926655"
+						},
+						"rank": "normal",
+						"id": "Q32561351$57f3b32b-4f36-2945-b26d-3ee581733cc2",
+						"type": "statement"
+					}
+				],
+				"P31": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 5,
+									"id": "Q5"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P31",
+							"snaktype": "value",
+							"hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9"
+						},
+						"rank": "normal",
+						"id": "Q32561351$ed8928bb-431c-7c14-6baa-5d7eee506b96",
+						"type": "statement"
+					}
+				]
+			},
+			"modified": "2021-12-07T10:55:42Z",
+			"sitelinks": {
+				"viwiki": {
+					"badges": [],
+					"site": "viwiki",
+					"title": "Vũ Huy Đỉnh",
+					"url": "https://vi.wikipedia.org/wiki/V%C5%A9_Huy_%C4%90%E1%BB%89nh"
+				}
+			},
+			"id": "Q32561351",
+			"pageid": 34023277,
+			"title": "Q32561351",
+			"type": "item",
+			"lastrevid": 1539830524,
+			"descriptions": {},
+			"labels": {
+				"vi": {
+					"language": "vi",
+					"value": "Vũ Huy Đỉnh"
+				},
+				"nl": {
+					"language": "nl",
+					"value": "Vũ Huy Đỉnh"
+				}
+			}
+		}
+	}
+}

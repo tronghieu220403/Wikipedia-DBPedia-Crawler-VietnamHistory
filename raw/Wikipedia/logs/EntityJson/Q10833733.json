@@ -1,0 +1,432 @@
+{
+	"entities": {
+		"Q10833733": {
+			"aliases": {
+				"vi": [
+					{
+						"language": "vi",
+						"value": "Thị trấn Vĩnh Trụ"
+					},
+					{
+						"language": "vi",
+						"value": "Vĩnh Trụ, Lý Nhân"
+					}
+				],
+				"en": [
+					{
+						"language": "en",
+						"value": "Vinh Tru"
+					},
+					{
+						"language": "en",
+						"value": "Thị Trấn Vĩnh Trụ"
+					}
+				]
+			},
+			"ns": 0,
+			"claims": {
+				"P2044": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "quantity",
+								"value": {
+									"amount": "+9",
+									"unit": "http://www.wikidata.org/entity/Q11573"
+								}
+							},
+							"datatype": "quantity",
+							"property": "P2044",
+							"snaktype": "value",
+							"hash": "8ccee6331879319e2954f488c3c3f98889faaa05"
+						},
+						"rank": "normal",
+						"id": "Q10833733$058B0EE5-3BA6-4B6A-AFAF-BA61EFF04754",
+						"type": "statement"
+					}
+				],
+				"P2671": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "/g/120htp41"
+							},
+							"datatype": "external-id",
+							"property": "P2671",
+							"snaktype": "value",
+							"hash": "f82b4a4e3989301cb9140e516660454e02bee531"
+						},
+						"rank": "normal",
+						"id": "Q10833733$D74D3A72-3A4B-4162-B789-6999B83605AA",
+						"type": "statement"
+					}
+				],
+				"P421": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 6940,
+									"id": "Q6940"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P421",
+							"snaktype": "value",
+							"hash": "a76f0b5cf7969cb64254594200ac404c76ff710f"
+						},
+						"rank": "normal",
+						"id": "Q10833733$4E3203E5-D5BB-4245-A426-A1FC4A26EF0D",
+						"type": "statement"
+					}
+				],
+				"P17": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 881,
+									"id": "Q881"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P17",
+							"snaktype": "value",
+							"hash": "c40be02120fa6723ead45340635fe0835f073e90"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P248",
+									"P577",
+									"P2326"
+								],
+								"snaks": {
+									"P577": [
+										{
+											"datavalue": {
+												"type": "time",
+												"value": {
+													"before": 0,
+													"timezone": 0,
+													"precision": 11,
+													"time": "+2018-06-11T00:00:00Z",
+													"after": 0,
+													"calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+												}
+											},
+											"datatype": "time",
+											"property": "P577",
+											"snaktype": "value",
+											"hash": "a372c95b03a3464736c5fd1d7ed86176f0c04973"
+										}
+									],
+									"P248": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 1194038,
+													"id": "Q1194038"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P248",
+											"snaktype": "value",
+											"hash": "7648f66055f57f6227dd1f872bc4ed26c70da7c6"
+										}
+									],
+									"P2326": [
+										{
+											"datavalue": {
+												"type": "string",
+												"value": "11780301"
+											},
+											"datatype": "external-id",
+											"property": "P2326",
+											"snaktype": "value",
+											"hash": "49eabe123114e178da9ecf0188db0a4297510080"
+										}
+									]
+								},
+								"hash": "07cd59c67252f9c15cb89d3926cb3f5968fffb6b"
+							}
+						],
+						"rank": "normal",
+						"id": "Q10833733$75679586-F69D-476D-959F-9847E9305562",
+						"type": "statement"
+					}
+				],
+				"P131": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 6707009,
+									"id": "Q6707009"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P131",
+							"snaktype": "value",
+							"hash": "529fa1cfec261ff1229da98f312078e02aed32ae"
+						},
+						"rank": "normal",
+						"id": "Q10833733$F0238DFF-1DEA-43B4-AC0E-DD1D6EF51684",
+						"type": "statement"
+					}
+				],
+				"P1566": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "8564067"
+							},
+							"datatype": "external-id",
+							"property": "P1566",
+							"snaktype": "value",
+							"hash": "d958acc0f26de79921cef853bd03561813b6a59f"
+						},
+						"rank": "normal",
+						"id": "Q10833733$7678D313-7D36-45E2-8758-CA78F3952E13",
+						"type": "statement"
+					}
+				],
+				"P2326": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "11780301"
+							},
+							"datatype": "external-id",
+							"property": "P2326",
+							"snaktype": "value",
+							"hash": "49eabe123114e178da9ecf0188db0a4297510080"
+						},
+						"rank": "normal",
+						"id": "Q10833733$098CC915-F391-4163-A6C1-DD816411BAA1",
+						"type": "statement"
+					}
+				],
+				"P625": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "globecoordinate",
+								"value": {
+									"altitude": null,
+									"globe": "http://www.wikidata.org/entity/Q2",
+									"latitude": 20.585867,
+									"precision": 0.000001,
+									"longitude": 105.923996
+								}
+							},
+							"datatype": "globe-coordinate",
+							"property": "P625",
+							"snaktype": "value",
+							"hash": "b92d072a3824f73e54fba191edb88d36c3c256c9"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P143"
+								],
+								"snaks": {
+									"P143": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 200180,
+													"id": "Q200180"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P143",
+											"snaktype": "value",
+											"hash": "2ce37078fb0b73b39acff0a04fa4f988d1762233"
+										}
+									]
+								},
+								"hash": "3ddf3400c3e6781db3e52ae79df04661d26c3169"
+							}
+						],
+						"rank": "normal",
+						"id": "Q10833733$569764D6-967D-415D-B23E-F2126C7A28D1",
+						"type": "statement"
+					},
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "globecoordinate",
+								"value": {
+									"altitude": null,
+									"globe": "http://www.wikidata.org/entity/Q2",
+									"latitude": 20.555833333333,
+									"precision": 0.00027777777777778,
+									"longitude": 106.03055555556
+								}
+							},
+							"datatype": "globe-coordinate",
+							"property": "P625",
+							"snaktype": "value",
+							"hash": "275e2239ff3a35dd33de04742691013730fa33d3"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P248",
+									"P577",
+									"P2326"
+								],
+								"snaks": {
+									"P577": [
+										{
+											"datavalue": {
+												"type": "time",
+												"value": {
+													"before": 0,
+													"timezone": 0,
+													"precision": 11,
+													"time": "+2018-06-11T00:00:00Z",
+													"after": 0,
+													"calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+												}
+											},
+											"datatype": "time",
+											"property": "P577",
+											"snaktype": "value",
+											"hash": "a372c95b03a3464736c5fd1d7ed86176f0c04973"
+										}
+									],
+									"P248": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 1194038,
+													"id": "Q1194038"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P248",
+											"snaktype": "value",
+											"hash": "7648f66055f57f6227dd1f872bc4ed26c70da7c6"
+										}
+									],
+									"P2326": [
+										{
+											"datavalue": {
+												"type": "string",
+												"value": "11780301"
+											},
+											"datatype": "external-id",
+											"property": "P2326",
+											"snaktype": "value",
+											"hash": "49eabe123114e178da9ecf0188db0a4297510080"
+										}
+									]
+								},
+								"hash": "07cd59c67252f9c15cb89d3926cb3f5968fffb6b"
+							}
+						],
+						"rank": "normal",
+						"id": "Q10833733$A3AE2BEE-BF78-43B9-B800-D198D5EC1383",
+						"type": "statement"
+					}
+				],
+				"P31": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 1070942,
+									"id": "Q1070942"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P31",
+							"snaktype": "value",
+							"hash": "e0d94e0f47a5ad65206404992125b7c13d430e35"
+						},
+						"rank": "normal",
+						"id": "Q10833733$52EB9165-3DC2-44D6-B9E6-8C47E960D61C",
+						"type": "statement"
+					}
+				]
+			},
+			"modified": "2021-02-10T15:00:06Z",
+			"sitelinks": {
+				"enwiki": {
+					"badges": [],
+					"site": "enwiki",
+					"title": "Vĩnh Trụ",
+					"url": "https://en.wikipedia.org/wiki/V%C4%A9nh_Tr%E1%BB%A5"
+				},
+				"viwiki": {
+					"badges": [],
+					"site": "viwiki",
+					"title": "Vĩnh Trụ",
+					"url": "https://vi.wikipedia.org/wiki/V%C4%A9nh_Tr%E1%BB%A5"
+				},
+				"cebwiki": {
+					"badges": [],
+					"site": "cebwiki",
+					"title": "Thị Trấn Vĩnh Trụ",
+					"url": "https://ceb.wikipedia.org/wiki/Th%E1%BB%8B_Tr%E1%BA%A5n_V%C4%A9nh_Tr%E1%BB%A5"
+				}
+			},
+			"id": "Q10833733",
+			"pageid": 12106390,
+			"title": "Q10833733",
+			"type": "item",
+			"lastrevid": 1358397741,
+			"descriptions": {
+				"el": {
+					"language": "el",
+					"value": "οικισμός τoυ Βιετνάμ"
+				},
+				"en": {
+					"language": "en",
+					"value": "township in Red River Delta, Vietnam"
+				},
+				"fr": {
+					"language": "fr",
+					"value": "établissement humain au Viêt Nam"
+				}
+			},
+			"labels": {
+				"ceb": {
+					"language": "ceb",
+					"value": "Thị Trấn Vĩnh Trụ"
+				},
+				"vi": {
+					"language": "vi",
+					"value": "Vĩnh Trụ"
+				},
+				"en": {
+					"language": "en",
+					"value": "Vĩnh Trụ"
+				},
+				"zh": {
+					"language": "zh",
+					"value": "永柱市镇"
+				}
+			}
+		}
+	}
+}

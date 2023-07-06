@@ -1,0 +1,231 @@
+{
+	"entities": {
+		"Q10830790": {
+			"aliases": {
+				"en": [
+					{
+						"language": "en",
+						"value": "Tan Son"
+					}
+				]
+			},
+			"ns": 0,
+			"claims": {
+				"P2671": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "string",
+								"value": "/g/1hb_gtytk"
+							},
+							"datatype": "external-id",
+							"property": "P2671",
+							"snaktype": "value",
+							"hash": "707081f9cd86102ebbf4d2b973de71ecedc79880"
+						},
+						"rank": "normal",
+						"id": "Q10830790$B9A7624A-10ED-43EF-94E5-9245538438F3",
+						"type": "statement"
+					}
+				],
+				"P421": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 6940,
+									"id": "Q6940"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P421",
+							"snaktype": "value",
+							"hash": "a76f0b5cf7969cb64254594200ac404c76ff710f"
+						},
+						"rank": "normal",
+						"id": "Q10830790$C37427DF-2285-4F22-9E29-146248E241B6",
+						"type": "statement"
+					}
+				],
+				"P17": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 881,
+									"id": "Q881"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P17",
+							"snaktype": "value",
+							"hash": "c40be02120fa6723ead45340635fe0835f073e90"
+						},
+						"rank": "normal",
+						"id": "Q10830790$FC7945E6-0102-4092-AAFF-8F227B1CF74F",
+						"type": "statement"
+					}
+				],
+				"P131": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 5286108,
+									"id": "Q5286108"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P131",
+							"snaktype": "value",
+							"hash": "b265845c53ccd1f305222a1708b1c37f64f5ca32"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P143"
+								],
+								"snaks": {
+									"P143": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 200180,
+													"id": "Q200180"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P143",
+											"snaktype": "value",
+											"hash": "2ce37078fb0b73b39acff0a04fa4f988d1762233"
+										}
+									]
+								},
+								"hash": "3ddf3400c3e6781db3e52ae79df04661d26c3169"
+							}
+						],
+						"rank": "normal",
+						"id": "Q10830790$6E827DDD-8574-4C0A-82E3-4292A83286BE",
+						"type": "statement"
+					}
+				],
+				"P625": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "globecoordinate",
+								"value": {
+									"altitude": null,
+									"globe": "http://www.wikidata.org/entity/Q2",
+									"latitude": 18.87694444,
+									"precision": 0.00001,
+									"longitude": 105.3572222
+								}
+							},
+							"datatype": "globe-coordinate",
+							"property": "P625",
+							"snaktype": "value",
+							"hash": "1bcfc43a7c22867a704c45cd3f1556550749e92e"
+						},
+						"references": [
+							{
+								"snaks-order": [
+									"P143"
+								],
+								"snaks": {
+									"P143": [
+										{
+											"datavalue": {
+												"type": "wikibase-entityid",
+												"value": {
+													"entity-type": "item",
+													"numeric-id": 200180,
+													"id": "Q200180"
+												}
+											},
+											"datatype": "wikibase-item",
+											"property": "P143",
+											"snaktype": "value",
+											"hash": "2ce37078fb0b73b39acff0a04fa4f988d1762233"
+										}
+									]
+								},
+								"hash": "3ddf3400c3e6781db3e52ae79df04661d26c3169"
+							}
+						],
+						"rank": "normal",
+						"id": "Q10830790$843AD051-5AE7-449B-9FCB-6484F7828504",
+						"type": "statement"
+					}
+				],
+				"P31": [
+					{
+						"mainsnak": {
+							"datavalue": {
+								"type": "wikibase-entityid",
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 2389082,
+									"id": "Q2389082"
+								}
+							},
+							"datatype": "wikibase-item",
+							"property": "P31",
+							"snaktype": "value",
+							"hash": "a1cede3b8f83350f276961f8ae57f766b609d163"
+						},
+						"rank": "normal",
+						"id": "Q10830790$5F72BF1A-C2B9-4ACB-9499-FF0F705E70D9",
+						"type": "statement"
+					}
+				]
+			},
+			"modified": "2021-05-30T02:05:16Z",
+			"sitelinks": {
+				"viwiki": {
+					"badges": [],
+					"site": "viwiki",
+					"title": "Tân Sơn, Đô Lương",
+					"url": "https://vi.wikipedia.org/wiki/T%C3%A2n_S%C6%A1n,_%C4%90%C3%B4_L%C6%B0%C6%A1ng"
+				}
+			},
+			"id": "Q10830790",
+			"pageid": 12103512,
+			"title": "Q10830790",
+			"type": "item",
+			"lastrevid": 1431269991,
+			"descriptions": {
+				"de": {
+					"language": "de",
+					"value": "Landgemeinde in Vietnam"
+				},
+				"vi": {
+					"language": "vi",
+					"value": "xã thuộc Đô Lương"
+				},
+				"el": {
+					"language": "el",
+					"value": "οικισμός τoυ Βιετνάμ"
+				}
+			},
+			"labels": {
+				"vi": {
+					"language": "vi",
+					"value": "Tân Sơn"
+				},
+				"en": {
+					"language": "en",
+					"value": "Tân Sơn"
+				}
+			}
+		}
+	}
+}

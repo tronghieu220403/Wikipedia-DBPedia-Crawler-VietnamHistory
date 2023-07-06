@@ -1,0 +1,52 @@
+{
+	"entities": {
+		"Q30919901": {
+			"pageid": 32529214,
+			"ns": 0,
+			"title": "Q30919901",
+			"lastrevid": 705717599,
+			"modified": "2018-07-03T15:25:41Z",
+			"type": "item",
+			"id": "Q30919901",
+			"labels": {
+				"vi": {
+					"language": "vi",
+					"value": "Khu bảo tồn thiên nhiên Nà Hẩu"
+				}
+			},
+			"descriptions": {},
+			"aliases": {},
+			"claims": {
+				"P17": [
+					{
+						"mainsnak": {
+							"snaktype": "value",
+							"property": "P17",
+							"hash": "c40be02120fa6723ead45340635fe0835f073e90",
+							"datavalue": {
+								"value": {
+									"entity-type": "item",
+									"numeric-id": 881,
+									"id": "Q881"
+								},
+								"type": "wikibase-entityid"
+							},
+							"datatype": "wikibase-item"
+						},
+						"type": "statement",
+						"id": "Q30919901$26972E6F-FAF0-4F84-B850-31B1B984FBB1",
+						"rank": "normal"
+					}
+				]
+			},
+			"sitelinks": {
+				"viwiki": {
+					"site": "viwiki",
+					"title": "Khu bảo tồn thiên nhiên Nà Hẩu",
+					"badges": [],
+					"url": "https://vi.wikipedia.org/wiki/Khu_b%E1%BA%A3o_t%E1%BB%93n_thi%C3%AAn_nhi%C3%AAn_N%C3%A0_H%E1%BA%A9u"
+				}
+			}
+		}
+	}
+}
