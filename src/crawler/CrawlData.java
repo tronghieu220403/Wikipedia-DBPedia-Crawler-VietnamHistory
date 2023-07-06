@@ -11,7 +11,6 @@ public class CrawlData {
         String wikiPath = "raw/Wikipedia/";
         String dbpediaPath = "raw/DBPedia/";
 
-        /*
         WikiData wikiData = new WikiData(wikiPath);
         wikiData.setBruteForceLimit(0);
         wikiData.getData();
@@ -20,7 +19,6 @@ public class CrawlData {
         dbpediaData.getBruteForceData();
         dbpediaData.syncData();
         DataHandling.print("Done dbpediaData");
-        */
         
         Merge mergeData = new Merge();
         mergeData.merge("data/", wikiPath, dbpediaPath, Merge.createSource("Wikipedia"), Merge.createSource("DBPedia"));
