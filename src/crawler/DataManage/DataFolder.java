@@ -1,4 +1,4 @@
-package crawler;
+package crawler.DataManage;
 
 public class DataFolder {
     //root path:

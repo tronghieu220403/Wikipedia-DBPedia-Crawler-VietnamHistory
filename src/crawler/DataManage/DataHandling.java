@@ -1,4 +1,4 @@
-package crawler;
+package crawler.DataManage;
 /**
  * What to do with an Data:
  * 1) Get the content of that JSON file from URL.
@@ -26,7 +26,7 @@ import java.net.HttpURLConnection;
 
 import org.json.JSONObject;
 
-abstract class DataHandling {   
+public class DataHandling {   
     protected static long timeNow = System.currentTimeMillis();
 
     private static final String STR_DATE = (new SimpleDateFormat("yyyy-mm-dd hh:mm:ss")).format(Calendar.getInstance().getTime()).replace(':', '-');

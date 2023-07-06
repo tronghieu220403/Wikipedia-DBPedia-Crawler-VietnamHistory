@@ -1,4 +1,4 @@
-package crawler;
+package crawler.DBPediaDataCrawler;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -7,6 +7,10 @@ import java.util.Iterator;
 import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import crawler.DataManage.BruteForceData;
+import crawler.DataManage.DataHandling;
+import crawler.WikiDataCrawler.WikiDataHandling;
 
 public class DBPediaData extends BruteForceData {
     
@@ -182,7 +186,7 @@ public class DBPediaData extends BruteForceData {
         return output.toString();
     }
 
-    protected void syncData() throws Exception
+    public void syncData() throws Exception
     {
         String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
         String wikiEntityPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/logs/EntityJson";

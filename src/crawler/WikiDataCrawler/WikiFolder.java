@@ -1,4 +1,7 @@
-package crawler;
+package crawler.WikiDataCrawler;
+
+import crawler.DataManage.DataFolder;
+import crawler.DataManage.DataHandling;
 
 import java.io.FileNotFoundException;
 import java.util.HashMap;
