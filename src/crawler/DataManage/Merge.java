@@ -106,14 +106,7 @@ public class Merge {
 
                 for (String propertyName: DataHandling.getAllKeys(objClaims1))
                 { 
-                    JSONArray objPropertyArr1 = objClaims1.getJSONArray(propertyName);
-                    for (int i = 0; i < objPropertyArr1.length(); i++)
-                    {
-                        JSONObject obj = objPropertyArr1.getJSONObject(i);
-                        if (!obj.has("source")){
-                            obj.put("source", srcArr);
-                        }
-                    }
+                    addSourceToArr(objClaims1.getJSONArray(propertyName), srcArr);
                 }
                 DataHandling.writeFile(exportDataSubFolder + "/" + fileName, objJson1.toString(), false);
             }
