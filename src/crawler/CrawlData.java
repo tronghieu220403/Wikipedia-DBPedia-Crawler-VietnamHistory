@@ -4,7 +4,7 @@ public class CrawlData {
     public static void main(String[] args) throws Exception {
         String wikiPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/";
         String dbpediaPath = "E:/Code/Java/OOP_Project/saveddata/DBPedia/";
-        
+
         WikiBruteForceData wikiBruteForceData = new WikiBruteForceData(wikiPath);
         wikiBruteForceData.setBruteForceAnalyseLitmit(0);
         wikiBruteForceData.getBruteForceData();

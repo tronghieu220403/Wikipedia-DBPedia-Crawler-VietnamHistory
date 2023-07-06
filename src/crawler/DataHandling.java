@@ -210,11 +210,13 @@ abstract class DataHandling {
                 throw new Exception("Unable to create file " + filePath);
             }
         }
+        /*
         else {
             String s = readFileAll(filePath);
             if (s.equals(content) && !append) return;
         }
         //writeToLogs(filePath);
+        */
         try (FileWriter fout = new FileWriter(filePath, append)){
             fout.write(content);
         }
@@ -394,7 +396,7 @@ abstract class DataHandling {
         filePath = getFullPath(filePath);
         if (!fileExist(filePath))
             return;
-        writeToLogs(filePath);
+        //writeToLogs(filePath);
         File myObj = new File(filePath);
         if (!myObj.delete()){
             throw new IOException(); // Failed to delete file

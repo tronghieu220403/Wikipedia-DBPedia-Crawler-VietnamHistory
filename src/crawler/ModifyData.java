@@ -14,6 +14,16 @@ public class ModifyData extends DataHandling{
         md.removeEntity();
     }
 
+    public ModifyData(String path){
+        folderPath = path + "/";
+    }
+
+    public ModifyData(){
+        folderPath = "data/";
+    }
+
+    private String folderPath = "";
+
     public static final String[] BIG_CATEGORIES = {"triều đại lịch sử","địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "sự kiện lịch sử", "nhân vật lịch sử"};
 
     public static boolean cmpPropValue(JSONObject obj1, JSONObject obj2)
@@ -65,16 +75,16 @@ public class ModifyData extends DataHandling{
         }
         for (String bigCategory: BIG_CATEGORIES)
         {
-            for (String fileName: listAllFiles("data/" + bigCategory))
+            for (String fileName: listAllFiles(folderPath + bigCategory))
             {
                 String qID = fileName.replace(".json","");
                 if (rmHashSet.contains(qID)){
-                    deleteFile("data/" + bigCategory + "/" + fileName);
+                    deleteFile(folderPath + bigCategory + "/" + fileName);
                     continue;
                 }
-                JSONObject json = getJSONFromFile("data/" + bigCategory + "/" + fileName);
+                JSONObject json = getJSONFromFile(folderPath + bigCategory + "/" + fileName);
                 modifyEntity(json, rmHashSet, changeName);
-                writeFile("data/" + bigCategory + "/" + fileName, json.toString(), false);
+                writeFile(folderPath + bigCategory + "/" + fileName, json.toString(), false);
             }
         }
     }
