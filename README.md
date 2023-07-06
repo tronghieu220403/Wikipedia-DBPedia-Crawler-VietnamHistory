@@ -64,7 +64,7 @@ Folder structure
 ----------------
 ```
 .
-├── data                 			# consists of fully analyzed information.
+├── data                 		    # consists of fully analyzed information.
 │   └── địa điểm du lịch, di tích lịch sử
 │   │   └── ...
 │   └── lễ hội văn hóa
@@ -77,8 +77,8 @@ Folder structure
 │   │   └── ...
 │   └── triều đại lịch sử
 │   │   └── ...
-├── raw                 			# data collected for processing
-├── src                 			# source code
+├── raw                 	            # data collected for processing
+├── src                 	            # source code
 │   ├── crawler
 │   │   └── DataManage                 		# the program's general data processing and management
 │   │   │   └── ...
@@ -86,12 +86,12 @@ Folder structure
 │   │   │   └── ...
 │   │   └── DBPediaDataCrawler                 	# the crawler for DBPedia
 │   │   │   └── ...
-│   │   └── CrawlData.java                 	# this file is used to run the data scraper program.
-│   ├── text-modify							# this folder contains files for modifying data.
-│   │   │   └── change_name.json			# change name of some properties
-│   │   │   └── delete.txt					# delete invalid entities
+│   │   └── CrawlData.java                      # this file is used to run the data scraper program.
+│   ├── text-modify                         # this folder contains files for modifying data.
+│   │   │   └── change_name.json                # change name of some properties
+│   │   │   └── delete.txt                      # delete invalid entities
 │   │   │   └── ...
-│   ├── Statistical.java                 	# this folder is used for statistics on scratched data.
+│   ├── Statistical.java                    # used for statistics on scratched data.
 
 
 ```
