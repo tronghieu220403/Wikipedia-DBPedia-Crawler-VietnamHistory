@@ -8,13 +8,13 @@ import crawler.WikiDataCrawler.*;
 
 public class CrawlData {
     public static void main(String[] args) throws Exception {
-        String wikiPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/";
-        String dbpediaPath = "E:/Code/Java/OOP_Project/saveddata/DBPedia/";
-        /*
+        String wikiPath = "raw/Wikipedia/";
+        String dbpediaPath = "raw/DBPedia/";
+
         WikiData wikiData = new WikiData(wikiPath);
         wikiData.setBruteForceLimit(0);
         wikiData.getData();
-        */
+
         /*
         DBPediaData dbpediaData = new DBPediaData(dbpediaPath);
         dbpediaData.getBruteForceData();
