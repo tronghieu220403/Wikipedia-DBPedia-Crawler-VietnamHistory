@@ -86,8 +86,12 @@ Folder structure
 │   │   │   └── ...
 │   │   └── DBPediaDataCrawler                 	# the crawler for DBPedia
 │   │   │   └── ...
-│   │   └── CrawlData.java                 	# This directory is used to run the data scraper program.
-│   ├── Statistical.java                 	# This folder is used for statistics on scratched data.
+│   │   └── CrawlData.java                 	# this file is used to run the data scraper program.
+│   ├── text-modify							# this folder contains files for modifying data.
+│   │   │   └── change_name.json			# change name of some properties
+│   │   │   └── delete.txt					# delete invalid entities
+│   │   │   └── ...
+│   ├── Statistical.java                 	# this folder is used for statistics on scratched data.
 
 
 ```
