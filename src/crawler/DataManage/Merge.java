@@ -2,14 +2,11 @@ package crawler.DataManage;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import crawler.DataManage.BruteForceData.Pair;
 
 public class Merge {
     public static void main(String[] args) throws Exception {
