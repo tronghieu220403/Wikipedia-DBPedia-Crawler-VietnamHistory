@@ -1,5 +1,5 @@
 {
-	"Number of relation": 87508,
+	"Number of relation": 87524,
 	"Number of properties": {
 		"DBPedia": {
 			"Number of unique property names": {
@@ -35,9 +35,9 @@
 				"triều đại lịch sử": 23
 			},
 			"Number of property value": {
-				"địa điểm du lịch, di tích lịch sử": 28909,
+				"địa điểm du lịch, di tích lịch sử": 28965,
 				"sự kiện lịch sử": 9675,
-				"nhân vật lịch sử": 116345,
+				"nhân vật lịch sử": 116344,
 				"lễ hội văn hóa": 1095,
 				"triều đại lịch sử": 1955
 			}
@@ -52,7 +52,7 @@
 			"triều đại lịch sử": 17
 		},
 		"Wikipedia": {
-			"địa điểm du lịch, di tích lịch sử": 2641,
+			"địa điểm du lịch, di tích lịch sử": 2647,
 			"sự kiện lịch sử": 382,
 			"nhân vật lịch sử": 5574,
 			"lễ hội văn hóa": 107,
