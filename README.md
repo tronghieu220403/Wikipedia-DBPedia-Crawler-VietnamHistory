@@ -3,7 +3,6 @@
 This is a mini-project in Object Oriented Programming course of SoICT - HUST.
 
 - [Problem](#problem)
-<<<<<<< Updated upstream
 - [Abstract](#abstract)
 - [Folder structure](#folder-structure)
 - [Result](#result)
