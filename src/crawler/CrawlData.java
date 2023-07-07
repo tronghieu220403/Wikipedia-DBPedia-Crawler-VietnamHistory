@@ -17,7 +17,7 @@ public class CrawlData {
         
         DBPediaData dbpediaData = new DBPediaData(dbpediaPath);
         dbpediaData.getBruteForceData();
-        dbpediaData.syncData();
+        dbpediaData.syncData(wikiPath);
         DataHandling.print("Done dbpediaData");
 
         Merge mergeData = new Merge();

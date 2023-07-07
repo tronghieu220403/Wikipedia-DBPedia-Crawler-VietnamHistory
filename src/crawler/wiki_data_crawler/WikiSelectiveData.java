@@ -76,7 +76,7 @@ public class WikiSelectiveData extends WikiBruteForceData implements WikiSelecti
                 break;
             else catString = nextPageUrl;
         }
-        if (getCat == true)
+        if (getCat)
         {
             for (String craftURL: WikiDataHandling.getAllWikiHref(wikiPageData, "mw-subcategories", true)){
                 getAllURL(craftURL, floor + 1, getCat, urlSet);
@@ -119,7 +119,7 @@ public class WikiSelectiveData extends WikiBruteForceData implements WikiSelecti
                 "https://vi.wikipedia.org/wiki/Lễ_hội_Lào",
                 "https://vi.wikipedia.org/wiki/Lễ_hội_Nhật_Bản",
                 "https://vi.wikipedia.org/wiki/Lễ_hội_Thái_Lan", "https://vi.wikipedia.org/wiki/Lễ_hội", "https://vi.wikipedia.org/wiki/Lễ_hội_Việt_Nam"));
-            String urls[] = {"https://vi.wikipedia.org/wiki/L%E1%BB%85_h%E1%BB%99i_c%C3%A1c_d%C3%A2n_t%E1%BB%99c_Vi%E1%BB%87t_Nam", "https://vi.wikipedia.org/wiki/L%E1%BB%85_h%E1%BB%99i_Vi%E1%BB%87t_Nam"};
+            String[] urls = {"https://vi.wikipedia.org/wiki/L%E1%BB%85_h%E1%BB%99i_c%C3%A1c_d%C3%A2n_t%E1%BB%99c_Vi%E1%BB%87t_Nam", "https://vi.wikipedia.org/wiki/L%E1%BB%85_h%E1%BB%99i_Vi%E1%BB%87t_Nam"};
             urlSet.add("https://vi.wikipedia.org/wiki/Giỗ_Tổ_Hùng_Vương");
 
             urlToEntityHashMap.forEach((key, value) -> {
@@ -134,10 +134,8 @@ public class WikiSelectiveData extends WikiBruteForceData implements WikiSelecti
                 String wikiPageData = DataHandling.getDataFromURL(urlString).toString();
 
                 for (String craftURL: WikiDataHandling.getAllWikiHref(wikiPageData)){
-                    if ((craftURL.contains("Lễ_hội") || craftURL.contains("Hội")) && !bannedFestivalURLs.contains(craftURL)){
-                        if (!urlSet.contains(craftURL)) {
+                    if ((craftURL.contains("Lễ_hội") || craftURL.contains("Hội")) && !bannedFestivalURLs.contains(craftURL) &&  (!urlSet.contains(craftURL))) {
                             urlSet.add(craftURL);
-                        }
                     }
                 }
             }
@@ -183,7 +181,7 @@ public class WikiSelectiveData extends WikiBruteForceData implements WikiSelecti
         HashSet<String> urlSet = new HashSet<>();
         if (!DataHandling.fileExist(SCARLARLY_PATH + "locations.json"))
         {
-            String urlCat[] = {"https://vi.wikipedia.org/wiki/Thể_loại:Khu_bảo_tồn_Việt_Nam", "https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_tại_Hà_Nội", "https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_quốc_gia_đặc_biệt", "https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_tại_Hà_Nội","https://vi.wikipedia.org/wiki/Thể_loại:Chùa_Việt_Nam_theo_tỉnh_thành","https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_quốc_gia_Việt_Nam"};
+            String[] urlCat = {"https://vi.wikipedia.org/wiki/Thể_loại:Khu_bảo_tồn_Việt_Nam", "https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_tại_Hà_Nội", "https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_quốc_gia_đặc_biệt", "https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_tại_Hà_Nội","https://vi.wikipedia.org/wiki/Thể_loại:Chùa_Việt_Nam_theo_tỉnh_thành","https://vi.wikipedia.org/wiki/Thể_loại:Di_tích_quốc_gia_Việt_Nam"};
             for (String catString: urlCat){
                 getAllURL(catString, 0, true, urlSet);
             }
@@ -267,7 +265,7 @@ public class WikiSelectiveData extends WikiBruteForceData implements WikiSelecti
             JSONObject claims = json.getJSONObject("claims");
             WikiDataHandling.addProperties(claims, "là một", instance);
             if (instance.equals("người"))
-            WikiDataHandling.addProperties(claims, instance.equals("người") ? "quốc tịch" : "quốc gia", "Việt Nam");
+                WikiDataHandling.addProperties(claims, instance.equals("người") ? "quốc tịch" : "quốc gia", "Việt Nam");
             DataHandling.writeFile(ENTITY_FINAL_PATH + qID + ".json", json.toString(), false);
         }
     }

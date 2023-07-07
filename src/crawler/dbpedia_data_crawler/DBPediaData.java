@@ -30,7 +30,7 @@ public class DBPediaData extends BruteForceData implements NonWikiCrawler {
     public static void main(String[] args) throws Exception {
         DBPediaData dbpediaData = new DBPediaData("E:/Code/Java/OOP_Project/saveddata/DBPedia/");
         dbpediaData.getBruteForceData();
-        dbpediaData.syncData();
+        dbpediaData.syncData("E:/Code/Java/OOP_Project/saveddata/Wikipedia/");
     }
 
     /**
@@ -105,7 +105,7 @@ public class DBPediaData extends BruteForceData implements NonWikiCrawler {
             if (strEnd == -1 ) break;
             String refURL = content.substring(strBegin, strEnd);
             refURL.replace("http:", "https:");
-            if (checkURL(refURL)==false) continue;
+            if (!checkURL(refURL)) continue;
             refURL = refURL.replace("http:", "https:");
             if (refURL.contains("/resource/"))
             {
@@ -115,7 +115,6 @@ public class DBPediaData extends BruteForceData implements NonWikiCrawler {
             refURL = filterURL(refURL);
             addToCrafedURL(refURL, depth);
         }
-        return;
     }
 
     private static final char[] BANNED_CHRS = {'/', '/', '?', '*', ':', '>', '<', '|', '\"'};
@@ -149,10 +148,10 @@ public class DBPediaData extends BruteForceData implements NonWikiCrawler {
      * @param data String content of DBPedia JSON item.
      * @return Return {@code true} if it is related; otherwise return {@code false}.
      */
-    public boolean checkRelated(String data) throws Exception {
+    public boolean checkRelated(String data) {
         for (String vietnamEntity: vietnamEntityHashSet)
         {
-            if (((String) data).contains(vietnamEntity))
+            if (data.contains(vietnamEntity))
             {
                 return true;
             }
@@ -178,12 +177,13 @@ public class DBPediaData extends BruteForceData implements NonWikiCrawler {
         return output.toString();
     }
 
-    public void syncData() throws Exception
+    @Override
+    public void syncData(String wikiPath) throws Exception
     {
         String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
-        String wikiEntityPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/logs/EntityJson";
-        String wikiPropPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/logs/EntityProperties";
-        String wikiDataPath = "E:/Code/Java/OOP_Project/saveddata/Wikipedia/data/";
+        String wikiEntityPath = wikiPath + "logs/EntityJson";
+        String wikiPropPath = wikiPath + "logs/EntityProperties";
+        String wikiDataPath = wikiPath + "data/";
 
         HashSet<String> qIDHashSet = new HashSet<>();
         for (String bigCategory: bigCategories)
@@ -198,10 +198,10 @@ public class DBPediaData extends BruteForceData implements NonWikiCrawler {
         String dbEntityFolder = ENTITY_JSON_PATH;
 
         JSONObject wikiUrlMapped = new JSONObject();
-        JSONObject rawWikiUrlMapped = DataHandling.getJSONFromFile("E:/Code/Java/OOP_Project/saveddata/Wikipedia/logs/URLToEntities.json");
-        Iterator<String> URLs = ((JSONObject) rawWikiUrlMapped).keys();
-        while (URLs.hasNext()) {
-            String url = URLs.next();
+        JSONObject rawWikiUrlMapped = DataHandling.getJSONFromFile(wikiPath + "logs/URLToEntities.json");
+        Iterator<String> urls = (rawWikiUrlMapped).keys();
+        while (urls.hasNext()) {
+            String url = urls.next();
             wikiUrlMapped.put(DataHandling.urlDecode(url), rawWikiUrlMapped.getString(url));
         }
 
@@ -215,9 +215,10 @@ public class DBPediaData extends BruteForceData implements NonWikiCrawler {
             for (String fileName: files)
             {
                 String filePath = dbEntityFolder + fileName;
-                String key1 = "", key2 = "";
+                String key1 = "";
+                String key2 = "";
                 JSONObject json = DataHandling.getJSONFromFile(filePath);
-                Iterator<String> keys = ((JSONObject) json).keys();
+                Iterator<String> keys = (json).keys();
                 while (keys.hasNext()) {
                     String key = keys.next();
                     JSONObject value = json.getJSONObject(key);

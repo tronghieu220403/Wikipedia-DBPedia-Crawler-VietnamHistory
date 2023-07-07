@@ -1,7 +1,7 @@
-package crawler.WikiDataCrawler;
+package crawler.wiki_data_crawler;
 
-import crawler.DataManage.DataHandling;
-import crawler.DataManage.Merge;
+import crawler.data_manage.DataHandling;
+import crawler.data_manage.Merge;
 
 import java.io.IOException;
 import java.util.ArrayList;

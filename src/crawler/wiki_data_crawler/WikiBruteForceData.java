@@ -66,17 +66,16 @@ public class WikiBruteForceData extends BruteForceData implements WikiBruteForce
             }
         }
         getVietnamRelatedEntity();
-        return;
     }
 
     @Override
     public void entityAnalys(String urlString, int depth, boolean forceRelated) throws Exception {
         // Check if urlString is a valid Wikipedia URL .
         urlString = DataHandling.urlDecode(urlString.replace("\n", ""));
-        if (WikiDataHandling.checkURL(urlString, false) == false){
+        if (!WikiDataHandling.checkURL(urlString, false)){
             return;
         }
-        if (forceRelated == false && existInAnalysedURL(urlString)){
+        if (!forceRelated && existInAnalysedURL(urlString)){
             return;
         }
 
@@ -103,7 +102,7 @@ public class WikiBruteForceData extends BruteForceData implements WikiBruteForce
             * The related URLs is in "EntityReference" folder. 
             */
             // Parse the HTML using Jsoup
-            StringBuffer s = new StringBuffer("");
+            StringBuilder s = new StringBuilder("");
             for (String craftURL: WikiDataHandling.getAllWikiHref(wikiPageData)){
                 s.append(craftURL + '\n');
                 addToCrafedURL(craftURL, depth);
@@ -111,7 +110,6 @@ public class WikiBruteForceData extends BruteForceData implements WikiBruteForce
             DataHandling.writeFile(ENTITY_REFERENCE_PATH + qID + ".txt", s.toString(), true);
             addToAnalysedURL(urlString);
         }
-        return;
     }
 
     public boolean checkRelated(String qID, String wikiPageData, boolean forceRelated) throws Exception {
@@ -124,12 +122,12 @@ public class WikiBruteForceData extends BruteForceData implements WikiBruteForce
 
         String entityURL = "https://www.wikidata.org/wiki/Special:EntityData/" + qID + ".json";
         String content = DataHandling.getDataFromURL(entityURL).toString();
-        if (forceRelated == false){
+        if (!forceRelated){
             if (content.isEmpty())
                 return false;
             JSONObject json = new JSONObject(content);
         
-            if (WikiDataHandling.jsonAnalysis(json, vietnamEntityHashSet) == false)
+            if (!WikiDataHandling.jsonAnalysis(json, vietnamEntityHashSet))
                 return false;
             if (WikiDataHandling.getWikiEntityViLabel(json, qID).isEmpty())
                 return false;
@@ -141,7 +139,7 @@ public class WikiBruteForceData extends BruteForceData implements WikiBruteForce
                     break;
                 }
             }
-            if (check == false) return false;
+            if (!check) return false;
 
             JSONObject entitiyJson = json.getJSONObject("entities").getJSONObject(qID);
             // If an entity has no sitelinks to Wikipedia then that entity is virtual. We will put it into the ENTITY_PROPERTIES_PATH
@@ -166,7 +164,6 @@ public class WikiBruteForceData extends BruteForceData implements WikiBruteForce
     public void getDataCallBack() throws Exception
     {
         analyzeBruteForceData();
-        return;
     }
 
     @Override
