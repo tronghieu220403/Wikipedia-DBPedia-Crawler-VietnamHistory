@@ -94,6 +94,8 @@ Folder structure
 │   │   └── DBPediaDataCrawler                 	# the crawler for DBPedia
 │   │   │   └── ...
 │   │   └── CrawlData.java                      # this file is used to run the data scraper program.
+│   ├── crawler									# gives a summary of the important classes and what they are for.
+│   │   │   └── ...								
 │   ├── text-modify                         # this folder contains files for modifying data.
 │   │   │   └── change_name.json                # change name of some properties
 │   │   │   └── delete.txt                      # delete invalid entities
