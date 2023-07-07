@@ -3,8 +3,13 @@
 This is a mini-project in Object Oriented Programming course of SoICT - HUST.
 
 - [Problem](#problem)
+<<<<<<< Updated upstream
 - [Solution](#solution)
 - [Folder structure](#folder-structure)
+=======
+- [Abstract](#abstract)
+- [Folder structure](#solder-structure)
+>>>>>>> Stashed changes
 - [Result](#result)
 - [Contributors to this project](#contributors-to-this-project)
 - [VS Code for Java](#vs-code-for-java)
@@ -39,7 +44,7 @@ Historical figures of Hung King:
 - Year of death: unknown
 - …
 
-Solution
+Abstract
 --------
 
 ## Wikipedia
@@ -116,9 +121,8 @@ Sincere thanks to:
 
 VS Code for Java
 ------------
-## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
 ## Folder Structure
 
