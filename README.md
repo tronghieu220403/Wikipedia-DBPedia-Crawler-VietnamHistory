@@ -4,12 +4,8 @@ This is a mini-project in Object Oriented Programming course of SoICT - HUST.
 
 - [Problem](#problem)
 <<<<<<< Updated upstream
-- [Solution](#solution)
-- [Folder structure](#folder-structure)
-=======
 - [Abstract](#abstract)
-- [Folder structure](#solder-structure)
->>>>>>> Stashed changes
+- [Folder structure](#folder-structure)
 - [Result](#result)
 - [Contributors to this project](#contributors-to-this-project)
 - [VS Code for Java](#vs-code-for-java)
