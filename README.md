@@ -4,7 +4,7 @@ This is a mini-project in Object Oriented Programming course of SoICT - HUST.
 
 - [Problem](#problem)
 - [Solution](#solution)
-- [Folder structure](#solder-structure)
+- [Folder structure](#folder-structure)
 - [Result](#result)
 - [Contributors to this project](#contributors-to-this-project)
 - [VS Code for Java](#vs-code-for-java)
