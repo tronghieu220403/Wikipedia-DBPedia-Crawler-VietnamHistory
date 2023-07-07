@@ -15,13 +15,14 @@ public class WikiData implements WikiCrawler{
     private String wikiPath = "";
     private int bruteForceLimit = -1;
 
-    public WikiData(String path) throws Exception{
+    public WikiData(String path){
         wikiPath = path;
     }
     public WikiData(){
         throw new IllegalArgumentException("File path must be provided.");
     }
 
+    @Override
     public void getData() throws Exception{
         getBruteForceData();
         getSelectiveData();

@@ -19,7 +19,7 @@ public class Merge {
     private JSONObject getAllEntityFiles(String path){
         JSONObject map = new JSONObject();
         HashSet<String> fileList = DataHandling.listAllFiles(path);
-        if (fileList.size() == 0){
+        if (fileList.isEmpty()){
             for (String cat: BIG_CATEGORIES){
                 for (String fileName: DataHandling.listAllFiles(path + cat)){
                     if (map.has(fileName)){
