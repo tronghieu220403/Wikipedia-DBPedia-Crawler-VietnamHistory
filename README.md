@@ -57,7 +57,7 @@ Finally, our job now is to transform all of that Wikipedia's .json files into **
 
 ## DBPedia
 
-**Compared to Wikipedia, the data in the dbpedia JSON file is simpler, but it also contains a lot of inaccurate information.**
+DBPedia also provide **Structured Data.**. Morover, compared to Wikipedia, the data in the dbpedia JSON file is **simpler**, but it also contains **a lot of inaccurate information.**
 Entities with **links to entities in Wikipedia** are the only ones I scratch and process. For each entity, I also only receive properties **whose components share the same data type**.
 
 Folder structure
