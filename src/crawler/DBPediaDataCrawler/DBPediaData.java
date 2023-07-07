@@ -12,7 +12,9 @@ import crawler.DataManage.BruteForceData;
 import crawler.DataManage.DataHandling;
 import crawler.WikiDataCrawler.WikiDataHandling;
 
-public class DBPediaData extends BruteForceData {
+import crawler.Interface.NonWikiCrawler;
+
+public class DBPediaData extends BruteForceData implements NonWikiCrawler {
     
     public DBPediaData(String path) throws Exception
     {
@@ -164,16 +166,6 @@ public class DBPediaData extends BruteForceData {
         vietnamEntityHashSet.add("http://dbpedia.org/resource/Vietnam");
     }
     
-    /**
-     * Get all properties of all entities and save it to folder "Properties".
-     * @throws Exception
-     */
-    @Override
-    protected void getWikiProperties() throws Exception
-    {
-        return;
-    }
-
     public static String convertCamelCase(String input) {
         StringBuilder output = new StringBuilder();
         for (int i = 0; i < input.length(); i++) {
@@ -509,6 +501,10 @@ public class DBPediaData extends BruteForceData {
             String writePath = DATA_PATH + qID + ".json";
             DataHandling.writeFile(writePath,  analizedJSON.toString(), false);
         }
+    }
 
+    @Override
+    public void getData() throws Exception {
+        getBruteForceData();
     }
 }

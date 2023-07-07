@@ -1,13 +1,14 @@
 package crawler.WikiDataCrawler;
 
 import crawler.DataManage.DataHandling;
+import crawler.Interface.WikiTableCrawler;
 
 import java.util.HashMap;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class WikiTableData extends WikiBruteForceData {
+public class WikiTableData extends WikiBruteForceData implements WikiTableCrawler {
 
     public static void main(String[] args) throws Exception {
         WikiTableData wikiTableData = new WikiTableData("E:/Code/Java/OOP_Project/saveddata/Wikipedia/");

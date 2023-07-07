@@ -12,7 +12,9 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.jsoup.nodes.Element;
 
-public class WikiSelectiveData extends WikiBruteForceData {
+import crawler.Interface.WikiSelectiveCrawler;
+
+public class WikiSelectiveData extends WikiBruteForceData implements WikiSelectiveCrawler {
 
     public static void main(String[] args) throws Exception {
         WikiSelectiveData wikiSelectiveData = new WikiSelectiveData("E:/Code/Java/OOP_Project/saveddata/Wikipedia/");

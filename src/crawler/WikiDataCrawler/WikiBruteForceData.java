@@ -13,8 +13,9 @@ import org.jsoup.nodes.Document;
 
 import crawler.DataManage.BruteForceData;
 import crawler.DataManage.DataHandling;
+import crawler.Interface.WikiBruteForceCrawler;
 
-public class WikiBruteForceData extends BruteForceData {
+public class WikiBruteForceData extends BruteForceData implements WikiBruteForceCrawler {
 
     protected final String ENTITY_PROPERTIES_PATH = LOGS_PATH + "EntityProperties/";
     protected final String HTML_PATH = LOGS_PATH + "WebHtml/";
@@ -69,7 +70,7 @@ public class WikiBruteForceData extends BruteForceData {
     }
 
     @Override
-    protected void entityAnalys(String urlString, int depth, boolean forceRelated) throws Exception {
+    public void entityAnalys(String urlString, int depth, boolean forceRelated) throws Exception {
         // Check if urlString is a valid Wikipedia URL .
         urlString = DataHandling.urlDecode(urlString.replace("\n", ""));
         if (WikiDataHandling.checkURL(urlString, false) == false){
@@ -161,7 +162,6 @@ public class WikiBruteForceData extends BruteForceData {
         return true;
     }
 
-
     @Override
     public void getDataCallBack() throws Exception
     {
@@ -169,7 +169,8 @@ public class WikiBruteForceData extends BruteForceData {
         return;
     }
 
-    private void analyzeBruteForceData() throws Exception{
+    @Override
+    public void analyzeBruteForceData() throws Exception{
         urlToEntities();
         getWikiProperties();
         entityRefFinal();
@@ -197,8 +198,8 @@ public class WikiBruteForceData extends BruteForceData {
         return;
     }
 
-
-    public final void urlToEntities() throws Exception
+    @Override
+    public void urlToEntities() throws Exception
     {
         if (DataHandling.fileExist(LOGS_PATH + "URLToEntities.json"))
         {
@@ -223,6 +224,7 @@ public class WikiBruteForceData extends BruteForceData {
         DataHandling.writeFile(LOGS_PATH +  "URLToEntities.json" , (new JSONObject(urlToEntityHashMap)).toString(), false);
     }
 
+    @Override
     public void entityRefFinal() throws Exception
     {
         HashSet<String> allQRefFile = DataHandling.listAllFiles(ENTITY_REFERENCE_PATH);
@@ -270,7 +272,8 @@ public class WikiBruteForceData extends BruteForceData {
         });
     }
 
-    public final void entityFinal() throws Exception
+    @Override
+    public void entityFinal() throws Exception
     {
         //HashSet<String> allPFile = listAllFiles(ENTITY_PROPERTIES_PATH);
         allQFile = DataHandling.listAllFiles(ENTITY_JSON_PATH);
@@ -289,7 +292,8 @@ public class WikiBruteForceData extends BruteForceData {
         }
     }
 
-    public final void resetEntityRef() throws Exception
+    @Override
+    public void resetEntityRef() throws Exception
     {
         //HashSet<String> allPFile = listAllFiles(ENTITY_PROPERTIES_PATH);
         allQFile = DataHandling.listAllFiles(ENTITY_JSON_PATH);
@@ -334,7 +338,7 @@ public class WikiBruteForceData extends BruteForceData {
      * Get all properties of all entities and save it to folder "Properties".
      * @throws Exception
      */
-    protected void getWikiProperties() throws Exception
+    public void getWikiProperties() throws Exception
     {
         if (DataHandling.fileExist(LOGS_PATH + "PropertiesList.json")) {
             JSONArray myJsonArray = new JSONArray(DataHandling.readFileAll(LOGS_PATH + "PropertiesList.json"));
