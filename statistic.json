@@ -1,1 +1,62 @@
-{"Number of entity":{"DBPedia":{"địa điểm du lịch, di tích lịch sử":0,"sự kiện lịch sử":0,"nhân vật lịch sử":0,"lễ hội văn hóa":0,"triều đại lịch sử":0},"Wikipedia":{"địa điểm du lịch, di tích lịch sử":2644,"sự kiện lịch sử":384,"nhân vật lịch sử":5574,"lễ hội văn hóa":107,"triều đại lịch sử":25}},"Number of relation":83522}
+{
+	"Number of relation": 87508,
+	"Number of properties": {
+		"DBPedia": {
+			"Number of unique property names": {
+				"địa điểm du lịch, di tích lịch sử": 45,
+				"sự kiện lịch sử": 48,
+				"nhân vật lịch sử": 94,
+				"lễ hội văn hóa": 4,
+				"triều đại lịch sử": 26
+			},
+			"Number of property value": {
+				"địa điểm du lịch, di tích lịch sử": 271,
+				"sự kiện lịch sử": 708,
+				"nhân vật lịch sử": 3471,
+				"lễ hội văn hóa": 14,
+				"triều đại lịch sử": 169
+			}
+		},
+		"Wikipedia + DBPedia": {
+			"Number of unique property names": {
+				"địa điểm du lịch, di tích lịch sử": 156,
+				"sự kiện lịch sử": 104,
+				"nhân vật lịch sử": 180,
+				"lễ hội văn hóa": 35,
+				"triều đại lịch sử": 40
+			}
+		},
+		"Wikipedia": {
+			"Number of unique property names": {
+				"địa điểm du lịch, di tích lịch sử": 126,
+				"sự kiện lịch sử": 75,
+				"nhân vật lịch sử": 117,
+				"lễ hội văn hóa": 32,
+				"triều đại lịch sử": 23
+			},
+			"Number of property value": {
+				"địa điểm du lịch, di tích lịch sử": 28909,
+				"sự kiện lịch sử": 9675,
+				"nhân vật lịch sử": 116345,
+				"lễ hội văn hóa": 1095,
+				"triều đại lịch sử": 1955
+			}
+		}
+	},
+	"Number of entities": {
+		"DBPedia": {
+			"địa điểm du lịch, di tích lịch sử": 134,
+			"sự kiện lịch sử": 130,
+			"nhân vật lịch sử": 558,
+			"lễ hội văn hóa": 3,
+			"triều đại lịch sử": 17
+		},
+		"Wikipedia": {
+			"địa điểm du lịch, di tích lịch sử": 2641,
+			"sự kiện lịch sử": 382,
+			"nhân vật lịch sử": 5574,
+			"lễ hội văn hóa": 107,
+			"triều đại lịch sử": 25
+		}
+	}
+}
