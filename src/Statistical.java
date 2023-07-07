@@ -1,4 +1,4 @@
-import crawler.DataManage.DataHandling;
+import crawler.data_manage.DataHandling;
 
 import java.util.*;
 
