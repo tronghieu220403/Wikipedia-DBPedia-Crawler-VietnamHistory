@@ -49,7 +49,7 @@ Entities web pages on Wikipedia often have a [Wikidata](https://www.wikidata.org
 
 See this: [How to get JSON from a Item or Property](https://www.wikidata.org/wiki/Wikidata:Data_access#Linked_Data_Interface_(URI))
 
-Hence, for **Wikipedia** , we can get properties of an entity as long as we have its ID.
+Hence, for **Wikipedia** , we can get properties of an entity as long as we have its Wikidata ID.
 
 I use the [`Wikidata query builder`](https://query.wikidata.org/querybuilder/?uselang=en) to query all entities that have property "P17" ("country") of "Q881"("Vietnam"). After that, for each entity we crawl from Wikidata, I will check if it is related to Vietnam or not.
 
