@@ -78,6 +78,12 @@ Folder structure
 │   └── triều đại lịch sử
 │   │   └── ...
 ├── raw                 	            # data collected for processing
+│   └── Wikipedia                                
+│   │   └── data                                # final data of all scratched entities in human-readable form
+│   │   └── intitialize                         # folder containing all input data
+│   │   └── logs                                # folder containing all data in all processing steps
+│   └── DBPedia
+│   │   └── ...                        
 ├── src                 	            # source code
 │   ├── crawler
 │   │   └── DataManage                 		# the program's general data processing and management
@@ -92,22 +98,21 @@ Folder structure
 │   │   │   └── delete.txt                      # delete invalid entities
 │   │   │   └── ...
 │   ├── Statistical.java                    # used for statistics on scratched data.
-
-
+├── statistic.json                 	    # statistics on the number of entities collected
 ```
 
 Result
 ------
  
-I processed and retrieved **8760** entities related to Vietnamese history out of a total of **more than 400,000** entities that have been scratched.
+I processed and retrieved **8735** entities related to Vietnamese history out of a total of **more than 400,000** entities that have been scratched.
 
 Contributors to this project
 ----------------------------
 
 Sincere thanks to:
 
-- [Chử Minh Hà](https://github.com/Nov17th) for filtering and reporting non-Vietnamese data that cannot be processed by computers.
 - [Nguyễn Quốc Trung](https://github.com/ravenpwn) for contributing data by scraping the tables in Wikipedia for processing in the WikiTableData method. 
+- [Chử Minh Hà](https://github.com/Nov17th) for filtering and reporting a lot of non-Vietnamese entities that cannot be processed by computers.
 
 VS Code for Java
 ------------
