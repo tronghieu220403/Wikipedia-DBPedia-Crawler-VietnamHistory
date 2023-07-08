@@ -1,4 +1,4 @@
-package crawler.my_interface;
+package crawler.myinterface;
 
 public interface NonWikiCrawler {
     public void getData() throws Exception;

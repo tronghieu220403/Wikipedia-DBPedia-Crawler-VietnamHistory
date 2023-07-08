@@ -1,4 +1,4 @@
-package crawler.data_manage;
+package crawler.datamanage;
 /**
  * What to do with an Data:
  * 1) Get the content of that JSON file from URL.

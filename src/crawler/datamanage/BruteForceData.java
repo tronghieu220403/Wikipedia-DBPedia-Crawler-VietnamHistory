@@ -1,6 +1,6 @@
-package crawler.data_manage;
+package crawler.datamanage;
 
-import crawler.wiki_data_crawler.WikiDataHandling;
+import crawler.wikidatacrawler.WikiDataHandling;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

@@ -1,10 +1,10 @@
 package crawler;
 
-import crawler.dbpedia_data_crawler.DBPediaData;
-import crawler.data_manage.DataHandling;
-import crawler.data_manage.Merge;
-import crawler.data_manage.ModifyData;
-import crawler.wiki_data_crawler.*;
+import crawler.dbpediadatacrawler.DBPediaData;
+import crawler.datamanage.DataHandling;
+import crawler.datamanage.Merge;
+import crawler.datamanage.ModifyData;
+import crawler.wikidatacrawler.*;
 
 public class CrawlData {
     public static void main(String[] args) throws Exception {

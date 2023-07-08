@@ -1,4 +1,4 @@
-package crawler.wiki_data_crawler;
+package crawler.wikidatacrawler;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -11,9 +11,9 @@ import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import crawler.data_manage.BruteForceData;
-import crawler.data_manage.DataHandling;
-import crawler.my_interface.WikiBruteForceCrawler;
+import crawler.datamanage.BruteForceData;
+import crawler.datamanage.DataHandling;
+import crawler.myinterface.WikiBruteForceCrawler;
 
 public class WikiBruteForceData extends BruteForceData implements WikiBruteForceCrawler {
 

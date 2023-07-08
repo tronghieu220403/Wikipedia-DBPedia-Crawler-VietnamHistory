@@ -1,4 +1,4 @@
-package crawler.data_manage;
+package crawler.datamanage;
 
 public class DataFolder {
     //root path:

@@ -1,4 +1,4 @@
-package crawler.dbpedia_data_crawler;
+package crawler.dbpediadatacrawler;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -9,11 +9,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import crawler.data_manage.BruteForceData;
-import crawler.data_manage.DataHandling;
-import crawler.wiki_data_crawler.WikiDataHandling;
+import crawler.datamanage.BruteForceData;
+import crawler.datamanage.DataHandling;
+import crawler.wikidatacrawler.WikiDataHandling;
 
-import crawler.my_interface.NonWikiCrawler;
+import crawler.myinterface.NonWikiCrawler;
 
 public class DBPediaData extends BruteForceData implements NonWikiCrawler {
     

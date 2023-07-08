@@ -1,6 +1,6 @@
-package crawler.wiki_data_crawler;
+package crawler.wikidatacrawler;
 
-import crawler.data_manage.DataHandling;
+import crawler.datamanage.DataHandling;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,7 +12,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.jsoup.nodes.Element;
 
-import crawler.my_interface.WikiSelectiveCrawler;
+import crawler.myinterface.WikiSelectiveCrawler;
 
 public class WikiSelectiveData extends WikiBruteForceData implements WikiSelectiveCrawler {
 

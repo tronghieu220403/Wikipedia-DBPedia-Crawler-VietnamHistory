@@ -1,7 +1,7 @@
-package crawler.wiki_data_crawler;
+package crawler.wikidatacrawler;
 
-import crawler.data_manage.DataHandling;
-import crawler.my_interface.WikiCrawler;
+import crawler.datamanage.DataHandling;
+import crawler.myinterface.WikiCrawler;
 /**
  *  The "WikiData" class provides useful methods for analyzing Wikipedia pages and extracting relevant information related to entities in Vietnam.
  */

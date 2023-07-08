@@ -1,7 +1,7 @@
-package crawler.wiki_data_crawler;
+package crawler.wikidatacrawler;
 
-import crawler.data_manage.DataHandling;
-import crawler.my_interface.WikiTableCrawler;
+import crawler.datamanage.DataHandling;
+import crawler.myinterface.WikiTableCrawler;
 
 import java.util.HashMap;
 
