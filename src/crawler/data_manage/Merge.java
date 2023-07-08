@@ -9,10 +9,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class Merge {
-    public static void main(String[] args) throws Exception {
-        //Merge mergeData = new Merge();
-        //mergeData.merge("data","E:/Code/Java/OOP_Project/saveddata/Wikipedia/", "E:/Code/Java/OOP_Project/saveddata/DBPedia/data/", createSource("Wikipedia"), createSource("DBPedia"));
-    }
 
     public static String[] BIG_CATEGORIES = {"triều đại lịch sử", "nhân vật lịch sử", "địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "sự kiện lịch sử"};
 
@@ -43,19 +39,23 @@ public class Merge {
         path2 += "data/";
         DataHandling.createFolder(exportPath);
         
+        for (String cat: BIG_CATEGORIES){
+            DataHandling.createFolder(exportPath + cat);
+        }
+
         JSONObject fileMap1 = getAllEntityFiles(path1);
         JSONObject fileMap2 = getAllEntityFiles(path2);
 
         for (String fileName: DataHandling.getAllKeys(fileMap1)){
             String filePath = fileMap1.getString(fileName);
-            String exportDataSubFolder = "";
+            String exportDataSubFolder = null;
             for (String cat: BIG_CATEGORIES){
                 if (filePath.contains(cat)){
                     exportDataSubFolder = exportPath + cat;
                     break;
                 }
             }
-            if (exportDataSubFolder.isEmpty()) continue;
+            if (exportDataSubFolder == null) continue;
             JSONObject objJson1 = DataHandling.getJSONFromFile(filePath);
             JSONObject objClaims1 = objJson1.getJSONObject("claims");
             if (fileMap2.has(fileName)) {

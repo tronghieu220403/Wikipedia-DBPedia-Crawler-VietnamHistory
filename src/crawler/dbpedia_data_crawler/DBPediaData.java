@@ -22,15 +22,12 @@ public class DBPediaData extends BruteForceData implements NonWikiCrawler {
         DataHandling.changeRequestRate(100);
     }
 
+    public static final String[] BIG_CATEGORIES = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
+
+
     public DBPediaData() throws Exception
     {
         throw new IllegalArgumentException("File path must be provided.");
-    }
-
-    public static void main(String[] args) throws Exception {
-        DBPediaData dbpediaData = new DBPediaData("E:/Code/Java/OOP_Project/saveddata/DBPedia/");
-        dbpediaData.getBruteForceData();
-        dbpediaData.syncData("E:/Code/Java/OOP_Project/saveddata/Wikipedia/");
     }
 
     /**
@@ -177,44 +174,37 @@ public class DBPediaData extends BruteForceData implements NonWikiCrawler {
         return output.toString();
     }
 
-    @Override
-    public void syncData(String wikiPath) throws Exception
-    {
-        String[] bigCategories = {"địa điểm du lịch, di tích lịch sử", "lễ hội văn hóa", "nhân vật lịch sử", "sự kiện lịch sử", "triều đại lịch sử"};
-        String wikiEntityPath = wikiPath + "logs/EntityJson";
-        String wikiPropPath = wikiPath + "logs/EntityProperties";
-        String wikiDataPath = wikiPath + "data/";
-
+    public static HashSet<String> getAllQid(String dataPath){
         HashSet<String> qIDHashSet = new HashSet<>();
-        for (String bigCategory: bigCategories)
+        for (String bigCategory: BIG_CATEGORIES)
         {
-            String path = wikiDataPath + bigCategory;
+            String path = dataPath + bigCategory;
             HashSet<String> fileList = DataHandling.listAllFiles(path);
             for (String fileName: fileList)
             {
                 qIDHashSet.add(fileName.replaceAll(".json",""));
             }
         }
-        String dbEntityFolder = ENTITY_JSON_PATH;
+        return qIDHashSet;
+    }
 
+    public static JSONObject getWikiUrlToEntity(String wikiPath) throws Exception{
         JSONObject wikiUrlMapped = new JSONObject();
         JSONObject rawWikiUrlMapped = DataHandling.getJSONFromFile(wikiPath + "logs/URLToEntities.json");
-        Iterator<String> urls = (rawWikiUrlMapped).keys();
-        while (urls.hasNext()) {
-            String url = urls.next();
+        for (String url: DataHandling.getAllKeys(rawWikiUrlMapped)){
             wikiUrlMapped.put(DataHandling.urlDecode(url), rawWikiUrlMapped.getString(url));
         }
+        return wikiUrlMapped;
+    }
 
-        JSONObject selected = new JSONObject(); 
-        JSONObject selectedP = new JSONObject();
-
+    void mapWithWikiEntitiesAndPropties(JSONObject selectedQ, JSONObject selectedP, HashSet<String> qIDHashSet, JSONObject wikiUrlMapped, String wikiEntityPath, String wikiPropPath) throws Exception{
         if (!DataHandling.fileExist(LOGS_PATH + "wikiMapped.json") || !DataHandling.fileExist(LOGS_PATH + "wikiMappedProp.json"))
         {
-            HashSet<String> files = DataHandling.listAllFiles(dbEntityFolder);
+            HashSet<String> files = DataHandling.listAllFiles(ENTITY_JSON_PATH);
 
             for (String fileName: files)
             {
-                String filePath = dbEntityFolder + fileName;
+                String filePath = ENTITY_JSON_PATH + fileName;
                 String key1 = "";
                 String key2 = "";
                 JSONObject json = DataHandling.getJSONFromFile(filePath);
@@ -242,7 +232,7 @@ public class DBPediaData extends BruteForceData implements NonWikiCrawler {
                     String qID = wikiUrlMapped.getString(key1);
                     if (qIDHashSet.contains(qID))
                     {
-                        selected.put(fileName, qID);
+                        selectedQ.put(fileName, qID);
                     }
                     else{
                         String label = WikiDataHandling.getWikiEntityViLabel(qID, wikiEntityPath, wikiPropPath);
@@ -253,15 +243,79 @@ public class DBPediaData extends BruteForceData implements NonWikiCrawler {
                     }
                 }   
             }
-            DataHandling.writeFile(LOGS_PATH + "wikiMapped.json", selected.toString(), false);
+            DataHandling.writeFile(LOGS_PATH + "wikiMapped.json", selectedQ.toString(), false);
             DataHandling.writeFile(LOGS_PATH + "wikiMappedProp.json", selectedP.toString(), false);
         }
         else
         {
-            selected = DataHandling.getJSONFromFile(LOGS_PATH + "wikiMapped.json");
+            selectedQ = DataHandling.getJSONFromFile(LOGS_PATH + "wikiMapped.json");
             selectedP = DataHandling.getJSONFromFile(LOGS_PATH + "wikiMappedProp.json");
         }
-                
+    }
+
+    public JSONObject translateDBPediaPropName(JSONObject selectedQ, JSONObject selectedP, JSONObject mappedWikiProp) throws Exception{
+        JSONObject dbpediaPropertyTranslate = new JSONObject();
+        if (!DataHandling.fileExist(LOGS_PATH + "DBPediaPropertyTranslate.json"))
+        {
+            if (!DataHandling.fileExist(LOGS_PATH + "AllProperties.txt"))
+            {
+                Iterator<String> keys = selectedQ.keys();
+                while(keys.hasNext())
+                {
+                    JSONObject json = DataHandling.getJSONFromFile(ENTITY_JSON_PATH + keys.next());
+                    for (String firstFloorKey: DataHandling.getAllKeys(json))
+                    {
+                        for (String propertyStr: DataHandling.getAllKeys(json.getJSONObject(firstFloorKey)))
+                        {
+                            if (propertyStr.contains("wiki")||propertyStr.contains("Wiki")) continue;
+                            String p;
+                            if (propertyStr.contains("http://dbpedia.org/property/"))
+                            {
+                                p = propertyStr.replace("http://dbpedia.org/property/", "");
+                            }
+                            else if (propertyStr.contains("http://dbpedia.org/ontology/"))
+                            {
+                                p = propertyStr.replace("http://dbpedia.org/ontology/", "");
+                            }
+                            else continue;
+                            if (p.matches(".*[0-9].*")) continue;
+                            if (p.length()<=2) continue;
+                            String pConvert = convertCamelCase(p);
+                            dbpediaPropertyTranslate.put(pConvert, "");
+                        }
+                    }
+                }
+                Iterator<String> propKeys = dbpediaPropertyTranslate.keys();
+                while(propKeys.hasNext())
+                {
+                    DataHandling.writeFile(LOGS_PATH + "AllProperties.txt", propKeys.next() + "\n", true);
+                }
+            }
+            List<String> lines = DataHandling.readFileAllLine(LOGS_PATH + "AllProperties.txt");
+            List<String> trans = DataHandling.readFileAllLine(LOGS_PATH + "Translate.txt");
+
+            for (int i = 0; i < lines.size(); i++)
+            {
+                String propertyName = lines.get(i);
+                if (mappedWikiProp.has(propertyName))
+                {
+                    dbpediaPropertyTranslate.put(lines.get(i), mappedWikiProp.getString(propertyName));
+                }
+                else {
+
+                    dbpediaPropertyTranslate.put(lines.get(i), trans.get(i));
+                }
+            }
+            DataHandling.writeFile(LOGS_PATH + "DBPediaPropertyTranslate.json", dbpediaPropertyTranslate.toString(), false);
+        }
+        else
+        {
+            dbpediaPropertyTranslate = DataHandling.getJSONFromFile(LOGS_PATH + "DBPediaPropertyTranslate.json");
+        }
+        return dbpediaPropertyTranslate;
+    }
+
+    public JSONObject mapWithWikiPropName(String wikiEntityPath,String wikiPropPath) throws Exception{
         JSONObject mappedWikiProp = new JSONObject();
         if (!DataHandling.fileExist(LOGS_PATH + "MappedWikiProp.json"))
         {
@@ -293,94 +347,47 @@ public class DBPediaData extends BruteForceData implements NonWikiCrawler {
             mappedWikiProp = DataHandling.getJSONFromFile(LOGS_PATH + "MappedWikiProp.json");
         }
 
-        JSONObject dbpediaPropertyTranslate = new JSONObject();
-        if (!DataHandling.fileExist(LOGS_PATH + "DBPediaPropertyTranslate.json"))
-        {
-            if (!DataHandling.fileExist(LOGS_PATH + "AllProperties.txt"))
-            {
-                Iterator<String> keys = selected.keys();
-                while(keys.hasNext())
-                {
-                    JSONObject json = DataHandling.getJSONFromFile(dbEntityFolder + keys.next());
-                    Iterator<String> firstFloorKeys = json.keys();
-                    while(firstFloorKeys.hasNext())
-                    {
-                        String firstFloorKey = firstFloorKeys.next();
-                        JSONObject firstFloorJson = json.getJSONObject(firstFloorKey);
-                        Iterator<String> secondFloorKeys = firstFloorJson.keys();
-                        while(secondFloorKeys.hasNext())
-                        {
-                            String propertyStr = secondFloorKeys.next();
-                            if (propertyStr.contains("wiki")||propertyStr.contains("Wiki")) continue;
-                            String p;
-                            if (propertyStr.contains("http://dbpedia.org/property/"))
-                            {
-                                p = propertyStr.replace("http://dbpedia.org/property/", "");
-                            }
-                            else if (propertyStr.contains("http://dbpedia.org/ontology/"))
-                            {
-                                p = propertyStr.replace("http://dbpedia.org/ontology/", "");
-                            }
-                            else continue;
-                            if (p.matches(".*[0-9].*")) continue;
-                            if (p.length()<=2) continue;
-                            String pConvert = convertCamelCase(p);
-                            dbpediaPropertyTranslate.put(pConvert, "");
-                        }
-                    }
-                }
-                Iterator<String> propKeys = dbpediaPropertyTranslate.keys();
-                while(propKeys.hasNext())
-                {
-                    DataHandling.writeFile(LOGS_PATH + "AllProperties.txt", propKeys.next() + "\n", true);
-                }
-            }
-            else
-            {
-                List<String> lines = DataHandling.readFileAllLine(LOGS_PATH + "AllProperties.txt");
-                List<String> trans = DataHandling.readFileAllLine(LOGS_PATH + "Translate.txt");
+        return mappedWikiProp;
+    }
 
-                for (int i = 0; i < lines.size(); i++)
-                {
-                    String propertyName = lines.get(i);
-                    if (mappedWikiProp.has(propertyName))
-                    {
-                        dbpediaPropertyTranslate.put(lines.get(i), mappedWikiProp.getString(propertyName));
-                    }
-                    else {
+    @Override
+    public void syncData(String wikiPath) throws Exception
+    {
+        String wikiEntityPath = wikiPath + "logs/EntityJson";
+        String wikiPropPath = wikiPath + "logs/EntityProperties";
+        String wikiDataPath = wikiPath + "data/";
 
-                        dbpediaPropertyTranslate.put(lines.get(i), trans.get(i));
-                    }
-                }
-                DataHandling.writeFile(LOGS_PATH + "DBPediaPropertyTranslate.json", dbpediaPropertyTranslate.toString(), false);
-            }
-        }
-        else
-        {
-            dbpediaPropertyTranslate = DataHandling.getJSONFromFile(LOGS_PATH + "DBPediaPropertyTranslate.json");
-        }
+        HashSet<String> qIDHashSet = getAllQid(wikiDataPath);
+
+        JSONObject wikiUrlMapped = getWikiUrlToEntity(wikiPath);
+
+        JSONObject selectedQ = new JSONObject(); 
+        JSONObject selectedP = new JSONObject();
+
+        mapWithWikiEntitiesAndPropties(selectedQ, selectedP, qIDHashSet, wikiUrlMapped, wikiEntityPath, wikiPropPath);
+        
+                
+        JSONObject mappedWikiProp = mapWithWikiPropName(wikiEntityPath, wikiPropPath);
+
+        JSONObject dbpediaPropertyTranslate = translateDBPediaPropName(selectedQ, selectedP, mappedWikiProp);
 
         /*
          * Iterate all selected files
          */
-        Iterator<String> keys = selected.keys();
+        Iterator<String> keys = selectedQ.keys();
         while (keys.hasNext()) {
             String fileName = keys.next();
             JSONObject analizedJSON = new JSONObject();
             JSONObject claims = new JSONObject();
-            JSONObject json = DataHandling.getJSONFromFile(dbEntityFolder + fileName);
-            Iterator<String> firstFloorKeys = json.keys();
+            JSONObject json = DataHandling.getJSONFromFile(ENTITY_JSON_PATH + fileName);
             String mainKey = "http://dbpedia.org/resource/" + fileName.replace(".json", "");
-            while(firstFloorKeys.hasNext())
+            for (String firstFloorKey: DataHandling.getAllKeys(json))
             {
-                String firstFloorKey = firstFloorKeys.next();
                 if (firstFloorKey.equals(mainKey))
                 {
                     JSONObject mainJSON = json.getJSONObject(mainKey);
-                    Iterator<String> secondFloorKeys = mainJSON.keys();
-                    while(secondFloorKeys.hasNext())
+                    for (String secondFloorKey: DataHandling.getAllKeys(mainJSON))
                     {
-                        String secondFloorKey = secondFloorKeys.next();
                         String propertyName = convertCamelCase(secondFloorKey.replace("http://dbpedia.org/ontology/", "").replace("http://dbpedia.org/property/", ""));
                         if (!dbpediaPropertyTranslate.has(propertyName)) continue;
                         if (!mappedWikiProp.has(propertyName)) continue;
@@ -395,11 +402,11 @@ public class DBPediaData extends BruteForceData implements NonWikiCrawler {
                                 String value = thirdFloorProp.getString("value");
                                 if (!value.contains("http://dbpedia.org/resource/")) continue;
                                 value = value.replace("http://dbpedia.org/resource/", "") + ".json";
-                                if (selected.has(value))
+                                if (selectedQ.has(value))
                                 {
                                     JSONObject info = new JSONObject();
                                     info.put("type", "wikibase-item");
-                                    String id = selected.getString(value);
+                                    String id = selectedQ.getString(value);
                                     info.put("id", id);
                                     info.put("value", WikiDataHandling.getWikiEntityViLabel(id, wikiEntityPath, wikiPropPath));
                                     analizedJsonArray.put(info);
@@ -436,12 +443,12 @@ public class DBPediaData extends BruteForceData implements NonWikiCrawler {
                 else{
                     if (!firstFloorKey.contains("http://dbpedia.org/resource/")) continue;
                     String key = firstFloorKey.replace("http://dbpedia.org/resource/", "") + ".json";
-                    if (!selected.has(key) && !selectedP.has(key)) continue;
+                    if (!selectedQ.has(key) && !selectedP.has(key)) continue;
                     JSONObject info = new JSONObject();
-                    if (selected.has(key))
+                    if (selectedQ.has(key))
                     {
                         info.put("type", "wikibase-item");
-                        String id = selected.getString(key);
+                        String id = selectedQ.getString(key);
                         info.put("id", id);
                         info.put("value", WikiDataHandling.getWikiEntityViLabel(id, wikiEntityPath, wikiPropPath));
                     }
@@ -498,7 +505,7 @@ public class DBPediaData extends BruteForceData implements NonWikiCrawler {
             }
             if (claims.length() == 0) continue;
             analizedJSON.put("claims", claims);
-            String qID = selected.getString(fileName);
+            String qID = selectedQ.getString(fileName);
             String writePath = DATA_PATH + qID + ".json";
             DataHandling.writeFile(writePath,  analizedJSON.toString(), false);
         }

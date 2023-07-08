@@ -9,9 +9,6 @@ import crawler.my_interface.WikiCrawler;
 
 public class WikiData implements WikiCrawler{
     
-    public static void main(String[] args) throws Exception {
-    }
-
     private String wikiPath = "";
     private int bruteForceLimit = -1;
 

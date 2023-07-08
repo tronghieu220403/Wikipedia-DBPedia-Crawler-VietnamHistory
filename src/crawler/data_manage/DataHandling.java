@@ -210,37 +210,7 @@ public class DataHandling {
                 throw new Exception("Unable to create file " + filePath);
             }
         }
-        /*
-        else {
-            String s = readFileAll(filePath);
-            if (s.equals(content) && !append) return;
-        }
-        //writeToLogs(filePath);
-        */
         try (FileWriter fout = new FileWriter(filePath, append)){
-            fout.write(content);
-        }
-        catch (IOException e)
-        {
-            throw e;
-        }
-    }
-
-    private static final void writeFile(String filePath, String content) throws Exception
-    {
-        filePath = getFullPath(filePath);
-        
-        File file = new File(filePath);
-        if (!file.isFile()){
-            try{
-                file.createNewFile();
-            }
-            catch (Exception e)
-            {
-                throw new Exception("Unable to create file " + filePath);
-            }
-        }
-        try (FileWriter fout = new FileWriter(filePath, false)){
             fout.write(content);
         }
         catch (IOException e)
@@ -363,18 +333,6 @@ public class DataHandling {
         }
     }
     
-    private static final String writeToLogs(String filePath) throws Exception
-    {
-        filePath = getFullPath(filePath);
-        String s = readFileAll(filePath);
-        String fileName = filePath.substring(filePath.lastIndexOf("\\")+1);
-        String logsPath = filePath.substring(0,filePath.lastIndexOf("\\")+1) + ".logs"+ "\\";
-        createFolder(logsPath);
-        createFolder(logsPath + STR_DATE);
-        writeFile(logsPath + STR_DATE + "\\" + fileName, s);
-        return logsPath;
-    }
-
     /**
      * 
      */
