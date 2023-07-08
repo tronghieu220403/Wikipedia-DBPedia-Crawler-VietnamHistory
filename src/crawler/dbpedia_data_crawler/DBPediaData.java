@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import crawler.data_manage.BruteForceData;
@@ -197,7 +198,7 @@ public class DBPediaData extends BruteForceData implements NonWikiCrawler {
         return wikiUrlMapped;
     }
 
-    void mapWithWikiEntitiesAndPropties(JSONObject selectedQ, JSONObject selectedP, HashSet<String> qIDHashSet, JSONObject wikiUrlMapped, String wikiEntityPath, String wikiPropPath) throws Exception{
+    private void mapWithWikiEntitiesAndPropties(String wikiEntityPath, String wikiPropPath) throws Exception{
         if (!DataHandling.fileExist(LOGS_PATH + "wikiMapped.json") || !DataHandling.fileExist(LOGS_PATH + "wikiMappedProp.json"))
         {
             HashSet<String> files = DataHandling.listAllFiles(ENTITY_JSON_PATH);
@@ -253,7 +254,7 @@ public class DBPediaData extends BruteForceData implements NonWikiCrawler {
         }
     }
 
-    public JSONObject translateDBPediaPropName(JSONObject selectedQ, JSONObject selectedP, JSONObject mappedWikiProp) throws Exception{
+    private JSONObject translateDBPediaPropName(JSONObject mappedWikiProp) throws Exception{
         JSONObject dbpediaPropertyTranslate = new JSONObject();
         if (!DataHandling.fileExist(LOGS_PATH + "DBPediaPropertyTranslate.json"))
         {
@@ -350,6 +351,143 @@ public class DBPediaData extends BruteForceData implements NonWikiCrawler {
         return mappedWikiProp;
     }
 
+    public JSONArray createAnalizeJsonArrayForDbpediaProp(JSONArray secondFloorArray, String wikiEntityPath, String wikiPropPath) throws JSONException, Exception{
+        JSONArray analizedJsonArray = new JSONArray();
+        for (int i=0;i < secondFloorArray.length() ; ++i){
+            JSONObject thirdFloorProp = secondFloorArray.getJSONObject(i);
+            if (thirdFloorProp.has("lang")) continue;
+            if (thirdFloorProp.getString("type").equals("uri"))
+            {
+                String value = thirdFloorProp.getString("value");
+                if (!value.contains("http://dbpedia.org/resource/")) continue;
+                value = value.replace("http://dbpedia.org/resource/", "") + ".json";
+                if (selectedQ.has(value))
+                {
+                    JSONObject info = new JSONObject();
+                    info.put("type", "wikibase-item");
+                    String id = selectedQ.getString(value);
+                    info.put("id", id);
+                    info.put("value", WikiDataHandling.getWikiEntityViLabel(id, wikiEntityPath, wikiPropPath));
+                    analizedJsonArray.put(info);
+                }
+                else if (selectedP.has(value))
+                {
+                    JSONObject info = new JSONObject();
+                    info.put("type", "string");
+                    info.put("value", selectedP.getString(value));
+                    analizedJsonArray.put(info);
+                }
+            }
+            else if (thirdFloorProp.has("datatype"))
+            {
+                String datatype = thirdFloorProp.getString("datatype");
+                if (datatype.equals("http://www.w3.org/2001/XMLSchema#date"))
+                {
+                    JSONObject info = new JSONObject();
+                    info.put("type", "string");
+                    String dateStr = thirdFloorProp.getString("value");
+                    LocalDate date = LocalDate.parse(dateStr);
+                    String formattedDate = date.format(DateTimeFormatter.ofPattern("'ngày' dd 'tháng' MM 'năm' yyyy"));
+                    info.put("value", formattedDate);
+                    analizedJsonArray.put(info);
+                }
+            }
+        }
+        return analizedJsonArray;
+    }
+
+    private void addActivePropertiesToClaims(JSONObject claims, JSONObject json, String mainKey, String wikiEntityPath, String wikiPropPath) throws JSONException, Exception{
+        JSONObject mainJSON = json.getJSONObject(mainKey);
+        for (String secondFloorKey: DataHandling.getAllKeys(mainJSON))
+        {
+            String propertyName = convertCamelCase(secondFloorKey.replace("http://dbpedia.org/ontology/", "").replace("http://dbpedia.org/property/", ""));
+            if (!dbpediaPropertyTranslate.has(propertyName)) continue;
+            if (!mappedWikiProp.has(propertyName)) continue;
+            propertyName = dbpediaPropertyTranslate.getString(propertyName);
+            JSONArray secondFloorArray = mainJSON.getJSONArray(secondFloorKey);
+            JSONArray analizedJsonArray = createAnalizeJsonArrayForDbpediaProp(secondFloorArray, wikiEntityPath, wikiPropPath);
+            if (analizedJsonArray.length()>0)
+            {
+                claims.put(propertyName, analizedJsonArray);
+            }
+        }
+    }
+
+    void addPassivePropertiesToClaims(JSONObject claims, JSONObject json, String firstFloorKey, String wikiEntityPath, String wikiPropPath) throws JSONException, Exception{
+        if (!firstFloorKey.contains("http://dbpedia.org/resource/")){
+            return;
+        }
+        String key = firstFloorKey.replace("http://dbpedia.org/resource/", "") + ".json";
+        if (!selectedQ.has(key) && !selectedP.has(key)) {
+            return;
+        }
+        JSONObject info = new JSONObject();
+        if (selectedQ.has(key))
+        {
+            info.put("type", "wikibase-item");
+            String id = selectedQ.getString(key);
+            info.put("id", id);
+            info.put("value", WikiDataHandling.getWikiEntityViLabel(id, wikiEntityPath, wikiPropPath));
+        }
+        else
+        {
+            info.put("type", "string");
+            info.put("value", selectedP.getString(key));
+        }
+        JSONObject passiveJSON = json.getJSONObject(firstFloorKey);
+        Iterator<String> secondFloorKeys = passiveJSON.keys();
+        while(secondFloorKeys.hasNext())
+        {
+            String propertyName = convertCamelCase(secondFloorKeys.next().replace("http://dbpedia.org/ontology/", "").replace("http://dbpedia.org/property/", ""));
+            if (!dbpediaPropertyTranslate.has(propertyName)) continue;
+            propertyName = dbpediaPropertyTranslate.getString(propertyName) + " của";
+
+            if (!claims.has(propertyName))
+            {
+                JSONArray jsonArr = new JSONArray();
+                jsonArr.put(info);
+                claims.put(propertyName, jsonArr);
+            }
+            else
+            {
+                claims.getJSONArray(propertyName).put(info);
+            }
+        }
+    }
+
+    private void filterDbpediaPropertiesInClaims(JSONObject claims){
+        for (String propertyName: DataHandling.getAllKeys(claims))
+        {
+            JSONArray jsonArr = claims.getJSONArray(propertyName);
+            HashSet<String> nameSet = new HashSet<>();
+            List<Integer> eraseList = new ArrayList<>();
+            for (int i = 0; i < jsonArr.length(); i++)
+            {
+                String value = jsonArr.getJSONObject(i).getString("value");
+                if (nameSet.contains(value))
+                {
+                    eraseList.add(i);
+                }
+                else
+                {
+                    nameSet.add(value);
+                }
+            }
+            for (int i = eraseList.size() - 1; i >= 0 ; i--)
+            {
+                jsonArr.remove(eraseList.get(i));
+            }
+        }
+
+    }
+
+    private HashSet<String> qIDHashSet = new HashSet<>();
+    private JSONObject wikiUrlMapped = new JSONObject();
+    private JSONObject selectedQ = new JSONObject(); 
+    private JSONObject selectedP = new JSONObject();
+    private JSONObject dbpediaPropertyTranslate = new JSONObject();
+    private JSONObject mappedWikiProp = new JSONObject();
+
     @Override
     public void syncData(String wikiPath) throws Exception
     {
@@ -357,26 +495,13 @@ public class DBPediaData extends BruteForceData implements NonWikiCrawler {
         String wikiPropPath = wikiPath + "logs/EntityProperties";
         String wikiDataPath = wikiPath + "data/";
 
-        HashSet<String> qIDHashSet = getAllQid(wikiDataPath);
-
-        JSONObject wikiUrlMapped = getWikiUrlToEntity(wikiPath);
-
-        JSONObject selectedQ = new JSONObject(); 
-        JSONObject selectedP = new JSONObject();
-
-        mapWithWikiEntitiesAndPropties(selectedQ, selectedP, qIDHashSet, wikiUrlMapped, wikiEntityPath, wikiPropPath);
+        qIDHashSet = getAllQid(wikiDataPath);
+        wikiUrlMapped = getWikiUrlToEntity(wikiPath);
+        mapWithWikiEntitiesAndPropties(wikiEntityPath, wikiPropPath);
+        mappedWikiProp = mapWithWikiPropName(wikiEntityPath, wikiPropPath);
+        dbpediaPropertyTranslate = translateDBPediaPropName(mappedWikiProp);
         
-                
-        JSONObject mappedWikiProp = mapWithWikiPropName(wikiEntityPath, wikiPropPath);
-
-        JSONObject dbpediaPropertyTranslate = translateDBPediaPropName(selectedQ, selectedP, mappedWikiProp);
-
-        /*
-         * Iterate all selected files
-         */
-        Iterator<String> keys = selectedQ.keys();
-        while (keys.hasNext()) {
-            String fileName = keys.next();
+        for (String fileName: DataHandling.getAllKeys(selectedQ)){
             JSONObject analizedJSON = new JSONObject();
             JSONObject claims = new JSONObject();
             JSONObject json = DataHandling.getJSONFromFile(ENTITY_JSON_PATH + fileName);
@@ -385,124 +510,13 @@ public class DBPediaData extends BruteForceData implements NonWikiCrawler {
             {
                 if (firstFloorKey.equals(mainKey))
                 {
-                    JSONObject mainJSON = json.getJSONObject(mainKey);
-                    for (String secondFloorKey: DataHandling.getAllKeys(mainJSON))
-                    {
-                        String propertyName = convertCamelCase(secondFloorKey.replace("http://dbpedia.org/ontology/", "").replace("http://dbpedia.org/property/", ""));
-                        if (!dbpediaPropertyTranslate.has(propertyName)) continue;
-                        if (!mappedWikiProp.has(propertyName)) continue;
-                        propertyName = dbpediaPropertyTranslate.getString(propertyName);
-                        JSONArray secondFloorArray = mainJSON.getJSONArray(secondFloorKey);
-                        JSONArray analizedJsonArray = new JSONArray();
-                        for (int i=0;i < secondFloorArray.length() ; ++i){
-                            JSONObject thirdFloorProp = secondFloorArray.getJSONObject(i);
-                            if (thirdFloorProp.has("lang")) continue;
-                            if (thirdFloorProp.getString("type").equals("uri"))
-                            {
-                                String value = thirdFloorProp.getString("value");
-                                if (!value.contains("http://dbpedia.org/resource/")) continue;
-                                value = value.replace("http://dbpedia.org/resource/", "") + ".json";
-                                if (selectedQ.has(value))
-                                {
-                                    JSONObject info = new JSONObject();
-                                    info.put("type", "wikibase-item");
-                                    String id = selectedQ.getString(value);
-                                    info.put("id", id);
-                                    info.put("value", WikiDataHandling.getWikiEntityViLabel(id, wikiEntityPath, wikiPropPath));
-                                    analizedJsonArray.put(info);
-                                }
-                                else if (selectedP.has(value))
-                                {
-                                    JSONObject info = new JSONObject();
-                                    info.put("type", "string");
-                                    info.put("value", selectedP.getString(value));
-                                    analizedJsonArray.put(info);
-                                }
-                            }
-                            else if (thirdFloorProp.has("datatype"))
-                            {
-                                String datatype = thirdFloorProp.getString("datatype");
-                                if (datatype.equals("http://www.w3.org/2001/XMLSchema#date"))
-                                {
-                                    JSONObject info = new JSONObject();
-                                    info.put("type", "string");
-                                    String dateStr = thirdFloorProp.getString("value");
-                                    LocalDate date = LocalDate.parse(dateStr);
-                                    String formattedDate = date.format(DateTimeFormatter.ofPattern("'ngày' dd 'tháng' MM 'năm' yyyy"));
-                                    info.put("value", formattedDate);
-                                    analizedJsonArray.put(info);
-                                }
-                            }
-                        }
-                        if (analizedJsonArray.length()>0)
-                        {
-                            claims.put(propertyName, analizedJsonArray);
-                        }
-                    }
+                    addActivePropertiesToClaims(claims, json, mainKey,  wikiEntityPath, wikiPropPath);
                 }
                 else{
-                    if (!firstFloorKey.contains("http://dbpedia.org/resource/")) continue;
-                    String key = firstFloorKey.replace("http://dbpedia.org/resource/", "") + ".json";
-                    if (!selectedQ.has(key) && !selectedP.has(key)) continue;
-                    JSONObject info = new JSONObject();
-                    if (selectedQ.has(key))
-                    {
-                        info.put("type", "wikibase-item");
-                        String id = selectedQ.getString(key);
-                        info.put("id", id);
-                        info.put("value", WikiDataHandling.getWikiEntityViLabel(id, wikiEntityPath, wikiPropPath));
-                    }
-                    else
-                    {
-                        info.put("type", "string");
-                        info.put("value", selectedP.getString(key));
-                    }
-
-                    JSONObject passiveJSON = json.getJSONObject(firstFloorKey);
-                    Iterator<String> secondFloorKeys = passiveJSON.keys();
-                    while(secondFloorKeys.hasNext())
-                    {
-                        String propertyName = convertCamelCase(secondFloorKeys.next().replace("http://dbpedia.org/ontology/", "").replace("http://dbpedia.org/property/", ""));
-                        if (!dbpediaPropertyTranslate.has(propertyName)) continue;
-                        propertyName = dbpediaPropertyTranslate.getString(propertyName) + " của";
-
-                        if (!claims.has(propertyName))
-                        {
-                            JSONArray jsonArr = new JSONArray();
-                            jsonArr.put(info);
-                            claims.put(propertyName, jsonArr);
-                        }
-                        else
-                        {
-                            claims.getJSONArray(propertyName).put(info);
-                        }
-                    }
+                    addPassivePropertiesToClaims(claims, json, firstFloorKey,  wikiEntityPath, wikiPropPath);
                 }
             }
-            Iterator<String> claimKeys = claims.keys();
-            while(claimKeys.hasNext())
-            {
-                String propertyName = claimKeys.next();
-                JSONArray jsonArr = claims.getJSONArray(propertyName);
-                HashSet<String> nameSet = new HashSet<>();
-                List<Integer> eraseList = new ArrayList<>();
-                for (int i = 0; i < jsonArr.length(); i++)
-                {
-                    String value = jsonArr.getJSONObject(i).getString("value");
-                    if (nameSet.contains(value))
-                    {
-                        eraseList.add(i);
-                    }
-                    else
-                    {
-                        nameSet.add(value);
-                    }
-                }
-                for (int i = eraseList.size() - 1; i >= 0 ; i--)
-                {
-                    jsonArr.remove(eraseList.get(i));
-                }
-            }
+            filterDbpediaPropertiesInClaims(claims);
             if (claims.length() == 0) continue;
             analizedJSON.put("claims", claims);
             String qID = selectedQ.getString(fileName);
