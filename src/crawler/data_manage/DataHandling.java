@@ -10,9 +10,7 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.HashSet;
 import java.util.List;
 import java.io.BufferedReader;
@@ -28,8 +26,6 @@ import org.json.JSONObject;
 
 public class DataHandling {   
     protected static long timeNow = System.currentTimeMillis();
-
-    private static final String STR_DATE = (new SimpleDateFormat("yyyy-mm-dd hh:mm:ss")).format(Calendar.getInstance().getTime()).replace(':', '-');
     
     private static int requestRate = 100;
     /**
