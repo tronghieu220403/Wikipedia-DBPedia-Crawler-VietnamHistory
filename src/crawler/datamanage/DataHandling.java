@@ -105,6 +105,9 @@ public class DataHandling {
      */
     public static final JSONObject getJSONFromFile(String filePath) throws Exception {
         String content = readFileAll(filePath);
+        if (content.length() < 2){
+            return new JSONObject();
+        }
         return new JSONObject(content);
     }
     
