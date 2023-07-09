@@ -135,6 +135,10 @@ public class DataHandling {
         {
             throw e;
         }
+        if (content.length() > 0)
+        {
+            content.deleteCharAt(content.length() - 1);
+        }
         return content.toString();
     }
 
@@ -199,6 +203,7 @@ public class DataHandling {
         File file = new File(filePath);
         if (!file.isFile()){
             try{
+                (new File(file.getParent())).mkdirs();
                 file.createNewFile();
             }
             catch (Exception e)
@@ -289,6 +294,8 @@ public class DataHandling {
     public static final HashSet<String> listAllFiles(String folderPath)
     {
         HashSet<String> list = new HashSet<>();
+        if (!folderExist(folderPath))
+            return list;
         File folder = new File(folderPath);
         File[] files = folder.listFiles();
 

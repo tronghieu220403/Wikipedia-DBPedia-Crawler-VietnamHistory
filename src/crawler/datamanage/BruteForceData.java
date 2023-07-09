@@ -37,8 +37,8 @@ public class BruteForceData extends DataFolder {
     protected final String FAILED_URLS_PATH;    // Đổi tên thành RejectedURL
 
     private Deque<Pair> deque = new ArrayDeque<>();
-    private HashSet<String> failedURLsHashSet;
-    private HashSet<String> analysedURLsHashSet;
+    private HashSet<String> failedURLsHashSet = new HashSet<>();
+    private HashSet<String> analysedURLsHashSet = new HashSet<>();
     private HashMap<String, Integer> craftedURLsHashMap = new HashMap<>();
     private int totalAnalysed;
     private int limitAmountAnalysis = 100000;
@@ -64,7 +64,7 @@ public class BruteForceData extends DataFolder {
         DataHandling.createFolder(LOGS_PATH);
         ENTITY_JSON_PATH = LOGS_PATH + "EntityJson/";
         DataHandling.createFolder(ENTITY_JSON_PATH);
-        BEGIN_URLS_PATH = LOGS_PATH + "BeginURLs.txt";
+        BEGIN_URLS_PATH = INITIALIZE_PATH + "BeginURLs.txt";
         CRAFTED_URLS_PATH = LOGS_PATH + "CraftedURLs.txt";
         ANALYSED_URLS_PATH = LOGS_PATH + "AnalysedURLs.txt";
         FAILED_URLS_PATH = LOGS_PATH + "FailedURLs.txt";

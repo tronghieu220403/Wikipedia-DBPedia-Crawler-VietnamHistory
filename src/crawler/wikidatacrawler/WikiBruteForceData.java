@@ -210,7 +210,7 @@ public class WikiBruteForceData extends BruteForceData implements WikiBruteForce
         {
             String qID = fileName.replace(".json", "");
             JSONObject entity = DataHandling.getJSONFromFile(ENTITY_JSON_PATH + fileName).getJSONObject("entities").getJSONObject(qID);
-            JSONObject sitelinks = entity.getJSONObject(qID).getJSONObject("sitelinks");
+            JSONObject sitelinks = entity.getJSONObject("sitelinks");
             if (sitelinks.has("viwiki")){
                 urlToEntityHashMap.put(DataHandling.urlDecode(sitelinks.getJSONObject("viwiki").getString("url")), qID);
             }

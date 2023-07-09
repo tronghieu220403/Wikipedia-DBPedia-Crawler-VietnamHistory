@@ -19,6 +19,9 @@ public class ModifyData extends DataHandling{
     public ModifyData(String dataPath, String modifyPath){
         folderPath = dataPath;
         txtModifyPath = modifyPath;
+        for (String cat: BIG_CATEGORIES){
+            createFolder(dataPath + cat);
+        }
     }
 
     public ModifyData(){

@@ -38,7 +38,9 @@ public class Merge {
         path1 += "data/";
         path2 += "data/";
         DataHandling.createFolder(exportPath);
-        
+        for (String cat: BIG_CATEGORIES){
+            DataHandling.createFolder(exportPath + cat);
+        }
         for (String cat: BIG_CATEGORIES){
             DataHandling.createFolder(exportPath + cat);
         }
