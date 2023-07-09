@@ -95,7 +95,7 @@ public class WikiSelectiveData extends WikiBruteForceData implements WikiSelecti
                 categoryHashSet.add(qID);
                 continue;
             }
-            entityAnalys(urlString, 3, true);
+            analyzeEntity(urlString, 3, true);
             qID = urlToEntityHashMap.get(urlString);
             if (qID!=null)
             {
@@ -202,7 +202,7 @@ public class WikiSelectiveData extends WikiBruteForceData implements WikiSelecti
             String qID = "";
             if (WikiDataHandling.checkURL(urlString, false)){
                 if (!urlToEntityHashMap.containsKey(urlString)){
-                    entityAnalys(urlString, 3, true);
+                    analyzeEntity(urlString, 3, true);
                     qID = urlToEntityHashMap.get(urlString);
                     if (qID != null){
                         urlSet.add(urlString);

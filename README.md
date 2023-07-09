@@ -5,6 +5,7 @@ This is a mini-project in Object Oriented Programming course of SoICT - HUST.
 - [Problem](#problem)
 - [Abstract](#abstract)
 - [Folder structure](#folder-structure)
+- [Packages description](#packages-description)
 - [Result](#result)
 - [Contributors to this project](#contributors-to-this-project)
 - [VS Code for Java](#vs-code-for-java)
@@ -86,14 +87,14 @@ Folder structure
 │   │   └── ...                        
 ├── src                 	            # source code
 │   ├── crawler
-│   │   └── DataManage                 		# the program's general data processing and management
+│   │   └── datamanage                 		# the program's general data processing and management
 │   │   │   └── ...
-│   │   └── WikiDataCrawler                     # the crawler for Wikipedia
+│   │   └── wikidatacrawler                     # the crawler for Wikipedia
 │   │   │   └── ...
-│   │   └── DBPediaDataCrawler                 	# the crawler for DBPedia
+│   │   └── dbpediadatacrawler                 	# the crawler for DBPedia
 │   │   │   └── ...
-│   │   └── CrawlData.java                      # this file is used to run the data scraper program.
-│   ├── Interface                           # gives a summary of the important classes and what they are for.
+│   │   └── crawldata.java                      # this file is used to run the data scraper program.
+│   │   └── myinterface                           # gives a summary of the important classes and what they are for.
 │   │   │   └── ...								
 │   ├── text-modify                         # this folder contains files for modifying data.
 │   │   │   └── change_name.json                # change name of some properties
@@ -102,6 +103,53 @@ Folder structure
 │   ├── Statistical.java                    # used for statistics on scratched data.
 ├── statistic.json                 	    # statistics on the number of entities collected
 ```
+
+Packages description
+--------------------
+
+## datamanage: general data processing and management
+
+- `DataHandling.java`: contains all the static methods for handling different data types (JSON, read-write file, string decode, ...etc)
+
+- `DataFolder.java`: initialize shared folders used in scraping data for different sites (input for crawling, final data folder, all crafted URLs, logs folders for crawling and later analyzed,...)
+
+- `BruteForceData.java`: An abstract class for the brute-force algorithm. Idea: start with one (or several) preselected URLs, take all the URLs in it, analyze them to select quality URLs, and repeat with those quality URLs.
+
+- `Merge.java`: Concatenate data together. For conflicting fields, separate them and source each field. For identical fields, combine them and concatenate sources to assign them to that field.
+
+- `ModifyData.java`: Change, edit, or delete the given attributes if they are meaningless or duplicate in meaning. It also deletes the entity and unlinks it with other entities if the entity is not related to Vietnamese history.
+
+## myinterface: gives a summary of the important classes.
+
+- `WikiBruteForceCrawler.java`: the interface represents the work flow of the brute force method for wiki crawler. First of all, we will get all entities related to Vietnam. Secondly, check if the entity being analyzed contains one of the Vietnam-related entities in its properties. Next, write all important information to the files, such as converting from URL to entity ID, getting the names of the properties of the entities, and saving the associated entities. Finally, write all attributes and associated entities to files in JSON format.
+
+- `WikiSelectiveCrawler.java`: the interface represents the work flow of the selective method for wiki crawler. We will query all of them, anlyzed them and then assign them some important properties for identification and classification.
+
+- `WikiTableCrawler.java`: the interface represents the work flow of the table method for wiki crawler. We only need query all of them and then assign them some important properties for identification and classification.
+
+- `WikiCrawler.java`: call three above classes to crawl the data. Moreover, the interface also has a method for assigning associated entites and a method for export them as the final data.
+
+- `NonWikiCrawler.java`: interface for non-wiki crawler (DBPedia, Nguoi ke su,...) include getData method for crawling raw data and syncData method for matching with Wiki data.
+
+## wikidatacrawler: the crawler for Wikipedia
+
+- `WikiFolder.java`: Inherit from the `DataFolder` class, initialize directories solely for the analysis of data from Wikipedia.
+
+- `WikiDataHandling.java`: contains all the static methods for handling different properties and entities.
+
+- `WikiBruteForceData.java`: Inherit from the `BruteForceData` class, implement from `WikiBruteForceCrawler` interface, and override the **"analyzeEntity"** method. The idea is to take entities related to Vietnamese history, save them and then analyze the URLs in those entities to assign them to associative entities.
+
+- `WikiSelectiveData.java`: Inherit **"analyzeEntity"** method from the `BruteForceData` class and implement from `WikiSelectiveCrawler` interface. The idea is to takes all entities in some specific URLs and assign them to be related to Vietnamese history without any checking.
+
+- `WikiTableData.java`:implement from `WikiTableCrawler` interface. The idea is that we will takes data from the tables provided in Wikipedia on a specific number of pages and assigns it to entities. If any of the entities in the table have an entity ID that represents them, then match the properties in the table to the properties contained in the data with that entity ID. If not, initialize a separate entity ID with properties that are in the table. Entity IDs are initialized with an X at the end of their ID.
+
+- `WikiDataExport.java`: Export the final data to data folder.
+
+- `WikiData.java`: Call all the classes above to make a complete Wikipedia crawler.
+
+## dbpediadatacrawler: the crawler for DBPedia
+
+- `DBPediaData.java`: Inherit from the `BruteForceData` class, implement from `NonWikiCrawler` interface, and override the **"analyzeEntity"** method. The idea is to take entities related to Vietnamese history, save them and then analyze the URLs in those entities to assign them to associative entities. Finally, sync the data to match with the format of Wiki data.
 
 Result
 ------

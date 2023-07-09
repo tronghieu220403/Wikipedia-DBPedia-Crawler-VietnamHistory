@@ -117,7 +117,7 @@ public class BruteForceData extends DataFolder {
                 String urlString = deque.getFirst().first;
                 if ( depth <= 3 && totalAnalysed <= limitAmountAnalysis)
                 {
-                    entityAnalys(urlString, depth, true);
+                    analyzeEntity(urlString, depth, true);
                     totalAnalysed++;
                 }
                 deque.removeFirst();
@@ -233,7 +233,7 @@ public class BruteForceData extends DataFolder {
     }
     */
 
-    protected void entityAnalys(String url, int depth, boolean forceRelated) throws Exception {
+    protected void analyzeEntity(String url, int depth, boolean forceRelated) throws Exception {
         throw new UnsupportedOperationException("Unimplemented method 'entityAnalys' from EntityHandling. Must be overriden in subclasss.");
     }
 

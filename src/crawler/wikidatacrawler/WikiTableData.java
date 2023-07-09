@@ -188,7 +188,7 @@ public class WikiTableData extends WikiBruteForceData implements WikiTableCrawle
         String qID = "";
         if (WikiDataHandling.checkURL(urlString, false)){
             if (!urlToEntityHashMap.containsKey(urlString)){
-                entityAnalys(urlString, 3, true);
+                analyzeEntity(urlString, 3, true);
                 qID = urlToEntityHashMap.get(urlString);
                 if (qID != null){
                     json = getVietnameseWikiReadable(qID);

@@ -12,9 +12,10 @@ public class CrawlData {
         String dbpediaPath = "raw/DBPedia/";
         
         WikiData wikiData = new WikiData(wikiPath);
-        wikiData.setBruteForceLimit(10);
+        wikiData.setBruteForceLimit(4);
         wikiData.getData();
         
+        /*
         DBPediaData dbpediaData = new DBPediaData(dbpediaPath);
         dbpediaData.getBruteForceData();
         dbpediaData.syncData(wikiPath);
@@ -27,7 +28,7 @@ public class CrawlData {
         ModifyData md = new ModifyData("data/","src/text-modify/");
         md.removeEntity();
         DataHandling.print("Finish");
-
+        */
     }
 
 }

@@ -69,7 +69,7 @@ public class WikiBruteForceData extends BruteForceData implements WikiBruteForce
     }
 
     @Override
-    public void entityAnalys(String urlString, int depth, boolean forceRelated) throws Exception {
+    public void analyzeEntity(String urlString, int depth, boolean forceRelated) throws Exception {
         // Check if urlString is a valid Wikipedia URL .
         urlString = DataHandling.urlDecode(urlString.replace("\n", ""));
         if (!WikiDataHandling.checkURL(urlString, false)){

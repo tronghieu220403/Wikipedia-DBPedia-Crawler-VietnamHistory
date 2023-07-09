@@ -55,7 +55,7 @@ public class DBPediaData extends BruteForceData implements NonWikiCrawler {
      * @apiNote The entity data is in "EntityJson" folder. 
      */
     @Override
-    protected void entityAnalys(String url, int depth, boolean forceRelated) throws Exception {
+    protected void analyzeEntity(String url, int depth, boolean forceRelated) throws Exception {
         if (WikiDataHandling.checkURL(url, false)==false) return;
         url = filterURL(url);
         url = url.replace("http:", "https:");
