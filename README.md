@@ -43,7 +43,7 @@ Historical figures of Hung King:
 Abstract
 --------
 
-## Wikipedia
+### Wikipedia
 Entities web pages on Wikipedia often have a [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page) item (from the Wikipedia website: Tools -> Wikidata Item). When accessing, we will see a lot of properties of the entity in the form of tables. This is **Structured Data.**
 
 *"Each Item or Property has a persistent URI made up of the Wikidata concept namespace and the Item or Property ID (e.g., Q42, P31) as well as concrete data that can be accessed by that Item's or Property's data URL."*
@@ -56,7 +56,7 @@ I use the [`Wikidata query builder`](https://query.wikidata.org/querybuilder/?us
 
 Finally, our job now is to transform all of that Wikipedia's .json files into **human-readable** format.
 
-## DBPedia
+### DBPedia
 
 DBPedia also provide **Structured Data.** Morover, compared to Wikipedia, the data in the dbpedia JSON file is **simpler**, but it also contains **a lot of inaccurate information.**
 Entities with **links to entities in Wikipedia** are the only ones I scratch and process. For each entity, I also only receive properties **whose components share the same data type**.
@@ -107,7 +107,7 @@ Folder structure
 Packages description
 --------------------
 
-## datamanage: general data processing and management
+### datamanage: general data processing and management
 
 - `DataHandling.java`: contains all the static methods for handling different data types (JSON, read-write file, string decode, ...etc)
 
@@ -119,7 +119,7 @@ Packages description
 
 - `ModifyData.java`: Change, edit, or delete the given attributes if they are meaningless or duplicate in meaning. It also deletes the entity and unlinks it with other entities if the entity is not related to Vietnamese history.
 
-## myinterface: gives a summary of the important classes.
+### myinterface: gives a summary of the important classes.
 
 - `WikiBruteForceCrawler.java`: the interface represents the work flow of the brute force method for wiki crawler. First of all, we will get all entities related to Vietnam. Secondly, check if the entity being analyzed contains one of the Vietnam-related entities in its properties. Next, write all important information to the files, such as converting from URL to entity ID, getting the names of the properties of the entities, and saving the associated entities. Finally, write all attributes and associated entities to files in JSON format.
 
@@ -131,7 +131,7 @@ Packages description
 
 - `NonWikiCrawler.java`: interface for non-wiki crawler (DBPedia, Nguoi ke su,...) include getData method for crawling raw data and syncData method for matching with Wiki data.
 
-## wikidatacrawler: the crawler for Wikipedia
+### wikidatacrawler: the crawler for Wikipedia
 
 - `WikiFolder.java`: Inherit from the `DataFolder` class, initialize directories solely for the analysis of data from Wikipedia.
 
@@ -147,7 +147,7 @@ Packages description
 
 - `WikiData.java`: Call all the classes above to make a complete Wikipedia crawler.
 
-## dbpediadatacrawler: the crawler for DBPedia
+### dbpediadatacrawler: the crawler for DBPedia
 
 - `DBPediaData.java`: Inherit from the `BruteForceData` class, implement from `NonWikiCrawler` interface, and override the **"analyzeEntity"** method. The idea is to take entities related to Vietnamese history, save them and then analyze the URLs in those entities to assign them to associative entities. Finally, sync the data to match with the format of Wiki data.
 
