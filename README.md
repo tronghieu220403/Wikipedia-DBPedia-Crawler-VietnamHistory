@@ -127,7 +127,7 @@ Packages description
 
 - `WikiTableCrawler.java`: Ihe interface represents the workflow of the table method for wiki crawler. We only need query all of them and then assign them some important properties for identification and classification.
 
-- `WikiCrawler.java`: This class implements the `WikiBruteForceCrawler`, `WikiSelectiveCrawler`, and `WikiTableCrawler` interfaces to crawl data from Wiki. It handles the data retrieval process by calling the respective methods from each interface. Furthermore, it includes functionality for assigning associated entities and exporting the final data. 
+- `WikiCrawler.java`: This class implements the `WikiBruteForceCrawler`, `WikiSelectiveCrawler`, and `WikiTableCrawler` interfaces to crawl data from Wiki. It handles the data retrieval process by calling the respective methods from each interface. Furthermore, it includes functionality for assigning associated entities and exporting the final data. 
 
 - `NonWikiCrawler.java`: Interface for non-wiki crawler (DBPedia, Nguoi ke su,...) include getData method for crawling raw data and syncData method for matching with Wiki data.
 
